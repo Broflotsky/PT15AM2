@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8"/>
+  <title>Henry - Hooks Demo</title>
+</head>
+
+<body>
+  <div id='app'></div>
+
+  <script src="https://unpkg.com/react@16.8/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16.8/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+
+  <script type="text/babel">
+  const { useState } = React;
+
+  function MuestraCuenta(props) {
+      return (
+        <p>Hola, van {props.contador}!!</p>
+      );
+    }  
+  function Contador(props) {
+    const [contador, setContador] = useState(props.contador);
+
+    const onButtonClick = () => {
+      setContador(contador +1)
+    }
+
+    return (
+      <div>
+        <button onClick={onButtonClick}>Suma uno!</button>
+        <MuestraCuenta contador={contador} />
+      </div>  
+    )
+  };
+  ReactDOM.render(<Contador contador={100} />, document.getElementById('app'));
+  </script>
+</body>
+
+</html>

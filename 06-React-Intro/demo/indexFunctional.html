@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  <div id='app'></div>
+
+  <script src="https://unpkg.com/react@16.8/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16.8/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    function Boton(props) {
+      return (
+        <button onClick={props.clickHandler}>
+          {props.numero}
+        </button>
+      )
+    };
+
+    function Contador() {
+    const [contador, setContador] = useState(0);
+
+    const clickHandler = (e) => {
+      e.preventDefault();
+      window.location = 'http://www.google.com'
+    };
+    return (
+      <div>
+        <Boton clickHandler={clickHandler} numero={contador} />
+      </div>
+    )
+  };
+
+  
+  ReactDOM.render(<Contador />, document.getElementById('app'));
+  </script>
+</body>
+
+</html>

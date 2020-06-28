@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Henry - Demo Axios</title>
+</head>
+<body>
+  <div id='app'></div>
+
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/babel">
+  
+    // Pure Component
+    function Post(props) {
+      return (
+        <div>
+          <h3>{props.title}</h3>
+          <p>{props.body}</p>
+        </div>
+      );
+    };
+
+  class PostSearch extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        body: '',
+        title: '',
+      };
+      this.onButtonClick = this.onButtonClick.bind(this);
+      this.input = React.createRef();
+    }
+    onButtonClick(){
+      const index = this.input.current.value;
+      axios.get(`https://jsonplaceholder.typicode.com/posts/${index}`)
+        .then((response) => {
+          console.log(response);
+          this.setState({
+            body: response.data.body,
+            title: response.data.title,
+          });
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+    render(){
+      return (
+        <div>
+            <input type='text' ref={this.input}/>
+            <button onClick={this.onButtonClick}>get Post!</button>
+          <Post
+            body={this.state.body}
+            title={this.state.title}
+          />
+        </div>  
+      )
+    }
+  };
+  ReactDOM.render(<PostSearch />, document.getElementById('app'));
+  </script>
+</body>
+</html>

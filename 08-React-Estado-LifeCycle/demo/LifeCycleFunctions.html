@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  <div id='app'></div>
+
+  <script src="https://unpkg.com/react@16.8/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16.8/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+
+  <script type="text/babel">
+  const { useState, useEffect } = React;
+
+  const fnComparacion = function(prevProps, nextProps) {
+    if(nextProps.numero > 10) {
+      return true;
+    }
+      return false;
+  };
+
+  const Numero = React.memo((props) => {
+
+    useEffect(() => {
+      console.log('Estoy en el DOM!!');
+    },[])
+
+    useEffect(() => {
+      console.log('Ya me actualicé!!');
+    })
+
+    useEffect(() => {
+      return () => {
+        console.log('adios!!');
+      }
+    },[])
+
+    useEffect(() => {
+      console.log(`Me ejecuto cuando props.numero: ${props.numero} cambie de valor!`)
+    },[props.numero])
+
+    console.log('Renderizando Componente Numero!!')
+    return (
+      <div id="numero">
+        {props.numero}
+      </div>
+    )
+  },fnComparacion)
+
+  function Contador(props) {
+    const [contador, setContador] = useState(props.contador);
+    const [reRender, setReRender] = useState(false)
+
+    const onButtonClick = (e) => {
+      e.preventDefault();
+      setContador(contador +1)
+    }
+
+    console.log('Renderizando Contador!!')
+    return (
+      <div>
+        <button onClick={onButtonClick}>Suma uno!</button>
+        <button onClick={() => setReRender(!reRender)}>Re-Render!</button>
+        {contador < 3 ? <Numero numero={contador} />: null}
+      </div>  
+    )
+  };
+  ReactDOM.render(<Contador contador={0} />, document.getElementById('app'));
+  </script>
+</body>
+
+</html>

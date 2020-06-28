@@ -1,0 +1,14 @@
+{
+  "name": "World-Wide-Whiteboard",
+  "version": "1.0.0",
+  "description": "socket.io",
+  "main": "index.js",
+  "author": "Henry",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.12.3",
+    "socket.io": "^1.7.2"
+  }
+}

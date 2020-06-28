@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  <div id='app'></div>
+
+  <script src="https://unpkg.com/react@16.8/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16.8/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <script type="text/babel">
+  const { useState, useRef } = React;
+
+  // Pure Component
+  function Post(props) {
+    return (
+      <div>
+        <h3>{props.title}</h3>
+        <p>{props.body}</p>
+      </div>
+    );
+  };
+
+  function PostSearch() {
+    const [state, setState] = useState({body: '', title: ''})
+    const input = useRef(null)
+
+    const onButtonClick = async () => {
+      const index = input.current.value;
+      try {
+        const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${index}`)
+          console.log(response)
+          setState({
+            body: response.data.body,
+            title: response.data.title,
+          });
+      } catch(e) {
+        setState({
+            body: 'Intenta nuevamente en unos minutos.',
+            title: 'Fallo la llamada al Servidor!',
+          });
+        console.log(e)
+      }
+    }
+
+    return (
+      <div>
+          <input type='text' ref={input}/>
+          <button onClick={onButtonClick}>get Post!</button>
+        <Post
+          body={state.body}
+          title={state.title}
+        />
+      </div>  
+    )
+  };
+
+  ReactDOM.render(<PostSearch />, document.getElementById('app'));
+  </script>
+</body>
+
+</html>

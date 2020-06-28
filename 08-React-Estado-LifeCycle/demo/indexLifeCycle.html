@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Henry - Demo LifeCycle</title>
+</head>
+<body>
+  <div id='app'></div>
+
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+  
+    class Numero extends React.Component {
+      constructor(props) {
+        super(props);
+      }
+      componentWillMount() {
+        console.log('Voy a estar en el DOM!');
+        console.log(document.querySelector('#numero'));
+      }
+       componentDidMount() {
+       console.log('Estoy en el DOM');
+       console.log(document.querySelector('#numero'));
+      }
+      componentWillReceiveProps(nextProps) {
+       console.log('Recibi nuevas props:', nextProps);
+       console.log(document.querySelector('#numero').innerText);
+      }
+      shouldComponentUpdate(nextProps, nextState) {
+        if(nextProps.numero > 10) {
+          return false;
+        }
+        return true;
+      }
+      componentWillUpdate(nextProps, nextState) {
+        console.log('Me voy a actualizar:', nextProps);
+        console.log(document.querySelector('#numero').innerText);
+      }
+      componentDidUpdate(prevProps, prevState) {
+        console.log('Ya me actualicé:', prevProps);
+        console.log(document.querySelector('#numero').innerText);
+      
+      }
+      componentWillUnmount() {
+        console.log('adios!!');
+        console.log(document.querySelector('#numero'));
+      }
+      render() {
+        console.log('renderié!');
+        return (
+          <div id="numero">
+            {this.props.numero}
+          </div>
+        );
+      }
+    };
+
+  class Contador extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {contador: this.props.contador}
+      this.onButtonClick = this.onButtonClick.bind(this);
+    }
+    onButtonClick(e){
+      e.preventDefault();
+      this.setState({
+        contador: this.state.contador + 1,
+      });
+    }
+    render(){
+      return (
+        <div>
+         <button onClick={this.onButtonClick}>Suma uno!</button>
+         {this.state.contador < 3 ? <Numero numero={this.state.contador} /> : null}
+        </div>  
+      )
+    }
+  };
+  ReactDOM.render(<Contador contador={0} />, document.getElementById('app'));
+  </script>
+</body>
+</html>

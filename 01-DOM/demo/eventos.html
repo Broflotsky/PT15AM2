@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo1</title>
+  <style type="text/css">
+    div {
+      height: 200px;
+      width: 200px;
+      border: black 1px solid;
+      background: plum;
+    }
+  </style>
+</head>
+<body>
+  <div id='uno'>Uno</div>
+  <div id='dos'>Dos</div>
+  <div id='tres'>Tres</div>
+
+  <script type="text/javascript">
+    var arreglo = [1,2,3]
+    var divs = document.querySelectorAll('div');
+    var div = document.getElementById('uno');
+    // divs.forEach(function(e) {
+    //   e.addEventListener('click', function(evento) {
+    //     if( evento.target.style.background == 'gray none repeat scroll 0% 0%') {
+    //       evento.target.style.background = 'plum';
+    //     } else {
+    //       evento.target.style.background = 'gray';
+    //     }
+    //   })
+    // })
+    // document.body.addEventListener('mousemove', function(e) {
+    //   // div.style.position = 'fixed';
+    //   // div.style.top = e.clientY + 15 +'px';
+    //   // div.style.left = e.clientX + 152+'px';
+
+    // })
+    document.body.addEventListener('click', function(e) {
+      console.log(e.target);
+    })
+  </script>
+</body>
+</html>

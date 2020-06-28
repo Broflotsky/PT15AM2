@@ -1,0 +1,16 @@
+{
+      "name": "prep",
+      "version": "1.0.0",
+      "main": "index.js",
+      "scripts": {
+            "test": "jest --collectCoverage=false"
+      },
+      "devDependencies": {
+            "jest": "^22.0.3"
+      },
+      "author": "",
+      "license": "ISC",
+      "jest": {
+            "testURL": "http://localhost/"
+      }
+}
