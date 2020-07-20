@@ -1,13 +1,23 @@
 // Crear un array vacío llamado 'toDoItems'
 // Tu codigo acá:
+<<<<<<< HEAD
 var toDoItems=[];
+=======
+var toDoItems = []
+
+>>>>>>> 1b32c59c22d9e68e3c22ba1d52da52906430938c
 
 // En la página 'index.html' hay un elemento span cuyo texto es 'Aplicación creada por:'.
 // Usando querySelector seleccionar dicho span por su id ('createdBy') y luego usando innerHTML
 // agregar tu nombre al final del texto actual. Ej: 'Aplicación creada por Franco'
 // Tu código acá:
+<<<<<<< HEAD
 var x = document.getElementById("createdBy");
 x.innerHTML=x.innerHTML+" Claudio";
+=======
+var variable1 = document.querySelectorAll('createdBy').innerHTML
+variable1 = variable + "Juan"
+>>>>>>> 1b32c59c22d9e68e3c22ba1d52da52906430938c
 
 
 
@@ -20,8 +30,15 @@ x.innerHTML=x.innerHTML+" Claudio";
 
 function ToDo (description) {
   // Tu código acá:
+<<<<<<< HEAD
   this.description=description;
   this.complete=false;
+=======
+  constructor(description){
+    this.description = description;
+    this.complete = false;
+}
+>>>>>>> 1b32c59c22d9e68e3c22ba1d52da52906430938c
 
 }
 
@@ -31,9 +48,13 @@ function ToDo (description) {
 // Debe setear el atributo 'complete' del ToDo en true
 
 // Tu código acá:
+<<<<<<< HEAD
 ToDo.prototype.completeToDo=function(){
   this.complete=true;
 }
+=======
+ToDo.prototype.completeToDo = function(){this.complete = true;}
+>>>>>>> 1b32c59c22d9e68e3c22ba1d52da52906430938c
 
 
 
@@ -43,7 +64,7 @@ ToDo.prototype.completeToDo=function(){
 //
 // La función debe realizar lo siguiente:
 //    1) Crear un elemento 'div' y asignárselo a una variable denominada 'toDoShell'
-//    2) Asignarle a 'toDoShell' la clase 'toDoShell'
+//    2) Asignarle a 'toDoShell' la clase ' toDoShell'
 //    3) Crear un elemento 'span' y asignárselo a una variable denominada 'toDoText'
 //    4) Utilizando el objeto toDo pasado como argumento, setear el 'toDoText' innerHTML
 //       asignándole el valor de la propiedad 'description' del objeto ToDo.
@@ -57,6 +78,7 @@ ToDo.prototype.completeToDo=function(){
 
 function buildToDo(todo, index) {
   // Tu código acá:
+<<<<<<< HEAD
   const toDoShell=document.createElement('div');
   const checkbox=document.createElement('input');
   toDoShell.className="toDoShell";
@@ -78,6 +100,13 @@ function buildToDo(todo, index) {
   return(toDoShell);
 
 
+=======
+  var object = new ToDo()
+  var indexN = 0
+  
+  var toDoShell = document.createElement("div")
+  toDoShell.className = toDoShell;
+>>>>>>> 1b32c59c22d9e68e3c22ba1d52da52906430938c
 
 }
 
