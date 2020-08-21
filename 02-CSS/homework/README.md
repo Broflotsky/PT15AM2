@@ -22,13 +22,9 @@ A partir de una paǵina que simula una noticia sobre _Música 8D_ es necesario t
 
 #### Configuración de LESS (Preprocessador)
 
-* Verificar si ya se encuentra instalado LESS: Si al ejecutar el comando `lessc --version` les devuelve algo similar a `lessc 3.11.1 (Less Compiler) [JavaScript]` es porque ya lo tienen instalado.
+* Ejecutar `npm install` para instalar less y less-watch-compiler
 
-* Si no se encuentra instalado LESS: Ejecutar el siguiente comando en la consola `npm install -g less`
-
-* Instalar less-watch-compiler: Ejecutar el siguiente comando en la consola `npm install -g less-watch-compiler`
-
-* Desde la carpeta del proyecto `responsive-web` ejecutar el siguiente comando: `less-watch-compiler less css index.less`
+* Desde la carpeta del proyecto `responsive-web` ejecutar el siguiente comando: `npm run less`. Esto va a hacer que quede un watcher corriendo de fondo esperando por los cambios que efectuen en el archivo `index.less` para compilarlo a codigo CSS y almacenarlo en el archivo `index.css`.
 
 * Verificar que el compilador esté funcionando correctamente, para ello colocar la propiedad `background-color` del elemento `html` a `red` en el archivo `index.less` que se encuentra dentro de la carpeta `less`. Si actualizamos ahora la página, el fondo debería haberse cambiado a rojo
 
