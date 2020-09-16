@@ -3,7 +3,8 @@
       "version": "1.0.0",
       "main": "index.js",
       "scripts": {
-            "test": "jest --collectCoverage=false"
+            "test": "jest --collectCoverage=false",
+            "grade": "jest --useStderr --json --outputFile=./tests/result.json"
       },
       "devDependencies": {
             "jest": "^22.0.3"
@@ -12,5 +13,9 @@
       "license": "ISC",
       "jest": {
             "testURL": "http://localhost/"
+      },
+      "dependencies": {
+            "node-fetch": "^2.6.1",
+            "prompt-sync": "^4.2.0"
       }
 }
