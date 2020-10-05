@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "express": "^4.12.3",
-    "socket.io": "^1.7.2"
+    "socket.io": "^1.7.2",
+    "node-fetch": "^2.6.1",
+    "prompt-sync": "^4.2.0"
   }
 }

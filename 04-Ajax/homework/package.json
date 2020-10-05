@@ -1,7 +1,7 @@
 {
   "name": "homework",
   "version": "1.0.0",
-  "description": "Crea un documento HTML que conste de un título h1 con el texto, dos párrafos de texto y una imagen. Utiliza los eventos onmouseover para que la imagen original sea reemplazada por otra imagen cuando el usuario pasa el ratón sobre ella. Utiliza el evento onmouseout para hacer que cuando el usuario salga del espacio de la imagen, vuelva a aparecer la imagen original.",
+  "description": "",
   "main": "homework.js",
   "directories": {
     "body-parser": "^1.18.2",
@@ -19,6 +19,8 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "node-fetch": "^2.6.1",
+    "prompt-sync": "^4.2.0"
   }
 }
