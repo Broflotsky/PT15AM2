@@ -1,3 +1,19 @@
+# Henry
+
+<table width="100%" style='table-layout:fixed;'>
+  <tr>
+	  <td>
+	  	<a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=09-React-Routing">
+			<img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
+			<br>
+			Hacé click acá para dejar tu feedback sobre esta clase.
+	  	</a>
+	  </td>
+    <td>
+		</td>
+  </tr>
+</table>
+
 # Front-End Routing
 
 Vamos a ver que muchísimos proyectos de _React_ están construidos comos __SPA__ (Single Page Applications), es decir que sin recargar una página se van mostrando algunos _Containers_ u otros según donde vaya navegando el usuario. Gracias a que tenemos todo encapsulado en _Componentes_ pensar nuestra _app_ como __SPA__ no puede ser muy complejo, lo que sí puede serlo es el _ruteo_ interno en el _front-end_, es decir, el trabajo de __mapear__ cada _link_ con algún _Componente_. Por suerte no estamos solos, existen varias librerías en _npm_ listas para ayudarnos con esto. Nosotros vamos a usar una llamada _react-router_.
