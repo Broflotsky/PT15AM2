@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Henry - React Demo 1</title>
+</head>
+<body>
+  <div id='app'></div>
+
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+
+  const element = <h1>Hello, world!</h1>;
+
+  
+  // function formatName(user) {
+  //   return user.firstName + ' ' + user.lastName;
+  // };
+
+  // const user = {
+  //   firstName: 'Toni',
+  //   lastName: 'Tralice'
+  // };
+
+  // const element = (
+  //   <h1>
+  //     Hello, {formatName(user)}!
+  //   </h1>
+  // );
+
+  // const personas = [
+  //   {
+  //     name: 'Toni',
+  //     lastname: 'Tralice',
+  //     id: 0
+  //   },
+  //   {
+  //     name: 'Fran',
+  //     lastname: 'Etcheverri',
+  //     id: 1
+  //   },
+  //   {
+  //     name: 'Agustin',
+  //     lastname: 'Amani',
+  //     id: 2
+  //   }
+  // ]
+
+  // function Persona(props) {
+  //   return (
+  //     <h1>
+  //       Hola, {props.personaNombre} {props.personaApellido}!
+  //     </h1>
+  //   )
+  // }
+
+  // function Container() {
+  //   return (
+  //     <div>
+  //      {
+  //       personas.map(p => <Persona personaNombre={p.name} personaApellido={p.lastname} key={p.id} />)
+  //      } 
+  //     </div>
+  //   )
+  // }
+
+  ReactDOM.render(
+    element,
+    document.getElementById('app')
+  );
+  </script>
+</body>
+</html>
