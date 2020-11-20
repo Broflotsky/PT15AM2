@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import '../global.gcss';
 
 const Producto = styled.div`
   color: salmon;
