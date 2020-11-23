@@ -11,32 +11,35 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
   
-    function Boton (props) {
-        return <button onClick={props.clickHandler}>
-          {props.numero}
-        </button>
+  function Boton(props) {
+    return (
+      <button onClick={props.clickHandler}>
+        Click
+      </button>
+    )
+  }
+
+  class App extends React.Component {
+    constructor() {                 
+      super();
+
+      this.clickHandler = this.clickHandler.bind(this);
+    }                 
+
+    clickHandler(){                                 
+      window.location = 'http://www.google.com'
     }
 
-    class Contador extends React.Component {
-      constructor(props) {                 
-        super(props);                      
-        this.state = {contador: 0}
-        this.clickHandler = this.clickHandler.bind(this);
-      }                                    
-      clickHandler(e){                    
-        e.preventDefault();                
-        window.location = 'http://www.google.com'
-      }
-      render(){
-        return (
-          <div>
-            <Boton clickHandler={this.clickHandler} numero={this.state.contador} />
-          </div>  
-        )
-      }
+    render(){
+      return (
+        <div>
+          <Boton clickHandler={this.clickHandler}/>
+        </div>  
+      )
+    }
   };        
-    
-    ReactDOM.render(<Contador/>, document.getElementById('app'));
+  
+  ReactDOM.render(<App/>, document.getElementById('app'));
   </script>
 </body>
 </html>

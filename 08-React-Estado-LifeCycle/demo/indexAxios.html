@@ -29,12 +29,13 @@
       this.state = {
         body: '',
         title: '',
+        input: ''
       };
       this.onButtonClick = this.onButtonClick.bind(this);
-      this.input = React.createRef();
     }
-    onButtonClick(){
-      const index = this.input.current.value;
+
+    onButtonClick() {
+      const index = this.state.input;
       axios.get(`https://jsonplaceholder.typicode.com/posts/${index}`)
         .then((response) => {
           console.log(response);
@@ -46,11 +47,34 @@
         .catch(function (error) {
           console.log(error);
         });
+
+      // fetch(`https://jsonplaceholder.typicode.com/posts/${index}`)
+      //   .then(response => {
+      //     console.log(response)
+      //     return response.json()
+      //   })
+      //   .then(data => {
+      //     console.log(data);
+      //     this.setState({
+      //       body: data.body,
+      //       title: data.title
+      //     });
+      //   })
+      //   .catch(function(error) {
+      //     console.log(error);
+      //   });
     }
+
+    handleChange = (e) => {
+      this.setState({
+        input: e.target.value
+      })
+    }
+
     render(){
       return (
         <div>
-            <input type='text' ref={this.input}/>
+            <input type='text' onChange={this.handleChange} />
             <button onClick={this.onButtonClick}>get Post!</button>
           <Post
             body={this.state.body}

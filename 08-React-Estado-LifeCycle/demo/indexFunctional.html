@@ -13,32 +13,27 @@
   <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
 
   <script type="text/babel">
-    const { useState, useEffect } = React;
-
     function Boton(props) {
       return (
         <button onClick={props.clickHandler}>
-          {props.numero}
+          Click
         </button>
       )
     };
 
-    function Contador() {
-    const [contador, setContador] = useState(0);
+    function App() {
 
-    const clickHandler = (e) => {
-      e.preventDefault();
-      window.location = 'http://www.google.com'
+      const clickHandler = () => {
+        window.location = 'http://www.google.com'
+      };
+      return (
+        <div>
+          <Boton clickHandler={clickHandler} />
+        </div>
+      )
     };
-    return (
-      <div>
-        <Boton clickHandler={clickHandler} numero={contador} />
-      </div>
-    )
-  };
-
   
-  ReactDOM.render(<Contador />, document.getElementById('app'));
+    ReactDOM.render(<App />, document.getElementById('app'));
   </script>
 </body>
 
