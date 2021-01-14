@@ -58,7 +58,7 @@ Comenzamos agregando el formulario per se, usando JSX. En el código vamos a cre
 Te dejamos un ejemplo de cómo quedaría sólo con el input para el username.
 
 ```js
-// Form.jsx 
+// Form.jsx
 
 export default function  Form() {
   return (
@@ -85,7 +85,7 @@ El siguiente paso es agregar comportamiento a nuestro componente, para eso vamos
 export default function Form() {
     const [username, setUsername] = React.useState('')
     const [password, setPassword] = React.useState('')
-    
+
     ...
 };
 
@@ -96,7 +96,7 @@ Con esto, estamos agregando estado al componente.
 Genial! ahora tenemos estado, pero tenemos que *conectarlo* con el formulario. Para eso vamos a poner como `value` del input el estado correspondiente.
 
 ```js
-// Form.jsx 
+// Form.jsx
     ...
     <form>
       <div>
@@ -112,7 +112,7 @@ Por ahora, el input toma el valor del estado, pero cuando se cambia el input el 
 Para eso vamos a usar el evento `onChange` del input, y le vamos a pasar las funciones `setUsername` y `setPassword`, respectivamente:
 
 ```js
-// Form.jsx 
+// Form.jsx
 
 export default function  Form() {
   ...
@@ -222,7 +222,7 @@ Si corremos los tests, deberiamos estar pasando 8 de ellos!!
 
 #### Validaciones
 
-Ahora vamos a agregar las validaciones en nuestro form. Básicamente, cada vez que se actualize el estado queremos controlar si cada input cumple con las condiciones que pedimos. 
+Ahora vamos a agregar las validaciones en nuestro form. Básicamente, cada vez que se actualize el estado queremos controlar si cada input cumple con las condiciones que pedimos.
 En nuestro caso, que el username sea un mail válido, y el password contenga por lo menos un número.
 
 Para hacer esto, necesitamos definir una función `validate` que reciba el input, y nos diga si cumple o no. Vamos a usar [Regexp](https://es.ryte.com/wiki/RegEx) para controlar los inputs.
@@ -257,6 +257,8 @@ Otro ejemplo:
 ```
 
 Te compartimos la primera mitad de la función `validate`, lo que ves en el if es una expresión regular que controlar por un mail válido (estas expresiones son comunes y podés encontrarlas en internet!).
+
+__IMPORTANTE__: Para que funcionen correctamente los tests esta función debe ir por fuera del componente Form. Adicionalmente colocarla allí nos permitiría de ser necesario importarla en otro archivo y reutilizarla.
 
 ```js
 export function validate(input) {
