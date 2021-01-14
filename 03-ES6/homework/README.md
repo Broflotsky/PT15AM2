@@ -1,10 +1,5 @@
 # Selectores
 
-## Setup
-
-1. Forkea este Repo
-2. Clonalo en tu computadora
-
 ### Ejecutando los tests
 
 Vamos a trabajar con los siguientes archivos:
@@ -21,10 +16,10 @@ En spec/selectorSpec.js podes previsualizar como los test estan siendo corridos.
 
 ### Orientacion
 
-En este homework, vamos a crear nuestra propia implementación de un selector en el DOM, es decir, vamos a traversar (recorrer) el DOM buscando elementos que matcheen con el argumento que le hayamos pasado. Por ejemplo: 
+En este homework, vamos a crear nuestra propia implementación de un selector en el DOM, es decir, vamos a traversar (recorrer) el DOM buscando elementos que matcheen con el argumento que le hayamos pasado. Por ejemplo:
 
 ```
-$('#id') => debería retornar un elemento con id: "id". 
+$('#id') => debería retornar un elemento con id: "id".
 ```
 
 Si bien este problema parece muy complejo a priori, vamos a usar la ténica [**divide and conquer**](https://es.wikipedia.org/wiki/Algoritmo_divide_y_vencer%C3%A1s). De esta manera vamos a separar el problema en tres problemas más pequeños:
@@ -56,7 +51,7 @@ Estas llamadas de funciones ya estan conectadas para vos, i.e., el flow esta est
 
 #### Chrome Web Tools
 
-Usando Chrome Web Tools va a ser útil mientras debuggiemos el codigo, o examinando elementos HTML. Esto tambien es una gran oportunidad para ser mejor en Javascript Console y Web Tools. Trata usando la función `document.querySelectorAll` en la consola para entender como la función `$` que estamos construyendo deberia funcionar y devolver. 
+Usando Chrome Web Tools va a ser útil mientras debuggiemos el codigo, o examinando elementos HTML. Esto tambien es una gran oportunidad para ser mejor en Javascript Console y Web Tools. Trata usando la función `document.querySelectorAll` en la consola para entender como la función `$` que estamos construyendo deberia funcionar y devolver.
 
 Tratemos un par de comandos en consola de Chrome:
 
@@ -67,7 +62,7 @@ Abre la consola de Chromo en la misma ventana donde estas corriendo `SpecRunner.
 - Ahora, trate `alldivs[0].children` - esto te devuelve todos los hijos del primer div.
 - Similarmente podes substituir "div" por cualquier selector css en `querySelectorAll`.
 
-### La funcion principal: $ 
+### La funcion principal: $
 
 Apesar de que esta función esta ya definida para vos, es importante entender su proposito. La función `$` se comporta exactamente casi como `document.querySelectorAll` o JQuery's `$`. Toma un string de un selector CSS y devuelve un arreglo de elementos en el documento que matchea el selector. Por ejemplo, `$('img.photo')` debería retornar un arreglo con todos los nodos HTML `<img>` que tienen `class="photo"`.
 
@@ -80,7 +75,7 @@ Apesar de que esta función esta ya definida para vos, es importante entender su
 
 ### Matching Selector Types
 
-Antes de que podamos empezar a matchear selectores especificos, tenemos que pensar que tipo de selector el usuario quiere. Buscar por cierto tipo de elemento (e.g. `<h1>` tags) es muy diferente a buscar por elementos con una cierta clase (e.g todos los tags con class="warning"). 
+Antes de que podamos empezar a matchear selectores especificos, tenemos que pensar que tipo de selector el usuario quiere. Buscar por cierto tipo de elemento (e.g. `<h1>` tags) es muy diferente a buscar por elementos con una cierta clase (e.g todos los tags con class="warning").
 
 Hay cuatro tipos de selectores que tu función `$` puede ser capáz de matchear. Nótese que esto es un subset simplificado del que actualmente aceptan CSS y jQuery.
 
@@ -95,7 +90,7 @@ Hay cuatro tipos de selectores que tu función `$` puede ser capáz de matchear.
 
 El `selectorTypeMatcher` debería tomar un selector como string (como cualquiera de los ejemplos de arriba) y devolver one de los 4 string que representand el tipo de selector. Por ejemplo, para detectar un selector de tipo id, cheque primero si el primer caracter del selector es #. Si es asím la función debería devolver 'id'.
 
-**Termina escribiendo** `selectorTypeMatcher. Cuando hayas pasado los tests asociados avanza a la siguiente parte del workshop. 
+**Termina escribiendo** `selectorTypeMatcher. Cuando hayas pasado los tests asociados avanza a la siguiente parte del workshop.
 
 
 ### Generando la función de matcheo
@@ -125,7 +120,7 @@ La función devuelta por matchFunctionMaker va a ser usada por `traverseDomAndCo
 
 **Termina escribiendo** `matchFunctionMaker`.  Cuando los test asociados hayan pasado puedes continuar con la siguiente parte del workshop.
 
-### Recorriendo el DOM y Recolectando Elementos 
+### Recorriendo el DOM y Recolectando Elementos
 
 #### Repaso
 
@@ -203,9 +198,3 @@ domNode.on('bananas', function () {
 domNode.trigger('bananas');
 // console should have logged 'in pajamas'
 ```
-
-
-
-
-
-

@@ -179,13 +179,15 @@ Llegado a este punto cada vez que le den click al botón de `Agregar` se debe in
 
 __IMPORTANTE__: Para poder realizar las llamadas a la API es necesario contar con una apiKey  que como verán en el código debajo debe ser incluida dentro de la URL. La misma la podemos obtener creando una cuenta en la paǵina de [openweather](https://openweathermap.org/current). Sino consultar con sus PMs si tienen ya una apiKey para darles y que puedan evitar realizar este paso.
 
+*Pueden utilizar sino la siguiente apiKey: '4ae2636d8dfbdc3044bede63951a019b'*
+
 ```js
 // App.js
 
   ...
 
   function onSearch(ciudad) {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}`)
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`)
       .then(r => r.json())
       .then((recurso) => {
         if(recurso.main !== undefined){

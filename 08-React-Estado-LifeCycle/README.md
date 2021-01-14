@@ -27,7 +27,7 @@ Algunas tareas de las que se encargan estos gestores de proceso pueden ser:
 * Minificar código.
 * Concatenar archivos.
 * Correr los tests automáticamente.
-* etc... 
+* etc...
 
 > Existen varios gestores de procesos buenos y populares, los más usados son: [Grunt](http://gruntjs.com/), [Gulp!](http://gulpjs.com/) y [Webpack](http://webpack.github.io/). Nosotros vamos a usar _Webpack_, pero podrían hacer lo mismo con los otros.
 
@@ -102,7 +102,7 @@ module.exports = {
 En el ejemplo, usamos un `loader` de _coffeeScript_. Como se ve, también agreamos una propiedad llamada `module` que será un objeto dentro del cual aparecerá la propiedad `loaders` que será un arreglo de objetos. Cada objeto dentro de este arreglo representa una transformacion.
 Vemos que ese objeto tiene tres propiedades: `test`, `exclude`, y `loader`. La primera hace referencia a qué archivos deberán pasar por la transformación, y recibe como valor una __expresión regular__, en nuestro ejemplo estamos diciendo que pasarán por la transformación todos los archivos terminados en `.coffee`. La segunda, `exclude` le indica a webpack qué directorios excluir, en nuestro ejemplo (y siempre lo haremos) excluimos `node_modules`, donde sabemos que no habrá código para transformar. Finalmente, en la propiedad `loader` vamos a poner el nombre del loader que queremos usar, en este caso el nombre es "coffee-loader".
 
-> Siempre busquen los loaders que necesiten dentro del ecosistema npm. 
+> Siempre busquen los loaders que necesiten dentro del ecosistema npm.
 
 Por último, vamos a agregar donde queremos que webpack deposite los archivos luego de la transformación:
 
@@ -242,7 +242,7 @@ Los Hooks en React fueron introducidos en su version 16.8, nos permiten el uso d
 
 ## Estado de un Componente
 
-Dijimos que las _props_ era la _configuración inicial_ del Componente y que no se pueden cambiar, que son _inmutables_. Van a existir muchos casos donde un Componente mantenga adentro suyo algún dato que pueda cambiar con el tiempo, como por ejemplo lo que queremos hacer ahora de cambiar el nombre del saludo. Para hacer esto, cada Componente es capaz de mantener datos guardados en lo que React llama el _Estado_ de un Componente. Un Componente por lo tanto va a poder actualizar su propio _Estado_ sin restricciones. Para empezar, comencemos dandole un _Estado_ inicial al Componente, lo hacemos defindiendo una función llamada `getInitialState`, que no recibe parámetros y devuelve un objeto con el _Estado_ inicial del Componente, al que luego podremos hacer referencia usando `this.state`. Para nuestro ejemplo, vamos a darle como _Estado_ inicial un objeto que contenga la propiedad `name` y que sea igual `this.props.name`, o sea que vamos a hacer que una _prop_ sea un _estado_, esto es así porque sabemos que va a cambiar en el futuro.
+Dijimos que las _props_ era la _configuración inicial_ del Componente y que no se pueden cambiar, que son _inmutables_. Van a existir muchos casos donde un Componente mantenga adentro suyo algún dato que pueda cambiar con el tiempo, como por ejemplo lo que queremos hacer ahora de cambiar el nombre del saludo. Para hacer esto, cada Componente es capaz de mantener datos guardados en lo que React llama el _Estado_ de un Componente. Un Componente por lo tanto va a poder actualizar su propio _Estado_ sin restricciones. Para empezar, comencemos dandole un _Estado_ inicial al Componente, lo hacemos definiendo dentro del constructor de la clase el `this.state` que va a ser un objeto con todas las propiedades que queramos almacenar como estado interno. Cada propiedad puede almacenar cualquier tipo de dato que quedamos. Para nuestro ejemplo, vamos a darle como _Estado_ inicial un objeto que contenga la propiedad `name` y que sea igual a `this.props.name`, o sea que vamos a hacer que una _prop_ sea un _estado_, esto es así porque sabemos que va a cambiar en el futuro.
 
 Genial, ya tenemos _Estado_, ahora lo único que nos falta es _cambiar_ el _Estado_ cuando el usuario haga click. Para hacerlo vamos a tener que usar una función llamada `setState`. No podemos simplemente asignarle un valor nuevo a `this.state.name`, esto es así por matener la arquitectura del Virtual DOM de react. Veamos cómo quedaría el ejemplo:
 
@@ -479,7 +479,7 @@ De esta forma vamos a poder organizar muy bien nuestros componentes en distintos
 
 ## React y Funciones Puras
 
-Como vimos recién vamos a poder usar todo lo que sabemos de JS para codear con React. Pensemoslo así, en vez de tener _funciones_ que tomen argumentos y  retornen  valores y objetos, en React vamos a tener _funciones_ que tomen argumentos y retornen __UI (user interfaces)__.  Podemos resumir este concepto en `f(d) = V`, es decir, una función toma `d` argumentos y retorna una __View__. Esta es una buena forma de desarrollar interfaces, porque ahora toda tu interfaz este compuesta de invocaciones a funciones, que es la forma en que estamos acostumbrados a programar nuestras aplicaciones. Veamos este concepto en código: 
+Como vimos recién vamos a poder usar todo lo que sabemos de JS para codear con React. Pensemoslo así, en vez de tener _funciones_ que tomen argumentos y  retornen  valores y objetos, en React vamos a tener _funciones_ que tomen argumentos y retornen __UI (user interfaces)__.  Podemos resumir este concepto en `f(d) = V`, es decir, una función toma `d` argumentos y retorna una __View__. Esta es una buena forma de desarrollar interfaces, porque ahora toda tu interfaz este compuesta de invocaciones a funciones, que es la forma en que estamos acostumbrados a programar nuestras aplicaciones. Veamos este concepto en código:
 
 ```javascript
 const getFoto = function(username) {
@@ -606,7 +606,7 @@ Tambien pusimos nuestro propio ejemplo de un boilerPlate simplificado [acá](../
 
 ## Propiedades y Estados
 
-Ya vimos que en React las propiedades se pasan de componentes padres a hijos a través de la variable `props`. Veamos algunas propiedades más avanzadas del comportamiento de `props`. 
+Ya vimos que en React las propiedades se pasan de componentes padres a hijos a través de la variable `props`. Veamos algunas propiedades más avanzadas del comportamiento de `props`.
 
 ## Estados
 
@@ -698,7 +698,7 @@ const handleClick = () => {
 
 Seguramente se preguntarán cúal es la diferencia entre props y estados, en realidad las dos mantiene información o datos que va a usar el Componente. La diferencia es el uso de cada una. Las pros de un Componente van a ser pasadas por el padre del mismo y _deberían_ ser _inmutables_, es decir, que si se cambian las props (o sea que el padre las cambia), el Componente se debería renderizar de nuevo con las nuevas props. Podría decir que las props son un tipo de _configuración_ del Componente.
 
-Los estados, encambio, son manejados exclusivamente e internamente por un Componente, nada tiene que ver con el estado de otros Copmonentes, es decir el estado es  _privado_, además los estados __no__ son _inmutables_! 
+Los estados, encambio, son manejados exclusivamente e internamente por un Componente, nada tiene que ver con el estado de otros Copmonentes, es decir el estado es  _privado_, además los estados __no__ son _inmutables_!
 
 ## React Life Cycle Events
 
@@ -715,7 +715,7 @@ En la imagen de abajo, vemos el ciclo de vida Completo de cualquier Componente d
 
 Veamos algunos de estos eventos, primero los vamos a separa en dos categorias que cubren la mayoría de ellos:
 
-* Cuando un Componente es Montado o Desmontado en el DOM. 
+* Cuando un Componente es Montado o Desmontado en el DOM.
 * Cuando un Componente recibe nuevos datos.
 
 #### Montando / Desmontado

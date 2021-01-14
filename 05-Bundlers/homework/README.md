@@ -55,11 +55,11 @@ Esto es a lo que nos referimos cuando hablamos de IFFEs - nos dan una forma de i
 
 Por mucho tiempo, este patrón fue fuertemente confiado en proveer modularidad en Javascript, porque cualquier variable declarada dentro de un IFFE pertenecería solo al scope de esa función - no contaminarían el scope global.
 
-Vamos a ver porque eso es importante en un momento - por ahora, si te sentís cómodo en tu entendimiento de como operan las IFFE operan, estas listo para continuar leyendo! 
+Vamos a ver porque eso es importante en un momento - por ahora, si te sentís cómodo en tu entendimiento de como operan las IFFE operan, estas listo para continuar leyendo!
 
 ### Script Tags y Browser Javascript
 
-Muchos lenguajes construidos para correr en sistemas operativos (e.g. Java) tienen una forma nativa de definir modulos - esto es, archivos de código individual que pueden definir variables y/o funciones para exportar (o "exponer") a otros archivos. Los módulos pueden luego importar las variables y funciones que fueron exportadas por otros módulos. Cualquier variable o función que no ha sido explícitamente elegida para ser exportada es "privada" (o "local") de ese módulo. 
+Muchos lenguajes construidos para correr en sistemas operativos (e.g. Java) tienen una forma nativa de definir modulos - esto es, archivos de código individual que pueden definir variables y/o funciones para exportar (o "exponer") a otros archivos. Los módulos pueden luego importar las variables y funciones que fueron exportadas por otros módulos. Cualquier variable o función que no ha sido explícitamente elegida para ser exportada es "privada" (o "local") de ese módulo.
 
 Este tipo de modularidad hace nuestro código fácil de leer, escribir, y mantener en el tiempo.
 
@@ -123,7 +123,7 @@ var foo = "uh oh!"; // We've already declared a variable called "foo" in fileA.j
 bar(); // this is our bar function from fileA.js!
 ```
 
-Que pasa si invocamos bar? cuando originalmente escribimos en `fileA.js`, esperábamos loggear el número 42, pero ahora `fileC.js` hemos declarado otra variable con el mismo nombre - hemos encontrado un colisión de nombres. Mientras quizás queríamos re-definir el valor de `foo`, lo más probable es que nos olvidamos el nombre de la variable que usamos antes! 
+Que pasa si invocamos bar? cuando originalmente escribimos en `fileA.js`, esperábamos loggear el número 42, pero ahora `fileC.js` hemos declarado otra variable con el mismo nombre - hemos encontrado un colisión de nombres. Mientras quizás queríamos re-definir el valor de `foo`, lo más probable es que nos olvidamos el nombre de la variable que usamos antes!
 
 De cualquier forma, el gran problema numero uno es que los archivos JavaScript en el browser no corren aislados - las variables/funciones que ponen en el scope pueden ser sobrescritas por el código en otros archivos JavaScript. Esto hace al código que escribimos extremadamente frágil - introduciendo un nuevo archivo Javascript puede inadvertidamente romper otra pieza del script al sobrescribir una variable!
 
@@ -151,7 +151,7 @@ Recuerda que `fileC.js` usa la función `bar` que `fileA.js` define. Si tratamos
 
 El patrón IIFE ayuda a aminorar alguno de estos problemas (pero no los soluciona). Continuá leyendo y veremos como.
 
-### Patrón de Módulos IFFE 
+### Patrón de Módulos IFFE
 
 Cómo una forma de proteger el scope de las variables dentro de un archivo JavaScript, los desarrolladores empezaron a envolver sus archivos JavaScript en IFFEs. Porque las variables/funciones declaradas dentro de un IFFE tienen su scope limitado al scope de la función que lo contiene, somos capaces de en su mayoría (pero no completamente) mitigan la amenaza de la colisión de nombres. Considerá, una vez más, nuestro `fileA.js` y `fileC.js` (anda y mirá las secciones previas si necesitas un recuerdo de como se ven).
 
@@ -195,7 +195,7 @@ Mientras que todavía hay chances que `window.bar` pueda ser sobrescrito por otr
 
 Sin embargo, con el amanecer de la edad de AJAX y JQuery, las aplicaciones web se fueron haciendo más grandes y más sofisticadas, y el "patrón IFFE" esta lejos de ser a prueba de tontos. Si queremos escribir aplicaciones de browser sofisticadas como las que existen en la computadora, vamos a necesitar herramientas mejores.
 
-Aquí es donde las tecnologías como Webpack aparecen. Pero antes de eso, vamos a divagar un poco sobre como NodeJS cambió el juego al popularizar un cierto sistema de módulos para JavaScript del **lado del servidor**. 
+Aquí es donde las tecnologías como Webpack aparecen. Pero antes de eso, vamos a divagar un poco sobre como NodeJS cambió el juego al popularizar un cierto sistema de módulos para JavaScript del **lado del servidor**.
 
 ### Entra Node
 
@@ -225,21 +225,15 @@ var foo = "no sweat"; // no tiene idea que usamos el mismo nombre para una varia
 someFunc(); // 42
 ```
 
-Salirse del browser permitió a Node implementar un sistema de módulos en JS, basado en un sistema propuesto por ![CommonJS](http://wiki.commonjs.org/wiki/Modules/1.1.1), que ayudo a elevar a JavaScript a ser un "lenguaje de programación real" en los ojos de muchos. 
+Salirse del browser permitió a Node implementar un sistema de módulos en JS, basado en un sistema propuesto por ![CommonJS](http://wiki.commonjs.org/wiki/Modules/1.1.1), que ayudo a elevar a JavaScript a ser un "lenguaje de programación real" en los ojos de muchos.
 
 Sin embargo, solo JavaScript del lado del servidor puede usar `require` y `module.exports` - JavaScript escrito en browsers todavía era renegado a los riesgos y fragilidades de tags `<scripts>`. Sin embargo, ahora que hemos experimentado modularidad real con Node, nos debemos preguntar - ¿podemos implementar un sistema de módulos real para JavaScript desde browser también? ¿Hay una herramienta que podamos crear para que podamos esencialmente usar `require` y `module.exports` en nuestro Javascript para el browser también?
 
 ### JavaScript Moderno
 
-La respuesta a esa pregunta en la sección anterior es si, por supuesto! Herramientas como Webpack (como también otras como browserfy, el cúal no vamos a utilizar) nos permiten escribir archivos Javascript para el browser como si fueran módulos de Node - podemos usar `require` y `module.exports`, y declarar variables sin tener que preocuparse sobre contaminar el objeto global window. Es realmente un gran momento para ser un desarrollador web! 
+La respuesta a esa pregunta en la sección anterior es si, por supuesto! Herramientas como Webpack (como también otras como browserfy, el cúal no vamos a utilizar) nos permiten escribir archivos Javascript para el browser como si fueran módulos de Node - podemos usar `require` y `module.exports`, y declarar variables sin tener que preocuparse sobre contaminar el objeto global window. Es realmente un gran momento para ser un desarrollador web!
 
-## Punto de Arranque 
-
-### Clona el Repo
-
-En este workshop, vamos a usar Webpack para refactorear nuestro amado World Wide Whiteboard a una verdadera obra de arte modularizada.
-
-Empezá forkeando y clonando este repo. Contiene la solución al World Wide Whiteboard workshop. Tomate unos minutos para re-familiarizarte con el (ya que puede diferir un poco a tu solución).
+## Punto de Arranque
 
 ### Entendiendo Nuestras Dependencias
 
@@ -258,7 +252,7 @@ Antes de sumergirnos en Webpack, tomate un momento para mirar a través de los a
 ```
 
 +++Solución
-Podemos visualizar nuestro "árbol de dependencia" de esta forma. 
+Podemos visualizar nuestro "árbol de dependencia" de esta forma.
 ```
 /socket/io/socket.io.js
   crea window.io
@@ -281,7 +275,7 @@ app.js
 
 __Webpack__ es una herramienta extremadamente poderosa y flexible para construir Javascript, y sus características van mas allá de las cuales tomamos ventaja hoy. Igual, primero, te estarás preguntando... ¿qué es Webpack?  
 
-Webpack es un módulo de Node que podes instalar usando npm. Si recordás usando el compilador node-sass de Shoestring para compilar (o, más apropiadamente "transpilar" - ver la nota debajo) nuestros archivos SCSS a un solo archivo CSS - Webpack es como eso! 
+Webpack es un módulo de Node que podes instalar usando npm. Si recordás usando el compilador node-sass de Shoestring para compilar (o, más apropiadamente "transpilar" - ver la nota debajo) nuestros archivos SCSS a un solo archivo CSS - Webpack es como eso!
 
 Webpack toma nuestros archivos JavaScript y produce un solo, archivo JavaScript transformado. De la misma forma node-sass puede reconocer características SCSS (como nesting y @import) y formatear el archivo CSS saliente apropiadamente, Webpack puede reconocerlo cuando tu Javascript usa `require` y `module.exports`, y va transformar el archivo Javascript resultante apropiadamente también. Wow!
 
@@ -290,7 +284,7 @@ Webpack toma nuestros archivos JavaScript y produce un solo, archivo JavaScript 
 
 Usualmente vas a ver los términos "compilador" y "compilación" combinados juntos con los términos "transpilador" y "transpilación". La diferencia es puramente semántica. Un "compilador" típicamente "compila" un lenguaje de alto nivel a un lenguaje de menor nivel (no humanamente legible). Por ejemplo usas un compilador C++ para compilar código fuente C++ a código de maquina.
 
-Por el otro lado, un "transpilador" típicamente "transpila" un lenguaje de alto nivel, a otro lenguaje de alto nivel. Por ejemplo, el transpilador node-sass toma código fuente SCSS y lo transpila a CSS. De la misma forma, Webpack transpila nuestro Javascript a... Javascript distinto! 
+Por el otro lado, un "transpilador" típicamente "transpila" un lenguaje de alto nivel, a otro lenguaje de alto nivel. Por ejemplo, el transpilador node-sass toma código fuente SCSS y lo transpila a CSS. De la misma forma, Webpack transpila nuestro Javascript a... Javascript distinto!
 
 ### Instalar
 
@@ -299,7 +293,7 @@ Empecemos la fiesta de paquetes!
 1. Primero, instala webpack:
 `npm install --save-dev webpack`
 
-**Nota**: Te estarás preguntando porque estoy sugiriendo `--save-dev` y no solo `--save`. Esta es una característica de npm. El flag `-dev` marca a webpack como una dependencia de desarrollo. Webpack es una "build tool"(herramienta de desarrollo) que típicamente solo necesitamos mientras estamos desarrollando nuestra app. Cuando deployamos nuestra app a un servidor de  producción, ya vamos a tener todo construido y listo para andar, por lo que no es necesario instalar el paquete de `webpack` en el servidor de producción. En cambio, cuando instalamos nuestra app en nuestro servidor de producción, podemos añadir un flag especial (como `npm install --production`) para señalizar que la instalación debe ignorar las dependencias dev. 
+**Nota**: Te estarás preguntando porque estoy sugiriendo `--save-dev` y no solo `--save`. Esta es una característica de npm. El flag `-dev` marca a webpack como una dependencia de desarrollo. Webpack es una "build tool"(herramienta de desarrollo) que típicamente solo necesitamos mientras estamos desarrollando nuestra app. Cuando deployamos nuestra app a un servidor de  producción, ya vamos a tener todo construido y listo para andar, por lo que no es necesario instalar el paquete de `webpack` en el servidor de producción. En cambio, cuando instalamos nuestra app en nuestro servidor de producción, podemos añadir un flag especial (como `npm install --production`) para señalizar que la instalación debe ignorar las dependencias dev.
 
 En nuestro `package.json`, agrega un nuevo campo a `"scripts"` llamado `"build"`. Este debería simplemente ejecutar el comando webpack. Esto nos va a permitir ejecutar webpack al decir `npm run build` desde nuestra terminal.
 
@@ -321,9 +315,9 @@ Para que webpack sea capaz de construir nuestro archivo apropiadamente, necesita
 - Un archivo para usar como un punto de arranque donde va a comenzar a construir
 - Un lugar para poner el output del programa (nuestro JavaScript transformado)
 
-Vamos a dárselos: 
+Vamos a dárselos:
 
-1. En la raíz del directorio de nuestro repo, crea un archivo llamado `webpack.config.js`. Notá que el nombre "webpack.config.js" importa (de la misma manera el nombre package.json importa) - el programa webpack va a buscar automáticamente por este archivo con ese nombre. 
+1. En la raíz del directorio de nuestro repo, crea un archivo llamado `webpack.config.js`. Notá que el nombre "webpack.config.js" importa (de la misma manera el nombre package.json importa) - el programa webpack va a buscar automáticamente por este archivo con ese nombre.
 2. Copiá y pegá el siguiente código en tu `webpack.config.js`
 Copy and paste the following code into your webpack.config.js
 
@@ -348,23 +342,23 @@ bundle.js  3.1 kB       0  [emitted]  main
    [0] ./browser/app.js 586 bytes {0} [built]
 ```
 
-Ahora, anda y chequeá el contenido del directorio `browser/`. Deberías ver una adición: algo llamado `bundle.js`. Este es el archivo de salida que webpack creó! Abrilo! 
+Ahora, anda y chequeá el contenido del directorio `browser/`. Deberías ver una adición: algo llamado `bundle.js`. Este es el archivo de salida que webpack creó! Abrilo!
 
 ...
 
 ...Sorprendido? Se ve bastante loco ahí, verdad? Pero si ves cuidadosamente, vas a ver nuestro código! Si ves a un mas cerca, podes notar que el código de app.js esta ahora envuelto en otra expresión de función - que parece estar pasando algo llamado `module` y `exports` a él!
 
-Normalmente no veremos dentro de nuestro `bundle.js` (y se vuelven bastante grandes!), ni vamos a ir a las especificidades de como webpack hace su magia, pero podés ver la idea - webpack toma tu código JavaScript y lo envuelve en una lógica de módulos muy sofisticada. De esta forma, podemos empezar usando nuestros archivos Javascript del lado del cliente como módulos! 
+Normalmente no veremos dentro de nuestro `bundle.js` (y se vuelven bastante grandes!), ni vamos a ir a las especificidades de como webpack hace su magia, pero podés ver la idea - webpack toma tu código JavaScript y lo envuelve en una lógica de módulos muy sofisticada. De esta forma, podemos empezar usando nuestros archivos Javascript del lado del cliente como módulos!
 
 Estas emocionado? Yo también lo estoy! Continuemos!
 
 > Nota al pie: Dado que los artefactos del build como `bundle.js` son creados del código fuente, eso lo hacen información redundante de una perspectiva del control de versionado. En otras palabras, builds son normalmente agregados al `.gitignore`. Vamos a ignorar que en este workshop por un tema simplicidad.
 
-## Módulos en el Browser! 
+## Módulos en el Browser!
 
 ### Review - Nuestro Árbol de Dependencias de Archivos
 
-Estamos tan cerca de lo increíble! Tomémonos un momento para revisar nuestro "árbol de dependencias" de antes: 
+Estamos tan cerca de lo increíble! Tomémonos un momento para revisar nuestro "árbol de dependencias" de antes:
 
 ```
 /socket/io/socket.io.js
@@ -386,7 +380,7 @@ La forma en que webpack opera es que al principio con el archivo especificado en
 Dado esto, ¿qué archivo debería ser nuestro _entry point_(punto de entrada)?
 
 +++Solución
-Debería ser app.js! Algo interesante para notar aquí es que la forma que webpack toma los archivos es opuesta a la forma en que el browser las necesita. En vez de empezar con los archivos con la menor cantidad de dependencias y trabajar de ahí para abajo, webpack empieza en la raíz de nuestro árbol de dependencias y trabaja de ahí para arriba! 
+Debería ser app.js! Algo interesante para notar aquí es que la forma que webpack toma los archivos es opuesta a la forma en que el browser las necesita. En vez de empezar con los archivos con la menor cantidad de dependencias y trabajar de ahí para abajo, webpack empieza en la raíz de nuestro árbol de dependencias y trabaja de ahí para arriba!
 +++
 
 ### Solo Puede Haber Uno
@@ -396,7 +390,7 @@ Todo esto estando dicho -- la única forma de obtener JavaScript para correr en 
 Comentá los `<script>` tags actuales en nuestro `index.html`. En su lugar, escribe un `<script>` tag que tome `bundle.js`.
 
 +++Solución
-```html 
+```html
 <!-- <script src="/socket.io/socket.io.js"></script> -->
 <!-- <script src="event-emitter.js"></script> -->
 <!-- <script src="whiteboard.js"></script> -->
@@ -417,7 +411,7 @@ El momento ha llegado! Ve a través de los archivos Javascript y convertilos en 
 
 #### NOTA IMPORTANTE PARA SOCKET.IO!
 
-Para socket.io, vas a necesitar requerirlo como "socket.io-client". Recuerda que en Node, podes hacer `require('un-modulo-de-node')` sin usar un path relativo (mientras sea un directorio dentro de la carpeta node_modules). Con webpack, es la misma situación! El nombre de la carpeta en tu carpeta `node_modules` que contiene el archivo que queremos es llamado `socket.io-client`. 
+Para socket.io, vas a necesitar requerirlo como "socket.io-client". Recuerda que en Node, podes hacer `require('un-modulo-de-node')` sin usar un path relativo (mientras sea un directorio dentro de la carpeta node_modules). Con webpack, es la misma situación! El nombre de la carpeta en tu carpeta `node_modules` que contiene el archivo que queremos es llamado `socket.io-client`.
 
 Una vez que hayas terminado de refactorear, vas a necesitar ejecutar `npm run build` otra vez para reconstruir tu `bundle.js`. Si todo funcionó, deberías ser capaz de usar whiteboard otra vez como si nada hubiese pasado! Asegurate de chequear si tus sockets siguen funcionando!
 
@@ -427,21 +421,21 @@ Si algo va a mal - presta mucha atención a cualquier mensaje de error que recib
 
 ### Otra manera
 
-Podríamos detenernos aquí mismo - siendo capaces de hacer `require` y `module.exports` en tu browser Javascript de la misma forma que lo harías en Node es un tremendo nuevo súper poder para agregar a nuestro arsenal. 
+Podríamos detenernos aquí mismo - siendo capaces de hacer `require` y `module.exports` en tu browser Javascript de la misma forma que lo harías en Node es un tremendo nuevo súper poder para agregar a nuestro arsenal.
 
-Sin embargo, si estuviste paseando por el Internet, podés haber notado algo extraño: mucha gente está empezando a escribir código que se ve como `import miModulo from './miModulo';`, y `export default algunaCosa;`... en JavaScript! 
+Sin embargo, si estuviste paseando por el Internet, podés haber notado algo extraño: mucha gente está empezando a escribir código que se ve como `import miModulo from './miModulo';`, y `export default algunaCosa;`... en JavaScript!
 
 **Qué es esta locura?**
 
 Eso, mi amigo, es la sintaxis de módulos ECMAScript, introducida en ES6.
 
-Permitime explicar - luego de que Node popularizó el uso de `require` y `module.exports`, los mantenedores de la especificación de ECMAScript reconocieron la necesidad de un sistema de módulos nativo en JavaScript. Sin embargo, en vez de basar este nuevo sistema en la popular sintaxis de Node, la especificación aprobó una sintaxis diferente usando keywords como `import` y `export` - el cual es mucho más similar a la sintaxis que usa Java. 
+Permitime explicar - luego de que Node popularizó el uso de `require` y `module.exports`, los mantenedores de la especificación de ECMAScript reconocieron la necesidad de un sistema de módulos nativo en JavaScript. Sin embargo, en vez de basar este nuevo sistema en la popular sintaxis de Node, la especificación aprobó una sintaxis diferente usando keywords como `import` y `export` - el cual es mucho más similar a la sintaxis que usa Java.
 
-Para muchos, esto fue una decepción. Para otros, fue una victoria para ![análisis estático](https://en.wikipedia.org/wiki/Static_program_analysis) (el cual es imposible con la sintaxis de Node). Pero no nos detengamos en política - el sistema import/export es ahora parte del estándar de ECMAScript, y a pesar que no este aún soportado por ningún browser o por Node, va a eventualmente recibir soporte nativo en todos esos ambientes. 
+Para muchos, esto fue una decepción. Para otros, fue una victoria para ![análisis estático](https://en.wikipedia.org/wiki/Static_program_analysis) (el cual es imposible con la sintaxis de Node). Pero no nos detengamos en política - el sistema import/export es ahora parte del estándar de ECMAScript, y a pesar que no este aún soportado por ningún browser o por Node, va a eventualmente recibir soporte nativo en todos esos ambientes.
 
 Afortunadamente para nosotros, Webpack está aquí para salvar el día! Webpack reconoce y soporta AMBOS `require`/`module.exports` y`import`/`export`! (Aunque en cualquier proyecto, deberías elegir usar uno o el otro - mezclar los dos va a ser el código difícil de entender y puede de hecho resultar en errores dado que Webpack tiene la habilidad de realizar optimizaciones extra en el código usando `import/export`).
 
-Todo lo que necesitamos es aprender como `import` y `export` funcionan, y podemos ir y agregarlos a nuestro propio código sin perder nada. 
+Todo lo que necesitamos es aprender como `import` y `export` funcionan, y podemos ir y agregarlos a nuestro propio código sin perder nada.
 
 **Nota**: El soporte a declaraciones de `import` y `export` solo están disponible desde el lanzamiento de webpack 2.x. Si llegaste a instalar una versión de webpack mas vieja (o en algún punto en el pasado instalaste webpack globalmente y estas usando esa copia), asegurate de actualizarlo a la última versión.
 
@@ -457,8 +451,8 @@ export function bar () {
   // etc
 }
 ```
- 
-Podés exportar la cantidad de expresiones que quieras. Sin embargo, podes especificar un (y solo un) default export, de esta forma: 
+
+Podés exportar la cantidad de expresiones que quieras. Sin embargo, podes especificar un (y solo un) default export, de esta forma:
 
 ```js
 export const foo = 42;
@@ -533,7 +527,7 @@ console.log(foo) // 42
 bar(); // etc
 ```
 
-Hay otras variaciones que podés tomar de este patrón fundamental de `import`/`export` (por ejemplo, podes hacer cosas como `import * from './exports.js'`) y asignar aliases a imports/exports usando el keyword `as`), pero esos ya son cerezas de la torta. Con lo que hemos cubierto hasta ahora, podemos fácilmente remplazar `require` y `module.exports`. 
+Hay otras variaciones que podés tomar de este patrón fundamental de `import`/`export` (por ejemplo, podes hacer cosas como `import * from './exports.js'`) y asignar aliases a imports/exports usando el keyword `as`), pero esos ya son cerezas de la torta. Con lo que hemos cubierto hasta ahora, podemos fácilmente remplazar `require` y `module.exports`.
 
 ### Una ultima vez
 
