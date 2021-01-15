@@ -29,7 +29,7 @@ Los **módulos** son un intento de evitar estos problemas. Un **Módulo** es un 
 > **Interfaz** es lo que conocemos en inglés como interface (“superficie de contacto”).
 > En informática, se utiliza para nombrar a la conexión funcional entre dos sistemas, programas, dispositivos o componentes de cualquier tipo, que proporciona una comunicación de distintos niveles permitiendo el intercambio de información. Su plural es interfaces.
 
-Estos módulos proveen una interfaz de contacto hacia afuera, es decir que todo el funcionamiento del mismo está encapsulado del mundo externo, y sólo se permite interactuar con el módulo a través de puntos de contactos bien definidos y documentos (en el mejor de los casos). 
+Estos módulos proveen una interfaz de contacto hacia afuera, es decir que todo el funcionamiento del mismo está encapsulado del mundo externo, y sólo se permite interactuar con el módulo a través de puntos de contactos bien definidos y documentos (en el mejor de los casos).
 
 Es muy similar a cuando interactuamos con un objeto, como un `Array` y usamos sus métodos:
 
@@ -68,15 +68,15 @@ NPM es un servicio online en donde estan hosteados los paquetes que los usuarios
 
 Hasta 2015, JavaScript no tenía una forma *nativa* de construir módulos. Pero de todos modos, las personas lo usasron para construir grandes proyectos a lo largo de diez años. Por lo tanto, los desarrolladores crearon su propia forma de crear módulos en JavaScript. Lo lograron usando funciones para crear scopes isolados, y usaron objetos para crear las interfaces de los módulos.
 
-Vamos a crear un módulo que nos ayude a trabajar con fechas, va a tener dós métodos que nos permiten pasar un Integer y recibir el nombre del día, y al revés. 
+Vamos a crear un módulo que nos ayude a trabajar con fechas, va a tener dós métodos que nos permiten pasar un Integer y recibir el nombre del día, y al revés.
 
 ```js
 const weekDay = function() {
   const names = ["Domingo", "Lunes", "Martes", "Miercoles",
                  "Jueves", "Viernes", "Sabado"];
   return {
-    name(number) { return names[number]; },
-    number(name) { return names.indexOf(name); }
+    name: function name(number) { return names[number]; },
+    number: function number(name) { return names.indexOf(name); }
   };
 }();
 

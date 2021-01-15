@@ -215,4 +215,13 @@ Ya tenemos una lista de ciudad, por lo tanto, podemos usar el ciudadId del pará
 cities.filter(c => c.id === parseInt(match.params.ciudadId))
 ```
 
-El filter nos devuelve un arreglo, que puede tener uno o cero elemntos. Por lo tanto, van a tener que modificar `Ciudad.jsx` controlar esto. Si hay un elemento, voy a ponerlo en `ciudad`. Y si cero, debería mostrar una leyenda que diga: "Esta ciudad no se encuentra en la lista".
+El filter nos devuelve un arreglo, que puede tener uno o cero elementos. Por lo tanto, van a tener que modificar `Ciudad.jsx` controlar esto. Si hay un elemento, voy a ponerlo en `ciudad`. Y si cero, debería mostrar una leyenda que diga: "Esta ciudad no se encuentra en la lista".
+
+*Pueden utilizar la función onFilter que se encuentra ya definida en el archivo App.js*
+
+```js
+<Route
+  exact path='/ciudad/:ciudadId'
+  render={({match}) => <Ciudad city={onFilter(match.params.ciudadId)}/>}
+/>
+```
