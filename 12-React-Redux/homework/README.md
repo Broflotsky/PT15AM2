@@ -49,7 +49,7 @@ export function getMovies(titulo) {
 }
 
 ```
-Cada accion devuelve un objecto, la primera key de este objeto es el `type`, su valor lo ponemos nosotros, por convencion se usan mayusculas y guion bajo (_) para separar. Como segundo argumento recibe un `payload`, que son datos que puede llevar que usaremos en nuestro reducer para actualizar el estado. En `addMovieFavorite` el payload que pasaremos cuando hagamos un dispatch de esa action sera el nombre de la Pelicula.En `removeMovieFavorite`,nuestro payload sera la pelicula a eliminar. En `getMovies`, nuestro payload sera el objeto que recibamos de nuestra request. En `getMovieDetail`, el payload sera el objeto con los detalles de la pelicula que seleccionamos.
+Cada accion devuelve un objecto, la primera key de este objeto es el `type`, su valor lo ponemos nosotros, por convencion se usan mayusculas y guion bajo `_` para separar. Como segundo argumento recibe un `payload`, que son datos que puede llevar que usaremos en nuestro reducer para actualizar el estado. En `addMovieFavorite` el payload que pasaremos cuando hagamos un dispatch de esa action sera el nombre de la Pelicula.En `removeMovieFavorite`,nuestro payload sera la pelicula a eliminar. En `getMovies`, nuestro payload sera el objeto que recibamos de nuestra request. En `getMovieDetail`, el payload sera el objeto con los detalles de la pelicula que seleccionamos.
 
 ### Creamos nuestro Reducer
 
@@ -142,7 +142,7 @@ Ya tenemos nuestro STORE conectado con nuestra App!
 Usamos las funciones `mapStateToProps` y `mapDispatchToProps` dentro de nuestros componentes. La primera nos permite traer nuestro state global como props a nuestro componente, y la segunda nos permite hacer el `dispatch` de nuestras actions al store. Y para terminar de conectar nuestro componente con el store global usamos una HoC ( High Order Component ) que importamos de la libreria 'react-redux' que se llama `connect`. En nuestro componente `Buscador.js` nos deberia quedar algo asi:
 
 ```javascript
-//Buscador.js 
+//Buscador.js
 
 function mapStateToProps(state) {
   return {
@@ -192,14 +192,14 @@ Hasta ahora tenemos nuestro componente Home, en donde podemos buscar peliculas, 
 
 <div style="text-align:center"><img src="src/img/favs-movies.gif"/></div><br>
 
-Por ahora nos deberia quedar algo asi, 
+Por ahora nos deberia quedar algo asi,
 
 ### En el componente Movie
 
  En nuestros componentes `Favorites.js` y `Buscador.js` veremos que cuando mapeamos nuestro array con peliculas, cada pelicula tiene un `imdbID` usaremos ese ID como parametro, entonces en donde renderizamos el Titulo de la Pelicula, lo envolvemos en un Link y le pasamos como parametro ese ID que recibimos. Algo asi:
 
 ```javascript
-//Buscador.js 
+//Buscador.js
 
 <Link to={`/movie/${movie.imdbID}`}>
   {movie.Title}
@@ -220,11 +220,3 @@ Llamamos a la funcion `getMovieDetail` y le pasamos nuestro ID todo dentro de nu
 <div style="text-align:center"><img src="src/img/movie-detail.gif"/></div><br>
 
 Con esto tendriamos una App integrado con React Redux!
-
-### Extra
-
-* Agregar un custom middleware que valide que las películas que estemos agregando a favoritos no esten ya incluidas
-
-* Implementar animaciones con estos [addOns](https://facebook.github.io/react/docs/animation.html) de React.
-
-* Diferenciar la búsqueda entre series y películas, ¿esto implicaría crear otra ruta?
