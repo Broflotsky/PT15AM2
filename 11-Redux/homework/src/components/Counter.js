@@ -26,7 +26,7 @@ class Counter extends Component {
                 </button>
                  {/* Si quieres hacer los extra credit puede descomentar las lineas de abajo */}
                 {/* <button onClick={this.incrementIfOdd}>
-                    incrementa si es par
+                    incrementa si es impar
                 </button>
                 <button onClick={this.incrementAsync}>
                     Incrementa despues de un segundos
@@ -48,7 +48,7 @@ const mapStateToProps = (state) => {
 };
 
 // Se llama a la función de connect para que este componente conozca el resto de la arquitectura de redux.
-// Sin esto, este componente es sólo un componente tonto de React. 
+// Sin esto, este componente es sólo un componente tonto de React.
 //Pasamos todas las funciones que dependen de Redux, junto con el propio componente,
 // para que Redux se dé a conocer a este componente.
 export default connect(mapStateToProps, { increment, decrement })(Counter);
