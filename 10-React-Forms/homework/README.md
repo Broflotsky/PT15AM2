@@ -16,7 +16,7 @@ npm start
 
 Comienza a correr la aplicación de forma local por lo que se puede ver desde el navegador accediendo a http://localhost:3000
 
-    No es necesario volver a correr el proyecto cada vez que se realice un cambio sino que se verá automáticamente reflejando en el navegador.
+No es necesario volver a correr el proyecto cada vez que se realice un cambio sino que se verá automáticamente reflejando en el navegador.
 
 ## Ejecutar los Tests
 
@@ -90,6 +90,8 @@ export default function Form() {
 };
 
 ```
+
+__IMPORTANTE__: Deben utilizar `React.useState` y no `useState` para que todos los tests funcionen correctamente en esta homework en particular.
 
 Con esto, estamos agregando estado al componente.
 
