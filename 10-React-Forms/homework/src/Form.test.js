@@ -8,13 +8,13 @@ describe('<Form /> Mounted', () => {
   beforeEach(() => {
     wrapper = mount(<Form />);
   });
-  it('El form debe tener un label que diga: "Username: "', () => {
+  it('El form debe tener un label que diga: "Username:"', () => {
       const { container } = render(<Form />)
       const element = container.querySelectorAll('label')[0]
       expect(element.innerHTML).toBe('Username:');
   });
 
-  it('El form debe tener un label que diga: "Password: "', () => {
+  it('El form debe tener un label que diga: "Password:"', () => {
     const { container } = render(<Form />)
     const element = container.querySelectorAll('label')[1]
     expect(element.innerHTML).toBe('Password:');
