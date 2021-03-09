@@ -33,6 +33,8 @@ En nuestro archivo `index.js` en nuestra carpeta actions. Por ahora vamos a crea
 
 > Abajo tienes un par de ejemplos, para las dos que faltan tienes que investigar y hacerlo por tu propia cuenta. La api que usamos es `http://www.omdbapi.com/`
 
+> Para obtener alguna película a partir de su ID pueden usar el endpoint: http://www.omdbapi.com/?apikey=20dac387&i={idMovie}
+
 ```javascript
 export function addMovieFavorite(payload) {
   return { type: "ADD_MOVIE_FAVORITE", payload };
@@ -57,12 +59,12 @@ Vamos al archivo `index.js` en nuestra carpeta reducers. Como vimos, un reducer 
 
 ```javascript
 const initialState = {
-  movies: [],
+  moviesFavourites: [],
   moviesLoaded: [],
   movieDetail: {}
 };
 ```
-Vamos a  `movies`.`moviesLoaded` y `movieDetail`.
+
 Tienes que crear los 4 reducers para las 4 acciones que creamos anteriormente que son:`getMovies`, `getMovieDetail`, `removeMovieFavorite`,`addMovieFavorite`
 
 > Aca abajo le dejamos dos ejemplos, vas a tener que crear los dos restantes
@@ -72,7 +74,7 @@ function rootReducer(state = initialState, action) {
   if (action.type === "ADD_MOVIE_FAVORITE") {
       return {
         ...state,
-        movies: state.movies.concat(action.payload)
+        moviesFavourites: state.moviesFavourites.concat(action.payload)
       }
   }
   if (action.type === "GET_MOVIES") {
@@ -184,7 +186,7 @@ Una vez que hacemos el dispatch, ya tenemos nuestro state en nuestro Store, en `
 <button onClick={() => this.props.addMovie({title: movie.Title, id: movie.imdbID})}>Fav</button>
 ```
 
-Hasta ahora tenemos nuestro componente Home, en donde podemos buscar peliculas, guardarlas en nuestro state global, y mostrarlas. Las peliculas que nos trae la request la estamos guardando en `moviesLoaded` y las que seleccionamos como favoritas en `movies`. El siguiente paso sera comenzar a hacer el enrutado para mostrar nuestras pelis Favoritas.
+Hasta ahora tenemos nuestro componente Home, en donde podemos buscar peliculas, guardarlas en nuestro state global, y mostrarlas. Las peliculas que nos trae la request la estamos guardando en `moviesLoaded` y las que seleccionamos como favoritas en `moviesFavourites`. El siguiente paso sera comenzar a hacer el enrutado para mostrar nuestras pelis Favoritas.
 
 ### En el componente Favorites
 
