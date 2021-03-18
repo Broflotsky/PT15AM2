@@ -266,7 +266,7 @@ Modificamos `useEffect` para agregar la funcionalidad de 'Cuenta Regresiva'. Use
     if (!activo && segundos !== 0 && tipo === 'Contador') {
       clearInterval(intervalo);
     }
-    if (segundos === 0 && activo === 'Cuenta Regresiva') {
+    if (segundos === 0 && tipo === 'Cuenta Regresiva') {
       reset();
       clearInterval(intervalo);
     }
