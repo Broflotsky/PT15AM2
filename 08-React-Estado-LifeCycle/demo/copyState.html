@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Henry - Demo State</title>
+</head>
+<body>
+  <div id='app'></div>
+
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+
+    class Children extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          title: this.props.title
+        };
+      }
+
+      render(){
+        return (
+          <div>
+            <h2>{this.state.title}</h2>
+          </div>
+        )
+      }
+    };
+
+  class App extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        title: 'Henry'
+      };
+      this.onButtonClick = this.onButtonClick.bind(this);
+    }
+
+    onButtonClick() {
+      this.setState({
+        title: this.state.title === "Henry" ? "Franco" : "Henry"
+      });
+    }
+
+    render(){
+      return (
+        <div>
+          <h1>DEMO - Father title: {this.state.title}</h1>
+          <Children title={this.state.title} />
+          <button onClick={this.onButtonClick}>Click me!</button>
+        </div>
+      )
+    }
+  };
+
+  ReactDOM.render(<App />, document.getElementById('app'));
+  </script>
+</body>
+</html>
