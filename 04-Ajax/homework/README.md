@@ -5,7 +5,7 @@ Antes de desarollar nuestro codigo de front-end necesitaremos un servidor al que
 
 > Para poder correr el servidor necesitaras tener NodeJs instalado. Puedes descargarlo e instalarlo entrando a la [pagina oficial](https://nodejs.org/en/download/)
 
-Una vez que hayas instalado NodeJs, ve al directorio `03-ajax/homework` desde la terminal y corre estos dos comandos:
+Una vez que hayas instalado NodeJs, ve al directorio `04-ajax/homework` desde la terminal y corre estos dos comandos:
 ```shell
 npm install
 npm start # Este ultimo comando no nos retornara la terminal, sino que quedara ejecutando. Necesitamos dejarlo abierto mientras trabajamos
