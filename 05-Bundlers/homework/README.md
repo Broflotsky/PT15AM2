@@ -51,11 +51,11 @@ Sin embargo, si envolvés una expresión de función dentro de un par de parént
 }());
 ```
 
-Esto es a lo que nos referimos cuando hablamos de IFFEs - nos dan una forma de invocar una expresión de función "inmediatamente" sin necesitar guardarla en una variable.
+Esto es a lo que nos referimos cuando hablamos de IIFEs - nos dan una forma de invocar una expresión de función "inmediatamente" sin necesitar guardarla en una variable.
 
-Por mucho tiempo, este patrón fue fuertemente confiado en proveer modularidad en Javascript, porque cualquier variable declarada dentro de un IFFE pertenecería solo al scope de esa función - no contaminarían el scope global.
+Por mucho tiempo, este patrón fue fuertemente confiado en proveer modularidad en Javascript, porque cualquier variable declarada dentro de un IIFE pertenecería solo al scope de esa función - no contaminarían el scope global.
 
-Vamos a ver porque eso es importante en un momento - por ahora, si te sentís cómodo en tu entendimiento de como operan las IFFE operan, estas listo para continuar leyendo!
+Vamos a ver porque eso es importante en un momento - por ahora, si te sentís cómodo en tu entendimiento de como operan las IIFE operan, estas listo para continuar leyendo!
 
 ### Script Tags y Browser Javascript
 
@@ -151,16 +151,16 @@ Recuerda que `fileC.js` usa la función `bar` que `fileA.js` define. Si tratamos
 
 El patrón IIFE ayuda a aminorar alguno de estos problemas (pero no los soluciona). Continuá leyendo y veremos como.
 
-### Patrón de Módulos IFFE
+### Patrón de Módulos IIFE
 
-Cómo una forma de proteger el scope de las variables dentro de un archivo JavaScript, los desarrolladores empezaron a envolver sus archivos JavaScript en IFFEs. Porque las variables/funciones declaradas dentro de un IFFE tienen su scope limitado al scope de la función que lo contiene, somos capaces de en su mayoría (pero no completamente) mitigan la amenaza de la colisión de nombres. Considerá, una vez más, nuestro `fileA.js` y `fileC.js` (anda y mirá las secciones previas si necesitas un recuerdo de como se ven).
+Cómo una forma de proteger el scope de las variables dentro de un archivo JavaScript, los desarrolladores empezaron a envolver sus archivos JavaScript en IIFEs. Porque las variables/funciones declaradas dentro de un IIFE tienen su scope limitado al scope de la función que lo contiene, somos capaces de en su mayoría (pero no completamente) mitigan la amenaza de la colisión de nombres. Considerá, una vez más, nuestro `fileA.js` y `fileC.js` (anda y mirá las secciones previas si necesitas un recuerdo de como se ven).
 
 ```html
 <script src="/fileA.js"></script>
 <script src="/fileC.js"></script>
 ```
 
-Cambiemos `fileA.js` para que su contenido este envuelto en una IFFE. En cambio de poner todas de nuestras variables directamente en el scope global, vamos a restringirlo al scope local de la función - si hay algún valor que queremos exponer, vamos a poner esos valor al objeto global `window`.
+Cambiemos `fileA.js` para que su contenido este envuelto en una IIFE. En cambio de poner todas de nuestras variables directamente en el scope global, vamos a restringirlo al scope local de la función - si hay algún valor que queremos exponer, vamos a poner esos valor al objeto global `window`.
 
 ```js
 // fileA.js
@@ -189,11 +189,11 @@ var foo = "uh oh";
 bar(); // Ahora esto va a ser 42!
 ```
 
-Cuando invocamos `bar` ahora, la función `bar` que invocamos va a tener closure sobre la variable `foo` dentro del IFFE - no va a colisionar con la variable `foo` declarada en `fileC.js`!
+Cuando invocamos `bar` ahora, la función `bar` que invocamos va a tener closure sobre la variable `foo` dentro del IIFE - no va a colisionar con la variable `foo` declarada en `fileC.js`!
 
-Mientras que todavía hay chances que `window.bar` pueda ser sobrescrito por otro módulo, este patrón hizo las cosas mucho más fácil por un tiempo, podemos escribir ahora archivos JavaScript separados, envueltos en IFFEs, y podemos razonar sobre ellos en términos de sus "exports" (los valores que ellos anexan al objeto global `window`),  y sus "imports"/"dependencias" (los valores que necesitan que existan en el objeto global `window` antes de que ese archivo corrió). Otra variación de este concepto, [el patrón de revelación de módulos](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript), en el cual retornamos en la función eso que queremos exponer, permitió a los desarrolladores ser mucho mas explícitos sobre los "exports" de sus "módulos".
+Mientras que todavía hay chances que `window.bar` pueda ser sobrescrito por otro módulo, este patrón hizo las cosas mucho más fácil por un tiempo, podemos escribir ahora archivos JavaScript separados, envueltos en IIFEs, y podemos razonar sobre ellos en términos de sus "exports" (los valores que ellos anexan al objeto global `window`),  y sus "imports"/"dependencias" (los valores que necesitan que existan en el objeto global `window` antes de que ese archivo corrió). Otra variación de este concepto, [el patrón de revelación de módulos](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript), en el cual retornamos en la función eso que queremos exponer, permitió a los desarrolladores ser mucho mas explícitos sobre los "exports" de sus "módulos".
 
-Sin embargo, con el amanecer de la edad de AJAX y JQuery, las aplicaciones web se fueron haciendo más grandes y más sofisticadas, y el "patrón IFFE" esta lejos de ser a prueba de tontos. Si queremos escribir aplicaciones de browser sofisticadas como las que existen en la computadora, vamos a necesitar herramientas mejores.
+Sin embargo, con el amanecer de la edad de AJAX y JQuery, las aplicaciones web se fueron haciendo más grandes y más sofisticadas, y el "patrón IIFE" esta lejos de ser a prueba de tontos. Si queremos escribir aplicaciones de browser sofisticadas como las que existen en la computadora, vamos a necesitar herramientas mejores.
 
 Aquí es donde las tecnologías como Webpack aparecen. Pero antes de eso, vamos a divagar un poco sobre como NodeJS cambió el juego al popularizar un cierto sistema de módulos para JavaScript del **lado del servidor**.
 
@@ -404,7 +404,7 @@ Comentá los `<script>` tags actuales en nuestro `index.html`. En su lugar, escr
 
 El momento ha llegado! Ve a través de los archivos Javascript y convertilos en modules! Si necesitas ayuda, aquí hay una checklist de cosas que podés hacer en cada archivo:
 
-- Remové las IFFE que rodean al código - ya no las vas a necesitar más. (Quiz: por qué?)
+- Remové las IIFE que rodean al código - ya no las vas a necesitar más. (Quiz: por qué?)
 - Identifica que cosas ese archivo expone al objeto `window` y y pon eso `module.exports`.
 - Identificá cualquier cosa que ese archivo obtiene de otro archivo en el objeto window y cambialo a que sea requerido.
   + (nota: esto por supuesto no incluye cosas como `window.location.origin` o `window.addEventListner` - estamos manipulando el contexto global por gusto ahí)
