@@ -1,8 +1,7 @@
 {
-  "name": "homework",
+  "name": "03-es6",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "author": "",
   "license": "ISC",
   "dependencies": {
