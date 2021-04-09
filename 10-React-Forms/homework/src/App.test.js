@@ -1,12 +1,15 @@
 import React from 'react';
-import { render, fireEvent, screen, getByTestId} from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { shallow, mount } from 'enzyme';
 import Form, {validate}  from './Form.jsx';
 
-describe('App', () => {
+describe('<Form />', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = mount(<Form />);
+  });
+  afterEach(() => {
+    jest.clearAllMocks();
   });
   it('El form deberia cambiar de estado cuando escriban en el input de username', () => {
     wrapper.find('input[name="username"]').simulate('change', {target: {name: 'username', value: 'NewUsr'}});
