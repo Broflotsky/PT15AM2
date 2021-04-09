@@ -1,7 +1,6 @@
 {
-  "name": "homework",
-  "version": "0.1.0",
-  "private": true,
+  "name": "10-react-forms",
+  "version": "1.0.0",
   "dependencies": {
     "@babel/runtime": "^7.13.10",
     "@testing-library/jest-dom": "^5.11.10",
