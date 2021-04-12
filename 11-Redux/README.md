@@ -38,7 +38,7 @@ Si bien, podemos crear _containers_ que mantengan el estado estado de sus _child
 
 >El __estado__ de toda tu aplicación está guardado en un árbol en una sola __store__.
 
-Esto hace que se fácil crear apps universale, ya que el _estado_ de tu servidor puede ser _serializado_ fácilmente a todos los clientes sin efuerzo extra. Además hace que sea más fácil _debuggear_ e _inspeccionar_ tu aplicación. 
+Esto hace que sea fácil crear apps universales, ya que el _estado_ de tu servidor puede ser _serializado_ fácilmente a todos los clientes sin efuerzo extra. Además hace que sea más fácil _debuggear_ e _inspeccionar_ tu aplicación. 
 
 ```javascript
 console.log(store.getState())
