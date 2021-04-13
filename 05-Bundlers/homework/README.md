@@ -235,6 +235,8 @@ La respuesta a esa pregunta en la sección anterior es si, por supuesto! Herrami
 
 ## Punto de Arranque
 
+En primer lugar para que vean la apllicación funcionando pueden, luego de ejecutar el `npm install` hacer un `npm start` e ingresar a la URL que les indica por consola para ver el whiteboard funcionando. A partir de ahora la idea será hacer unn refactor de la aplicación para aplicar lo visto en la clase de módulos pero sin modificar la funcionalidad en sí de la aplicación.
+
 ### Entendiendo Nuestras Dependencias
 
 Antes de sumergirnos en Webpack, tomate un momento para mirar a través de los archivos Javascript que nuestro `index.html` carga y determina como estan relacionados uno con el otro. Tratá de armar un "árbol de dependencias" - eso es, un gráfico en el cual los archivos requieren otros archivos para ser ejecutados primero. Debería verse algo como esto:
@@ -408,6 +410,8 @@ El momento ha llegado! Ve a través de los archivos Javascript y convertilos en 
 - Identifica que cosas ese archivo expone al objeto `window` y y pon eso `module.exports`.
 - Identificá cualquier cosa que ese archivo obtiene de otro archivo en el objeto window y cambialo a que sea requerido.
   + (nota: esto por supuesto no incluye cosas como `window.location.origin` o `window.addEventListner` - estamos manipulando el contexto global por gusto ahí)
+
+Una vez realizado todos esos cambios deberían ejecutar el `npm run build` una vez más y luego hacer `npm start` lo cual les levantará la aplicación en su computadora en el puerto indicado en la consola y podrán ingresar a la URL indicada para ver wl whiteboard funcionando. En el caso de que no funcione es probable que al cambiar la sintaxis por esta nueva forma de require y module.exports hayan cometido algún error.
 
 #### NOTA IMPORTANTE PARA SOCKET.IO!
 
