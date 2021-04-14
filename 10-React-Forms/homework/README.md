@@ -317,7 +317,7 @@ Para eso vamos a agregar dos cosas:
 ...
 <div>
     <label>Username:</label>
-    <input className={`${errors.username && 'danger'}`}
+    <input className={errors.username && 'danger'}
       type="text" name="username" onChange={handleInputChange} value={input.username} />
     {errors.username && (
       <p className="danger">{errors.username}</p>
