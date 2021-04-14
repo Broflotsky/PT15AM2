@@ -5,29 +5,22 @@ import Form, {validate}  from './Form.jsx';
 
 describe('<Form />', () => {
   let wrapper;
-  const setState = jest.fn();
-  const useStateSpy = jest.spyOn(React, 'useState')
-  useStateSpy.mockImplementation((init) => [init, setState]);
-
   beforeEach(() => {
-    wrapper = shallow(<Form />);
+    wrapper = mount(<Form />);
   });
-
   afterEach(() => {
     jest.clearAllMocks();
   });
-
-  describe('Estados: ', () => {
-    it('El form deberia cambiar de estado cuando escriban en el input de username', () => {
-      wrapper.find('input[name="username"]').simulate('change', {target: {name: 'username', value: 'My new value'}});
-      expect(setState).toHaveBeenCalledWith({"username": "My new value", "password": ""});
-    });
-    it('El form deberia cambiar de estado cuando escriban en el input de password', () => {
-      wrapper.find('input[name="username"]').simulate('change', {target: {name: 'password', value: 'My new value'}});
-      expect(setState).toHaveBeenCalledWith({"username": "", "password": "My new value"});
-    });
+  it('El form deberia cambiar de estado cuando escriban en el input de username', () => {
+    wrapper.find('input[name="username"]').simulate('change', {target: {name: 'username', value: 'NewUsr'}});
+    const ele = wrapper.find('input[name="username"]');
+    expect(ele.prop('value')).toEqual('NewUsr');
   });
-
+  it('El form deberia cambiar de estado cuando escriban en el input de password', () => {
+    wrapper.find('input[name="password"]').simulate('change', {target: {name: 'password', value: 'NewPsw'}});
+    const ele = wrapper.find('input[name="password"]');
+    expect(ele.prop('value')).toEqual("NewPsw");
+  });
   describe('Validacion: ', () => {
     it('validate debe devolver un objeto con un error si el usarname no es un email valido:', () => {
       expect(validate({
@@ -55,5 +48,3 @@ describe('<Form />', () => {
     });
   });
 });
-
-

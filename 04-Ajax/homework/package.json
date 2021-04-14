@@ -1,25 +1,17 @@
 {
-  "name": "homework",
+  "name": "04-ajax",
   "version": "1.0.0",
   "description": "",
-  "main": "homework.js",
-  "directories": {
-    "body-parser": "^1.18.2",
-    "cors": "^2.8.4",
-    "express": "^4.16.2",
-    "nodemon": "^1.14.11"
-  },
   "scripts": {
     "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "nodemon": "^2.0.2",
+    "nodemon": "^2.0.7",
     "node-fetch": "^2.6.1",
     "prompt-sync": "^4.2.0"
   }
