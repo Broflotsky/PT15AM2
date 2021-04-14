@@ -91,8 +91,6 @@ export default function Form() {
 
 ```
 
-__IMPORTANTE__: Deben utilizar `React.useState` y no `useState` para que todos los tests funcionen correctamente en esta homework en particular.
-
 Con esto, estamos agregando estado al componente.
 
 Genial! ahora tenemos estado, pero tenemos que *conectarlo* con el formulario. Para eso vamos a poner como `value` del input el estado correspondiente.
