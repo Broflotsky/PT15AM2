@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 // import { connect } from "react-redux";
-// import { removeArticle } from "../../actions/index";
 // import { Link } from 'react-router-dom';
 import './Favorites.css';
 
