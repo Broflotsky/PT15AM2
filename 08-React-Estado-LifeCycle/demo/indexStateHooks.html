@@ -15,22 +15,33 @@
 
   <script type="text/babel">
   const { useState, useEffect } = React;
-
+ 
   function Contador(props) {
     const [contador, setContador] = useState(props.contador);
-
-    const onButtonClick = () => {
-      setContador(contador + 1)
-    }
-
+    let varContador = 100;
+   
     useEffect(() => {
       console.log('Effect');
     });
 
+    let onButtonClick = () => {
+      setContador(contador + 1)
+    }
+
+    const incrementar = () =>{
+      varContador ++
+      console.log("Soy variable", varContador)
+    }
+
     return (
       <div>
-        <button onClick={onButtonClick}>Suma uno!</button>
-        <p>Hola, van {contador}!!</p>
+        <h1>State Hooks vs Variable Contador</h1>
+        <div><button onClick={onButtonClick}>Suma uno!</button>
+        &nbsp;Hola, soy el State {contador}!!
+        </div>
+        <p><button onClick={incrementar}>Suma uno!</button>
+        &nbsp;Hola, soy la variable contador {varContador}!!
+        </p>
       </div>
     )
   };
