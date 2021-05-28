@@ -219,7 +219,7 @@ module.exports = bar;
 // fileB.js
 
 // usamos `require`para importar valores de otros módulos
-var someFunc = require('./fileB');
+var someFunc = require('./fileA');
 
 var foo = "no sweat"; // no tiene idea que usamos el mismo nombre para una variable en fileA
 someFunc(); // 42
