@@ -1,13 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Counter from './src/components/Counter.jsx';
+import Friends from './src/components/Friends.jsx';
 import  { Provider } from 'react-redux';
 import store from './src/store.js';
 
 render(
     <Provider store={store}>
       <div>
-        <Counter/>
+        <Friends/>
       </div>
     </Provider>,
   document.getElementById('app')
