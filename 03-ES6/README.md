@@ -9,8 +9,13 @@
 			Hacé click acá para dejar tu feedback sobre esta clase.
 	  	</a>
 	  </td>
-    <td>
-		</td>
+              <td>
+	    <a href="https://quiz.soyhenry.com/evaluation/new/606f6127656c8d23c2e60f50">
+	    	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/HSQuiz.svg/768px-HSQuiz.svg.png" width="100" height="100"/>
+	    	<br>
+	    	Hacé click acá completar el quiz teórico de esta lecture.
+	    </a>
+	 </td>
   </tr>
 </table>
 
