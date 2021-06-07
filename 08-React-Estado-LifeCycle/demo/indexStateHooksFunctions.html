@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8"/>
+  <title>Henry - useState Function update vs value update</title>
+</head>
+
+<body>
+  <div id='app'></div>
+
+  <script src="https://unpkg.com/react@16.8/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16.8/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+
+  <script type="text/babel">
+  const { useState, useEffect } = React;
+ 
+  function Contador(props) {
+    const [contador, setContador] = useState(props.contador);
+    let varContador = 100;
+
+    let incrementarValue = () => {
+      setContador(contador + 1)
+      setContador(contador + 1)
+    }
+
+    const incrementarFunction = () =>{
+      setContador((prevState) => prevState + 1)
+      setContador((prevState) => prevState + 1)
+    }
+
+    return (
+      <div>
+        <h1>useState Function update vs value update</h1>
+        <div>
+          <button onClick={incrementarFunction}>Suma dos!</button>
+        </div>
+        <div>
+          <button onClick={incrementarValue}>Suma dos?</button>
+        </div>
+        &nbsp;Hola, soy el State {contador}!!
+  
+      </div>
+    )
+  };
+
+  ReactDOM.render(<Contador contador={100} />, document.getElementById('app'));
+  </script>
+</body>
+
+</html>
