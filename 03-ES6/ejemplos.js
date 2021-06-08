@@ -117,6 +117,29 @@ for(i of gen){
 	console.log(i)
 }
 
+function arrayWithLet(){
+  let arreglo = [];
+ //cambiar let por var y descomentar el console.log anterior al return
+ // y observar el resultado
+  for ( let j= 0; j < 3; j++){
+    arreglo.push(
+      function(){
+        console.log(j);
+      }
+    )
+  }
+ 
+ //console.log("J después del for ",j)
+return arreglo;
+}
+ 
+var array = arrayWithLet();
+//Si en lugar de let se usa var en el for,
+// el valor que imprimiría siempre sería el último tomado por el índice
+//En nuestro ejemplo: el 3
+array[0]() 
+array[1]() 
+array[2]() 
 
 // // Sets
 // var s = new Set();
