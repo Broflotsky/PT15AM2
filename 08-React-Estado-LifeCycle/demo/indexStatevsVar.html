@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8"/>
+  <title>Henry - State vs Var</title>
+</head>
+
+<body>
+  <div id='app'></div>
+
+  <script crossorigin src="https://unpkg.com/react@16.8/umd/react.development.js" ></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16.8/umd/react-dom.development.js" ></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  <script type="text/babel">
+
+ class StateContador extends React.Component{
+   constructor(props) {
+     super(props);
+     this.state = {
+       contador: this.props.contador
+      }
+      this.variable = this.props.contador
+      this.incrementoContador= this.incrementoContador.bind(this);
+    }
+    
+    onButtonClick = () => {
+      this.setState((state) => {
+          return {contador: state.contador + 1}
+     });
+      console.log("Actualicé mi state :", this.state.contador)
+    }
+    
+    incrementoContador(cuento) {
+     this.variable++
+      console.log("Soy contador ", this.variable)
+    }
+    
+    render(){
+      return (
+        <div>          
+          <h1>State vs Variable Contador</h1>
+          <div><button onClick={this.onButtonClick}>Suma uno!</button>
+            &nbsp;Hola, soy el State {this.state.contador}!!
+            </div>
+            <div>
+            <p>Variable contador: {this.variable}</p>
+            <button onClick={this.incrementoContador}>Incrementa!</button>  
+            </div>
+            </div>
+            )
+    }
+  };
+
+  ReactDOM.render(<StateContador contador={0} />, document.getElementById('app'));
+  </script>
+</body>
+
+</html>
