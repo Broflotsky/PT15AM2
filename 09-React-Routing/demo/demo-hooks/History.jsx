@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 
-export default function History({ history }) {
+export default function History() {
+  let history = useHistory();
+  console.log("History: ", history);
+
   const [number, setNumber] = useState(0);
   const [text, setText] = useState('');
 

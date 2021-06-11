@@ -4,7 +4,6 @@ import { Route, Switch, Link, HashRouter as Router, useRouteMatch } from 'react-
 
 import Home from './Home.jsx';
 import Params from './Params.jsx';
-import Other from './Other.jsx';
 import Location from './Location.jsx';
 import History from './History.jsx';
 
@@ -27,8 +26,6 @@ function NavBar() {
       <br></br>
       <Link to="/component/one">Component with less params</Link>
       <br></br>
-      <Link to="/render/1">Render</Link>
-      <br></br>
       <Link to="/location?name=Franco&age=26">Location</Link>
       <br></br>
       <Link to={customLocation}>Custom Location</Link>
@@ -44,34 +41,24 @@ const Root = (
     <Switch>
       <Route 
         path="/component/:firstParam/:secondParam"
-        component={Params}
-      />
+      >
+        <Params />
+      </Route>
       <Route 
         path="/component"
-        component={Home}
-      />
-      {/* <Route
-        path="/render/:paramOne"
-        render={({ match }) => (
-          <Other match={match} Ejemplo />
-        )}
-      /> */}
-      <Route
-        path="/render/:paramOne"
-        render={(props) => (
-          <Other {...props} Ejemplo />
-        )}
-      />
+      >
+        <Home />
+      </Route>
       <Route
         path="/location"
-        render={(props) => (
-          <Location {...props} Ejemplo />
-        )}
-      />
+      >
+        <Location />
+      </Route>
       <Route 
         path="/history"
-        component={History}
-      />
+      >
+        <History />
+      </Route>
       <Route path="/">
         <h2>Default</h2>
       </Route>
