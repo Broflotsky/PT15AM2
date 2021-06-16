@@ -21,8 +21,17 @@ const Root = (
       <Route exact path="/">
         <Home />
       </Route>
+      {/* <Route path="/about/other">
+        <h2>About Other</h2>
+      </Route> */}
       <Route path="/about">
         <About />
+      </Route>
+      <Route path="/aboutttttt">
+        <h2>Aboutttttt</h2>
+      </Route>
+      <Route path="/about/other">
+        <h2>About Other</h2>
       </Route>
       <Route path="/ejemplo">
         <Ejemplo nombre="Toni" apellido="Tralice"/>
