@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 
 export default function Location() {
   let location = useLocation();
-  console.log("Location: ", location);
+
   return (
     <div>
     {
