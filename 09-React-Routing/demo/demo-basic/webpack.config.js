@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'development',
   entry: './index.js', // ruta al entry point
   output: {
     path: __dirname + '/dist', // path donde webpack dejarǻ los archivos.
