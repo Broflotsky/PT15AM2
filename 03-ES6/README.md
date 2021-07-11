@@ -198,7 +198,7 @@ Más Info: [MDN Template Strings](https://developer.mozilla.org/en-US/docs/Web/J
 
 ### Destructuring
 
-Las estructuras se pueden desestructar para poder seleccionar valores
+Las estructuras se pueden desestructurar para poder seleccionar valores
 usando patrones de matcheo, con soporte para arreglos y objetos. Esto funciona igual que buscar una propiedad de un objeto `foo['bar']` en el sentido que ambos son `fail-soft`, es decir, que producen un `undefined` cuando algo no se encuentra.
 
 ```JavaScript
