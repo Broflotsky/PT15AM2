@@ -219,6 +219,10 @@ const movieId = this.props.match.params.id;
 ```
 Llamamos a la funcion `getMovieDetail` y le pasamos nuestro ID todo dentro de nuestro `componentDidMount`. Una vez obtenido los datos tendriamos que tenerlos en `this.props.movieDetail` (obtenidos desde nuestro mapStateToProps y guardado en nuestro initalState). Y por ultimo mostramos detalles de la pelicula por ej: Titulo, Año, Rating, Plot, Premios, Genero, etc... Ej:
 
+## Punto Extra:
+
+Para mejorar la experiencia del usuario, cuando se presione el link para ver el detalle de una película, mostrar un texto o imagen que indique que se está "Cargando" la información, hasta que llegue el response del servidor y recién ahí, mostrar su detalle.
+
 <div style="text-align:center"><img src="src/img/movie-detail.gif"/></div><br>
 
 Con esto tendriamos una App integrado con React Redux!
