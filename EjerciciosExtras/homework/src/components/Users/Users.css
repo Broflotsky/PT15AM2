@@ -1,0 +1,23 @@
+.cnt {
+    padding-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    width: 50%;
+    text-align: center;
+   
+    padding: 1em;
+  }
+
+.header{
+    background-color: yellow;
+}  
+
+.button {
+    
+    background-color: #555555;
+    border: 1px solid rgb(158, 143, 143);
+    color: #fff;
+    text-decoration:none;
+}
