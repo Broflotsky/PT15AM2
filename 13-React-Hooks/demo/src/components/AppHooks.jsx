@@ -14,9 +14,10 @@ export default function AppHooks() {
     window.addEventListener('resize', handleResize)
 
     return () => {
+      console.log('Entra...');
       window.removeEventListener('resize', handleResize)
     }
-  })
+  }, [])
   
   function handleChange(e) {
     setName(e.target.value)
