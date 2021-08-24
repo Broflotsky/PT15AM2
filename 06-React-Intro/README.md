@@ -442,7 +442,7 @@ function HelloWorld() {
 
 ```
 
-Como podemos ver, la transformación toma los datos y lo transforma a código Javascript. Se llamó a `React.createElement` en la función `render`, esta función crea un elemento HTML según los parámetros que les pasamos. Como podemos ver, escribir código JavaScript para crear elementos HTMl puede ser engorroso. Si bien, podríamos codear todas nuestras apps de react escribiendo JS nativo, lo mejor y más productivo va a ser usar __JSX__.
+Como podemos ver, la transformación toma los datos y lo transforma a código Javascript. Se llamó a `React.createElement` en la función `render`, esta función crea un elemento HTML según los parámetros que les pasamos. Como podemos ver, escribir código JavaScript para crear elementos HTML puede ser engorroso. Si bien, podríamos codear todas nuestras apps de react escribiendo JS nativo, lo mejor y más productivo va a ser usar __JSX__.
 
 Pueden ver más transformaciones que realiza _babel_ [acá](https://babeljs.io/repl/#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&spec=false&loose=false&code_lz=G4QwTgBAEgpgNnA9gdUWOATCBeCAlGEAYwBcA6IsQkmAYThAGdGAKAbwCgIIqA7DGGABcEAGYBXXqQCWiXiwCUnbtyolxYXhBZcV3ADwZpwAHy69BgA4mAooxKIIMRhEkRLAQ7BgQoxPoB6a3MLfWsAWWk-CCJEAFtHACEQACN4CBIfXkY_MDiQDMQMRwBaEwhA4IsVfQALACYTAGUYCGBxeGBW2LjLOGkiEGKAGgheRAB-QIazaoMjUxDquoBGcvCYACs0V0YYBJcAKSaADQBCM4qA2rWlmoCF2dCH4yfuBV0AXw5PhQBuDgcAjEEgAEQA8uEyHwBGAWPpYAgUGhMBAAiZRsUiOI4jBeOQAOYwEg2OD7PEkRIATwAkhgWAByECWSwMhT_IA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=true&fileSize=false&timeTravel=false&sourceType=module&lineWrap=false&presets=react%2Cstage-2&prettier=false&targets=&version=7.9.6&externalPlugins=);
 
