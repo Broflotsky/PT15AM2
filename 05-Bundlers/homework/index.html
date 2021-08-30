@@ -1,25 +1,29 @@
 <!doctype html>
 <html>
-    <head>
-        <link href="style.css" type="text/css" rel="stylesheet">
-    </head>
-    <body>
-        <canvas id="paint"></canvas>
 
-        <div id="color-selector">
-            <div class="marker selected" id="black"></div>
-            <div class="marker" id="purple"></div>
-            <div class="marker" id="red"></div>
-            <div class="marker" id="blue"></div>
-            <div class="marker" id="green"></div>
-            <div class="marker" id="orange"></div>
-            <div class="marker" id="yellow"></div>
-            <div class="marker" id="brown"></div>
-        </div>
+<head>
+    <meta charset=UTF-8>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
 
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="event-emitter.js"></script>
-        <script src="whiteboard.js"></script>
-        <script src="app.js"></script>
-    </body>
+<body>
+    <canvas id="paint"></canvas>
+
+    <div id="color-selector">
+        <div class="marker selected" id="black"></div>
+        <div class="marker" id="purple"></div>
+        <div class="marker" id="red"></div>
+        <div class="marker" id="blue"></div>
+        <div class="marker" id="green"></div>
+        <div class="marker" id="orange"></div>
+        <div class="marker" id="yellow"></div>
+        <div class="marker" id="brown"></div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="event-emitter.js"></script>
+    <script src="whiteboard.js"></script>
+    <script src="app.js"></script>
+</body>
+
 </html>

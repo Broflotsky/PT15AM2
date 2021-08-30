@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+  <meta charset=UTF-8>
   <title></title>
 </head>
+
 <body>
   <div id='app'></div>
 
@@ -10,36 +13,37 @@
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
-  
-  function Boton(props) {
-    return (
-      <button onClick={props.clickHandler}>
-        Click
-      </button>
-    )
-  }
 
-  class App extends React.Component {
-    constructor() {                 
-      super();
-
-      this.clickHandler = this.clickHandler.bind(this);
-    }                 
-
-    clickHandler(){                                 
-      window.location = 'http://www.google.com'
-    }
-
-    render(){
+    function Boton(props) {
       return (
-        <div>
-          <Boton clickHandler={this.clickHandler}/>
-        </div>  
+        <button onClick={props.clickHandler}>
+          Click
+        </button>
       )
     }
-  };        
-  
-  ReactDOM.render(<App/>, document.getElementById('app'));
+
+    class App extends React.Component {
+      constructor() {
+        super();
+
+        this.clickHandler = this.clickHandler.bind(this);
+      }
+
+      clickHandler() {
+        window.location = 'http://www.google.com'
+      }
+
+      render() {
+        return (
+          <div>
+            <Boton clickHandler={this.clickHandler} />
+          </div>
+        )
+      }
+    };
+
+    ReactDOM.render(<App />, document.getElementById('app'));
   </script>
 </body>
+
 </html>
