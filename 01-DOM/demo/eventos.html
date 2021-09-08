@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+  <meta charset=UTF-8>
   <title>Demo1</title>
   <style type="text/css">
     div {
@@ -11,13 +13,14 @@
     }
   </style>
 </head>
+
 <body>
   <div id='uno'>Uno</div>
   <div id='dos'>Dos</div>
   <div id='tres'>Tres</div>
 
   <script type="text/javascript">
-    var arreglo = [1,2,3]
+    var arreglo = [1, 2, 3]
     var divs = document.querySelectorAll('div');
     var div = document.getElementById('uno');
     // divs.forEach(function(e) {
@@ -35,9 +38,10 @@
     //   // div.style.left = e.clientX + 152+'px';
 
     // })
-    document.body.addEventListener('click', function(e) {
+    document.body.addEventListener('click', function (e) {
       console.log(e.target);
     })
   </script>
 </body>
+
 </html>
