@@ -63,6 +63,7 @@ ES6 incluye las siguientes features:
 - [binary and octal literals](#binary-and-octal-literals)
 - [reflect api](#reflect-api)
 - [tail calls](#tail-calls)
+- [Optional Chaining](#optional-chaining)
 
 ## ECMAScript 6 Features
 
@@ -520,6 +521,27 @@ factorial(100000)
 
 > Podemos ver una lista de features más detallada y comparada con la versión anterior [aquí](http://es6-features.org/)
 
+
+### Optional Chaining
+El operador de encadenamiento opcional `?.` permite leer el valor de una propiedad ubicada dentro de una cadena de objetos conectados sin tener que validar expresamente que cada referencia en la cadena sea válida. El operador `?.` funciona de manera similar a el operador de encadenamiento `.` , excepto que en lugar de causar un error si una referencia es casi-nula (`null` o `undefined`), la expresión hace una evaluación de circuito corto con un valor de retorno de undefined. Cuando se usa con llamadas a funciones, devuelve `undefined` si la función dada no existe.
+Esto da como resultado expresiones más cortas y simples cuando se accede a propiedades encadenadas dónde existe la posibilidad de que falte una referencia. También puede ser útil al explorar el contenido de un objeto cuando no hay una garantía conocida de qué propiedades se requieren.
+
+```JavaScript
+const adventurer = {
+  name: 'Alice',
+  cat: {
+    name: 'Dinah'
+  }
+};
+
+const dogName = adventurer.dog?.name;
+console.log(dogName);
+// expected output: undefined
+
+console.log(adventurer.someNonExistentMethod?.());
+// expected output: undefined
+
+```
 
 ## Compatibilidad
 
