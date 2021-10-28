@@ -523,7 +523,7 @@ factorial(100000)
 
 
 ### Optional Chaining
-El operador de encadenamiento opcional `?.` permite leer el valor de una propiedad ubicada dentro de una cadena de objetos conectados sin tener que validar expresamente que cada referencia en la cadena sea válida. El operador `?.` funciona de manera similar a el operador de encadenamiento `.` , excepto que en lugar de causar un error si una referencia es casi-nula (`null` o `undefined`), la expresión hace una evaluación de circuito corto con un valor de retorno de undefined. Cuando se usa con llamadas a funciones, devuelve `undefined` si la función dada no existe.
+El operador de encadenamiento opcional `?.` permite leer el valor de una propiedad ubicada dentro de una cadena de objetos conectados sin tener que validar expresamente que cada referencia en la cadena sea válida. El operador `?.` funciona de manera similar a el operador de encadenamiento `.` , excepto que en lugar de causar un error si una referencia es `null` o `undefined`, la expresión hace una short-circuit evaluation (`la evaluacion del segundo termino solo se efectua si el primero no permite definir un resultado ej: (true ||false)---> da verdadero sin siquiera pasar por false`) con un valor de retorno de `undefined`. Cuando se usa con llamadas a funciones, devuelve `undefined` si la función dada no existe.
 Esto da como resultado expresiones más cortas y simples cuando se accede a propiedades encadenadas dónde existe la posibilidad de que falte una referencia. También puede ser útil al explorar el contenido de un objeto cuando no hay una garantía conocida de qué propiedades se requieren.
 
 ```JavaScript
