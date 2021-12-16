@@ -28,7 +28,7 @@ eleventyNavigation:
   </tr>
 </table>
 
-# Lesson 05 - Módulos y Bundlers
+# Módulos y Bundlers
 
 Cuando desarrollamos, queremos que la estructura de nuestro programa/codigo sea lo mas transparente posible, facil de explicar y que cada parte cumpla una tarea definida.
 

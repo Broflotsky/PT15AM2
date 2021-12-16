@@ -52,7 +52,7 @@ AJAX se basa en un montón de tecnologías. No tienes que ser un experto en toda
 
 Piensa en toda tu aplicación web como un restaurante de comida rápida. Tú eres el cajero, la persona en las primeras líneas. Manejas las **solicitudes** de los cliente
 
-![img](/_src/assets/04-Ajax/image-1.png)
+![no-box](/_src/assets/04-Ajax/image-1.png)
 
 
 Si miras este diagrama, puedo ver tres trabajos separados que deben hacerse.
@@ -63,7 +63,7 @@ Si miras este diagrama, puedo ver tres trabajos separados que deben hacerse.
 
 Sin embargo, si no tuvieras AJAX, sólo se te permitiría procesar un pedido a la vez de principio a fin! Tendrías que tomar el pedido... luego cobrar al cliente... luego sentarte ahí sin hacer nada mientras la gente en la cocina cocina cocina la comida... y luego seguir esperando mientras el equipo de preparación de la comida la empaqueta. Sólo podrías tomar el siguiente pedido después de todo eso.
 
-![img](/_src/assets/04-Ajax/image-2.png)
+![no-box](/_src/assets/04-Ajax/image-2.png)
 
 
 Eso es una mala experiencia para el usuario! Ya no podrías llamarlo "comida rápida". En su lugar, tendrías que llamarlo "comida mediocre"... o algo así.
@@ -74,7 +74,7 @@ Los clientes pueden seguir haciendo pedidos, y no es necesario sentarse allí mi
 
 Esto ciertamente introduce cierta complejidad. Ahora tienes múltiples especializaciones dentro del restaurante. Además, los pedidos se están manejando a ritmos diferentes. Pero, crea una experiencia de usuario mucho mejor.
 
-![img](/_src/assets/04-Ajax/image-3.png)
+![no-box](/_src/assets/04-Ajax/image-3.png)
 
 
 Probablemente has  visto esto en acción en un restaurante. Una persona está trabajando en la máquina de papas fritas. Una persona está manejando la parrilla. Cuando llega un pedido, el cajero puede comunicarse instantáneamente con ambos y volver a tomar los pedidos.
@@ -116,7 +116,7 @@ Por las papas fritas, puede que sólo necesitemos saberlo:
 1. El tamaño de las patatas
 2. El precio
 
-![img](/_src/assets/04-Ajax/image-4.png)
+![no-box](/_src/assets/04-Ajax/image-4.png)
 
 
 Veamos un ejemplo de un combo de: una hamburguesa con queso con una Pepsi que cuesta 6 dólares. Esto es lo que parece en JavaScript.
@@ -188,7 +188,7 @@ let meal = {
 };$.get('/comboMeal', meal);
 ```
 
-![img](/_src/assets/04-Ajax/image-5.png)
+![no-box](/_src/assets/04-Ajax/image-5.png)
 
 
 También necesitamos un disparador para este. Esta solicitud se activa cuando los clientes responden a tus preguntas como cajero antes de que les entregues la comida. No hay una forma conveniente de representar las preguntas y respuestas con JavaScript. Así que voy a crear otro evento de clic para el botón con la clase "respuesta".
@@ -203,7 +203,7 @@ $('.answer').click(function(){
 });
 ```
 
-![img](/_src/assets/04-Ajax/image-6.png)
+![no-box](/_src/assets/04-Ajax/image-6.png)
 
 
 Este también necesita una función de devolución de llamada, porque vamos a recibir lo que estaba contenido en las tres comidas compuestas en el orden 191. Podemos recibir esos datos a través de un parámetro de *datos* en nuestra llamada de retorno.
@@ -228,7 +228,7 @@ $('.answer').click(function(){
 
 El producto final, *datos*, contendría el contenido de las tres comidas combinadas, teóricamente. ¡Depende de cómo esté escrito en el backend!
 
-![img](/_src/assets/04-Ajax/image-7.png)
+![no-box](/_src/assets/04-Ajax/image-7.png)
 
 
 

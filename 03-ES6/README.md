@@ -20,7 +20,7 @@ eleventyNavigation:
 	  </td>
               <td>
 	    <a href="https://quiz.soyhenry.com/evaluation/new/606f6127656c8d23c2e60f50">
-	    	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/HSQuiz.svg/768px-HSQuiz.svg.png" width="100" height="100"/>
+	    	<img  src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/HSQuiz.svg/768px-HSQuiz.svg.png" width="100" height="100"/>
 	    	<br>
 	    	Hacé click acá completar el quiz teórico de esta lecture.
 	    </a>
@@ -36,7 +36,7 @@ El ES6 ,también conocido como ECMAScript 2015 o ES2015+, es la última versión
 
 Desde su aparición en 1995, JS fue evolucionando lentamente. ECMAScript apareció como standart en 1997, y desde ahí viene lanzando nuevas versiones como ES3, ES5, ES6, etc..
 
-![Evolution](/_src/assets/03-ES6/jsevo.png)
+![no-box](/_src/assets/03-ES6/jsevo.png)
 
 Como ven entre ES3 y ES5 pasaron _10 años_ y entre ES5 y ES6 pasaron _6 años_. Ahora la idea es lanzar nuevas versiones con cambios pequeños cada año.
 
