@@ -579,3 +579,7 @@ echo 'console.log([1, 2, 3].map(n => n + 1));' > index.js
 
 De esa forma vamos a poder transformar un archivo y lo tenemos que hacer manualmente. Si queremos que sea automático tenemos muchísimas opciones.
 Veamos algunas en la página de [babel](https://babeljs.io/docs/setup/) y elijamos el setup que más nos guste.
+
+## Homework
+
+Completa la tarea descrita en el archivo [README](https://github.com/soyHenry/FT-M2/blob/master/03-ES6/homework/README.md)

@@ -553,3 +553,12 @@ const defaultState = {
 
 const store = createStore(rootReducer, defaultState);
 ```
+
+
+## Homework Redux
+
+Completa la tarea descrita en el archivo [README](https://github.com/soyHenry/FT-M2/blob/master/11-Redux/homework/README.md)
+
+## Homework React Redux
+
+Completa la tarea descrita en el archivo [README](https://github.com/soyHenry/FT-M2/blob/master/12-React-Redux/homework/README.md)

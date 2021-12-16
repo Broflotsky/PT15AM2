@@ -942,3 +942,6 @@ const fnComparacion = function(prevProps, nextProps) {
 
 export default React.memo(Ejemplo, fnComparacion);
 ```
+## Homework
+
+Completa la tarea descrita en el archivo [README](https://github.com/soyHenry/FT-M2/blob/master/08-React-Estado-LifeCycle/homework/README.md)

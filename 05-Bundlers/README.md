@@ -215,3 +215,7 @@ Entrando desde un entry point (nuestro archivo `.js` principal), el objetivo de 
 Una vez hecho esto, podés empaquetar o convertir todo tu grafo de dependencias en un sólo archivo que tu aplicación va a usar. Finalmente, obtenemos un archivo único (el **bundle**) que vamos a importar en nuestro HTML. De esta forma, resolvemos los problemas de encapsulamiento que mencionamos anteriormente.
 
 > Cuando veamos *React*, vamos a aprender a usar el bundeler *webpack*.
+
+## Homework
+
+Completa la tarea descrita en el archivo [README](https://github.com/soyHenry/FT-M2/blob/master/05-Bundlers/homework/README.md)

@@ -221,3 +221,7 @@ Bien, vemos que renderiza bien la barra de navegación en todas las páginas, pe
 El parametro `exact` cuando lo pasamos nuestra `activeClassName` solo se aplicará si la ubicación coincida exactamente.
 
 ![NavBarOK](/_src/assets/09-React-Routing/reactNavBarOk.gif)
+
+## Homework
+
+Completa la tarea descrita en el archivo [README](https://github.com/soyHenry/FT-M2/blob/master/09-React-Routing/homework/README.md)

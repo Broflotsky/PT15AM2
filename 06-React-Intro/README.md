@@ -969,3 +969,7 @@ En este ejemplo estamos declarando que las _props_ que le lleguen al Componente 
 Como vemos, toda esta funcionalidad está contenida en el objeto `React.PropTypes` que viene nativamente en React.
 
 > Para más información sobre `React.PropTypes` y las cosas que podemos controlar con ella vamos a la documentación oficial [aquí](https://facebook.github.io/react/docs/typechecking-with-proptypes.html). 
+
+## Homework
+
+Completa la tarea descrita en el archivo [README](https://github.com/soyHenry/FT-M2/blob/master/06-React-Intro/homework/README.md)

@@ -357,3 +357,7 @@ Sabiendo esto, si hacemos un `join` de un arreglo formado por cada clase que use
 >![xkcd](/_src/assets/07-React-Estilos/standards.png)
 
 > Estan apareciendo muchas formas distintas de incluir CSS en React, todavía no se puede decir cual es la mejor, todas tienen sus pros y sus contras. Así que hay que tener paciencia, probar varias y quedarse con la que más nos gusta. Lo importante es entender que está sucediendo por detrás.
+
+## Homework
+
+Completa la tarea descrita en el archivo [README](https://github.com/soyHenry/FT-M2/blob/master/07-React-Estilos/homework/README.md)

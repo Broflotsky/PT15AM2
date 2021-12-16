@@ -406,3 +406,7 @@ Esto se debe a que el navegador intenta realizar un proceso de renderizado cada 
 ¿Que pasaria si a un usuario que interactuando con nuestra página le sucediera esto?
 
 Lo más probable es que cierre el navegador y nunca más vuelva a entrar a nuestra página. No es algo que queremos que suceda.
+
+## Homework
+
+Completa la tarea descrita en el archivo [README](https://github.com/soyHenry/FT-M2/blob/master/04-Ajax/homework/README.md)

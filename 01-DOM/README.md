@@ -228,3 +228,7 @@ El evento más común es el de 'click' y en particular es el único que posee la
 ```
 
 *En este ejemplo lo que estamos haciendo es indicarle que cuando el mouse ingrese al div cuyo id es 'divId' se ejecute la función ahí definida que lo único que hará en este caso es escribir por consola "El mouse entró!"*
+
+## Homework
+
+Completa la tarea descrita en el archivo [README](https://github.com/soyHenry/FT-M2/blob/master/01-DOM/homework/README.md)
