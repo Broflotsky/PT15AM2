@@ -1,6 +1,6 @@
 # Henry
 
-<table width="100%" style='table-layout:fixed;'>
+<table class="hide" width="100%" style='table-layout:fixed;'>
   <tr>
 	  <td>
 	  	<a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=04-Ajax">
