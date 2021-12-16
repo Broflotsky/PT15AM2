@@ -1,4 +1,13 @@
-# Henry
+---
+title: React-Intro
+permalink: "/React-Intro/"
+feedbackID: 06-React-Intro
+eleventyNavigation:
+  key: React-Intro
+  order: 6
+---
+
+![HenryLogo](/_src/assets/logo-white.png)
 
 <table class="hide" width="100%" style='table-layout:fixed;'>
   <tr>
@@ -62,7 +71,7 @@ Para el segundo punto, React construye una representación del DOM en memoria y 
 
 Miremos la imagen de abajo, cada cajita con un color particular representa un componente. Esta es una de las muchas formas de poder dividir un solo elemento o feature de nuestro sitio. Según esta división tendríamos la jerarquía de componentes que se muestran a la derecha de la imagen: 
 
-![componentes](./img/react_component_hierarchy.png)
+![componentes](/_src/assets/06-React-Intro/react_component_hierarchy.png)
 
 ##### Qué debería contener un _Componente_?
 
@@ -335,7 +344,7 @@ Para poder ejecutar webpack, debemos agregar dentro de `scripts` en nuestro `pac
 
 Para probar si todo funciona bien, iremos a la carpeta donde tenemos definidos todos estos archivos, y vamos a escribir `npm run build`.
 
-![Webpack](./img/webpack.png)
+![Webpack](/_src/assets/06-React-Intro/webpack.png)
 
 Si todo funcionó bien, veremos un mensaje como el de la imagen! Y además encontraremos un archivo nuevo en la carpeta `dist`.
 
@@ -724,7 +733,8 @@ Los componentes que creamos en React despues los usamos escribiendolos como un t
 ```
 Luego ese tag se renderizará a lo que sea que hayamos escrito en el método `render` de ese componente, transformandose así en HTML finalmente.
 Existe una convención en React para distinguir entre Componentes React y elemento HTML nativos. Para el primero usamos BumpyCase y lowercase para el último. Por ejemplo:
-```
+
+```html
 <MostrarLista /> BumpyCase
 <div>            lowercase
 ```

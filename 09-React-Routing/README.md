@@ -1,4 +1,14 @@
-# Henry
+---
+title: React-Routing
+permalink: "/React-Routing/"
+feedbackID: 09-React-Routing
+eleventyNavigation:
+  key: React-Routing
+  order: 9
+---
+
+
+![HenryLogo](/_src/assets/logo-white.png)
 
 <table class="hide" width="100%" style='table-layout:fixed;'>
   <tr>
@@ -80,7 +90,7 @@ Dentro de `BrowserRouter`, vamos a agregar nuestras rutas. En este caso agregamo
 * _component_: Es el componente que se va a cargar cuando ingresemos a la ruta definida en el _path_.
 * _exact_: Agregamos esta keyword para que matchee exactamente con el path que le pasamos. Este parametro entra en juego cuando tenemos path anidados.
 
-![ReactRouter](./img/ejemploRutas.gif)
+![ReactRouter](/_src/assets/09-React-Routing/ejemploRutas.gif)
 
 Ahora, si probamos este ejemplo (siguiendo los pasos mencionados anteriormente sobre como usar _webpack_), vamos a ver en el browser que se carga el Componente que declaramos en la ruta `/`, y si escribimos `/lista` en la URL, vemos que automáticamente se carga el componente declarado en la ruta `/lista`.
 
@@ -88,7 +98,7 @@ Ahora, si probamos este ejemplo (siguiendo los pasos mencionados anteriormente s
 
 ## Links
 
-Bien, ahora lo que necesitamos es crear Links para navegar entre rutas. Podríamos usar el tag `<a>` y en el `href` agregar el `/`, por dos razones simples no vamos a usar este método y sí vamos a usar un nuevo Componente de `react-router-dom` llamado `Link`. La primera razón es que si por alguna razón dejamos de usar `BrowserRouter`, probablemente (no es seguro) nuestros links dejarían de funcionar, la segunda es que los `Links` de `react-router-dom` no producen un 'refresh' en nuestra pagina como lo hacen los hag <a>
+Bien, ahora lo que necesitamos es crear Links para navegar entre rutas. Podríamos usar el tag `<a>` y en el `href` agregar el `/`, por dos razones simples no vamos a usar este método y sí vamos a usar un nuevo Componente de `react-router-dom` llamado `Link`. La primera razón es que si por alguna razón dejamos de usar `BrowserRouter`, probablemente (no es seguro) nuestros links dejarían de funcionar, la segunda es que los `Links` de `react-router-dom` no producen un 'refresh' en nuestra pagina como lo hacen los hag `<a>`
 
 Como siempre, primero vamos a tener que importar el Componente `Link` de `react-router-dom`. Luego, lo vamos a utilizar de manera muy similar a `<a>` sólo que en vez de `href` vamos a pasarle la _propiedad_ `to`, y en ella indicarle a que _path_ nos debería llevar. Por ejemplo, agreguemos un Link en el Componente `Home` del ejemplo anterior (también agregamos un link `<a>` para ver qué sucede):
 
@@ -138,7 +148,7 @@ Ahora en los `NavLinks` vamos a agregar la propiedad `activeClassName` y pasarle
 
 Veamos el resultado:
 
-![ReactLink](./img/reactLinkExample.gif)
+![ReactLink](/_src/assets/09-React-Routing/reactLinkExample.gif)
 
 Con esto vamos a poder navegar entre páginas de nuestra SPA, y además ya tenemos resuelto el tema de mantener los estilos de los Links de páginas activas!
 
@@ -190,13 +200,13 @@ Como vemos, importamos los Componentes como siempre y en el método render retor
 
 En la siguiente imagen, digramamos que sería cada Componente:
 
-![EjemploNavBar](./img/EjemploNavBar.png)
+![EjemploNavBar](/_src/assets/09-React-Routing/EjemploNavBar.png)
 
 El componente violeta llamado _Componentes_ va a ser el que se renderizé a través nuestras rutas.
 
 Veamos nuestro código en funcionamiento:
 
-![NavBar](./img/exampleNavBar.gif)
+![NavBar](/_src/assets/09-React-Routing/exampleNavBar.gif)
 
 Bien, vemos que renderiza bien la barra de navegación en todas las páginas, pero está pasando algo raro ya que el `NavLink` al home ( '/' ) está siempre como activo. Esto se debe a que la ruta de ese link matchea siempre con la ruta de la ruta _raíz_. Para resolver este problema debemos agregar lo siguiente:
 
@@ -210,4 +220,4 @@ Bien, vemos que renderiza bien la barra de navegación en todas las páginas, pe
 ```
 El parametro `exact` cuando lo pasamos nuestra `activeClassName` solo se aplicará si la ubicación coincida exactamente.
 
-![NavBarOK](./img/reactNavBarOk.gif)
+![NavBarOK](/_src/assets/09-React-Routing/reactNavBarOk.gif)

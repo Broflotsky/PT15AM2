@@ -1,4 +1,14 @@
-# Henry
+---
+title: React-Estado-LifeCycle
+permalink: "/React-Estado-LifeCycle/"
+feedbackID: 08-React-Estado-LifeCycle
+eleventyNavigation:
+  key: React-LifeCycle
+  order: 8
+---
+
+
+![HenryLogo](/_src/assets/logo-white.png)
 
 <table class="hide" width="100%" style='table-layout:fixed;'>
   <tr>
@@ -19,7 +29,7 @@
   </tr>
 </table>
 
-# REACT
+# React Estado LifeCycle
 
 ## La mejor manera: Webpack
 
@@ -217,7 +227,7 @@ Para poder ejecutar webpack, debemos agregar dentro de `scripts` en nuestro `pac
 
 Para probar si todo funciona bien, iremos a la carpeta donde tenemos definidos todos estos archivos, y vamos a escribir `npm run build`.
 
-![Webpack](./img/webpack.png)
+![Webpack](/_src/assets/08-React-Estado-LifeCycle/webpack.png)
 
 Si todo funcionó bien, veremos un mensaje como el de la imagen! Y además encontraremos un archivo nuevo en la carpeta `dist`.
 
@@ -431,7 +441,8 @@ Los componentes que creamos en React despues los usamos escribiendolos como un t
 ```
 Luego ese tag se renderizará a lo que sea que hayamos escrito en el método `render` de ese componente, transformandose así en HTML finalmente.
 Existe una convención en React para distinguir entre Componentes React y elemento HTML nativos. Para el primero usamos BumpyCase y lowercase para el último. Por ejemplo:
-```
+
+```jsx
 <MostrarLista /> BumpyCase
 <div>            lowercase
 ```
@@ -714,7 +725,7 @@ Para poder hacerlo vamos a incorporar el concepto de ciclo de vida de React y su
 
 En la imagen de abajo, vemos el ciclo de vida Completo de cualquier Componente de React. En ella vemos también los estados en los que puede estar un Componente y qué cosas o funciones activarán el paso de estados y por ende la invocación de los métodos que nos provee React:
 
-![LifeCycle](./img/lifecycle.png)
+![LifeCycle](/_src/assets/08-React-Estado-LifeCycle/lifecycle.png)
 
 > Pueden ver este [Gist](https://gist.github.com/fay-jai/fc8a5093c0b5124d4b2d#file-react-lifecycle-parent-child-jsx) y probarlo localmente para tener un mayor entendimiento de _cuando_ se invoca cada método de React.
 

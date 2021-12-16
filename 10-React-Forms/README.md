@@ -1,4 +1,14 @@
-# Henry
+---
+title: React-Forms
+permalink: "/React-Forms/"
+feedbackID: 10-React-Forms
+eleventyNavigation:
+  key: React-Forms
+  order: 10
+---
+
+
+![HenryLogo](/_src/assets/logo-white.png)
 
 <table class="hide" width="100%" style='table-layout:fixed;'>
   <tr>
@@ -19,15 +29,15 @@
   </tr>
 </table>
 
-# Lesson 10 - React Forms
+# React Forms
 
 Los formularios son muy útiles en cualquier aplicacion WEB. En React tenemos que manejar estos formularios nosotros mismos. Por ejemplo: obtener los valores que se ingresan, cómo administramos el state del form, las validaciones de cada valor ingresado, mostrar los mensajes de validacion, etc. Existen diferentes métodos y librerias que nos ayudan con esto, pero como no queremos depender de codigo de otro, lo haremos nosotros.
 
-## Tipos de Componentes para un Formulario:
+## Tipos de Componentes para un Formulario:
 
 En React tenemos dos tipos de componentes para crear nuestro Form: `Controlled Components` y `Uncontrolled Components`. 
 
-# Componentes Controlados
+## Componentes Controlados
 
 Como sabemos, el estado en React es mutable, y lo mantenemos dentro del componente. En un componente controlado, que renderiza el Formulario, tambien controla lo que sucede con el. Es decir que a medida que cambien los valores del Form, el componente guarda esos valores en su state. Aqui vemos un pequeño ejemplo:
 

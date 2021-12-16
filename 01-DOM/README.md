@@ -1,4 +1,13 @@
-# Henry
+---
+title: DOM
+permalink: "/DOM/"
+feedbackID: 01-DOM
+eleventyNavigation:
+  key: DOM
+  order: 1
+---
+
+![HenryLogo](/_src/assets/logo-white.png)
 
 <table class="hide" width="100%" style='table-layout:fixed;'>
   <tr>
@@ -19,8 +28,9 @@
   </tr>
 </table>
 
-# Lesson 00 - DOM
+# DOM
 
+<div class="hide">
 En esta Lesson se verán los siguientes temas:
 
 * `DOM`
@@ -29,6 +39,8 @@ En esta Lesson se verán los siguientes temas:
 * `document` Selectors
 * Element Methods
 * Event Handlers
+
+</div>
 
 ## Introduction al `DOM`
 
@@ -63,13 +75,13 @@ Es posible inyectar código Javascript dentro de una página HTML utilizando el 
 
 *Nota: el atributo `type` debe colocarse como "text/javascript" y en el `src` se debe indicar la ubicación del archivo con código Javascript que queremos inyectar. Es posible también incluir la palabra `async` al final de la etiqueta para indicarle al navegador que debe cargar dicho script de forma asincrónica*
 
-## `document`
+## Document
 
 Mediante la ejecución de Javascript tenemos la posibilidad de acceder a un objeto global denominado `document` que contiene las propiedades del DOM y métodos de su prototipo que nos permiten acceder a los elementos del DOM y manipularlos.
 
 >En el motor de JS que se ejecuta en el browser, el objeto global es `document`, es decir que `this` apunta a `document` cuando lo usamos en el contexto global.
 
-## `document` Selectors
+## Selectors
 
 Cuando el Browser parsea el documento HTML, crea una estructura de árbol (el DOM), pensemos que el DOM es un modelo de la página en forma de objetos. JavaScript no sabe cómo trabajar con HTML, pero sí con objetos. Por lo tanto, cada elemento html que esté en el dom, podremos usarlo como un objeto, que tendrá sus propiedades y métodos. Dentro de todos los métodos que contiene `document` en su prototipo los más útiles son los **selectores**. Los **selectores** nos permitiran buscar y recuperar un elemento del DOM. (como cuando buscabamos un elemento en un árbol de búsqueda), sólo que ahora el elemento retornado es un objeto JS que representa una entidad HTML.
 

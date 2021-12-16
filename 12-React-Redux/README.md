@@ -1,4 +1,5 @@
-# Henry
+
+![HenryLogo](/_src/assets/logo-white.png)
 
 <table class="hide" width="100%" style='table-layout:fixed;'>
   <tr>
@@ -19,14 +20,14 @@
   </tr>
 </table>
 
-## Redux
+# React Redux
 
 <p align='center'>
-    <img src='https://camo.githubusercontent.com/f28b5bc7822f1b7bb28a96d8d09e7d79169248fc/687474703a2f2f692e696d6775722e636f6d2f4a65567164514d2e706e67'/>
+    <img alt="logo" src='https://camo.githubusercontent.com/f28b5bc7822f1b7bb28a96d8d09e7d79169248fc/687474703a2f2f692e696d6775722e636f6d2f4a65567164514d2e706e67'/>
 </p>
 
-```
-Redux is a predictable state container for JavaScript apps.
+```js
+//Redux is a predictable state container for JavaScript apps.
 ```
 
 Redux es una librería que nos va a ayudar a mantener el estado _global_ de nuestra aplicación.
@@ -139,7 +140,7 @@ Para hacerlo, empecemos repasando las ideas principiales que tenemos que impleme
 * Los usuarios disparan __acciones__ que describen qué sucedió.
 * Un _nuevo estado_ es generado, resultado de combinar el _viejo estado_ y la _acción_ del usuario. Este proceso lo realiza una función llamada __reducer__.
 
-![Diagrama Redux](./img/redux----redux-diagram.png)
+![Diagrama Redux](/_src/assets/12-React-Redux/redux----redux-diagram.png)
 
 ### Reducers
 
@@ -382,7 +383,7 @@ Lo primero que tenemos que incorporar para trabajar con Redux, es el workflow qu
 
 > Se podría considerar a `redux` cómo una implementación del patrón `flux` para react, también se podría considerar cómo un patrón por si mismo. ( De hecho, [ni sus autores se ponen de acuerdo en eso](http://redux.js.org/docs/introduction/PriorArt.html#flux) ) Lo cierto es que está influenciado por el patrón `flux`, usando por facebook.
 
-![WorkFlow](./img/ui_workflow.png)
+![WorkFlow](/_src/assets/12-React-Redux/ui_workflow.png)
 
 1. El `árbol de Estado` define la UI y las acciones posibles a través de `props`.
 2. Acciones realizadas por los usuarios son enviadas a un `action creator` que las normaliza.
@@ -598,7 +599,7 @@ export default App;
 
 Todos los Componentes Containers deben tener acceso al `Store` para que puedan suscribirse a ella. Una opción seria pasar el store como un prop a cada componente Container, pero esto se volvería tedioso muy rápidamente, y un posible punto de error. Lo que nos recomienda `redux` es usar un Componente especial de `react-redux` llamado `<Provider>` que [mágicamente](https://facebook.github.io/react/docs/context.html) hace que el Store esté disponible para todos los Container de nuestra app, sin pasarla explícitamente.
 
-```
+```jsx
 ...
 import { Provider } from 'react-redux'; //Bindings from redux and React
 import store, { history } from './store.js';

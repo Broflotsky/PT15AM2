@@ -1,4 +1,13 @@
-# Henry
+---
+title: Bundlers
+permalink: "/Bundlers/"
+feedbackID: 05-Bundlers
+eleventyNavigation:
+  key: Bundlers
+  order: 5
+---
+
+![HenryLogo](/_src/assets/logo-white.png)
 
 <table class="hide" width="100%" style='table-layout:fixed;'>
   <tr>
@@ -180,13 +189,13 @@ function require(name) {
 
 Para evitar tener que cargar el mismo módulo muchas veces, `require` tiene un *cache* de módulos que ya fueron cargados. Si el módulo ya fue invocado, estará en el objeto `cache`, si no, leerá el código del módulo, lo envolverá en una función e lo invocará.
 
-# Que son los Bundlers?
+## Que son los Bundlers?
 
 Bien, ahora que sabemos algo sobre módulos, veamos cómo estos revolucionaron la forma de escribir código para el front-end con la introducción de los bundlers.
 
 Como sabemos, la forma de importar librerías (que a su vez son módulos) en HTML es la siguiente:
 
-![scripts](./img/scripts.jpeg)
+![scripts](/_src/assets/05-Bundlers/scripts.jpeg)
 
 Si pensamos en detalle que sucede cuando importamos cada uno de esos scripts, veremos que básicamente todos terminan cayendo al mismo contexto, el global. Para salvar esto, las librerías básicamente elegían arbitrariamente un nombre de variable donde exponer su funcionalidad. Por ejemplo, `jQuery` utilizaba el signo `$`. Ahora bien, si otra librería decidía utilizar el mismo nombre de variable para su interfaz, tendríamos un conflicto, y ambas librerías no podrían ser usadas en el mismo HTML.
 
@@ -194,7 +203,7 @@ Al principio, sólo se importaba una cantidad pequeñas de librerías para el fr
 
 Acá aparecieron los **Module Bundlers**. Como por ejemplo: `Browserify`, `Webpack`, `Rollup`, etc... Básicamente lo que hacen es ejecutar un proceso que lee todas las dependencias de nuestro proyecto, y luego genera un archivo JS que contiene todos los módulos necesarios que podemos incluir en nuestro HTML.
 
-![Dependecy Graph](./img/graph.png)
+![Dependecy Graph](/_src/assets/05-Bundlers/graph.png)
 
 Hay dos cosas etapas en tarea de un Bundler:
 

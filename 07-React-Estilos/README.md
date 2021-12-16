@@ -1,4 +1,14 @@
-# Henry
+---
+title: 07-React-Estilos
+permalink: "/React-Estilos/"
+feedbackID: 07-React-Estilos
+eleventyNavigation:
+  key: React-Estilos
+  order: 7
+---
+
+
+![HenryLogo](/_src/assets/logo-white.png)
 
 <table class="hide" width="100%" style='table-layout:fixed;'>
   <tr>
@@ -29,7 +39,7 @@ Este es un tema muy particular, ya que se está cambiando la filosofía que teni
 
 Una de las formas de dar Estilos a los Componentes es usando el atributo `style` del mismo. En react esta propiedad recibe un _objeto JavaScript_ y no una _Css String_ como en HTML nativo. Por lo tanto, vamos a tener que cambiar un poco la sintaxis de las reglas _CSS_. Veamos el ejemplo de la [documentación](https://facebook.github.io/react/docs/dom-elements.html#style) de react:
 
-```
+```jsx
 const divStyle = {
   color: 'blue',
   backgroundImage: 'url(' + imgUrl + ')',
@@ -48,7 +58,7 @@ Como vemos, no podemos usar los mismos nombres de las propiedades _CSS_ porque t
 
 En los ejemplos anteriores usamos una clase para setear el estilo de un Link activo. La clase la habíamo definido en el `index.html` en donde se cargaba todo nuestro código, por lo tanto esa definición era accesible por los Links. Del mismo modo, si tenemos clases definidas de esa manera (podríamos usar un framework como Boostrap, por ejemplo), vamos a poder dar el nombre de las clases que tendrán nuestros Componentes y sus childrens, usando el keyword `className`. Como se imaginan el keyword `class` está reservado en JavaScript y no se puede utilizar para eso. Por ejemplo
 
-```
+```jsx
 function HelloWorldComponent() {
   return <div className='activado'>Hello World!</div>;
 }
@@ -69,7 +79,7 @@ Tambien tenemos que instalar, en este caso Bootstrap y jQuery: `npm install jque
 
 Ahora tenemos que configurar de nuevo nuestro `webpack.config` para hacer uso de los loaders nuevos, para eso vamosa a agregar entradas en el arreglo `loaders`:
 
-```javascript
+```js
 module.exports = {
     entry: [
         './index.js'
@@ -107,7 +117,7 @@ Todavía no hemos usado el `script-loader`, porque por ahora sólo estamos inclu
 
 Por último nos falta agregar Bootstrap en nuestro projecto, por lo tanto en nuestro `index.js` vamos a agregar la siguiente línea:
 
-```javascript
+```js
 require('bootstrap/dist/css/bootstrap.css');
 ```
 
@@ -118,7 +128,7 @@ Genial! Ahora ya tenemos por cargado Bootstrap en nuestra App, podemos verlo en 
 
 Ahora agregemos la clase `btn btn-default` a cada Link de nuestra Nav y vemos cómo queda:
 
-```
+```jsx
 <IndexLink className="btn btn-default" to="/" activeClassName="active" >Home</IndexLink>
 <Link className="btn btn-default" to="/about" activeClassName="active" >Componente2</Link>
 <Link className="btn btn-default" to="/ejemplos" activeClassName="active">Componente3</Link>
@@ -135,7 +145,7 @@ Veamos como hacerlo.
 
 Por empezar debemos incluir el archivo `.js` en nuestro `index.js`:
 
-```javascript
+```js
 require('script-loader!jquery/dist/jquery.min.js');
 require('bootstrap/dist/css/bootstrap.css');
 require('script-loader!bootstrap/dist/js/bootstrap.min.js');
@@ -146,7 +156,7 @@ Ahora sí estamos usando el `script-loader`, cuando cargamos jQuery. En este cas
 
 También existen otras formas de hacer lo mismo con webpack, pero indicando qué cosas necesitamos en el `webpack.config.js`. Para probarlo vamos a comentar las líneas de los requires:
 
-```javascript
+```js
 //require('script!jquery/dist/jquery.min.js');
 //require('bootstrap/dist/css/bootstrap.css');
 //require('bootstrap/dist/js/bootstrap.min.js');
@@ -154,7 +164,7 @@ También existen otras formas de hacer lo mismo con webpack, pero indicando qué
 
 Y vamosa  agregar los siguiente a nuestro `webpack.config.js`:
 
-```javascript
+```js
 module.exports = {
     entry: [
       'script-loader!jquery/dist/jquery.min.js',
@@ -207,7 +217,7 @@ Con _Webpack_ encontramos la forma de _importar_ estilos. Veamos que sucede cuan
 
 Bien, ahora vamos a ir a nuestro Componente `Home` y vamos a importarlo y usar la clase prueba en un `div`:
 
-```
+```jsx
 var React = require('react');
 var Link = require('react-router').Link;
 
@@ -226,7 +236,7 @@ module.exports = React.createClass({
 
 Antes de mostrar el resultado, vamos a ir a otro Componente, por ejempo `About` y usar la misma clase 'prueba', pero sin _importar_ la hoja de estilos:
 
-```javascript
+```js
 var React = require('react');
 var Link = require('react-router').Link;
 
@@ -247,7 +257,7 @@ Esto ocurre, porque en nuestro `webpack.config.js` hemos definido que cada archi
 
 Ahora, si no quisieramos que esto ocurra, tendremos que usar otro approach. Vamos a usar uno conocido como `CSS-Modules`, básicamente lo que vamos a hacer es dejar que webpack haga un poco de _magia_ usando los loaders que ya tenemos, y que cuando importemos el archivo CSS nos devuelva un objeto JS, con estilos listos para usar con react y con un _namespace_ local:
 
-```javascript
+```js
 {
   test: /\.ncss$/,
   loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]' 
@@ -258,7 +268,7 @@ Primero vamos a agregar esta entrada en los loaders, vamos a tener que usar otra
 
 Ahora, vamos a crear un archivo `estilos.ncss` con el mismo contenido que `estilos.css`. Y lo vamos a requerir en nuestro Componente `Home`:
 
-```java
+```js
 var prueba = require('../styles/estilos.ncss').prueba;
 
 module.exports = React.createClass({
@@ -301,7 +311,7 @@ Por ejemplo, si este fuera el `css` que importamos:
 
 Entonces podríamos usar las clases de la siguiente manera:
 
-```java
+```jsx
 var s = require('../styles/estilos.ncss');
 
 module.exports = React.createClass({
@@ -318,13 +328,13 @@ module.exports = React.createClass({
 
 Como vemos, si quisieramos que un mismo elemento tenga múltiples clases, podemos usar el siguiente _truco_:
 
-```javascript
+```js
 [s.title, s.size].join[' ']
 ```
 
 Esto funciona porque lo que hace el `style-loader` es darle un nombre único a cada clase del archivo `css`, y lo guarda en el objeto donde importamos bajo en una propiedad con el nombre orignal de la clase, y como valor el valor nuevo de la clase. Por ejemplo, si importamos `estilos.ncss` en el objeto `s` este sería algo así:
 
-```javascript
+```js
 
 var s = require('../styles/estilos.ncss');
 
@@ -344,6 +354,6 @@ Sabiendo esto, si hacemos un `join` de un arreglo formado por cada clase que use
 
 > Este cambio de filosofía es relativamente nuevo y todavía están surgiendo ideas nuevas y nuevas formas de hacer las cosas, asi que por ahora está sucediendo lo mismo que en este comic:
     
->![xkcd](./img/standards.png)
+>![xkcd](/_src/assets/07-React-Estilos/standards.png)
 
 > Estan apareciendo muchas formas distintas de incluir CSS en React, todavía no se puede decir cual es la mejor, todas tienen sus pros y sus contras. Así que hay que tener paciencia, probar varias y quedarse con la que más nos gusta. Lo importante es entender que está sucediendo por detrás.
