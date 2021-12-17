@@ -92,11 +92,7 @@ hr {
   margin-bottom: 1rem;
 }
 
-.lesson h3#podes-ver-el-contenido-de-todo-el-repositorio-en-formato-web-tipeando-npm-install-y-npm-start {
-  display: none
-}
-
-.lesson h3#corre-en-el-puerto-8080-por-defecto {
+.lesson h3:first-of-type  {
   display: none
 }
 
