@@ -77,6 +77,10 @@
   margin-bottom: 1rem;
 }
 
+hr {
+  display: none;
+}
+
 .lesson h3 {
   font-family: 'Avenir-Black';
   font-weight: 900;
@@ -86,6 +90,14 @@
   color: #2e2e2e;
   margin-top: 2rem;
   margin-bottom: 1rem;
+}
+
+.lesson h3#podes-ver-el-contenido-de-todo-el-repositorio-en-formato-web-tipeando-npm-install-y-npm-start {
+  display: none
+}
+
+.lesson h3#default-port-8080 {
+  display: none
 }
 
 .lesson h4 {
