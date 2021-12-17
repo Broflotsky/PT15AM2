@@ -13,7 +13,7 @@ eleventyNavigation:
 
 ### Podes ver el contenido de todo el repositorio en formato web tipeando `npm install` y `npm start`
 
-### Default port ***8080***
+### Corre en el puerto ***8080*** por defecto
 
 ---
 
