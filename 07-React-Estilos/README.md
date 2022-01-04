@@ -12,13 +12,13 @@ eleventyNavigation:
 
 <table class="hide" width="100%" style='table-layout:fixed;'>
   <tr>
-	  <td>
-	  	<a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=07-React-Estilos">
-			<img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
-			<br>
-			Hacé click acá para dejar tu feedback sobre esta clase.
-	  	</a>
-	  </td>
+   <td>
+    <a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=07-React-Estilos">
+   <img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
+   <br>
+   Hacé click acá para dejar tu feedback sobre esta clase.
+    </a>
+   </td>
               <td>
       <a href="https://quiz.soyhenry.com/evaluation/new/608f049d56b4056ff032a31f">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/HSQuiz.svg/768px-HSQuiz.svg.png" width="100" height="100"/>
@@ -50,7 +50,7 @@ function HelloWorldComponent() {
 }
 ```
 
-Como vemos, no podemos usar los mismos nombres de las propiedades _CSS_ porque tiene conflicto con el operador `-`, por lo tanto decidieron que es mejor utilizar los nombres de las reglas usando _camelCase_. 
+Como vemos, no podemos usar los mismos nombres de las propiedades _CSS_ porque tiene conflicto con el operador `-`, por lo tanto decidieron que es mejor utilizar los nombres de las reglas usando _camelCase_.
 
 > Existen traductores de CSS a CSS JavaScript como [este](http://staxmanade.com/CssToReact/).
 
@@ -69,6 +69,7 @@ function HelloWorldComponent() {
 Veamos como podemos usar Webpack, para _requerir_ un Framework y utilizarlo dentro de nuestra app. Para esto, vamos a necesitar instalar algunos `loaders` extras, para que Webpack sepa como manejar un `require(./estilo.css)` ya que no se tratan de archivos js!
 
 Para eso vamos a instalar varios `loaders`:
+
 * __css-loader__ : Sirve para requerir archivos `.css` y tenerlos como objetos JS.
 * __script-loader__: Algunos frameworks utilizan jQuery u otras librerías como dependencias, con este loader vamos a poder incluirlas también en nuestra app.
 * __style-loader__: Por último nos va a faltar inyectar el CSS en nuestro HTML, lo vamos a hacer usando este loader.
@@ -123,7 +124,6 @@ require('bootstrap/dist/css/bootstrap.css');
 
 Básicamente, estamos _importando_ el archivo .css de bootstrap que habíamos instalado con `npm`, y este es pasado por los loaders que hemos definido y así llega a nuestra página.
 
-
 Genial! Ahora ya tenemos por cargado Bootstrap en nuestra App, podemos verlo en los estilos de los Headers y Links!
 
 Ahora agregemos la clase `btn btn-default` a cada Link de nuestra Nav y vemos cómo queda:
@@ -133,7 +133,6 @@ Ahora agregemos la clase `btn btn-default` a cada Link de nuestra Nav y vemos c�
 <Link className="btn btn-default" to="/about" activeClassName="active" >Componente2</Link>
 <Link className="btn btn-default" to="/ejemplos" activeClassName="active">Componente3</Link>
 ```
-
 
 Ahora, vamos a probar agregar una NavBar de Bootstrap, podemos copiarla [acá](http://getbootstrap.com/components/#navbar).
 
@@ -152,7 +151,6 @@ require('script-loader!bootstrap/dist/js/bootstrap.min.js');
 ```
 
 Ahora sí estamos usando el `script-loader`, cuando cargamos jQuery. En este caso lo usamos, porque necesitamos que jQuery este accesible de manera global, así el `js` de bootstrap pueda acceder a él.
-
 
 También existen otras formas de hacer lo mismo con webpack, pero indicando qué cosas necesitamos en el `webpack.config.js`. Para probarlo vamos a comentar las líneas de los requires:
 
@@ -203,7 +201,6 @@ module.exports = {
 Lo que hicimos fue decirle a Webpack que nos incluya en el `bundle` a los archivos necesarios, lo hicimos agregando cada uno de ellos en el arreglo `entry`. Noten que a jquery `.js` tuvimos que avisarle que utilize el loader `script`, ya que necesitamos que sea _global_.
 
 > __Webpack__ es genial, pero también es muy complejo. A veces se hace díficil pensar que está haciendo por atrás. Además hay miles de formas de hacer lo mismo, lo que no lo hace más sencillo.
-
 
 ## Nuestros propios estilos
 
@@ -285,7 +282,6 @@ module.exports = React.createClass({
 
 Como ven, requerimos el archivo, y el nombre de la clase como propiedad del mismo. Y luego utilizamos la variable donde lo guardamos como `className`.
 
-
 Bien! Hemos logrado importar un archivo css de manera local. El Componente `About` sigue teniendo la clase `prueba`, pero no se activa con el CSS que hemos importado. Esto se debe a que Webpack le puso un hash al nombre de la clase para que sea único, en nuestro ejemplo la clase `.prueba` terminó llamandose `.estilos__prueba___2wKns`, emulando así un _namespace_ local en CSS.
 
 #### Múltiples clases
@@ -353,7 +349,7 @@ Sabiendo esto, si hacemos un `join` de un arreglo formado por cada clase que use
 ---
 
 > Este cambio de filosofía es relativamente nuevo y todavía están surgiendo ideas nuevas y nuevas formas de hacer las cosas, asi que por ahora está sucediendo lo mismo que en este comic:
-    
+
 >![xkcd](/_src/assets/07-React-Estilos/standards.png)
 
 > Estan apareciendo muchas formas distintas de incluir CSS en React, todavía no se puede decir cual es la mejor, todas tienen sus pros y sus contras. Así que hay que tener paciencia, probar varias y quedarse con la que más nos gusta. Lo importante es entender que está sucediendo por detrás.
