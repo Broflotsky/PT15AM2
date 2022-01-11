@@ -1,0 +1,10 @@
+{
+  "lessonTitle": "React-Intro",
+  "permalink": "/React-Intro/",
+  "feedbackID": "06-React-Intro",
+  "homeworkUrl" : "https://github.com/soyHenry/FT-M2/blob/master/06-React-Intro/homework/README.md",
+  "eleventyNavigation": {
+    "key": "React",
+    "order": 6
+  }
+}

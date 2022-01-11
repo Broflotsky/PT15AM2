@@ -1,0 +1,10 @@
+{
+  "lessonTitle": "React-LifeCycle",
+  "permalink": "/React-Estado-LifeCycle/",
+  "feedbackID": "08-React-Estado-LifeCycle",
+  "homeworkUrl" : "https://github.com/soyHenry/FT-M2/blob/master/08-React-Estado-LifeCycle/homework/README.md",
+  "eleventyNavigation": {
+    "key": "React-LifeCycle",
+    "order": 8
+  }
+}

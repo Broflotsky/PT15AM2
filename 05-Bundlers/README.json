@@ -1,0 +1,10 @@
+{
+  "lessonTitle": "Bundlers",
+  "permalink": "/Bundlers/",
+  "feedbackID": "05-Bundlers",
+  "homeworkUrl" : "https://github.com/soyHenry/FT-M2/blob/master/05-Bundlers/homework/README.md",
+  "eleventyNavigation": {
+    "key": "Bundlers",
+    "order": 5
+  }
+}

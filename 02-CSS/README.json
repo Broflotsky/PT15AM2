@@ -1,0 +1,10 @@
+{
+  "lessonTitle": "CSS",
+  "permalink": "/CSS/",
+  "feedbackID": "02-CSS",
+  "homeworkUrl": "https://github.com/soyHenry/FT-M2/blob/master/02-CSS/homework/README.md",
+  "eleventyNavigation": {
+    "key": "CSS",
+    "order": 2
+  }
+}

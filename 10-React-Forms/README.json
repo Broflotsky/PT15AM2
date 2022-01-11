@@ -1,0 +1,10 @@
+{
+  "lessonTitle": "React-Forms",
+  "permalink": "/React-Forms/",
+  "feedbackID": "10-React-Forms",
+  "homeworkUrl" : "https://github.com/soyHenry/FT-M2/blob/master/10-React-Forms/homework/README.md",
+  "eleventyNavigation": {
+    "key": "Forms",
+    "order": 10
+  }
+}

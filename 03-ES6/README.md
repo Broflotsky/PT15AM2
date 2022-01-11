@@ -1,30 +1,21 @@
----
-title: ES6
-permalink: "/ES6/"
-feedbackID: 03-ES6
-eleventyNavigation:
-  key: ES6
-  order: 3
----
-
 ![HenryLogo](https://static.wixstatic.com/media/85087f_0d84cbeaeb824fca8f7ff18d7c9eaafd~mv2.png/v1/fill/w_160,h_30,al_c,q_85,usm_0.66_1.00_0.01/Logo_completo_Color_1PNG.webp)
 
 <table class="hide" width="100%" style='table-layout:fixed;'>
   <tr>
-	  <td>
-	  	<a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=03-ES6">
-			<img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
-			<br>
-			Hacé click acá para dejar tu feedback sobre esta clase.
-	  	</a>
-	  </td>
+   <td>
+    <a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=03-ES6">
+   <img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
+   <br>
+   Hacé click acá para dejar tu feedback sobre esta clase.
+    </a>
+   </td>
               <td>
-	    <a href="https://quiz.soyhenry.com/evaluation/new/606f6127656c8d23c2e60f50">
-	    	<img  src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/HSQuiz.svg/768px-HSQuiz.svg.png" width="100" height="100"/>
-	    	<br>
-	    	Hacé click acá completar el quiz teórico de esta lecture.
-	    </a>
-	 </td>
+     <a href="https://quiz.soyhenry.com/evaluation/new/606f6127656c8d23c2e60f50">
+      <img  src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/HSQuiz.svg/768px-HSQuiz.svg.png" width="100" height="100"/>
+      <br>
+      Hacé click acá completar el quiz teórico de esta lecture.
+     </a>
+  </td>
   </tr>
 </table>
 
@@ -516,7 +507,6 @@ var p = timeout(1000).then(() => {
 
 Más info: [MDN Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
-
 ### Tail Calls
 
 Se puede implementar llamadas recursivas sin tener que agregar un un frame al `call stack` haciendo que sea segura la ejecución de una función recursiva (sin temer por el stack overflow).
@@ -536,6 +526,7 @@ factorial(100000)
 > Podemos ver una lista de features más detallada y comparada con la versión anterior [aquí](http://es6-features.org/)
 
 ### Optional Chaining
+
 El operador de encadenamiento opcional `?.` permite leer el valor de una propiedad ubicada dentro de una cadena de objetos conectados sin tener que validar expresamente que cada referencia en la cadena sea válida. El operador `?.` funciona de manera similar a el operador de encadenamiento `.` , excepto que en lugar de causar un error si una referencia es `null` o `undefined`, la expresión hace una short-circuit evaluation (`la evaluacion del segundo termino solo se efectua si el primero no permite definir un resultado ej: (true ||false)---> da verdadero sin siquiera pasar por false`) con un valor de retorno de `undefined`. Cuando se usa con llamadas a funciones, devuelve `undefined` si la función dada no existe.
 Esto da como resultado expresiones más cortas y simples cuando se accede a propiedades encadenadas dónde existe la posibilidad de que falte una referencia. También puede ser útil al explorar el contenido de un objeto cuando no hay una garantía conocida de qué propiedades se requieren.
 

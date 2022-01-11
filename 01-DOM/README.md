@@ -1,34 +1,27 @@
----
-title: DOM
-permalink: "/DOM/"
-feedbackID: 01-DOM
-eleventyNavigation:
-  key: DOM
-  order: 1
----
-
 ![HenryLogo](https://static.wixstatic.com/media/85087f_0d84cbeaeb824fca8f7ff18d7c9eaafd~mv2.png/v1/fill/w_160,h_30,al_c,q_85,usm_0.66_1.00_0.01/Logo_completo_Color_1PNG.webp)
 
 <table class="hide" width="100%" style='table-layout:fixed;'>
   <tr>
-	  <td>
-	  	<a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=01-DOM">
-			<img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
-			<br>
-			Hacé click acá para dejar tu feedback sobre esta clase.
-	  	</a>
-	  </td>
+   <td>
+    <a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=01-DOM">
+   <img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
+   <br>
+   Hacé click acá para dejar tu feedback sobre esta clase.
+    </a>
+   </td>
           <td>
-	    <a href="https://quiz.soyhenry.com/evaluation/new/606da62a656c8d23c2e60e8c">
-	    	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/HSQuiz.svg/768px-HSQuiz.svg.png" width="100" height="100"/>
-	    	<br>
-	    	Hacé click acá completar el quizz teórico de esta lecture.
-	    </a>
-	 </td>
+     <a href="https://quiz.soyhenry.com/evaluation/new/606da62a656c8d23c2e60e8c">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/HSQuiz.svg/768px-HSQuiz.svg.png" width="100" height="100"/>
+      <br>
+      Hacé click acá completar el quizz teórico de esta lecture.
+     </a>
+  </td>
   </tr>
 </table>
 
 # DOM
+
+#### Introducción al *DOM*
 
 <div class="hide">
 En esta Lesson se verán los siguientes temas:
@@ -41,8 +34,6 @@ En esta Lesson se verán los siguientes temas:
 * Event Handlers
 
 </div>
-
-## Introduction al *DOM*
 
 El nombre `DOM` proviene de sus siglas en ingles de 'Document Object Model'. Cuando un navegador carga una página web, toma todo el contenido HTML y genera un modelo para dicho contenido. Utilizando código Javascript podemos acceder y manipular ese modelo ya sea agregando o quitando elementos, cambiando sus atributos y también modificando sus estilos.
 
@@ -107,7 +98,7 @@ Los principales 5 selectores son los siguientes:
 
 *En este ejempo estamos buscando el elemento cuyo id es igual a 'divId'*
 
-##querySelecto
+## querySelecto
 
 `document.querySelector` es un método que busca los elementos basándose en uno o más selectores CSS. Recordemos que es posible hacer referencia a clases utilizando un `.`, a ids con `#` y a elementos usando el nombre de su etiqueta directamente. Es recomendable utilizar sólo ids con `querySelector` ya que sólo retornará el primer elemento que coincida con el selector indicado. Ejemplo:
 
@@ -134,6 +125,7 @@ En el caso de que queramos crear un elemento para agregarlo al `DOM` podemos uti
 ```javascript
     const newDiv = document.createElement('div');
 ```
+
 *En este ejemplo estamos creando un nuevo elemento 'div' vacío*
 
 ## Element Methods
@@ -199,6 +191,7 @@ Es posible agregar elementos directamente al `DOM` utilizando `.appendChild` sob
     body.appendChild(newDiv); // Agregarmos el div recién creado dentro del body de la paǵina
 
 ```
+
 ## Event Listeners
 
 Un `Event Listener` es una función que se ejecuta luego de que ocurra un determinado evento. Existen diferentes tipos de eventos, entre ellos se encuentran: un click, un desplazamiento del mouse por encima del elemento, el apretado de una tecla, etc. Para ver la lista completa pueden consultar el siguiente [link](https://developer.mozilla.org/es/docs/Web/Events)

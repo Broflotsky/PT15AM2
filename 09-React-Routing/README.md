@@ -1,24 +1,14 @@
----
-title: React-Routing
-permalink: "/React-Routing/"
-feedbackID: 09-React-Routing
-eleventyNavigation:
-  key: React-Routing
-  order: 9
----
-
-
 ![HenryLogo](https://static.wixstatic.com/media/85087f_0d84cbeaeb824fca8f7ff18d7c9eaafd~mv2.png/v1/fill/w_160,h_30,al_c,q_85,usm_0.66_1.00_0.01/Logo_completo_Color_1PNG.webp)
 
 <table class="hide" width="100%" style='table-layout:fixed;'>
   <tr>
-	  <td>
-	  	<a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=09-React-Routing">
-			<img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
-			<br>
-			Hacé click acá para dejar tu feedback sobre esta clase.
-	  	</a>
-	  </td>
+   <td>
+    <a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=09-React-Routing">
+   <img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
+   <br>
+   Hacé click acá para dejar tu feedback sobre esta clase.
+    </a>
+   </td>
               <td>
       <a href="https://quiz.soyhenry.com/evaluation/new/607ee76b56b4056ff03288da">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/HSQuiz.svg/768px-HSQuiz.svg.png" width="100" height="100"/>
@@ -35,7 +25,7 @@ Vamos a ver que muchísimos proyectos de _React_ están construidos comos __SPA_
 
 ## React Router
 
-Según su descripción en su [repo](https://github.com/ReactTraining/react-router), __react-router__ sirve para mantener sincronizados tu _UI_ con la _url_ de una forma _declarativa_. 
+Según su descripción en su [repo](https://github.com/ReactTraining/react-router), __react-router__ sirve para mantener sincronizados tu _UI_ con la _url_ de una forma _declarativa_.
 
 Nosotros utilizaremos react-router-dom, que contiene los componentes basicos de `react-router` mas componentes extras que iremos utilizando. Básicamente, lo que nos da `react-router-dom` son una serie de  _Componentes_, los cuales van a recibir ciertas _props_ que le van cambiar el comportamiento. La idea entonces será tener un _Componente_ principal que se va a cargar en nuestra página ( la única que vamos a tener ), y este se encargará de llamar a nuestro __Componentes__ que querramos mostrar según a donde navegue el usuario.
 Por ejemplo:
@@ -86,6 +76,7 @@ ReactDOM.render((
 
 Primero vemos que vamos a envolver todo en un Componente llamador `BrowserRouter`.
 Dentro de `BrowserRouter`, vamos a agregar nuestras rutas. En este caso agregamos dos, usando `<Route>`. A este Componente hay que pasarle dos propiedades:
+
 * _path_: Es el path de la __url__ que va a activar esta ruta.
 * _component_: Es el componente que se va a cargar cuando ingresemos a la ruta definida en el _path_.
 * _exact_: Agregamos esta keyword para que matchee exactamente con el path que le pasamos. Este parametro entra en juego cuando tenemos path anidados.
@@ -193,6 +184,7 @@ ReactDOM.render(
   document.getElementById('app')
 );
 ```
+
 Ahora introduciomos otro componente de 'react-router-dom', <Switch>, este es único en el sentido de que representa una ruta exclusivamente. Por ej, si estamos en /about, <Switch> comenzará a buscar una <Route> coincidente. <Route path = "/about" /> coincidirá y <Switch> dejará de buscar coincidencias y mostrará <About>. Básicamente lo que va a ocurrir, es que cuando se cargué la página, se va a invocar al Componente raíz que matchee con la ruta ( en este ejemplo: `/` ), y si cambiamos de ruta por ejemplo /ejemplos, <Switch> empezara a buscar y en el primer match renderizara la ruta, en este caso el componente <Ejemplo>. Ponemos el path "/" ya que siempre sera match entonces sera nuestra ruta por default.
  Afuera de nuestro `Switch` pondremos nuestro componente <NavBar />, que no tendra ningun path para nuestra url, y renderizara siempra. Este sera nuestro componente que nos permitira movernos a las rutas que tengamos en nuestro `Switch`.
 
@@ -218,6 +210,7 @@ Bien, vemos que renderiza bien la barra de navegación en todas las páginas, pe
     <NavLink to="/ejemplo" activeClassName="active">Componente3</NavLink>
   </div>
 ```
+
 El parametro `exact` cuando lo pasamos nuestra `activeClassName` solo se aplicará si la ubicación coincida exactamente.
 
 ![NavBarOK](/_src/assets/09-React-Routing/reactNavBarOk.gif)

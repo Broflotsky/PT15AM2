@@ -1,34 +1,23 @@
----
-title: React-Intro
-permalink: "/React-Intro/"
-feedbackID: 06-React-Intro
-eleventyNavigation:
-  key: React-Intro
-  order: 6
----
-
 ![HenryLogo](https://static.wixstatic.com/media/85087f_0d84cbeaeb824fca8f7ff18d7c9eaafd~mv2.png/v1/fill/w_160,h_30,al_c,q_85,usm_0.66_1.00_0.01/Logo_completo_Color_1PNG.webp)
 
 <table class="hide" width="100%" style='table-layout:fixed;'>
   <tr>
-	  <td>
-	  	<a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=06-React-Intro">
-			<img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
-			<br>
-			Hacé click acá para dejar tu feedback sobre esta clase.
-	  	</a>
-	            <td>
+   <td>
+    <a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=06-React-Intro">
+   <img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
+   <br>
+   Hacé click acá para dejar tu feedback sobre esta clase.
+    </a>
+             <td>
       <a href="https://quiz.soyhenry.com/evaluation/new/606b936e656c8d23c2e60e8a">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/HSQuiz.svg/768px-HSQuiz.svg.png" width="100" height="100"/>
         <br>
         Hacé click acá completar el quiz teórico de esta lecture.
       </a>
    </td>
-		</td>
+  </td>
   </tr>
 </table>
-
-
 
 # REACT
 
@@ -36,7 +25,8 @@ eleventyNavigation:
 
 React es una librería de JavaScript que es declarativa, eficiente y flexible y sirve para construir interfaces de usuarios. Esta librería fue creada por el equipo de _facebook_ e _instagram_, que fue liberada y ahora es un proyecto __open source__.
 
-> La diferencia entre programación declarativa o imperativa, es que en la primera le _decimos_ a la computadora __qué__ queremos hacer (ella se encarga de saber cómo), mientras que en programación _imperativa_ le decimos exactamente __cómo__ queremos que se hagan las cosas. Puede que parezcan dos cosas iguales, pero veamos la diferencia con un ejemplo: 
+> La diferencia entre programación declarativa o imperativa, es que en la primera le _decimos_ a la computadora __qué__ queremos hacer (ella se encarga de saber cómo), mientras que en programación _imperativa_ le decimos exactamente __cómo__ queremos que se hagan las cosas. Puede que parezcan dos cosas iguales, pero veamos la diferencia con un ejemplo:
+
   ```javascript
   const numbers = [4,2,3,6];
   //imperativo (le decimos COMO queremos que se hagan las cosas)
@@ -65,17 +55,17 @@ Cuando queremos rastrear cambios en algún modelo y luego trasladarlos al DOM (r
 
 Para el primer punto react utiliza un [modelo de observador](https://en.wikipedia.org/wiki/Observer_pattern) ( esto quiere decir que no tiene que estar revisando continuamente por cambios ). Por lo tanto cuando algo cambia este le _avisa_ a react inmediatamente.
 
-Para el segundo punto, React construye una representación del DOM en memoria y calcula que elementos del DOM van a cambiar. Hacer cambios en el DOM consume muchos recursos, es por eso que se concentraron tanto en minimizar al máximo los cambios en el DOM real. Muy básicamente, cuando algo cambia en el estado del modelo, la idea es no tocar el DOM e ir haciendo cambios en el Virtual DOM, luego se computan las diferencias entre el DOM real y el virtual DOM ( para esto se utilizan [algoritmos de diferencia bastante copados](http://snip.ly/ywCe#http://calendar.perfplanet.com/2013/diff/) ), y finalmente se realizan la menor cantidad de cambios posibles al DOM real. 
+Para el segundo punto, React construye una representación del DOM en memoria y calcula que elementos del DOM van a cambiar. Hacer cambios en el DOM consume muchos recursos, es por eso que se concentraron tanto en minimizar al máximo los cambios en el DOM real. Muy básicamente, cuando algo cambia en el estado del modelo, la idea es no tocar el DOM e ir haciendo cambios en el Virtual DOM, luego se computan las diferencias entre el DOM real y el virtual DOM ( para esto se utilizan [algoritmos de diferencia bastante copados](http://snip.ly/ywCe#http://calendar.perfplanet.com/2013/diff/) ), y finalmente se realizan la menor cantidad de cambios posibles al DOM real.
 
 ### Component Driven Development
 
-Miremos la imagen de abajo, cada cajita con un color particular representa un componente. Esta es una de las muchas formas de poder dividir un solo elemento o feature de nuestro sitio. Según esta división tendríamos la jerarquía de componentes que se muestran a la derecha de la imagen: 
+Miremos la imagen de abajo, cada cajita con un color particular representa un componente. Esta es una de las muchas formas de poder dividir un solo elemento o feature de nuestro sitio. Según esta división tendríamos la jerarquía de componentes que se muestran a la derecha de la imagen:
 
 ![componentes](/_src/assets/06-React-Intro/react_component_hierarchy.png)
 
 ##### Qué debería contener un _Componente_?
 
-Para diseñar componentes es importante tener en cuenta el principio de diseño llamado _[single responsabilty principle](https://en.wikipedia.org/wiki/Single_responsibility_principle)_, o _princio de responsabilidad única_, basicamente deberíamos diseñar cada componente para que sea responsable de _sólo_ una cosa. Pensar de este modo no es fácil, [acá](https://facebook.github.io/react/docs/thinking-in-react.html) hay un tutorial de _facebook_ para empezar a pensar en componentes. 
+Para diseñar componentes es importante tener en cuenta el principio de diseño llamado _[single responsabilty principle](https://en.wikipedia.org/wiki/Single_responsibility_principle)_, o _princio de responsabilidad única_, basicamente deberíamos diseñar cada componente para que sea responsable de _sólo_ una cosa. Pensar de este modo no es fácil, [acá](https://facebook.github.io/react/docs/thinking-in-react.html) hay un tutorial de _facebook_ para empezar a pensar en componentes.
 
 De todos modos, la mejor forma de aprender es la práctica. Al usar React, te vas a ir dando cuenta cuando te conviene subdividir un componente en otros o no. De hecho, no te deberías preocupar tanto por asumir esta mentalidad antes de empezar, aceptá el hecho que mientas desarrolles con react vas a ir cambiando solo la mentalidad, y no al revés.
 
@@ -94,7 +84,6 @@ Vamos a ver los siguentes componentes:
 * Webpack: Es una herramienta que agrupa modulos de JavaScript (entre otras cosas que hace), o mejor dicho, agrupa código, lo vamos a usar para crear el pipeline para desarrollar con React.
 * Babel: Es una librería/herramienta que nos permite transformar nuestro código. Con React vamos a usar JSX, que es un lenguaje construido sobre JS, Babel lo va a transformar a JS normal.
 
-
 ### La Manera Sencilla
 
 La forma más fácil y rápida para poder empezar a ver _como es_ React es a traves de un documento HTML. Ojo, esta no es la _mejor_ forma ni la que usaremos en adelante.
@@ -112,6 +101,7 @@ Aca veremos dos formas de representar un componente en React. Componente basado 
   <body></body>
 </html>
 ```
+
 Como puedes comprobar solo estamos haciendo referencia a dos ficheros ficheros JavaScript:
 
 * __react.js__: La librería principal de ReactJS.
@@ -159,7 +149,7 @@ Algunas tareas de las que se encargan estos gestores de proceso pueden ser:
 * Minificar código.
 * Concatenar archivos.
 * Correr los tests automáticamente.
-* etc... 
+* etc...
 
 > Existen varios gestores de procesos buenos y populares, los más usados son: [Grunt](http://gruntjs.com/), [Gulp!](http://gulpjs.com/) y [Webpack](http://webpack.github.io/). Nosotros vamos a usar _Webpack_, pero podrían hacer lo mismo con los otros.
 
@@ -186,7 +176,7 @@ module.exports.doSomething = function() {
 Vamos a empezar instalando y configurando Webpack. Voy a aclarar al principio que Webpack es una herramienta muy poderosa, por ende compleja, y lamentablemente su documentación no es la mejor. Por lo tanto, nos va a parecer complejo al principio, pero rápidamente nos vamos a encariñar con todas las cosas que podemos hacer con Webpack.
 
 ```shell
-$ npm i -D webpack webpack-cli
+npm i -D webpack webpack-cli
 ```
 
 Como dijimos, Webpack es una herramienta que va a aplicar ciertas _transformaciones_ a nuestro código, por ende para funcionar webpack necesita saber:
@@ -218,7 +208,6 @@ Bien, ahora para el segundo punto, tenemos que definir qué tipo de transformaci
 
 > Para usar un loader, es necesario tenerlo instalado antes. Para eso vamos a usar `npm`. Por ejemplo, si quiero usar el `loader` de babel debería hacer: `npm i -D @babel/core @babel/preset-env @babel/preset-react babel-loader`.
 
-
 ```javascript
 module.exports = {
   entry: [
@@ -231,10 +220,11 @@ module.exports = {
   },
 }
 ```
+
 En el ejemplo, usamos un `loader` de _coffeeScript_. Como se ve, también agreamos una propiedad llamada `module` que será un objeto dentro del cual aparecerá la propiedad `loaders` que será un arreglo de objetos. Cada objeto dentro de este arreglo representa una transformacion.
 Vemos que ese objeto tiene tres propiedades: `test`, `exclude`, y `loader`. La primera hace referencia a qué archivos deberán pasar por la transformación, y recibe como valor una __expresión regular__, en nuestro ejemplo estamos diciendo que pasarán por la transformación todos los archivos terminados en `.coffee`. La segunda, `exclude` le indica a webpack qué directorios excluir, en nuestro ejemplo (y siempre lo haremos) excluimos `node_modules`, donde sabemos que no habrá código para transformar. Finalmente, en la propiedad `loader` vamos a poner el nombre del loader que queremos usar, en este caso el nombre es "coffee-loader".
 
-> Siempre busquen los loaders que necesiten dentro del ecosistema npm. 
+> Siempre busquen los loaders que necesiten dentro del ecosistema npm.
 
 Por último, vamos a agregar donde queremos que webpack deposite los archivos luego de la transformación:
 
@@ -316,10 +306,11 @@ module.exports = {
 Por último vamos a tener que usar `npm` para instalar las dependencias:
 
 ```shell
-$ npm install -D @babel/core @babel/preset-env @babel/preset-react babel-loader
+npm install -D @babel/core @babel/preset-env @babel/preset-react babel-loader
 ```
+
 ```shell
-$ npm install react react-dom --save
+npm install react react-dom --save
 ```
 
 Para poder ejecutar webpack, debemos agregar dentro de `scripts` en nuestro `package.json` lo siguiente:
@@ -378,7 +369,7 @@ Básicamente, __JSX__ es _syntactic sugar_ para una función en particular de Re
 
 Veamos un ejemplo:
 
-Sin __JSX__: 
+Sin __JSX__:
 
 ```javascript
 React.createElement(
@@ -399,6 +390,7 @@ Con __JSX__:
 Esta es la razón de ser de __JSX__, podemos leer más en detalle las demás features que nos ofrece [acá](https://facebook.github.io/react/docs/jsx-in-depth.html).
 
 Podemos ir a la página de `babel` y ver cómo se transforme el código _JSX_ en Javascript plano:
+
 ```javascript
 // Código en JSX, componente basado en clases
 class HelloWorld extends React.Component{
@@ -455,12 +447,11 @@ Como podemos ver, la transformación toma los datos y lo transforma a código Ja
 
 Pueden ver más transformaciones que realiza _babel_ [acá](https://babeljs.io/repl/#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&spec=false&loose=false&code_lz=G4QwTgBAEgpgNnA9gdUWOATCBeCAlGEAYwBcA6IsQkmAYThAGdGAKAbwCgIIqA7DGGABcEAGYBXXqQCWiXiwCUnbtyolxYXhBZcV3ADwZpwAHy69BgA4mAooxKIIMRhEkRLAQ7BgQoxPoB6a3MLfWsAWWk-CCJEAFtHACEQACN4CBIfXkY_MDiQDMQMRwBaEwhA4IsVfQALACYTAGUYCGBxeGBW2LjLOGkiEGKAGgheRAB-QIazaoMjUxDquoBGcvCYACs0V0YYBJcAKSaADQBCM4qA2rWlmoCF2dCH4yfuBV0AXw5PhQBuDgcAjEEgAEQA8uEyHwBGAWPpYAgUGhMBAAiZRsUiOI4jBeOQAOYwEg2OD7PEkRIATwAkhgWAByECWSwMhT_IA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=true&fileSize=false&timeTravel=false&sourceType=module&lineWrap=false&presets=react%2Cstage-2&prettier=false&targets=&version=7.9.6&externalPlugins=);
 
-
 ### Creando nuestro primer componente
 
 >Usemos el ejemplo de arriba, pero pensemos paso a paso cómo crear ese componente.
 
-Como podemos imaginar, un _Componente_ en react está representado por una clase o un objeto llamado _Component_. Este tiene incorporado una serie de propiedades y métodos, los cuales logran el comportamiento y le dan el poder de React. 
+Como podemos imaginar, un _Componente_ en react está representado por una clase o un objeto llamado _Component_. Este tiene incorporado una serie de propiedades y métodos, los cuales logran el comportamiento y le dan el poder de React.
 
 Cuando nosotros creamos un componente nuevo, básicamente _heredamos_ todas esas propiedades y métodos del objeto _Component_ y luego customizamos el nuevo componente según nuestras necesidades. Veamos un ejemplo con un componente de clases:
 
@@ -479,6 +470,7 @@ class HelloWorld extends React.Component {
 };
 ReactDOM.render(<HelloWorld />, document.getElementById('app'));
 ```
+
 Del mismo modo podemos ver el ejemplo con un componente de funcion:
 
 ```javascript
@@ -527,6 +519,7 @@ ReactDOM.render(<HelloWorld name={nombreVariable} />, document.getElementById('a
 ```
 
 En un componente de funcion:
+
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -639,6 +632,7 @@ function HelloWorld(props) {
 
 ReactDOM.render(<HelloWorld name='Soy Henry!' />, document.getElementById('app'));
 ```
+
 En el caso de un componente de funcion, no podemos usar el atributo `ref` ya que esta no puede ser instanciada, y no tenemos el uso de la palabra `this` para hacer referencia a 'refs' dentro de la clase. Aca estamos usando una nueva caracteristica de React que son los Hooks. En este caso estamos importando el Hook `useRef`, que lo iniciamos con un argumento, en este caso null, cuya propiedad `.current` se inicializa sobre el argumento pasado. En este caso pasamos un objeto de referencia a React con `ref`, React configurará su propiedad `.current` al nodo del DOM correspondiente cuando sea que el nodo cambie.
 
 Como vemos, logramos tener el `alert` con el nombre que escribió el usuario. Ahora, ya sabemos que los `alert`s no sirven. Intenemos hacer que cuando el usuario haga click en el botón se cambie el nombre en el saludo. Para esto vamos a introducir el concepto de __Estado__ de un componente.
@@ -683,6 +677,7 @@ class MostrarLista extends React.Component {
   }
 };
 ```
+
 Lo primero que notamos es que usamos _JS_ para crear elementos HTMl más complejos. En esta caso usamos la función `map`, para crear un elemento `<li>` por cada _amigo_ en la lista o arreglo.
 Viendo el ejemplo anterior usando funciones:
 
@@ -710,9 +705,11 @@ function MostrasLista({ names }) {
   )
 };
 ```
+
 Aca podemos usar `destructuring` para pasar las props directamente con el nombre de la variable `names`
 
 > Por si no se acuerdan como funciona map:
+
 ```javascript
 const amigos = ['Santi', 'Guille', 'Facu', 'Solano'];
 const lista = amigos.map(amigo => "<li> " + amigo + "</li>");
@@ -721,16 +718,17 @@ console.log(lista); //['<li> Santi</li>', '<li> Guille</li>', '<li> Facu</li>', 
 
 Justamente ese nuevo conjunto de `li`s que hemos creado, lo vamos a usar envuelto en tags `<ul>` para formar la lista de amigos.
 
-
 ## Etiquetas HTML y Componentes
 
 Los componentes que creamos en React despues los usamos escribiendolos como un tag HTML, en realidad es un tag [XML](https://www.quora.com/What-is-the-difference-between-HTML-and-XML). Por ejemplo: el tag `MostrarLista` es un Componente que creamos antes y lo usamos así:
+
 ```html
 <div>
   <h3> Nombre: {name} </h3>
   <MostrarLista names={amigos} />
 </div>
 ```
+
 Luego ese tag se renderizará a lo que sea que hayamos escrito en el método `render` de ese componente, transformandose así en HTML finalmente.
 Existe una convención en React para distinguir entre Componentes React y elemento HTML nativos. Para el primero usamos BumpyCase y lowercase para el último. Por ejemplo:
 
@@ -787,7 +785,7 @@ De esta forma vamos a poder organizar muy bien nuestros componentes en distintos
 
 ## React y Funciones Puras
 
-Como vimos recién vamos a poder usar todo lo que sabemos de JS para codear con React. Pensemoslo así, en vez de tener _funciones_ que tomen argumentos y  retornen  valores y objetos, en React vamos a tener _funciones_ que tomen argumentos y retornen __UI (user interfaces)__.  Podemos resumir este concepto en `f(d) = V`, es decir, una función toma `d` argumentos y retorna una __View__. Esta es una buena forma de desarrollar interfaces, porque ahora toda tu interfaz este compuesta de invocaciones a funciones, que es la forma en que estamos acostumbrados a programar nuestras aplicaciones. Veamos este concepto en código: 
+Como vimos recién vamos a poder usar todo lo que sabemos de JS para codear con React. Pensemoslo así, en vez de tener _funciones_ que tomen argumentos y  retornen  valores y objetos, en React vamos a tener _funciones_ que tomen argumentos y retornen __UI (user interfaces)__.  Podemos resumir este concepto en `f(d) = V`, es decir, una función toma `d` argumentos y retorna una __View__. Esta es una buena forma de desarrollar interfaces, porque ahora toda tu interfaz este compuesta de invocaciones a funciones, que es la forma en que estamos acostumbrados a programar nuestras aplicaciones. Veamos este concepto en código:
 
 ```javascript
 const getFoto = function(username) {
@@ -915,7 +913,7 @@ Tambien pusimos nuestro propio ejemplo de un boilerPlate simplificado [acá](../
 
 ## Propiedades y Estados
 
-Ya vimos que en React las propiedades se pasan de componentes padres a hijos a través de la variable `props`. Veamos algunas propiedades más avanzadas del comportamiento de `props`. 
+Ya vimos que en React las propiedades se pasan de componentes padres a hijos a través de la variable `props`. Veamos algunas propiedades más avanzadas del comportamiento de `props`.
 
 ### this.props.children
 
@@ -937,6 +935,7 @@ Qué Pasa si lo que está adentro es un poco más complejo? Por Ejemplo:
   <Link />
 </Nombre>
 ```
+
 Ahora dentro de `Nombre` tenemos dos Componentes (`Foto` y `Link`). Bien, como se podrían imaginar, `this.props.children` va a evaluar a un __arreglo__ de Componentes.
 
 ### PropTypes
@@ -961,14 +960,15 @@ class Icono extends React.createClass {
 ```
 
 En este ejemplo estamos declarando que las _props_ que le lleguen al Componente `Icono`, deberán ser:
-  * _nombre_: Tiene que ser de tipo _String_ y es obligatorio.
-  * _tamanio_: Tiene que ser de tipo _Number_ y es obligatorio.
-  * _color_ : Tambien un _String_ y obligatorio.
-  * _style_ : Debe ser un _Objeto_, no es obligatorio.
+
+* _nombre_: Tiene que ser de tipo _String_ y es obligatorio.
+* _tamanio_: Tiene que ser de tipo _Number_ y es obligatorio.
+* _color_ : Tambien un _String_ y obligatorio.
+* _style_ : Debe ser un _Objeto_, no es obligatorio.
 
 Como vemos, toda esta funcionalidad está contenida en el objeto `React.PropTypes` que viene nativamente en React.
 
-> Para más información sobre `React.PropTypes` y las cosas que podemos controlar con ella vamos a la documentación oficial [aquí](https://facebook.github.io/react/docs/typechecking-with-proptypes.html). 
+> Para más información sobre `React.PropTypes` y las cosas que podemos controlar con ella vamos a la documentación oficial [aquí](https://facebook.github.io/react/docs/typechecking-with-proptypes.html).
 
 ## Homework
 

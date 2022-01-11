@@ -1,13 +1,3 @@
----
-title: 07-React-Estilos
-permalink: "/React-Estilos/"
-feedbackID: 07-React-Estilos
-eleventyNavigation:
-  key: React-Estilos
-  order: 7
----
-
-
 ![HenryLogo](https://static.wixstatic.com/media/85087f_0d84cbeaeb824fca8f7ff18d7c9eaafd~mv2.png/v1/fill/w_160,h_30,al_c,q_85,usm_0.66_1.00_0.01/Logo_completo_Color_1PNG.webp)
 
 <table class="hide" width="100%" style='table-layout:fixed;'>
@@ -331,15 +321,12 @@ Como vemos, si quisieramos que un mismo elemento tenga múltiples clases, podemo
 Esto funciona porque lo que hace el `style-loader` es darle un nombre único a cada clase del archivo `css`, y lo guarda en el objeto donde importamos bajo en una propiedad con el nombre orignal de la clase, y como valor el valor nuevo de la clase. Por ejemplo, si importamos `estilos.ncss` en el objeto `s` este sería algo así:
 
 ```js
-
 var s = require('../styles/estilos.ncss');
-
 // s = {
 //  prueba: '.estilos__prueba___2wKns',
 //  title: '.estilos__title___3dsns;
 //  size: '.estilos__size___7d8f8;
 // }
-
 ```
 
 > Esto es un ejemplo ilustrativo, probablemente el objeto `s` no debe ser exactamente así.
