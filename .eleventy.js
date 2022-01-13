@@ -41,7 +41,6 @@ module.exports = function (eleventyConfig) {
     ul: true
   })
 
-  eleventyConfig.addPassthroughCopy("_src/styles");
   eleventyConfig.addPassthroughCopy("_src/assets");
 
   eleventyConfig.addNunjucksFilter('bootstrapNav', toBootstrapNav)
