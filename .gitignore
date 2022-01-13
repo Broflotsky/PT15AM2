@@ -11,7 +11,10 @@ node_modules/
 
 # production
 /build
-/_dist
+
+# Eleventy
+_dist
+_cache
 
 # misc
 .DS_Store
