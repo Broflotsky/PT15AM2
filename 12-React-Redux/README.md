@@ -578,7 +578,7 @@ Para generar un Componente que tenga todos los bindings de redux con react, prim
 
 Finalmente, usando `connect` de `react-redux` y pasandole estas dos funciones obtenemos una función lista para darle los binding a un Componente React. Finalmente elegimos que Componente queremos que tenga los bindings y luego lo exportamos. Por ejemplo, vamos a darle los binding al Componente `Main` y lo vamos a exportar como `App`:
 
-```javascript
+```jsx
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actionsCreators from '../actions/actionCreators.js';
