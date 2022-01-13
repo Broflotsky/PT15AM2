@@ -553,7 +553,7 @@ const store = createStore(rootReducer, defaultState);
 
 Para usar redux con react, vamos a usar un paquete llamado [`react-redux`](https://github.com/reactjs/react-redux) que nos ofrece los `bindings` de redux con react. Para instalarlo hacemos:
 
-```
+```bash
 npm install --save react-redux
 ```
 
