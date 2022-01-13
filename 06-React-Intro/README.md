@@ -31,7 +31,7 @@ React es una librería de JavaScript que es declarativa, eficiente y flexible y 
   const numbers = [4,2,3,6];
   //imperativo (le decimos COMO queremos que se hagan las cosas)
   let total = 0;
-  for (let i = 0; i < numbers.lenght; i++){
+  for (let i = 0; i < numbers.length; i++){
     total += numbers[i]
   }
   //declarativo (decime QUE queremos que se haga)
