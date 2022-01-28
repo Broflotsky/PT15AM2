@@ -15,6 +15,7 @@ node_modules/
 # Eleventy
 _dist
 _cache
+/_src/localStyles
 
 # misc
 .DS_Store
