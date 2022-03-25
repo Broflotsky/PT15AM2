@@ -1,0 +1,11 @@
+{
+  "lessonTitle": "React-Routing",
+  "permalink": "/React-Routing/",
+  "feedbackID": "09-React-Routing",
+  "quizzID" : "607ee76b56b4056ff03288da",
+  "homeworkUrl" : "https://github.com/soyHenry/FT-M2/blob/master/09-React-Routing/homework/README.md",
+  "eleventyNavigation": {
+    "key": "React-Routing",
+    "order": 9
+  }
+}

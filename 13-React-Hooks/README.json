@@ -1,0 +1,11 @@
+{
+  "lessonTitle": "React-Hooks",
+  "permalink": "/React-Hooks/",
+  "feedbackID": "13-React-Hooks",
+  "quizzID" : "607473ce656c8d23c2e6111c",
+  "homeworkUrl" : "https://github.com/soyHenry/FT-M2/blob/master/13-React-Hooks/homework/README.md",
+  "eleventyNavigation": {
+    "key": "Hooks",
+    "order": 13
+  }
+}

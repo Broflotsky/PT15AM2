@@ -1,0 +1,11 @@
+{
+  "lessonTitle": "ES6",
+  "permalink": "/ES6/",
+  "feedbackID": "03-ES6",
+  "quizzID" : "606f6127656c8d23c2e60f50",
+  "homeworkUrl": "https://github.com/soyHenry/FT-M2/blob/master/03-ES6/homework/README.md",
+  "eleventyNavigation": {
+    "key": "ES6",
+    "order": 3
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "lessonTitle": "Ajax",
+  "permalink": "/Ajax/",
+  "feedbackID": "04-Ajax",
+  "quizzID" : "60709537656c8d23c2e6104b",
+  "homeworkUrl": "https://github.com/soyHenry/FT-M2/blob/master/04-Ajax/homework/README.md",
+  "eleventyNavigation": {
+    "key": "Ajax",
+    "order": 4
+  }
+}

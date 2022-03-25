@@ -1,0 +1,11 @@
+{
+  "lessonTitle": "Redux",
+  "permalink": "/Redux/",
+  "feedbackID": "11-Redux",
+  "quizzID" : "60746019656c8d23c2e610d5",
+  "homeworkUrl" : "https://github.com/soyHenry/FT-M2/blob/master/11-Redux/homework/README.md",
+  "eleventyNavigation": {
+    "key": "Redux",
+    "order": 11
+  }
+}

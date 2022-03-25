@@ -1,0 +1,11 @@
+{
+  "lessonTitle": "DOM",
+  "permalink": "/DOM/",
+  "feedbackID": "01-DOM",
+  "quizzID" : "606da62a656c8d23c2e60e8c",
+  "homeworkUrl" : "https://github.com/soyHenry/FT-M2/blob/master/01-DOM/homework/README.md",
+  "eleventyNavigation": {
+    "key": "DOM",
+    "order": 1
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "lessonTitle": "CSS",
+  "permalink": "/CSS/",
+  "feedbackID": "02-CSS",
+  "quizzID" : "606f21f0656c8d23c2e60f10",
+  "homeworkUrl": "https://github.com/soyHenry/FT-M2/blob/master/02-CSS/homework/README.md",
+  "eleventyNavigation": {
+    "key": "CSS",
+    "order": 2
+  }
+}

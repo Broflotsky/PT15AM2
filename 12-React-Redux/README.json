@@ -1,0 +1,11 @@
+{
+  "lessonTitle": "React-Redux",
+  "permalink": "/React-Redux/",
+  "feedbackID": "12-React-Redux",
+  "quizzID" : "60746d39656c8d23c2e61101",
+  "homeworkUrl" : "https://github.com/soyHenry/FT-M2/blob/master/12-React-Redux/homework/README.md",
+  "eleventyNavigation": {
+    "key": "React-Redux",
+    "order": 12
+  }
+}

@@ -1,14 +1,15 @@
-# Henry
 
-<table width="100%" style='table-layout:fixed;'>
+![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
+
+<table class="hide" width="100%" style='table-layout:fixed;'>
   <tr>
-	  <td>
-	  	<a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=12-React-Redux">
-			<img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
-			<br>
-			Hacé click acá para dejar tu feedback sobre esta clase.
-	  	</a>
-	  </td>
+   <td>
+    <a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=12-React-Redux">
+   <img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
+   <br>
+   Hacé click acá para dejar tu feedback sobre esta clase.
+    </a>
+   </td>
               <td>
       <a href="https://quiz.soyhenry.com/evaluation/new/60746d39656c8d23c2e61101">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/HSQuiz.svg/768px-HSQuiz.svg.png" width="100" height="100"/>
@@ -19,14 +20,14 @@
   </tr>
 </table>
 
-## Redux
+# React Redux
 
 <p align='center'>
-    <img src='https://camo.githubusercontent.com/f28b5bc7822f1b7bb28a96d8d09e7d79169248fc/687474703a2f2f692e696d6775722e636f6d2f4a65567164514d2e706e67'/>
+    <img alt="logo" src='https://camo.githubusercontent.com/f28b5bc7822f1b7bb28a96d8d09e7d79169248fc/687474703a2f2f692e696d6775722e636f6d2f4a65567164514d2e706e67'/>
 </p>
 
-```
-Redux is a predictable state container for JavaScript apps.
+```js
+//Redux is a predictable state container for JavaScript apps.
 ```
 
 Redux es una librería que nos va a ayudar a mantener el estado _global_ de nuestra aplicación.
@@ -43,7 +44,7 @@ Si bien, podemos crear _containers_ que mantengan el estado estado de sus _child
 
 >El __estado__ de toda tu aplicación está guardado en un árbol en una sola __store__.
 
-Esto hace que se fácil crear apps universale, ya que el _estado_ de tu servidor puede ser _serializado_ fácilmente a todos los clientes sin efuerzo extra. Además hace que sea más fácil _debuggear_ e _inspeccionar_ tu aplicación. 
+Esto hace que se fácil crear apps universale, ya que el _estado_ de tu servidor puede ser _serializado_ fácilmente a todos los clientes sin efuerzo extra. Además hace que sea más fácil _debuggear_ e _inspeccionar_ tu aplicación.
 
 ```javascript
 console.log(store.getState())
@@ -133,22 +134,25 @@ let store = createStore(reducer)
 Para entender bien el concepto de _Redux_, vamos a crear nuestra propia mini-implementación del paradigma que utiliza. Luego vamos a usar la librería `redux`.
 
 Para hacerlo, empecemos repasando las ideas principiales que tenemos que implementar:
+
 * Toda la data mantenida por nuestra aplicación tiene que estar contenida en una única estructura de datos llamada el `state` de nuestra app. Esta estructura de datos debe estar guardada en el `store`.
 * Nuestra app lee el __state__ desde nuestra __store__.
 * El __store__ no puede ser manipulado directamente por el usuario.
 * Los usuarios disparan __acciones__ que describen qué sucedió.
 * Un _nuevo estado_ es generado, resultado de combinar el _viejo estado_ y la _acción_ del usuario. Este proceso lo realiza una función llamada __reducer__.
 
-![Diagrama Redux](./img/redux----redux-diagram.png)
+![Diagrama Redux](/_src/assets/12-React-Redux/redux----redux-diagram.png)
 
 ### Reducers
 
 Un _reducer_ toma un estado _viejo (actual)_ y una _acción_ y devuelve un _estado nuevo_. Un _reducer_ __debe ser una _función pura___, es decir:
+
 * No debe mutar directamente el estado.
 * No debe usar datos que no hayan sido pasada por argumentos.
 
-Los _reducers_ siempre deben tratar el _estado actual_ como __sólo lectura__. De hecho, el _reducer_ __no cambia el estado__, si no que __devuelve un estado nuevo__. 
+Los _reducers_ siempre deben tratar el _estado actual_ como __sólo lectura__. De hecho, el _reducer_ __no cambia el estado__, si no que __devuelve un estado nuevo__.
 Para crear nuestro primer reducer, entonces, vamos a necesitar:
+
 * Una __acción__, que nos define que hacer (opcionalmente con argumentos).
 * El __estado__, que _guarda_ toda la información de nuestro _app_.
 * El __reducer__ _per se_ que recibe el _estado_ y la _acción_ y retorna el _nuevo estado_.
@@ -279,6 +283,7 @@ Si vemos el ejemplo, notamos que a pesar de pasar por los _reducers_, nuestro es
 > En Redux, generalmente, tenemos un Store y un top level reducer.
 
 Veamos que contiene nuestra __Store__:
+
 * Cuando la inicializamos vamos a pasarle un _Estado Inicial_ y un _reducer_.
 * `getState()` retorna el _Estado Actual_.
 * Por último tenemos la función `dispatch` que recibe una acción e invoca al `reducer` con el estado actual y la acción, y actualiza el estado con lo que retorna el `reducer` (el nuevo estado).
@@ -307,6 +312,7 @@ Empezamos por crear una `Store` nueva y la guardamos, en este caso, en una varia
 Si vemos el ejemplo anterior, siempre que queremos ver el estado del `Store` tenemos que pedirle explicitamente. Sería interesante que nos enteremos que una acción fue despachada para que podamos responder si es necesario. Para esto vamos a implementar el [patrón Observador](https://es.wikipedia.org/wiki/Observer_(patr%C3%B3n_de_dise%C3%B1o)), es decir que vamos a _suscribir_ un callback para que escuche por cambios.
 
 Esto es lo que queremos hacer:
+
 * Registrar una función _listener_ usando `suscribe`.
 * Cuando `dispatch` es invocada, iteraremos sobre todos los _listeners_ que tenga subscriptos y los invocaremos, notificandolos que el Estado ha cambiado.
 
@@ -382,7 +388,7 @@ Lo primero que tenemos que incorporar para trabajar con Redux, es el workflow qu
 
 > Se podría considerar a `redux` cómo una implementación del patrón `flux` para react, también se podría considerar cómo un patrón por si mismo. ( De hecho, [ni sus autores se ponen de acuerdo en eso](http://redux.js.org/docs/introduction/PriorArt.html#flux) ) Lo cierto es que está influenciado por el patrón `flux`, usando por facebook.
 
-![WorkFlow](./img/ui_workflow.png)
+![WorkFlow](/_src/assets/12-React-Redux/ui_workflow.png)
 
 1. El `árbol de Estado` define la UI y las acciones posibles a través de `props`.
 2. Acciones realizadas por los usuarios son enviadas a un `action creator` que las normaliza.
@@ -390,17 +396,15 @@ Lo primero que tenemos que incorporar para trabajar con Redux, es el workflow qu
 4. El reducer crea un nuevo Estado y lo devuelve (`dispatches it`) al `Store`.
 5. La UI es actualizada acorde al nuevo estado.
 
-
 ### Acciones
 
-Las __acciones__ representan una _inteción_ de cambiar el estado de nuestra `store`. Las _acciones_ son las __únicas__ fuente de información que llega a nuestras `stores`. 
+Las __acciones__ representan una _inteción_ de cambiar el estado de nuestra `store`. Las _acciones_ son las __únicas__ fuente de información que llega a nuestras `stores`.
 
 Las __acciones__ son __objetos JavaScript planos__, deben tener una propiedad llamada `type`, que indica o describa la acción que se realiza. Por convención los `type`s debe estar escritos como `string constants`, es decir, todo en mayúsuclas y con SNAKE_CASE. Además del type, las acciones van a contener cualquier otra propiedad que necesitemos para su funcionamiento. Se recomienda que las acciones tengan la menor cantidad de propiedades posibles.
 
 Podemos ver algunas recomendaciones de cómo diseñar nuestras acciones en [esta guía](https://github.com/acdlite/flux-standard-action).
 
 > Cuando tu app empieze a crecer, es buena idea separar las acciones en distintos módulos (archivos).
-
 
 ```javascript
 // incrementas likes
@@ -467,8 +471,9 @@ También se puede envolver a los dispatchers en una serie de [Middlewares](http:
 
 Las _acciones_ describen que algo sucedió en nuestra app, pero no especifican _cómo_ esta accion impacta en el estado actual. Saber eso es el trabajo de los __reducers__.
 
-Un _reducer_ es una función que recibe el estado previo de un Store y un acción y retorna el nuevo estado. Justamente se llama reducer, porque toma al estado cómo una _acumulación_ de acciones. 
+Un _reducer_ es una función que recibe el estado previo de un Store y un acción y retorna el nuevo estado. Justamente se llama reducer, porque toma al estado cómo una _acumulación_ de acciones.
 Los reducers tienen que ser siempre funciones __puras__, estas son cosas que __nunca__ deberías hacer en un reducer:
+
 * Mutar sus argumentos.
 * Realizar cosas que tengan efectos secundarios, como llamadas a APIs, o routeo.
 * Llamar a funciones no puras adentro, como `Math.random()` o `Date.now()`
@@ -516,6 +521,7 @@ export default rootReducer;
 ### Store
 
 La __Store__ tiene la siguientes responsabilidades:
+
 * Mantiene el estado de la aplicación.
 * Permite el acceso al estado a través de `getState()`.
 * Permite actualizar el estado a través de `dispatch(action)`.
@@ -547,13 +553,13 @@ const store = createStore(rootReducer, defaultState);
 
 Para usar redux con react, vamos a usar un paquete llamado [`react-redux`](https://github.com/reactjs/react-redux) que nos ofrece los `bindings` de redux con react. Para instalarlo hacemos:
 
-```
+```bash
 npm install --save react-redux
 ```
 
 ### Componentes
 
-Los bindings de `react-redux` están realizados pensandos en el patrón de __separar los Componentes Presentacionales de los Containers__. 
+Los bindings de `react-redux` están realizados pensandos en el patrón de __separar los Componentes Presentacionales de los Containers__.
 
 ||__Presentacionales__ |__Containers__ |
 |---|:---|:---|
@@ -566,12 +572,13 @@ Los bindings de `react-redux` están realizados pensandos en el patrón de __sep
 > Técnicamente podríamos codear los Containers por nosotros mismos usando `subscribe`, pero Redux nos desaconseja de hacer esto, ya que nos proveen de la función `connect`, que nos permite generarlos, y estos Componentes generados están optimizados en términos de performance.
 
 Para generar un Componente que tenga todos los bindings de redux con react, primero vamos a tener que definir las siguientes funciones:
-* __mapStateToProps__: Recibe el estado de la apliación y lo mapea a props de react. 
-* __mapDispatchToProps__: Recibe el método `dispatch` y retorna callbacks props que vamos a poder pasar a los Componentes presentacionales. 
+
+* __mapStateToProps__: Recibe el estado de la apliación y lo mapea a props de react.
+* __mapDispatchToProps__: Recibe el método `dispatch` y retorna callbacks props que vamos a poder pasar a los Componentes presentacionales.
 
 Finalmente, usando `connect` de `react-redux` y pasandole estas dos funciones obtenemos una función lista para darle los binding a un Componente React. Finalmente elegimos que Componente queremos que tenga los bindings y luego lo exportamos. Por ejemplo, vamos a darle los binding al Componente `Main` y lo vamos a exportar como `App`:
 
-```javascript
+```jsx
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actionsCreators from '../actions/actionCreators.js';
@@ -598,7 +605,7 @@ export default App;
 
 Todos los Componentes Containers deben tener acceso al `Store` para que puedan suscribirse a ella. Una opción seria pasar el store como un prop a cada componente Container, pero esto se volvería tedioso muy rápidamente, y un posible punto de error. Lo que nos recomienda `redux` es usar un Componente especial de `react-redux` llamado `<Provider>` que [mágicamente](https://facebook.github.io/react/docs/context.html) hace que el Store esté disponible para todos los Container de nuestra app, sin pasarla explícitamente.
 
-```
+```jsx
 ...
 import { Provider } from 'react-redux'; //Bindings from redux and React
 import store, { history } from './store.js';
@@ -617,3 +624,7 @@ const router = (
 ```
 
 Ahora vamos a poder acceder a nuestro `store` en cada Componente a través de sus props.
+
+## Homework
+
+Completa la tarea descrita en el archivo [README](https://github.com/soyHenry/FT-M2/blob/master/12-React-Redux/homework/README.md)

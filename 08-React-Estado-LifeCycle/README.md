@@ -1,14 +1,14 @@
-# Henry
+![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
 
-<table width="100%" style='table-layout:fixed;'>
+<table class="hide" width="100%" style='table-layout:fixed;'>
   <tr>
-	  <td>
-	  	<a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=08-React-Estado-LifeCycle">
-			<img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
-			<br>
-			Hacé click acá para dejar tu feedback sobre esta clase.
-	  	</a>
-	  </td>
+   <td>
+    <a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=08-React-Estado-LifeCycle">
+   <img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
+   <br>
+   Hacé click acá para dejar tu feedback sobre esta clase.
+    </a>
+   </td>
               <td>
       <a href="https://quiz.soyhenry.com/evaluation/new/606df913656c8d23c2e60e99">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/HSQuiz.svg/768px-HSQuiz.svg.png" width="100" height="100"/>
@@ -19,7 +19,7 @@
   </tr>
 </table>
 
-# REACT
+# React Estado LifeCycle
 
 ## La mejor manera: Webpack
 
@@ -59,7 +59,7 @@ module.exports.doSomething = function() {
 Vamos a empezar instalando y configurando Webpack. Voy a aclarar al principio que Webpack es una herramienta muy poderosa, por ende compleja, y lamentablemente su documentación no es la mejor. Por lo tanto, nos va a parecer complejo al principio, pero rápidamente nos vamos a encariñar con todas las cosas que podemos hacer con Webpack.
 
 ```shell
-$ npm i -D webpack webpack-cli
+npm i -D webpack webpack-cli
 ```
 
 Como dijimos, Webpack es una herramienta que va a aplicar ciertas _transformaciones_ a nuestro código, por ende para funcionar webpack necesita saber:
@@ -91,7 +91,6 @@ Bien, ahora para el segundo punto, tenemos que definir qué tipo de transformaci
 
 > Para usar un loader, es necesario tenerlo instalado antes. Para eso vamos a usar `npm`. Por ejemplo, si quiero usar el `loader` de babel debería hacer: `npm i -D @babel/core @babel/preset-env @babel/preset-react babel-loader`.
 
-
 ```javascript
 module.exports = {
   entry: [
@@ -104,6 +103,7 @@ module.exports = {
   },
 }
 ```
+
 En el ejemplo, usamos un `loader` de _coffeeScript_. Como se ve, también agreamos una propiedad llamada `module` que será un objeto dentro del cual aparecerá la propiedad `loaders` que será un arreglo de objetos. Cada objeto dentro de este arreglo representa una transformacion.
 Vemos que ese objeto tiene tres propiedades: `test`, `exclude`, y `loader`. La primera hace referencia a qué archivos deberán pasar por la transformación, y recibe como valor una __expresión regular__, en nuestro ejemplo estamos diciendo que pasarán por la transformación todos los archivos terminados en `.coffee`. La segunda, `exclude` le indica a webpack qué directorios excluir, en nuestro ejemplo (y siempre lo haremos) excluimos `node_modules`, donde sabemos que no habrá código para transformar. Finalmente, en la propiedad `loader` vamos a poner el nombre del loader que queremos usar, en este caso el nombre es "coffee-loader".
 
@@ -189,10 +189,11 @@ module.exports = {
 Por último vamos a tener que usar `npm` para instalar las dependencias:
 
 ```shell
-$ npm install -D @babel/core @babel/preset-env @babel/preset-react babel-loader
+npm install -D @babel/core @babel/preset-env @babel/preset-react babel-loader
 ```
+
 ```shell
-$ npm install react react-dom --save
+npm install react react-dom --save
 ```
 
 Para poder ejecutar webpack, debemos agregar dentro de `scripts` en nuestro `package.json` lo siguiente:
@@ -217,7 +218,7 @@ Para poder ejecutar webpack, debemos agregar dentro de `scripts` en nuestro `pac
 
 Para probar si todo funciona bien, iremos a la carpeta donde tenemos definidos todos estos archivos, y vamos a escribir `npm run build`.
 
-![Webpack](./img/webpack.png)
+![Webpack](/_src/assets/08-React-Estado-LifeCycle/webpack.png)
 
 Si todo funcionó bien, veremos un mensaje como el de la imagen! Y además encontraremos un archivo nuevo en la carpeta `dist`.
 
@@ -311,6 +312,7 @@ function HelloWorld(props) {
 };
 ReactDOM.render(<HelloWorld name='Soy Henry' />, document.getElementById('app'));
 ```
+
 Aca vemos el uso de el Hook `useState`. Lo llamamos dentro de un componente funcional para agregarle un estado local. React mantendrá este estado entre re-renderizados. useState devuelve un array con 2 elementos: el valor de estado actual y una función que le permite actualizarlo. Puedes llamar a esta función desde un controlador de eventos o desde otro lugar. Es similar a this.setState en una clase, excepto que no combina el estado antiguo y el nuevo.
 El único argumento para useState es el estado inicial. En el ejemplo anterior, es 'props.name'. Ten en cuenta que a diferencia de this.state, el estado aquí no tiene que ser un objeto — aunque puede serlo si quisieras. El argumento de estado inicial solo se usa durante el primer renderizado.
 Ahora veremos el mismo ejemplo escribiendo `useState` de una forma mas entendible, usando `array destructuring`. Para darle el primer valor del array nuestro state inicial y al segundo valor sera nuestra funcion para actualizar el estado.
@@ -381,6 +383,7 @@ class MostrarLista extends React.Component {
   }
 };
 ```
+
 Lo primero que notamos es que usamos _JS_ para crear elementos HTMl más complejos. En esta caso usamos la función `map`, para crear un elemento `<li>` por cada _amigo_ en la lista o arreglo.
 Viendo el ejemplo anterior usando funciones:
 
@@ -408,9 +411,11 @@ function MostrasLista({ names }) {
   )
 };
 ```
+
 Aca podemos usar `destructuring` para pasar las props directamente con el nombre de la variable `names`
 
 > Por si no se acuerdan como funciona map:
+
 ```javascript
 const amigos = ['Santi', 'Guille', 'Facu', 'Solano'];
 const lista = amigos.map(amigo => "<li> " + amigo + "</li>");
@@ -419,19 +424,21 @@ console.log(lista); //['<li> Santi</li>', '<li> Guille</li>', '<li> Facu</li>', 
 
 Justamente ese nuevo conjunto de `li`s que hemos creado, lo vamos a usar envuelto en tags `<ul>` para formar la lista de amigos.
 
-
 ## Etiquetas HTML y Componentes
 
 Los componentes que creamos en React despues los usamos escribiendolos como un tag HTML, en realidad es un tag [XML](https://www.quora.com/What-is-the-difference-between-HTML-and-XML). Por ejemplo: el tag `MostrarLista` es un Componente que creamos antes y lo usamos así:
+
 ```html
 <div>
   <h3> Nombre: {name} </h3>
   <MostrarLista names={amigos} />
 </div>
 ```
+
 Luego ese tag se renderizará a lo que sea que hayamos escrito en el método `render` de ese componente, transformandose así en HTML finalmente.
 Existe una convención en React para distinguir entre Componentes React y elemento HTML nativos. Para el primero usamos BumpyCase y lowercase para el último. Por ejemplo:
-```
+
+```jsx
 <MostrarLista /> BumpyCase
 <div>            lowercase
 ```
@@ -598,6 +605,7 @@ Básicamente, vamos a guardar cada Componente en un archivo `.js` separado y _ex
 > Por convención vamos a llamar a los archivos que contengan un componente con la primera letra en Mayúsculas. Por ejemplo: `Header.jsx` o `Profile.js`.
 
 Cuando comenzamos un proyecto nuevo de React, en vez de empezar de cero, podemos guardar un esqueleto que ya tenga todas las tareas que deberíamos repetir en cada proyecto, en inglés esto se conoce como  `boilerplates project`. De hecho, podemos hacer nuestro propio `boilerplate` o buscar online alguna que se ajuste a nuestras necesidades. En general que están publicados online traen muchas cosas que tal vez no vayamos a usar, aquí algunos ejemplos:
+
 * [react-webpack-boilerplate](https://github.com/KleoPetroff/react-webpack-boilerplate)
 * [react-starter-kit](https://github.com/kriasoft/react-starter-kit)
 * [react-native-starter](https://github.com/mcnamee/react-native-starter-app)
@@ -618,6 +626,7 @@ Ya vimos que en React las propiedades se pasan de componentes padres a hijos a t
 La otra forma de que los Componentes de React tengan información es a través del `State`. Este `Estado` se encuentra disponible en el objeto `State` de cada Componente, es decir que podermos acceder a el a través de `this.State`. Los estados __no__ son inmutables, es decir que estan pensados para _cambiar_ eventualmente. Justamente por esto, es que los Componentes que tienen Estados son menos _performantes_ que los que no.
 
 Cuando creamos un Componente cualquiera, su estado o `this.State` es igual a `null`, o sea que no tiene Estado por defecto!. Para agregar un estado vamos a usar el método `getInitialState`, el cual retorna un objeto que contiene el estado inicial de ese Componente. Por ejemplo:
+
 ```javascript
 class Componente extends React.Component {
   constructor(props) {
@@ -638,7 +647,9 @@ class Componente extends React.Component {
 };
 ReactDOM.render(<Componente />, document.getElementById('appEstado'));
 ```
+
 En un componente de funcion la nueva forma de tener un `State` es a traves del Hook `useState` que vimos anteriormente. Siguiendo con el ejemplo anterior:
+
 ```javascript
 function Componente(props) {
   const [nombre, setNombre] = useState("Toni");
@@ -680,6 +691,7 @@ render() {
 ### Actualizando el Estado en una funcion
 
 Para actualizar el `state` en un componente de function, como vimos, llamamos a la funcion que nos devuelve el Hook `useState`. Y le pasamos por parametro el nuevo `estado`. Por ejemplo:
+
 ```javascript
 // Agregamos este método al código anterior
 ...
@@ -714,7 +726,7 @@ Para poder hacerlo vamos a incorporar el concepto de ciclo de vida de React y su
 
 En la imagen de abajo, vemos el ciclo de vida Completo de cualquier Componente de React. En ella vemos también los estados en los que puede estar un Componente y qué cosas o funciones activarán el paso de estados y por ende la invocación de los métodos que nos provee React:
 
-![LifeCycle](./img/lifecycle.png)
+![LifeCycle](/_src/assets/08-React-Estado-LifeCycle/lifecycle.png)
 
 > Pueden ver este [Gist](https://gist.github.com/fay-jai/fc8a5093c0b5124d4b2d#file-react-lifecycle-parent-child-jsx) y probarlo localmente para tener un mayor entendimiento de _cuando_ se invoca cada método de React.
 
@@ -803,7 +815,7 @@ function Login() {
 };
 ```
 
-###### Hacer alguna petición AJAX para traer datos necesarios para el Componente.
+###### Hacer alguna petición AJAX para traer datos necesarios para el Componente
 
 Este es un caso muy común, el Componente necesita datos que son traídos a través de un request tipo AJAX. En un componente de clase, React nos da el método `componentDidMount`, este método es llamado justo después que el componente se montó al DOM:
 
@@ -818,6 +830,7 @@ class Lista extends React.Component {
   }
 };
 ```
+
 Al usar una funcion, introducimos el Hook `useEffect`. Este recibe un callback que se ejecuta despues de cada renderizado en el componente, y nos permite hacer peticiones de datos, establecimiento de suscripciones y actualizaciones manuales del DOM en componentes de React. Por lo general llamamos a estas operaciones “efectos secundarios” (o simplemente “efectos”). Este Hook equivale a los ciclos de vida de clase: componentDidMount, componentDidUpdate y componentWillUnmount combinados. El segundo argumento que recibe es un `array`, al pasar un array vacio `[]`, esto le indica a React que `useEffect` no depende de ningún valor proveniente de las props o el estado, de modo que no necesita volver a ejecutarse.
 
 ```javascript
@@ -860,7 +873,8 @@ function Lista() {
   )
 };
 ```
-###### Remover listeners que ya no sirven más.
+
+###### Remover listeners que ya no sirven más
 
 Análogamente, existe el método `componentWillUnmount` que es invocado justo antes de remover el Componente del DOM:
 
@@ -874,6 +888,7 @@ class FriendsList extends React.Component {
   }
 };
 ```
+
 Para el caso de una function, usamos el mismo Hook, `useEffect`, Quizás puedas estar pensando que necesitaríamos un efecto aparte para llevar a cabo el remove del event. Pero el código para añadir y eliminarlo está tan estrechamente relacionado que useEffect está diseñado para mantenerlo unido. Si tu efecto devuelve una función, React la ejecutará en el momento correcto:
 
 ```javascript
@@ -892,6 +907,7 @@ function FriendList() {
   )
 };
 ```
+
 En este caso, cuando retornamos una funcion en `useEffect`, esta es ejecutada antes de que el componente sea removido de la UI.
 
 ### Eventos cuando el componente recibe nuevos Datos
@@ -914,6 +930,7 @@ function Ejemplo() {
   );
 };
 ```
+
 En el ejemplo anterior, no necesitamos actualizar el título del documento (nuestro efecto) después de cada representación, sino solo cuando el nombre de la variable del state cambie su valor. Es por eso que pasamos array con el valor de `name` como segundo parámetro:
 Aca si solo queremos que nuestro Hook se invoque solo después del primer render, tenemos que pasar una matriz vacía [] (que nunca cambia) como segundo parámetro.
 En el segundo caso podemos utilizar `React.memo` que es un HOC (High Order Component) que ayuda en la performance de renderizado de un componente, evitar un re-renderizado. Si un componente devuelve el mismo resultado, es decir, no cambian sus props. Envolver el componente en `React.memo` puede ayudar mucho a la performance. Esta funcion puede recibir como segundo argumento una funcion de comparacion personalizada, que reciba las props viejas y las nuevas. Si retorna true, se obvia la actualización. Por ejemplo:
@@ -931,3 +948,7 @@ const fnComparacion = function(prevProps, nextProps) {
 
 export default React.memo(Ejemplo, fnComparacion);
 ```
+
+## Homework
+
+Completa la tarea descrita en el archivo [README](https://github.com/soyHenry/FT-M2/blob/master/08-React-Estado-LifeCycle/homework/README.md)

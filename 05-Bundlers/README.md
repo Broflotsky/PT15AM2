@@ -1,14 +1,14 @@
-# Henry
+![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
 
-<table width="100%" style='table-layout:fixed;'>
+<table class="hide" width="100%" style='table-layout:fixed;'>
   <tr>
-	  <td>
-	  	<a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=05-Bundlers">
-			<img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
-			<br>
-			Hacé click acá para dejar tu feedback sobre esta clase.
-	  	</a>
-	  </td>
+   <td>
+    <a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=05-Bundlers">
+   <img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
+   <br>
+   Hacé click acá para dejar tu feedback sobre esta clase.
+    </a>
+   </td>
               <td>
       <a href="https://quiz.soyhenry.com/evaluation/new/607f6d7d56b4056ff0328db0">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/HSQuiz.svg/768px-HSQuiz.svg.png" width="100" height="100"/>
@@ -19,7 +19,7 @@
   </tr>
 </table>
 
-# Lesson 05 - Módulos y Bundlers
+# Módulos y Bundlers
 
 Cuando desarrollamos, queremos que la estructura de nuestro programa/codigo sea lo mas transparente posible, facil de explicar y que cada parte cumpla una tarea definida.
 
@@ -63,7 +63,7 @@ La solución a este problema son los **paquetes**. Un **paquete** es un pedazo d
 
 Cuando un error es encontrado en algún paquete, o se le agrega funcionalidad nueva. Es corregido y updateado. Ahora los proyectos que dependen de ese paquete pueden actualizar esos paquetes a la nueva versión.
 
-Para lograr distribuir estos paquetes y mantenerlos correctamente actualizados, vamos a necesitas la ayuda de un **gestor de paquetes**. El gestor de paquetes es un pedazo de software que se encarga de manejar esto de manera automática. En el mundo de JavaScript, el gestor de paquetes más usados es NPM (https://npmjs.org).
+Para lograr distribuir estos paquetes y mantenerlos correctamente actualizados, vamos a necesitas la ayuda de un **gestor de paquetes**. El gestor de paquetes es un pedazo de software que se encarga de manejar esto de manera automática. En el mundo de JavaScript, el gestor de paquetes más usados es NPM (<https://npmjs.org>).
 
 NPM es un servicio online en donde estan hosteados los paquetes que los usuarios comparten, y a su vez un programa que se puede instalar en cualquier SO, que te ayuda a descargarlos, instalarlos y mantenerlos actualizados.
 
@@ -131,6 +131,7 @@ console.log(plusOne(4));
 // → 5
 
 ```
+
 Utilizando esto, vamos a poder encapsular un módulo dentro de una función y usar el scope de esa función como el scope del módulo.
 
 ## CommonJS
@@ -180,13 +181,13 @@ function require(name) {
 
 Para evitar tener que cargar el mismo módulo muchas veces, `require` tiene un *cache* de módulos que ya fueron cargados. Si el módulo ya fue invocado, estará en el objeto `cache`, si no, leerá el código del módulo, lo envolverá en una función e lo invocará.
 
-# Que son los Bundlers?
+## Que son los Bundlers?
 
 Bien, ahora que sabemos algo sobre módulos, veamos cómo estos revolucionaron la forma de escribir código para el front-end con la introducción de los bundlers.
 
 Como sabemos, la forma de importar librerías (que a su vez son módulos) en HTML es la siguiente:
 
-![scripts](./img/scripts.jpeg)
+![scripts](/_src/assets/05-Bundlers/scripts.jpeg)
 
 Si pensamos en detalle que sucede cuando importamos cada uno de esos scripts, veremos que básicamente todos terminan cayendo al mismo contexto, el global. Para salvar esto, las librerías básicamente elegían arbitrariamente un nombre de variable donde exponer su funcionalidad. Por ejemplo, `jQuery` utilizaba el signo `$`. Ahora bien, si otra librería decidía utilizar el mismo nombre de variable para su interfaz, tendríamos un conflicto, y ambas librerías no podrían ser usadas en el mismo HTML.
 
@@ -194,15 +195,19 @@ Al principio, sólo se importaba una cantidad pequeñas de librerías para el fr
 
 Acá aparecieron los **Module Bundlers**. Como por ejemplo: `Browserify`, `Webpack`, `Rollup`, etc... Básicamente lo que hacen es ejecutar un proceso que lee todas las dependencias de nuestro proyecto, y luego genera un archivo JS que contiene todos los módulos necesarios que podemos incluir en nuestro HTML.
 
-![Dependecy Graph](./img/graph.png)
+![Dependecy Graph](/_src/assets/05-Bundlers/graph.png)
 
 Hay dos cosas etapas en tarea de un Bundler:
 
-  * Resolución de dependecias
-  * Empaquetamiento
+* Resolución de dependecias
+* Empaquetamiento
 
 Entrando desde un entry point (nuestro archivo `.js` principal), el objetivo de la resolución de dependencias es buscar todas las dependencias del código y construir un grafo (llamado grafo de dependencias).
 
 Una vez hecho esto, podés empaquetar o convertir todo tu grafo de dependencias en un sólo archivo que tu aplicación va a usar. Finalmente, obtenemos un archivo único (el **bundle**) que vamos a importar en nuestro HTML. De esta forma, resolvemos los problemas de encapsulamiento que mencionamos anteriormente.
 
 > Cuando veamos *React*, vamos a aprender a usar el bundeler *webpack*.
+
+## Homework
+
+Completa la tarea descrita en el archivo [README](https://github.com/soyHenry/FT-M2/blob/master/05-Bundlers/homework/README.md)

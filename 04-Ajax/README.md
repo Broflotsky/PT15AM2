@@ -1,14 +1,14 @@
-# Henry
+![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
 
-<table width="100%" style='table-layout:fixed;'>
+<table class="hide" width="100%" style='table-layout:fixed;'>
   <tr>
-	  <td>
-	  	<a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=04-Ajax">
-			<img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
-			<br>
-			Hacé click acá para dejar tu feedback sobre esta clase.
-	  	</a>
-	  </td>
+   <td>
+    <a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=04-Ajax">
+   <img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
+   <br>
+   Hacé click acá para dejar tu feedback sobre esta clase.
+    </a>
+   </td>
               <td>
       <a href="https://quiz.soyhenry.com/evaluation/new/60709537656c8d23c2e6104b">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/HSQuiz.svg/768px-HSQuiz.svg.png" width="100" height="100"/>
@@ -21,7 +21,7 @@
 
 # AJAX
 
-### Que es  AJAX?
+## Que es  AJAX?
 
 AJAX son las siglas de Asynchronous JavaScript and XML. XML es raramente relevante, pero cuando desarrollamos aplicaciones web, usamos Ajax para hacer cosas asincrónicas como actualizar una página, hacer acciones, etc.
 
@@ -31,7 +31,7 @@ En resumen, AJAX se trata de actualizar partes de una página web sin tener que 
 
 AJAX se basa en un montón de tecnologías. No tienes que ser un experto en todas ellas pero un poco de conocimiento de fondo será útil. Esto debería darte los antecedentes suficientes para que te hagas una  idea de AJAX.
 
-### Las tecnologías que forman AJAX son:
+### Las tecnologías que forman AJAX son
 
 - XHTML y CSS, para crear una presentación basada en estándares.
 - DOM, para la interacción y manipulación dinámica de la presentación.
@@ -43,8 +43,7 @@ AJAX se basa en un montón de tecnologías. No tienes que ser un experto en toda
 
 Piensa en toda tu aplicación web como un restaurante de comida rápida. Tú eres el cajero, la persona en las primeras líneas. Manejas las **solicitudes** de los cliente
 
-![img](./img/image-1.png)
-
+![no-box](/_src/assets/04-Ajax/image-1.png)
 
 Si miras este diagrama, puedo ver tres trabajos separados que deben hacerse.
 
@@ -54,8 +53,7 @@ Si miras este diagrama, puedo ver tres trabajos separados que deben hacerse.
 
 Sin embargo, si no tuvieras AJAX, sólo se te permitiría procesar un pedido a la vez de principio a fin! Tendrías que tomar el pedido... luego cobrar al cliente... luego sentarte ahí sin hacer nada mientras la gente en la cocina cocina cocina la comida... y luego seguir esperando mientras el equipo de preparación de la comida la empaqueta. Sólo podrías tomar el siguiente pedido después de todo eso.
 
-![img](./img/image-2.png)
-
+![no-box](/_src/assets/04-Ajax/image-2.png)
 
 Eso es una mala experiencia para el usuario! Ya no podrías llamarlo "comida rápida". En su lugar, tendrías que llamarlo "comida mediocre"... o algo así.
 
@@ -65,12 +63,11 @@ Los clientes pueden seguir haciendo pedidos, y no es necesario sentarse allí mi
 
 Esto ciertamente introduce cierta complejidad. Ahora tienes múltiples especializaciones dentro del restaurante. Además, los pedidos se están manejando a ritmos diferentes. Pero, crea una experiencia de usuario mucho mejor.
 
-![img](./img/image-3.png)
-
+![no-box](/_src/assets/04-Ajax/image-3.png)
 
 Probablemente has  visto esto en acción en un restaurante. Una persona está trabajando en la máquina de papas fritas. Una persona está manejando la parrilla. Cuando llega un pedido, el cajero puede comunicarse instantáneamente con ambos y volver a tomar los pedidos.
 
-### Como crear una solicitud POST 
+### Como crear una solicitud POST
 
 Pongamos estos conceptos a trabajar. Como cajera, debes enviar las solicitudes de los clientes a la cocina para que el resto de tu equipo pueda preparar la comida. Puedes hacer eso con la solicitud POST.
 
@@ -89,7 +86,7 @@ Tiene tres partes principales:
 
 Estos dos requieren procesos diferentes. Una solicitud de papas fritas podría necesitar sólo una persona para meter algunas papas fritas en una manga. Pero un pedido de comida combinada requerirá el trabajo de varios miembros del equipo. Por lo tanto, estos dos necesitan diferentes URLs.
 
-```
+```js
 $.post('/comboMeal')$.post('/fries')
 ```
 
@@ -97,7 +94,7 @@ La URL nos permite usar la misma lógica en el back-end para ciertos tipos de so
 
 Lo siguiente es la **data**. Este es un [objeto](https://blog.codeanalogies.com/2017/04/29/javascript-arrays-and-objects-are-just-like-books-and-newspapers/) que nos dice un poco más sobre la petición. Para la URL de la comida combinada, probablemente necesitamos saber:
 
-1.  El tipo de comida principal
+1. El tipo de comida principal
 2. El tipo de bebida
 3. El precio
 4. Cualquier petición especial
@@ -107,12 +104,11 @@ Por las papas fritas, puede que sólo necesitemos saberlo:
 1. El tamaño de las patatas
 2. El precio
 
-![img](./img/image-4.png)
-
+![no-box](/_src/assets/04-Ajax/image-4.png)
 
 Veamos un ejemplo de un combo de: una hamburguesa con queso con una Pepsi que cuesta 6 dólares. Esto es lo que parece en JavaScript.
 
-```
+```js
 let order = {
   mainMeal: 'cheeseburger',
   drink: 'Pepsi',
@@ -125,7 +121,7 @@ La variable *orden* contiene el contenido del orden. Y luego lo incluimos en el 
 
 ¡Pero no podemos hacer que todo este código se ejecute al azar! Necesitamos un evento de activación que active la solicitud. En este caso, un pedido de un cliente en un restaurante de comida rápida es como una persona que hace clic en un botón de "pedido" en su sitio web. Podemos usar el evento [click()](https://api.jquery.com/click/) de jQuery para ejecutar el POST cuando el usuario hace clic en un botón.
 
-```
+```js
 $('button').click(function(){ 
   let order = { 
     mainMeal: 'cheeseburger',
@@ -140,7 +136,7 @@ $('button').click(function(){
 
 La última parte. Tenemos que decirle algo al cliente después de que su pedido haya sido enviado. Los cajeros suelen decir "¡El próximo cliente por favor!" ya que este es un restaurante de comida rápida, así que podemos usar eso dentro de la llamada para mostrar que el pedido ha sido enviado.
 
-```
+```js
 $('button').click(function(){ 
    let order = {
      mainMeal: 'cheeseburger',
@@ -152,8 +148,6 @@ $('button').click(function(){
   }); 
 })
 ```
-
-
 
 ### Como crear una solicitud GET
 
@@ -171,7 +165,7 @@ Digamos que ordenó tres comidas compuestas para su familia. Quieres comer la co
 
 Podemos crear una solicitud GET con una URL de '/comboMeal', que corresponde a la solicitud POST junto con la misma URL. Sin embargo, esta vez necesitamos datos diferentes. Es un tipo de solicitud totalmente diferente. El mismo nombre de URL sólo nos permite organizar mejor nuestro código.
 
-```
+```js
 let meal = {
   location: 'here',
   condiments: 'ketchup',
@@ -179,12 +173,11 @@ let meal = {
 };$.get('/comboMeal', meal);
 ```
 
-![img](./img/image-5.png)
-
+![no-box](/_src/assets/04-Ajax/image-5.png)
 
 También necesitamos un disparador para este. Esta solicitud se activa cuando los clientes responden a tus preguntas como cajero antes de que les entregues la comida. No hay una forma conveniente de representar las preguntas y respuestas con JavaScript. Así que voy a crear otro evento de clic para el botón con la clase "respuesta".
 
-```
+```js
 $('.answer').click(function(){
   let meal = {
      location: 'here',
@@ -194,14 +187,13 @@ $('.answer').click(function(){
 });
 ```
 
-![img](./img/image-6.png)
-
+![no-box](/_src/assets/04-Ajax/image-6.png)
 
 Este también necesita una función de devolución de llamada, porque vamos a recibir lo que estaba contenido en las tres comidas compuestas en el orden 191. Podemos recibir esos datos a través de un parámetro de *datos* en nuestra llamada de retorno.
 
 Esto nos devolverá lo que sea que la retrollamada estipule para la orden 191. Voy a usar una función llamada *comer* para significar que eventualmente se puede comer la comida, pero ten en cuenta que no hay una función de comer en JavaScript!
 
-```
+```js
 $('.answer').click(function(){
    let meal = {
      location: 'here',
@@ -219,16 +211,11 @@ $('.answer').click(function(){
 
 El producto final, *datos*, contendría el contenido de las tres comidas combinadas, teóricamente. ¡Depende de cómo esté escrito en el backend!
 
-![img](./img/image-7.png)
+![no-box](/_src/assets/04-Ajax/image-7.png)
 
-
-
-
-# Eventos en javascript
+## Eventos en javascript
 
 Como se mencionó anteriormente, los **eventos** son acciones u ocurrencias que suceden en el sistema que está programando — el sistema disparará una señal de algún tipo cuando un evento ocurra y también proporcionará un mecanismo por el cual se puede tomar algún tipo de acción automáticamente (p.e., ejecutando algún código) cuando se produce el evento. Por ejemplo, en un aeropuerto cuando la pista está despejada para que despegue un avión, se comunica una señal al piloto y, como resultado, comienzan a pilotar el avión.
-
-
 
 En el caso de la Web, los eventos se desencadenan dentro de la ventana del navegador y tienden a estar unidos a un elemento específico que reside en ella — podría ser un solo elemento, un conjunto de elementos, el documento HTML cargado en la pestaña actual o toda la ventana del navegador. Hay muchos tipos diferentes de eventos que pueden ocurrir, por ejemplo:
 
@@ -265,18 +252,15 @@ btn.onclick = function() {
 }
 ```
 
-En este código, almacenamos una referencia al botón dentro de una variable llamada `btn`, usando la función `Document.querySelector ()`. También definimos una función que devuelve un número aleatorio. La tercera parte del código es el controlador de eventos. La variable `btn` apunta a un elemento ``, y este tipo de objeto tiene una serie de eventos que pueden activarse y, por lo tanto, los controladores de eventos están disponibles. Estamos escuchando el disparo del evento "click", estableciendo la propiedad del controlador de eventos `onclick` para que sea igual a una función anónima que contiene código que generó un color RGB aleatorio y establece el `` color de fondo igual a este.
+En este código, almacenamos una referencia al botón dentro de una variable llamada `btn`, usando la función `Document.querySelector ()`. También definimos una función que devuelve un número aleatorio. La tercera parte del código es el controlador de eventos. La variable `btn` apunta a un elemento , y este tipo de objeto tiene una serie de eventos que pueden activarse y, por lo tanto, los controladores de eventos están disponibles. Estamos escuchando el disparo del evento `click`, estableciendo la propiedad del controlador de eventos `onclick` para que sea igual a una función anónima que contiene código que generó un color `RGB` aleatorio y establece el color de fondo igual a este.
 
-Este código ahora se ejecutará cada vez que se active el evento "click" en el elemento ``, es decir, cada vez que un usuario haga clic en él.
+Este código ahora se ejecutará cada vez que se active el evento  `click` en el elemento, es decir, cada vez que un usuario haga clic en él.
 
-
-
-# Event Loop
+## Event Loop
 
 Antes que nada miremos un dibujo que representa el runtime de v8 (el runtime que usa chrome y node)
 
-![img](./img/image-8.png)
-
+![img](/_src/assets/04-Ajax/image-8.png)
 
 Como se puede ver en la imagen, el engine consiste de dos elementos principales
 
@@ -295,7 +279,7 @@ Javascript es un lenguaje single threaded. Esto quiere decir que durante la ejec
 
 Veamos un ejemplo:
 
-```
+```js
 function multiply (x, y) {    
   return x * y; 
 } 
@@ -310,12 +294,11 @@ printSquare(5);
 
 **Los estados del call stack serían:**
 
-![img](./img/image-9.png)
-
+![img](/_src/assets/04-Ajax/image-9.png)
 
 Y que pasa si tenemos una función de esta manera:
 
-```
+```js
 function foo() {    
   foo(); 
 } 
@@ -323,13 +306,11 @@ function foo() {
 foo();
 ```
 
-![img](./img/image-10.png)
-
+![img](/_src/assets/04-Ajax/image-10.png)
 
 Lo que sucedería es que en algún momento la cantidad de funciones llamadas excede el tamaño del stack , por lo que el navegador mostrará este error:
 
-![img](./img/image-13.png)
-
+![img](/_src/assets/04-Ajax/image-13.png)
 
 Pero qué pasa si llamamos a un timeout o hacemos un request con AJAX a un servidor. Al ser un solo thread, hay un solo call stack y por lo tanto solo se puede ejecutar una cosa a la vez. Es decir el navegador debería congelarse, no podría hacer más nada, no podría renderizar, hasta que la llamada termine de ejecutarse. Sin embargo esto no es asi, javascript es asincrónico y no bloqueante. Esto es gracias al Event Loop.
 
@@ -339,7 +320,7 @@ Algo interesante acerca de javascript, o mejor dicho de los runtimes de javascri
 
 Por lo tanto este es el gráfico que muestra una visión más abarcativa de javascript. En este se puede ver el runtime, más las Web APIs y el callback queue del cual hablaremos más adelante.
 
-![img](./img/image-11.png)
+![img](/_src/assets/04-Ajax/image-11.png)
 
 Al haber un solo thread es importante no escribir codigo bloqueante para la UI no quede bloqueada.
 
@@ -349,7 +330,7 @@ La solución son callbacks asincronicas. Para esto combinamos el uso de callback
 
 Por ejemplo:
 
-```
+```js
 console.log(“hola”);
 
 setTimeout(function timeoutCallback() {
@@ -382,13 +363,11 @@ Luego de terminar la cuenta regresiva del setTimeout() (que no es ejecutada en e
 
 El flujo en imágenes de todo este trabalenguas seria:
 
-![img](./img/image-12.gif)
-
+![img](/_src/assets/04-Ajax/image-12.gif)
 
 De esta manera se logra que el código sea no bloqueante, en vez de un setTimeout podría ser una llamada a un servidor, en donde habría que esperar que se procese nuestra solicitud y nos envíe una respuesta , el cual sería tiempo ocioso si no contáramos con callbacks asincronicas, de modo que el runtime pueda seguir con otro código. Una vez que la respuesta haya llegado del servidor y Call Stack esté vacío, se podrá procesar la respuesta (mediante la función pasada como callback ) y hacer algo con ella , por ejemplo mostrarla al usuario.
 
-Este video explica muy bien el Event Loop https://www.youtube.com/watch?v=8aGhZQkoFbQ
-
+Este video explica muy bien el Event Loop <https://www.youtube.com/watch?v=8aGhZQkoFbQ>
 
 **¿Por que si bloqueamos el call stack la ui ya no responde más?**
 
@@ -397,3 +376,7 @@ Esto se debe a que el navegador intenta realizar un proceso de renderizado cada 
 ¿Que pasaria si a un usuario que interactuando con nuestra página le sucediera esto?
 
 Lo más probable es que cierre el navegador y nunca más vuelva a entrar a nuestra página. No es algo que queremos que suceda.
+
+## Homework
+
+Completa la tarea descrita en el archivo [README](https://github.com/soyHenry/FT-M2/blob/master/04-Ajax/homework/README.md)

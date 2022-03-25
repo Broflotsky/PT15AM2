@@ -1,14 +1,14 @@
-# Henry
+![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
 
-<table width="100%" style='table-layout:fixed;'>
+<table class="hide" width="100%" style='table-layout:fixed;'>
   <tr>
-	  <td>
-	  	<a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=10-React-Forms">
-			<img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
-			<br>
-			Hacé click acá para dejar tu feedback sobre esta clase.
-	  	</a>
-	  </td>
+   <td>
+    <a href="https://airtable.com/shrHsDa2eamWqLAre?prefill_clase=10-React-Forms">
+   <img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
+   <br>
+   Hacé click acá para dejar tu feedback sobre esta clase.
+    </a>
+   </td>
               <td>
       <a href="https://quiz.soyhenry.com/evaluation/new/6074c02e656c8d23c2e6112b">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/HSQuiz.svg/768px-HSQuiz.svg.png" width="100" height="100"/>
@@ -19,19 +19,20 @@
   </tr>
 </table>
 
-# Lesson 10 - React Forms
+# React Forms
 
 Los formularios son muy útiles en cualquier aplicacion WEB. En React tenemos que manejar estos formularios nosotros mismos. Por ejemplo: obtener los valores que se ingresan, cómo administramos el state del form, las validaciones de cada valor ingresado, mostrar los mensajes de validacion, etc. Existen diferentes métodos y librerias que nos ayudan con esto, pero como no queremos depender de codigo de otro, lo haremos nosotros.
 
-## Tipos de Componentes para un Formulario:
+## Tipos de Componentes para un Formulario
 
-En React tenemos dos tipos de componentes para crear nuestro Form: `Controlled Components` y `Uncontrolled Components`. 
+En React tenemos dos tipos de componentes para crear nuestro Form: `Controlled Components` y `Uncontrolled Components`.
 
-# Componentes Controlados
+## Componentes Controlados
 
 Como sabemos, el estado en React es mutable, y lo mantenemos dentro del componente. En un componente controlado, que renderiza el Formulario, tambien controla lo que sucede con el. Es decir que a medida que cambien los valores del Form, el componente guarda esos valores en su state. Aqui vemos un pequeño ejemplo:
 
 Con Hooks:
+
 ```javascript
 import React, { useState } from 'react';
 
@@ -56,6 +57,7 @@ function Form() {
 ```
 
 Con Class:
+
 ```javascript
 import React from 'react';
 
@@ -98,6 +100,7 @@ Manejando multiples inputs:
 En la mayoria de los casos tendremos mas de un solo input. Para manejarlos podemos agregar el atributo `name` a cada uno y dejar que nuestra funcion que maneje los cambios decida que hacer dependiendo de cada valor de `e.target.name`:
 
 Con Hooks:
+
 ```javascript
 import React, { useState } from 'react';
 
@@ -136,6 +139,7 @@ export default Form;
 ```
 
 Con Class:
+
 ```javascript
 import React from 'react';
 
@@ -185,6 +189,7 @@ Validando nuestros Inputs
 Otra de las cosas que queremos hacer en nuestro componente es validar los input dependiendo de que datos se tengan que ingresar. Por ejempo: en el caso de validar un email, en el momento de cambiar nuestro state queremos 'filtrar' el valor de ese input por una funcion que valide los valores ingresados. En el caso que no sea valido mostraremos un mensaje de error.
 
 Con Hooks:
+
 ```javascript
 import React, { useState } from 'react';
 
@@ -248,8 +253,8 @@ function Form() {
 export default Form;
 ```
 
-
 Con Class:
+
 ```javascript
 import React from 'react';
 
@@ -483,7 +488,6 @@ class Form extends React.Component {
 export default Form;
 ```
 
-
 ### Inputs Dinamicos en Forms Controlados
 
 Otra de las cosas que podemos hacer en un Form controlado es tener Inputs Dinamicos, es decir, dependiendo de el usuario que utilice nuestre formulario, dinamicamente podemos crear inputs que se adapten a cada usuario. Por ejemplo, cuando en un Formulario agregamos miembros en nuestra familia, dinamicamente los inputs se van agregando.
@@ -553,7 +557,6 @@ function Form() {
 export default Form;
 ```
 
-
 ### Agregando inputs
 
 Por el momento estamos iterando sobre el state `familiar` para mostrar un input. Todavia no es dinamico. Para eso tenemos que dejar que el usuario agregue inputs haciendo click en el boton que creamos. Vamos a crear un metodo que agregue un nuevo objeto a nuestro state.
@@ -604,7 +607,7 @@ function Form() {
 export default Form;
 ```
 
-### Controlando los inputs.
+### Controlando los inputs
 
 Ya tenemos nuestros inputs, ahora tenemos que, utilizando lo antes visto. Capturar los valores ingresados utilizando un estado.
 
@@ -678,7 +681,6 @@ export default Form;
 
 Y con ese ultimo paso creamos un simple Formulario con inputs dinamicos.
 
-
 ## Uncontrolled Components
 
 Siempre se recomienda trabajar con Componentes Controlados para la implementacion de Forms. La alternativa a esto son los Componentes no controlados, en donde los datos del Form son manejados por el propio DOM. En lugar de escribir eventos para las actualizaciones del state, podemos usar una referencia para obtener los valores del formulario desde el DOM, o utilizar los metodos de `document` como por ejemplo `document.querySelector()` para obtener los valores del Formulario.
@@ -734,3 +736,7 @@ function Uncontrolled() {
   }
 }
 ```
+
+## Homework
+
+Completa la tarea descrita en el archivo [README](https://github.com/soyHenry/FT-M2/blob/master/10-React-Forms/homework/README.md)
