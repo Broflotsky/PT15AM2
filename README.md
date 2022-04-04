@@ -11,6 +11,7 @@
 #### Front-End
 
 <div class="hide">
+
 # Modulo 2 - Front-End
 
 - [01 - DOM avanzado](./01-DOM)
