@@ -12,8 +12,6 @@
 
 <div class="hide">
 
-# Modulo 2 - Front-End
-
 - [01 - DOM avanzado](./01-DOM)
 - [02 - CSS Avanzado](./02-CSS)
 - [03 - ES6 - Selectores](./03-ES6)
