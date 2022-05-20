@@ -8,14 +8,14 @@ Con tu App podremos:
 * Poder ver todos los post de un usuario en particular.
 * Poder ver los comentarios de cada post.
 
-
 ### Comenzamos
 
 Para poder comenzar tenemos que instalar las dependencias que utilizaremos. Tendran en el `package.json` ya las dependencias.Dentro de la carpeta EjerciciosExtras/homework, hacemos:
 
-```javascript
+```bash
 npm install
 ```
+
 Dentro de nuestra carpeta `components` tendremos subcarpetas con nuestros nuestro archivo.js y .css para tener mas acomodado nuestro codigo.
 En la carpeta `components` tenemos 4 subcarpetas: `User`. `UserPosts`, `CommentsPost`, `NavBar` y `Buscador`. Y en cada una crearemos sus respectivos archivos .js y .css.
 `NavBar.js` sera nuestro Header que nos permitira navegar a nuestra ruta principal(Debe verse en todas las páginas)

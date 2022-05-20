@@ -2,7 +2,7 @@
 
 ## Estilos
 
-![CSSMOdule](https://i0.wp.com/programmingwithmosh.com/wp-content/uploads/2019/01/css-modules-logo.png?resize=150%2C150&ssl=1)
+![CSSModule](https://i0.wp.com/programmingwithmosh.com/wp-content/uploads/2019/01/css-modules-logo.png?resize=150%2C150&ssl=1)
 
 En este homework vas a utilizar CSS Modules para dar estilos a los componentes que hicimos la clase anterior.
 

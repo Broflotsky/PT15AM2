@@ -8,10 +8,10 @@ En este `homework` vamos a utilizar `react-router` para poder tener más de una 
 Vamos a utilizar el código que hicimos en el `homework` anterior. Si no lo terminaste, no te preocupes, en `src` dejamos todo el código para tener el proyecto funcionando.
 
 Cuando terminemos este `homework`, vamos a tener tres rutas que podremos navegar:
+
  - **"/"**: El home, acá vamos a ver lo mismo que veiamos.
  - **"/ciudad/{ciudadId}/"**: en esta ruta, vamos a tener información más detallada sobre el clima de una ciudad en particular, notese que usamos el ID de una ciudad para identificarla y no el nombre.
  - **"/about"**: Tu oportunidad de poner tu nombre y explicar un poco de que va la `weatherApp`.
-
 
 #### Comenzamos el Enrutado de nuestra aplicacion.
 
@@ -34,6 +34,7 @@ Vamos a tener que instalar `react-router-dom`. Para eso hacemos:
 ```shell
 npm install --save react-router-dom
 ```
+
 Cómo sabemos, lo primero que necesitamos es elegir un Wrapper.
 
 Para ello debemos importar `BrowserRouter` del paquete recién agregado `react-router-dom`:
@@ -59,6 +60,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
+
 #### Modificando el NavBar
 
 Ahora que ya hemos preparado nuestra App para usar router, vamos a agregar los links necesarios en nuestro `<Nav />`. Para ello notar que es necesario primero importar `Link` desde `react-router-dom`. (Recordar de importar el componente About para poder utilizarlo)
