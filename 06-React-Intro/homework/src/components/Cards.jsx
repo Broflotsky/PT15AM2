@@ -4,7 +4,7 @@ export default function Cards (props) {
   // acá va tu código
   // tip, podés usar un map
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+    <div>
       {props.characters.map((char) => (
         <Card
           key={char.name}
