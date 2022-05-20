@@ -1,14 +1,8 @@
 export default function Card (props) {
-  // acá va tu código
   return (
     <div>
-      <div>
-        <button onClick={() => props.onClose()}>X</button>
-      </div>
-      <div>{props.name}</div>
-      <div>{props.species}</div>
-      <div>{props.gender}</div>
-      <div><img alt={props.image} src={props.image} /></div>
+      {/* acá va tu código */}
+      Card Component
     </div>
   )
 }
