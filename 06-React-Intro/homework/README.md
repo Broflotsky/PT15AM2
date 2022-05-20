@@ -14,15 +14,35 @@ Sabemos que los Componentes de React tiene que cumplir el principio de una sóla
 
 ---
 
+## Instrucciones para correr el proyecto
+
+Desde la carpeta `homework` se deben ejecutar los siguientes comandos:
+
+```bash
+npm install
+```
+
+Instala todas las dependecias necesarias para correr el proyecto correctamente
+
+```bash
+npm start
+```
+
+Comienza a correr la aplicación de forma local por lo que se puede ver desde el navegador accediendo a <http://localhost:3000>
+
+>No es necesario volver a correr el proyecto cada vez que se realice un cambio, el mismo se verá automáticamente reflejando en el navegador.
+
+---
+
 ## Character Card
 
 (`components/Card.js`)
 
+<img src="./img/characterCard.png" height="250px">
+
 Esta tarjeta va a mostrar el **nombre** de un personaje, su **especie**, **género** e **imagen**.
 
 Además cuando el usuario haga click en la X de "cerrar", se invocará una función que también viene como props.
-
-<img src="./img/characterCard.png" height="250px">
 
 Este componente `Card` va a recibir las siguientes props:
 
@@ -40,11 +60,13 @@ Este componente `Card` va a recibir las siguientes props:
 
 (`components/Cards.js`)
 
-Este Componente nos va a servir para renderizar **varios** Componentes `Card`. Básicamente, este componente va a recibir un arreglo de `personajes` (con todos sus datos), y va a crear un componente `Card` por cada uno de ellos, pasándole las props correspondientes.
-
 <img src="./img/Cards.png" height="250px">
 
-> Tip: Podés usar la función `map` y devolver un componente `Card` por cada elemento del arreglo. [Acá](https://es.reactjs.org/docs/lists-and-keys.html#rendering-multiple-components) un ejemplo de la documentación de React.
+Este Componente nos va a servir para renderizar **varios** Componentes `Card`.
+
+Básicamente, va a recibir un arreglo de `personajes` (con todos sus datos), y va a utilizar un componente `Card` (reutilizando el mismo que ya hicimos en el punto anterior) por cada uno de ellos, pasándole las props correspondientes.
+
+> Tip: Usar el método `map` y devolver un componente `Card` por cada elemento del arreglo. [Acá](https://es.reactjs.org/docs/lists-and-keys.html#rendering-multiple-components) un ejemplo de la documentación de React.
 
 ---
 
@@ -52,33 +74,13 @@ Este Componente nos va a servir para renderizar **varios** Componentes `Card`. B
 
 (`components/SearchBar.js`)
 
-Vamos a crear este componente para luego poder encontrar los personajes que deseemos ver.
+<img src="./img/SearchBar.png" height="50px">
 
-![searchBar](./img/SearchBar.png)
+Vamos a crear este componente para luego poder agregar más personajes que deseemos ver.
 
-Este Componente recibe por props una función `onSearch`, que recibe un parámetro (que será el nombre del personaje tomado desde el input; pero de momento pueden pasarle uno cualquiera, ya que aún no estamos utilizando estados dentro del componente).
+Este Componente recibe por props una función `onSearch`, que recibe un parámetro (que luego será el nombre del personaje tomado desde el input; pero de momento le pasamos uno cualquiera, ya que aún no estamos utilizando estados dentro del componente).
 
 La función `onSearch` se debe ejecutar cuando se haga click en el botón `Agregar`.
-
----
-
-## Instrucciones para correr el proyecto
-
-Desde la carpeta `homework` se pueden ejecutar los siguientes comandos:
-
-```bash
-npm install
-```
-
-Instala todas las dependecias necesarias para correr el proyecto correctamente
-
-```bash
-npm start
-```
-
-Comienza a correr la aplicación de forma local por lo que se puede ver desde el navegador accediendo a <http://localhost:3000>
-
->No es necesario volver a correr el proyecto cada vez que se realice un cambio sino que se verá automáticamente reflejando en el navegador.
 
 ---
 
@@ -86,8 +88,7 @@ Comienza a correr la aplicación de forma local por lo que se puede ver desde el
 
 Ya completaste los puntos anteriores y funciona todo? Perfecto! Ya podemos comenzar a crear nuestra propia app:
 
-1. En una carpeta fuera de este repo, usamos CRA (create-react-app) para crear una nueva app de React:
-<!-- Instrucciones? ^^^^  -->
+1. En una carpeta **fuera de este repo**, usamos *CRA* (create-react-app) para crear una nueva app de React:
 
 ```bash
 npx create-react-app rick_and_morty
@@ -95,7 +96,7 @@ npx create-react-app rick_and_morty
 
 > Hint: para el nombre de tu app no puedes usar mayúsculas ni el signo "&"
 
-Al término del proceso, nos va a quedar una carpeta con el siguiente contenido:
+Al término del proceso, nos va a crear una nueva carpeta con el siguiente contenido:
 
 <img src="./img/cra_01.png" height="200px">
 
