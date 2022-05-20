@@ -132,7 +132,7 @@ Ahora debemos crear una función para agregar nuevos personajes a nuestro estado
 export default function App() {
 ...
 
-function onSearch(ciudad) {
+function onSearch(character) {
     // Acá habría que hacer el llamado a la API para obtener los datos del personaje,
     // pero de momento agregaremos uno por default, para ver que funcione.
 
@@ -152,6 +152,8 @@ return (
 
 ```
 
+---
+
 ### 5) Le pasamos la función a Nav
 
 Nuestra función recién creada, que modifica el estado `characters` se la pasamos a `Nav`.
@@ -164,7 +166,9 @@ Nuestra función recién creada, que modifica el estado `characters` se la pasam
 
 ```
 
-7. Quien finalmente debe ejecutar la función `onSearch` no es el `Nav` sino el `SearchBar` por lo que debemos hacerle llegar dicha función.
+### 6) Seguimos pasando la función para que llegue a su destino
+
+Quien finalmente debe ejecutar la función `onSearch` no es el `Nav` sino el `SearchBar`, por lo que debemos hacerle llegar dicha función.
 
 ```jsx
 // Nav.jsx
@@ -178,100 +182,98 @@ return (
 )
 ```
 
-8. En este punto ya la función debería ejecutarse ya que en el ejercicio anterior ya habíamos creado el componente `SearchBar` que recibía la función como parámetro y la ejecutaba cuando se hacía un `submit` del form.
+---
+
+### 7) Probemos que funcione
+
+En este punto la función ya debería ejecutarse, debido a que en un homework anterior ya habíamos creado el componente `SearchBar` que recibía la función como parámetro y la ejecutaba cuando se hacía un `submit` del form.
+
+Repasemos el componente `SearchBar`:
 
 ```js
 //SearchBar.jsx
 
-export default function SearchBar({onSearch}) {
+export default function SearchBar ({ onSearch }) { // recibimos la prop que nos pasó el componente Nav
   return (
-    <form onSubmit={(e) => {
-      e.preventDefault();
-      onSearch("Cairns");
-    }}>
-      <input
-        type="text"
-        placeholder="Ciudad..."
-      />
-      <input type="submit" value="Agregar" />
-    </form>
-  );
+    <div>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          onSearch()
+        }}
+      >
+        <input
+          type='text'
+          placeholder='Personaje...'
+        />
+        <input type='submit' value='Agregar'/>
+      </form>
+    </div>
+  )
 }
 ```
 
-Si observamos el código anterior estamos llamando a la función `onSearch` con un parámetro ya fijo pero quisiéramos que ese parámetro dependa del input ingresado por el usuario.
+<!-- Llegado a este punto cada vez que le den click al botón de `Agregar` se debe incluir una nueva tarjeta con los datos que seteamos para la ciudad de `Cairns` -->
 
-9. Modificar el componente `SearchBar` para que mantenga un estado interno del nombre de la ciudad (`city`) escrita por el usuario y que cuando haya un cambio en el input lo detecte mediante el listener `onChange` y actualice dicho estado. Adicionalmente cambiar el parámetro de la funcion `onSearch` para que utilice el estado `city` en vez del valor fijo que tenía hasta ahora (Si ya habían realizado esto en el ejercicio anterior, saltear este paso)
+Si observamos el código anterior estamos llamando a la función `onSearch` sin pasarle ningún parámetro, pero quisiéramos que ese parámetro dependa del input ingresado por el usuario.
 
-Llegado a este punto cada vez que le den click al botón de `Agregar` se debe incluir una nueva tarjeta con los datos que seteamos para la ciudad de `Cairns`
+---
 
-10. Modificar la función `onSearch` para que obtenga los datos necesarios desde la API de [openweather](https://openweathermap.org/current). Para ello pueden utilizar `fetch` para hacer la llamada y obtener el resultado. En el caso de que la ciudad no exista deberíamos mostrar un mensaje indicándolo.
+### 8) Pasandole parámetros a la función
 
-__IMPORTANTE__: Para poder realizar las llamadas a la API es necesario contar con una apiKey  que como verán en el código debajo debe ser incluida dentro de la URL. La misma la podemos obtener creando una cuenta en la paǵina de [openweather](https://openweathermap.org/current). Sino consultar con sus PMs si tienen ya una apiKey para darles y que puedan evitar realizar este paso.
+Modificar el componente `SearchBar` para que mantenga un **estado** interno del nombre del personaje (`character`) escrito por el usuario y que cuando haya un cambio en el input, lo detecte mediante el listener `onChange` y actualice dicho estado.
 
-*Pueden utilizar sino la siguiente apiKey: '4ae2636d8dfbdc3044bede63951a019b'*
+Adicionalmente pasarle dicho estado `character` como parámetro de la funcion `onSearch` cuando la llamamos en el `submit`; para que utilice el estado, que contiene lo que ingresó el usuario y éste valor llegue así a la función onSearch que tenemos en App.
+
+---
+
+### 9) Buscando datos reales
+
+Ahora debemos modificar la función `onSearch` para que obtenga los datos necesarios desde la API de [Rick&Morty](https://rickandmortyapi.com). Para ello vamos a utilizar `fetch` para hacer la llamada y obtener el resultado. Por el momento sólo vamos a obtener los personajes por ID, ya que si los buscamos por nombre hay demasiados resultados debido a que los mismos se repiten bastante.
+
+En el caso de que el personaje no exista, deberíamos mostrar un mensaje indicándolo.
 
 ```js
 // App.js
 
   ...
 
-  function onSearch(ciudad) {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`)
-      .then(r => r.json())
-      .then((recurso) => {
-        if(recurso.main !== undefined){
-          const ciudad = {
-            min: Math.round(recurso.main.temp_min),
-            max: Math.round(recurso.main.temp_max),
-            img: recurso.weather[0].icon,
-            id: recurso.id,
-            wind: recurso.wind.speed,
-            temp: recurso.main.temp,
-            name: recurso.name,
-            weather: recurso.weather[0].main,
-            clouds: recurso.clouds.all,
-            latitud: recurso.coord.lat,
-            longitud: recurso.coord.lon
-          };
-          setCities(oldCities => [...oldCities, ciudad]);
+  function onSearch (character) {
+    fetch(`https://rickandmortyapi.com/api/character/${character}`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.name) {
+          setCharacters(oldChars => [...oldChars, data])
         } else {
-          alert("Ciudad no encontrada");
+          window.alert('No hay personajes con ese ID')
         }
-      });
+      })
+  }
 
-    }
 
 ...
 
 ```
 
-11. Por último en el ejercicio anterior habíamos creado el componente `Card` para que reciba una función como parámetro. Esta va a ser la encargada de eliminarla al momento de hacer click en el botón `X`. Para ello es necesario definir dicha función en `App.js` para que a partir del id recibido, elimina dicha cudad del array de ciudades del estado.
+---
 
-```js
+### 10) Cerrar cards
+
+Por último, recordemos que en una homework anterior habíamos creado el componente `Card` para que reciba una función como parámetro. Ésta va a ser la encargada de eliminar esa card al momento de hacer click en el botón `X`.
+
+Para ello es necesario definir dicha función en `App.js` para que a partir del id recibido, elimina dicho personaje del array de personajes del ***estado***.
+
+```jsx
 // App.js
-
   ...
-
   function App() {
-
     ...
-
     function onClose(id) {
-      setCities(oldCities => oldCities.filter(c => c.id != id));
+      setCharacters(prevCharacters => prevCharacters.filter(char => char.id != id));
     }
-
     ...
-
 ```
-Muestra final de la aplicación funcionando:
 
-<p align="center">
-  <img src="./img-screen/agregar-ciudad.gif" alt="Gif" />
-</p>
+### Muestra final de la aplicación funcionando
 
-<p align="center">
-  <img src="./img-screen/borrar-ciudad.gif" alt="Gif" />
-</p>
-
-![Alt](./img-screen/tarjetas-iconos.png)
+<img src="./img/final.gif" width='800px'/>
