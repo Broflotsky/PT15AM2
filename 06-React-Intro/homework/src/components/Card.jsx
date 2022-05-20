@@ -1,4 +1,3 @@
-
 export default function Card (props) {
   // acá va tu código
   return (
