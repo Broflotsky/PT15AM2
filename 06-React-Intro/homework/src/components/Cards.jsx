@@ -1,19 +1,18 @@
-import React from 'react'
 import Card from './Card'
 
-export default function Cards(props) {
-  console.log('props de Cards', props)
+export default function Cards (props) {
   // acá va tu código
   // tip, podés usar un map
   return (
-    <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+    <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
       {props.characters.map((char) => (
         <Card
+          key={char.name}
           name={char.name}
           species={char.species}
           gender={char.gender}
           image={char.image}
-          onClose={() => alert('Emulamos que se cierra la card')}
+          onClose={() => window.alert('Emulamos que se cierra la card')}
         />
       ))}
     </div>

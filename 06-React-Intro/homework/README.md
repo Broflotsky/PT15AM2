@@ -18,13 +18,13 @@ Sabemos que los Componentes de React tiene que cumplir el principio de una sóla
 
 (`components/Card.js`)
 
-Esta tarjeta va a mostrar el nombre de un personaje, su especie, género e imagen.
+Esta tarjeta va a mostrar el **nombre** de un personaje, su **especie**, **género** e **imagen**.
 
-Además cuando el usuario haga click en la X de "cerrar", se invocará una función que tambien viene como props.
+Además cuando el usuario haga click en la X de "cerrar", se invocará una función que también viene como props.
 
 <img src="./img/characterCard.png" height="250px">
 
-Este Componente va a recibir las siguientes props:
+Este componente `Card` va a recibir las siguientes props:
 
 - **name**: Nombre
 - **species**: Especie
@@ -32,7 +32,7 @@ Este Componente va a recibir las siguientes props:
 - **image**: Imágen
 - **onClose**: La función que se va a ejecutar cuando el usuario haga click en el botón de cerrar.
 
-Todos estos datos van a venir de una API externa, pero por ahora no nos interesa esa parte. Nosotros te vamos a dar datos de prueba para que puedas ver tu componente funcionando.
+> Luego todos éstos datos van a venir de una API externa, pero por ahora no nos interesa esa parte. Por el momento nosotros te los vamos a brindar desde un archivo local, para que ya puedas ver tu componente funcionando.
 
 ---
 
@@ -40,7 +40,7 @@ Todos estos datos van a venir de una API externa, pero por ahora no nos interesa
 
 (`components/Cards.js`)
 
-Este Componente nos va a servir para renderizar muchos Componentes `Cards`. Básicamente, este componente va a recibir un arreglo de `personajes` (con todos sus datos), y va a crear un componente `Card` por cada uno de ellos, pasándole las props correspondientes.
+Este Componente nos va a servir para renderizar **varios** Componentes `Card`. Básicamente, este componente va a recibir un arreglo de `personajes` (con todos sus datos), y va a crear un componente `Card` por cada uno de ellos, pasándole las props correspondientes.
 
 <img src="./img/Cards.png" height="250px">
 
@@ -52,13 +52,17 @@ Este Componente nos va a servir para renderizar muchos Componentes `Cards`. Bás
 
 (`components/SearchBar.js`)
 
-Este componente se va a utilizarse para luego poder encontrar las ciudades sobre las cuales se desee ver el clima actual.
+Vamos a crear este componente para luego poder encontrar los personajes que deseemos ver.
 
 ![searchBar](./img/SearchBar.png)
 
-Este Componente recibe por props una función `onSearch` que recibe un parámetro (que será el nombre de la ciudad tomado desde el input pero de momento pueden pasarle uno cualquiera ya que aún no estamos utilizando estados dentro del componente). La función `onSearch` se debe ejecutar cuando se haga click en el botón `Agregar`.
+Este Componente recibe por props una función `onSearch`, que recibe un parámetro (que será el nombre del personaje tomado desde el input; pero de momento pueden pasarle uno cualquiera, ya que aún no estamos utilizando estados dentro del componente).
 
-### Instrucciones para correr el proyecto
+La función `onSearch` se debe ejecutar cuando se haga click en el botón `Agregar`.
+
+---
+
+## Instrucciones para correr el proyecto
 
 Desde la carpeta `homework` se pueden ejecutar los siguientes comandos:
 
@@ -78,7 +82,7 @@ Comienza a correr la aplicación de forma local por lo que se puede ver desde el
 
 ---
 
-## Creemos una app desde cero
+## Ahora creemos una app desde cero
 
 Ya completaste los puntos anteriores y funciona todo? Perfecto! Ya podemos comenzar a crear nuestra propia app:
 
@@ -101,8 +105,18 @@ Al término del proceso, nos va a quedar una carpeta con el siguiente contenido:
 npm start
 ```
 
-> Hint: procuremos cerrar la terminal o terminar el proceso anterior si aún estabamos corriendo el front de la homework. De lo contrario podemos obtener un error por el puerto ya ocupado. Si eso sucede, terminamos el servidor anterior (CTRL+C) y reintentamos.
+> Hint: Si aún tenemos corriendo el server local de la homework, vamos a obtener un error debido a que el puerto predeterminado (3000) está ocupado. Podemos elegir utilizar otro puerto, o terminar el proceso anterior y luego reintentarlo.
 
 Esperamos que se "levante" el servidor local y luego veremos algo así:
 
 <img src="./img/cra_02.gif" height="360px">
+
+Ahora copiemos/reemplacemos, en nuestra carpeta `\src` del nuevo proyecto, los siguientes elementos que ya teníamos en la homework:
+
+1. La carpeta `components` (y todo su contenido)
+2. El archivo `App.js`
+3. El archivo `data.js`
+
+En el navegador ya deberías ver los cambios. Lo que hicimos en la homework está corriendo como una app independiente.
+
+Listo! Ya tenes tu primer app hecha con React 👏🏼🚀
