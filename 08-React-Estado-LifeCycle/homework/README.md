@@ -269,7 +269,7 @@ Para ello es necesario definir dicha función en `App.js` para que a partir del 
   function App() {
     ...
     function onClose(id) {
-      setCharacters(prevCharacters => prevCharacters.filter(char => char.id != id));
+      setCharacters(prevCharacters => prevCharacters.filter(char => char.id !== id));
     }
     ...
 ```
