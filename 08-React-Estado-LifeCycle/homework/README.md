@@ -16,7 +16,7 @@ No es necesario volver a correr el proyecto cada vez que se realice un cambio si
 
 <!-- 1. Ya se encuentran copiados los componentes creados en el ejercicio anterior dentro de la carpeta `components`. En el caso de que quieran utilizar los que hicieron ustedes, copiar todos los archivos que se encuentren en la carpeta `components` del ejercicio `07-React-Estilos` a la carpeta `components` pero del ejercicio `08-React-Estado-LifeCycle` sobreescribiendo los que ya se encuentran allí. -->
 
-Hasta el momento en nuestra app tenemos estos 3 Componentes:
+Hasta el momento en nuestra Rick&Morty App tenemos estos 3 Componentes:
 
 * Card.jsx
 * Cards.jsx
@@ -24,7 +24,7 @@ Hasta el momento en nuestra app tenemos estos 3 Componentes:
 
 Adicionalmente, vamos a crear otro denominado `Nav` que va a ser nuestra barra superior de navegación, en la cual debemos incluir el componente `SearchBar`.
 
-También vamos a reestructurar nuestra vista ***Home***, que no es más que nuestro archivo `App.js` para darle una forma más ordenada.
+También vamos a reestructurar nuestra vista ***"Home"***, que no es más que nuestro archivo `App.js` para darle una forma más ordenada.
 
 ## Ejercicio
 
@@ -53,7 +53,7 @@ Escribir el código correspondiente en `components/Nav.jsx`. Recuerda que este c
 
 Ahora vamos a modificar el contenido del archivo `App.js`.
 
-Para ello veamos una imagen del resultado final y pensemos la estructura general:
+Veamos primero una imagen del resultado final y pensemos la estructura general:
 
 <img src="./img/layout.png" width='800px'/>
 
@@ -62,9 +62,10 @@ Para ello veamos una imagen del resultado final y pensemos la estructura general
 >* **Recuadro verde**: Cards
 >* **Recuadro azul**: Card
 
-Ya no vamos a renderizar la `Card` "suelta" que pusimos en la primera clase. En `App` sólo vamos a renderizar el componentes `Cards`, ya que el mismo ya incluye varias `Card`.
+En `App` sólo vamos a renderizar los componentes `Cards` y `Nav`.
 
-Lo mismo sucede con `SearchBar`, no lo vamos a renderizar más directamente en App, debido a que ya se encuentra dentro de `Nav`.
+* Ya no vamos a renderizar la primera `Card` "suelta" que pusimos en la primera clase, ya que el mismo `Cards` incluye varias `Card`.
+* Lo mismo sucede con `SearchBar`, no lo vamos a renderizar más directamente en App, debido a que ya se encuentra dentro de `Nav`.
 
 #### Entonces necesitamos
 
@@ -116,7 +117,7 @@ import { useState } from 'react' // Agregamos useState
 ...
 
 export default function App() {
-  const [cities, setCities] = useState([])
+  const [characters, setCharacters] = useState([])
   ...
 }
 ```
@@ -186,9 +187,9 @@ return (
 
 ### 7) Probemos que funcione
 
-En este punto la función ya debería ejecutarse, debido a que en un homework anterior ya habíamos creado el componente `SearchBar` que recibía la función como parámetro y la ejecutaba cuando se hacía un `submit` del form.
+En un homework anterior ya habíamos creado el componente `SearchBar` que recibía la función como parámetro y la ejecutaba cuando se hacía un `submit` del form.
 
-Repasemos el componente `SearchBar`:
+Repasemos el componente:
 
 ```js
 //SearchBar.jsx
@@ -213,7 +214,7 @@ export default function SearchBar ({ onSearch }) { // recibimos la prop que nos 
 }
 ```
 
-<!-- Llegado a este punto cada vez que le den click al botón de `Agregar` se debe incluir una nueva tarjeta con los datos que seteamos para la ciudad de `Cairns` -->
+En este punto la función ya debería ejecutarse, cada vez que le demos click al botón `Agregar`, un nuevo personaje se añade a nuestro estado `characters`, y por cada uno de ellos nuestro componente `Cards` renderiza una `Card`.
 
 Si observamos el código anterior estamos llamando a la función `onSearch` sin pasarle ningún parámetro, pero quisiéramos que ese parámetro dependa del input ingresado por el usuario.
 
