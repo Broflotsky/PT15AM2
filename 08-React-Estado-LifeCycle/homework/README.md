@@ -277,3 +277,10 @@ Para ello es necesario definir dicha función en `App.js` para que a partir del 
 ### Muestra final de la aplicación funcionando
 
 <img src="./img/final.gif" width='800px'/>
+
+---
+
+## Extras
+
+* Controlar que no se puedan agregar personajes repetidos
+* Agregar un botón en la navbar que agregue un personaje random (Hint: hay 826 personajes en total)
