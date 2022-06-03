@@ -2,7 +2,12 @@
 
 En este ejercicio vamos a crear una APP que utilice la API de [OMDB](http://www.omdbapi.com/). Vamos a crear nuestra app utilizando __REACT__ y __REDUX__.
 
-> Vamos a necesitar una APIKEY ya que la API de OMDB es paga. Usen `apikey=20dac387`
+> Vamos a necesitar una APIKEY ya que la API de OMDB es paga.
+
+Para eso deben ir a la página de OMDB a crearse una cuenta.  
+1 - Ir a la página de [creación de apiKey]((http://www.omdbapi.com/apikey.aspx)) y rellenar el formulario  
+2 - Una vez completado el formulario, les llegará un email a con la `apiKey` que utilizarán para acceder a la api de OMDB  
+3 - Listo! ya pueden utilizar la `apiKey` creada para resolver la homework
 
 Con tu App podremos:
 
@@ -42,7 +47,7 @@ export function addMovieFavorite(payload) {
 
 export function getMovies(titulo) {
   return function(dispatch) {
-    return fetch("http://www.omdbapi.com/?apikey=20dac387&s=" + titulo)
+    return fetch("http://www.omdbapi.com/?apikey=tuApiKey&s=" + titulo)
       .then(response => response.json())
       .then(json => {
         dispatch({ type: "GET_MOVIES", payload: json });
