@@ -60,7 +60,7 @@ Este componente `Card` va a recibir las siguientes props:
 
 (`components/Cards.js`)
 
-<img src="/06-React-Intro/homework/homework-integration/img/cards.png" height="250px">
+<img src="/06-React-Intro/homework/homework-integration/img/Cards.png" height="250px">
 
 Este Componente nos va a servir para renderizar **varios** Componentes `Card`.
 
@@ -74,7 +74,7 @@ Básicamente, va a recibir un arreglo de `personajes` (con todos sus datos), y v
 
 (`components/SearchBar.js`)
 
-<img src="/06-React-Intro/homework/homework-integration/img/searchBar.png" height="50px">
+<img src="/06-React-Intro/homework/homework-integration/img/SearchBar.png" height="50px">
 
 Vamos a crear este componente para luego poder agregar más personajes que deseemos ver.
 
