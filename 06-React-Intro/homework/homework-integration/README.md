@@ -60,7 +60,7 @@ Este componente `Card` va a recibir las siguientes props:
 
 (`components/Cards.js`)
 
-<img src="./img/cards.png" height="250px">
+<img src="/06-React-Intro/homework/homework-integration/img/cards.png" height="250px">
 
 Este Componente nos va a servir para renderizar **varios** Componentes `Card`.
 
@@ -74,7 +74,7 @@ Básicamente, va a recibir un arreglo de `personajes` (con todos sus datos), y v
 
 (`components/SearchBar.js`)
 
-<img src="./img/searchBar.png" height="50px">
+<img src="/06-React-Intro/homework/homework-integration/img/searchBar.png" height="50px">
 
 Vamos a crear este componente para luego poder agregar más personajes que deseemos ver.
 
@@ -98,7 +98,7 @@ npx create-react-app rick_and_morty
 
 Al término del proceso, nos va a crear una nueva carpeta con el siguiente contenido:
 
-<img src="./img/cra_01.png" height="200px">
+<img src="/06-React-Intro/homework/homework-integration/img/cra_01.png" height="200px">
 
 2. Dentro de esta nueva carpeta tipeamos:
 
@@ -110,7 +110,7 @@ npm start
 
 Esperamos que se "levante" el servidor local y luego veremos algo así:
 
-<img src="./img/cra_02.gif" height="360px">
+<img src="/06-React-Intro/homework/homework-integration/img/cra_02.gif" height="360px">
 
 Ahora copiemos/reemplacemos, en nuestra carpeta `\src` del nuevo proyecto, los siguientes elementos que ya teníamos en la homework:
 
