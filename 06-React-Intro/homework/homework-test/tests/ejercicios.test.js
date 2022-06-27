@@ -1,3 +1,16 @@
+import React from "react";
+import "@testing-library/jest-dom/extend-expect";
+import { render } from "@testing-library/react";
+import Bienvenido from "../components/Bienvenido.jsx";
+
+describe("<Bienvenido/>", () => {
+  const component = render(<Bienvenido />);
+
+  test("Debería renderizar el componente", () => {
+    expect(component).toBeTruthy();
+  });
+});
+
 /*
 Ejercicio 1
 
