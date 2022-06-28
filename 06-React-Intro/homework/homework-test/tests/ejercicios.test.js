@@ -1,13 +1,43 @@
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
-import { render } from "@testing-library/react";
-import Bienvenido from "../components/Bienvenido.jsx";
+import Bienvenido from "../src/components/Bienvenido.jsx";
+import { shallow, configure } from "enzyme";
+import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 
-describe("<Bienvenido/>", () => {
-  const component = render(<Bienvenido />);
+configure({ adapter: new Adapter() });
 
-  test("Debería renderizar el componente", () => {
-    expect(component).toBeTruthy();
+describe("<Bienvenido />", () => {
+  it("Renderiza el componente", () => {
+    shallow(<Bienvenido />);
+  });
+
+  
+  it("Debe renderizar el titulo correcto con un tag h1", () => {
+    const saludo = "Bienvenidos a la magia";
+    
+    const wrapper = shallow(<Bienvenido />);
+    expect(wrapper.find("h1").text()).toEqual(saludo);
+  });
+
+  it("Debe renderizar los tipos de magia correctos en una lista desordenada", () => {
+    const tiposMagia = [
+      "fuego",
+      "rayo",
+      "aire",
+      "metal",
+      "veneno",
+      "celestial",
+      "transformación",
+      "elemental",
+      "alquímica",
+      "escritura",
+      "armadura",
+      "estelar",
+      "hadas",
+    ];
+  
+    const wrapper = shallow(<Bienvenido />);
+    expect(wrapper.find("ul").children().length).toEqual(tiposMagia.length);
   });
 });
 
