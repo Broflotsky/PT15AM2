@@ -38,7 +38,7 @@ Comienza a correr la aplicación de forma local por lo que se puede ver desde el
 
 (`components/Card.js`)
 
-<img src="/06-React-Intro/homework/homework-integration/img/characterCard.png" height="250px">
+<img src="./img/characterCard.png" height="250px">
 
 Esta tarjeta va a mostrar el **nombre** de un personaje, su **especie**, **género** e **imagen**.
 
