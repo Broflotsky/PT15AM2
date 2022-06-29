@@ -8,7 +8,7 @@ En esta homework, vamos a crear una serie de Componentes de React, nos ayudarán
 >
 > No te preocupes por el estilo de los componentes. En la homework siguiente practicaremos un poco sobre estilos.
 
-En la carpeta `src` vas a encontrar ya el esqueleto del proyecto React, estructurado de la siguiente manera:una carpeta llamada componentes (dentro de ella realizarás los ejercicios), un archivo llamado App.js, index.js, index.css, una carpeta donde estarán los tests correspondientes, package.json y el archivo README que ahora mismo estás leyendo. (^-^)
+En la carpeta `src` vas a encontrar ya el esqueleto del proyecto React, estructurado de la siguiente manera:una carpeta llamada components (dentro de ella realizarás los ejercicios), un archivo llamado App.js, index.js, index.css, una carpeta donde estarán los tests correspondientes, package.json y el archivo README que ahora mismo estás leyendo. (^-^)
 
 Estos ejercicios nos ayudarán a comprender los conceptos vistos en clase y a la hora de realizar la homework-integration.
 ---
@@ -35,22 +35,20 @@ Comienza a correr la aplicación de forma local por lo que se puede ver desde el
 
 ## Ejercicio 1️⃣ 
 
-Para este primer ejercicio encontrarás ya creado el componente "Bienvenido", dentro de la función utilizaremos la magia de React para combinar Javascript con HTML, crea una variable de tipo string llamada saludo, asígnale un mensaje de bienvenida y luego que ésta retorne en un h1.
+Para este primer ejercicio encontrarás ya creado el componente "Bienvenido", dentro de la función utilizaremos la magia de React para combinar Javascript con HTML, crea una variable de tipo string llamada saludo, asígnale un mensaje de bienvenida y luego que ésta retorne en un h1; además crea una etiqueta <p> con un mensaje que destaque la lista de los tipos de magia; por último debes crear una variable que contenga un arreglo con mínimo 5 elementos que retornarán en una lista desordenada que enliste este arreglo.
+> Tip: para recorrer el arreglo puedes usar el método `map`
 
+<p align="center"><img src="./img/eje1.png" height="250px" >
 
 ---
 
-## Ejercicio 2
+## Ejercicio 2️⃣
 
-(`components/Cards.js`)
+Para este ejercicio ya sabemos cómo funciona un componente en React, ahora vamos a crear un componente desde cero. Haz click derecho sobre la carpeta "components" --> Nuevo archivo --> Botones.jsx, crea el componente guiándote del ejercicio anterior; sin embargo, para este ejercicio el componente tendrá lo siguiente:
 
-<img src="./img/cards.png" height="250px">
+🔵 Un botón llamado "Ocultar" que al hacer click sobre él, los tipos de magia del componente "Bienvenido" se oculten.
 
-Este Componente nos va a servir para renderizar **varios** Componentes `Card`.
-
-Básicamente, va a recibir un arreglo de `personajes` (con todos sus datos), y va a utilizar un componente `Card` (reutilizando el mismo que ya hicimos en el punto anterior) por cada uno de ellos, pasándole las props correspondientes.
-
-> Tip: Usar el método `map` y devolver un componente `Card` por cada elemento del arreglo. [Acá](https://es.reactjs.org/docs/lists-and-keys.html#rendering-multiple-components) un ejemplo de la documentación de React.
+🔵 Un botón llamado "Mostrar" que vuelva nuevamente visible los tipos de magia del componente "Bienvenido".
 
 ---
 
@@ -68,40 +66,6 @@ La función `onSearch` se debe ejecutar cuando se haga click en el botón `Agreg
 
 ---
 
-## Ahora creemos una app desde cero
+Listo! Ahora estás preparado para crear tu propia app!! ✨🚀
 
-Ya completaste los puntos anteriores y funciona todo? Perfecto! Ya podemos comenzar a crear nuestra propia app:
-
-1. En una carpeta **fuera de este repo**, usamos *CRA* (create-react-app) para crear una nueva app de React:
-
-```bash
-npx create-react-app rick_and_morty
-```
-
-> Hint: para el nombre de tu app no puedes usar mayúsculas ni el signo "&"
-
-Al término del proceso, nos va a crear una nueva carpeta con el siguiente contenido:
-
-<img src="./img/cra_01.png" height="200px">
-
-2. Dentro de esta nueva carpeta tipeamos:
-
-```bash
-npm start
-```
-
-> Hint: Si aún tenemos corriendo el server local de la homework, vamos a obtener un error debido a que el puerto predeterminado (3000) está ocupado. Podemos elegir utilizar otro puerto, o terminar el proceso anterior y luego reintentarlo.
-
-Esperamos que se "levante" el servidor local y luego veremos algo así:
-
-<img src="./img/cra_02.gif" height="360px">
-
-Ahora copiemos/reemplacemos, en nuestra carpeta `\src` del nuevo proyecto, los siguientes elementos que ya teníamos en la homework:
-
-1. La carpeta `components` (y todo su contenido)
-2. El archivo `App.js`
-3. El archivo `data.js`
-
-En el navegador ya deberías ver los cambios. Lo que hicimos en la homework está corriendo como una app independiente.
-
-Listo! Ya tenes tu primer app hecha con React 👏🏼🚀
+Dirígete a la carpeta 📂<b>"homework-integration"</b> y diviértete desarrollando la app de Rick & Morty 🤩
