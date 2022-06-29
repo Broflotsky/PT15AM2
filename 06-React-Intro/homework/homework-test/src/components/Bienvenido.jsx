@@ -1,8 +1,8 @@
 import React from "react";
 import Botones from "./Botones";
 
-const saludo = "Bienvenidos a la magia";
-const tiposMagia = [
+export const saludo = "Hola Magicos";
+export const tiposMagia = [
   "fuego",
   "rayo",
   "aire",
