@@ -35,7 +35,7 @@ Comienza a correr la aplicación de forma local por lo que se puede ver desde el
 
 ## Ejercicio 1️⃣ 
 
-Para este primer ejercicio encontrarás ya creado el componente "Bienvenido", dentro de la función utilizaremos la magia de React para combinar Javascript con HTML, crea una variable de tipo string llamada saludo, asígnale un mensaje de bienvenida y luego que ésta retorne en un h1; además crea una etiqueta <p> con un mensaje que destaque la lista de los tipos de magia; por último debes crear una variable que contenga un arreglo con mínimo 5 elementos que retornarán en una lista desordenada que enliste este arreglo.
+Para este primer ejercicio encontrarás ya creado el componente "Bienvenido", dentro de la función utilizaremos la magia de React para combinar Javascript con HTML, crea una variable de tipo string llamada saludo, asígnale un mensaje de bienvenida y luego que ésta retorne en un h1; además crea una etiqueta de párrafo con un mensaje que destaque la lista de los tipos de magia; por último debes crear una variable que contenga un arreglo con mínimo 5 elementos que retornarán en una lista desordenada que enliste este arreglo.
 > Tip: para recorrer el arreglo puedes usar el método `map`
 
 <p align="center"><img src="./img/eje1.png" height="250px" >

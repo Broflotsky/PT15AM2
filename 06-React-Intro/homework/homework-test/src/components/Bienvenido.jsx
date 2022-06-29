@@ -1,4 +1,5 @@
 import React from "react";
+import Botones from "./Botones";
 
 const saludo = "Bienvenidos a la magia";
 const tiposMagia = [
@@ -27,6 +28,7 @@ export default function Bienvenido() {
           <li key={k}>{t}</li>
         ))}
       </ul>
+      <Botones/>
     </div>
   );
 }
