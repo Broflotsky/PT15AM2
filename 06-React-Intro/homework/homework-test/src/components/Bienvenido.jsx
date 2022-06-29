@@ -1,7 +1,7 @@
 import React from "react";
 
-const saludo = "Bienvenidos a la magia";
-const tiposMagia = [
+export const saludo = "Hola Magicos";
+export const tiposMagia = [
   "fuego",
   "rayo",
   "aire",
