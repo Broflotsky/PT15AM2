@@ -2,17 +2,18 @@
 
 ## Ejercicios
 
-En esta homework, vamos a crear una serie de Componentes de React, nos ayudarán a entender mucho mejor esta grandiosa librería :D.
+Esta homework, en la que vamos a crear una serie de Componentes de React, nos ayudará a entender mucho mejor esta grandiosa librería :D.
 
 > **Nota**: Todos los Componentes que haremos en esta homework son `Puros` o `Funcionales`, por lo tanto, ninguno tiene estado, simplemente algunos reciben datos por props.
 >
 > No te preocupes por el estilo de los componentes. En la homework siguiente practicaremos un poco sobre estilos.
 
-En la carpeta `src` vas a encontrar ya el esqueleto del proyecto React, estructurado de la siguiente manera:una carpeta llamada components (dentro de ella realizarás los ejercicios), un archivo llamado App.js, index.js, index.css, una carpeta donde estarán los tests correspondientes, package.json y el archivo README que ahora mismo estás leyendo. (^-^)
+En la carpeta `src` vas a encontrar ya el esqueleto del proyecto React, estructurado de la siguiente manera: una carpeta llamada components (dentro de ella realizarás los ejercicios), un archivo llamado App.js, index.js, index.css, una carpeta donde estarán los tests correspondientes, package.json y el archivo README que ahora mismo estás leyendo. (^-^)
 
 Estos ejercicios nos ayudarán a comprender los conceptos vistos en clase y a la hora de realizar la homework-integration.
+
 ---
-***
+
 ## Comencemos... 🤖
 
 Desde la carpeta `homework/homework-test` se deben ejecutar los siguientes comandos:
@@ -33,7 +34,7 @@ Comienza a correr la aplicación de forma local por lo que se puede ver desde el
 
 ---
 
-## Ejercicio 1️⃣ 
+## Ejercicio 1️⃣
 
 Para este primer ejercicio encontrarás ya creado el componente "Bienvenido", dentro de la función utilizaremos la magia de React para combinar Javascript con HTML, crea una variable de tipo string llamada saludo, asígnale un mensaje de bienvenida y luego que ésta retorne en un h1; además crea una etiqueta de párrafo con un mensaje que destaque la lista de los tipos de magia; por último debes crear una variable que contenga un arreglo con mínimo 5 elementos que retornarán en una lista desordenada que enliste este arreglo.
 > Tip: para recorrer el arreglo puedes usar el método `map`
@@ -68,4 +69,4 @@ La función `onSearch` se debe ejecutar cuando se haga click en el botón `Agreg
 
 Listo! Ahora estás preparado para crear tu propia app!! ✨🚀
 
-Dirígete a la carpeta 📂<b>"homework-integration"</b> y diviértete desarrollando la app de Rick & Morty 🤩
+Dirígete a la carpeta 📂**homework-integration** y diviértete desarrollando la app de Rick & Morty 🤩
