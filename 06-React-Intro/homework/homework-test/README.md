@@ -2,7 +2,7 @@
 
 ## Ejercicios
 
-En esta homework, vamos a crear una serie de Componentes de React, nos ayudarán a entender mucho mejor esta grandiosa librería :D.
+Esta homework, en la que vamos a crear una serie de Componentes de React, nos ayudará a entender mucho mejor esta grandiosa librería :D.
 
 > **Nota**: Todos los Componentes que haremos en esta homework son `Puros` o `Funcionales`, por lo tanto, ninguno tiene estado, simplemente algunos reciben datos por props.
 >
