@@ -107,12 +107,6 @@ Estos ejercicios nos ayudarán a comprender los conceptos vistos en clase y a la
 
 ---
 
-
-
-
-
----
-
 ## Ejercicio 2️⃣
 
 Para este ejercicio ya sabemos cómo funciona un componente en React, ahora vamos a crear un componente desde cero. Haz click derecho sobre la carpeta "components" --> Nuevo archivo --> Botones.jsx, crea el componente guiándote del ejercicio anterior; sin embargo, para este ejercicio el componente tendrá lo siguiente:
