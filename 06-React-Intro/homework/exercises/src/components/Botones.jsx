@@ -1,12 +1,14 @@
-export default function Botones (props){
-    const handleClickShow = () => {
-        alert('Mostrar')
-    }
-    const handleClickHidden = () => {
-        alert('Ocultar')
-    }
-    return <div>
-                <button onClick={handleClickHidden}>Ocultar</button>
-                <button onClick={handleClickShow}>Mostrar</button>
-           </div>
+import React from "react";
+
+class Botones extends React.Component {
+  render() {
+    return (
+      <div>
+        <button onClick={() => alert(this.props.alerts.ocultar)}>Ocultar</button>
+        <button onClick={() => alert(this.props.alerts.mostrar)}>Mostrar</button>
+      </div>
+    );
+  }
 }
+
+export default Botones;

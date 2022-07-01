@@ -24,12 +24,24 @@ Al finalizar esta homework habrás aprendido a crear componentes de React tanto 
 ---
 ## Consigna de la homework
 
-En esta homework, vamos a crear una serie de componentes de React, que nos ayudarán a entender mucho mejor cómo funciona esta grandiosa librería 😀.
+En esta homework, vamos a crear dos componentes de React, que nos ayudarán a entender mucho mejor cómo funciona esta grandiosa librería 😀.
 
-> **Nota**: Todos los Componentes que haremos en esta homework ninguno tiene estado, simplemente algunos reciben datos por props.
->
-> No te preocupes por el estilo de los componentes. En la siguiente homework practicaremos un poco sobre estilos.
+> **Nota**: No te preocupes por el estilo de los componentes. En la siguiente homework practicaremos un poco sobre estilos.
+
+◻️ El primer componente "Bienvenido.jsx" lo encontrarás ya creado y su función predefinida.
+
+◻️ El segundo componente "Botones.jsx" lo deberás crear desde cero como un componente de clase.
+
 ---
+## Pasos básicos para realizar la homework
+
+◻️ Para poder ejecutar los `test` de esta homework, es necesario que estemos ubicados dentro de la carpeta `exercises` utilizando el comando "cd + nombreCarpeta.
+
+➡️ Cuando te encuentres en esta carpeta, debes ejecutar el comando `npm install`o `npm i`.
+
+    ➡️
+
+
 En la carpeta `src` vas a encontrar ya el esqueleto del proyecto React, estructurado de la siguiente manera:
 
 🔹 Una carpeta llamada components (dentro de ella realizarás los ejercicios)
@@ -91,20 +103,6 @@ Para este ejercicio ya sabemos cómo funciona un componente en React, ahora vamo
 🔵 Un botón llamado "Ocultar" que al hacer click sobre él, los tipos de magia del componente "Bienvenido" se oculten.
 
 🔵 Un botón llamado "Mostrar" que vuelva nuevamente visible los tipos de magia del componente "Bienvenido".
-
----
-
-## Barra de búsqueda
-
-(`components/SearchBar.js`)
-
-<img src="./img/searchBar.png" height="50px">
-
-Vamos a crear este componente para luego poder agregar más personajes que deseemos ver.
-
-Este Componente recibe por props una función `onSearch`, que recibe un parámetro (que luego será el nombre del personaje tomado desde el input; pero de momento le pasamos uno cualquiera, ya que aún no estamos utilizando estados dentro del componente).
-
-La función `onSearch` se debe ejecutar cuando se haga click en el botón `Agregar`.
 
 ---
 

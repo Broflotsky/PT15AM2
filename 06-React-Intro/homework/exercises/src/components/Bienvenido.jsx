@@ -1,8 +1,8 @@
 import React from "react";
 import Botones from "./Botones";
 
-export const saludo = "Hola Magicos";
-export const tiposMagia = [
+const subTitle = "Magic Types";
+const magicTypes = [
   "fuego",
   "rayo",
   "aire",
@@ -19,16 +19,24 @@ export const tiposMagia = [
 ];
 
 export default function Bienvenido() {
+  const alerts = {
+    ocultar: "Ocultar",
+    mostrar: "Mostrar",
+  };
+
   return (
     <div>
-      <h1>{saludo}</h1>
-      <p>Tipos de magia:</p>
+      <h1>Title</h1>
+      <h3>{subTitle}</h3>
       <ul>
-        {tiposMagia.map((t, k) => (
+        {magicTypes.map((t, k) => (
           <li key={k}>{t}</li>
         ))}
       </ul>
-      <Botones/>
+      <Botones alerts={alerts} />
     </div>
   );
 }
+
+export { subTitle, magicTypes };
+
