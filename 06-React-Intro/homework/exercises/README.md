@@ -32,6 +32,8 @@ En esta homework, vamos a crear dos componentes de React, que nos ayudarán a en
 
 ◻️ El segundo componente "Botones.jsx" lo deberás crear desde cero como un componente de clase.
 
+> **Nota**: Estos ejercicios nos ayudarán a comprender los conceptos vistos en clase y a la hora de realizar la homework de integration.
+
 ---
 ## Pasos básicos para realizar la homework
 
@@ -80,7 +82,7 @@ Dentro de la carpeta `exercises`, vas a encontrar la siguiente estructura:
 
 🔹 En el componente `Bienvenido.jsx` encontrarás la función predefinida de un componente funcional, dentro de ella aplicaremos la magia de React para combinar los temas vistos en clase, para ello necesitamos:
 
-* Que la función retorne un div.
+* Que la función renderice un div.
 * Dentro de este div, crea la etiqueta correspondiente para un título (puedes colocar el texto que desees).
 * Crea una constante de tipo string llamada `subTitle` y asígnale un texto.
 * Dicha constante debe ser renderizada dentro de un h3.
@@ -89,40 +91,55 @@ Dentro de la carpeta `exercises`, vas a encontrar la siguiente estructura:
 
 > Tip: para recorrer el arreglo puedes usar el método `map`.
 
-* El componente debe verse en el navegador similar a esta imagen:
+* El componente `Bienvenido` debe verse en el navegador similar a esta imagen:
 <p align="center"><img src="./img/eje1.png" height="500px" >    
 
-🔹 Llegó la hora de crear tu primer componente desde cero.
+**...Llegó la hora de crear tu primer componente desde cero** ⭐
+
+Ya sabemos cómo funciona un componente en React, ahora vamos a crear un componente desde cero, pero esta vez será un componente de clase. Haz click derecho sobre la carpeta "components" --> Nuevo archivo --> `Botones.jsx` 
+
+> **Nota**: Puedes guiarte del ejercicio anterior.
+
+* Crea un componente de clase llamado `Botones.jsx`.
+* La función debe renderizar en un div.
+* Dentro del div, renderiza un botón llamado "Mostrar".
+* Dentro del div, renderiza un botón llamado "Ocultar".
+* Cada botón debe tener el atributo onClick que muestre una alerta.
+
+**...Estamos llegando a la última parte de la homework** ⭐
+
+Necesitamos ahora conectar estos dos componentes, cómo lo hacemos? muy fácil!!!
+
+* Primero debes importar `Botones.jsx` dentro del componente `Bienvenido.jsx`
+* Segundo debes renderizar `Botones.jsx` como etiqueta en el componente `Bienvenido.jsx`con sus props del objeto "alerts".
+* Y tercero, el componente `Botones.jsx` recibe props del componente `Bienvenido.jsx`, los cuales serán renderizados dentro de cada alert de cada botón.
+* El componente debe verse en el navegador similar a esta imagen:
+
+<img src="./img/eje2.png" height="250px" >  <img src="./img/eje3.png" height="250px" >
 
 ---
 
-## Duración estimada
+## Duración estimada 🕒
 
 90 minutos
 
 ---
-## Recuerda que...
+## Recordemos que...
 
-Estos ejercicios nos ayudarán a comprender los conceptos vistos en clase y a la hora de realizar la homework-integration.
+🔹 Todo en Reat es un componente y existen dos tipos: los componentes funcionales y los componentes de clase.
+
+🔹 Un componente funcional es una función de Javascript que puede o no recibir datos (props). Tanto el nombre de la función como el nombre del archivo se deben llamar igual y deben ser con mayúscula inicial.
+
+🔹 Un componente de clase es otra manera de definir un componente, la diferencia radica en que es con sintaxis de ES6.
+
+🔹 Las props o propiedades son la manera que tiene React para pasar parámetros de un componente padre a sus hijos.
+
+---
+## Recursos adicionales
+Documentación **"Intro to React"** https://reactjs.org/tutorial/tutorial.html
 
 ---
 
-## Ejercicio 2️⃣
+Listo!! Ahora estás preparado para crear tu propia app!! ✨🚀
 
-Para este ejercicio ya sabemos cómo funciona un componente en React, ahora vamos a crear un componente desde cero. Haz click derecho sobre la carpeta "components" --> Nuevo archivo --> Botones.jsx, crea el componente guiándote del ejercicio anterior; sin embargo, para este ejercicio el componente tendrá lo siguiente:
-
-🔵 Importar el componente "Botones" en el componente "Bienvenido".
-
-🔵 Renderiza el componente "Botones" debajo de la lista desordenada.
-
-🔵 El componente "Botones" recibe props.
-
-🔵 Un botón llamado "Ocultar" que al hacer click sobre él, los tipos de magia del componente "Bienvenido" se oculten.
-
-🔵 Un botón llamado "Mostrar" que vuelva nuevamente visible los tipos de magia del componente "Bienvenido".
-
----
-
-Listo! Ahora estás preparado para crear tu propia app!! ✨🚀
-
-Dirígete a la carpeta 📂<b>"homework-integration"</b> y diviértete desarrollando la app de Rick & Morty 🤩
+Dirígete a la carpeta 📂 **"homework-integration"** y diviértete desarrollando la app de Rick & Morty 🤩
