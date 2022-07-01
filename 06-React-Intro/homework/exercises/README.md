@@ -37,56 +37,79 @@ En esta homework, vamos a crear dos componentes de React, que nos ayudarán a en
 
 ◻️ Para poder ejecutar los `test` de esta homework, es necesario que estemos ubicados dentro de la carpeta `exercises` utilizando el comando "cd + nombreCarpeta.
 
-➡️ Cuando te encuentres en esta carpeta, debes ejecutar el comando `npm install`o `npm i`.
+* Cuando te encuentres en esta carpeta, debes ejecutar el comando `npm install` o `npm i`.
 
-    ➡️
+* Listo!! Ya puedes correr los test con el comando `npm test`
 
+◻️ Para poder correr la aplicación de forma local solo debes ejecutar el comando `npm start`. 
 
-En la carpeta `src` vas a encontrar ya el esqueleto del proyecto React, estructurado de la siguiente manera:
+* Verás en el navegador lo que vamos trabajando accediendo a <http://localhost:3000>
+>**Nota**: No es necesario volver a correr el proyecto cada vez que se realice un cambio, el mismo se verá automáticamente reflejando en el navegador.
 
-🔹 Una carpeta llamada components (dentro de ella realizarás los ejercicios)
+---
+## Conociendo la estructura...
 
-🔹 Un archivo llamado App.js
+Dentro de la carpeta `exercises`, vas a encontrar la siguiente estructura:
 
-🔹 Un archivo index.js
+🔹 Una carpeta llamada `img`
 
-🔹 Un archivo index.css (estilos)
+🔹 Una carpeta llamada `public`
 
-🔹 Una carpeta `tests` donde están los tests correspondientes a los ejercicios.
+🔹 Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
 
-🔹 Un package.json
+🔹 Una carpeta llamada `tests`
+
+🔹 Un archivo package.json
 
 🔹 Y el archivo README que ahora mismo estás leyendo. 🧐
 
+---
+## Comencemos...👨‍💻👩‍💻
+
+🔹 Dentro de la carpeta `src` en la que vas a encontrar ya el esqueleto del proyecto React, estructurado de la siguiente manera:
+
+* Una carpeta llamada components (dentro de ella realizarás los ejercicios)
+
+* Un archivo llamado App.js
+
+* Un archivo index.js
+
+* Un archivo index.css (estilos)
+
+🔹 Trabajaremos en la carpeta `components` en ella por ahora solo tenemos el componente "Bienvenido.jsx".
+
+🔹 En el componente `Bienvenido.jsx` encontrarás la función predefinida de un componente funcional, dentro de ella aplicaremos la magia de React para combinar los temas vistos en clase, para ello necesitamos:
+
+* Que la función retorne un div.
+* Dentro de este div, crea la etiqueta correspondiente para un título (puedes colocar el texto que desees).
+* Crea una constante de tipo string llamada `subTitle`.
+* Asígnale un texto.
+* La constante debe retornar en un h3.
+* Encontrarás una constante llamada `magicTypes` de tipo array, asígnale mínimo 5 elementos.
+* Este arreglo debe retornar en una lista desordenada que enliste los elementos.
+> Tip: para recorrer el arreglo puedes usar el método `map`.
+
+* El componente debe verse en el navegador similar a esta imagen:
+<p align="center"><img src="./img/eje1.png" height="500px" >    
+
+🔹 Llegó la hora de crear tu primer componente desde cero. 
+
+---
+## Duración estimada
+
+45 minutos
+
+---
+## Recuerda que... 
+
 Estos ejercicios nos ayudarán a comprender los conceptos vistos en clase y a la hora de realizar la homework-integration.
----
-***
-## Comencemos... 🤖
 
-Desde la carpeta `homework/homework-test` se deben ejecutar los siguientes comandos:
-
-```bash
-npm install
-```
-
-Luego de hacer la instalación coloca en la consola el comando:
-
-```bash
-npm start
-```
-
-Comienza a correr la aplicación de forma local por lo que se puede ver desde el navegador accediendo a <http://localhost:3000>
-
->No es necesario volver a correr el proyecto cada vez que se realice un cambio, el mismo se verá automáticamente reflejando en el navegador.
 
 ---
 
-## Ejercicio 1️⃣ 
 
-Para este primer ejercicio encontrarás ya creado el componente "Bienvenido.jsx" dentro de la carpeta components, dentro de la función utilizaremos la magia de React para combinar Javascript con HTML, crea una variable de tipo string llamada saludo, asígnale un mensaje de bienvenida y luego que ésta retorne en un h1; además crea una etiqueta de párrafo con un mensaje que destaque la lista de los tipos de magia; por último debes crear una variable que contenga un arreglo con mínimo 5 elementos que retornarán en una lista desordenada que enliste este arreglo.
-> Tip: para recorrer el arreglo puedes usar el método `map`
 
-<p align="center"><img src="./img/eje1.png" height="500px" >
+
 
 ---
 
