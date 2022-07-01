@@ -76,34 +76,34 @@ Dentro de la carpeta `exercises`, vas a encontrar la siguiente estructura:
 
 * Un archivo index.css (estilos)
 
-🔹 Trabajaremos en la carpeta `components` en ella por ahora solo tenemos el componente "Bienvenido.jsx".
+🔹 Trabajaremos sólo en la carpeta `components`, en principio sólo tenemos el componente "Bienvenido.jsx".
 
 🔹 En el componente `Bienvenido.jsx` encontrarás la función predefinida de un componente funcional, dentro de ella aplicaremos la magia de React para combinar los temas vistos en clase, para ello necesitamos:
 
 * Que la función retorne un div.
 * Dentro de este div, crea la etiqueta correspondiente para un título (puedes colocar el texto que desees).
-* Crea una constante de tipo string llamada `subTitle`.
-* Asígnale un texto.
-* La constante debe retornar en un h3.
+* Crea una constante de tipo string llamada `subTitle` y asígnale un texto.
+* Dicha constante debe ser renderizada dentro de un h3.
 * Encontrarás una constante llamada `magicTypes` de tipo array, asígnale mínimo 5 elementos.
-* Este arreglo debe retornar en una lista desordenada que enliste los elementos.
+* Los elementos de este arreglo deben renderizarse en una lista desordenada.
+
 > Tip: para recorrer el arreglo puedes usar el método `map`.
 
 * El componente debe verse en el navegador similar a esta imagen:
 <p align="center"><img src="./img/eje1.png" height="500px" >    
 
-🔹 Llegó la hora de crear tu primer componente desde cero. 
+🔹 Llegó la hora de crear tu primer componente desde cero.
 
 ---
+
 ## Duración estimada
 
-45 minutos
+90 minutos
 
 ---
-## Recuerda que... 
+## Recuerda que...
 
 Estos ejercicios nos ayudarán a comprender los conceptos vistos en clase y a la hora de realizar la homework-integration.
-
 
 ---
 
