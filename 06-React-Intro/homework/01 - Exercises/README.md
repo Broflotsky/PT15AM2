@@ -20,7 +20,7 @@ En esta homework, vamos a crear dos componentes de React, que nos ayudarán a en
 
 ### Pasos básicos para realizar la homework
 
-◻️ Para poder ejecutar los `test` de esta homework, es necesario que estemos ubicados dentro de la carpeta `exercises` utilizando el comando "cd + nombreCarpeta.
+◻️ Para poder ejecutar los `test` de esta homework, es necesario que estemos ubicados dentro de la carpeta `01 - Exercises` utilizando el comando "cd + nombreCarpeta.
 
 * Cuando te encuentres en esta carpeta, debes ejecutar el comando `npm install` o `npm i`.
 
