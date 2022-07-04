@@ -1,7 +1,7 @@
 import React from 'react'
 
 const studentName = 'Nacho'
-const techSkills = ['react', 'javascript', 'css', 'html', 'redux']
+const techSkills = ['Html', 'Css', 'JavaScript', 'React', 'Redux']
 const alerts = {}
 
 export default function Bienvenido () {

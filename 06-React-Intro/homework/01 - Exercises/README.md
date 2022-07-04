@@ -52,7 +52,7 @@ Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
 ---
 
-## Comencemos...👨‍💻👩‍💻
+## 👩‍💻 Ejercicio 1
 
 🔹 Dentro de la carpeta `src` en la que vas a encontrar ya el esqueleto del proyecto React, estructurado de la siguiente manera:
 
@@ -79,9 +79,13 @@ Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
 * El componente `Bienvenido` debe verse en el navegador similar a esta imagen:
 
-<p align="center"><img src="./img/eje1.png" height="500px" >
+<p align="center"><img src="./img/01.png" height="300px" >
 
-**...Llegó la hora de crear tu primer componente desde cero** ⭐
+---
+
+## 👩‍💻 Ejercicio 2
+
+**Llegó la hora de crear tu primer componente desde cero** ⭐
 
 Ya sabemos cómo funciona un componente en React, ahora vamos a crear un componente desde cero, pero esta vez será un componente de clase. Haz click derecho sobre la carpeta "components" --> Nuevo archivo --> `Botones.jsx`
 
