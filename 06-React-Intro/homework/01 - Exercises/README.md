@@ -1,26 +1,8 @@
-# Módulo: Módulo 2 - Front End
+# HW 01 - React-Intro | Ejercicios con test
 
-# Lecture: React-Intro
+## Duración estimada 🕒
 
-## Temas de la clase
-
-◻️ React
-
-◻️ Componente
-
-◻️ JSX
-
-◻️ Componentes funcionales y componentes de clase
-
-◻️ Props
-
-◻️ Webpack
-
----
-
-## Aprendizaje esperado
-
-Al finalizar esta homework habrás aprendido a crear componentes de React tanto funcionales como de clase, entenderás el propósito de las props, cómo trabaja Javascript con HTML y podrás aplicar todos estos conocimientos en la app de integración.
+90 minutos
 
 ---
 
@@ -32,19 +14,17 @@ En esta homework, vamos a crear dos componentes de React, que nos ayudarán a en
 
 ◻️ El primer componente "Bienvenido.jsx" lo encontrarás ya creado y su función predefinida.
 
-◻️ El segundo componente "Botones.jsx" lo deberás crear desde cero como un componente de clase.
-
-> **Nota**: Estos ejercicios nos ayudarán a comprender los conceptos vistos en clase y a la hora de realizar la homework de integration.
+◻️ El segundo componente "Botones.jsx" lo deberás crear desde cero como un componente ***de clase***.
 
 ---
 
-## Pasos básicos para realizar la homework
+### Pasos básicos para realizar la homework
 
 ◻️ Para poder ejecutar los `test` de esta homework, es necesario que estemos ubicados dentro de la carpeta `exercises` utilizando el comando "cd + nombreCarpeta.
 
 * Cuando te encuentres en esta carpeta, debes ejecutar el comando `npm install` o `npm i`.
 
-* Listo!! Ya puedes correr los test con el comando `npm test`
+* Listo!! Ya puedes correr los test con el comando `npm test` o `npm t`.
 
 ◻️ Para poder correr la aplicación de forma local solo debes ejecutar el comando `npm start`.
 
@@ -54,7 +34,7 @@ En esta homework, vamos a crear dos componentes de React, que nos ayudarán a en
 
 ---
 
-## Conociendo la estructura
+### Conociendo la estructura
 
 Dentro de la carpeta `exercises`, vas a encontrar la siguiente estructura:
 
@@ -126,15 +106,9 @@ Necesitamos ahora conectar estos dos componentes, cómo lo hacemos? muy fácil!!
 
 ---
 
-## Duración estimada 🕒
-
-90 minutos
-
----
-
 ## Recordemos que
 
-🔹 Todo en Reat es un componente y existen dos tipos: los componentes funcionales y los componentes de clase.
+🔹 Todo en React es un componente y existen dos tipos: los componentes funcionales y los componentes de clase.
 
 🔹 Un componente funcional es una función de Javascript que puede o no recibir datos (props). Tanto el nombre de la función como el nombre del archivo se deben llamar igual y deben ser con mayúscula inicial.
 
