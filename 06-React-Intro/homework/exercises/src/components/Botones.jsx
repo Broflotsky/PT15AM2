@@ -4,8 +4,12 @@ class Botones extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={() => alert(this.props.alerts.ocultar)}>Ocultar</button>
-        <button onClick={() => alert(this.props.alerts.mostrar)}>Mostrar</button>
+        <button onClick={() => alert("Ocultar")}>
+          {this.props.alerts.ocultar}
+        </button>
+        <button onClick={() => alert("Mostrar")}>
+          {this.props.alerts.mostrar}
+        </button>
       </div>
     );
   }

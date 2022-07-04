@@ -83,7 +83,7 @@ Dentro de la carpeta `exercises`, vas a encontrar la siguiente estructura:
 🔹 En el componente `Bienvenido.jsx` encontrarás la función predefinida de un componente funcional, dentro de ella aplicaremos la magia de React para combinar los temas vistos en clase, para ello necesitamos:
 
 * Que la función renderice un div.
-* Dentro de este div, crea la etiqueta correspondiente para un título (puedes colocar el texto que desees).
+* Dentro de este div, crea la etiqueta correspondiente para un título h1 (puedes colocar el texto que desees).
 * Crea una constante de tipo string llamada `subTitle` y asígnale un texto.
 * Dicha constante debe ser renderizada dentro de un h3.
 * Encontrarás una constante llamada `magicTypes` de tipo array, asígnale mínimo 5 elementos.

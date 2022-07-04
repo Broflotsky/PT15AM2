@@ -18,12 +18,12 @@ const magicTypes = [
   "hadas",
 ];
 
-export default function Bienvenido() {
-  const alerts = {
-    ocultar: "Ocultar",
-    mostrar: "Mostrar",
-  };
+const alerts = {
+  ocultar: "Ocultar",
+  mostrar: "Mostrar",
+};
 
+export default function Bienvenido() {
   return (
     <div>
       <h1>Title</h1>
@@ -38,5 +38,4 @@ export default function Bienvenido() {
   );
 }
 
-export { subTitle, magicTypes };
-
+export { subTitle, magicTypes, alerts };
