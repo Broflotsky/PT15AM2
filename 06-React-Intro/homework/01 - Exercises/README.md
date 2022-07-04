@@ -36,7 +36,7 @@ En esta homework, vamos a crear dos componentes de React, que nos ayudarán a en
 
 ### Conociendo la estructura
 
-Dentro de la carpeta `exercises`, vas a encontrar la siguiente estructura:
+Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
 🔹 Una carpeta llamada `img`
 
@@ -56,7 +56,7 @@ Dentro de la carpeta `exercises`, vas a encontrar la siguiente estructura:
 
 🔹 Dentro de la carpeta `src` en la que vas a encontrar ya el esqueleto del proyecto React, estructurado de la siguiente manera:
 
-* Una carpeta llamada components (dentro de ella realizarás los ejercicios)
+* Una carpeta llamada components
 
 * Un archivo llamado App.js
 
@@ -64,16 +64,16 @@ Dentro de la carpeta `exercises`, vas a encontrar la siguiente estructura:
 
 * Un archivo index.css (estilos)
 
-🔹 Trabajaremos sólo en la carpeta `components`, en principio sólo tenemos el componente "Bienvenido.jsx".
+🔹 Para estos ejercicios, trabajaremos sólo dentro la carpeta `components`. En principio sólo tenemos el componente `Bienvenido.jsx`.
 
-🔹 En el componente `Bienvenido.jsx` encontrarás la función predefinida de un componente funcional, dentro de ella aplicaremos la magia de React para combinar los temas vistos en clase, para ello necesitamos:
+🔹 En dicho componente encontrarás la función predefinida de un componente funcional. Dentro de ella aplicaremos la magia de React para combinar los temas vistos en clase, y para ello debes realizar los pasos a continuación:
 
-* Que la función renderice un div.
-* Dentro de este div, crea la etiqueta correspondiente para un título h1 (puedes colocar el texto que desees).
-* Crea una constante de tipo string llamada `subTitle` y asígnale un texto.
-* Dicha constante debe ser renderizada dentro de un h3.
-* Encontrarás una constante llamada `magicTypes` de tipo array, asígnale mínimo 5 elementos.
-* Los elementos de este arreglo deben renderizarse en una lista desordenada.
+1. Que la función renderice un div.
+2. Dentro de este div, crea la etiqueta correspondiente para un título h1 (puedes colocar el texto que desees).
+3. Crea una constante de tipo string llamada `studentName` y asígnale un texto.
+4. Dicha constante debe ser renderizada dentro de un h3.
+5. Encontrarás una constante llamada `techSkills` de tipo array, asígnale mínimo 5 elementos.
+6. Los elementos de este arreglo deben renderizarse en una lista desordenada.
 
 > Tip: para recorrer el arreglo puedes usar el método `map`.
 

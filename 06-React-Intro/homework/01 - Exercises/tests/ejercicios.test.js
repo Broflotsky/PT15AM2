@@ -5,8 +5,8 @@ import { shallow, configure } from 'enzyme'
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
 // Importamos variables/componentes
 import Bienvenido, {
-  subTitle,
-  magicTypes,
+  studentName,
+  techSkills,
   alerts
 } from '../src/components/Bienvenido.jsx'
 import Botones from '../src/components/Botones.jsx'
@@ -33,14 +33,14 @@ describe('React-Intro tests', () => {
     expect(h1.length).toBe(1)
   })
 
-  it("Debe renderizar una etiqueta 'h3' en donde su texto corresponda a la constante 'subTitle'", () => {
+  it("Debe renderizar una etiqueta 'h3' en donde su texto corresponda a la constante 'studentName'", () => {
     const h3 = divBienvenido.find('h3')
     expect(h3.length).toBe(1)
-    expect(h3.text()).toBe(subTitle)
+    expect(h3.text()).toBe(studentName)
   })
 
-  it('El arreglo magicTypes debe contener al menos 5 elementos', () => {
-    expect(magicTypes.length).toBeGreaterThanOrEqual(5)
+  it('El arreglo techSkills debe contener al menos 5 elementos', () => {
+    expect(techSkills.length).toBeGreaterThanOrEqual(5)
   })
 
   it("Debe renderizar una etiqueta 'ul'", () => {
@@ -48,11 +48,11 @@ describe('React-Intro tests', () => {
     expect(ul.length).toBe(1)
   })
 
-  it('Debe renderizar una etiqueta li por cada tipo de magia', () => {
+  it('Debe renderizar una etiqueta li por cada tech skill', () => {
     const ul = divBienvenido.find('ul')
     const li = ul.find('li')
-    magicTypes.length > 5
-      ? expect(li.length).toBe(magicTypes.length)
+    techSkills.length > 5
+      ? expect(li.length).toBe(techSkills.length)
       : expect(li.length).toBe(5)
   })
 
