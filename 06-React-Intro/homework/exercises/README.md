@@ -1,7 +1,8 @@
 # Módulo: Módulo 2 - Front End
+
 # Lecture: React-Intro
 
-## Temas de la clase:
+## Temas de la clase
 
 ◻️ React
 
@@ -22,6 +23,7 @@
 Al finalizar esta homework habrás aprendido a crear componentes de React tanto funcionales como de clase, entenderás el propósito de las props, cómo trabaja Javascript con HTML y podrás aplicar todos estos conocimientos en la app de integración.
 
 ---
+
 ## Consigna de la homework
 
 En esta homework, vamos a crear dos componentes de React, que nos ayudarán a entender mucho mejor cómo funciona esta grandiosa librería 😀.
@@ -35,6 +37,7 @@ En esta homework, vamos a crear dos componentes de React, que nos ayudarán a en
 > **Nota**: Estos ejercicios nos ayudarán a comprender los conceptos vistos en clase y a la hora de realizar la homework de integration.
 
 ---
+
 ## Pasos básicos para realizar la homework
 
 ◻️ Para poder ejecutar los `test` de esta homework, es necesario que estemos ubicados dentro de la carpeta `exercises` utilizando el comando "cd + nombreCarpeta.
@@ -43,13 +46,15 @@ En esta homework, vamos a crear dos componentes de React, que nos ayudarán a en
 
 * Listo!! Ya puedes correr los test con el comando `npm test`
 
-◻️ Para poder correr la aplicación de forma local solo debes ejecutar el comando `npm start`. 
+◻️ Para poder correr la aplicación de forma local solo debes ejecutar el comando `npm start`.
 
 * Verás en el navegador lo que vamos trabajando accediendo a <http://localhost:3000>
+
 >**Nota**: No es necesario volver a correr el proyecto cada vez que se realice un cambio, el mismo se verá automáticamente reflejando en el navegador.
 
 ---
-## Conociendo la estructura...
+
+## Conociendo la estructura
 
 Dentro de la carpeta `exercises`, vas a encontrar la siguiente estructura:
 
@@ -66,6 +71,7 @@ Dentro de la carpeta `exercises`, vas a encontrar la siguiente estructura:
 🔹 Y el archivo README que ahora mismo estás leyendo. 🧐
 
 ---
+
 ## Comencemos...👨‍💻👩‍💻
 
 🔹 Dentro de la carpeta `src` en la que vas a encontrar ya el esqueleto del proyecto React, estructurado de la siguiente manera:
@@ -92,11 +98,12 @@ Dentro de la carpeta `exercises`, vas a encontrar la siguiente estructura:
 > Tip: para recorrer el arreglo puedes usar el método `map`.
 
 * El componente `Bienvenido` debe verse en el navegador similar a esta imagen:
-<p align="center"><img src="./img/eje1.png" height="500px" >    
+
+<p align="center"><img src="./img/eje1.png" height="500px" >
 
 **...Llegó la hora de crear tu primer componente desde cero** ⭐
 
-Ya sabemos cómo funciona un componente en React, ahora vamos a crear un componente desde cero, pero esta vez será un componente de clase. Haz click derecho sobre la carpeta "components" --> Nuevo archivo --> `Botones.jsx` 
+Ya sabemos cómo funciona un componente en React, ahora vamos a crear un componente desde cero, pero esta vez será un componente de clase. Haz click derecho sobre la carpeta "components" --> Nuevo archivo --> `Botones.jsx`
 
 > **Nota**: Puedes guiarte del ejercicio anterior.
 
@@ -115,7 +122,7 @@ Necesitamos ahora conectar estos dos componentes, cómo lo hacemos? muy fácil!!
 * Y tercero, el componente `Botones.jsx` recibe por props del componente `Bienvenido.jsx` un objeto llamado `alerts` con dos propiedades: `ocultar` y `mostrar`. Estos serán renderizados dentro de cada botón.
 * El componente debe verse en el navegador similar a esta imagen:
 
-<img src="./img/eje2.png" height="250px" >  <img src="./img/eje3.png" height="250px" >
+<img src="./img/eje2.png" height="250px" >  <img src="./img/eje3.png" height="250px">
 
 ---
 
@@ -124,7 +131,8 @@ Necesitamos ahora conectar estos dos componentes, cómo lo hacemos? muy fácil!!
 90 minutos
 
 ---
-## Recordemos que...
+
+## Recordemos que
 
 🔹 Todo en Reat es un componente y existen dos tipos: los componentes funcionales y los componentes de clase.
 
@@ -135,8 +143,10 @@ Necesitamos ahora conectar estos dos componentes, cómo lo hacemos? muy fácil!!
 🔹 Las props o propiedades son la manera que tiene React para pasar parámetros de un componente padre a sus hijos.
 
 ---
+
 ## Recursos adicionales
-Documentación **"Intro to React"** https://reactjs.org/tutorial/tutorial.html
+
+Documentación **"Intro to React"** <https://reactjs.org/tutorial/tutorial.html>
 
 ---
 
