@@ -7,6 +7,7 @@ import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 import Bienvenido, {
   subTitle,
   magicTypes,
+  alerts,
 } from "../src/components/Bienvenido.jsx";
 import Botones from "../src/components/Botones.jsx";
 
@@ -16,7 +17,7 @@ describe("React-Intro tests", () => {
   const wrapperBienvenido = shallow(<Bienvenido />);
   const divBienvenido = wrapperBienvenido.find("div");
 
-  const wrapperBotones = shallow(<Botones />);
+  const wrapperBotones = shallow(<Botones alerts={alerts} />);
   const divBotones = wrapperBotones.find("div");
 
   it("Renderiza el componente ", () => {
@@ -43,7 +44,7 @@ describe("React-Intro tests", () => {
     expect(ul.length).toBe(1);
   });
 
-  it("El arreglo tiposMagia debe contener al menos 5 elementos", () => {
+  it("El arreglo magicTypes debe contener al menos 5 elementos", () => {
     expect(magicTypes.length).toBeGreaterThanOrEqual(5);
   });
 
@@ -61,7 +62,6 @@ describe("React-Intro tests", () => {
   });
 
   it("Dentro del componente Botones, debe renderizar una única etiqueta 'div' que contenga todo lo demás", () => {
-    const divBotones = wrapperBotones.find("div");
     expect(divBotones).toHaveLength(1);
   });
 
@@ -70,20 +70,35 @@ describe("React-Intro tests", () => {
     expect(botones.length).toBe(2);
   });
 
-  it("Dentro del componente Botones, el primer botón debe tener el texto 'Ocultar'", () => {
-    const botones = divBotones.find("button");
-    expect(botones.first().text()).toBe("Ocultar");
+  it("El componente Botones debe recibir un objeto alerts con dos propiedades como props", () => {
+    // console.log(wrapperBotones.props("alerts"));
+    console.log(wrapperBotones.prop("alerts").length);
   });
 
-  it("Dentro del componente Botones, el segundo botón debe tener el texto 'Mostrar'", () => {
-    const botones = divBotones.find("button");
-    expect(botones.last().text()).toBe("Mostrar");
-  });
+  // it("El componente Botones debe recibir por props un objeto alerts con una propiedad ocultar en donde su valor sea 'Ocultar' y una propiedad mostrar en donde su valor sea 'Mostrar'", () => {
 
-  it("Los botones deben tener un evento onClick que ejecuten una función que muestre un alert con un texto aleatorio", () => {
-    const botones = divBotones.find("button");
-    botones.forEach((boton) => {
-      expect(boton.props().onClick).toBeInstanceOf(Function);
-    });
-  });
+  //   // const botonOcultarProp = botones.find(e => e.text() === alerts.ocultar);
+  //   // const botonMostrarProp = botones.find(e => e.text() === alerts.mostrar);
+  //   // expect(botonOcultarProp).toBeTruthy();
+  //   // expect(botonMostrarProp).toBeTruthy();
+  // });
+
+  // it("Dentro del componente Botones, el primer boton debe contener el texto que le pasemos por props como propiedad 'ocultar'", () => {
+  //   const firstButton = divBotones.find("button").at(0);
+  //   const propOcultar = wrapperBotones.prop("alerts").ocultar;
+  //   expect(firstButton.text()).toBe(propOcultar);
+  // });
+
+  // it("Dentro del componente Botones, el segundo boton debe contener el texto que le pasemos por props como propiedad 'mostrar'", () => {
+  //   const secondButton = divBotones.find("button").at(1);
+  //   const propMostrar = wrapperBotones.prop("alerts").mostrar;
+  //   expect(secondButton.text()).toBe(propMostrar);
+  // });
+
+  // it("Los botones deben tener un evento onClick que ejecuten una función que muestre un alert con un texto aleatorio", () => {
+  //   const botones = divBotones.find("button");
+  //   botones.forEach((boton) => {
+  //     expect(boton.props().onClick).toBeInstanceOf(Function);
+  //   });
+  // });
 });

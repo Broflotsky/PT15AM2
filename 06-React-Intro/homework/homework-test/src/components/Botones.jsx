@@ -2,10 +2,11 @@ import React from "react";
 
 class Botones extends React.Component {
   render() {
+    const { alerts } = this.props;
     return (
       <div>
-        <button onClick={() => alert(this.props.alerts.ocultar)}>Ocultar</button>
-        <button onClick={() => alert(this.props.alerts.mostrar)}>Mostrar</button>
+        <button onClick={() => alert(alerts.ocultar)}>Ocultar</button>
+        <button onClick={() => alert(alerts.mostrar)}>Mostrar</button>
       </div>
     );
   }
