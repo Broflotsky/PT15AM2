@@ -112,7 +112,7 @@ Necesitamos ahora conectar estos dos componentes, cómo lo hacemos? muy fácil!!
 
 * Primero debes importar `Botones.jsx` dentro del componente `Bienvenido.jsx`
 * Segundo debes renderizar `Botones.jsx` como etiqueta en el componente `Bienvenido.jsx`con sus props del objeto "alerts".
-* Y tercero, el componente `Botones.jsx` recibe props del componente `Bienvenido.jsx`, los cuales serán renderizados dentro de cada alert de cada botón.
+* Y tercero, el componente `Botones.jsx` recibe por props del componente `Bienvenido.jsx` un objeto llamado `alerts` con dos propiedades: `ocultar` y `mostrar`. Estos serán renderizados dentro de cada botón.
 * El componente debe verse en el navegador similar a esta imagen:
 
 <img src="./img/eje2.png" height="250px" >  <img src="./img/eje3.png" height="250px" >
