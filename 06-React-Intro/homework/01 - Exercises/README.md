@@ -22,13 +22,13 @@ En esta homework, vamos a crear dos componentes de React, que nos ayudarán a en
 
 ◻️ Para poder ejecutar los `test` de esta homework, es necesario que estemos ubicados dentro de la carpeta `01 - Exercises`.
 
-* Cuando te encuentres en esta carpeta, debes ejecutar el comando `npm install` o `npm i`.
+* Cuando te encuentres en esta carpeta, debes ejecutar el comando `npm install` (o `npm i`).
 
-* Listo!! Ya puedes correr los test con el comando `npm test` o `npm t`.
+* Listo!! Ya puedes correr los test con el comando `npm test` (o `npm t`).
 
-◻️ Para poder correr la aplicación de forma local solo debes ejecutar el comando `npm start`.
+◻️ Para poder correr la aplicación de forma local, sólo debes ejecutar el comando `npm start`.
 
-* Verás en el navegador lo que vamos trabajando accediendo a <http://localhost:3000>
+* Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
 
 >**Nota**: No es necesario volver a correr el proyecto cada vez que se realice un cambio, el mismo se verá automáticamente reflejando en el navegador.
 
