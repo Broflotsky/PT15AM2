@@ -10,7 +10,7 @@
 
 En esta homework, vamos a crear dos componentes de React, que nos ayudarán a entender mucho mejor cómo funciona esta grandiosa librería 😀.
 
-> **Nota**: No te preocupes por el estilo de los componentes. En la siguiente homework practicaremos un poco sobre estilos.
+> **Nota**: No te preocupes por el estilo de los componentes. En la siguiente clase y homework nos dedicaremos a ellos.
 
 ◻️ El primer componente "Bienvenido.jsx" lo encontrarás ya creado y su función predefinida.
 
