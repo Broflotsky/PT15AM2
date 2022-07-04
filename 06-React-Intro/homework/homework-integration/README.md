@@ -10,13 +10,13 @@ En este homework, vamos a crear una serie de Componentes de React, que luego van
 
 En la carpeta `src` vas a encontrar ya el esqueleto del proyecto React, y los archivos donde deberás codear cada Componente.
 
-Sabemos que los Componentes de React tiene que cumplir el principio de una sóla responsabilidad, es decir que cada Componente debé cumplir una sóla tarea bien definida. Los Componentes que vamos a codear son:
+Sabemos que los Componentes de React tienen que cumplir el principio de una sóla responsabilidad, es decir que cada Componente debé cumplir una sóla tarea bien definida.
 
 ---
 
 ## Instrucciones para correr el proyecto
 
-Desde la carpeta `homework` se deben ejecutar los siguientes comandos:
+Desde la carpeta `homework-integration` se deben ejecutar los siguientes comandos:
 
 ```bash
 npm install
@@ -33,6 +33,8 @@ Comienza a correr la aplicación de forma local por lo que se puede ver desde el
 >No es necesario volver a correr el proyecto cada vez que se realice un cambio, el mismo se verá automáticamente reflejando en el navegador.
 
 ---
+
+## Los Componentes que vamos a codear son:
 
 ## Character Card
 
@@ -52,7 +54,7 @@ Este componente `Card` va a recibir las siguientes props:
 - **image**: Imágen
 - **onClose**: La función que se va a ejecutar cuando el usuario haga click en el botón de cerrar.
 
-> Luego todos éstos datos van a venir de una API externa, pero por ahora no nos interesa esa parte. Por el momento nosotros te los vamos a brindar desde un archivo local, para que ya puedas ver tu componente funcionando.
+> Luego todos éstos datos van a venir de una API externa, pero por ahora no nos interesa esa parte. Por el momento nosotros te los vamos a brindar desde un archivo local **(src/data.js)**, para que ya puedas ver tu componente funcionando.
 
 ---
 
@@ -88,7 +90,7 @@ La función `onSearch` se debe ejecutar cuando se haga click en el botón `Agreg
 
 Ya completaste los puntos anteriores y funciona todo? Perfecto! Ya podemos comenzar a crear nuestra propia app:
 
-1. En una carpeta **fuera de este repo**, usamos *CRA* (create-react-app) para crear una nueva app de React:
+1. En una carpeta **fuera de este repositorio**, usamos *CRA* (create-react-app) para crear una nueva app de React:
 
 ```bash
 npx create-react-app rick_and_morty
