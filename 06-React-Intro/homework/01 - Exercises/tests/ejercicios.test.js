@@ -62,17 +62,21 @@ describe('Excercises | React-Intro ', function () {
     const wrapperBotones = shallow(<Botones alerts={alerts} />)
     const divBotones = wrapperBotones.find('div')
 
-    it('Debe renderizar un componente Botones', () => {
+    it('Debe existir un componente llamado "Botones"', () => {
       expect(wrapperBotones).toBeTruthy()
     })
 
-    it("Dentro del componente Botones, debe renderizar una única etiqueta 'div' que contenga todo lo demás", () => {
+    it("El componente Botones, debe renderizar una única etiqueta 'div' que contenga todo lo demás", () => {
       expect(divBotones).toHaveLength(1)
     })
 
-    it('Dentro del componente Botones, debe renderizar dos botones', () => {
+    it('Debe renderizar dos botones con el texto "Módulo 1" y "Módulo 2" respectivamente', () => {
       const botones = divBotones.find('button')
+      const botonM1 = divBotones.find('button').at(0)
+      const botonM2 = divBotones.find('button').at(1)
       expect(botones.length).toBe(2)
+      expect(botonM1.text()).toBe('Módulo 1')
+      expect(botonM2.text()).toBe('Módulo 2')
     })
 
     it('Los botones deben tener un evento onClick que ejecuten un alert con cualquier texto', () => {
@@ -87,20 +91,22 @@ describe('Excercises | React-Intro ', function () {
       expect(botones.length).toBe(1)
     })
 
-    it('El componente Botones debe recibir un objeto alerts con dos propiedades como props', () => {
+    it('El componente Botones debe recibir como prop un objeto alerts, con dos propiedades', () => {
       const componentBotones = wrapperBienvenido.find('Botones')
       expect(componentBotones.prop('alerts'))
       expect(Object.keys(componentBotones.prop('alerts')).length).toBe(2)
     })
 
-    it("Dentro del componente Botones, el primer boton debe contener el texto que le pasemos por props como propiedad 'ocultar'", () => {
-      const botonOcultar = divBotones.find('button').at(0)
-      expect(botonOcultar.text()).toBe(alerts.ocultar)
-    })
+    // Estos deben testear el contenido del window.alert
 
-    it("Dentro del componente Botones, el segundo boton debe contener el texto que le pasemos por props como propiedad 'mostrar'", () => {
-      const botonMostrar = divBotones.find('button').at(1)
-      expect(botonMostrar.text()).toBe(alerts.mostrar)
-    })
+    // it("El primer botón debe mostrar un 'alert' con el texto que recibe el componente como propiedad 'm1'", () => {
+    //   const botonM1 = divBotones.find('button').at(0)
+    //   expect(botonM1.text()).toBe(alerts.m1)
+    // })
+
+    // it("El segundo botón debe mostrar un 'alert' con el texto que recibe el componente como propiedad 'm2'", () => {
+    //   const botonM2 = divBotones.find('button').at(1)
+    //   expect(botonM2.text()).toBe(alerts.m2)
+    // })
   })
 })
