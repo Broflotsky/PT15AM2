@@ -5,8 +5,6 @@ import { shallow, configure } from 'enzyme'
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
 // Importamos variables/componentes
 import Bienvenido, {
-  studentName,
-  techSkills,
   alerts
 } from '../src/components/Bienvenido.jsx'
 import Botones from '../src/components/Botones.jsx'
