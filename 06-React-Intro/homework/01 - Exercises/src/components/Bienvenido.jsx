@@ -1,8 +1,9 @@
 import React from 'react'
+import Botones from './Botones'
 
 const studentName = 'Nacho'
 const techSkills = ['Html', 'Css', 'JavaScript', 'React', 'Redux']
-const alerts = {}
+const alerts = { m1: 'Aprobado', m2: 'En curso' }
 
 export default function Bienvenido () {
   return (
@@ -14,6 +15,7 @@ export default function Bienvenido () {
           <li key={skill}>{skill}</li>
         ))}
       </ul>
+      <Botones alerts={alerts} />
     </div>
   )
 }

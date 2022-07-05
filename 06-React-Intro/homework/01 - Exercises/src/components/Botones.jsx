@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function Botones () {
+export default function Botones ({ alerts }) {
   return (
     <div>
-      <button onClick={alert('mensaje 1')}>Botón 1</button>
-      <button onClick={alert('mensaje 2')}>Botón 2</button>
+      <button onClick={() => window.alert(alerts.m1)}>Módulo 1</button>
+      <button onClick={() => window.alert(alerts.m2)}>Módulo 2</button>
     </div>
   )
 }
