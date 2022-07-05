@@ -75,7 +75,7 @@ describe('Excercises | React-Intro ', function () {
       expect(botones.length).toBe(2)
     })
 
-    it('Los botones deben tener un evento onClick que ejecuten un alert con un texto aleatorio', () => {
+    it('Los botones deben tener un evento onClick que ejecuten un alert con cualquier texto', () => {
       const botones = divBotones.find('button')
       botones.forEach((boton) => {
         expect(boton.props().onClick).toBeInstanceOf(Function)
