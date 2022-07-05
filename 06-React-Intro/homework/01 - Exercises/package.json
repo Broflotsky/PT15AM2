@@ -10,6 +10,7 @@
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
     "babel-jest": "^26.6.0",
     "enzyme": "^3.11.0",
+    "is-react": "^1.5.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "^4.0.3"
@@ -37,10 +38,11 @@
   },
   "devDependencies": {
     "standard": "^17.0.0"
-    
   },
   "standard": {
-    "env": [ "mocha" ]
+    "env": [
+      "mocha"
+    ]
   },
   "jest": {
     "setupFilesAfterEnv": [
