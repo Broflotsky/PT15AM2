@@ -6,10 +6,8 @@ import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
 // Importamos variables/componentes
 import Bienvenido, {
   studentName,
-  techSkills,
-  alerts
+  techSkills
 } from '../src/components/Bienvenido.jsx'
-import Botones from '../src/components/Botones.jsx'
 
 configure({ adapter: new Adapter() })
 
