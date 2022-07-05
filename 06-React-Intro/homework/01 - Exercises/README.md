@@ -79,7 +79,7 @@ Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
 * El componente `Bienvenido` debe verse en el navegador similar a esta imagen:
 
-<p align="center"><img src="./img/01.png" height="300px" >
+<p align="center"><img src="./img/01.png" height="300px" ></p>
 
 ---
 
@@ -91,22 +91,25 @@ Ya sabemos cómo funciona un componente en React, ahora vamos a crear un compone
 
 > **Nota**: Puedes guiarte del ejercicio anterior.
 
-* Crea un componente de clase llamado `Botones.jsx`.
-* La función debe renderizar en un div.
-* Dentro del div, renderiza un botón llamado "Mostrar".
-* Dentro del div, renderiza un botón llamado "Ocultar".
-* Cada botón debe tener el atributo onClick que muestre una alerta.
+1. Crea un componente de clase llamado `Botones.jsx`.
+2. La función debe renderizar en un div.
+3. Dentro del div, renderiza un botón llamado "Módulo 1".
+4. Dentro del div, renderiza un botón llamado "Módulo 2".
+5. Cada botón debe tener el atributo onClick que muestre una alerta.
 
 **...Estamos llegando a la última parte de la homework** ⭐
 
 Necesitamos ahora conectar estos dos componentes, cómo lo hacemos? muy fácil!!!
 
-* Primero debes importar `Botones.jsx` dentro del componente `Bienvenido.jsx`
-* Segundo debes renderizar `Botones.jsx` como etiqueta en el componente `Bienvenido.jsx`con sus props del objeto "alerts".
-* Y tercero, el componente `Botones.jsx` recibe por props del componente `Bienvenido.jsx` un objeto llamado `alerts` con dos propiedades: `ocultar` y `mostrar`. Estos serán renderizados dentro de cada botón.
+1. Debes importar `Botones.jsx` dentro del componente `Bienvenido.jsx`
+2. Debes renderizar `Botones.jsx` como etiqueta en el componente `Bienvenido.jsx`con sus props del objeto "alerts".
+3. El componente `Botones.jsx` recibe por props del componente `Bienvenido.jsx` un objeto llamado `alerts` con dos propiedades: `m1` y `m2`. Estos serán renderizados dentro del alert que dispara cada botón.
+
 * El componente debe verse en el navegador similar a esta imagen:
 
-<img src="./img/eje2.png" height="250px" >  <img src="./img/eje3.png" height="250px">
+<p align="center"><img src="./img/02.png" height="300px"></p>
+
+<p align="center"><img src="./img/03.png" height="300px"></p>
 
 ---
 
