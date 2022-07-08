@@ -70,10 +70,9 @@ Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
 1. Que la función renderice un div.
 2. Dentro de este div, crea la etiqueta correspondiente para un título h1 (puedes colocar el texto que desees).
-3. Crea una constante de tipo string llamada `studentName` y asígnale un texto.
+3. Encontrarás una constante de tipo string llamada `studentName`, asígnale un texto con tu nombre.
 4. Dicha constante debe ser renderizada dentro de un h3.
-5. Encontrarás una constante llamada `techSkills` de tipo array, asígnale mínimo 5 elementos.
-6. Los elementos de este arreglo deben renderizarse en una lista desordenada.
+5. Encontrarás una constante llamada `techSkills` de tipo array, con 5 elementos. Los elementos de este arreglo deben renderizarse en una lista desordenada.
 
 > Tip: para recorrer el arreglo puedes usar el método `map`.
 
@@ -92,7 +91,7 @@ Ya sabemos cómo funciona un componente en React, ahora vamos a crear un compone
 > **Nota**: Puedes guiarte del ejercicio anterior.
 
 1. Crea un componente de clase llamado `Botones.jsx`.
-2. La función debe renderizar en un div.
+2. El componente debe renderizar un div.
 3. Dentro del div, renderiza un botón llamado "Módulo 1".
 4. Dentro del div, renderiza un botón llamado "Módulo 2".
 5. Cada botón debe tener el atributo onClick que muestre una alerta.
