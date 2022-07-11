@@ -34,10 +34,6 @@ describe('01 | Componente "Bienvenido"', () => {
     expect(h3.text()).toBe(studentName)
   })
 
-  it('El arreglo techSkills debe contener al menos 5 elementos', () => {
-    expect(techSkills.length).toBeGreaterThanOrEqual(5)
-  })
-
   it("Debe renderizar una etiqueta 'ul'", () => {
     const ul = divBienvenido.find('ul')
     expect(ul.length).toBe(1)

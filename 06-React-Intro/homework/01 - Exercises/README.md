@@ -1,4 +1,4 @@
-# HW 01 - React-Intro | Ejercicios con test
+# HW 01 - React-Intro | Ejercicios
 
 ## Duración estimada 🕒
 
@@ -30,7 +30,7 @@ En esta homework, vamos a crear dos componentes de React, que nos ayudarán a en
 
 * Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
 
->**Nota**: No es necesario volver a correr el proyecto cada vez que se realice un cambio, el mismo se verá automáticamente reflejando en el navegador.
+>**Nota**: No es necesario volver a correr el proyecto cada vez que se realice un cambio, el mismo se verá automáticamente reflejado en el navegador.
 
 ---
 
@@ -101,8 +101,9 @@ Ya sabemos cómo funciona un componente en React, ahora vamos a crear un compone
 Necesitamos ahora conectar estos dos componentes, cómo lo hacemos? muy fácil!!!
 
 1. Debes importar `Botones.jsx` dentro del componente `Bienvenido.jsx`
-2. Debes renderizar `Botones.jsx` como etiqueta en el componente `Bienvenido.jsx`con sus props del objeto "alerts".
-3. El componente `Botones.jsx` recibe por props del componente `Bienvenido.jsx` un objeto llamado `alerts` con dos propiedades: `m1` y `m2`. Estos serán renderizados dentro del alert que dispara cada botón.
+2. Debes renderizar `Botones.jsx` como etiqueta en el componente `Bienvenido.jsx`
+3. Dentro del componente `Bienvenido` debemos pasarle el objeto `alerts` como ***props*** al renderizar el componente `Botones`.
+4. El componente `Botones.jsx` recibe por props del componente `Bienvenido.jsx` dicho objeto con dos propiedades: `m1` y `m2`. Estos serán renderizados dentro del alert que dispara cada botón.
 
 * El componente debe verse en el navegador similar a esta imagen:
 
