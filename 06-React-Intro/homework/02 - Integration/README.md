@@ -1,4 +1,4 @@
-# Homework React-Intro
+# HW 02 - React-Intro | Integración
 
 ## Rick & Morty App
 
