@@ -1,5 +1,5 @@
 import React from 'react'
-import Bienvenido from './components/Bienvenido.jsx'
+import Bienvenido from './components/Bienvenido/Bienvenido.jsx'
 
 export default function App () {
   return (
