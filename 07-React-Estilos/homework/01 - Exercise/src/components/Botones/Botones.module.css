@@ -13,9 +13,18 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    border: 1px solid #000;
     border-radius: 5px;
     margin-left: 10px;
     margin-right: 10px;
+    padding: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: #131313ea;
+    font-size: 1em;
+    color: beige;
+}
+
+.buttons:hover{
     background-color: #fcff4f;
+    color:#131313ea ;
 }

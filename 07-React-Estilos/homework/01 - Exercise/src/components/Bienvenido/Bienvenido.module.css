@@ -1,14 +1,16 @@
 .divBienvenido {
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fcff4fa2;
 }
 
 .title {
-    font-size: 2em;
+    font-size: 3em;
     text-align: center;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -25,15 +27,31 @@
     list-style-type: none;
     padding: 0;
     margin-bottom: 3em;
+    display: flex;
+    flex-direction: row;
 }
 
 .itemsList {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
+    width: 15vw;
+    height: 15vh;
     background-color: #fcff4f;
-    margin-top: 0.5em;
+    padding: 1em;
+    margin: 5px;
+    font-weight: 500;
+    border-radius: 5%;
 }
+.itemsList:hover {
+    background-color: #262623c9;
+    color: beige;
+}
+
+.itemsList img {
+    width: 50%;
+    object-fit: cover;
+    margin: 15px;
+}
+
