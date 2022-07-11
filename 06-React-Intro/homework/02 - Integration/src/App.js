@@ -25,7 +25,7 @@ function App () {
       <hr />
       <div>
         <SearchBar
-          onSearch={(character) => window.alert(character)}
+          onSearch={(characterID) => window.alert(characterID)}
         />
       </div>
     </div>
