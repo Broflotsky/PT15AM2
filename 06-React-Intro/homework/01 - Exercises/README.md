@@ -70,9 +70,8 @@ Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
 1. Que la función renderice un div.
 2. Dentro de este div, crea la etiqueta correspondiente para un título h1 (puedes colocar el texto que desees).
-3. Encontrarás una constante de tipo string llamada `studentName`, asígnale un texto con tu nombre.
-4. Dicha constante debe ser renderizada dentro de un h3.
-5. Encontrarás una constante llamada `techSkills` de tipo array, con 5 elementos. Los elementos de este arreglo deben renderizarse en una lista desordenada.
+3. Encontrarás una constante de tipo string llamada `studentName`, asígnale un texto con tu nombre. Dicha constante debe ser renderizada dentro de un h3.
+4. Encontrarás una constante llamada `techSkills` de tipo array, con 5 elementos. Los elementos de este arreglo deben renderizarse en una lista desordenada.
 
 > Tip: para recorrer el arreglo puedes usar el método `map`.
 
