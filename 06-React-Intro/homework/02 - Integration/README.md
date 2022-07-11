@@ -4,7 +4,7 @@
 
 En este homework, vamos a crear una serie de Componentes de React, que luego van a formar parte de nuestro primer desarrollo front-end.
 
-> **Nota**: Todos los Componentes que hagamos en este homework son `Puros` o `Funcionales`, por lo tanto, ninguno tiene estado, simplemente reciben datos por props.
+> **Nota**: Todos los Componentes que hagamos en este homework son `Puros` por lo tanto, ninguno tiene estado, simplemente reciben datos por props.
 >
 > No te preocupes por el estilo de los componentes. En el homework siguiente vamos a darle Estilos.
 
