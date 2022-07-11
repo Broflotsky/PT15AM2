@@ -8,7 +8,7 @@ const alerts = { m1: 'Aprobado', m2: 'En curso' }
 export default function Bienvenido () {
   return (
     <div>
-      <h1>soy Henry!</h1>
+      <h1>Bienvenido a React</h1>
       <h3>{studentName}</h3>
       <ul>
         {techSkills.map(skill => (
@@ -20,4 +20,5 @@ export default function Bienvenido () {
   )
 }
 
+// Esto lo exportamos para los tests
 export { studentName, techSkills, alerts }

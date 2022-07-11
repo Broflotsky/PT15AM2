@@ -47,7 +47,7 @@ describe('02 | Componente "Botones"', () => {
     expect(botones.length).toBe(1)
   })
 
-  it('El componente Botones debe recibir como prop un objeto alerts, con dos propiedades', () => {
+  it('El componente Bienvenido, debe pasarle por "props" al componente Botones, el objeto alerts', () => {
     const componentBotones = wrapperBienvenido.find('Botones')
     expect(componentBotones.prop('alerts'))
     expect(Object.keys(componentBotones.prop('alerts')).length).toBe(2)
