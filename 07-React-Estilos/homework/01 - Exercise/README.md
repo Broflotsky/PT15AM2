@@ -1,4 +1,4 @@
-# HW 01 - React-Estilos | Ejercicios con test
+# HW 02 - React-Estilos | Ejercicios
 
 ## Duración estimada 🕒
 

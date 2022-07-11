@@ -1,5 +1,4 @@
-# Homework: React-Estilos
-
+# HW 02 - React-Estilos | Integración
 
 <img src='../img/cssModules-logo.png' width='200px'/>
 
