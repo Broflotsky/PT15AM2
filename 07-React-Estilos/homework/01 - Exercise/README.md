@@ -1,4 +1,4 @@
-# HW 01 - React-Intro | Ejercicios con test
+# HW 01 - React-Estilos | Ejercicios con test
 
 ## Duración estimada 🕒
 
@@ -8,9 +8,9 @@
 
 ## Consigna de la homework
 
-En esta homework, vamos a crear dos componentes de React, que nos ayudarán a entender mucho mejor cómo funciona esta grandiosa librería 😀.
+En esta homework, vamos a aprender a utilizar estilos, el que utulizaremos en esta homework  😀.
 
-> **Nota**: No te preocupes por el estilo de los componentes. En la siguiente clase y homework nos dedicaremos a ellos.
+
 
 ◻️ El primer componente "Bienvenido.jsx" lo encontrarás ya creado y su función predefinida.
 
