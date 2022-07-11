@@ -16,7 +16,7 @@ Sabemos que los Componentes de React tienen que cumplir el principio de una sól
 
 ## Instrucciones para correr el proyecto
 
-Desde la carpeta `homework-integration` se deben ejecutar los siguientes comandos:
+Desde la carpeta `02 - Integration` se deben ejecutar los siguientes comandos:
 
 ```bash
 npm install
@@ -34,9 +34,11 @@ Comienza a correr la aplicación de forma local por lo que se puede ver desde el
 
 ---
 
-## Los Componentes que vamos a codear son:
+## Comencemos
 
-## Character Card
+En el archivo `App.js` ya tenemos importados y estamos renderizando los 3 componentes que vamos a codear. Revisa el código, verás que le estamos pasando props a estos componentes.
+
+### 01 - Haz el componente Character Card
 
 (`components/Card.js`)
 
@@ -58,7 +60,7 @@ Este componente `Card` va a recibir las siguientes props:
 
 ---
 
-## Cards
+### 02 - Haz el componente Cards
 
 (`components/Cards.js`)
 
@@ -72,7 +74,7 @@ Básicamente, va a recibir un arreglo de `personajes` (con todos sus datos), y v
 
 ---
 
-## Barra de búsqueda
+### 03 - Haz el componente de la de Barra de búsqueda
 
 (`components/SearchBar.js`)
 
@@ -80,13 +82,13 @@ Básicamente, va a recibir un arreglo de `personajes` (con todos sus datos), y v
 
 Vamos a crear este componente para luego poder agregar más personajes que deseemos ver.
 
-Este Componente recibe por props una función `onSearch`, que recibe un parámetro (que luego será el nombre del personaje tomado desde el input; pero de momento le pasamos uno cualquiera, ya que aún no estamos utilizando estados dentro del componente).
+Este Componente recibe por props una función `onSearch`, que recibe un parámetro (que luego será el ID del personaje tomado desde el input; pero de momento le pasamos uno cualquiera, ya que aún no estamos utilizando estados dentro del componente).
 
 La función `onSearch` se debe ejecutar cuando se haga click en el botón `Agregar`.
 
 ---
 
-## Ahora creemos una app desde cero
+## Listo! Ahora creemos una app desde cero
 
 Ya completaste los puntos anteriores y funciona todo? Perfecto! Ya podemos comenzar a crear nuestra propia app:
 
