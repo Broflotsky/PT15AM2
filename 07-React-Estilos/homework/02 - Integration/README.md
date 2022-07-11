@@ -1,6 +1,7 @@
-# Homework React-Estilos
+# Homework: React-Estilos
 
-<img src='./img/cssModules-logo.png' width='200px'/>
+
+<img src='../img/cssModules-logo.png' width='200px'/>
 
 ## Intro
 
@@ -22,12 +23,12 @@ Pueden recordar cómo se usa CSS MODULES viendo los ejemplos [acá](https://css-
 
 Utilizando CSS Modules, tu tarea consiste en agregar estilos CSS para que los componentes queden *lindos*, puedes usar estas imágenes de referencia:
 
-<img src='./img/cards.png' width='600px'/>
+<img src='../img/cards.png' width='600px'/>
 
 Y si te animás a ir por más...
 
-<img src='./img/cards2.png' width='600px'/>
+<img src='../img/cards2.png' width='600px'/>
 
-<img src='./img/Searchbar.png' width='250px'/>
+<img src='../img/Searchbar.png' width='250px'/>
 
 Sé creativo/a!
