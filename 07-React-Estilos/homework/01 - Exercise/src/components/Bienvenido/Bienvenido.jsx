@@ -8,7 +8,7 @@ import reactImg from '../../assets/react.png';
 import redux from '../../assets/redux.png'
 
 
-const studentName = 'studentName'
+const studentName = 'Nombre alumno'
 const techSkills = [{tech:'Html', image:htmlImg}, {tech:'Css', image:cssImg}, {tech:'JavaScript', image:javascriptImg}, {tech:'React', image:reactImg}, {tech:'Redux', image:redux}]
 const alerts = { m1: 'Aprobado', m2: 'En curso' }
 
