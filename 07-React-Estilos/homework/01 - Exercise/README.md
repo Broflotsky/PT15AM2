@@ -98,30 +98,43 @@ Dentro de la carpeta `01 - Exercise`, vas a encontrar la siguiente estructura:
         
 🔹 Debes darle estilo llamando la clase que se adapte a cada etiqueta. Por ejemplo: `<div className={s.classExample}>Example</div>`
 
----
+## 👩‍💻 Ejercicio 2
 
+**Llegó la hora de crear desde cero estilos en React** ⭐
+
+Ya sabemos cómo funciona y se conectan los archivos module.css a nuestros componentes, ahora vamos a estilar desde cero en nuestro componente Botones, pero esta vez será un aplicando `Styled Components`. Para ello debes seguir los siguientes pasos:
+
+1. Ejecuta el comando `npm i styled-components` en la consola.
+2. En el componente `Botones.jsx`, importa `styled` desde `"styled-components"`
+3. Crea una constante que contenga los estilos para el div. ejemplo: 
+
+```jsx
+
+const DivExample = styled.div`
+    width: 100vw; 
+    height: 100 hw`;
+
+```
+**Nota**: Recuerda que las variables const deben ser con mayúscula inicial.
+
+4. Crea una constante que contenga los estilos para los botones.
+
+5. Envuelve el código con las constantes creadas en forma de etiquetas. Por ejemplo: 
+
+```jsx
+<DivExample></DivExample>
+```
+
+> **Nota**: Para los estilos puedes guiarte del ejercicio anterior. ⭐
+
+**...Estamos llegando a la última parte de la homework** ⭐
+
+--- 
 ### Ejercicio Extra
 
 🔹 Aplica al h1 un estilo utilizando `inline styling`
 
 ---
-
-## 👩‍💻 Ejercicio 2
-
-**Llegó la hora de crear desde cero estilos en React** ⭐
-
-Ya sabemos cómo funciona y se conectan los archivos module.css a nuestros componentes, ahora vamos a crear desde cero un archivo de estilo para el componente Botones, pero esta vez será un aplicando `Styled Components`. Haz click derecho sobre la carpeta "Bienvenido" --> Nuevo archivo --> `...`
-
-> **Nota**: Puedes guiarte del ejercicio anterior. ⭐
-
-1. Crea un componente de clase llamado `Botones.jsx`.
-2. El componente debe renderizar un div.
-3. Dentro del div, renderiza un botón llamado "Módulo 1".
-4. Dentro del div, renderiza un botón llamado "Módulo 2".
-5. Cada botón debe tener el atributo onClick que muestre una alerta.
-
-**...Estamos llegando a la última parte de la homework** ⭐
-
 
 * El componente debe verse en el navegador similar a esta imagen:
 
@@ -131,9 +144,9 @@ Ya sabemos cómo funciona y se conectan los archivos module.css a nuestros compo
 
 ---
 
-## Recordemos que
+## Recordemos que...
 
-🔹 Todo en React es un componente y existen dos tipos: los componentes funcionales y los componentes de clase.
+🔹 Puedes utilizar cualquiera de los métodos enseñados en clase y practicados en este ejercicio para aplicar estilos en React.
 
 🔹 Un componente funcional es una función de Javascript que puede o no recibir datos (props). Tanto el nombre de la función como el nombre del archivo se deben llamar igual y deben ser con mayúscula inicial.
 
