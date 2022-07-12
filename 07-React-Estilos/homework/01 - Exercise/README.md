@@ -2,25 +2,23 @@
 
 ## Duración estimada 🕒
 
-90 minutos
+60 minutos
 
 ---
 
 ## Consigna de la homework
 
-En esta homework, vamos a aprender a utilizar estilos, el que utulizaremos en esta homework  😀.
+En esta homework, aprenderemos a utilizar las diferentes formas de aplicar estilos en React 🎨.
 
+◻️ Aplicaremos en el componente "Bienvenido.jsx" `module.css` e `inline styling`.
 
-
-◻️ El primer componente "Bienvenido.jsx" lo encontrarás ya creado y su función predefinida.
-
-◻️ El segundo componente "Botones.jsx" lo deberás crear desde cero como un componente ***de clase***.
+◻️ Aplicaremos en el componente "Botones.jsx" `styled components`. 
 
 ---
 
 ### Pasos básicos para realizar la homework
 
-◻️ Para poder ejecutar los `test` de esta homework, es necesario que estemos ubicados dentro de la carpeta `01 - Exercises`.
+◻️ Para poder ejecutar los `test` de esta homework, es necesario que estemos ubicados dentro de la carpeta `01 - Exercise`.
 
 * Cuando te encuentres en esta carpeta, debes ejecutar el comando `npm install` (o `npm i`).
 
@@ -30,15 +28,14 @@ En esta homework, vamos a aprender a utilizar estilos, el que utulizaremos en es
 
 * Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
 
->**Nota**: No es necesario volver a correr el proyecto cada vez que se realice un cambio, el mismo se verá automáticamente reflejando en el navegador.
 
 ---
 
 ### Conociendo la estructura
 
-Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
+Dentro de la carpeta `01 - Exercise`, vas a encontrar la siguiente estructura:
 
-🔹 Una carpeta llamada `img`
+🔹 Una carpeta llamada `_mocks_`
 
 🔹 Una carpeta llamada `public`
 
@@ -54,7 +51,9 @@ Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
 ## 👩‍💻 Ejercicio 1
 
-🔹 Dentro de la carpeta `src` en la que vas a encontrar ya el esqueleto del proyecto React, estructurado de la siguiente manera:
+🔹 Dentro de la carpeta `src` en la que vas a encontrarás el esqueleto del proyecto React, estructurado de la siguiente manera:
+
+* Una carpeta llamada assets
 
 * Una carpeta llamada components
 
@@ -64,31 +63,56 @@ Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
 * Un archivo index.css (estilos)
 
-🔹 Para estos ejercicios, trabajaremos sólo dentro la carpeta `components`. En principio sólo tenemos el componente `Bienvenido.jsx`.
+🔹 Para estos ejercicios, trabajaremos sólo dentro la carpeta `components`. Dentro de esta carpeta encontrarás:
 
-🔹 En dicho componente encontrarás la función predefinida de un componente funcional. Dentro de ella aplicaremos la magia de React para combinar los temas vistos en clase, y para ello debes realizar los pasos a continuación:
+* Una carpeta llamada Bienvenido, que dentro de ella contiene:
 
-1. Que la función renderice un div.
-2. Dentro de este div, crea la etiqueta correspondiente para un título h1 (puedes colocar el texto que desees).
-3. Encontrarás una constante de tipo string llamada `studentName`, asígnale un texto con tu nombre.
-4. Dicha constante debe ser renderizada dentro de un h3.
-5. Encontrarás una constante llamada `techSkills` de tipo array, con 5 elementos. Los elementos de este arreglo deben renderizarse en una lista desordenada.
+    * El componente Bienvenido.jsx
 
-> Tip: para recorrer el arreglo puedes usar el método `map`.
+    * El archivo Bienvenido.module.css
 
-* El componente `Bienvenido` debe verse en el navegador similar a esta imagen:
+* Una carpeta llamada Botones, que dentro de ella contiene:
 
-<p align="center"><img src="./img/01.png" height="300px" ></p>
+    * El componente Botones.jsx
+
+
+1. Comencemos con la carpeta Bienvenido:
+
+◻️ Abre el archivo Bienvenido.module.css, dentro de él encontrarás las clases ya con el css implementado.
+
+◻️ Abre el archivo Bienvenido.jsx, dentro de él encontrarás:
+
+* El import de la librería react, los archivos en formato de imagen y el archivo Bienvenido.module.css 
+    
+* Las constantes studentName, techSkills y alerts que vimos en la homework anterior. 
+
+* La función Bienvenido que renderiza:
+
+    1. Un div.
+    2. Dentro de este div, se renderiza:
+        a. Un h1
+        b. Un h3
+        c. Una ul (lista desordenada)
+            -  dentro de la ul se renderiza una li (lista) con el array de techSkills
+        d. El componente Botones.
+        
+🔹 Debes darle estilo llamando la clase que se adapte a cada etiqueta. Por ejemplo: `<div className={s.classExample}>Example</div>`
+
+---
+
+### Ejercicio Extra
+
+🔹 Aplica al h1 un estilo utilizando `inline styling`
 
 ---
 
 ## 👩‍💻 Ejercicio 2
 
-**Llegó la hora de crear tu primer componente desde cero** ⭐
+**Llegó la hora de crear desde cero estilos en React** ⭐
 
-Ya sabemos cómo funciona un componente en React, ahora vamos a crear un componente desde cero, pero esta vez será un componente de clase. Haz click derecho sobre la carpeta "components" --> Nuevo archivo --> `Botones.jsx`
+Ya sabemos cómo funciona y se conectan los archivos module.css a nuestros componentes, ahora vamos a crear desde cero un archivo de estilo para el componente Botones, pero esta vez será un aplicando `Styled Components`. Haz click derecho sobre la carpeta "Bienvenido" --> Nuevo archivo --> `...`
 
-> **Nota**: Puedes guiarte del ejercicio anterior.
+> **Nota**: Puedes guiarte del ejercicio anterior. ⭐
 
 1. Crea un componente de clase llamado `Botones.jsx`.
 2. El componente debe renderizar un div.
@@ -98,11 +122,6 @@ Ya sabemos cómo funciona un componente en React, ahora vamos a crear un compone
 
 **...Estamos llegando a la última parte de la homework** ⭐
 
-Necesitamos ahora conectar estos dos componentes, cómo lo hacemos? muy fácil!!!
-
-1. Debes importar `Botones.jsx` dentro del componente `Bienvenido.jsx`
-2. Debes renderizar `Botones.jsx` como etiqueta en el componente `Bienvenido.jsx`con sus props del objeto "alerts".
-3. El componente `Botones.jsx` recibe por props del componente `Bienvenido.jsx` un objeto llamado `alerts` con dos propiedades: `m1` y `m2`. Estos serán renderizados dentro del alert que dispara cada botón.
 
 * El componente debe verse en el navegador similar a esta imagen:
 
