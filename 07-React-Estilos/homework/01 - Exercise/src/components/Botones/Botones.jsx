@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const DivBotones = styled.div`
   display: flex;
@@ -28,19 +28,20 @@ const Buttons = styled.button`
 
   &:hover {
     background-color: #fcff4f;
-    color:#131313ea ;
+    color: #131313ea;
   }
 `;
-class Botones extends React.Component {
-  render () {
-    const { alerts } = this.props
+export default class Botones extends React.Component {
+  render() {
+    const { alerts } = this.props;
     return (
       <DivBotones>
         <Buttons onClick={() => window.alert(alerts.m1)}>Módulo 1</Buttons>
         <Buttons onClick={() => window.alert(alerts.m2)}>Módulo 2</Buttons>
       </DivBotones>
-    )
+    );
   }
 }
 
-export default Botones
+//Esto lo exportamos para los tests
+export { DivBotones, Buttons };

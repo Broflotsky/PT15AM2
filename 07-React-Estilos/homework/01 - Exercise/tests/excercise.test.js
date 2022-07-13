@@ -1,11 +1,15 @@
 // Configuramos test
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
+import "jest-styled-components";
 import { shallow, configure } from "enzyme";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 // Importamos variables/componentes
 import Bienvenido from "../src/components/Bienvenido/Bienvenido.jsx";
-import Botones from "../src/components/Botones/Botones.jsx";
+import Botones, {
+  DivBotones,
+  Buttons,
+} from "../src/components/Botones/Botones.jsx";
 
 configure({ adapter: new Adapter() });
 
@@ -39,7 +43,6 @@ describe("01 | Componente 'Bienvenido'", () => {
   it("Las etiquetas li debe contener una clase llamada 'listItem'", () => {
     const ul = wrapperBienvenido.find("ul");
     const li = ul.find("li");
-    console.log(li.at(0).props().className);
     expect(li.at(0).props().className).toBe("itemsList");
     expect(li.at(1).props().className).toBe("itemsList");
     expect(li.at(2).props().className).toBe("itemsList");
@@ -55,15 +58,25 @@ describe("02 | Componente 'Botones'", () => {
     expect(wrapperBotones).toBeTruthy();
   });
 
-  it("La etiqueta div debe contener una clase llamada 'divBotones'", () => {
-    const divBotones = wrapperBotones.find("div");
-    expect(divBotones.hasClass("divBotones")).toBe(true);
+  it("Debe utilizarse styled-components para el div, llamándose 'DivBotones'", () => {
+    const divBotones = wrapperBotones.find("DivBotones");
+    expect(divBotones).toBeTruthy();
   });
 
-  it("Las etiquetas button deben contener una clase llamada 'buttons'", () => {
-    const button = wrapperBotones.find("button");
-    expect(button.at(0).props().className).toBe("buttons");
-    expect(button.at(1).props().className).toBe("buttons");
+  it("Debe utilizarse styled-components para los botones, llamándose 'Buttons'", () => {
+    const buttons = wrapperBotones.find("Buttons");
+    expect(buttons).toBeTruthy();
   });
-  
+
+  it("'DivBotones' debe tener al menos dos propiedades CSS: 'display: flex' y 'flex-direction: row'", () => {
+    const divBotones = shallow(<DivBotones />);
+    expect(divBotones).toHaveStyleRule("display", "flex");
+    expect(divBotones).toHaveStyleRule("flex-direction", "row");
+  });
+
+  it("'Buttons' debe tener al menos dos propiedades CSS: 'border-radius: 5px' y 'color: beige'", () => {
+    const buttons = shallow(<Buttons />);
+    expect(buttons).toHaveStyleRule("border-radius", "5px");
+    expect(buttons).toHaveStyleRule("color", "beige");
+  });
 });

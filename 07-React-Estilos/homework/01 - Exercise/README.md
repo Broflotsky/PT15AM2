@@ -132,7 +132,7 @@ const DivExample = styled.div`
 --- 
 ### Ejercicio Extra
 
-🔹 Aplica al h1 un estilo utilizando `inline styling`
+🔹 Aplica al h1 un estilo utilizando `inline styling`, que sea de fuente cursiva (italic) y tamaño 50px.
 
 ---
 
