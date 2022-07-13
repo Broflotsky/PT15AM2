@@ -12,17 +12,13 @@ En esta homework, vamos a crear dos componentes de React, que nos ayudarán a en
 
 > **Nota**: No te preocupes por el estilo de los componentes. En la siguiente clase y homework nos dedicaremos a ellos.
 
-◻️ El primer componente "Bienvenido.jsx" lo encontrarás ya creado y su función predefinida.
-
-◻️ El segundo componente "Botones.jsx" lo deberás crear desde cero como un componente ***de clase***.
-
 ---
 
 ### Pasos básicos para realizar la homework
 
 ◻️ Para poder ejecutar los `test` de esta homework, es necesario que estemos ubicados dentro de la carpeta `01 - Exercises`.
 
-* Cuando te encuentres en esta carpeta, debes ejecutar el comando `npm install` (o `npm i`).
+* Cuando te encuentres en esta carpeta, debes ejecutar en la terminal el comando `npm install` (o `npm i`).
 
 * Listo!! Ya puedes correr los test con el comando `npm test` (o `npm t`).
 
@@ -54,19 +50,21 @@ Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
 ## 👩‍💻 Ejercicio 1
 
-🔹 Dentro de la carpeta `src` en la que vas a encontrar ya el esqueleto del proyecto React, estructurado de la siguiente manera:
+🔹 Dentro de la carpeta `src` vas a encontrar ya el esqueleto del proyecto React, estructurado de la siguiente manera:
 
 * Una carpeta llamada components
 
 * Un archivo llamado App.js
 
-* Un archivo index.js
+* Un archivo index.css
 
-* Un archivo index.css (estilos)
+* Un archivo index.js
 
 🔹 Para estos ejercicios, trabajaremos sólo dentro la carpeta `components`. En principio sólo tenemos el componente `Bienvenido.jsx`.
 
 🔹 En dicho componente encontrarás la función predefinida de un componente funcional. Dentro de ella aplicaremos la magia de React para combinar los temas vistos en clase, y para ello debes realizar los pasos a continuación:
+
+### Lo que hay que hacer
 
 1. Que la función renderice un div.
 2. Dentro de este div, crea la etiqueta correspondiente para un título h1 (puedes colocar el texto que desees).
@@ -85,9 +83,11 @@ Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
 **Llegó la hora de crear tu primer componente desde cero** ⭐
 
-Ya sabemos cómo funciona un componente en React, ahora vamos a crear un componente desde cero, pero esta vez será un componente de clase. Haz click derecho sobre la carpeta "components" --> Nuevo archivo --> `Botones.jsx`
+Ya sabemos cómo funciona un componente en React, ahora vamos a crear un componente desde cero, pero esta vez será un ***componente de clase***. Haz click derecho sobre la carpeta "components" --> Nuevo archivo --> `Botones.jsx`
 
 > **Nota**: Puedes guiarte del ejercicio anterior.
+
+### Lo que hay que hacer
 
 1. Crea un componente de clase llamado `Botones.jsx`.
 2. El componente debe renderizar un div.
