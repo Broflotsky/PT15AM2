@@ -2,7 +2,7 @@
 
 ## Duración estimada 🕒
 
-90 minutos
+60 minutos
 
 ---
 
@@ -133,4 +133,4 @@ Documentación **"Intro to React"** <https://reactjs.org/tutorial/tutorial.html>
 
 Listo!! Ahora estás preparado para crear tu propia app!! ✨🚀
 
-Dirígete a la carpeta 📂 **"homework-integration"** y diviértete desarrollando la app de Rick & Morty 🤩
+Dirígete a la carpeta 📂 **"02 - Integration"** y diviértete desarrollando la app de Rick & Morty 🤩
