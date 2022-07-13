@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const DivBotones = styled.div`
+const DivButtons = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -35,10 +35,10 @@ class Botones extends React.Component {
   render () {
     const { alerts } = this.props
     return (
-      <DivBotones>
+      <DivButtons>
         <Buttons onClick={() => window.alert(alerts.m1)}>Módulo 1</Buttons>
         <Buttons onClick={() => window.alert(alerts.m2)}>Módulo 2</Buttons>
-      </DivBotones>
+      </DivButtons>
     )
   }
 }
