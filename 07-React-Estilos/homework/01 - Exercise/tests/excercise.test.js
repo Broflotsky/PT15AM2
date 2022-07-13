@@ -68,7 +68,7 @@ describe("02 | Componente 'Botones'", () => {
     expect(buttons).toBeTruthy();
   });
 
-  it("'DivBotones' debe tener al menos dos propiedades CSS: 'display: flex' y 'flex-direction: row'", () => {
+  it("'DivButtons' debe tener al menos dos propiedades CSS: 'display: flex' y 'flex-direction: row'", () => {
     const divBotones = shallow(<DivButtons />);
     expect(divBotones).toHaveStyleRule("display", "flex");
     expect(divBotones).toHaveStyleRule("flex-direction", "row");
