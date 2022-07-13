@@ -22,7 +22,7 @@ En esta homework, aprenderemos a utilizar las diferentes formas de aplicar estil
 
 * Cuando te encuentres en esta carpeta, debes ejecutar el comando `npm install` (o `npm i`).
 
-* Listo!! Ya puedes correr los test con el comando `npm test` (o `npm t`).
+* Listo!! Ya puedes correr los test con el comando `npm test` (o `npm t`). Los dos primeros pasarán sin que hagas nada, simplemente están para que te ayuden a verificar que estás realizando correctamente los pasos y que no tienes errores.
 
 ◻️ Para poder correr la aplicación de forma local, sólo debes ejecutar el comando `npm start`.
 

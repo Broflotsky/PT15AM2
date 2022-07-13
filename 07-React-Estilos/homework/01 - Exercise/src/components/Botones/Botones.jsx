@@ -1,7 +1,7 @@
 import React from "react";
 
-const DivButtons = null;
-const Buttons = null;
+const DivButtons = 'DivButtons';
+const Buttons = 'Buttons';
 
 export default class Botones extends React.Component {
   render() {
