@@ -1,5 +1,9 @@
 # HW 02 - React-Intro | Integración
 
+## Duración estimada 🕒
+
+90 minutos
+
 ## Rick & Morty App
 
 En este homework, vamos a crear una serie de Componentes de React, que luego van a formar parte de nuestro primer desarrollo front-end.

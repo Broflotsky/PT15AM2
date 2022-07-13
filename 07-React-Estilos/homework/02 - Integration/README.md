@@ -1,5 +1,11 @@
 # HW 02 - React-Estilos | Integración
 
+## Duración estimada 🕒
+
+Dependerá de todo el amor que le quieras colocar a tu app 💛
+
+---
+
 <img src='../img/cssModules-logo.png' width='200px'/>
 
 ## Intro
@@ -30,4 +36,5 @@ Y si te animás a ir por más...
 
 <img src='../img/Searchbar.png' width='250px'/>
 
-Sé creativo/a!
+
+**Sé creativo/a!** 🧑‍🎨

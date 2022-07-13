@@ -2,12 +2,10 @@
 
 ## Temas de la clase
 
-- React
-- Componente
-- JSX
-- Componentes funcionales y componentes de clase
-- Props
-- Webpack
+- Estilos en React
+- Inline Styling (CSS in JS)
+- CSS Modules
+- Styled Components
 
 ---
 
@@ -19,4 +17,4 @@
 
 ## Aprendizaje esperado
 
-Al finalizar esta homework habrás aprendido a crear componentes de React tanto funcionales como de clase, entenderás el propósito de las props, cómo trabaja Javascript con HTML y podrás aplicar todos estos conocimientos en la app de integración.
+Al finalizar esta homework habrás aprendido a aplicar estilos en React implementándolos de las diferentes formas enseñadas en clase, entenderás lo dinámico y divertido que será diseñar nuestros componentes...

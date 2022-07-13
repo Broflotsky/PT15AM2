@@ -10,9 +10,9 @@
 
 En esta homework, aprenderemos a utilizar las diferentes formas de aplicar estilos en React 🎨.
 
-◻️ Aplicaremos en el componente "Bienvenido.jsx" `module.css` e `inline styling`.
+◻️ Aplicaremos al componente "Bienvenido.jsx" `module.css` e `inline styling`.
 
-◻️ Aplicaremos en el componente "Botones.jsx" `styled components`. 
+◻️ Aplicaremos al componente "Botones.jsx" `styled components`. 
 
 ---
 
@@ -49,9 +49,9 @@ Dentro de la carpeta `01 - Exercise`, vas a encontrar la siguiente estructura:
 
 ---
 
-## 👩‍💻 Ejercicio 1
+## 👩‍💻 Ejercicio
 
-🔹 Dentro de la carpeta `src` en la que vas a encontrarás el esqueleto del proyecto React, estructurado de la siguiente manera:
+🔹 Dentro de la carpeta `src` encontrarás el esqueleto del proyecto React, estructurado de la siguiente manera:
 
 * Una carpeta llamada assets
 
@@ -65,20 +65,19 @@ Dentro de la carpeta `01 - Exercise`, vas a encontrar la siguiente estructura:
 
 🔹 Para estos ejercicios, trabajaremos sólo dentro la carpeta `components`. Dentro de esta carpeta encontrarás:
 
-* Una carpeta llamada Bienvenido, que dentro de ella contiene:
+* Una carpeta llamada Bienvenido, la cual a su vez contiene:
 
     * El componente Bienvenido.jsx
 
-    * El archivo Bienvenido.module.css
+    * La hoja de estilos Bienvenido.module.css
 
-* Una carpeta llamada Botones, que dentro de ella contiene:
+* Una carpeta llamada Botones, la cual a su vez contiene:
 
     * El componente Botones.jsx
 
+**1. Comencemos con la carpeta Bienvenido:**
 
-1. Comencemos con la carpeta Bienvenido:
-
-◻️ Abre el archivo Bienvenido.module.css, dentro de él encontrarás las clases ya con el css implementado.
+◻️ Abre el archivo Bienvenido.module.css, dentro de él encontrarás las clases con sus estilos.
 
 ◻️ Abre el archivo Bienvenido.jsx, dentro de él encontrarás:
 
@@ -90,23 +89,25 @@ Dentro de la carpeta `01 - Exercise`, vas a encontrar la siguiente estructura:
 
     1. Un div.
     2. Dentro de este div, se renderiza:
+
         a. Un h1
+
         b. Un h3
+
         c. Una ul (lista desordenada)
-            -  dentro de la ul se renderiza una li (lista) con el array de techSkills
+
+        -  dentro de la ul se renderiza una li (lista) con el array de techSkills.
+
         d. El componente Botones.
         
-🔹 Debes darle estilo llamando la clase que se adapte a cada etiqueta. Por ejemplo: `<div className={s.classExample}>Example</div>`
+🔹 Debes aplicar la clase que corresponda al elemento JSX usando el atributo className. Por ejemplo: `<div className={s.classExample}>Example</div>`
 
-## 👩‍💻 Ejercicio 2
+**2. Continuamos con la carpeta Botones:** 
 
-**Llegó la hora de crear desde cero estilos en React** ⭐
+Ya sabemos cómo funciona y se conectan los archivos module.css a nuestros componentes, ahora vamos a estilar desde cero en nuestro componente Botones, pero esta vez será un aplicando `Styled Components`, para ello debes seguir los siguientes pasos:
 
-Ya sabemos cómo funciona y se conectan los archivos module.css a nuestros componentes, ahora vamos a estilar desde cero en nuestro componente Botones, pero esta vez será un aplicando `Styled Components`. Para ello debes seguir los siguientes pasos:
-
-1. Ejecuta el comando `npm i styled-components` en la consola.
-2. En el componente `Botones.jsx`, importa `styled` desde `"styled-components"`
-3. Crea una constante que contenga los estilos para el div. ejemplo: 
+1. En el componente `Botones.jsx`, importa `styled` desde `"styled-components"`
+2. Crea una constante llamada 'DivButtons' que contenga los estilos para el div. Por ejemplo: 
 
 ```jsx
 
@@ -115,32 +116,34 @@ const DivExample = styled.div`
     height: 100 hw`;
 
 ```
-**Nota**: Recuerda que las variables const deben ser con mayúscula inicial.
 
-4. Crea una constante que contenga los estilos para los botones.
+3. Crea una constante llamada 'Buttons' que contenga los estilos para los botones.
 
-5. Envuelve el código con las constantes creadas en forma de etiquetas. Por ejemplo: 
+4. Cambia las etiquetas por las constantes creadas. Por ejemplo: 
 
 ```jsx
+<div></div> 
+
+//cambiaría por: 
+
 <DivExample></DivExample>
 ```
 
-> **Nota**: Para los estilos puedes guiarte del ejercicio anterior. ⭐
+> **Nota**: Para los estilos puedes guiarte del ejercicio anterior. 💡
+
+---
 
 **...Estamos llegando a la última parte de la homework** ⭐
 
---- 
 ### Ejercicio Extra
 
-🔹 Aplica al h1 un estilo utilizando `inline styling`, que sea de fuente cursiva (italic) y tamaño 50px.
+🔹 Aplica estilo al h1 utilizando `inline styling`.
 
 ---
 
 * El componente debe verse en el navegador similar a esta imagen:
 
-<p align="center"><img src="./img/02.png" height="300px"></p>
-
-<p align="center"><img src="./img/03.png" height="300px"></p>
+<p align="center"><img src="./img/exercise.gif" height="300px"></p>
 
 ---
 
@@ -148,20 +151,24 @@ const DivExample = styled.div`
 
 🔹 Puedes utilizar cualquiera de los métodos enseñados en clase y practicados en este ejercicio para aplicar estilos en React.
 
-🔹 Un componente funcional es una función de Javascript que puede o no recibir datos (props). Tanto el nombre de la función como el nombre del archivo se deben llamar igual y deben ser con mayúscula inicial.
+🔹 Si vas a utilizar styled componentes, las variables const deben ser con mayúscula inicial.
 
-🔹 Un componente de clase es otra manera de definir un componente, la diferencia radica en que es con sintaxis de ES6.
+🔹 Para utilizar estilos en línea o inline styling, debes usar el atributo 'style', estableciendo su valor como un objeto de javascript.
 
-🔹 Las props o propiedades son la manera que tiene React para pasar parámetros de un componente padre a sus hijos.
+🔹 Si utilizas module.css el alcance de tu css será local y evitarás conflictos como pisar estilos en tu proyecto.
+
+🔹 Aplicar estilos es como pintar un cuadro, no hay límites en la imaginación y creatividad, sin olvidarnos de dar a los usuarios la mejor experiencia. 😃
 
 ---
 
 ## Recursos adicionales
 
-Documentación **"Intro to React"** <https://reactjs.org/tutorial/tutorial.html>
+Documentación **"Styled Components"** <https://styled-components.com/docs/basics>
+
+Documentación **"CSS"** <https://www.w3schools.com/css/default.asp>
 
 ---
 
-Listo!! Ahora estás preparado para crear tu propia app!! ✨🚀
+Listo!! Ahora estás preparado para estilar tu app!! 👨‍🎨👩‍🎨✨🚀
 
-Dirígete a la carpeta 📂 **"homework-integration"** y diviértete desarrollando la app de Rick & Morty 🤩
+Dirígete a la carpeta 📂 **"02 - Integration"** y diviértete estilando la app de Rick & Morty 🤩

@@ -7,7 +7,7 @@ import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 // Importamos variables/componentes
 import Bienvenido from "../src/components/Bienvenido/Bienvenido.jsx";
 import Botones, {
-  DivBotones,
+  DivButtons,
   Buttons,
 } from "../src/components/Botones/Botones.jsx";
 
@@ -58,8 +58,8 @@ describe("02 | Componente 'Botones'", () => {
     expect(wrapperBotones).toBeTruthy();
   });
 
-  it("Debe utilizarse styled-components para el div, llamándose 'DivBotones'", () => {
-    const divBotones = wrapperBotones.find("DivBotones");
+  it("Debe utilizarse styled-components para el div, llamándose 'DivButtons'", () => {
+    const divBotones = wrapperBotones.find("DivButtons");
     expect(divBotones).toBeTruthy();
   });
 
@@ -69,7 +69,7 @@ describe("02 | Componente 'Botones'", () => {
   });
 
   it("'DivBotones' debe tener al menos dos propiedades CSS: 'display: flex' y 'flex-direction: row'", () => {
-    const divBotones = shallow(<DivBotones />);
+    const divBotones = shallow(<DivButtons />);
     expect(divBotones).toHaveStyleRule("display", "flex");
     expect(divBotones).toHaveStyleRule("flex-direction", "row");
   });
