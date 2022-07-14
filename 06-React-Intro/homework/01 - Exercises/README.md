@@ -101,7 +101,7 @@ Ya sabemos cómo funciona un componente en React, ahora vamos a crear un compone
 
 **... Estamos llegando a la última parte de la homework** ⭐
 
-Ahora necesitamos conectar estos dos componentes, cómo lo hacemos? muy fácil!!!
+Ahora necesitamos conectar estos dos componentes, ¿Cómo lo hacemos? Muy fácil!
 
 1. Debes importar `Botones.jsx` dentro del componente `Bienvenido.jsx`
 2. Debes renderizar `Botones.jsx`, como etiqueta en el componente `Bienvenido.jsx`
