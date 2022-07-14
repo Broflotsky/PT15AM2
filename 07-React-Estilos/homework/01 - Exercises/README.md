@@ -115,7 +115,11 @@ Ya sabemos cómo funciona y se conectan los archivos module.css a nuestros compo
 
 1. En el componente `Botones.jsx`, importa `styled` desde "styled-components"`
 
-2. Encontrarás una constante llamada `DivButtons`, la cual debe contener mínimamente los estilos `'display: flex'` y `'flex-direction: row'` para el div. Por ejemplo:
+2. Encontrarás una constante llamada `DivButtons`, la cual debe contener mínimamente los siguientes estilos para el div:
+    * `display: flex`
+    * `flex-direction: row`
+
+ Por ejemplo:
 
 ```jsx
 const DivExample = styled.div`
@@ -123,9 +127,12 @@ const DivExample = styled.div`
     height: 100 hw`
 ```
 
-3. Encontrarás una constante llamada `Buttons`, la cual debe contener mínimamente los estilos `'border-radius: 5px'` y `'color: beige'` para los botones.
+3. Encontrarás una constante llamada `Buttons`, la cual debe contener mínimamente los estilos para los botones:
+    * `border-radius: 5px`
+    * `margin: 10px`
+    * `padding: 5px`
 
-4. Cambia las etiquetas por las constantes mencionadas anteriormente. Por ejemplo: 
+4. Cambia las etiquetas por las constantes mencionadas anteriormente. Por ejemplo:
 
 ```html
 <div></div> 
