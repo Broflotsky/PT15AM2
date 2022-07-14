@@ -1,15 +1,14 @@
-import React from 'react';
-import Botones from '../Botones/Botones.jsx';
-import htmlImg from '../../assets/html.png';
-import cssImg from '../../assets/css.svg';
-import javascriptImg from '../../assets/javascript.png';
-import reactImg from '../../assets/react.png';
+import React from 'react'
+import Botones from '../Botones/Botones.jsx'
+import htmlImg from '../../assets/html.png'
+import cssImg from '../../assets/css.svg'
+import javascriptImg from '../../assets/javascript.png'
+import reactImg from '../../assets/react.png'
 import redux from '../../assets/redux.png'
-// import styles from './Bienvenido.module.css';
-
+// import styles from './Bienvenido.module.css'
 
 const studentName = 'Nombre alumno'
-const techSkills = [{tech:'Html', image:htmlImg}, {tech:'Css', image:cssImg}, {tech:'JavaScript', image:javascriptImg}, {tech:'React', image:reactImg}, {tech:'Redux', image:redux}]
+const techSkills = [{ tech: 'Html', image: htmlImg }, { tech: 'Css', image: cssImg }, { tech: 'JavaScript', image: javascriptImg }, { tech: 'React', image: reactImg }, { tech: 'Redux', image: redux }]
 const alerts = { m1: 'Aprobado', m2: 'En curso' }
 
 export default function Bienvenido () {
@@ -19,7 +18,7 @@ export default function Bienvenido () {
       <h3>{studentName}</h3>
       <ul>
         {techSkills.map(skill => (
-              <li key={skill}>{skill.tech}<img src={skill.image} alt={skill.tech}/></li>
+          <li key={skill}>{skill.tech}<img src={skill.image} alt={skill.tech} /></li>
         ))}
       </ul>
       <Botones alerts={alerts} />

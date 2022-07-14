@@ -12,7 +12,7 @@ En esta homework, aprenderemos a utilizar las diferentes formas de aplicar estil
 
 ◻️ Aplicaremos al componente "Bienvenido.jsx" `module.css` e `inline styling`.
 
-◻️ Aplicaremos al componente "Botones.jsx" `styled components`. 
+◻️ Aplicaremos al componente "Botones.jsx" `styled components`.
 
 ---
 
