@@ -30,7 +30,7 @@
   flex-direction: row;
 }
 
-.itemList {
+.listItem {
   display: flex;
   flex-direction: row;
   align-items: center;
