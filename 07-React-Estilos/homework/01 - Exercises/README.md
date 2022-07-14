@@ -113,14 +113,14 @@ Dentro de la carpeta `01 - Exercise`, vas a encontrar la siguiente estructura:
 
 Ya sabemos cómo funciona y se conectan los archivos module.css a nuestros componentes, ahora vamos a estilar desde cero en nuestro componente Botones, pero esta vez será aplicando `Styled Components`, para ello debes seguir los siguientes pasos:
 
-1. En el componente `Botones.jsx`, importa `style` desde "styled-components"`
+1. En el componente `Botones.jsx`, importa `styled` desde "styled-components"`
 
 2. Encontrarás una constante llamada `DivButtons`, la cual debe contener mínimamente los estilos `'display: flex'` y `'flex-direction: row'` para el div. Por ejemplo:
 
 ```jsx
 const DivExample = styled.div`
     width: 100vw; 
-    height: 100 hw`;
+    height: 100 hw`
 ```
 
 3. Encontrarás una constante llamada `Buttons`, la cual debe contener mínimamente los estilos `'border-radius: 5px'` y `'color: beige'` para los botones.
