@@ -96,7 +96,7 @@ Dentro de la carpeta `01 - Exercise`, vas a encontrar la siguiente estructura:
 
         c. Una ul (lista desordenada)
 
-        -  dentro de la ul se renderiza una li (lista) con el array de techSkills.
+        -  Dentro de la ul se renderizan varios li (ítems de lista) correspondientes al array de techSkills.
 
         d. El componente Botones.
         
