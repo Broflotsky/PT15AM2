@@ -3,7 +3,7 @@
 ## Temas de la clase
 
 - React
-- Componente
+- Componentes
 - JSX
 - Componentes funcionales y componentes de clase
 - Props
