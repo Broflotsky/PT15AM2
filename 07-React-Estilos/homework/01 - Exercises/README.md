@@ -32,49 +32,38 @@ En esta homework, aprenderemos a utilizar las diferentes formas de aplicar estil
 
 ### Conociendo la estructura
 
-Dentro de la carpeta `01 - Exercise`, vas a encontrar la siguiente estructura:
+🔹 Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
-🔹 Una carpeta llamada `_mocks_`
+* Una carpeta llamada `_mocks_`
+* Una carpeta llamada `public`
+* Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
+* Una carpeta llamada `tests`
+* Un archivo package.json
+* Y el archivo README que ahora mismo estás leyendo. 🧐
 
-🔹 Una carpeta llamada `public`
-
-🔹 Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
-
-🔹 Una carpeta llamada `tests`
-
-🔹 Un archivo package.json
-
-🔹 Y el archivo README que ahora mismo estás leyendo. 🧐
-
----
-
-## 👩‍💻 Ejercicio 1
+Además:
 
 🔹 Dentro de la carpeta `src` encontrarás el esqueleto del proyecto React, estructurado de la siguiente manera:
 
 * Una carpeta llamada assets
-
 * Una carpeta llamada components
-
 * Un archivo llamado App.js
-
 * Un archivo index.js
-
 * Un archivo index.css (estilos)
 
 🔹 Para estos ejercicios, trabajaremos sólo dentro la carpeta `components`. Dentro de esta carpeta encontrarás:
 
 * Una carpeta llamada Bienvenido, la cual a su vez contiene:
-
-    * El componente Bienvenido.jsx
-
-    * La hoja de estilos Bienvenido.module.css
-
+  * El componente Bienvenido.jsx
+  * La hoja de estilos Bienvenido.module.css
 * Una carpeta llamada Botones, la cual a su vez contiene:
+  * El componente Botones.jsx
 
-    * El componente Botones.jsx
+---
 
-**1. Comencemos con la carpeta Bienvenido:**
+## 👩‍💻 Ejercicio 1
+
+### Dando estilos al componente Bienvenido
 
 ◻️ Abre el archivo Bienvenido.module.css, dentro de él encontrarás las clases con sus estilos.
 
@@ -98,6 +87,8 @@ Dentro de la carpeta `01 - Exercise`, vas a encontrar la siguiente estructura:
         -  Dentro de la ul se renderizan varios li (ítems de lista) correspondientes al array de techSkills.
 
         d. El componente Botones.
+
+### Lo que hay que hacer
 
 🔹 Debes aplicar la clase que corresponda al elemento JSX usando el atributo className. Por ejemplo:
 
