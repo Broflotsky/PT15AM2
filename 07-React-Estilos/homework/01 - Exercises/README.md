@@ -71,26 +71,21 @@ Además:
 
 * El import de la librería react, los archivos en formato de imagen y el archivo Bienvenido.module.css **(que debes descomentar para poder empezar a trabajar)**
 
-* Las constantes studentName, techSkills y alerts que vimos en la homework anterior. 
+* Las constantes `studentName`, `techSkills` y `alerts` que vimos en la homework anterior.
 
 * La función Bienvenido que renderiza:
 
-    1. Un div.
-    2. Dentro de este div, se renderiza:
+1. Un div.
+2. Dentro de este div, se renderiza:
+   * Un h1
+   * Un h3
+   * Una ul (lista desordenada)
+     * Dentro de la ul se renderizan varios li (ítems de lista) correspondientes al array de `techSkills`
+   * El componente `Botones`
 
-        a. Un h1
+🔹 Lo que hay que hacer:
 
-        b. Un h3
-
-        c. Una ul (lista desordenada)
-
-        -  Dentro de la ul se renderizan varios li (ítems de lista) correspondientes al array de techSkills.
-
-        d. El componente Botones.
-
-### Lo que hay que hacer
-
-🔹 Debes aplicar la clase que corresponda al elemento JSX usando el atributo className. Por ejemplo:
+Debes aplicar la clase que corresponda al elemento JSX usando el atributo className. Por ejemplo:
 
 ```html
 <div className={s.classExample}>Example</div>
