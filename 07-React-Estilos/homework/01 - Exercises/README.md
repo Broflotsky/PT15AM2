@@ -10,8 +10,8 @@
 
 En esta homework, aprenderemos a utilizar las diferentes formas de aplicar estilos en React 🎨
 
-* Aplicaremos al componente "Bienvenido.jsx" `module.css` e `inline styling`.
-* Aplicaremos al componente "Botones.jsx" `styled components`.
+* Aplicaremos al componente **Bienvenido.jsx** `module.css` e `inline styling`.
+* Aplicaremos al componente **Botones.jsx** `styled components`.
 
 ---
 
@@ -33,7 +33,7 @@ npm test
 
 Los dos primeros test pasarán sin que hagas nada, simplemente están para que te ayuden a verificar que estás realizando correctamente los pasos y que no tienes errores.
 
-🔹 Para poder correr la aplicación de forma local, sólo debes ejecutar el comando 
+🔹 Para poder correr la aplicación de forma local, sólo debes ejecutar el comando
 
 ```bash
 npm start
