@@ -4,11 +4,8 @@
 
 90 minutos
 
-<<<<<<< HEAD
-=======
 ---
 
->>>>>>> f8a4de95d40314e24f35e8194a1599357a80a516
 ## Rick & Morty App
 
 En este homework, vamos a crear una serie de Componentes de React, que luego van a formar parte de nuestro primer desarrollo front-end.
