@@ -116,7 +116,7 @@ Ahora necesitamos conectar estos dos componentes, cómo lo hacemos? muy fácil!!
 
 ---
 
-## Recordemos que...
+## Recuerda que...
 
 * Todo en React es un componente y existen dos tipos: los componentes funcionales y los componentes de clase.
 * Un componente funcional es una función de Javascript que puede o no recibir datos (props). Tanto el nombre de la función como el nombre del archivo se deben llamar igual y deben ser con mayúscula inicial.
