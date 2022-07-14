@@ -99,8 +99,12 @@ Dentro de la carpeta `01 - Exercise`, vas a encontrar la siguiente estructura:
         -  Dentro de la ul se renderizan varios li (ítems de lista) correspondientes al array de techSkills.
 
         d. El componente Botones.
-        
-🔹 Debes aplicar la clase que corresponda al elemento JSX usando el atributo className. Por ejemplo: `<div className={s.classExample}>Example</div>`
+
+🔹 Debes aplicar la clase que corresponda al elemento JSX usando el atributo className. Por ejemplo:
+
+```html
+<div className={s.classExample}>Example</div>
+```
 
 **2. Continuamos con la carpeta Botones:** 
 
