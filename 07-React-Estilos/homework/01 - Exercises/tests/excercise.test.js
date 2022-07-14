@@ -79,6 +79,7 @@ describe("02 | Componente 'Botones'", () => {
   it("'Buttons' debe tener al menos dos propiedades CSS: 'border-radius: 5px' y 'color: beige'", () => {
     const buttons = shallow(<Buttons />)
     expect(buttons).toHaveStyleRule('border-radius', '5px')
-    expect(buttons).toHaveStyleRule('color', 'beige')
+    expect(buttons).toHaveStyleRule('margin', '10px')
+    expect(buttons).toHaveStyleRule('padding', '5px')
   })
 })
