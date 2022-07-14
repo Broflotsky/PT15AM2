@@ -43,12 +43,12 @@
   font-weight: 500;
   border-radius: 5%;
 }
-.itemsList:hover {
+.listItem:hover {
   background-color: #262623c9;
   color: beige;
 }
 
-.itemsList img {
+.listItem img {
   width: 50%;
   object-fit: cover;
   margin: 15px;
