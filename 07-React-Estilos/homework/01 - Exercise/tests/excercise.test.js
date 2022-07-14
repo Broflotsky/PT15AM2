@@ -59,9 +59,7 @@ describe("02 | Componente 'Botones'", () => {
   });
 
   it("Debe utilizarse styled-components para el div, llamándose 'DivButtons' y además, debe renderizarse dentro del componente como tal", () => {
-    const styledDivButtons = wrapperBotones.find(DivButtons);
-    expect(styledDivButtons).toBeTruthy();
-    expect(wrapperBotones.containsMatchingElement(styledDivButtons)).toBe(true);
+    expect(wrapperBotones.containsMatchingElement(DivButtons)).toBe(true);
   });
 
   it("'DivButtons' debe tener al menos dos propiedades CSS: 'display: flex' y 'flex-direction: row'", () => {
@@ -71,14 +69,13 @@ describe("02 | Componente 'Botones'", () => {
   });
 
   it("Debe utilizarse styled-components para los botones, llamándose 'Buttons' y además, debe renderizarse dentro del componente como tal", () => {
-    const styledButtons = wrapperBotones.find(Buttons);
-    expect(styledButtons).toBeTruthy();
-    expect(wrapperBotones.containsMatchingElement(styledButtons)).toBe(true);
+    expect(wrapperBotones.containsMatchingElement(Buttons)).toBe(true);
   });
 
   it("'Buttons' debe tener al menos dos propiedades CSS: 'border-radius: 5px' y 'color: beige'", () => {
     const buttons = shallow(<Buttons />);
     expect(buttons).toHaveStyleRule("border-radius", "5px");
-    expect(buttons).toHaveStyleRule("color", "beige");
+    expect(buttons).toHaveStyleRule("margin", "10px");
+    expect(buttons).toHaveStyleRule("padding", "5px");
   });
 });
