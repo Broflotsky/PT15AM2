@@ -111,7 +111,7 @@ Dentro de la carpeta `01 - Exercise`, vas a encontrar la siguiente estructura:
 
 ### Continuamos con la carpeta Botones
 
-Ya sabemos cómo funciona y se conectan los archivos module.css a nuestros componentes, ahora vamos a estilar desde cero en nuestro componente Botones, pero esta vez será un aplicando `Styled Components`, para ello debes seguir los siguientes pasos:
+Ya sabemos cómo funciona y se conectan los archivos module.css a nuestros componentes, ahora vamos a estilar desde cero en nuestro componente Botones, pero esta vez será aplicando `Styled Components`, para ello debes seguir los siguientes pasos:
 
 1. En el componente `Botones.jsx`, importa `style` desde "styled-components"`
 
