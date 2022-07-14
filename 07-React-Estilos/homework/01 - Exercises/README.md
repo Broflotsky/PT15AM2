@@ -18,7 +18,7 @@ En esta homework, aprenderemos a utilizar las diferentes formas de aplicar estil
 
 ### Pasos básicos para realizar la homework
 
-◻️ Para poder ejecutar los `test` de esta homework, es necesario que estemos ubicados dentro de la carpeta `01 - Exercise`.
+◻️ Para poder ejecutar los `test` de esta homework, es necesario que estemos ubicados dentro de la carpeta `01 - Exercises`.
 
 * Cuando te encuentres en esta carpeta, debes ejecutar el comando `npm install` (o `npm i`).
 
