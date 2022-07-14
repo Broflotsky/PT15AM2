@@ -17,13 +17,27 @@ En esta homework, aprenderemos a utilizar las diferentes formas de aplicar estil
 
 ## Pasos básicos para realizar la homework
 
-🔹 Para poder ejecutar los `test` de esta homework, es necesario que estemos ubicados dentro de la carpeta `01 - Exercises`.
+🔹 Para poder ejecutar los `test` de esta homework, es necesario que abramos la terminal ubicados dentro de la carpeta `01 - Exercises`.
 
-* Cuando te encuentres en esta carpeta, debes ejecutar el comando `npm install` (o `npm i`).
+* Cuando te encuentres en esta carpeta, debes ejecutar el comando
 
-* Listo!! Ya puedes correr los test con el comando `npm test` (o `npm t`). Los dos primeros pasarán sin que hagas nada, simplemente están para que te ayuden a verificar que estás realizando correctamente los pasos y que no tienes errores.
+```bash
+npm install
+```
 
-🔹 Para poder correr la aplicación de forma local, sólo debes ejecutar el comando `npm start`.
+* Listo!! Ya puedes correr los test:
+
+```bash
+npm test
+```
+
+Los dos primeros test pasarán sin que hagas nada, simplemente están para que te ayuden a verificar que estás realizando correctamente los pasos y que no tienes errores.
+
+🔹 Para poder correr la aplicación de forma local, sólo debes ejecutar el comando 
+
+```bash
+npm start
+```
 
 * Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
 
@@ -140,7 +154,7 @@ const DivExample = styled.div`
 
 🔹 Aplica estilo al h1 utilizando `inline styling`.
 
-* El componente debe verse en el navegador similar a esta imagen:
+El componente debe verse en el navegador similar a esta imagen:
 
 <p align="center"><img src="./img/exercise.gif" height="300px"></p>
 
@@ -148,26 +162,21 @@ const DivExample = styled.div`
 
 ## Recordemos que...
 
-🔹 Puedes utilizar cualquiera de los métodos enseñados en clase y practicados en este ejercicio para aplicar estilos en React.
-
-🔹 Si vas a utilizar styled componentes, las variables const deben ser con mayúscula inicial.
-
-🔹 Para utilizar estilos en línea o inline styling, debes usar el atributo 'style', estableciendo su valor como un objeto de javascript.
-
-🔹 Si utilizas module.css el alcance de tu css será local y evitarás conflictos como pisar estilos en tu proyecto.
-
-🔹 Aplicar estilos es como pintar un cuadro, no hay límites en la imaginación y creatividad, sin olvidarnos de dar a los usuarios la mejor experiencia. 😃
+* Puedes utilizar cualquiera de los métodos enseñados en clase y practicados en este ejercicio para aplicar estilos en React.
+* Si vas a utilizar `styled components`, el nombre de las variables `const` deben comenzar con mayúscula.
+* Para utilizar estilos en línea o `inline styling`, debes usar el atributo `style`, estableciendo su valor **como un objeto de javascript**.
+* Si utilizas `CSS Modules`, el alcance de tus estilos será local para cada componente y evitarás conflictos como pisar estilos en tu proyecto.
+* Aplicar estilos es como pintar un cuadro, no hay límites en la imaginación y creatividad, sin olvidarnos de dar a los usuarios la mejor experiencia. 😃
 
 ---
 
 ## Recursos adicionales
 
-Documentación **"Styled Components"** <https://styled-components.com/docs/basics>
-
-Documentación **"CSS"** <https://www.w3schools.com/css/default.asp>
+* Documentación **"Styled Components"** <https://styled-components.com/docs/basics>
+* Documentación **"CSS"** <https://www.w3schools.com/css/default.asp>
 
 ---
 
 Listo!! Ahora estás preparado para estilar tu app!! 👨‍🎨👩‍🎨✨🚀
 
-Dirígete a la carpeta 📂 **"02 - Integration"** y diviértete estilando la app de Rick & Morty 🤩
+Dirígete a la carpeta 📂 [**"02 - Integration"**](../02%20-%20Integration/README.md) y diviértete estilando la app de Rick & Morty 🤩
