@@ -61,8 +61,8 @@ Además:
 * Una carpeta llamada **assets**
 * Una carpeta llamada `components`
 * Un archivo llamado **App.js**
+* Un archivo **index.css**
 * Un archivo **index.js**
-* Un archivo **index.css** (estilos)
 
 🔹 Para estos ejercicios, trabajaremos sólo dentro la carpeta `components`. Dentro de esta carpeta encontrarás:
 
