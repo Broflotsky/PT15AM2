@@ -8,56 +8,55 @@
 
 ## Consigna de la homework
 
-En esta homework, aprenderemos a utilizar las diferentes formas de aplicar estilos en React 🎨.
+En esta homework, aprenderemos a utilizar las diferentes formas de aplicar estilos en React 🎨
 
-◻️ Aplicaremos al componente "Bienvenido.jsx" `module.css` e `inline styling`.
-
-◻️ Aplicaremos al componente "Botones.jsx" `styled components`.
+* Aplicaremos al componente "Bienvenido.jsx" `module.css` e `inline styling`.
+* Aplicaremos al componente "Botones.jsx" `styled components`.
 
 ---
 
-### Pasos básicos para realizar la homework
+## Pasos básicos para realizar la homework
 
-◻️ Para poder ejecutar los `test` de esta homework, es necesario que estemos ubicados dentro de la carpeta `01 - Exercises`.
+🔹 Para poder ejecutar los `test` de esta homework, es necesario que estemos ubicados dentro de la carpeta `01 - Exercises`.
 
 * Cuando te encuentres en esta carpeta, debes ejecutar el comando `npm install` (o `npm i`).
 
 * Listo!! Ya puedes correr los test con el comando `npm test` (o `npm t`). Los dos primeros pasarán sin que hagas nada, simplemente están para que te ayuden a verificar que estás realizando correctamente los pasos y que no tienes errores.
 
-◻️ Para poder correr la aplicación de forma local, sólo debes ejecutar el comando `npm start`.
+🔹 Para poder correr la aplicación de forma local, sólo debes ejecutar el comando `npm start`.
 
 * Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
 
 ---
 
-### Conociendo la estructura
+## Conociendo la estructura
 
 🔹 Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
-* Una carpeta llamada `_mocks_`
-* Una carpeta llamada `public`
+* Una carpeta llamada **_mocks_**
+* Una carpeta llamada **public**
 * Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
-* Una carpeta llamada `tests`
-* Un archivo package.json
-* Y el archivo README que ahora mismo estás leyendo. 🧐
+* Una carpeta llamada **tests**
+* Un archivo **package.json**
+* Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
 
 Además:
 
 🔹 Dentro de la carpeta `src` encontrarás el esqueleto del proyecto React, estructurado de la siguiente manera:
 
-* Una carpeta llamada assets
-* Una carpeta llamada components
-* Un archivo llamado App.js
-* Un archivo index.js
-* Un archivo index.css (estilos)
+* Una carpeta llamada **assets**
+* Una carpeta llamada `components`
+* Un archivo llamado **App.js**
+* Un archivo **index.js**
+* Un archivo **index.css** (estilos)
 
 🔹 Para estos ejercicios, trabajaremos sólo dentro la carpeta `components`. Dentro de esta carpeta encontrarás:
 
-* Una carpeta llamada Bienvenido, la cual a su vez contiene:
-  * El componente Bienvenido.jsx
-  * La hoja de estilos Bienvenido.module.css
-* Una carpeta llamada Botones, la cual a su vez contiene:
-  * El componente Botones.jsx
+* Una carpeta llamada **Bienvenido**, la cual a su vez contiene:
+  * El componente `Bienvenido.jsx`
+  * La hoja de estilos `Bienvenido.module.css`
+* Una carpeta llamada **Botones**, la cual a su vez contiene:
+  * El componente `Botones.jsx`
 
 ---
 
@@ -65,11 +64,11 @@ Además:
 
 ### Dando estilos al componente Bienvenido
 
-◻️ Abre el archivo Bienvenido.module.css, dentro de él encontrarás las clases con sus estilos.
+🔹 Abre y revisa el archivo `Bienvenido.module.css`, dentro de él encontrarás las clases con sus estilos.
 
-◻️ Abre el archivo Bienvenido.jsx, dentro de él encontrarás:
+🔹 Abre el archivo `Bienvenido.jsx`, dentro de él encontrarás:
 
-* El import de la librería react, los archivos en formato de imagen y el archivo Bienvenido.module.css **(que debes descomentar para poder empezar a trabajar)**
+* El import de la librería **React**, los archivos en formato de imagen y el archivo `Bienvenido.module.css` **(que debes descomentar para poder empezar a trabajar)**
 
 * Las constantes `studentName`, `techSkills` y `alerts` que vimos en la homework anterior.
 
@@ -85,10 +84,10 @@ Además:
 
 🔹 Lo que hay que hacer:
 
-Debes aplicar la clase que corresponda al elemento JSX usando el atributo className. Por ejemplo:
+Debes aplicar la clase que corresponda a cada elemento **HTML** usando el atributo `className`. Por ejemplo:
 
 ```html
-<div className={s.classExample}>Example</div>
+<div className={styles.classExample}>Example</div>
 ```
 
 ---
