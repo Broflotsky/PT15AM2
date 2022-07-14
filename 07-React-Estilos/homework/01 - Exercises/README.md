@@ -99,7 +99,6 @@ Debes aplicar la clase que corresponda a cada elemento **HTML** usando el atribu
 Ya sabemos cómo funciona y se conectan los archivos module.css a nuestros componentes, ahora vamos a estilar desde cero en nuestro componente Botones, pero esta vez será aplicando `Styled Components`, para ello debes seguir los siguientes pasos:
 
 1. En el componente `Botones.jsx`, importa `styled` desde "styled-components"`
-
 2. Encontrarás una constante llamada `DivButtons`, la cual debe contener mínimamente los siguientes estilos para el div:
     * `display: flex`
     * `flex-direction: row`
@@ -126,6 +125,10 @@ const DivExample = styled.div`
 
 <DivExample></DivExample>
 ```
+
+🔹 Resultado esperado:
+
+<p align="center"><img src="./img/01.png" height="300px"></p>
 
 > **Nota**: Para los estilos puedes guiarte del ejercicio anterior. 💡
 
