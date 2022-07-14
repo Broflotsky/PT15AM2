@@ -28,7 +28,6 @@ En esta homework, aprenderemos a utilizar las diferentes formas de aplicar estil
 
 * Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
 
-
 ---
 
 ### Conociendo la estructura
@@ -49,7 +48,7 @@ Dentro de la carpeta `01 - Exercise`, vas a encontrar la siguiente estructura:
 
 ---
 
-## 👩‍💻 Ejercicio
+## 👩‍💻 Ejercicio 1
 
 🔹 Dentro de la carpeta `src` encontrarás el esqueleto del proyecto React, estructurado de la siguiente manera:
 
@@ -82,7 +81,7 @@ Dentro de la carpeta `01 - Exercise`, vas a encontrar la siguiente estructura:
 ◻️ Abre el archivo Bienvenido.jsx, dentro de él encontrarás:
 
 * El import de la librería react, los archivos en formato de imagen y el archivo Bienvenido.module.css **(que debes descomentar para poder empezar a trabajar)**
-    
+
 * Las constantes studentName, techSkills y alerts que vimos en la homework anterior. 
 
 * La función Bienvenido que renderiza:
@@ -106,27 +105,29 @@ Dentro de la carpeta `01 - Exercise`, vas a encontrar la siguiente estructura:
 <div className={s.classExample}>Example</div>
 ```
 
-**2. Continuamos con la carpeta Botones:** 
+---
+
+## 👩‍💻 Ejercicio 2
+
+### Continuamos con la carpeta Botones
 
 Ya sabemos cómo funciona y se conectan los archivos module.css a nuestros componentes, ahora vamos a estilar desde cero en nuestro componente Botones, pero esta vez será un aplicando `Styled Components`, para ello debes seguir los siguientes pasos:
 
-1. En el componente `Botones.jsx`, importa `styled desde `"styled-components"`
+1. En el componente `Botones.jsx`, importa `style` desde "styled-components"`
 
-2. Encontrarás una constante llamada 'DivButtons', la cual debe contener mínimamente los estilos `'display: flex'` y `'flex-direction: row'` para el div. Por ejemplo:
+2. Encontrarás una constante llamada `DivButtons`, la cual debe contener mínimamente los estilos `'display: flex'` y `'flex-direction: row'` para el div. Por ejemplo:
 
 ```jsx
-
 const DivExample = styled.div`
     width: 100vw; 
     height: 100 hw`;
-
 ```
 
-3. Encontrarás una constante llamada 'Buttons', la cual debe contener mínimamente los estilos `'border-radius: 5px'` y `'color: beige'` para los botones.
+3. Encontrarás una constante llamada `Buttons`, la cual debe contener mínimamente los estilos `'border-radius: 5px'` y `'color: beige'` para los botones.
 
 4. Cambia las etiquetas por las constantes mencionadas anteriormente. Por ejemplo: 
 
-```jsx
+```html
 <div></div> 
 
 //cambiaría por: 
@@ -136,15 +137,13 @@ const DivExample = styled.div`
 
 > **Nota**: Para los estilos puedes guiarte del ejercicio anterior. 💡
 
----
-
 **...Estamos llegando a la última parte de la homework** ⭐
 
-### Ejercicio Extra
+---
+
+## 👩‍💻 Ejercicio Extra
 
 🔹 Aplica estilo al h1 utilizando `inline styling`.
-
----
 
 * El componente debe verse en el navegador similar a esta imagen:
 
