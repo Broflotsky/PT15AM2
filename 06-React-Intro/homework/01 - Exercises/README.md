@@ -133,4 +133,4 @@ Ahora necesitamos conectar estos dos componentes, cómo lo hacemos? muy fácil!!
 
 Listo!! Ahora estás preparado para crear tu propia app!! ✨🚀
 
-Dirígete a la carpeta 📂 **"02 - Integration"** y diviértete desarrollando la app de Rick & Morty 🤩
+Dirígete a la carpeta 📂 [**"02 - Integration"**](../02%20-%20Integration/README.md) y diviértete desarrollando la app de Rick & Morty 🤩
