@@ -6,8 +6,6 @@ Dependerá de todo el amor que le quieras colocar a tu app 💛
 
 ---
 
-<img src='../img/cssModules-logo.png' width='200px'/>
-
 ## Intro
 
 En este homework vas a utilizar CSS Modules para dar estilos a los componentes que hicimos la clase anterior.
