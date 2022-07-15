@@ -12,9 +12,15 @@ En este homework vas a utilizar CSS Modules para dar estilos a los componentes q
 
 Vas a trabajar directamente sobre la app que creamos en forma independiente con CRA (create-react-app).
 
-### Configurando webpack
+### Webpack
 
 Como usamos `CRA`, no es necesario ninguna configuración para usar `css modules`. Simplemente podemos usarlo *out of the box*.
+
+En caso de usar `styled components`, debemos instalar dicha dependencia:
+
+```bash
+npm install styled-components
+```
 
 >__IMPORTANTE:__ Por la configuración del proyecto, para poder utilizar CSS Modules es necesario que la extensión de los archivos donde se definan los estilos sea `.module.css` (Por ejemplo: `Card.module.css`)
 
