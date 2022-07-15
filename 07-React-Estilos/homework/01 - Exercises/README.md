@@ -152,11 +152,11 @@ const DivExample = styled.div`
 
 ## 👩‍💻 Ejercicio Extra
 
-🔹 Aplica estilo al h1 utilizando `inline styling`.
+🔹 Volviendo al componente Bienvenido, aplica estilo al h1 utilizando `inline styling`. Intenta cambiarle su color a rojo, "pisando" el estilo que se aplica por CSS Modules.
 
 El componente debe verse en el navegador similar a esta imagen:
 
-<p align="center"><img src="./img/exercise.gif" height="300px"></p>
+<p align="center"><img src="./img/02.png" height="300px"></p>
 
 ---
 
