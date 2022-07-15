@@ -34,5 +34,4 @@ Y si te animás a ir por más...
 
 <img src='../img/Searchbar.png' width='250px'/>
 
-
 **Sé creativo/a!** 🧑‍🎨
