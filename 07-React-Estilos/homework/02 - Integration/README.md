@@ -32,10 +32,4 @@ Recuerda que debes trabajar sobre tu proyecto de integración (que no está en e
 
 🔹 Resultado esperado:
 
-<img src='../img/cards.png' width='600px'/>
-
-Y si te animás a ir por más...
-
-<img src='../img/cards2.png' width='600px'/>
-
-<img src='../img/Searchbar.png' width='250px'/>
+![ejemplo](./img/01.png)
