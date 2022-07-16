@@ -8,7 +8,7 @@ Dependerá de todo el amor que le quieras colocar a tu app 💛
 
 ## Intro
 
-En este homework vas a utilizar `CSS Modules` o `Styled Components` (tú eliges)para dar estilos a los componentes que hicimos la clase anterior.
+En este homework vas a utilizar `CSS Modules` o `Styled Components` (tú eliges) para dar estilos a los componentes que hicimos la clase anterior.
 
 🔹 Vas a trabajar directamente sobre la app que creamos en la homework anterior con CRA (create-react-app). Nuestra App de ***Rick&Morty***.
 
