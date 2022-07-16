@@ -160,7 +160,7 @@ El componente debe verse en el navegador similar a esta imagen:
 
 ---
 
-## Recordemos que...
+## Recuerda que...
 
 * Puedes utilizar cualquiera de los métodos enseñados en clase y practicados en este ejercicio para aplicar estilos en React.
 * Si vas a utilizar `styled components`, el nombre de las variables `const` deben comenzar con mayúscula.
