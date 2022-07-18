@@ -343,4 +343,4 @@ Sabiendo esto, si hacemos un `join` de un arreglo formado por cada clase que use
 
 ## Homework
 
-Completa la tarea descrita en el archivo [README](https://github.com/soyHenry/FT-M2/blob/master/07-React-Estilos/homework/README.md)
+Completa la tarea descrita en el archivo [README](./homework/README.md)

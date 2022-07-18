@@ -96,28 +96,35 @@ Además:
 
 🔹 Lo que hay que hacer:
 
-1. Importar con destructuring el hook `useState`.
+1. Mueve nuestra constante **studentName** dentro del componente **Bienvenido**.
 
+<<<<<<< HEAD
 2. Mueve nuestra constante **studentName** dentro de la función **Bienvenido**, antes del return.
 
 3. Cambia nuestra constante **studentName** por una constante de estado, y asígnale el hook useState que inicialice en un string vacío. Por ejemplo: 
+=======
+2. Cambia nuestra constante studentName por una constante de estado, y asígnale el hook React.useState que inicialice en un string vacío. Por ejemplo: 
+>>>>>>> 0bee0aa3f83cc2ed3c1ea71140d7bb7b5c41a562
 
 ```bash
-const [example, setExample] = useState('')
+const [example, setExample] = React.useState('');
 ```
-4. Renderiza una etiqueta label debajo de la etiqueta h1.
 
-5. Renderiza una etiqueta input debajo de la etiqueta label y encima de la etiqueta h3.
+> **Nota**: Para que corran los test, los hooks deben ser utilizados de esta manera: **React.useState()**. No deben utilizarse como **useState()**. 💡
 
-6. A la etiqueta input asígnale los atributos `value` y `onChange`.
+3. Renderiza una etiqueta label debajo de la etiqueta h1.
+
+4. Renderiza una etiqueta input debajo de la etiqueta label y encima de la etiqueta h3.
+
+5. A la etiqueta input asígnale los atributos `value` y `onChange`.
+
+6. Al atributo **value** de la etiqueta input asígnale la constante `studentName`.
 
 7. Crea una función llamada `handleInputChange`, que reciba un **evento** como parámetro.
 
-8. Al atributo **value** de la etiqueta input asígnale la constante `studentName`.
+8. Dentro de la función `handleInputChange`, setea el estado studentName, capturando el valor del input.
 
-9. Dentro de la función `handleInputChange`, setea el estado studentName, capturando el valor del input.
-
-6. Al atributo **onChange** asígnale la función `handleInputChange`.
+9. Al atributo **onChange** asígnale la función `handleInputChange`.
 
 🔹 Resultado esperado:
 
