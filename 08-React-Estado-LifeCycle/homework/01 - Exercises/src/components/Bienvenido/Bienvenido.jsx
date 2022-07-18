@@ -10,8 +10,8 @@ export default function Bienvenido() {
   return (
     <div>
       <h1 className={styles.title}>soy Henry!</h1>
-      <h3 className={styles.subtitle} >{studentName}</h3>
-      <ul className={styles.unorderedList} >
+      <h3 className={styles.subtitle}>{studentName}</h3>
+      <ul className={styles.unorderedList}>
         {/* {techSkills.map((skill) => (
           <li className={styles.listItem} key={skill}>
             {skill.tech}
