@@ -1,81 +1,72 @@
 // Configuramos test
-import React from 'react'
-import '@testing-library/jest-dom/extend-expect'
-import 'jest-styled-components'
-import { shallow, configure } from 'enzyme'
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
+import React from "react";
+import "@testing-library/jest-dom/extend-expect";
+import "jest-styled-components";
+import { shallow, configure } from "enzyme";
+import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
+import isReact from "is-react";
 // Importamos variables/componentes
-import Bienvenido from '../src/components/Bienvenido/Bienvenido.jsx'
-import Botones, {
-  DivButtons,
-  Buttons
-} from '../src/components/Botones/Botones.jsx'
+import Bienvenido from "../src/components/Bienvenido/Bienvenido";
+import Botones from "../src/components/Botones/Botones";
 
-configure({ adapter: new Adapter() })
+configure({ adapter: new Adapter() });
 
 describe("01 | Componente 'Bienvenido'", () => {
-  const wrapperBienvenido = shallow(<Bienvenido />)
+  let bienvenido, useState, useStateSpy;
 
-  it('Renderiza el componente', () => {
-    expect(wrapperBienvenido).toBeTruthy()
-  })
+  beforeAll(() => expect(isReact.classComponent(Bienvenido)).toBeFalsy());
 
-  it("La etiqueta div debe contener una clase llamada 'divBienvenido'", () => {
-    const divBienvenido = wrapperBienvenido.find('div')
-    expect(divBienvenido.hasClass('divBienvenido')).toBe(true)
-  })
+  beforeEach(() => {
+    useState = jest.fn();
+    useStateSpy = jest.spyOn(React, "useState");
+    useStateSpy.mockImplementation(() => ["", useState]);
 
-  it("La etiqueta h1 debe contener una clase llamada 'title'", () => {
-    const h1 = wrapperBienvenido.find('h1')
-    expect(h1.hasClass('title')).toBe(true)
-  })
+    bienvenido = shallow(<Bienvenido />);
+  });
 
-  it("La etiqueta h3 debe contener una clase llamada 'subtitle'", () => {
-    const h3 = wrapperBienvenido.find('h3')
-    expect(h3.hasClass('subtitle')).toBe(true)
-  })
+  it("Debe renderizar el componente 'Bienvenido'", () => {
+    expect(bienvenido).toBeTruthy();
+  });
 
-  it("La etiqueta ul debe contener una clase llamada 'unorderedList'", () => {
-    const ul = wrapperBienvenido.find('ul')
-    expect(ul.hasClass('unorderedList')).toBe(true)
-  })
+  it("Debería inicializar el estado con un string vacío", () => {
+    /* Los hooks de React si o si los tenes que usar como "React.useState". El test no los reconoce cuando se hace destructuring de estos métodos. */
+    expect(useStateSpy).toHaveBeenCalledWith("");
+  });
 
-  it("Las etiquetas li debe contener una clase llamada 'listItem'", () => {
-    const ul = wrapperBienvenido.find('ul')
-    const li = ul.find('li')
-    expect(li.at(0).props().className).toBe('listItem')
-    expect(li.at(1).props().className).toBe('listItem')
-    expect(li.at(2).props().className).toBe('listItem')
-    expect(li.at(3).props().className).toBe('listItem')
-    expect(li.at(4).props().className).toBe('listItem')
-  })
-})
+  it("Debería renderizar una etiqueta label debajo de la etiqueta h1", () => {
+    expect(bienvenido.childAt(0).type()).toBe("h1");
+    expect(bienvenido.childAt(1).type()).toBe("label");
+    expect(bienvenido.childAt(1).text()).toBe("Nombre Estudiante:");
+  });
+
+  it("Debería renderizar un input entre la etiqueta label y la etiqueta h3", () => {
+    expect(bienvenido.childAt(1).type()).toBe("label");
+    expect(bienvenido.childAt(2).type()).toBe("input");
+    expect(bienvenido.childAt(3).type()).toBe("h3");
+  });
+
+  it("La etiqueta input debe tener una propiedad 'value'", () => {
+    expect(bienvenido.childAt(2).prop("value")).not.toBe(null || undefined);
+  });
+
+  it("La etiqueta input debe tener una propiedad 'onChange'", () => {
+    expect(bienvenido.childAt(2).prop("onChange")).not.toBe(null || undefined);
+  });
+
+  it("La etiqueta input debe tener una propiedad 'value' con el valor del estado 'studentName'", () => {
+    expect(bienvenido.childAt(2).prop("value")).toBe(useStateSpy()[0]);
+  });
+
+  it("Debería reconocer cambios en el estado", () => {
+    bienvenido.find("input").simulate("change", {
+      target: { value: "Martín" },
+    });
+    expect(useState).toHaveBeenCalledWith("Martín");
+  });
+
+  afterEach(() => jest.restoreAllMocks());
+});
 
 describe("02 | Componente 'Botones'", () => {
-  const wrapperBotones = shallow(<Botones />)
-
-  it('Renderiza el componente', () => {
-    expect(wrapperBotones).toBeTruthy()
-  })
-
-  it("Debe utilizarse styled-components para el div, llamándose 'DivButtons' y además, debe renderizarse dentro del componente como tal", () => {
-    expect(wrapperBotones.containsMatchingElement(DivButtons)).toBe(true)
-  })
-
-  it("'DivButtons' debe tener al menos dos propiedades CSS: 'display: flex' y 'flex-direction: row'", () => {
-    const divBotones = shallow(<DivButtons />)
-    expect(divBotones).toHaveStyleRule('display', 'flex')
-    expect(divBotones).toHaveStyleRule('flex-direction', 'row')
-  })
-
-  it("Debe utilizarse styled-components para los botones, llamándose 'Buttons' y además, debe renderizarse dentro del componente como tal", () => {
-    expect(wrapperBotones.containsMatchingElement(Buttons)).toBe(true)
-  })
-
-  it("'Buttons' debe tener al menos dos propiedades CSS: 'border-radius: 5px' y 'color: beige'", () => {
-    const buttons = shallow(<Buttons />)
-    expect(buttons).toHaveStyleRule('border-radius', '5px')
-    expect(buttons).toHaveStyleRule('margin', '10px')
-    expect(buttons).toHaveStyleRule('padding', '5px')
-  })
-})
+  beforeAll(() => expect(isReact.classComponent(Botones)).toBeTruthy());
+});
