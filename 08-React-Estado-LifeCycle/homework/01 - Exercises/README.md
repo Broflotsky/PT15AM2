@@ -75,11 +75,13 @@ Además:
 
 ## 👩‍💻 Ejercicio 1
 
-### Creando un estado a nuestro componente funcional
+### Crea un estado a nuestro componente funcional
+
+🔹 El componente funcional `Bienvenido.jsx`, es actualmente un componente sin estado.
 
 🔹 Abre el archivo `Bienvenido.jsx`, dentro de él encontrarás:
 
-* El import de la librería **React**, los archivos en formato de imagen y el archivo `Bienvenido.module.css`.
+* El import de la librería **React**, el componente **Botones** y el archivo **Bienvenido.module.css**.
 
 * Las constantes `studentName` y `alerts`.
 
@@ -92,15 +94,13 @@ Además:
    * Una etiqueta ul (lista desordenada)
    * El componente `Botones`
 
-🔹 El componente funcional `Bienvenido.jsx`, es actualmente un componente sin estado. 
-
 🔹 Lo que hay que hacer:
 
 1. Importar con destructuring el hook `useState`.
 
-2. Mueve nuestra constante **studentName** dentro del componente **Bienvenido**.
+2. Mueve nuestra constante **studentName** dentro de la función **Bienvenido**, antes del return.
 
-3. Cambia nuestra constante studentName por una constante de estado, y asígnale el hook useState que inicialice en un string vacío. Por ejemplo: 
+3. Cambia nuestra constante **studentName** por una constante de estado, y asígnale el hook useState que inicialice en un string vacío. Por ejemplo: 
 
 ```bash
 const [example, setExample] = useState('')
@@ -121,48 +121,41 @@ const [example, setExample] = useState('')
 
 🔹 Resultado esperado:
 
-
-
+<p align="center"><img src="./img/img01.gif" height="300px"></p>
 
 ---
 
 ## 👩‍💻 Ejercicio 2
 
-### Continuamos con la carpeta Botones
+### Utiliza el hook useEffect
 
-Ya sabemos cómo funciona y se conectan los archivos module.css a nuestros componentes, ahora vamos a estilar desde cero en nuestro componente Botones, pero esta vez será aplicando `Styled Components`, para ello debes seguir los siguientes pasos:
+🔹 Continúa trabajando en el componente `Bienvenido.jsx`.
 
-1. En el componente `Botones.jsx`, importa `styled` desde "styled-components"`
-2. Encontrarás una constante llamada `DivButtons`, la cual debe contener mínimamente los siguientes estilos para el div:
-    * `display: flex`
-    * `flex-direction: row`
+🔹 Lo que hay que hacer:
 
- Por ejemplo:
+1. Importar con destructuring el hook `useEffect`.
 
-```jsx
-const DivExample = styled.div`
-    width: 100vw; 
-    height: 100 hw`
-```
+2. Mueve nuestra constante **studentName** dentro de la función **Bienvenido**, antes del return.
 
-3. Encontrarás una constante llamada `Buttons`, la cual debe contener mínimamente los estilos para los botones:
-    * `border-radius: 5px`
-    * `margin: 10px`
-    * `padding: 5px`
+3. Crea una constante de estado llamada **tech**, y asígnale el hook useState que inicialice en un array vacío.
 
-4. Cambia las etiquetas por las constantes mencionadas anteriormente. Por ejemplo:
+4. Renderiza una etiqueta li dentro de la etiqueta ul.
 
-```html
-<div></div> 
+5. Renderiza una etiqueta input debajo de la etiqueta label y encima de la etiqueta h3.
 
-//cambiaría por: 
+6. A la etiqueta input asígnale los atributos `value` y `onChange`.
 
-<DivExample></DivExample>
-```
+7. Crea una función llamada `handleInputChange`, que reciba un **evento** como parámetro.
+
+8. Al atributo **value** de la etiqueta input asígnale la constante `studentName`.
+
+9. Dentro de la función `handleInputChange`, setea el estado studentName, capturando el valor del input.
+
+6. Al atributo **onChange** asígnale la función `handleInputChange`.
 
 🔹 Resultado esperado:
 
-<p align="center"><img src="./img/01.png" height="300px"></p>
+<p align="center"><img src="./img/img01.gif" height="300px"></p>
 
 > **Nota**: Para los estilos puedes guiarte del ejercicio anterior. 💡
 
@@ -170,6 +163,8 @@ const DivExample = styled.div`
 
 ---
 
+
+Ya sabemos cómo funciona y se conectan los archivos module.css a nuestros componentes, ahora vamos a estilar desde cero en nuestro componente Botones, pero esta vez será aplicando `Styled Components`, para ello debes seguir los siguientes pasos:
 ## 👩‍💻 Ejercicio Extra
 
 🔹 Aplica estilo al h1 utilizando `inline styling`.

@@ -1,0 +1,23 @@
+{
+    "techSkills":[
+        { 
+            "tech": "Html", 
+            "image": "./src/assets/html.png" 
+        },
+        { 
+            "tech": "Css", 
+            "image": "./src/assets/css.svg"
+        },
+        {
+            "tech": "JavaScript",
+            "image": "./src/assets/javascript.png"
+        },
+        { 
+            "tech": "React", 
+            "image": "./src/assets/react.png"
+        }, 
+        { 
+            "tech": "Redux", 
+            "image": "./src/assets/redux.png" }
+    ]
+}
