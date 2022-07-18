@@ -16,7 +16,7 @@ En este homework, vamos a crear una serie de Componentes de React, que luego van
 
 En la carpeta `src` vas a encontrar ya el esqueleto del proyecto React, y los archivos donde deberás codear cada Componente.
 
-Sabemos que los Componentes de React tienen que cumplir el principio de una sóla responsabilidad, es decir que cada Componente debé cumplir una sóla tarea bien definida.
+Sabemos que los Componentes de React tienen que cumplir el principio de una única responsabilidad, es decir que cada Componente debé cumplir una única tarea bien definida.
 
 ---
 

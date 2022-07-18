@@ -101,7 +101,7 @@ Ya sabemos cómo funciona un componente en React, ahora vamos a crear un compone
 
 **... Estamos llegando a la última parte de la homework** ⭐
 
-Ahora necesitamos conectar estos dos componentes, cómo lo hacemos? muy fácil!!!
+Ahora necesitamos conectar estos dos componentes, ¿Cómo lo hacemos? Muy fácil!
 
 1. Debes importar `Botones.jsx` dentro del componente `Bienvenido.jsx`
 2. Debes renderizar `Botones.jsx`, como etiqueta en el componente `Bienvenido.jsx`
@@ -116,7 +116,7 @@ Ahora necesitamos conectar estos dos componentes, cómo lo hacemos? muy fácil!!
 
 ---
 
-## Recordemos que...
+## Recuerda que...
 
 * Todo en React es un componente y existen dos tipos: los componentes funcionales y los componentes de clase.
 * Un componente funcional es una función de Javascript que puede o no recibir datos (props). Tanto el nombre de la función como el nombre del archivo se deben llamar igual y deben ser con mayúscula inicial.
