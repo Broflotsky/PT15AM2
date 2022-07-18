@@ -106,7 +106,7 @@ const [example, setExample] = React.useState('');
 
 > **Nota**: Para que corran los test, los hooks deben ser utilizados de esta manera: **React.useState()**. No deben utilizarse como **useState()**. 💡
 
-3. Renderiza una etiqueta label debajo de la etiqueta h1.
+3. Renderiza una etiqueta label debajo de la etiqueta h1 que contenga el texto "Nombre Estudiante:".
 
 4. Renderiza una etiqueta input debajo de la etiqueta label y encima de la etiqueta h3.
 
