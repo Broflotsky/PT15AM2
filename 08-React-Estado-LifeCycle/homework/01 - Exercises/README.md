@@ -98,13 +98,7 @@ Además:
 
 1. Mueve nuestra constante **studentName** dentro del componente **Bienvenido**.
 
-<<<<<<< HEAD
-2. Mueve nuestra constante **studentName** dentro de la función **Bienvenido**, antes del return.
-
-3. Cambia nuestra constante **studentName** por una constante de estado, y asígnale el hook useState que inicialice en un string vacío. Por ejemplo: 
-=======
 2. Cambia nuestra constante studentName por una constante de estado, y asígnale el hook React.useState que inicialice en un string vacío. Por ejemplo: 
->>>>>>> 0bee0aa3f83cc2ed3c1ea71140d7bb7b5c41a562
 
 ```bash
 const [example, setExample] = React.useState('');
