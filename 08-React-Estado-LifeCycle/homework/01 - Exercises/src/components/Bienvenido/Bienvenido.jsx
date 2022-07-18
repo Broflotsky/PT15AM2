@@ -1,12 +1,13 @@
 import React from "react";
+import s from "./Bienvenido.module.css";
 import Botones from "../Botones/Botones.jsx";
 import htmlImg from "../../assets/html.png";
 import cssImg from "../../assets/css.svg";
 import javascriptImg from "../../assets/javascript.png";
 import reactImg from "../../assets/react.png";
 import redux from "../../assets/redux.png";
-import styles from "./Bienvenido.module.css";
 
+const studentName = "Nombre alumno";
 const techSkills = [
   { tech: "Html", image: htmlImg },
   { tech: "Css", image: cssImg },
@@ -17,23 +18,15 @@ const techSkills = [
 const alerts = { m1: "Aprobado", m2: "En curso" };
 
 export default function Bienvenido() {
-  const [studentName, setStudentName] = React.useState("");
-  const handleInputChange = (e) => {
-    setStudentName(e.target.value);
-  };
   return (
-    <div className={styles.divBienvenido}>
-      <h1 className={styles.title}>soy Henry!</h1>
-      <label>Nombre Estudiante:</label>
-      <input
-        value={studentName}
-        type="text"
-        onChange={handleInputChange}
-      ></input>
-      <h3 className={styles.subtitle}>{studentName}</h3>
-      <ul className={styles.unorderedList}>
+    <div className={s.divBienvenido}>
+      <h1 style={{ fontStyle: "italic", fontSize: "50px" }} className={s.title}>
+        soy Henry!
+      </h1>
+      <h3 className={s.subtitle}>{studentName}</h3>
+      <ul className={s.unorderedList}>
         {techSkills.map((skill) => (
-          <li className={styles.listItem} key={skill}>
+          <li className={s.itemsList} key={skill}>
             {skill.tech}
             <img src={skill.image} alt={skill.tech} />
           </li>
@@ -44,4 +37,4 @@ export default function Bienvenido() {
   );
 }
 
-export { techSkills, alerts };
+export { studentName, techSkills, alerts };
