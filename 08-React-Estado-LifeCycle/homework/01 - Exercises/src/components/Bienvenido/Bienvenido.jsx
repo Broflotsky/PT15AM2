@@ -24,4 +24,4 @@ export default function Bienvenido() {
   );
 }
 
-export { studentName, techSkills, alerts };
+export { techSkills, alerts };
