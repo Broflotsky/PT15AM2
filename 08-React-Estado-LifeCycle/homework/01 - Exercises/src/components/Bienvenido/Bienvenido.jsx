@@ -20,7 +20,7 @@ export default function Bienvenido() {
 
   return (
     <div >
-      <h1 style={{ fontStyle: "italic", fontSize: "50px" }} className={styles.title}>
+      <h1 className={styles.title}>
         soy Henry!
       </h1>
       <label style={{ textAlign:"center" }}>Nombre estudiante:</label>
@@ -28,7 +28,7 @@ export default function Bienvenido() {
       <h3 className={styles.subtitle}>{studentName}</h3>
       <ul className={styles.unorderedList} >
         {/* {techSkills.map((skill) => (
-          <li className={s.itemsList} key={skill}>
+          <li className={styles.listItem} key={skill}>
             {skill.tech}
             <img src={skill.image} alt={skill.tech} />
           </li>
@@ -39,4 +39,4 @@ export default function Bienvenido() {
   );
 }
 
-export { alerts }
+export { alerts };
