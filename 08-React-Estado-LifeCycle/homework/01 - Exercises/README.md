@@ -51,6 +51,7 @@ npm start
 * Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
 * Una carpeta llamada **tests**
 * Un archivo **package.json**
+* Un archivo **db.json**
 * Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
 
 Además:
@@ -75,7 +76,7 @@ Además:
 
 ## 👩‍💻 Ejercicio 1
 
-### Crea un estado a nuestro componente funcional
+### Crea un estado a nuestro componente funcional usando React.useState
 
 🔹 El componente funcional `Bienvenido.jsx`, es actualmente un componente sin estado.
 
@@ -85,7 +86,7 @@ Además:
 
 * Las constantes `studentName` y `alerts`.
 
-* La función Bienvenido que renderiza:
+* La función `Bienvenido` que renderiza:
 
 1. Un div.
 2. Dentro de este div, se renderiza:
@@ -96,29 +97,27 @@ Además:
 
 🔹 Lo que hay que hacer:
 
-1. Mueve nuestra constante **studentName** dentro del componente **Bienvenido**.
-
-2. Cambia nuestra constante studentName por una constante de estado, y asígnale el hook React.useState que inicialice en un string vacío. Por ejemplo: 
+1. Crea una constante de estado llamada `studentName`, y asígnale el hook React.useState que inicialice en un string vacío. Por ejemplo: 
 
 ```bash
 const [example, setExample] = React.useState('');
 ```
 
-> **Nota**: Para que corran los test, los hooks deben ser utilizados de esta manera: **React.useState()**. No deben utilizarse como **useState()**. 💡
+> **Nota**: Para que corran los test, el hook debe ser utilizado de esta manera: **React.useState()**. No debe utilizarse como **useState()**. 💡
 
-3. Renderiza una etiqueta label debajo de la etiqueta h1.
+2. Renderiza una etiqueta label debajo de la etiqueta h1.
 
-4. Renderiza una etiqueta input debajo de la etiqueta label y encima de la etiqueta h3.
+3. Renderiza una etiqueta input debajo de la etiqueta label y encima de la etiqueta h3.
 
-5. A la etiqueta input asígnale los atributos `value` y `onChange`.
+4. A la etiqueta input asígnale los atributos `value` y `onChange`que por el momento sean iguales a un string vacío.
 
-6. Al atributo **value** de la etiqueta input asígnale la constante `studentName`.
+5. Al atributo **value** de la etiqueta input asígnale el estado `studentName`.
 
-7. Crea una función llamada `handleInputChange`, que reciba un **evento** como parámetro.
+6. Crea una función llamada `handleInputChange`, que reciba un **evento** como parámetro.
 
-8. Dentro de la función `handleInputChange`, setea el estado studentName, capturando el valor del input.
+7. Dentro de la función `handleInputChange`, setea el estado studentName, capturando el valor del input.
 
-9. Al atributo **onChange** asígnale la función `handleInputChange`.
+8. Al atributo **onChange** del input, asígnale la función `handleInputChange`.
 
 🔹 Resultado esperado:
 
@@ -128,31 +127,25 @@ const [example, setExample] = React.useState('');
 
 ## 👩‍💻 Ejercicio 2
 
-### Utiliza el hook useEffect
+### Utiliza el hook React.useEffect
 
-🔹 Continúa trabajando en el componente `Bienvenido.jsx`.
+🔹 Continúa trabajando en el componente **Bienvenido.jsx**.
 
 🔹 Lo que hay que hacer:
 
-1. Importar con destructuring el hook `useEffect`.
+1. Crea un nuevo estado llamado `tech`, y asígnale el hook React.useState que inicialice en un array vacío.
 
-2. Mueve nuestra constante **studentName** dentro de la función **Bienvenido**, antes del return.
+2. Utiliza el hook React.useEffect.
 
-3. Crea una constante de estado llamada **tech**, y asígnale el hook useState que inicialice en un array vacío.
+3. Dentro del hook, usa fetch para hacer una llamada al servidor **db.json** a través del endpoint `'http://localhost:3001/techs'`, obteniendo el array **techSkills** con los datos de las tecnologías. Para utilizar fetch, es necesario usar promesas, como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook useEffect.
 
-4. Renderiza una etiqueta li dentro de la etiqueta ul.
+> **Nota**: Si tienes conocimiento base en promesas y deseas hacerlo de otra manera, puedes hacer la llamada utilizando `axios` para traer los datos. 💡
 
-5. Renderiza una etiqueta input debajo de la etiqueta label y encima de la etiqueta h3.
+4. Renderiza una etiqueta li, dentro de la etiqueta ul.
 
-6. A la etiqueta input asígnale los atributos `value` y `onChange`.
+5. Renderiza cada elemento del array del estado tech en la etiqueta li.
 
-7. Crea una función llamada `handleInputChange`, que reciba un **evento** como parámetro.
-
-8. Al atributo **value** de la etiqueta input asígnale la constante `studentName`.
-
-9. Dentro de la función `handleInputChange`, setea el estado studentName, capturando el valor del input.
-
-6. Al atributo **onChange** asígnale la función `handleInputChange`.
+> Tip: para recorrer el arreglo y retonar elementos de acuerdo a su contenido, puedes usar el método `map`.
 
 🔹 Resultado esperado:
 

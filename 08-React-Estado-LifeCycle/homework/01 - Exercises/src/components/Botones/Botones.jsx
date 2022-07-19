@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const DivButtons = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content:center;
   align-items: center;
   margin-top: 20px;
 `;
@@ -14,8 +14,6 @@ const Buttons = styled.button`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
   border-radius: 5px;
   margin-left: 10px;
   margin-right: 10px;
