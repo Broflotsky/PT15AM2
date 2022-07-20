@@ -10,8 +10,8 @@ x minutos
 
 En esta homework, aprenderemos a crear componentes de estado, teniendo en cuenta también su ciclo de vida.
 
-* Para el componente **Bienvenido.jsx** generaremos un estado en el nombre del alumno utilizando los hooks useState y useEffect.
-* Para el componente **Botones.jsx** también generaremos un estado utilizando el this.state y los ciclos de vida componentDidMount, componentDidUpdate y componentWillUnmount.
+* Para el componente **Especies.jsx** generaremos un estado en el nombre del alumno utilizando los hooks useState y useEffect.
+* Para el componente **Animales.jsx** también generaremos un estado utilizando el this.state y los ciclos de vida componentDidMount, componentDidUpdate y componentWillUnmount.
 
 ---
 
@@ -47,11 +47,13 @@ npm start
 
 🔹 Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
+* Una carpeta llamada **_mocks_**
+* Una carpeta llamada **img**
 * Una carpeta llamada **public**
 * Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
 * Una carpeta llamada **tests**
-* Un archivo **package.json**
 * Un archivo **db.json**
+* Un archivo **package.json**
 * Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
 
 Además:
@@ -66,11 +68,11 @@ Además:
 
 🔹 Para estos ejercicios, trabajaremos sólo dentro la carpeta `components`. Dentro de esta carpeta encontrarás:
 
-* Una carpeta llamada **Bienvenido**, la cual a su vez contiene:
-  * El componente `Bienvenido.jsx`
-  * La hoja de estilos **Bienvenido.module.css**
-* Una carpeta llamada **Botones**, la cual a su vez contiene:
-  * El componente `Botones.jsx`
+* Una carpeta llamada **Animales**, la cual a su vez contiene:
+* El componente `Animales.jsx`
+* Una carpeta llamada **Especies**, la cual a su vez contiene:
+* El componente `Especies.jsx`
+* La hoja de estilos **Especies.module.css**
 
 ---
 
@@ -78,26 +80,24 @@ Además:
 
 ### Crea un estado a nuestro componente funcional usando React.useState
 
-🔹 El componente funcional `Bienvenido.jsx`, es actualmente un componente sin estado.
+🔹 El componente funcional `Especies.jsx`, es actualmente un componente sin estado.
 
-🔹 Abre el archivo `Bienvenido.jsx`, dentro de él encontrarás:
+🔹 Abre el archivo `Especies.jsx`, dentro de él encontrarás:
 
-* El import de la librería **React**, el componente **Botones** y el archivo **Bienvenido.module.css**.
+* El import de la librería **React**, el componente **Animales** y el archivo **Especies.module.css**.
 
-* Las constantes `studentName` y `alerts`.
-
-* La función `Bienvenido` que renderiza:
+* La función `Especies` que renderiza:
 
 1. Un div.
 2. Dentro de este div, se renderiza:
    * Una etiqueta h1
    * Una etiqueta h3
    * Una etiqueta ul (lista desordenada)
-   * El componente `Botones`
+   * El componente `Animales`
 
 🔹 Lo que hay que hacer:
 
-1. Crea una constante de estado llamada `studentName`, y asígnale el hook React.useState que inicialice en un string vacío. Por ejemplo: 
+1. Crea una constante de estado llamada `zooName`, y asígnale el hook React.useState que inicialice en un string vacío. Por ejemplo: 
 
 ```bash
 const [example, setExample] = React.useState('');
@@ -105,23 +105,23 @@ const [example, setExample] = React.useState('');
 
 > **Nota**: Para que corran los test, el hook debe ser utilizado de esta manera: **React.useState()**. No debe utilizarse como **useState()**. 💡
 
-2. Renderiza una etiqueta label debajo de la etiqueta h1 que contenga el texto "Nombre Estudiante:".
+2. Renderiza una etiqueta label debajo de la etiqueta h1 que contenga el texto "Nombre de Zoo:".
 
 3. Renderiza una etiqueta input debajo de la etiqueta label y encima de la etiqueta h3.
 
 4. A la etiqueta input asígnale los atributos `value` y `onChange`que por el momento sean iguales a un string vacío.
 
-5. Al atributo **value** de la etiqueta input asígnale el estado `studentName`.
+5. Al atributo **value** de la etiqueta input asígnale el estado `zooName`.
 
 6. Crea una función llamada `handleInputChange`, que reciba un **evento** como parámetro.
 
-7. Dentro de la función `handleInputChange`, setea el estado studentName, capturando el valor del input.
+7. Dentro de la función `handleInputChange`, setea el estado zooName, capturando el valor del input.
 
 8. Al atributo **onChange** del input, asígnale la función `handleInputChange`.
 
 🔹 Resultado esperado:
 
-<p align="center"><img src="./img/img01.gif" height="300px"></p>
+<p align="center"><img src="./img/img01.gif" height="300px"></p> //pendiente!!!
 
 ---
 
@@ -129,27 +129,27 @@ const [example, setExample] = React.useState('');
 
 ### Utiliza el hook React.useEffect
 
-🔹 Continúa trabajando en el componente **Bienvenido.jsx**.
+🔹 Continúa trabajando en el componente **Especies.jsx**.
 
 🔹 Lo que hay que hacer:
 
-1. Crea un nuevo estado llamado `tech`, y asígnale el hook React.useState que inicialice en un array vacío.
+1. Crea un nuevo estado llamado `species`, y asígnale el hook React.useState que inicialice en un array vacío.
 
 2. Utiliza el hook React.useEffect.
 
-3. Dentro del hook, usa fetch para hacer una llamada al servidor **db.json** a través del endpoint `'http://localhost:3001/techs'`, obteniendo el array **techSkills** con los datos de las tecnologías. Para utilizar fetch, es necesario usar promesas, como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook useEffect.
+3. Dentro del hook, usa fetch para hacer una llamada al servidor **db.json** a través del endpoint `'http://localhost:3001/animals'`, obteniendo el array **animals** con los datos de las tecnologías. Para utilizar fetch, es necesario usar promesas, como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook useEffect.
 
 > **Nota**: Si tienes conocimiento base en promesas y deseas hacerlo de otra manera, puedes hacer la llamada utilizando `axios` para traer los datos. 💡
 
 4. Renderiza una etiqueta li, dentro de la etiqueta ul.
 
-5. Renderiza cada elemento del array del estado tech en la etiqueta li.
+5. Renderiza cada elemento del array del estado `animals` en la etiqueta li.
 
 > Tip: para recorrer el arreglo y retonar elementos de acuerdo a su contenido, puedes usar el método `map`.
 
 🔹 Resultado esperado:
 
-<p align="center"><img src="./img/img01.gif" height="300px"></p>
+<p align="center"><img src="./img/img01.gif" height="300px"></p> //pendiente!!!
 
 > **Nota**: Para los estilos puedes guiarte del ejercicio anterior. 💡
 

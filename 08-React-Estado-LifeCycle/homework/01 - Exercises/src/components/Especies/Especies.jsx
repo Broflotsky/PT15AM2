@@ -1,21 +1,18 @@
 import React from 'react';
-import Botones from '../Botones/Botones.jsx';
-import styles from './Bienvenido.module.css';
-
-
-const alerts = { m1: "Aprobado", m2: "En curso" };
+import Animales from '../Animales/Animales';
+import styles from './Especies.module.css';
 
 export default function Bienvenido() {
 
-  const [studentName, setStudentName] = React.useState('');
-  const [tech, setTech] = React.useState([]);
+  const [zooName, setZooName] = React.useState('');
+  const [animals, setAnimals] = React.useState([]);
 
   const handleInputChange = (e)=> {
-    setStudentName(e.target.value)
+    setZooName(e.target.value)
   }
 
   React.useEffect(()=>{
-    
+    //fetch --> especies --> 
   },[])
 
   return (
@@ -24,8 +21,8 @@ export default function Bienvenido() {
         soy Henry!
       </h1>
       <label style={{ textAlign:"center" }}>Nombre estudiante:</label>
-      <input value={studentName} onChange={handleInputChange}></input>
-      <h3 className={styles.subtitle}>{studentName}</h3>
+      <input value={zooName} onChange={handleInputChange}></input>
+      <h3 className={styles.subtitle}>{zooName}</h3>
       <ul className={styles.unorderedList} >
         {/* {techSkills.map((skill) => (
           <li className={styles.listItem} key={skill}>
@@ -34,9 +31,9 @@ export default function Bienvenido() {
           </li>
         ))} */}
       </ul>
-      <Botones alerts={alerts} />
+      <Animales />
     </div>
   );
 }
 
-export { alerts };
+

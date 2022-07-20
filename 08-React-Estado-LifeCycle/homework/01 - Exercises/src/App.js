@@ -1,10 +1,10 @@
 import React from 'react'
-import Bienvenido from './components/Bienvenido/Bienvenido.jsx'
+import Especies from './components/Especies/Especies.jsx'
 
 export default function App () {
   return (
     <div>
-      <Bienvenido />
+      <Especies />
     </div>
   )
 }

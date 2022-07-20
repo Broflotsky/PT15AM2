@@ -32,11 +32,11 @@ const Buttons = styled.button`
 
 export default class Botones extends React.Component {
   render () {
-    const { alerts } = this.props
+    const { animals } = this.props
     return (
       <DivButtons>
-        <Buttons onClick={() => window.alert(alerts.m1)}>Módulo 1</Buttons>
-        <Buttons onClick={() => window.alert(alerts.m2)}>Módulo 2</Buttons>
+        <Buttons>Módulo 1</Buttons>
+        <Buttons>Módulo 2</Buttons>
       </DivButtons>
     )
   }
