@@ -31,6 +31,10 @@ const Buttons = styled.button`
 `;
 
 export default class Botones extends React.Component {
+
+  state = {
+    animals:[]
+  }
   render () {
     const { animals } = this.props
     return (
