@@ -10,7 +10,7 @@ x minutos
 
 En esta homework, aprenderemos a crear componentes de estado, teniendo en cuenta también su ciclo de vida.
 
-* Para el componente **Especies.jsx** generaremos un estado en el nombre del alumno utilizando los hooks useState y useEffect.
+* Para el componente **Zoo.jsx** generaremos un estado utilizando los hooks useState y useEffect.
 * Para el componente **Animales.jsx** también generaremos un estado utilizando el this.state y los ciclos de vida componentDidMount, componentDidUpdate y componentWillUnmount.
 
 ---
@@ -70,9 +70,9 @@ Además:
 
 * Una carpeta llamada **Animales**, la cual a su vez contiene:
 * El componente `Animales.jsx`
-* Una carpeta llamada **Especies**, la cual a su vez contiene:
-* El componente `Especies.jsx`
-* La hoja de estilos **Especies.module.css**
+* Una carpeta llamada **Zoo**, la cual a su vez contiene:
+* El componente `Zoo.jsx`
+* La hoja de estilos **Zoo.module.css**
 
 ---
 
@@ -80,13 +80,13 @@ Además:
 
 ### Crea un estado a nuestro componente funcional usando React.useState
 
-🔹 El componente funcional `Especies.jsx`, es actualmente un componente sin estado.
+🔹 El componente funcional `Zoo.jsx`, es actualmente un componente sin estado.
 
-🔹 Abre el archivo `Especies.jsx`, dentro de él encontrarás:
+🔹 Abre el archivo `Zoo.jsx`, dentro de él encontrarás:
 
-* El import de la librería **React**, el componente **Animales** y el archivo **Especies.module.css**.
+* El import de la librería **React**, el componente **Animales** y el archivo **Zoo.module.css**.
 
-* La función `Especies` que renderiza:
+* La función `Zoo` que renderiza:
 
 1. Un div.
 2. Dentro de este div, se renderiza:
@@ -124,12 +124,11 @@ const [example, setExample] = React.useState('');
 <p align="center"><img src="./img/img01.gif" height="300px"></p> //pendiente!!!
 
 ---
-
 ## 👩‍💻 Ejercicio 2
 
 ### Utiliza el hook React.useEffect
 
-🔹 Continúa trabajando en el componente **Especies.jsx**.
+🔹 Continúa trabajando en el componente **Zoo.jsx**.
 
 🔹 Lo que hay que hacer:
 
@@ -143,20 +142,21 @@ const [example, setExample] = React.useState('');
 
 4. Renderiza una etiqueta li, dentro de la etiqueta ul.
 
-5. Renderiza cada elemento del array del estado `animals` en la etiqueta li.
+5. Renderiza la propiedad `specie` de cada objeto que existe dentro del estado **animals** (Recuerda que **animals** es un array).
 
-> Tip: para recorrer el arreglo y retonar elementos de acuerdo a su contenido, puedes usar el método `map`.
+> Tip: para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
 
 🔹 Resultado esperado:
 
 <p align="center"><img src="./img/img01.gif" height="300px"></p> //pendiente!!!
+
+---
 
 > **Nota**: Para los estilos puedes guiarte del ejercicio anterior. 💡
 
 **...Estamos llegando a la última parte de la homework** ⭐
 
 ---
-
 
 Ya sabemos cómo funciona y se conectan los archivos module.css a nuestros componentes, ahora vamos a estilar desde cero en nuestro componente Botones, pero esta vez será aplicando `Styled Components`, para ello debes seguir los siguientes pasos:
 ## 👩‍💻 Ejercicio Extra

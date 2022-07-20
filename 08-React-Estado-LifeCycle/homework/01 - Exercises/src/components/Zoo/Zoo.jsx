@@ -1,6 +1,6 @@
 import React from 'react';
 import Animales from '../Animales/Animales';
-import styles from './Especies.module.css';
+import styles from './Zoo.module.css';
 
 export default function Bienvenido() {
 
@@ -18,9 +18,9 @@ export default function Bienvenido() {
   return (
     <div >
       <h1 className={styles.title}>
-        soy Henry!
+        Mi Zoo!
       </h1>
-      <label style={{ textAlign:"center" }}>Nombre estudiante:</label>
+      <label style={{ textAlign:"center" }}>Nombre de zoo:</label>
       <input value={zooName} onChange={handleInputChange}></input>
       <h3 className={styles.subtitle}>{zooName}</h3>
       <ul className={styles.unorderedList} >
