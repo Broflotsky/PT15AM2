@@ -1,12 +1,11 @@
-import React from 'react';
-import Animales from '../Animales/Animales';
-import styles from './Zoo.module.css';
+import React from "react";
+import Animales from "../Animales/Animales";
+import styles from "./Zoo.module.css";
 
 export default function Bienvenido() {
-
   const [zoo, setZoo] = React.useState({
-    zooName:'',
-    animals:[]
+    zooName: "",
+    animals: [],
   });
 
   const handleInputChange = (e)=> {
@@ -38,9 +37,7 @@ export default function Bienvenido() {
           </li>
         ))} */}
       </ul>
-      <Animales />
+      <Animales animals={zoo.animals} />
     </div>
   );
 }
-
-
