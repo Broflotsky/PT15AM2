@@ -82,20 +82,16 @@ describe("01 | Componente 'Zoo'", () => {
       zooName: "Martín's Zoo",
       animals: [],
     });
-
     input.simulate("change", {
       target: { value: "Mate's Zoo" },
     });
-
     expect(useState).toHaveBeenCalledWith({
       zooName: "Mate's Zoo",
       animals: [],
     });
-
     input.simulate("change", {
       target: { value: "Auri's Zoo" },
     });
-
     expect(useState).toHaveBeenCalledWith({
       zooName: "Auri's Zoo",
       animals: [],
