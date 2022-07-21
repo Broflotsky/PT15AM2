@@ -8,34 +8,32 @@ export default function Bienvenido() {
     animals: [],
   });
 
-  const handleInputChange = (e)=> {
+  const handleInputChange = (e) => {
     setZoo({
-      zooName:e.target.value
-    })
-  }
+      ...zoo,
+      zooName: e.target.value,
+    });
+  };
 
-  React.useEffect(()=>{
-    // fetch("http://localhost:3001/animals")
-    //   .then((res) => res.json())
-    //   .then((data) => setZoo({ ...zoo, animals: data }))
-    //   .catch((error) => console.log(error));
-  },[])
+  React.useEffect(() => {
+    fetch("http://localhost:3001/animals")
+      .then((res) => res.json())
+      .then((data) => setZoo({ ...zoo, animals: data }))
+      .catch((error) => console.log(error));
+  }, [zoo]);
 
   return (
-    <div >
-      <h1 className={styles.title}>
-        Mi Zoo!
-      </h1>
+    <div>
+      <h1 className={styles.title}>Mi Zoo!</h1>
       <label>Nombre de Zoo:</label>
       <input value={zoo.zooName} onChange={handleInputChange}></input>
       <h3 className={styles.subtitle}>{zoo.zooName}</h3>
-      <ul className={styles.unorderedList} >
-        {/* {techSkills.map((skill) => (
-          <li className={styles.listItem} key={skill}>
-            {skill.tech}
-            <img src={skill.image} alt={skill.tech} />
+      <ul className={styles.unorderedList}>
+        {zoo.animals?.map((animal, key) => (
+          <li className={styles.listItem} key={key}>
+            <button>{animal.specie}</button>
           </li>
-        ))} */}
+        ))}
       </ul>
       <Animals animals={zoo.animals} />
     </div>

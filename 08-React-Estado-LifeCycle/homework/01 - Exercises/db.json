@@ -18,7 +18,7 @@
         { 
             "name": "Pavo real", 
             "specie":"aves", 
-            "image": "./src/assets/pavo real.jpg"
+            "image": "./src/assets/pavo_real.jpg"
         }, 
         { 
             "name": "Boa constrictora", 
