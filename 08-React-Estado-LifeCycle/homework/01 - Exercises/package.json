@@ -15,6 +15,7 @@
     "is-react": "^1.5.4",
     "jest-fetch-mock": "^3.0.3",
     "jest-styled-components": "^7.0.8",
+    "json-server": "^0.17.0",
     "nock": "^13.2.9",
     "node-fetch": "^3.2.9",
     "react": "^17.0.2",
@@ -24,6 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "server": "json-server --watch db.json --port 3001",
     "build": "react-scripts build",
     "test": "jest --verbose --detectOpenHandles",
     "eject": "react-scripts eject"

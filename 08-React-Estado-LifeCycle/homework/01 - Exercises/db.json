@@ -1,29 +1,24 @@
 {
-    "animals": [
-        { 
-            "name": "león", 
-            "specie":"mamífero",
-            "image": "./src/assets/html.png" 
-        },
-        { 
-            "name": "Delfín", 
-            "specie":"mamífero", 
-            "image": "./src/assets/css.svg"
-        },
-        {
-            "name": "Cocodrilo", 
-            "specie":"reptil",
-            "image": "./src/assets/javascript.png"
-        },
-        { 
-            "name": "Pavo real", 
-            "specie":"aves", 
-            "image": "./src/assets/react.png"
-        }, 
-        { 
-            "name": "Boa constrictora", 
-            "specie":"reptil", 
-            "image": "./src/assets/redux.png"
-        }
-    ]
+  "animals": [
+    {
+      "name": "león",
+      "specie": "mamífero"
+    },
+    {
+      "name": "Delfín",
+      "specie": "mamífero"
+    },
+    {
+      "name": "Cocodrilo",
+      "specie": "reptil"
+    },
+    {
+      "name": "Pavo real",
+      "specie": "aves"
+    },
+    {
+      "name": "Boa constrictora",
+      "specie": "reptil"
+    }
+  ]
 }

@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const DivButtons = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   margin-top: 20px;
 `;
@@ -31,16 +31,16 @@ const Buttons = styled.button`
 `;
 
 export default class Animals extends React.Component {
-  render () {
-    const { animals } = this.props
+  render() {
+    // const { animals } = this.props;
     return (
       <DivButtons>
         <Buttons>Módulo 1</Buttons>
         <Buttons>Módulo 2</Buttons>
       </DivButtons>
-    )
+    );
   }
 }
 
 // Esto lo exportamos para los tests
-export { DivButtons, Buttons }
+export { DivButtons, Buttons };
