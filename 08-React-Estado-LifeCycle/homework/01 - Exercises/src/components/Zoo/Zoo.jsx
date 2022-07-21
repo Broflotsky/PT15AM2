@@ -1,13 +1,25 @@
 import React from "react";
 import Animals from "../Animals/Animals";
+import Species from "../Species/Species";
 import styles from "./Zoo.module.css";
 
 export default function Bienvenido() {
   const [zoo, setZoo] = React.useState({
     zooName: "",
     animals: [],
-    species: []
+    copyAnimals: [],
+    species: [],
   });
+
+  React.useEffect(() => {
+    fetch("http://localhost:3001/animals")
+      .then((res) => res.json())
+      .then((data) =>
+        setZoo({ ...zoo, animals: data.animals, copyAnimals: data.animals, species: data.species })
+      )
+      .catch((error) => console.log(error));
+  }, []);
+
 
   const handleInputChange = (e) => {
     setZoo({
@@ -16,35 +28,37 @@ export default function Bienvenido() {
     });
   };
 
-  function changeAnimals (specie) {
+  const handleSpecies = (e) => {
     setZoo({
       ...zoo,
-      animals: zoo.animals.filter((a) => a.specie === specie)
-    })
-  }
+      animals: zoo.animals.filter((animal) => animal.specie === e.target.value),
+    });
+  };
 
-  React.useEffect(() => {
-    fetch("http://localhost:3001/animals")
-      .then((res) => res.json())
-      .then((data) => setZoo({ ...zoo, animals: data.animals, species: data.species }))
-      .catch((error) => console.log(error));
-  }, []);
+  const clearFilters = () => {
+    setZoo({
+      ...zoo,
+      animals: zoo.copyAnimals,
+    });
+  };
 
-  console.log(zoo.animals)
   return (
     <div>
       <h1 className={styles.title}>Mi Zoo!</h1>
-      <label>Nombre de Zoo:</label>
-      <input value={zoo.zooName} onChange={handleInputChange}></input>
+      <label>Zoo Name:</label>
+      <input
+        className={styles.input}
+        value={zoo.zooName}
+        onChange={handleInputChange}
+      ></input>
       <h3 className={styles.subtitle}>{zoo.zooName}</h3>
-      <ul className={styles.unorderedList}>
-        {zoo.species?.map((specie, key) => (
-          <li className={styles.listItem} key={key}>
-            <button onClick={() => changeAnimals(specie)}>Filtrar por {specie}</button>
-          </li>
-        ))}
-      </ul>
-      <Animals animals={zoo.animals} species={zoo.species} />
+      <div className={styles.containerComponents}>
+        <Species species={zoo.species} handleSpecies={handleSpecies} />
+        <button className={styles.buttonClear} onClick={clearFilters}>
+          Clear Filters
+        </button>
+        <Animals animals={zoo.animals} />
+      </div>
     </div>
   );
 }
