@@ -132,7 +132,7 @@ const [example, setExample] = React.useState({
 
 🔹 Lo que hay que hacer:
 
-1. Crea un nuevo estado llamado `species`, y asígnale el hook React.useState que inicialice en un array vacío.
+1. Agrega una propiedad llamada `species` al estado **zoo**, en el que su valor sea un array vacío.
 2. Utiliza el hook React.useEffect.
 3. Dentro del hook, usa fetch para hacer una llamada al servidor **db.json** a través del endpoint `'http://localhost:3001/animals'`, obteniendo el array **animals** con los datos de las tecnologías. Para utilizar fetch, es necesario usar promesas, como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook useEffect:
 
@@ -145,15 +145,16 @@ fetch("http://localhost:3001/animals")
 
 > **Nota**: Si tienes conocimiento base en promesas y deseas hacerlo de otra manera, puedes hacer la llamada utilizando `axios` para traer los datos. 💡
 
-4. Renderiza una etiqueta li, dentro de la etiqueta ul.
-5. Renderiza la propiedad `specie` de cada objeto que existe dentro del estado **animals**, sabiendo que éstas pueden llegar a repetirse, renderízala solo una vez (Recuerda que **animals** es un array).
+4. Abre otra terminal para levantar el servidor **db.json**, recuerda ubicarte nuevamente en la carpeta que estamos trabajando, ejecuta el comando `npm run server`.
+5. Renderiza una etiqueta li, dentro de la etiqueta ul.
+6. Renderiza la propiedad `specie` de cada objeto que existe dentro del estado **animals**, sabiendo que éstas pueden llegar a repetirse, renderízala solo una vez (Recuerda que **animals** es un array).
 
 > Tips: 
 > * Para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
 >
 > * Para que no se repitan las species puedes utilizar el constructor Set que puedes instanciar. Puedes ver cómo usala [**acá**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
 
-6. Pasar el estado `zoo` como ***props*** al renderizar el componente `Animals`.
+7. Pasar el estado `zoo` como ***props*** al renderizar el componente `Animals`.
 
 🔹 Resultado esperado:
 
@@ -167,6 +168,9 @@ fetch("http://localhost:3001/animals")
 🔹 Ahora trabajaremos en el componente **Animals.jsx**.
 
 🔹 Lo que hay que hacer:
+
+- guardar las especies. (boton)
+- onclick --> filter estado animals...
 
 1. Pasa por props el estado `zoo`
 

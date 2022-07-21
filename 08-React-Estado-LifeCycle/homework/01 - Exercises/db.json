@@ -1,28 +1,36 @@
-{
+{   
     "animals":[
-        { 
-            "name": "león", 
-            "specie":"mamífero",
-            "image": "./src/assets/Leon_1.jpg" 
-        },
-        { 
-            "name": "Delfín", 
-            "specie":"mamífero", 
-            "image": "./src/assets/Delfín.jpg"
-        },
         {
-            "name": "Cocodrilo", 
-            "specie":"reptil",
-            "image": "./src/assets/cocodrilo.jpg"
-        },
-        { 
-            "name": "Pavo real", 
-            "specie":"aves", 
-            "image": "./src/assets/pavo_real.jpg"
-        }, 
-        { 
-            "name": "Boa constrictora", 
-            "specie":"reptil", 
-            "image": "./src/assets/boa.jpg" }
+            "species":["Mamíferos", "Reptiles", "Aves"],
+            "animal":[
+                { 
+                    "name": "león", 
+                    "specie":"mamífero",
+                    "image": "./src/assets/Leon_1.jpg" 
+                },
+                { 
+                    "name": "Delfín", 
+                    "specie":"mamífero", 
+                    "image": "./src/assets/Delfín.jpg"
+                },
+                {
+                    "name": "Cocodrilo", 
+                    "specie":"reptil",
+                    "image": "./src/assets/cocodrilo.jpg"
+                },
+                { 
+                    "name": "Pavo real", 
+                    "specie":"aves", 
+                    "image": "./src/assets/pavo_real.jpg"
+                }, 
+                { 
+                    "name": "Boa constrictora", 
+                    "specie":"reptil", 
+                    "image": "./src/assets/boa.jpg" }
+            ]
+        }
     ]
+    
+    
+    
 }

@@ -31,12 +31,19 @@ const Buttons = styled.button`
 `;
 
 export default class Animals extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = ''
+  }
   render() {
-    // const { animals } = this.props;
+    
+    const { animals, species } = this.props;
     return (
       <DivButtons>
-        <Buttons>Módulo 1</Buttons>
-        <Buttons>Módulo 2</Buttons>
+        {
+          species.map(s => <Buttons>{s}</Buttons>)
+        }
+        <Buttons></Buttons>
       </DivButtons>
     );
   }
