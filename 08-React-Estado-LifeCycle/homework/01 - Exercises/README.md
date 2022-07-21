@@ -11,7 +11,7 @@ x minutos
 En esta homework, aprenderemos a crear componentes de estado, teniendo en cuenta también su ciclo de vida.
 
 * Para el componente **Zoo.jsx** generaremos un estado utilizando los hooks useState y useEffect.
-* Para el componente **Animales.jsx** también generaremos un estado utilizando el this.state y los ciclos de vida componentDidMount, componentDidUpdate y componentWillUnmount.
+* Para el componente **Animals.jsx** también generaremos un estado utilizando el this.state y los ciclos de vida componentDidMount, componentDidUpdate y componentWillUnmount.
 
 ---
 
@@ -68,8 +68,8 @@ Además:
 
 🔹 Para estos ejercicios, trabajaremos sólo dentro la carpeta `components`. Dentro de esta carpeta encontrarás:
 
-* Una carpeta llamada **Animales**, la cual a su vez contiene:
-* El componente `Animales.jsx`
+* Una carpeta llamada **Animals**, la cual a su vez contiene:
+* El componente `Animals.jsx`
 * Una carpeta llamada **Zoo**, la cual a su vez contiene:
 * El componente `Zoo.jsx`
 * La hoja de estilos **Zoo.module.css**
@@ -83,7 +83,7 @@ Además:
 
 🔹 Abre el archivo `Zoo.jsx`, dentro de él encontrarás:
 
-* El import de la librería **React**, el componente **Animales** y el archivo **Zoo.module.css**.
+* El import de la librería **React**, el componente **Animals** y el archivo **Zoo.module.css**.
 
 * La función `Zoo` que renderiza:
 
@@ -92,7 +92,7 @@ Además:
    * Una etiqueta h1
    * Una etiqueta h3
    * Una etiqueta ul (lista desordenada)
-   * El componente `Animales`
+   * El componente `Animals`
 
 🔹 Lo que hay que hacer:
 
@@ -150,6 +150,8 @@ fetch("http://localhost:3001/animals")
 
 > Tip: para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
 
+6. Pasar el estado `zoo` como ***props*** al renderizar el componente `Animals`.
+
 🔹 Resultado esperado:
 
 <p align="center"><img src="./img/img01.gif" height="300px"></p> 
@@ -157,13 +159,13 @@ fetch("http://localhost:3001/animals")
 ---
 
 ## 👩‍💻 Ejercicio 3
-### Crea un estado a nuestro componente de clase
+### Trae el estado por props a nuestro componente de clase
 
-🔹 Ahora trabajaremos en el componente **Animales.jsx**.
+🔹 Ahora trabajaremos en el componente **Animals.jsx**.
 
 🔹 Lo que hay que hacer:
 
-1. Pasa por props el estado ....
+1. Pasa por props el estado `zoo`
 
 2. Utiliza el hook React.useEffect.
 

@@ -1,5 +1,5 @@
 import React from "react";
-import Animales from "../Animales/Animales";
+import Animals from "../Animals/Animals";
 import styles from "./Zoo.module.css";
 
 export default function Bienvenido() {
@@ -26,7 +26,7 @@ export default function Bienvenido() {
       <h1 className={styles.title}>
         Mi Zoo!
       </h1>
-      <label style={{ textAlign:"center" }}>Nombre de Zoo:</label>
+      <label>Nombre de Zoo:</label>
       <input value={zoo.zooName} onChange={handleInputChange}></input>
       <h3 className={styles.subtitle}>{zoo.zooName}</h3>
       <ul className={styles.unorderedList} >
@@ -37,7 +37,7 @@ export default function Bienvenido() {
           </li>
         ))} */}
       </ul>
-      <Animales animals={zoo.animals} />
+      <Animals animals={zoo.animals} />
     </div>
   );
 }
