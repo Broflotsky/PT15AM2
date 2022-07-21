@@ -30,7 +30,7 @@ const Buttons = styled.button`
   }
 `;
 
-export default class Animales extends React.Component {
+export default class Animals extends React.Component {
   render () {
     const { animals } = this.props
     return (
