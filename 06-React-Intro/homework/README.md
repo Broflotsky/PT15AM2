@@ -21,7 +21,8 @@
 
 Al finalizar esta homework habrás aprendido a:
 
-- Aplicar estilos en React implementándolos de las diferentes formas enseñadas en clase, entenderás lo dinámico y divertido que será diseñar nuestros componentes.
+- Crear componentes de React tanto funcionales como de clase.
+- Entender el propósito de las props.
 - Iniciar la creación de una app nativa a partir de la creación de sus componentes y utilización de Props.
 
 ---

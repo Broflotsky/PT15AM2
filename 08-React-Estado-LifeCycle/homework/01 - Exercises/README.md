@@ -113,17 +113,11 @@ const [example, setExample] = React.useState({
 > **Nota**: Para que corran los test, el hook debe ser utilizado de esta manera: **React.useState()**. No debe utilizarse como **useState()**. 💡
 
 2. Renderiza una etiqueta label debajo de la etiqueta h1 que contenga el texto "Nombre de Zoo:".
-
 3. Renderiza una etiqueta input debajo de la etiqueta label y encima de la etiqueta h3.
-
 4. A la etiqueta input asígnale los atributos `value` y `onChange`que por el momento sean iguales a un string vacío.
-
 5. Al atributo **value** de la etiqueta input asígnale el estado `zooName`.
-
 6. Crea una función llamada `handleInputChange`, que reciba un **evento** como parámetro.
-
 7. Dentro de la función `handleInputChange`, setea el estado zooName, capturando el valor del input.
-
 8. Al atributo **onChange** del input, asígnale la función `handleInputChange`.
 
 🔹 Resultado esperado:
@@ -139,9 +133,7 @@ const [example, setExample] = React.useState({
 🔹 Lo que hay que hacer:
 
 1. Crea un nuevo estado llamado `species`, y asígnale el hook React.useState que inicialice en un array vacío.
-
 2. Utiliza el hook React.useEffect.
-
 3. Dentro del hook, usa fetch para hacer una llamada al servidor **db.json** a través del endpoint `'http://localhost:3001/animals'`, obteniendo el array **animals** con los datos de las tecnologías. Para utilizar fetch, es necesario usar promesas, como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook useEffect:
 
 ```js
@@ -154,7 +146,6 @@ fetch("http://localhost:3001/animals")
 > **Nota**: Si tienes conocimiento base en promesas y deseas hacerlo de otra manera, puedes hacer la llamada utilizando `axios` para traer los datos. 💡
 
 4. Renderiza una etiqueta li, dentro de la etiqueta ul.
-
 5. Renderiza la propiedad `specie` de cada objeto que existe dentro del estado **animals** (Recuerda que **animals** es un array).
 
 > Tip: para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
