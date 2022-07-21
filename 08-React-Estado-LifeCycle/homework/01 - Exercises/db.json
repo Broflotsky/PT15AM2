@@ -1,6 +1,6 @@
 {   
-    "animals":[
-        {
+    "animals":
+    {
             "species":["Mamíferos", "Reptiles", "Aves"],
             "animal":[
                 { 
@@ -28,9 +28,5 @@
                     "specie":"reptil", 
                     "image": "./src/assets/boa.jpg" }
             ]
-        }
-    ]
-    
-    
-    
+    }
 }

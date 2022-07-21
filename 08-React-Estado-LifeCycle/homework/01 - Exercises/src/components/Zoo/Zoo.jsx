@@ -15,14 +15,22 @@ export default function Bienvenido() {
       zooName: e.target.value,
     });
   };
-  
+
+  function changeAnimals (specie) {
+    setZoo({
+      ...zoo,
+      animals: zoo.animals.filter((a) => a.specie === specie)
+    })
+  }
+
   React.useEffect(() => {
     fetch("http://localhost:3001/animals")
       .then((res) => res.json())
-      .then((data) => setZoo({ ...zoo, animals: data.animal, species:data.species }))
+      .then((data) => setZoo({ ...zoo, animals: data.animals, species: data.species }))
       .catch((error) => console.log(error));
   }, []);
 
+  console.log(zoo.animals)
   return (
     <div>
       <h1 className={styles.title}>Mi Zoo!</h1>
@@ -30,14 +38,11 @@ export default function Bienvenido() {
       <input value={zoo.zooName} onChange={handleInputChange}></input>
       <h3 className={styles.subtitle}>{zoo.zooName}</h3>
       <ul className={styles.unorderedList}>
-        {zoo.species.map((specie, key) => 
-          <li key={key}>{specie}</li>
-        )}
-        {/* {zoo.species?.map((specie, key) => (
+        {zoo.species?.map((specie, key) => (
           <li className={styles.listItem} key={key}>
-            
+            <button onClick={() => changeAnimals(specie)}>Filtrar por {specie}</button>
           </li>
-        ))} */}
+        ))}
       </ul>
       <Animals animals={zoo.animals} species={zoo.species} />
     </div>
