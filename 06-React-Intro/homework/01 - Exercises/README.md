@@ -13,7 +13,6 @@ En esta homework, vamos a crear dos componentes de React, que nos ayudarán a en
 > **Nota**: No te preocupes por el estilo de los componentes. En la siguiente clase y homework nos dedicaremos a ellos.
 
 ---
-
 ## Pasos básicos para realizar la homework
 
 🔹 Para poder ejecutar los `test` de esta homework, es necesario que abramos la terminal ubicados dentro de la carpeta `01 - Exercises`.
@@ -68,7 +67,7 @@ Además:
 
 ### Nuestro primer componente funcional de React
 
-🔹 En el archivo `Bienvenido.jsx` encontrarás definida la función de un componente funcional. Dentro de ella aplicaremos la magia de React para combinar los temas vistos en clase.
+🔹 En el archivo `Bienvenido.jsx` encontrarás definida la función de un componente funcional de React. Dentro de ella aplicaremos la magia de React para combinar los temas vistos en clase.
 
 🔹 Lo que hay que hacer:
 
@@ -94,10 +93,12 @@ Ya sabemos cómo funciona un componente en React, ahora vamos a crear un compone
 🔹 Lo que hay que hacer:
 
 1. Crea un componente de clase llamado `Botones.jsx` (click derecho sobre la carpeta components --> Nuevo archivo --> `Botones.jsx`)
-2. El componente debe renderizar un div.
-3. Dentro del div, renderiza un botón llamado "Módulo 1".
-4. Dentro del div, renderiza un botón llamado "Módulo 2".
-5. Cada botón debe tener el atributo `onClick` que muestre un `alert` con cualquier texto.
+2. Importa React desde 'react'.
+3. Crea la función de clase llamada `Botones`.
+4. El componente debe renderizar un div.
+5. Dentro del div, renderiza un botón llamado "Módulo 1".
+6. Dentro del div, renderiza un botón llamado "Módulo 2".
+7. Cada botón debe tener el atributo `onClick` que muestre un `alert` con cualquier texto.
 
 **... Estamos llegando a la última parte de la homework** ⭐
 

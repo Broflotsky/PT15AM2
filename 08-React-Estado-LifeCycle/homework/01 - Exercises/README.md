@@ -11,7 +11,7 @@ x minutos
 En esta homework, aprenderemos a crear componentes de estado, teniendo en cuenta también su ciclo de vida.
 
 * Para el componente **Zoo.jsx** generaremos un estado utilizando los hooks useState y useEffect.
-* Para el componente **Animales.jsx** también generaremos un estado utilizando el this.state y los ciclos de vida componentDidMount, componentDidUpdate y componentWillUnmount.
+* Para el componente **Animals.jsx** también generaremos un estado utilizando el this.state y los ciclos de vida componentDidMount, componentDidUpdate y componentWillUnmount.
 
 ---
 
@@ -68,8 +68,8 @@ Además:
 
 🔹 Para estos ejercicios, trabajaremos sólo dentro la carpeta `components`. Dentro de esta carpeta encontrarás:
 
-* Una carpeta llamada **Animales**, la cual a su vez contiene:
-* El componente `Animales.jsx`
+* Una carpeta llamada **Animals**, la cual a su vez contiene:
+* El componente `Animals.jsx`
 * Una carpeta llamada **Zoo**, la cual a su vez contiene:
 * El componente `Zoo.jsx`
 * La hoja de estilos **Zoo.module.css**
@@ -77,14 +77,13 @@ Además:
 ---
 
 ## 👩‍💻 Ejercicio 1
-
 ### Crea un estado a nuestro componente funcional usando React.useState
 
 🔹 El componente funcional `Zoo.jsx`, es actualmente un componente sin estado.
 
 🔹 Abre el archivo `Zoo.jsx`, dentro de él encontrarás:
 
-* El import de la librería **React**, el componente **Animales** y el archivo **Zoo.module.css**.
+* El import de la librería **React**, el componente **Animals** y el archivo **Zoo.module.css**.
 
 * La función `Zoo` que renderiza:
 
@@ -93,39 +92,40 @@ Además:
    * Una etiqueta h1
    * Una etiqueta h3
    * Una etiqueta ul (lista desordenada)
-   * El componente `Animales`
+   * El componente `Animals`
 
 🔹 Lo que hay que hacer:
 
-1. Crea una constante de estado llamada `zooName`, y asígnale el hook React.useState que inicialice en un string vacío. Por ejemplo: 
+1. Crea una constante de estado llamada `zoo`, y asígnale el hook React.useState que inicialice en un objeto con las siguientes propiedades:
+
+* zooName en el que su valor sea un string vacío.
+* animals en el que su valor sea un array vacío.
+
+ Por ejemplo: 
 
 ```bash
-const [example, setExample] = React.useState('');
+const [example, setExample] = React.useState({
+   example1:'',
+   example2:[]
+});
 ```
 
 > **Nota**: Para que corran los test, el hook debe ser utilizado de esta manera: **React.useState()**. No debe utilizarse como **useState()**. 💡
 
 2. Renderiza una etiqueta label debajo de la etiqueta h1 que contenga el texto "Nombre de Zoo:".
-
 3. Renderiza una etiqueta input debajo de la etiqueta label y encima de la etiqueta h3.
-
 4. A la etiqueta input asígnale los atributos `value` y `onChange`que por el momento sean iguales a un string vacío.
-
 5. Al atributo **value** de la etiqueta input asígnale el estado `zooName`.
-
 6. Crea una función llamada `handleInputChange`, que reciba un **evento** como parámetro.
-
 7. Dentro de la función `handleInputChange`, setea el estado zooName, capturando el valor del input.
-
 8. Al atributo **onChange** del input, asígnale la función `handleInputChange`.
 
 🔹 Resultado esperado:
 
-<p align="center"><img src="./img/img01.gif" height="300px"></p> //pendiente!!!
+<p align="center"><img src="./img/img01.gif" height="300px"></p> 
 
 ---
 ## 👩‍💻 Ejercicio 2
-
 ### Utiliza el hook React.useEffect
 
 🔹 Continúa trabajando en el componente **Zoo.jsx**.
@@ -133,10 +133,45 @@ const [example, setExample] = React.useState('');
 🔹 Lo que hay que hacer:
 
 1. Crea un nuevo estado llamado `species`, y asígnale el hook React.useState que inicialice en un array vacío.
+2. Utiliza el hook React.useEffect.
+3. Dentro del hook, usa fetch para hacer una llamada al servidor **db.json** a través del endpoint `'http://localhost:3001/animals'`, obteniendo el array **animals** con los datos de las tecnologías. Para utilizar fetch, es necesario usar promesas, como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook useEffect:
+
+```js
+fetch("http://localhost:3001/animals")
+      .then((res) => res.json())
+      .then((data) => setZoo({ ...zoo, animals: data }))
+      .catch((error) => console.log(error));
+```
+
+> **Nota**: Si tienes conocimiento base en promesas y deseas hacerlo de otra manera, puedes hacer la llamada utilizando `axios` para traer los datos. 💡
+
+4. Renderiza una etiqueta li, dentro de la etiqueta ul.
+5. Renderiza la propiedad `specie` de cada objeto que existe dentro del estado **animals** (Recuerda que **animals** es un array).
+
+> Tip: para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
+
+6. Pasar el estado `zoo` como ***props*** al renderizar el componente `Animals`.
+
+🔹 Resultado esperado:
+
+<p align="center"><img src="./img/img01.gif" height="300px"></p> 
+
+---
+
+## 👩‍💻 Ejercicio 3
+### Trae el estado por props a nuestro componente de clase
+
+🔹 Ahora trabajaremos en el componente **Animals.jsx**.
+
+🔹 Lo que hay que hacer:
+
+1. Pasa por props el estado `zoo`
 
 2. Utiliza el hook React.useEffect.
 
-3. Dentro del hook, usa fetch para hacer una llamada al servidor **db.json** a través del endpoint `'http://localhost:3001/animals'`, obteniendo el array **animals** con los datos de las tecnologías. Para utilizar fetch, es necesario usar promesas, como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook useEffect.
+3. Dentro del hook, usa fetch para hacer una llamada al servidor **db.json** a través del endpoint `'http://localhost:3001/animals'`, obteniendo el array **animals** con los datos de las tecnologías. Para utilizar fetch, es necesario usar promesas, como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook useEffect:
+
+<!-- Colocar snippet!! -->
 
 > **Nota**: Si tienes conocimiento base en promesas y deseas hacerlo de otra manera, puedes hacer la llamada utilizando `axios` para traer los datos. 💡
 
@@ -148,9 +183,7 @@ const [example, setExample] = React.useState('');
 
 🔹 Resultado esperado:
 
-<p align="center"><img src="./img/img01.gif" height="300px"></p> //pendiente!!!
-
----
+<p align="center"><img src="./img/img01.gif" height="300px"></p> 
 
 > **Nota**: Para los estilos puedes guiarte del ejercicio anterior. 💡
 
