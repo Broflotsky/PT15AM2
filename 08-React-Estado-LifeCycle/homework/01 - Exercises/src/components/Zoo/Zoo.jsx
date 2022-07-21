@@ -10,6 +10,7 @@ export default function Bienvenido() {
 
   const handleInputChange = (e) => {
     setZoo({
+      ...zoo,
       zooName: e.target.value,
     });
   };

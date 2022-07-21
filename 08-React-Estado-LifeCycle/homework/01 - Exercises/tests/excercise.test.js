@@ -10,7 +10,7 @@ import data from "../db.json";
 import fetch from "jest-fetch-mock";
 // Importamos variables/componentes
 import Zoo from "../src/components/Zoo/Zoo";
-import Animales from "../src/components/Animales/Animales";
+import Animals from "../src/components/Animals/Animals";
 
 configure({ adapter: new Adapter() });
 global.fetch = fetch;
@@ -52,7 +52,7 @@ describe("01 | Componente 'Zoo'", () => {
   it("Debería renderizar una etiqueta label debajo de la etiqueta h1", () => {
     expect(zoo.childAt(0).type()).toBe("h1");
     expect(zoo.childAt(1).type()).toBe("label");
-    expect(zoo.childAt(1).text()).toBe("Nombre de zoo:");
+    expect(zoo.childAt(1).text()).toBe("Nombre de Zoo:");
   });
 
   it("Debería renderizar un input entre la etiqueta label y la etiqueta h3", () => {
@@ -113,15 +113,15 @@ describe("01 | Componente 'Zoo'", () => {
     }, 300);
   });
 
-  it("El componente Zoo, debe pasarle por 'props' al componente Animales, la propiedad animals del objeto zoo de su estado local", () => {
-    const componenteAnimales = zoo.find("Animales");
-    expect(componenteAnimales.prop("animals")).toBeTruthy();
+  it("El componente Zoo, debe pasarle por 'props' al componente Animals, la propiedad animals del objeto zoo de su estado local", () => {
+    const componenteAnimals = zoo.find("Animals");
+    expect(componenteAnimals.prop("animals")).toBeTruthy();
   });
 
   afterEach(() => jest.restoreAllMocks());
   afterEach(() => nock.cleanAll());
 });
 
-describe("02 | Componente 'Animales'", () => {
-  beforeAll(() => expect(isReact.classComponent(Animales)).toBeTruthy());
+describe("02 | Componente 'Animals'", () => {
+  beforeAll(() => expect(isReact.classComponent(Animals)).toBeTruthy());
 });
