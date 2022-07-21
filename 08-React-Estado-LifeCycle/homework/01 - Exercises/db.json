@@ -1,5 +1,5 @@
 {
-    "animals":[
+    "animals": [
         { 
             "name": "león", 
             "specie":"mamífero",
@@ -23,6 +23,7 @@
         { 
             "name": "Boa constrictora", 
             "specie":"reptil", 
-            "image": "./src/assets/redux.png" }
+            "image": "./src/assets/redux.png"
+        }
     ]
 }

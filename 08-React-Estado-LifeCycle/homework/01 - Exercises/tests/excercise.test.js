@@ -7,8 +7,8 @@ import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 import isReact from "is-react";
 import nock from "nock";
 import data from "../db.json";
-import fetch from "jest-fetch-mock";
 // Importamos variables/componentes
+import fetch from "jest-fetch-mock";
 import Zoo from "../src/components/Zoo/Zoo";
 import Animales from "../src/components/Animales/Animales";
 
@@ -26,7 +26,7 @@ describe("01 | Componente 'Zoo'", () => {
     // Se Mockea las request a las api
     const apiMock = nock("http://localhost:3001").persist();
 
-    apiMock.get("/animals").reply(200, data.animals);
+    apiMock.get("/animals").reply(201, data.animals);
 
     useState = jest.fn();
     useStateSpy = jest.spyOn(React, "useState");
@@ -82,16 +82,20 @@ describe("01 | Componente 'Zoo'", () => {
       zooName: "Martín's Zoo",
       animals: [],
     });
+
     input.simulate("change", {
       target: { value: "Mate's Zoo" },
     });
+
     expect(useState).toHaveBeenCalledWith({
       zooName: "Mate's Zoo",
       animals: [],
     });
+
     input.simulate("change", {
       target: { value: "Auri's Zoo" },
     });
+
     expect(useState).toHaveBeenCalledWith({
       zooName: "Auri's Zoo",
       animals: [],
@@ -110,16 +114,24 @@ describe("01 | Componente 'Zoo'", () => {
         zooName: "",
         animals: data.animals,
       });
-    }, 300);
+    }, 100);
   });
+
+  // it('El componente Bienvenido, debe pasarle por "props" al componente Botones, el objeto alerts', () => {
+  //   const componentBotones = wrapperBienvenido.find("Botones");
+  //   expect(componentBotones.prop("alerts"));
+  //   expect(Object.keys(componentBotones.prop("alerts")).length).toBe(2);
+  // });
 
   it("El componente Zoo, debe pasarle por 'props' al componente Animales, la propiedad animals del objeto zoo de su estado local", () => {
     const componenteAnimales = zoo.find("Animales");
-    expect(componenteAnimales.prop("animals")).toBeTruthy();
+    console.log(zoo.find("Animals").debug())
   });
 
-  afterEach(() => jest.restoreAllMocks());
-  afterEach(() => nock.cleanAll());
+  afterEach(() => {
+    nock.cleanAll()
+    jest.restoreAllMocks()
+  });
 });
 
 describe("02 | Componente 'Animales'", () => {
