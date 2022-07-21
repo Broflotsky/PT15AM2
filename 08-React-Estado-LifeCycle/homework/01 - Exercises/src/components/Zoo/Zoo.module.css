@@ -53,3 +53,32 @@
   object-fit: cover;
   margin: 15px;
 }
+
+.containerComponents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  width: 13vw;
+  height: 1vh;
+  border-radius: 5%;
+  border: 1px solid #262623c9;
+  padding: 1em;
+  margin: 1em;
+}
+
+.buttonClear {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 13vw;
+  height: 1vh;
+  border-radius: 5%;
+  border: 1px solid #262623c9;
+  padding: 1em;
+  margin: 1em;
+}

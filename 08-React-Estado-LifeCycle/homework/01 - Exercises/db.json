@@ -1,26 +1,26 @@
 {
   "animals": {
-   "species": ["mamífero", "reptil", "aves"],
+   "species": ["Mamífero", "Reptil", "Aves"],
    "animals": [
     {
-      "name": "león",
-      "specie": "mamífero"
+      "name": "León",
+      "specie": "Mamífero"
     },
     {
       "name": "Delfín",
-      "specie": "mamífero"
+      "specie": "Mamífero"
     },
     {
       "name": "Cocodrilo",
-      "specie": "reptil"
+      "specie": "Reptil"
     },
     {
       "name": "Pavo real",
-      "specie": "aves"
+      "specie": "Aves"
     },
     {
-      "name": "Boa constrictora",
-      "specie": "reptil"
+      "name": "Boa constructora",
+      "specie": "Reptil"
     }
   ]
   }
