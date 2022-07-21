@@ -32,7 +32,7 @@ const Buttons = styled.button`
 
 export default class Animals extends React.Component {
   render() {
-    const { animals } = this.props;
+    // const { animals } = this.props;
     return (
       <DivButtons>
         <Buttons>Módulo 1</Buttons>
