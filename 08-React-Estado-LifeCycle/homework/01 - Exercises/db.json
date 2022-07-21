@@ -1,5 +1,7 @@
 {
-  "animals": [
+  "animals": {
+   "species": ["mamífero", "reptil", "aves"],
+   "animals": [
     {
       "name": "león",
       "specie": "mamífero"
@@ -21,4 +23,5 @@
       "specie": "reptil"
     }
   ]
+  }
 }
