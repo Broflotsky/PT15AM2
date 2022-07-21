@@ -17,7 +17,7 @@ export default function Bienvenido() {
       .then((res) => res.json())
       .then((data) => setZoo({ ...zoo, animals: data }))
       .catch((error) => console.log(error));
-  }, []);
+  }, [zoo]);
 
   return (
     <div>
@@ -26,12 +26,11 @@ export default function Bienvenido() {
       <input value={zoo.zooName} onChange={handleInputChange}></input>
       <h3 className={styles.subtitle}>{zoo.zooName}</h3>
       <ul className={styles.unorderedList}>
-        {/* {techSkills.map((skill) => (
-          <li className={styles.listItem} key={skill}>
-            {skill.tech}
-            <img src={skill.image} alt={skill.tech} />
+        {zoo.animals?.map((animal, key) => (
+          <li className={styles.listItem} key={key}>
+            {animal.specie}
           </li>
-        ))} */}
+        ))}
       </ul>
       <Animales animals={zoo.animals} />
     </div>
