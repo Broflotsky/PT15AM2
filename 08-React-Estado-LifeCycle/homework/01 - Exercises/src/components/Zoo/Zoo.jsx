@@ -3,7 +3,7 @@ import Animals from "../Animals/Animals";
 import Species from "../Species/Species";
 import styles from "./Zoo.module.css";
 
-export default function Bienvenido() {
+export default function Zoo() {
   const [zoo, setZoo] = React.useState({
     zooName: "",
     animals: [],
