@@ -5,17 +5,17 @@
             "animals":[
                 { 
                     "name": "León", 
-                    "specie":"Mamífero",
+                    "specie":"Mamíferos",
                     "image": "./src/assets/Leon_1.jpg" 
                 },
                 { 
                     "name": "Delfín", 
-                    "specie":"Mamífero", 
+                    "specie":"Mamíferos", 
                     "image": "./src/assets/Delfín.jpg"
                 },
                 {
                     "name": "Cocodrilo", 
-                    "specie":"Reptil",
+                    "specie":"Reptiles",
                     "image": "./src/assets/cocodrilo.jpg"
                 },
                 { 
@@ -25,7 +25,7 @@
                 }, 
                 { 
                     "name": "Boa constrictora", 
-                    "specie":"Reptil", 
+                    "specie":"Reptiles", 
                     "image": "./src/assets/boa.jpg" }
             ]
     }
