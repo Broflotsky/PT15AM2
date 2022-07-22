@@ -12,6 +12,7 @@ En esta homework, aprenderemos a crear componentes de estado, teniendo en cuenta
 
 * Para el componente **Zoo.jsx** generaremos un estado utilizando los hooks useState y useEffect.
 * Para el componente **Animals.jsx** también generaremos un estado utilizando el this.state y los ciclos de vida componentDidMount, componentDidUpdate y componentWillUnmount.
+* Tendremos un componente adicional **Species** en el que recibe props.
 
 ---
 
@@ -33,6 +34,7 @@ npm test
 
 Los dos primeros test pasarán sin que hagas nada, simplemente están para que te ayuden a verificar que estás realizando correctamente los pasos y que no tienes errores.
 
+
 🔹 Para poder correr la aplicación de forma local, sólo debes ejecutar el comando
 
 ```bash
@@ -40,6 +42,16 @@ npm start
 ```
 
 * Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
+
+🔹 Para poder correr el servidor **db.json**, debes:
+
+* Abrir una segunda terminal.
+* En la terminal, dirígete a la carpeta que estamos trabajando.
+* Ejecuta el comando:
+ 
+```bash
+npm run server
+```
 
 ---
 
@@ -69,10 +81,12 @@ Además:
 🔹 Para estos ejercicios, trabajaremos sólo dentro la carpeta `components`. Dentro de esta carpeta encontrarás:
 
 * Una carpeta llamada **Animals**, la cual a su vez contiene:
-* El componente `Animals.jsx`
+   * El componente `Animals.jsx`
+* Una carpeta llamada **Species**, la cual a su vez contiene:
+   * El componente `Species.jsx`
 * Una carpeta llamada **Zoo**, la cual a su vez contiene:
-* El componente `Zoo.jsx`
-* La hoja de estilos **Zoo.module.css**
+   * El componente `Zoo.jsx`
+   * La hoja de estilos **Zoo.module.css**
 
 ---
 
@@ -83,16 +97,19 @@ Además:
 
 🔹 Abre el archivo `Zoo.jsx`, dentro de él encontrarás:
 
-* El import de la librería **React**, el componente **Animals** y el archivo **Zoo.module.css**.
+* El import de:
+   * La librería **React**
+   * El componente **Animals** 
+   * El componente **Species**
+   * El archivo **Zoo.module.css**
 
 * La función `Zoo` que renderiza:
 
-1. Un div.
-2. Dentro de este div, se renderiza:
-   * Una etiqueta h1
-   * Una etiqueta h3
-   * Una etiqueta ul (lista desordenada)
-   * El componente `Animals`
+   * Un div.
+   * Dentro de este div, se renderiza:
+      * Una etiqueta h1
+      * Una etiqueta h3
+      * Una etiqueta div
 
 🔹 Lo que hay que hacer:
 
@@ -100,25 +117,29 @@ Además:
 
 * zooName en el que su valor sea un string vacío.
 * animals en el que su valor sea un array vacío.
+* species en el que su valor sea un array vacío.
+* copyAnimals en el que su valor sea un array vacío.
 
  Por ejemplo: 
 
-```bash
+```js
 const [example, setExample] = React.useState({
    example1:'',
-   example2:[]
+   example2:[],
+   example3:[]
 });
 ```
 
 > **Nota**: Para que corran los test, el hook debe ser utilizado de esta manera: **React.useState()**. No debe utilizarse como **useState()**. 💡
 
-2. Renderiza una etiqueta label debajo de la etiqueta h1 que contenga el texto "Nombre de Zoo:".
+2. Renderiza una etiqueta label debajo de la etiqueta h1 que contenga el texto "Zoo Name:".
 3. Renderiza una etiqueta input debajo de la etiqueta label y encima de la etiqueta h3.
 4. A la etiqueta input asígnale los atributos `value` y `onChange`que por el momento sean iguales a un string vacío.
-5. Al atributo **value** de la etiqueta input asígnale el estado `zooName`.
+5. Al atributo **value** de la etiqueta input asígnale el estado `zoo.zooName`.
 6. Crea una función llamada `handleInputChange`, que reciba un **evento** como parámetro.
-7. Dentro de la función `handleInputChange`, setea el estado zooName, capturando el valor del input.
+7. Dentro de la función `handleInputChange`, setea el estado zoo, la propiedad zooName, capturando el valor del input.
 8. Al atributo **onChange** del input, asígnale la función `handleInputChange`.
+
 
 🔹 Resultado esperado:
 
@@ -126,48 +147,86 @@ const [example, setExample] = React.useState({
 
 ---
 ## 👩‍💻 Ejercicio 2
-### Utiliza el hook React.useEffect
+### Crea el hook React.useEffect en nuestro componente funcional 
 
 🔹 Continúa trabajando en el componente **Zoo.jsx**.
 
 🔹 Lo que hay que hacer:
 
-1. Agrega una propiedad llamada `species` al estado **zoo**, en el que su valor sea un array vacío.
-2. Utiliza el hook React.useEffect.
-3. Dentro del hook, usa fetch para hacer una llamada al servidor **db.json** a través del endpoint `'http://localhost:3001/animals'`, obteniendo el array **animals** con los datos de las tecnologías. Para utilizar fetch, es necesario usar promesas, como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook useEffect:
+1. Utiliza el hook React.useEffect.
+2. Dentro del hook, usa fetch para hacer una llamada al servidor **db.json** a través del endpoint `'http://localhost:3001/animals'`, obteniendo el objeto **animals** con los datos de los animales. Para utilizar fetch, es necesario usar promesas, como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook useEffect:
 
 ```js
 fetch("http://localhost:3001/animals")
       .then((res) => res.json())
-      .then((data) => setZoo({ ...zoo, animals: data }))
+      .then((data) =>
+        setZoo({ ...zoo, 
+            animals: data.animals, 
+            copyAnimals: data.animals, 
+            species: data.species })
+      )
       .catch((error) => console.log(error));
 ```
 
 > **Nota**: Si tienes conocimiento base en promesas y deseas hacerlo de otra manera, puedes hacer la llamada utilizando `axios` para traer los datos. 💡
 
-4. Abre otra terminal para levantar el servidor **db.json**, recuerda ubicarte nuevamente en la carpeta que estamos trabajando, ejecuta el comando `npm run server`.
-5. Renderiza una etiqueta li, dentro de la etiqueta ul.
-6. Renderiza la propiedad `specie` de cada objeto que existe dentro del estado **animals**, sabiendo que éstas pueden llegar a repetirse, renderízala solo una vez (Recuerda que **animals** es un array).
+3. Dentro del segundo div:
+      * Pasa el estado **zoo**, con su propiedad `species` como props al renderizar ***Species***.
+      * Pasa el estado **zoo**, con su propiedad `animals` como props al renderizar ***Animals***.
+
+---
+
+## 👩‍💻 Ejercicio 3
+### Recibiendo props en nuestro componente funcional Species
+
+🔹 Ahora trabajaremos en el componente **Species.jsx**.
+
+🔹 Abre el archivo `Species.jsx`, dentro de él encontrarás:
+
+* El import de la librería **React**
+
+* La función `Species` que renderiza:
+
+   * Un div.
+   * Dentro de este div, se renderiza:
+      * Una etiqueta h2
+      * Una lista desordenada
+
+🔹 Lo que hay que hacer:
+
+1. El componente recibe props como parámetro.
+2. Dentro del div:
+   * Introduce el texto `"Species"` en la etiqueta h2
+   * Renderiza una lista dentro de la etiqueta ul, en el que muestres las especies que trae el componente por props, que a su vez se renderizan con la etiqueta botones.(por ahora nuestros botones no hacen nada)
+
+> Tips: 
+> * Para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
+
+🔹 Resultado esperado:
+
+<p align="center"><img src="./img/img02.gif" height="300px"></p> 
+
+---
+
+## 👩‍💻 Ejercicio 4
+### Recibiendo props en nuestro componente de clases Animals
+
+🔹 Ahora trabajaremos en el componente **Animals.jsx**.
+
+🔹 Abre el archivo `Animals.jsx`, dentro de él encontrarás:
+
+* El import de la librería **React**
+
+* La función de clase `Animals` que renderiza un div.
+
+🔹 Lo que hay que hacer:
+
+1. Dentro del render crea una constante y asígnale las props.
 
 > Tips: 
 > * Para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
 >
 > * Para que no se repitan las species puedes utilizar el constructor Set que puedes instanciar. Puedes ver cómo usala [**acá**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
-
-7. Pasar el estado `zoo` como ***props*** al renderizar el componente `Animals`.
-
-🔹 Resultado esperado:
-
-<p align="center"><img src="./img/img01.gif" height="300px"></p> 
-
----
-
-## 👩‍💻 Ejercicio 3
-### Trae el estado por props a nuestro componente de clase
-
-🔹 Ahora trabajaremos en el componente **Animals.jsx**.
-
-🔹 Lo que hay que hacer:
 
 - guardar las especies. (boton)
 - onclick --> filter estado animals...
@@ -194,6 +253,9 @@ fetch("http://localhost:3001/animals")
 
 **...Estamos llegando a la última parte de la homework** ⭐
 
+3. Crea una función llamada `handleSpecies`, que reciba un **evento** como parámetro.
+
+4. Dentro de la función `handleSpecies`, setea el estado zoo, la propiedad animals, capturando el valor del input.
 ---
 
 Ya sabemos cómo funciona y se conectan los archivos module.css a nuestros componentes, ahora vamos a estilar desde cero en nuestro componente Botones, pero esta vez será aplicando `Styled Components`, para ello debes seguir los siguientes pasos:

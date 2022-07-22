@@ -2,30 +2,30 @@
     "animals":
     {
             "species":["Mamíferos", "Reptiles", "Aves"],
-            "animal":[
+            "animals":[
                 { 
-                    "name": "león", 
-                    "specie":"mamífero",
+                    "name": "León", 
+                    "specie":"Mamífero",
                     "image": "./src/assets/Leon_1.jpg" 
                 },
                 { 
                     "name": "Delfín", 
-                    "specie":"mamífero", 
+                    "specie":"Mamífero", 
                     "image": "./src/assets/Delfín.jpg"
                 },
                 {
                     "name": "Cocodrilo", 
-                    "specie":"reptil",
+                    "specie":"Reptil",
                     "image": "./src/assets/cocodrilo.jpg"
                 },
                 { 
                     "name": "Pavo real", 
-                    "specie":"aves", 
+                    "specie":"Aves", 
                     "image": "./src/assets/pavo_real.jpg"
                 }, 
                 { 
                     "name": "Boa constrictora", 
-                    "specie":"reptil", 
+                    "specie":"Reptil", 
                     "image": "./src/assets/boa.jpg" }
             ]
     }

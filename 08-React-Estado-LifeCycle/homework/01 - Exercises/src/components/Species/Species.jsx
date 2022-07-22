@@ -1,14 +1,20 @@
 import React from "react";
 
 export default function Species({ species, handleSpecies }) {
-  console.log(species);
-
   return (
     <div>
       <h2>Species</h2>
+      <ul>
         {species.map((specie, key) => (
-          <button onClick={handleSpecies} value={specie} key={key}>{specie}</button>
-        ))}
+            <li key={key}>
+              <button 
+                // onClick={handleSpecies} 
+                value={specie} 
+                >{specie}</button>
+            </li>
+          ))}
+      </ul>
+        
     </div>
   );
 }

@@ -3,13 +3,14 @@ import Animals from "../Animals/Animals";
 import Species from "../Species/Species";
 import styles from "./Zoo.module.css";
 
-export default function Bienvenido() {
+export default function Zoo() {
   const [zoo, setZoo] = React.useState({
     zooName: "",
     animals: [],
     copyAnimals: [],
     species: [],
   });
+
 
   React.useEffect(() => {
     fetch("http://localhost:3001/animals")
@@ -20,7 +21,6 @@ export default function Bienvenido() {
       .catch((error) => console.log(error));
   }, []);
 
-
   const handleInputChange = (e) => {
     setZoo({
       ...zoo,
@@ -29,35 +29,37 @@ export default function Bienvenido() {
   };
 
   const handleSpecies = (e) => {
-    setZoo({
-      ...zoo,
-      animals: zoo.animals.filter((animal) => animal.specie === e.target.value),
-    });
+    // setZoo({
+    //   ...zoo,
+    //   animals: zoo.animals.filter((animal) => animal.specie === e.target.value),
+    // });
   };
 
-  const clearFilters = () => {
-    setZoo({
-      ...zoo,
-      animals: zoo.copyAnimals,
-    });
-  };
+  // const clearFilters = () => {
+  //   setZoo({
+  //     ...zoo,
+  //     animals: zoo.copyAnimals,
+  //   });
+  // };
 
   return (
     <div>
       <h1 className={styles.title}>Mi Zoo!</h1>
+      {/* Escribe acá tu código */}
       <label>Zoo Name:</label>
       <input
-        className={styles.input}
         value={zoo.zooName}
         onChange={handleInputChange}
       ></input>
       <h3 className={styles.subtitle}>{zoo.zooName}</h3>
       <div className={styles.containerComponents}>
-        <Species species={zoo.species} handleSpecies={handleSpecies} />
-        <button className={styles.buttonClear} onClick={clearFilters}>
+        {/* Escribe acá tu código */}
+        <Species species={zoo.species}/>
+        <Animals animals={zoo.animals}/>
+        {/* <Species species={zoo.species} handleSpecies='' /> */}
+        {/* <button className={styles.buttonClear} onClick>
           Clear Filters
-        </button>
-        <Animals animals={zoo.animals} />
+        </button> */}
       </div>
     </div>
   );
