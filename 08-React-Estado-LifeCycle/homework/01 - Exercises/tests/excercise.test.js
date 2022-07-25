@@ -32,7 +32,7 @@ describe("01 | Componente 'Zoo'", () => {
     useStateSpy = jest.spyOn(React, "useState");
     useEffect = jest.spyOn(React, "useEffect");
     useStateSpy.mockImplementation(() => [
-      { zooName: "", animals: [] },
+      { zooName: "", animals: [], copyAnimals: [], species: [] },
       useState,
     ]);
 
@@ -44,9 +44,13 @@ describe("01 | Componente 'Zoo'", () => {
     expect(zoo).toBeTruthy();
   });
 
-  it("Debería inicializar el estado con un objeto que contenga una propiedad zoo inicializada como un string vacío y una propiedad animals inicializada como un array vacío", () => {
+  it("Debería inicializar el estado con un objeto con propiedades dentro", () => {
     /* Los hooks de React si o si los tenes que usar como "React.useState". El test no los reconoce cuando se hace destructuring de estos métodos. */
-    expect(useStateSpy).toHaveBeenCalledWith({ zooName: "", animals: [] });
+    expect(useStateSpy).toHaveBeenCalledWith({ zooName: "",
+      animals: [],
+      copyAnimals: [],
+      species: []
+    });
   });
 
   it("Debería renderizar una etiqueta label debajo de la etiqueta h1", () => {
@@ -75,26 +79,38 @@ describe("01 | Componente 'Zoo'", () => {
 
   it("Debería reconocer cambios en el estado", () => {
     const input = zoo.find("input");
+    
     input.simulate("change", {
       target: { value: "Martín's Zoo" },
     });
+    
     expect(useState).toHaveBeenCalledWith({
-      zooName: "Martín's Zoo",
       animals: [],
+      copyAnimals: [],
+      species: [],
+      zooName: "Martín's Zoo"
     });
+    
     input.simulate("change", {
       target: { value: "Mate's Zoo" },
     });
+    
     expect(useState).toHaveBeenCalledWith({
       zooName: "Mate's Zoo",
       animals: [],
+      copyAnimals: [],
+      species: []
     });
+  
     input.simulate("change", {
       target: { value: "Auri's Zoo" },
     });
+    
     expect(useState).toHaveBeenCalledWith({
       zooName: "Auri's Zoo",
       animals: [],
+      copyAnimals: [],
+      species: []
     });
   });
 
@@ -108,7 +124,10 @@ describe("01 | Componente 'Zoo'", () => {
       expect(useEffect).toHaveBeenCalled();
       expect(useState).toHaveBeenCalledWith({
         zooName: "",
-        animals: data.animals,
+        animals: data.animals.animals,
+        species: data.animals.species,
+        // CopyAnimals lo utilizaremos para no perder el estado al hacer los filtros
+        copyAnimals: data.animals.animals
       });
     }, 300);
   });

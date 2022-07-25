@@ -36,9 +36,9 @@ export default function Zoo() {
   return (
     <div>
       <h1 className={styles.title}>Mi Zoo!</h1>
-      {/* Escribe acá tu código */}
-      <label>Zoo Name:</label>
+      <label>Nombre de Zoo:</label>
       <input
+        className={styles.input}
         value={zoo.zooName}
         onChange={handleInputChange}
       ></input>
