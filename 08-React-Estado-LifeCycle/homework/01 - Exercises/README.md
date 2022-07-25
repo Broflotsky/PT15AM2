@@ -162,7 +162,6 @@ fetch("http://localhost:3001/animals")
       .then((data) =>
         setZoo({ ...zoo, 
             animals: data.animals, 
-            copyAnimals: data.animals, 
             species: data.species })
       )
       .catch((error) => console.log(error));
@@ -170,9 +169,10 @@ fetch("http://localhost:3001/animals")
 
 > **Nota**: Si tienes conocimiento base en promesas y deseas hacerlo de otra manera, puedes hacer la llamada utilizando `axios` para traer los datos. 💡
 
-3. Dentro del segundo div:
-      * Pasa el estado **zoo**, con su propiedad `species` como props al renderizar ***Species***.
-      * Pasa el estado **zoo**, con su propiedad `animals` como props al renderizar ***Animals***.
+3. Crea una función llamada `handleSpecies`, que reciba un **evento** como parámetro.
+4. Dentro del segundo div:
+      * Pasa el estado **zoo**, con su propiedad `species` y la función `handleSpecies` como props al renderizar el componente ***Species***.
+      * Pasa el estado **zoo**, con su propiedad `animals` como props al renderizar el componente ***Animals***.
 
 ---
 
@@ -196,8 +196,8 @@ fetch("http://localhost:3001/animals")
 
 1. El componente recibe props como parámetro.
 2. Dentro del div:
-   * Introduce el texto `"Species"` en la etiqueta h2
-   * Renderiza una lista dentro de la etiqueta ul, en el que muestres las especies que trae el componente por props, que a su vez se renderizan con la etiqueta botones.(por ahora nuestros botones no hacen nada)
+   * Introduce el texto `"Species"` en la etiqueta h2.
+   * Renderiza un botón por cada una de las especies que trae el componente por props y agrega el evento onClick, asignándole la función que también recibe por props.(Por ahora nuestros botones no hacen nada).
 
 > Tips: 
 > * Para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
@@ -217,55 +217,38 @@ fetch("http://localhost:3001/animals")
 
 * El import de la librería **React**
 
+* Inicializa un estado en cero.
+
 * La función de clase `Animals` que renderiza un div.
+   
 
 🔹 Lo que hay que hacer:
 
-1. Dentro del render crea una constante y asígnale las props.
+1. Dentro del div, renderiza las props animals, de acuerdo a lo que necesitemos en cada etiqueta:
+   * Una etiqueta h5 con el nombre de los animales.
+   * Una etiqueta de imagen, con sus atributos src, alt y width de 300px (para darle un tamaño apropiado a la imagen).
+   * Una etiqueta span con la especie de los animales.
 
 > Tips: 
 > * Para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
->
-> * Para que no se repitan las species puedes utilizar el constructor Set que puedes instanciar. Puedes ver cómo usala [**acá**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
-
-- guardar las especies. (boton)
-- onclick --> filter estado animals...
-
-1. Pasa por props el estado `zoo`
-
-2. mapear las especies
-
-3. Utilizar el componentdidmount y update
-
-> **Nota**: Si tienes conocimiento base en promesas y deseas hacerlo de otra manera, puedes hacer la llamada utilizando `axios` para traer los datos. 💡
-
-4. Renderiza una etiqueta li, dentro de la etiqueta ul.
-
-5. Renderiza la propiedad `specie` de cada objeto que existe dentro del estado **animals** (Recuerda que **animals** es un array).
-
-> Tip: para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
 
 🔹 Resultado esperado:
 
 <p align="center"><img src="./img/img01.gif" height="300px"></p> 
 
-> **Nota**: Para los estilos puedes guiarte del ejercicio anterior. 💡
-
 **...Estamos llegando a la última parte de la homework** ⭐
 
-3. Crea una función llamada `handleSpecies`, que reciba un **evento** como parámetro.
+Vamos a dar la funcionalidad correspondiente a la app para que cuando el usuario haga click en una de las especies nos renderice los animales relacionados a esa especie.
 
-4. Dentro de la función `handleSpecies`, setea el estado zoo, la propiedad animals, capturando el valor del input.
----
+🔹 Lo que hay que hacer:
 
-Ya sabemos cómo funciona y se conectan los archivos module.css a nuestros componentes, ahora vamos a estilar desde cero en nuestro componente Botones, pero esta vez será aplicando `Styled Components`, para ello debes seguir los siguientes pasos:
-## 👩‍💻 Ejercicio Extra
+1. Volvamos al componente Zoo
+2. Dentro de la función `handleSpecies`, implementa la lógica para filtrar los animales según su especie.
 
-🔹 Aplica estilo al h1 utilizando `inline styling`.
+> Tips: 
+> * Para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `filter`.
+> **Nota**: Al hacer filter del estado zoo.animals, los datos que no coincidan con el filtrado, se perderían; puedes utilizar la propiedad "zoo.copyAnimals" para mantener una copia de ese arreglo.
 
-El componente debe verse en el navegador similar a esta imagen:
-
-<p align="center"><img src="./img/exercise.gif" height="300px"></p>
 
 ---
 
