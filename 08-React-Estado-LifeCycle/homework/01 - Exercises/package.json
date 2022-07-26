@@ -27,7 +27,11 @@
     "start": "react-scripts start",
     "server": "json-server --watch db.json --port 3001",
     "build": "react-scripts build",
-    "test": "jest --verbose --detectOpenHandles",
+    "test": "jest --detectOpenHandles --verbose",
+    "test:01": "jest tests/01.test.js",
+    "test:02": "jest tests/02.test.js",
+    "test:03": "jest tests/03.test.js",
+    "test:04": "jest tests/04.test.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -54,6 +58,10 @@
     ]
   },
   "jest": {
+    "roots": [
+      "<rootDir>"
+    ],
+    "modulePaths": [],
     "setupFilesAfterEnv": [
       "<rootDir>/package.json"
     ],

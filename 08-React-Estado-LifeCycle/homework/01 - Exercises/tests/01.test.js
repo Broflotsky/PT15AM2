@@ -1,0 +1,103 @@
+// Configuramos test
+import React from "react";
+import "@testing-library/jest-dom/extend-expect";
+import { shallow, configure } from "enzyme";
+import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
+import isReact from "is-react";
+import nock from "nock";
+import data from "../db.json";
+import fetch from "jest-fetch-mock";
+// Importamos variables/componentes
+import Zoo from "../src/components/Zoo/Zoo";
+
+configure({ adapter: new Adapter() });
+global.fetch = fetch;
+
+describe("01 | Ejercicios", () => {
+  let zoo, useState, useStateSpy, useEffect;
+
+  beforeAll(() => {
+    expect(isReact.classComponent(Zoo)).toBeFalsy();
+  });
+
+  const mockUseEffect = () => useEffect.mockImplementation((fn) => fn());
+
+  beforeEach(() => {
+    // Se Mockea las request a las api
+    const apiMock = nock("http://localhost:3001").persist();
+
+    apiMock.get("/animals").reply(200, data.animals);
+
+    useState = jest.fn();
+    useStateSpy = jest.spyOn(React, "useState");
+    useEffect = jest.spyOn(React, "useEffect");
+    useStateSpy.mockImplementation(() => [
+      { zooName: "", animals: [], copyAnimals: [], species: [] },
+      useState,
+    ]);
+
+    zoo = shallow(<Zoo />);
+    expect(zoo).toBeTruthy();
+    mockUseEffect();
+  });
+
+  it("Debería inicializar el estado con un objeto con propiedades dentro", () => {
+    /* Los hooks de React si o si los tenes que usar como "React.useState". El test no los reconoce cuando se hace destructuring de estos métodos. */
+    expect(useStateSpy).toHaveBeenCalledWith({
+      zooName: "",
+      animals: [],
+      copyAnimals: [],
+      species: [],
+    });
+  });
+
+  it("Renderiza una etiqueta label encima de la etiqueta h1 que contenga el texto 'Zoo Name:'", () => {
+    expect(zoo.childAt(0).type()).toBe("label");
+    expect(zoo.childAt(0).text()).toBe("Nombre de Zoo:");
+  });
+
+  it("Renderiza una etiqueta input debajo de la etiqueta label y encima de la etiqueta h1", () => {
+    expect(zoo.childAt(0).type()).toBe("label");
+    expect(zoo.childAt(1).type()).toBe("input");
+    expect(zoo.childAt(2).type()).toBe("h1");
+  });
+
+  it("La etiqueta h1 debe contener el texto del estado 'zooName'", () => {
+    expect(zoo.childAt(2).text()).toBe(useStateSpy()[0].zooName);
+  });
+
+  it("A la etiqueta input asígnale los atributos 'value' y 'onChange' que por el momento sean iguales a un string vacío", () => {
+    expect(zoo.childAt(1).prop("value")).toBe("");
+    expect(zoo.childAt(1).prop("onChange")).toBeDefined();
+  });
+
+  it("Al atributo 'value' de la etiqueta input asignale el valor del estado 'zooName'", () => {
+    expect(zoo.childAt(1).prop("value")).toBe(useStateSpy()[0].zooName);
+  });
+
+  it("Crea una función llamada 'handleInputChange' que se ejecute cuando el usuario escriba en el input, modificando la propiedad zooName del estado", () => {
+    const input = zoo.find("input");
+
+    input.simulate("change", {
+      target: { value: "Zoo de Prueba" },
+    });
+    expect(useState).toHaveBeenCalledWith({
+      zooName: "Zoo de Prueba",
+      animals: [],
+      copyAnimals: [],
+      species: [],
+    });
+
+    input.simulate("change", { target: { value: "Henry Zoo" } });
+    expect(useState).toHaveBeenCalledWith({
+      zooName: "Henry Zoo",
+      animals: [],
+      copyAnimals: [],
+      species: [],
+    });
+  });
+
+  //restauramos mocks y cortamos el servidor de nock
+  afterEach(() => jest.restoreAllMocks());
+  afterEach(() => nock.cleanAll());
+});
