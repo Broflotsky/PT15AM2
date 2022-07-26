@@ -6,6 +6,13 @@ x minutos
 
 ---
 
+## Intro
+
+La aplicación que vas a desarrollar será sobre un zoológico. La misma tendrá un input donde escribir el nombre del zoológico, botones que filtren los animales según su especie, mostrando el resultado correspondiente y un listado de los animales que tiene nuestro zoológico.
+
+Todo esto lo harás utilizando componentes funcionales y componentes de clase.
+
+---
 ## Consigna de la homework
 
 En esta homework, aprenderemos a crear componentes de estado, teniendo en cuenta también su ciclo de vida.
@@ -108,7 +115,6 @@ Además:
    * Un div.
    * Dentro de este div, se renderiza:
       * Una etiqueta h1
-      * Una etiqueta h3
       * Una etiqueta div
 
 🔹 Lo que hay que hacer:
@@ -132,8 +138,9 @@ const [example, setExample] = React.useState({
 
 > **Nota**: Para que corran los test, el hook debe ser utilizado de esta manera: **React.useState()**. No debe utilizarse como **useState()**. 💡
 
-2. Renderiza una etiqueta label debajo de la etiqueta h1 que contenga el texto "Zoo Name:".
-3. Renderiza una etiqueta input debajo de la etiqueta label y encima de la etiqueta h3.
+2. Renderiza una etiqueta label encima de la etiqueta h1 que contenga el texto "Zoo Name:".
+3. Renderiza una etiqueta input debajo de la etiqueta label y encima de la etiqueta h1.
+4. En la etiqueta h1, renderiza el estado `zoo.zooName`
 4. A la etiqueta input asígnale los atributos `value` y `onChange`que por el momento sean iguales a un string vacío.
 5. Al atributo **value** de la etiqueta input asígnale el estado `zoo.zooName`.
 6. Crea una función llamada `handleInputChange`, que reciba un **evento** como parámetro.
@@ -161,8 +168,9 @@ fetch("http://localhost:3001/animals")
       .then((res) => res.json())
       .then((data) =>
         setZoo({ ...zoo, 
-            animals: data.animals, 
-            species: data.species })
+        animals: data.animals, 
+        species: data.species, 
+        copyAnimals:data.animals })
       )
       .catch((error) => console.log(error));
 ```

@@ -35,14 +35,13 @@ export default function Zoo() {
   };
   return (
     <div>
-      <h1 className={styles.title}>Mi Zoo!</h1>
       <label>Nombre de Zoo:</label>
       <input
         className={styles.input}
         value={zoo.zooName}
         onChange={handleInputChange}
       ></input>
-      <h3 className={styles.subtitle}>{zoo.zooName}</h3>
+      <h1 className={styles.subtitle}>{zoo.zooName}</h1>
       <div className={styles.containerComponents}>
         {/* Escribe acá tu código */}
         <Species species={zoo.species} handleSpecies={handleSpecies}/>
