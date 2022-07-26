@@ -11,7 +11,7 @@ export default function Zoo () {
     species: [],
     copyAnimals: []
   });
-
+console.log(zoo.species)
   React.useEffect(() => {
     fetch("http://localhost:3001/animals")
       .then((res) => res.json())
@@ -22,7 +22,7 @@ export default function Zoo () {
         copyAnimals:data.animals })
       )
       .catch((error) => console.log(error));
-  })
+  },[])
 
   function handleInputChange(e){
     setZoo({
@@ -42,7 +42,7 @@ export default function Zoo () {
       <h1>{zoo.zooName}</h1>
       <div >
         <Species species={zoo.species} handleSpecies={handleSpecies}/>
-        <Animals animals={zoo.animals}/>
+        {/* <Animals animals={zoo.animals}/> */}
       </div>
     </div>
   )

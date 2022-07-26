@@ -11,8 +11,8 @@ x minutos
 Para realizar esta actividad, debes desarrollar una Zoo app utilizando componentes funcionales y componentes de clase. La misma necesita:
 
 * Un input en el que el usuario puede bautizar su zoológico como desee.
-* Botones que tendrán la funcionalidad de filtrar los animales según su especie.
-* Mostrar los animales que tiene el zoológico. 
+* Mostrar todos los animales que tiene el zoológico. 
+* Botones que tendrán la funcionalidad de mostrar los animales según su especie.
 
 ---
 ## Consigna de la homework
@@ -160,6 +160,7 @@ const [example, setExample] = React.useState({
 🔹 Lo que hay que hacer:
 
 1. Utiliza el hook React.useEffect.
+> **Nota**: No olvides que el hook ReactuseEffect recibe dos parámetros. 💡
 2. Dentro del hook, usa fetch para hacer una llamada al servidor **db.json** a través del endpoint `'http://localhost:3001/animals'`, obteniendo el objeto **animals** con los datos de los animales. Para utilizar fetch, es necesario usar promesas, como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook React.useEffect:
 
 ```js
