@@ -40,8 +40,9 @@ describe("03 | Ejercicios", () => {
 
   it("Cada botón debería tener el evento onClick con un valor de la prop handleSpecies", () => {
     const buttons = species.find("button");
-    buttons.forEach((b) => {
-      expect(b.prop("onClick")).toBe(species.instance().handleSpecies);
+    buttons.forEach(button => {
+      expect(button.props.onClick).toBeDefined();
     });
+    
   });
 });

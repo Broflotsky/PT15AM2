@@ -8,18 +8,18 @@ x minutos
 
 ## Intro
 
-La aplicación que vas a desarrollar será sobre un zoológico. La misma tendrá un input donde escribir el nombre del zoológico, botones que filtren los animales según su especie, mostrando el resultado correspondiente y un listado de los animales que tiene nuestro zoológico.
+Para realizar esta actividad, debes desarrollar una Zoo app utilizando componentes funcionales y componentes de clase. La misma necesita:
 
-Todo esto lo harás utilizando componentes funcionales y componentes de clase.
+* Un input en el que el usuario puede bautizar su zoológico como desee.
+* Botones que tendrán la funcionalidad de filtrar los animales según su especie.
+* Mostrar los animales que tiene el zoológico. 
 
 ---
 ## Consigna de la homework
 
-En esta homework, aprenderemos a crear componentes de estado, teniendo en cuenta también su ciclo de vida.
-
-* Para el componente **Zoo.jsx** generaremos un estado utilizando los hooks useState y useEffect.
-* Para el componente **Animals.jsx** también generaremos un estado utilizando el this.state y los ciclos de vida componentDidMount, componentDidUpdate y componentWillUnmount.
-* Tendremos un componente adicional **Species** en el que recibe props.
+* El componente **Zoo.jsx** generará un estado utilizando los hooks React.useState y React.useEffect.
+* El componente **Animals.jsx** recibirá estados por props.
+* El componente **Species** también recibirá estados por props.
 
 ---
 
@@ -79,7 +79,6 @@ Además:
 
 🔹 Dentro de la carpeta `src` encontrarás el esqueleto del proyecto React, estructurado de la siguiente manera:
 
-* Una carpeta llamada **assets**
 * Una carpeta llamada `components`
 * Un archivo llamado **App.js**
 * Un archivo **index.css**
@@ -121,10 +120,10 @@ Además:
 
 1. Crea una constante de estado llamada `zoo`, y asígnale el hook React.useState que inicialice en un objeto con las siguientes propiedades:
 
-* zooName en el que su valor sea un string vacío.
-* animals en el que su valor sea un array vacío.
-* species en el que su valor sea un array vacío.
-* copyAnimals en el que su valor sea un array vacío.
+* `zooName` en el que su valor sea un string vacío.
+* `animals` en el que su valor sea un array vacío.
+* `species` en el que su valor sea un array vacío.
+* `copyAnimals` en el que su valor sea un array vacío.
 
  Por ejemplo: 
 
@@ -138,14 +137,14 @@ const [example, setExample] = React.useState({
 
 > **Nota**: Para que corran los test, el hook debe ser utilizado de esta manera: **React.useState()**. No debe utilizarse como **useState()**. 💡
 
-2. Renderiza una etiqueta label encima de la etiqueta h1 que contenga el texto "Zoo Name:".
+2. Renderiza una etiqueta label encima de la etiqueta h1 que contenga el texto `Zoo Name:`.
 3. Renderiza una etiqueta input debajo de la etiqueta label y encima de la etiqueta h1.
-4. En la etiqueta h1, renderiza el estado `zoo.zooName`
-4. A la etiqueta input asígnale los atributos `value` y `onChange`que por el momento sean iguales a un string vacío.
-5. Al atributo **value** de la etiqueta input asígnale el estado `zoo.zooName`.
+4. En la etiqueta h1, renderiza el estado ***zoo.zooName***
+4. A la etiqueta input asígnale los atributos `value` y `onChange` que por el momento sean iguales a un string vacío.
+5. Al atributo **value** de la etiqueta input asígnale el estado ***zoo.zooName***.
 6. Crea una función llamada `handleInputChange`, que reciba un **evento** como parámetro.
-7. Dentro de la función `handleInputChange`, setea el estado zoo, la propiedad zooName, capturando el valor del input.
-8. Al atributo **onChange** del input, asígnale la función `handleInputChange`.
+7. Dentro de la función ***handleInputChange***, setea el estado zoo, la propiedad **zooName**, capturando el valor del input.
+8. Al atributo **onChange** del input, asígnale la función ***handleInputChange***.
 
 
 🔹 Resultado esperado:
@@ -161,7 +160,7 @@ const [example, setExample] = React.useState({
 🔹 Lo que hay que hacer:
 
 1. Utiliza el hook React.useEffect.
-2. Dentro del hook, usa fetch para hacer una llamada al servidor **db.json** a través del endpoint `'http://localhost:3001/animals'`, obteniendo el objeto **animals** con los datos de los animales. Para utilizar fetch, es necesario usar promesas, como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook useEffect:
+2. Dentro del hook, usa fetch para hacer una llamada al servidor **db.json** a través del endpoint `'http://localhost:3001/animals'`, obteniendo el objeto **animals** con los datos de los animales. Para utilizar fetch, es necesario usar promesas, como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook React.useEffect:
 
 ```js
 fetch("http://localhost:3001/animals")
@@ -193,19 +192,18 @@ fetch("http://localhost:3001/animals")
 
 * El import de la librería **React**
 
-* La función `Species` que renderiza:
-
-   * Un div.
-   * Dentro de este div, se renderiza:
-      * Una etiqueta h2
-      * Una lista desordenada
+* La función `Species` que renderiza un div.
 
 🔹 Lo que hay que hacer:
 
 1. El componente recibe props como parámetro.
-2. Dentro del div:
-   * Introduce el texto `"Species"` en la etiqueta h2.
-   * Renderiza un botón por cada una de las especies que trae el componente por props y agrega el evento onClick, asignándole la función que también recibe por props.(Por ahora nuestros botones no hacen nada).
+2. Dentro del div, mapea las especies que vienen por props y que éstas se muestren en una etiqueta botón.
+3. Agrega a la etiqueta botón los siguientes atributos: 
+   * key
+   * El evento onClick y asignándole la función que también recibe por props.
+   * Un value asignándole la especie.
+4. En el children del botón renderiza las especies
+   (Por ahora nuestros botones no hacen nada).
 
 > Tips: 
 > * Para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
