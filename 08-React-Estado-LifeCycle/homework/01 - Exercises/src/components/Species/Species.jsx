@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
-export default function Species({ species, handleSpecies }) {
+export default function Species ({ species, handleSpecies }) {
   return (
     <div>
       {/* <h2>Species</h2> */}
@@ -12,5 +12,5 @@ export default function Species({ species, handleSpecies }) {
                 >{specie}</button>
           ))}
     </div>
-  );
+  )
 }

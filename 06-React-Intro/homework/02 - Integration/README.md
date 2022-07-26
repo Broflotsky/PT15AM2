@@ -68,7 +68,7 @@ Comienza a correr la aplicación de forma local por lo que se puede ver desde el
 
 En el archivo `App.js` ya tenemos importados y estamos renderizando los 3 componentes que vamos a codear. Revisa el código, verás que le estamos pasando props a estos componentes.
 
-### 01 - Haz el componente Character Card
+### 👩‍💻 01 - Haz el componente Character Card
 
 (`components/Card.js`)
 
@@ -80,17 +80,17 @@ Además cuando el usuario haga click en la X de "cerrar", se invocará una funci
 
 Este componente `Card` va a recibir las siguientes props:
 
-- **name**: Nombre
-- **species**: Especie
-- **gender**: Género
-- **image**: Imagen
-- **onClose**: La función que se va a ejecutar cuando el usuario haga click en el botón de cerrar.
+* **name**: Nombre
+* **species**: Especie
+* **gender**: Género
+* **image**: Imagen
+* **onClose**: La función que se va a ejecutar cuando el usuario haga click en el botón de cerrar.
 
 > Luego todos estos datos van a venir de una API externa, pero por ahora no nos interesa esa parte. Por el momento nosotros te los vamos a brindar desde un archivo local **(src/data.js)**, para que ya puedas ver tu componente funcionando.
 
 ---
 
-### 02 - Haz el componente Cards
+### 👩‍💻 02 - Haz el componente Cards
 
 (`components/Cards.js`)
 
@@ -104,7 +104,7 @@ Básicamente, va a recibir un arreglo de `personajes` (con todos sus datos), y v
 
 ---
 
-### 03 - Haz el componente de la de Barra de búsqueda
+### 👩‍💻 03 - Haz el componente de la de Barra de búsqueda
 
 (`components/SearchBar.js`)
 
@@ -119,6 +119,7 @@ La función `onSearch` se debe ejecutar cuando se haga click en el botón `Agreg
 ---
 
 ## Parte 2
+
 ## Listo! Ahora creemos una app desde cero
 
 Ya completaste los puntos anteriores y funciona todo? Perfecto! Ya podemos comenzar a crear nuestra propia app:

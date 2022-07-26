@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 export default class Animals extends React.Component {
   constructor(props){
@@ -6,7 +6,13 @@ export default class Animals extends React.Component {
   }
   
 
-  render() {
+  componentWillUpdate (prevProps, prevStates) {
+    if (prevStates.totalAnimals !== prevProps.animals.length) {
+      this.setState({ totalAnimals: this.props.animals.length })
+    }
+  }
+
+  render () {
     const { animals } = this.props
     return (
       <div>
@@ -19,6 +25,6 @@ export default class Animals extends React.Component {
           ))}
         
       </div>
-    );
+    )
   }
 }
