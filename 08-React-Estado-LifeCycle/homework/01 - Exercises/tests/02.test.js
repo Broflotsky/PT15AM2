@@ -8,7 +8,6 @@ import data from "../db.json";
 import fetch from "jest-fetch-mock";
 // Importamos variables/componentes
 import Zoo from "../src/components/Zoo/Zoo";
-import Animals from "../src/components/Animals/Animals";
 
 // jest.mock("../src/components/Animals/Animals", () => () => <></>);
 
