@@ -17,7 +17,7 @@ Para realizar esta actividad, debes desarrollar una Zoo app utilizando component
 ---
 ## Consigna de la homework
 
-* El componente **Zoo.jsx** generará un estado utilizando los hooks React.useState y React.useEffect.
+* Añadir estado local al componente **Zoo.jsx** utilizando el hook React.useState haciendo tu componente dinámico y ejecutar ese estado cada vez que se renderice el componente con React.useEffect.
 * El componente **Animals.jsx** recibirá estados por props.
 * El componente **Species** también recibirá estados por props.
 
@@ -41,6 +41,15 @@ npm test
 
 Los dos primeros test pasarán sin que hagas nada, simplemente están para que te ayuden a verificar que estás realizando correctamente los pasos y que no tienes errores.
 
+🔹 Para esta homework necesitarás emular peticiones a una api con el fin de consumir los datos que allí están, para ello, debes correr el servidor **db.json**, sin este paso no podrás visualizar el resultado esperado y tampoco pasarán los tests. A continuación, los pasos para correr el servidor:
+
+* Abrir una segunda terminal.
+* En la terminal, dirígete a la carpeta que estamos trabajando.
+* Ejecuta el comando:
+ 
+```bash
+npm run server
+```
 
 🔹 Para poder correr la aplicación de forma local, sólo debes ejecutar el comando
 
@@ -50,15 +59,6 @@ npm start
 
 * Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
 
-🔹 Para poder correr el servidor **db.json**, debes:
-
-* Abrir una segunda terminal.
-* En la terminal, dirígete a la carpeta que estamos trabajando.
-* Ejecuta el comando:
- 
-```bash
-npm run server
-```
 
 ---
 
