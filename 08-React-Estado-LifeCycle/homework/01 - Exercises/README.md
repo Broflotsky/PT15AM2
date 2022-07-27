@@ -118,7 +118,7 @@ Además:
 
 🔹 Lo que hay que hacer:
 
-1. Crea una constante de estado llamada `zoo`, y asígnale el hook React.useState que inicialice en un objeto con las siguientes propiedades:
+1. Ejecuta el método React.useState devolviendo el array con la variable llamada `zoo` y método llamado `setZoo`, cuyo valor inicial de éste sea un objeto con las siguientes propiedades:
 
 * `zooName` en el que su valor sea un string vacío.
 * `animals` en el que su valor sea un array vacío.
@@ -153,6 +153,7 @@ const [example, setExample] = React.useState({
 
 ---
 ## 👩‍💻 Ejercicio 2
+
 ### Crea el hook React.useEffect en nuestro componente funcional 
 
 🔹 Continúa trabajando en el componente **Zoo.jsx**.
@@ -161,6 +162,7 @@ const [example, setExample] = React.useState({
 
 1. Utiliza el hook React.useEffect.
 > **Nota**: No olvides que el hook ReactuseEffect recibe dos parámetros. 💡
+
 2. Dentro del hook, usa fetch para hacer una llamada al servidor **db.json** a través del endpoint `'http://localhost:3001/animals'`, obteniendo el objeto **animals** con los datos de los animales. Para utilizar fetch, es necesario usar promesas, como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook React.useEffect:
 
 ```js
@@ -178,13 +180,47 @@ fetch("http://localhost:3001/animals")
 > **Nota**: Si tienes conocimiento base en promesas y deseas hacerlo de otra manera, puedes hacer la llamada utilizando `axios` para traer los datos. 💡
 
 3. Crea una función llamada `handleSpecies`, que reciba un **evento** como parámetro.
+4. Crea una función llamada `handleAllSpecies`.
 4. Dentro del segundo div:
-      * Pasa el estado **zoo**, con su propiedad `species` y la función `handleSpecies` como props al renderizar el componente ***Species***.
+      * Pasa el estado **zoo**, con su propiedad `species` y las funciones `handleSpecies`, `handleAllSpecies` como props al renderizar el componente ***Species***.
       * Pasa el estado **zoo**, con su propiedad `animals` como props al renderizar el componente ***Animals***.
 
 ---
 
 ## 👩‍💻 Ejercicio 3
+
+### Recibiendo props en nuestro componente de clases Animals
+
+🔹 Ahora trabajaremos en el componente **Animals.jsx**.
+
+🔹 Abre el archivo `Animals.jsx`, dentro de él encontrarás:
+
+* El import de la librería **React**
+
+* La función de clase `Animals` que renderiza un div.
+   
+
+🔹 Lo que hay que hacer:
+
+1. Dentro del div, mapea y renderiza las props animals  de acuerdo a lo que necesitemos:
+   * Una etiqueta **h5** con el nombre de los animales.
+   * Una etiqueta **img** con los atributos:
+      * ***src*** asignando como valor la imagen de los animales.
+      * ***alt*** asignando como valor el nombre de los animales.
+      * ***width*** con un valor de 300px (para darle un tamaño apropiado a la imagen).
+   * Una etiqueta **span** con la especie de los animales.
+
+> Tips: 
+> * Para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
+
+🔹 Resultado esperado:
+
+<p align="center"><img src="./img/img02.gif" height="300px"></p> 
+
+---
+
+## 👩‍💻 Ejercicio 4
+
 ### Recibiendo props en nuestro componente funcional Species
 
 🔹 Ahora trabajaremos en el componente **Species.jsx**.
@@ -198,84 +234,67 @@ fetch("http://localhost:3001/animals")
 🔹 Lo que hay que hacer:
 
 1. El componente recibe props como parámetro.
-2. Dentro del div, mapea las especies que vienen por props y que éstas se muestren en una etiqueta botón.
-3. Agrega a la etiqueta botón los siguientes atributos: 
-   * key
-   * El evento onClick y asignándole la función que también recibe por props.
-   * Un value asignándole la especie.
-4. En el children del botón renderiza las especies
-   (Por ahora nuestros botones no hacen nada).
+2. Dentro del div, mapea y renderiza las especies que vienen por props en una etiqueta **button**.
+3. Agrega a la etiqueta button los siguientes atributos: 
+   * ***key***?
+   * El evento ***onClick***, asignándole la función `handleSpecies` que también recibe por props.
+   * Un ***value*** asignándole la especie.
+4. En el children del button renderiza las especies.
+5. Agrega una segunda etiqueta de botón en el que renderices en el evento ***onClick*** la función `handleAllSpecies`.
+6. En el children del segundo botón coloca el texto "All Animals".
+
+(Por ahora nuestros botones no hacen nada).
 
 > Tips: 
 > * Para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
 
 🔹 Resultado esperado:
 
-<p align="center"><img src="./img/img02.gif" height="300px"></p> 
+<p align="center"><img src="./img/img03.gif" height="300px"></p> 
 
 ---
 
-## 👩‍💻 Ejercicio 4
-### Recibiendo props en nuestro componente de clases Animals
-
-🔹 Ahora trabajaremos en el componente **Animals.jsx**.
-
-🔹 Abre el archivo `Animals.jsx`, dentro de él encontrarás:
-
-* El import de la librería **React**
-
-* Inicializa un estado en cero.
-
-* La función de clase `Animals` que renderiza un div.
-   
-
-🔹 Lo que hay que hacer:
-
-1. Dentro del div, renderiza las props animals, de acuerdo a lo que necesitemos en cada etiqueta:
-   * Una etiqueta h5 con el nombre de los animales.
-   * Una etiqueta de imagen, con sus atributos src, alt y width de 300px (para darle un tamaño apropiado a la imagen).
-   * Una etiqueta span con la especie de los animales.
-
-> Tips: 
-> * Para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
-
-🔹 Resultado esperado:
-
-<p align="center"><img src="./img/img01.gif" height="300px"></p> 
 
 **...Estamos llegando a la última parte de la homework** ⭐
 
-Vamos a dar la funcionalidad correspondiente a la app para que cuando el usuario haga click en una de las especies nos renderice los animales relacionados a esa especie.
+Vamos a dar la funcionalidad correspondiente a la app para que cuando el usuario haga click en una de las especies nos renderice los animales relacionados a esa especie y cuando haga click en el botón "All Animals" renderice nuevamente todos los animales.
 
 🔹 Lo que hay que hacer:
 
 1. Volvamos al componente Zoo
-2. Dentro de la función `handleSpecies`, implementa la lógica para filtrar los animales según su especie.
+2. Dentro de la función `handleSpecies`, setea el estado **zoo**, la propiedad animals, implementando la lógica para filtrar los animales según su especie.
+3. Dentro de la función `handleAllSpecies`, setea el estado **zoo**, la propiedad animals con la propiedad copyAnimals.
 
 > Tips: 
 > * Para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `filter`.
 > **Nota**: Al hacer filter del estado zoo.animals, los datos que no coincidan con el filtrado, se perderían; puedes utilizar la propiedad "zoo.copyAnimals" para mantener una copia de ese arreglo.
 
+🔹 Resultado esperado:
+
+<p align="center"><img src="./img/img04.gif" height="300px"></p>
 
 ---
 
 ## Recordemos que...
 
-* Puedes utilizar cualquiera de los métodos enseñados en clase y practicados en este ejercicio para aplicar estilos en React.
-* Si vas a utilizar `styled components`, el nombre de las variables `const` deben comenzar con mayúscula.
-* Para utilizar estilos en línea o `inline styling`, debes usar el atributo `style`, estableciendo su valor **como un objeto de javascript**.
-* Si utilizas `CSS Modules`, el alcance de tus estilos será local para cada componente y evitarás conflictos como pisar estilos en tu proyecto.
-* Aplicar estilos es como pintar un cuadro, no hay límites en la imaginación y creatividad, sin olvidarnos de dar a los usuarios la mejor experiencia. 😃
+* Los hooks son funciones especiales que nos permiten acceder a las funcionalidades de React.
+* El hook React.useState devuelve un array en el que tendrá el valor de ese estado y un método para actualizar ese estado.
+* Las variables de estado no tienen que inicializarse siempre en un objeto, puede ser en un array, string, número, boolean, etc.
+* Puedes usar en el componente los React.useState que desees.😃
+* El hook useEffect recibe dos parámetros: la función que React ejecutará cada renderización y un array de dependencias como opcional.
+* Puedes Utilizar más de un useEffect en el mismo componente. 😃
 
 ---
 
 ## Recursos adicionales
 
-* Documentación **"Styled Components"** <https://styled-components.com/docs/basics>
-* Documentación **"CSS"** <https://www.w3schools.com/css/default.asp>
+* Documentación **"Using the State Hook "** <https://reactjs.org/docs/hooks-state.html>
+* Documentación **"Using the Effect Hook "** <https://reactjs.org/docs/hooks-effect.html>
 
 ---
 
-Listo!! Ahora estás preparado para estilar tu app!! 👨‍🎨👩‍🎨✨🚀
+Listo!! Aprendiste cómo funcionan los componentes de estado y sus ciclos de vida!! ✨🚀
 
-Dirígete a la carpeta 📂 [**"02 - Integration"**](../02%20-%20Integration/README.md) y diviértete estilando la app de Rick & Morty 🤩
+Dirígete a la carpeta 📂 [**"02 - Integration"**](../02%20-%20Integration/README.md) y continúa desarrollando la app de Rick & Morty 🤩
+
+---
