@@ -39,7 +39,11 @@ npm install
 npm test
 ```
 
-Los dos primeros test pasarán sin que hagas nada, simplemente están para que te ayuden a verificar que estás realizando correctamente los pasos y que no tienes errores.
+Si deseas correr por test, puedes utilizar:
+
+```bash
+npm run test:01
+```
 
 🔹 Para esta homework necesitarás emular peticiones a una api con el fin de consumir los datos que allí están, para ello, debes correr el servidor **db.json**, sin este paso no podrás visualizar el resultado esperado y tampoco pasarán los tests. A continuación, los pasos para correr el servidor:
 
