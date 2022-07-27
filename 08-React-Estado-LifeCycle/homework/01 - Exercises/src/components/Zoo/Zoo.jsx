@@ -48,17 +48,21 @@ export default function Zoo() {
   const handleAllSpecies = () => {
     setZoo({
       ...zoo,
-      animals: zoo.copyAnimals
-    })
-  }
+      animals: zoo.copyAnimals,
+    });
+  };
   return (
     <div>
       <label>Zoo Name:</label>
       <input value={zoo.zooName} onChange={handleInputChange} />
       <h1>{zoo.zooName}</h1>
-      <div >
-        <Species species={zoo.species} handleSpecies={handleSpecies} handleAllSpecies={handleAllSpecies} />
-        <Animals animals={zoo.animals}/>
+      <div>
+        <Species
+          species={zoo.species}
+          handleSpecies={handleSpecies}
+          handleAllSpecies={handleAllSpecies}
+        />
+        <Animals animals={zoo.animals} />
       </div>
     </div>
   );

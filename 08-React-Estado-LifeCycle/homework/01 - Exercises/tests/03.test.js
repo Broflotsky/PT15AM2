@@ -3,46 +3,48 @@ import "@testing-library/jest-dom/extend-expect";
 import { shallow, configure } from "enzyme";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 import isReact from "is-react";
-import Species from "../src/components/Species/Species";
+import Animals from "../src/components/Animals/Animals";
 import data from "../db.json";
 
 configure({ adapter: new Adapter() });
 
 describe("03 | Ejercicios", () => {
-  let species;
+  let animals, animalsDivs;
 
-  beforeAll(() => expect(isReact.classComponent(Species)).toBeFalsy());
+  beforeAll(() => expect(isReact.classComponent(Animals)).toBe(true));
 
   beforeEach(() => {
-    species = shallow(<Species species={data.animals.species} />);
+    animals = shallow(<Animals animals={data.animals.animals} />);
   });
 
-  it("Debería renderizar un unico div", () => {
-    expect(species.find("div").length).toBe(1);
+  it("Debería renderizar un div por cada uno de los animales", () => {
+    animalsDivs = animals.find("div");
+    expect(animalsDivs.length).toBe(data.animals.animals.length + 1);
   });
 
-  it("Debería renderizar una etiqueta h2 con el texto 'Species'", () => {
-    const h2 = species.find("h2");
-    expect(h2).toHaveLength(1);
-    expect(h2.text()).toBe("Species");
+  it("Debería renderizar una etiqueta 'h5' dentro de cada div con el nombre de cada animal", () => {
+    const h5Tags = animalsDivs.find("h5");
+    expect(h5Tags.length).toBe(data.animals.animals.length);
+    h5Tags.forEach((h5, i) => {
+      expect(h5.text()).toBe(data.animals.animals[i].name);
+    });
   });
 
-  it("Debería renderizar un botón por cada una de las especies, y el texto de cada botón debe ser el de cada una de las especies", () => {
-    const buttons = species.find("button");
-    expect(buttons).toHaveLength(data.animals.species.length);
-    const buttonsTexts = buttons.map((button) => button.text());
-    expect(
-      buttonsTexts.includes(
-        buttons.at(0).text() && buttons.at(1).text() && buttons.at(2).text()
-      )
-    ).toBeTruthy();
+  it("Debería renderizar una etiqueta 'img' dentro de cada div con la imagen de cada animal", () => {
+    const animalsImgs = animalsDivs.find("img");
+    expect(animalsImgs.length).toBe(data.animals.animals.length);
+    animalsImgs.forEach((img, i) => {
+      expect(img.prop("src")).toEqual(data.animals.animals[i].image);
+      expect(img.prop("alt")).toBeDefined();
+      expect(img.prop("width")).toBe("300px");
+    });
   });
 
-  it("Cada botón debería tener el evento onClick con un valor de la prop handleSpecies", () => {
-    const buttons = species.find("button");
-    buttons.forEach((button) => {
-      expect(button.props().hasOwnProperty("onClick")).toBe(true);
-      expect(typeof button.props().onClick).toEqual("function");
+  it("Debería renderizar una etiqueta 'span' dentro de cada div con la especie de cada animal", () => {
+    const animalsSpans = animalsDivs.find("span");
+    expect(animalsSpans.length).toBe(data.animals.animals.length);
+    animalsSpans.forEach((span, i) => {
+      expect(span.text()).toBe(data.animals.animals[i].specie);
     });
   });
 });
