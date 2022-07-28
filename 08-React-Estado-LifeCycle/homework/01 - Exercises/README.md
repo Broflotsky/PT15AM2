@@ -261,7 +261,7 @@ fetch("http://localhost:3001/animals")
 
 ## 👩‍💻 Ejercicio 5 
 
-## ...Estamos llegando a la última parte de la homework ⭐
+### ...Estamos llegando a la última parte de la homework ⭐
 
 Vamos a dar la funcionalidad correspondiente a la app para que cuando el usuario haga click en una de las especies nos renderice los animales relacionados a esa especie y cuando haga click en el botón "All Animals" renderice nuevamente todos los animales.
 
