@@ -76,7 +76,7 @@ Necesitamos mantener actualizado el listado de personajes a mostrar, para ello d
 
 1. Borra el import que traes de data.js (Ya no vamos a usar más los datos de este archivo).
 2. Importa el hook useState.
-3. Crea un estado `characters` donde tengamos el array de personajes.
+3. Crea un estado `characters` donde guardaremos el array de personajes.
 
 ---
 
@@ -145,7 +145,7 @@ Si observamos el código anterior estamos llamando a la función `onSearch` sin 
 
 2. Mostrar un mensaje en caso de que el personaje no exista.
 
-> **Hint**:Como aún no has visto promesas, tienes este snippet para que copies y pegues dentro de la función ***onSearch***:
+> **Hint**:Como aún no has visto promesas, tienes este snippet para que copies y pegues la función ***onSearch***:
 
 ```js
 function onSearch (character) {
