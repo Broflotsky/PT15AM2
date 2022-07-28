@@ -27,14 +27,21 @@ También vamos a reestructurar nuestra vista ***"Home"***, que no es más que nu
 
 En el archivo `App.js` ya tenemos importados y estamos renderizando los 3 componentes que vamos a codear. Revisa el código, verás que le estamos pasando props a estos componentes.
 
-### 👩‍💻 01 - Crear Nav
+---
 
-1. Debemos crear nuestro componente `Nav`.
-2. Escribir el código correspondiente en `components/Nav.jsx`. Recuerda que este componente debe incluir el componente `SearchBar`.
+### 👩‍💻 Ejercicio 1 
+### Crear Nav
+
+1. Crear el componente `Nav`.
+2. Escribir el código correspondiente en `components/Nav.jsx`. 
+
+> **Hint**: Este componente debe incluir el componente `SearchBar`.
 
 ---
 
-### 👩‍💻 02 - Reestructurar Home
+### 👩‍💻 Ejercicio 2
+
+### Reestructurar Home
 
 
 1. Veamos primero una imagen del resultado final y pensemos la estructura general:
@@ -61,7 +68,9 @@ En el archivo `App.js` ya tenemos importados y estamos renderizando los 3 compon
 
 ---
 
-### 👩‍💻 03 - Implementar un estado
+### 👩‍💻 Ejercicio 3 
+
+### Implementar un estado
 
 Necesitamos mantener actualizado el listado de personajes a mostrar, para ello debemos crear un estado al componente `App.js` donde tengamos el array de personajes.
 
@@ -71,7 +80,9 @@ Necesitamos mantener actualizado el listado de personajes a mostrar, para ello d
 
 ---
 
-### 👩‍💻 04 - Función para agregar personajes
+### 👩‍💻 Ejercicio 4 
+
+### Función para agregar personajes
 
 Ahora debemos crear una función para agregar nuevos personajes a nuestro estado `characters` y se la pasaremos al `SearchBar` mediante el `Nav`.
 
@@ -87,41 +98,54 @@ const example = {
 ```
 ---
 
-### 👩‍💻 05 - Le pasamos la función a Nav
+### 👩‍💻 Ejercicio 5  
+
+### Le pasamos la función a Nav
 
 Nuestra función recién creada, que modifica el estado `characters` se la pasamos a `Nav`.
 
 ---
 
-### 👩‍💻 06 - Seguimos pasando la función para que llegue a su destino
+### 👩‍💻 Ejercicio 6 
+
+### Seguimos pasando la función para que llegue a su destino
 
 Quien finalmente debe ejecutar la función `onSearch` no es el `Nav` sino el `SearchBar`, por lo que debemos hacerle llegar dicha función.
 
 ---
 
-### 👩‍💻 07 - Probemos que funcione
+### 👩‍💻 Ejercicio 7
+
+### Analizando función onSearch
 
 En la homework anterior **06-React-Intro, 02 - Integration**, ya habíamos creado el componente `SearchBar` que recibía la función como parámetro y la ejecutaba cuando se hacía un `submit` del form.
 
-En este punto la función ya debería ejecutarse, cada vez que le demos click al botón `Agregar`, un nuevo personaje se añade a nuestro estado `characters`, y por cada uno de ellos nuestro componente `Cards` renderiza una `Card`.
+En este punto la función ya debería ejecutarse, cada vez que le demos click al botón `Agregar`, un nuevo personaje se añade a nuestro estado `characters` y por cada uno de ellos nuestro componente `Cards` renderiza una `Card`.
 
 Si observamos el código anterior estamos llamando a la función `onSearch` sin pasarle ningún parámetro, pero quisiéramos que ese parámetro dependa del input ingresado por el usuario.
 
----
-
-### 👩‍💻 08 - Pasándole parámetros a la función
-
-Modificar el componente `SearchBar` para que mantenga un **estado** interno del nombre del personaje (`character`) escrito por el usuario y que cuando haya un cambio en el input, lo detecte mediante el listener `onChange` y actualice dicho estado.
-
-Adicionalmente pasarle dicho estado `character` como parámetro de la funcion `onSearch` cuando la llamamos en el `submit`; para que utilice el estado, que contiene lo que ingresó el usuario y éste valor llegue así a la función onSearch que tenemos en App.
 
 ---
 
-### 👩‍💻 09 - Buscando datos reales
+### 👩‍💻 Ejercicio 8
 
-Ahora debemos modificar la función `onSearch` para que obtenga los datos necesarios desde la API de [Rick&Morty](https://rickandmortyapi.com). Para ello vamos a utilizar `fetch` para hacer la llamada y obtener el resultado. Por el momento sólo vamos a obtener los personajes por ID, ya que si los buscamos por nombre hay demasiados resultados debido a que los mismos se repiten bastante.
+### Pasándole parámetros a la función
 
-En el caso de que el personaje no exista, deberíamos mostrar un mensaje indicándolo:
+1. Modifica el componente `SearchBar` para que mantenga un **estado** interno del nombre del personaje (`character`) escrito por el usuario y que cuando haya un cambio en el input, lo detecte mediante el listener `onChange` y actualice dicho estado.
+
+2. Adicionalmente, pasar dicho estado `character` como parámetro de la función `onSearch` cuando la llamamos en el `submit`; para que utilice el estado, que contiene lo que ingresó el usuario y éste valor llegue así a la función ***onSearch*** que tenemos en **App.js**.
+
+---
+
+### 👩‍💻 Ejercicio 9
+
+### Buscando datos reales
+
+1. Ahora debemos modificar la función `onSearch` para que obtenga los datos necesarios desde la API de [Rick&Morty](https://rickandmortyapi.com). Para ello vamos a utilizar `fetch` para hacer la llamada y obtener el resultado. Por el momento sólo vamos a obtener los personajes por ID, ya que si los buscamos por nombre hay demasiados resultados debido a que los mismos se repiten bastante.
+
+2. Mostrar un mensaje en caso de que el personaje no exista.
+
+> **Hint**:Como aún no has visto promesas, tienes este snippet para que copies y pegues dentro de la función ***onSearch***:
 
 ```js
 function onSearch (character) {
@@ -139,11 +163,15 @@ function onSearch (character) {
 
 ---
 
-### 👩‍💻 10 - Cerrar cards
+### 👩‍💻 Ejercicio 10
 
-Por último, recordemos que en una homework anterior habíamos creado el componente `Card` para que reciba una función como parámetro. Ésta va a ser la encargada de eliminar esa card al momento de hacer click en el botón `X`.
+### Cerrar cards
 
-Para ello es necesario definir dicha función en `App.js` para que a partir del id recibido, elimina dicho personaje del array de personajes del ***estado***.
+Por último, recordemos que en la homework anterior **06-React-Intro, 02 - Integration** habíamos creado el componente `Card` para que reciba una función como parámetro. Ésta va a ser la encargada de eliminar esa card al momento de hacer click en el botón `X`.
+
+Para ello es necesario definir dicha función `onClose` en **App.js**, para que a partir del id recibido, elimina dicho personaje del array de personajes del ***estado***.
+
+> **Hint**: Puedes utilizar el método `filter`.
 
 ---
 
@@ -157,7 +185,7 @@ Listo! tu app es ahora dinámica e interactiva!! 👏🏼🚀
 
 ## 👩‍💻 Ejercicio Extra
 
-* Controlar que no se puedan agregar personajes repetidos
-* Agregar un botón en la navbar que agregue un personaje random (Hint: hay 826 personajes en total)
+* Controlar que no se puedan agregar personajes repetidos.
+* Agregar un botón en la navbar que agregue un personaje random (Hint: hay 826 personajes en total).
 
 

@@ -259,7 +259,9 @@ fetch("http://localhost:3001/animals")
 ---
 
 
-## 👩‍💻 Ejercicio 5 ...Estamos llegando a la última parte de la homework ⭐
+## 👩‍💻 Ejercicio 5 
+
+## ...Estamos llegando a la última parte de la homework ⭐
 
 Vamos a dar la funcionalidad correspondiente a la app para que cuando el usuario haga click en una de las especies nos renderice los animales relacionados a esa especie y cuando haga click en el botón "All Animals" renderice nuevamente todos los animales.
 
@@ -270,7 +272,7 @@ Vamos a dar la funcionalidad correspondiente a la app para que cuando el usuario
 3. Dentro de la función `handleAllSpecies`, setea el estado **zoo**, la propiedad animals con la propiedad copyAnimals.
 
 > Tips: 
-> * Para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `filter`.
+> * Para recorrer el arreglo y retornar sólo los elementos necesarios, puedes usar el método `filter`.
 > **Nota**: Al hacer filter del estado zoo.animals, los datos que no coincidan con el filtrado, se perderían; puedes utilizar la propiedad "zoo.copyAnimals" para mantener una copia de ese arreglo.
 
 🔹 Resultado esperado:
