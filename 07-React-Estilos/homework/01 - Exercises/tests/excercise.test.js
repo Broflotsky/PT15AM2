@@ -63,10 +63,12 @@ describe("02 | Componente 'Botones'", () => {
     expect(wrapperBotones.containsMatchingElement(DivButtons)).toBe(true)
   })
 
-  it("'DivButtons' debe tener al menos dos propiedades CSS: 'display: flex' y 'flex-direction: row'", () => {
+  it("'DivButtons' debe tener al menos estas propiedades CSS: 'display: flex, 'flex-direction: row', 'justify-content: space-around', 'align-items: center' ", () => {
     const divBotones = shallow(<DivButtons />)
     expect(divBotones).toHaveStyleRule('display', 'flex')
     expect(divBotones).toHaveStyleRule('flex-direction', 'row')
+    expect(divBotones).toHaveStyleRule('justify-content', 'space-around')
+    expect(divBotones).toHaveStyleRule('align-items', 'center')
   })
 
   it("Debe utilizarse styled-components para los botones, llamándose 'Buttons' y además, debe renderizarse dentro del componente como tal", () => {
