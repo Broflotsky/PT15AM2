@@ -1,0 +1,84 @@
+.divBienvenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #c5c5c5a2;
+}
+
+.title {
+  font-size: 3em;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.subtitle {
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.unorderedList {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 3em;
+  display: flex;
+  flex-direction: row;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 15vw;
+  height: 15vh;
+  background-color: #fcff4f;
+  padding: 1em;
+  margin: 5px;
+  font-weight: 500;
+  border-radius: 5%;
+}
+.listItem:hover {
+  background-color: #262623c9;
+  color: beige;
+}
+
+.listItem img {
+  width: 50%;
+  object-fit: cover;
+  margin: 15px;
+}
+
+.containerComponents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  width: 13vw;
+  height: 1vh;
+  border-radius: 5%;
+  border: 1px solid #262623c9;
+  padding: 1em;
+  margin: 1em;
+}
+
+.buttonClear {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 13vw;
+  height: 1vh;
+  border-radius: 5%;
+  border: 1px solid #262623c9;
+  padding: 1em;
+  margin: 1em;
+}
