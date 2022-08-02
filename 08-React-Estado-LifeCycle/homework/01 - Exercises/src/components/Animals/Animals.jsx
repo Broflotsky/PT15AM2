@@ -9,7 +9,7 @@ export default class Animals extends React.Component {
     const { animals } = this.props;
     return (
       <div>
-        {animals.map((animal, key) => (
+        {animals?.map((animal, key) => (
           <div key={key}>
             <h5>{animal.name}</h5>
             <img src={animal.image} alt="img not found" width="300px" />
