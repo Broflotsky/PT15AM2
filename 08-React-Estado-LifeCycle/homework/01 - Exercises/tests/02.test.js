@@ -5,11 +5,9 @@ import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 import isReact from "is-react";
 import nock from "nock";
 import data from "../db.json";
-import fetch from "jest-fetch-mock";
+import fetch from "node-fetch";
 // Importamos variables/componentes
 import Zoo from "../src/components/Zoo/Zoo";
-
-// jest.mock("../src/components/Animals/Animals", () => () => <></>);
 
 configure({ adapter: new Adapter() });
 global.fetch = fetch;
@@ -44,20 +42,6 @@ describe("02 | Ejercicios", () => {
     expect(useEffect).toHaveBeenCalled();
   });
 
-  it("Debería cargar el estado 'animals' al realizar la request a la api", () => {
-    // Timeout para darle tiempo a la promesa de resolverse
-    setTimeout(() => {
-      expect(useEffect).toHaveBeenCalled();
-      expect(useState).toHaveBeenCalledWith({
-        zooName: "",
-        animals: data.animals.animals,
-        species: data.animals.species,
-        // CopyAnimals lo utilizaremos para no perder el estado al hacer los filtros
-        copyAnimals: data.animals.animals,
-      });
-    }, 300);
-  });
-
   it("El componente Zoo debe pasarle por 'props' al componente Specie, la propiedad species del estado local y la funcion handleSpecies", () => {
     const speciesComponent = zoo.find("Species");
     expect(speciesComponent.prop("species")).toBeTruthy();
@@ -67,7 +51,9 @@ describe("02 | Ejercicios", () => {
 
   it("El componente Zoo, debe pasarle por 'props' al componente Animals, la propiedad animals del objeto zoo de su estado local", () => {
     const animalsComponent = zoo.find("Animals");
-    expect(animalsComponent.prop("animals")).toBeTruthy();
+    const propAnimals = animalsComponent.prop("animals");
+    expect(propAnimals).toBeTruthy();
+    expect(Array.isArray(propAnimals)).toBeTruthy();
   });
 
   afterEach(() => jest.restoreAllMocks());
