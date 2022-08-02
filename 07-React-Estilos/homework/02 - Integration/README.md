@@ -10,9 +10,9 @@ Dependerá de todo el amor que le quieras colocar a tu app 💛
 
 En este homework vas a utilizar `CSS Modules` o `Styled Components` (tú eliges) para dar estilos a los componentes que hicimos la clase anterior.
 
-🔹 Vas a trabajar directamente sobre la app que creamos en la homework anterior con CRA (create-react-app). Nuestra App de ***Rick&Morty***.
+🔹 Vas a trabajar directamente sobre la app que creamos en la homework anterior con CRA (create-react-app). Nuestra App de ***Rick & Morty***.
 
-* En caso de utilizar `Styled Components`, debemos instalar dicha dependencia, desde la carpeta raíz de nuestro proyecto de ***Rick&Morty:***
+* En caso de utilizar `Styled Components`, debemos instalar dicha dependencia, desde la carpeta raíz de nuestro proyecto de ***Rick & Morty:***
 
 ```bash
 npm install styled-components

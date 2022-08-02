@@ -8,18 +8,18 @@
 
 ## Consigna de la homework
 
-En esta homework, aprenderemos a utilizar las diferentes formas de aplicar estilos en React 🎨
+En esta homework, aprenderás a utilizar las diferentes formas de aplicar estilos en React 🎨
 
-* Aplicaremos al componente **Bienvenido.jsx** `module.css` e `inline styling`.
-* Aplicaremos al componente **Botones.jsx** `styled components`.
+* Aplicarás al componente **Bienvenido.jsx** `module.css` e `inline styling`.
+* Aplicarás al componente **Botones.jsx** `styled components`.
 
 ---
 
 ## Pasos básicos para realizar la homework
 
-🔹 Para poder ejecutar los `test` de esta homework, es necesario que abramos la terminal ubicados dentro de la carpeta `01 - Exercises`.
+🔹 Para poder ejecutar los `test` de esta homework, es necesario que abras la terminal ubicados dentro de la carpeta `01 - Exercises`.
 
-* Cuando te encuentres en esta carpeta, debes ejecutar el comando
+* Cuando te encuentres en esta carpeta, debes ejecutar el comando:
 
 ```bash
 npm install
@@ -33,13 +33,13 @@ npm test
 
 Los dos primeros test pasarán sin que hagas nada, simplemente están para que te ayuden a verificar que estás realizando correctamente los pasos y que no tienes errores.
 
-🔹 Para poder correr la aplicación de forma local, sólo debes ejecutar el comando
+🔹 Para poder correr la aplicación de forma local, debes abrir una segunda terminal, ubicarte en la carpeta que estás trabajando y ejecuta el comando:
 
 ```bash
 npm start
 ```
 
-* Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
+* Ingresando a <http://localhost:3000> desde el navegador, podrás ir viendo en tiempo real el resultado de su trabajo.
 
 ---
 
@@ -49,7 +49,7 @@ npm start
 
 * Una carpeta llamada **_mocks_**
 * Una carpeta llamada **public**
-* Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
+* Una carpeta llamada `src` (Es la carpeta en donde trabajarás)
 * Una carpeta llamada **tests**
 * Un archivo **package.json**
 * Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
@@ -64,7 +64,7 @@ Además:
 * Un archivo **index.css**
 * Un archivo **index.js**
 
-🔹 Para estos ejercicios, trabajaremos sólo dentro la carpeta `components`. Dentro de esta carpeta encontrarás:
+🔹 Para estos ejercicios, trabajarás sólo dentro la carpeta `components`. Dentro de esta carpeta encontrarás:
 
 * Una carpeta llamada **Bienvenido**, la cual a su vez contiene:
   * El componente `Bienvenido.jsx`
@@ -82,18 +82,18 @@ Además:
 
 🔹 Abre el archivo `Bienvenido.jsx`, dentro de él encontrarás:
 
-* El import de la librería **React**, los archivos en formato de imagen y el archivo `Bienvenido.module.css` **(que debes descomentar para poder empezar a trabajar)**
+* El import de la librería **React**, el componente **Botones**, los archivos en formato de imagen y el archivo `Bienvenido.module.css` **(que debes descomentar para poder empezar a trabajar)**
 
-* Las constantes `studentName`, `techSkills` y `alerts` que vimos en la homework anterior.
+* Las constantes `studentName`, `techSkills` y `alerts` que viste en la homework anterior.
 
 * La función Bienvenido que renderiza:
 
 1. Un div.
 2. Dentro de este div, se renderiza:
-   * Un h1
-   * Un h3
-   * Una ul (lista desordenada)
-     * Dentro de la ul se renderizan varios li (ítems de lista) correspondientes al array de `techSkills`
+   * Una etiqueta h1
+   * Una etiqueta h3 que renderiza el nombre del alumno
+   * Una etiqueta ul (lista desordenada)
+     * Dentro de la ul se renderizan varias etiquetas li (ítems de lista) correspondientes al array de `techSkills`
    * El componente `Botones`
 
 🔹 Lo que hay que hacer:
@@ -108,14 +108,17 @@ Debes aplicar la clase que corresponda a cada elemento **HTML** usando el atribu
 
 ## 👩‍💻 Ejercicio 2
 
-### Continuamos con la carpeta Botones
+### Continúa con la carpeta Botones
 
-Ya sabemos cómo funciona y se conectan los archivos module.css a nuestros componentes, ahora vamos a estilar desde cero en nuestro componente Botones, pero esta vez será aplicando `Styled Components`, para ello debes seguir los siguientes pasos:
+Ya sabes cómo funciona y se conectan los archivos module.css a los componentes, ahora estila desde cero en el componente Botones, pero esta vez será aplicando `Styled Components`, para ello debes seguir los siguientes pasos:
 
 1. En el componente `Botones.jsx`, importa `styled` desde "styled-components"`
 2. Encontrarás una constante llamada `DivButtons`, la cual debe contener mínimamente los siguientes estilos para el div:
     * `display: flex`
     * `flex-direction: row`
+    * `justify-content: space-around`
+    * `align-items: center`
+
 
  Por ejemplo:
 
@@ -146,13 +149,12 @@ const DivExample = styled.div`
 
 > **Nota**: Para los estilos puedes guiarte del ejercicio anterior. 💡
 
-**...Estamos llegando a la última parte de la homework** ⭐
 
 ---
 
 ## 👩‍💻 Ejercicio Extra
 
-🔹 Volviendo al componente Bienvenido, aplica estilo al h1 utilizando `inline styling`. Intenta cambiarle su color a rojo, "pisando" el estilo que se aplica por CSS Modules.
+🔹 Volviendo al componente Bienvenido, aplica estilo a la etiqueta h1, utilizando `inline styling`. Intenta cambiarle su color a rojo, "pisando" el estilo que se aplica por CSS Modules.
 
 El componente debe verse en el navegador similar a esta imagen:
 
