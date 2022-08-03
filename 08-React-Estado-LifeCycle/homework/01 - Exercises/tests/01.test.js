@@ -66,12 +66,7 @@ describe("01 | Ejercicios", () => {
     expect(zoo.childAt(2).text()).toBe(useStateSpy()[0].zooName);
   });
 
-  it("A la etiqueta input asígnale los atributos 'value' y 'onChange' que por el momento sean iguales a un string vacío", () => {
-    expect(zoo.childAt(1).prop("value")).toBe("");
-    expect(zoo.childAt(1).prop("onChange")).toBeDefined();
-  });
-
-  it("Al atributo 'value' de la etiqueta input asignale el valor del estado 'zooName'", () => {
+  it("A la etiqueta input asígnale el atributo 'value' con el estado 'zoo.zooName'", () => {
     expect(zoo.childAt(1).prop("value")).toBe(useStateSpy()[0].zooName);
   });
 

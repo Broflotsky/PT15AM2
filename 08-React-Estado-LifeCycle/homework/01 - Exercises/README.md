@@ -144,11 +144,10 @@ const [example, setExample] = React.useState({
 2. Renderiza una etiqueta label encima de la etiqueta h1 que contenga el texto `Zoo Name:`.
 3. Renderiza una etiqueta input debajo de la etiqueta label y encima de la etiqueta h1.
 4. En la etiqueta h1, renderiza el estado ***zoo.zooName***
-4. A la etiqueta input asígnale los atributos `value` y `onChange` que por el momento sean iguales a un string vacío.
-5. Al atributo **value** de la etiqueta input asígnale el estado ***zoo.zooName***.
+5. A la etiqueta input asígnale el atributo `value` con el estado ***zoo.zooName***.
 6. Crea una función llamada `handleInputChange`, que reciba un **evento** como parámetro.
 7. Dentro de la función ***handleInputChange***, setea el estado zoo, la propiedad **zooName**, capturando el valor del input.
-8. Al atributo **onChange** del input, asígnale la función ***handleInputChange***.
+8. A la etiqueta input, asígnale el atributo `onChange`, que sea igual a la función ***handleInputChange*** creada anteriormente.
 
 
 🔹 Resultado esperado:
@@ -187,7 +186,7 @@ fetch("http://localhost:3001/animals")
 
 3. Crea una función llamada `handleSpecies`, que reciba un **evento** como parámetro.
 4. Crea una función llamada `handleAllSpecies`.
-4. Dentro del segundo div:
+4. Dentro de la etiqueta div, por debajo de lo ya existente allí dentro, renderizarás el componente Species y el componente Animals, haciendo lo siguiente:
       * Pasa el estado **zoo**, con su propiedad `species` y las funciones `handleSpecies`, `handleAllSpecies` como props al renderizar el componente ***Species***.
       * Pasa el estado **zoo**, con su propiedad `animals` como props al renderizar el componente ***Animals***.
 
@@ -209,12 +208,13 @@ fetch("http://localhost:3001/animals")
 🔹 Lo que hay que hacer:
 
 1. Dentro del div, mapea y renderiza las props animals  de acuerdo a lo que necesitemos:
-   * Una etiqueta **h5** con el nombre de los animales.
-   * Una etiqueta **img** con los atributos:
-      * ***src*** asignando como valor la imagen de los animales.
-      * ***alt*** asignando como valor el nombre de los animales.
-      * ***width*** con un valor de 300px (para darle un tamaño apropiado a la imagen).
-   * Una etiqueta **span** con la especie de los animales.
+   * Por cada animal, debemos renderizar un div con lo siguiente:
+      * Una etiqueta **h5** con el nombre del animal.
+      * Una etiqueta **img** con los atributos:
+         * ***src*** asignando como valor la imagen del animal.
+         * ***alt*** asignando como valor el nombre del animal.
+         * ***width*** con un valor de 300px (para darle un tamaño apropiado a la imagen).
+      * Una etiqueta **span** con la especie del animal.
 
 > Tips: 
 > * Para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
@@ -239,14 +239,14 @@ fetch("http://localhost:3001/animals")
 
 🔹 Lo que hay que hacer:
 
-1. El componente recibe props como parámetro.
-2. Dentro del div, mapea y renderiza las especies que vienen por props en una etiqueta **button**.
+1. Renderizar una etiqueta **h2** con el texto `Species:`.
+2. El componente recibe props, y dentro del div, mapea y renderiza las especies que vienen por props en una etiqueta **button**.
 3. Agrega a la etiqueta button los siguientes atributos: 
    * ***key***?
    * El evento ***onClick***, asignándole la función `handleSpecies` que también recibe por props.
    * Un ***value*** asignándole la especie.
 4. En el children del button renderiza las especies.
-5. Agrega una segunda etiqueta de botón en el que renderices en el evento ***onClick*** la función `handleAllSpecies`.
+5. Fuera del map, agrega una segunda etiqueta de botón en el que renderices en el evento ***onClick*** la función `handleAllSpecies`.
 6. En el children del segundo botón coloca el texto "All Animals".
 
 (Por ahora nuestros botones no hacen nada).

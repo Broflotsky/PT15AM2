@@ -40,9 +40,9 @@ describe("05 | Ejercicios", () => {
     });
     await waitFor(() => {
       expect(screen.queryByText("Cocodrilo")).toEqual(null);
-      expect(screen.queryByText("Delfín")).toBeDefined();
-      expect(screen.queryByText("León")).toBeDefined();
-      expect(screen.queryByText("Boa constrictora")).toEqual(null);
+      expect(screen.queryByText("Delfín")).not.toEqual(null);
+      expect(screen.queryByText("León")).not.toEqual(null);
+      expect(screen.queryByText("Boa constrictor")).toEqual(null);
       expect(screen.queryByText("Pavo real")).toEqual(null);
     });
   });
@@ -57,8 +57,8 @@ describe("05 | Ejercicios", () => {
     });
     await waitFor(() => {
       expect(screen.queryByText("Delfín")).toEqual(null);
-      expect(screen.queryByText("Cocodrilo")).toBeDefined();
-      expect(screen.queryByText("Boa constrictora")).toBeDefined();
+      expect(screen.queryByText("Cocodrilo")).not.toEqual(null);
+      expect(screen.queryByText("Boa constrictor")).not.toEqual(null);
       expect(screen.queryByText("León")).toEqual(null);
       expect(screen.queryByText("Pavo real")).toEqual(null);
     });
@@ -76,8 +76,38 @@ describe("05 | Ejercicios", () => {
       expect(screen.queryByText("Cocodrilo")).toEqual(null);
       expect(screen.queryByText("Delfín")).toEqual(null);
       expect(screen.queryByText("León")).toEqual(null);
-      expect(screen.queryByText("Boa constrictora")).toEqual(null);
-      expect(screen.queryByText("Pavo real")).toBeDefined();
+      expect(screen.queryByText("Boa constrictor")).toEqual(null);
+      expect(screen.queryByText("Pavo real")).not.toEqual(null);
+    });
+  });
+
+  it("Al hacer click en el botón de la especie 'Aves', debe filtrar el estado que le llega por props a Animals por los animales de esa especie", async () => {
+    await act(async () => {
+      render(<Zoo />);
+    });
+
+    act(() => {
+      fireEvent.click(screen.getByRole("button", { name: "Aves" }));
+    });
+    
+    await waitFor(() => {
+      expect(screen.queryByText("Cocodrilo")).toEqual(null);
+      expect(screen.queryByText("Delfín")).toEqual(null);
+      expect(screen.queryByText("León")).toEqual(null);
+      expect(screen.queryByText("Boa constrictor")).toEqual(null);
+      expect(screen.queryByText("Pavo real")).not.toEqual(null);
+    });
+
+    act(() => {
+      fireEvent.click(screen.getByRole("button", { name: "All Animals" }));
+    });
+
+    await waitFor(() => {
+      expect(screen.queryByText("Cocodrilo")).not.toEqual(null);
+      expect(screen.queryByText("Delfín")).not.toEqual(null);
+      expect(screen.queryByText("León")).not.toEqual(null);
+      expect(screen.queryByText("Boa constrictor")).not.toEqual(null);
+      expect(screen.queryByText("Pavo real")).not.toEqual(null);
     });
   });
 
