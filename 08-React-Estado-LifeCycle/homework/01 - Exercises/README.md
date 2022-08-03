@@ -173,10 +173,12 @@ const [example, setExample] = React.useState({
 fetch("http://localhost:3001/animals")
       .then((res) => res.json())
       .then((data) =>
-        setZoo({ ...zoo, 
+        setZoo({ 
+        ...zoo, 
         animals: data.animals, 
         species: data.species, 
-        copyAnimals:data.animals })
+        copyAnimals:data.animals 
+        })
       )
       .catch((error) => console.log(error));
 ```
@@ -269,7 +271,7 @@ Vamos a dar la funcionalidad correspondiente a la app para que cuando el usuario
 
 1. Volvamos al componente Zoo
 2. Dentro de la función `handleSpecies`, setea el estado **zoo**, la propiedad animals, implementando la lógica para filtrar los animales según su especie.
-3. Dentro de la función `handleAllSpecies`, setea el estado **zoo**, la propiedad animals con la propiedad copyAnimals.
+3. Dentro de la función `handleAllSpecies`, setea dentro del estado **zoo**, la propiedad animals con el valor de la propiedad copyAnimals.
 
 > Tips: 
 > * Para recorrer el arreglo y retornar sólo los elementos necesarios, puedes usar el método `filter`.
