@@ -6,7 +6,7 @@ import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 import isReact from "is-react";
 import nock from "nock";
 import data from "../db.json";
-import fetch from "jest-fetch-mock";
+import fetch from "node-fetch";
 // Importamos variables/componentes
 import Zoo from "../src/components/Zoo/Zoo";
 
@@ -41,7 +41,7 @@ describe("01 | Ejercicios", () => {
     mockUseEffect();
   });
 
-  it("Debería inicializar el estado con un objeto con propiedades dentro", () => {
+  it("Debería inicializar React.useState con un objeto con propiedades dentro", () => {
     /* Los hooks de React si o si los tenes que usar como "React.useState". El test no los reconoce cuando se hace destructuring de estos métodos. */
     expect(useStateSpy).toHaveBeenCalledWith({
       zooName: "",
@@ -53,7 +53,7 @@ describe("01 | Ejercicios", () => {
 
   it("Renderiza una etiqueta label encima de la etiqueta h1 que contenga el texto 'Zoo Name:'", () => {
     expect(zoo.childAt(0).type()).toBe("label");
-    expect(zoo.childAt(0).text()).toBe("Nombre de Zoo:");
+    expect(zoo.childAt(0).text()).toBe("Zoo Name:");
   });
 
   it("Renderiza una etiqueta input debajo de la etiqueta label y encima de la etiqueta h1", () => {
@@ -66,12 +66,7 @@ describe("01 | Ejercicios", () => {
     expect(zoo.childAt(2).text()).toBe(useStateSpy()[0].zooName);
   });
 
-  it("A la etiqueta input asígnale los atributos 'value' y 'onChange' que por el momento sean iguales a un string vacío", () => {
-    expect(zoo.childAt(1).prop("value")).toBe("");
-    expect(zoo.childAt(1).prop("onChange")).toBeDefined();
-  });
-
-  it("Al atributo 'value' de la etiqueta input asignale el valor del estado 'zooName'", () => {
+  it("A la etiqueta input asígnale el atributo 'value' con el estado 'zoo.zooName'", () => {
     expect(zoo.childAt(1).prop("value")).toBe(useStateSpy()[0].zooName);
   });
 

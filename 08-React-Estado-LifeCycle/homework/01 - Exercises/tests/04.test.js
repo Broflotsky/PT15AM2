@@ -8,16 +8,13 @@ import data from "../db.json";
 
 configure({ adapter: new Adapter() });
 
-describe("03 | Ejercicios", () => {
+describe("04 | Ejercicios", () => {
   let species;
 
   beforeAll(() => expect(isReact.classComponent(Species)).toBeFalsy());
 
   beforeEach(() => {
-    species = shallow(<Species species={data.animals.species} />);
-  });
-
-  it("Debería renderizar un unico div", () => {
+    species = shallow(<Species handleAllSpecies={() => {}} handleSpecies={() => {}} species={data.animals.species} />);
     expect(species.find("div").length).toBe(1);
   });
 
@@ -29,7 +26,6 @@ describe("03 | Ejercicios", () => {
 
   it("Debería renderizar un botón por cada una de las especies, y el texto de cada botón debe ser el de cada una de las especies", () => {
     const buttons = species.find("button");
-    expect(buttons).toHaveLength(data.animals.species.length);
     const buttonsTexts = buttons.map((button) => button.text());
     expect(
       buttonsTexts.includes(
@@ -38,11 +34,11 @@ describe("03 | Ejercicios", () => {
     ).toBeTruthy();
   });
 
-  it("Cada botón debería tener el evento onClick con un valor de la prop handleSpecies", () => {
+  it("Cada botón debería tener el evento onClick", () => {
     const buttons = species.find("button");
     buttons.forEach((button) => {
       expect(button.props().hasOwnProperty("onClick")).toBe(true);
-      expect(typeof button.props().onClick).toEqual("function");
+      expect(button.props().onClick).toBeInstanceOf(Function);
     });
   });
 });
