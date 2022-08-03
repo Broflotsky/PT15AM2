@@ -1,4 +1,4 @@
-# HW 02 - React-Estado-Life Cycle | Ejercicios
+# HW 02 - React-Routing | Ejercicios
 
 ## Duración estimada 🕒
 
@@ -8,18 +8,15 @@ x minutos
 
 ## Intro
 
-Para realizar esta actividad, debes desarrollar una Zoo app utilizando componentes funcionales y componentes de clase. La misma necesita:
+Encontrarás en esta homework la Cruise App ya estructurada con sus componentes, lo que debes realizar, de acuerdo con lo visto en clase, es el enrutamiento de la aplicación.
 
-* Un input en el que el usuario puede bautizar su zoológico como desee.
-* Mostrar todos los animales que tiene el zoológico. 
-* Botones que tendrán la funcionalidad de mostrar los animales según su especie.
 
 ---
 ## Consigna de la homework
 
-* Añadir estado local al componente **Zoo.jsx** utilizando el hook React.useState haciendo tu componente dinámico y ejecutar ese estado cada vez que se renderice el componente con React.useEffect.
-* El componente **Animals.jsx** recibirá estados por props.
-* El componente **Species** también recibirá estados por props.
+* Implementar las rutas correspondientes para renderizar los componentes de la aplicación.
+* Realizar redirecciones a otros componentes.
+* Mantener renderizado un componente en todas las rutas.
 
 ---
 
@@ -84,76 +81,45 @@ Además:
 🔹 Dentro de la carpeta `src` encontrarás el esqueleto del proyecto React, estructurado de la siguiente manera:
 
 * Una carpeta llamada `components`
-* Un archivo llamado **App.js**
+* Un archivo llamado `App.js`
 * Un archivo **index.css**
-* Un archivo **index.js**
+* Un archivo `index.js`
 
-🔹 Para estos ejercicios, trabajaremos sólo dentro la carpeta `components`. Dentro de esta carpeta encontrarás:
+🔹 Para estos ejercicios, trabajaremos en la carpeta `components` y en el archivo `App.js`. Dentro de la carpeta **components** encontrarás:
 
-* Una carpeta llamada **Animals**, la cual a su vez contiene:
-   * El componente `Animals.jsx`
-* Una carpeta llamada **Species**, la cual a su vez contiene:
-   * El componente `Species.jsx`
-* Una carpeta llamada **Zoo**, la cual a su vez contiene:
-   * El componente `Zoo.jsx`
-   * La hoja de estilos **Zoo.module.css**
+* Una carpeta llamada **Home**, la cual a su vez contiene:
+   * El componente `Home.jsx`
+* Una carpeta llamada **NavBar**, la cual a su vez contiene:
+   * El componente `NavBar.jsx`
+* Una carpeta llamada **SearchBar**, la cual a su vez contiene:
+   * El componente `SearchBar.jsx`
+* Una carpeta llamada **Promotions**, la cual a su vez contiene:
+   * El componente `Promotions.jsx`
+* Una carpeta llamada **Card**, la cual a su vez contiene:
+   * El componente `Card.jsx`
+* Una carpeta llamada **Cards**, la cual a su vez contiene:
+   * El componente `Cards.jsx`
 
 ---
 
 ## 👩‍💻 Ejercicio 1
-### Crea un estado a nuestro componente funcional usando React.useState
+### BrowserRouter
 
-🔹 El componente funcional `Zoo.jsx`, es actualmente un componente sin estado.
 
-🔹 Abre el archivo `Zoo.jsx`, dentro de él encontrarás:
+🔹 Abre el archivo `index.js`, dentro de él encontrarás:
 
 * El import de:
-   * La librería **React**
-   * El componente **Animals** 
-   * El componente **Species**
-   * El archivo **Zoo.module.css**
+   * **React**
+   * **ReactDOM** 
+   * **index.css**
+   * **App.js**
 
-* La función `Zoo` que renderiza:
-
-   * Un div.
-   * Dentro de este div, se renderiza:
-      * Una etiqueta h1
-      * Una etiqueta div
+* También encontrarás el ReactDOM renderizando los elementos de react en el navegador.
 
 🔹 Lo que hay que hacer:
 
-1. Ejecuta el método React.useState devolviendo el array con la variable llamada `zoo` y método llamado `setZoo`, cuyo valor inicial de éste sea un objeto con las siguientes propiedades:
-
-* `zooName` en el que su valor sea un string vacío.
-* `animals` en el que su valor sea un array vacío.
-* `species` en el que su valor sea un array vacío.
-* `copyAnimals` en el que su valor sea un array vacío.
-
- Por ejemplo: 
-
-```js
-const [example, setExample] = React.useState({
-   example1:'',
-   example2:[],
-   example3:[]
-});
-```
-
-> **Nota**: Para que corran los test, el hook debe ser utilizado de esta manera: **React.useState()**. No debe utilizarse como **useState()**. 💡
-
-2. Renderiza una etiqueta label encima de la etiqueta h1 que contenga el texto `Zoo Name:`.
-3. Renderiza una etiqueta input debajo de la etiqueta label y encima de la etiqueta h1.
-4. En la etiqueta h1, renderiza el estado ***zoo.zooName***
-4. A la etiqueta input asígnale los atributos `value` y `onChange` que por el momento sean iguales a un string vacío.
-5. Al atributo **value** de la etiqueta input asígnale el estado ***zoo.zooName***.
-6. Crea una función llamada `handleInputChange`, que reciba un **evento** como parámetro.
-7. Dentro de la función ***handleInputChange***, setea el estado zoo, la propiedad **zooName**, capturando el valor del input.
-8. Al atributo **onChange** del input, asígnale la función ***handleInputChange***.
-
-
-🔹 Resultado esperado:
-
-<p align="center"><img src="./img/img01.gif" height="300px"></p> 
+1. Importa `BrowserRouter` desde **'react-router-dom'**
+2. Envuelve **App** en el componente ***BrowserRouter***.
 
 ---
 ## 👩‍💻 Ejercicio 2
