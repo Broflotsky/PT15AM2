@@ -208,7 +208,7 @@ fetch("http://localhost:3001/animals")
 
 🔹 Lo que hay que hacer:
 
-1. Dentro del div, mapea y renderiza las props animals  de acuerdo a lo que necesitemos:
+1. Dentro del div, mapea y renderiza las props `animals`  de acuerdo a lo que necesitemos:
    * Por cada animal, debemos renderizar un div con lo siguiente:
       * Una etiqueta **h5** con el nombre del animal.
       * Una etiqueta **img** con los atributos:
