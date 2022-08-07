@@ -56,7 +56,7 @@ npm run test:01
 npm run server
 ```
 
-🔹 Para poder correr la aplicación de forma local, sólo debes ejecutar el comando
+🔹 Y por último, para poder correr la aplicación de forma local, en una **nueva terminal** sólo debes ejecutar el comando
 
 ```bash
 npm start
