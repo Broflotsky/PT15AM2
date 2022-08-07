@@ -147,7 +147,7 @@ const [example, setExample] = React.useState({
 4. En la etiqueta h1, renderiza el estado ***zoo.zooName***
 5. A la etiqueta input asígnale el atributo `value` con el estado ***zoo.zooName***.
 6. Crea una función llamada `handleInputChange`, que reciba un **evento** como parámetro.
-7. Dentro de la función ***handleInputChange***, setea el estado zoo, la propiedad **zooName**, capturando el valor del input.
+7. Dentro de la función ***handleInputChange***, setea del estado zoo, la propiedad **zooName**, capturando el valor del input.
 8. A la etiqueta input, asígnale el atributo `onChange`, que sea igual a la función ***handleInputChange*** creada anteriormente.
 
 🔹 Resultado esperado:
