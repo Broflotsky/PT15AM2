@@ -8,7 +8,7 @@ x minutos
 
 ## Intro
 
-Para realizar esta actividad, debes desarrollar una Zoo app utilizando componentes funcionales y componentes de clase. La misma necesita:
+En esta actividad, debes desarrollar una Zoo app utilizando componentes funcionales y componentes de clase. La misma necesita:
 
 * Un input en el que el usuario puede bautizar su zoológico como desee.
 * Mostrar todos los animales que tiene el zoológico.
