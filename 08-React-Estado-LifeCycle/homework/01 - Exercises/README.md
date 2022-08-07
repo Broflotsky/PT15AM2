@@ -189,8 +189,8 @@ fetch("http://localhost:3001/animals")
 3. Crea una función llamada `handleSpecies`, que reciba un **evento** como parámetro.
 4. Crea una función llamada `handleAllSpecies`.
 4. Dentro de la etiqueta div, por debajo de lo ya existente allí dentro, renderizarás el componente Species y el componente Animals, haciendo lo siguiente:
-     * Pasa el estado **zoo**, con su propiedad `species` y las funciones `handleSpecies`, `handleAllSpecies` como props al renderizar el componente ***Species***.
-     * Pasa el estado **zoo**, con su propiedad `animals` como props al renderizar el componente ***Animals***.
+     * Pasa del estado **zoo**, únicamente la propiedad `species` (utilizando dicho nombre) y las funciones `handleSpecies`, `handleAllSpecies` como props al renderizar el componente ***Species***.
+     * Pasa del estado **zoo**, únicamente la propiedad `animals` (utilizando dicho nombre) como props al renderizar el componente ***Animals***.
 
 ---
 
