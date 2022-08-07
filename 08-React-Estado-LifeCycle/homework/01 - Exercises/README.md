@@ -142,8 +142,8 @@ const [example, setExample] = React.useState({
 
 > **Nota**: Para que corran los test, el hook debe ser utilizado de esta manera: **React.useState()**. No debe utilizarse como **useState()**. 💡
 
-2. Renderiza una etiqueta label encima de la etiqueta h1 que contenga el texto `Zoo Name:`.
-3. Renderiza una etiqueta input debajo de la etiqueta label y encima de la etiqueta h1.
+2. Renderiza una etiqueta label arriba de la etiqueta h1 que contenga el texto `Zoo Name:`.
+3. Renderiza una etiqueta input debajo de la etiqueta label y arriba de la etiqueta h1.
 4. En la etiqueta h1, renderiza el estado ***zoo.zooName***
 5. A la etiqueta input asígnale el atributo `value` con el estado ***zoo.zooName***.
 6. Crea una función llamada `handleInputChange`, que reciba un **evento** como parámetro.
