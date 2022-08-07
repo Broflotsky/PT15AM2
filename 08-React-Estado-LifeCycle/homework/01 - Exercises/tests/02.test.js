@@ -42,7 +42,7 @@ describe('02 | Ejercicios', () => {
     expect(useEffect).toHaveBeenCalled()
   })
 
-  it("El componente Zoo debe pasarle por 'props' al componente Specie, la propiedad species del estado local y la funcion handleSpecies", () => {
+  it("El componente Zoo debe pasarle por 'props' al componente Species, la propiedad species del estado local y la funcion handleSpecies", () => {
     const speciesComponent = zoo.find('Species')
     expect(speciesComponent.prop('species')).toBeTruthy()
     expect(speciesComponent.prop('handleSpecies')).toBeTruthy()
