@@ -23,11 +23,11 @@ describe('05 | Ejercicios', () => {
 
     jest.spyOn(global, 'fetch').mockImplementation(() =>
       Promise.resolve({
-        json: () => Promise.resolve(data.animals)
+        json: () => Promise.resolve(data.zoo)
       })
     )
 
-    apiMock.get('/zoo').reply(200, data.animals)
+    apiMock.get('/zoo').reply(200, data.zoo)
   })
 
   it("Al hacer click en el botón de la especie 'Mamíferos', debe filtrar el estado que le llega por props a Animals por los animales de esa especie", async () => {
