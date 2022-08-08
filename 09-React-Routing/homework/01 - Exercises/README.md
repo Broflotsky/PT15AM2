@@ -93,8 +93,6 @@ Además:
    * El componente `NavBar.jsx`
 * Una carpeta llamada **SearchBar**, la cual a su vez contiene:
    * El componente `SearchBar.jsx`
-* Una carpeta llamada **Promotions**, la cual a su vez contiene:
-   * El componente `Promotions.jsx`
 * Una carpeta llamada **Card**, la cual a su vez contiene:
    * El componente `Card.jsx`
 * Una carpeta llamada **Cards**, la cual a su vez contiene:
@@ -124,16 +122,19 @@ Además:
 ---
 ## 👩‍💻 Ejercicio 2
 
-### Crea el hook React.useEffect en nuestro componente funcional 
+### Routing 
 
-🔹 Continúa trabajando en el componente **Zoo.jsx**.
+🔹 Ahora dirígete al componente App.js.
 
 🔹 Lo que hay que hacer:
 
-1. Utiliza el hook React.useEffect.
-> **Nota**: No olvides que el hook ReactuseEffect recibe dos parámetros. 💡
-
-2. Dentro del hook, usa fetch para hacer una llamada al servidor **db.json** a través del endpoint `'http://localhost:3001/animals'`, obteniendo el objeto **animals** con los datos de los animales. Para utilizar fetch, es necesario usar promesas, como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook React.useEffect:
+1. Importa `Routes` y `Route` desde **react-router-dom**.
+2. Renderiza el componente **Routes**.
+3. Crea las siguientes rutas utilizando el componente **Route** dentro de ***Routes***:
+   * "/": Para la `NavBar`.
+   * "/home": Para el componente `Home`.
+   
+4.    
 
 ```js
 fetch("http://localhost:3001/animals")
