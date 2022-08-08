@@ -243,7 +243,7 @@ fetch("http://localhost:3001/animals")
 1. Renderizar una etiqueta **h2** con el texto `Species`.
 2. El componente recibe props, y dentro del div, mapea y renderiza las especies que vienen por props en una etiqueta **button**.
 3. Agrega a la etiqueta button los siguientes atributos:
-   * ***key***?
+   * ***key***
    * El evento ***onClick***, asignándole la función `handleSpecies` que también se recibe por props.
    * Un ***value*** asignándole la especie.
 4. En el children del button renderiza las especies.
