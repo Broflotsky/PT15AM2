@@ -14,7 +14,7 @@ describe('04 | Ejercicios', () => {
   beforeAll(() => expect(isReact.classComponent(Species)).toBeFalsy())
 
   beforeEach(() => {
-    species = shallow(<Species handleAllSpecies={() => {}} handleSpecies={() => {}} species={data.animals.species} />)
+    species = shallow(<Species handleAllSpecies={() => {}} handleSpecies={() => {}} species={data.zoo.species} />)
     expect(species.find('div').length).toBe(1)
   })
 
