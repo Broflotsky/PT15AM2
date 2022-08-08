@@ -4,7 +4,7 @@ import Cards from "../Cards/Cards";
 
 export default function Home() {
 
-  function onSearch(){
+  function onSearch(cruise){
     fetch(`http://localhost:3001/cruises?name=${cruise}`)
     .then((res) => res.json())
     .then((data) => {
@@ -30,7 +30,7 @@ export default function Home() {
  
   return (
     <div>
-      {/* <NavBar/> */}
+      <NavBar onSearch={onSearch}/>
       <Cards/>
     </div>
   )

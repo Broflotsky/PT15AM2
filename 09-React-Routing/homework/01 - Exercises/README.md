@@ -142,7 +142,7 @@ Además:
 
 ## 👩‍💻 Ejercicio 3
 
-### Recibiendo props en nuestro componente de clases Animals
+### Links
 
 🔹 Ahora trabajaremos en el componente **Animals.jsx**.
 
@@ -172,64 +172,6 @@ Además:
 
 ---
 
-## 👩‍💻 Ejercicio 4
-
-### Recibiendo props en nuestro componente funcional Species
-
-🔹 Ahora trabajaremos en el componente **Species.jsx**.
-
-🔹 Abre el archivo `Species.jsx`, dentro de él encontrarás:
-
-* El import de la librería **React**
-
-* La función `Species` que renderiza un div.
-
-🔹 Lo que hay que hacer:
-
-1. El componente recibe props como parámetro.
-2. Dentro del div, mapea y renderiza las especies que vienen por props en una etiqueta **button**.
-3. Agrega a la etiqueta button los siguientes atributos: 
-   * ***key***?
-   * El evento ***onClick***, asignándole la función `handleSpecies` que también recibe por props.
-   * Un ***value*** asignándole la especie.
-4. En el children del button renderiza las especies.
-5. Agrega una segunda etiqueta de botón en el que renderices en el evento ***onClick*** la función `handleAllSpecies`.
-6. En el children del segundo botón coloca el texto "All Animals".
-
-(Por ahora nuestros botones no hacen nada).
-
-> Tips: 
-> * Para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
-
-🔹 Resultado esperado:
-
-<p align="center"><img src="./img/img03.gif" height="300px"></p> 
-
----
-
-
-## 👩‍💻 Ejercicio 5 
-
-### ...Estamos llegando a la última parte de la homework ⭐
-
-Vamos a dar la funcionalidad correspondiente a la app para que cuando el usuario haga click en una de las especies nos renderice los animales relacionados a esa especie y cuando haga click en el botón "All Animals" renderice nuevamente todos los animales.
-
-🔹 Lo que hay que hacer:
-
-1. Volvamos al componente Zoo
-2. Dentro de la función `handleSpecies`, setea el estado **zoo**, la propiedad animals, implementando la lógica para filtrar los animales según su especie.
-3. Dentro de la función `handleAllSpecies`, setea el estado **zoo**, la propiedad animals con la propiedad copyAnimals.
-
-> Tips: 
-> * Para recorrer el arreglo y retornar sólo los elementos necesarios, puedes usar el método `filter`.
-> **Nota**: Al hacer filter del estado zoo.animals, los datos que no coincidan con el filtrado, se perderían; puedes utilizar la propiedad "zoo.copyAnimals" para mantener una copia de ese arreglo.
-
-🔹 Resultado esperado:
-
-<p align="center"><img src="./img/img04.gif" height="300px"></p>
-
----
-
 ## Recordemos que...
 
 * Los hooks son funciones especiales que nos permiten acceder a las funcionalidades de React.
@@ -248,7 +190,7 @@ Vamos a dar la funcionalidad correspondiente a la app para que cuando el usuario
 
 ---
 
-Listo!! Aprendiste cómo funcionan los componentes de estado y sus ciclos de vida!! ✨🚀
+Listo!! Aprendiste cómo funcionan las rutas en React!! ✨🚀
 
 Dirígete a la carpeta 📂 [**"02 - Integration"**](../02%20-%20Integration/README.md) y continúa desarrollando la app de Rick & Morty 🤩
 

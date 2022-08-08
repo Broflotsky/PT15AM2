@@ -1,9 +1,9 @@
 import logo from '../../assets/logo.png';
 import styleNav from './NavBar.module.css';
 import SearchBar from '../SearchBar/SearchBar';
-import onSearch from '../onSearch/onSearch';
 
-export default function NavBar() {
+
+export default function NavBar({onSearch}) {
 
   return (
     <div className={styleNav.container}>
