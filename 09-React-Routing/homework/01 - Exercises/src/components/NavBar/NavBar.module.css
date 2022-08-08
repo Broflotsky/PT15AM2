@@ -1,0 +1,14 @@
+.container {
+    width: 100vw;
+    height: 70px;
+    background-color: #dae8e8;
+    border: solid black
+}
+.container img {
+    height: 70px;
+    border:solid black;
+}
+.container h1 {
+    color: rgb(17, 17, 82);
+    border: solid black;
+}
