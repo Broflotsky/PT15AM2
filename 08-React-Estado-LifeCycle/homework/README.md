@@ -26,6 +26,7 @@ Al finalizar esta homework habrás aprendido a:
 - Crear componentes de estado.
 - Utilizar métodos de array como map y filter.
 - Crear componentes con su ciclo de vida
+
 ---
 
 ## ¿Cómo lo lograremos?

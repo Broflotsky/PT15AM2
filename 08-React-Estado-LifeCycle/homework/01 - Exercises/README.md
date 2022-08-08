@@ -8,13 +8,14 @@ x minutos
 
 ## Intro
 
-Para realizar esta actividad, debes desarrollar una Zoo app utilizando componentes funcionales y componentes de clase. La misma necesita:
+En esta actividad, debes desarrollar una Zoo App utilizando componentes funcionales y componentes de clase. La misma necesita:
 
-* Un input en el que el usuario puede bautizar su zoológico como desee.
-* Mostrar todos los animales que tiene el zoológico. 
-* Botones que tendrán la funcionalidad de mostrar los animales según su especie.
+* Tener un text-input con en el que el usuario pueda bautizar su zoológico como desee.
+* Mostrar todos los animales que tiene el zoológico.
+* Tener Botones que con la funcionalidad de mostrar los animales según su especie.
 
 ---
+
 ## Consigna de la homework
 
 * Añadir estado local al componente **Zoo.jsx** utilizando el hook React.useState haciendo tu componente dinámico y ejecutar ese estado cada vez que se renderice el componente con React.useEffect.
@@ -45,24 +46,23 @@ Si deseas correr por test, puedes utilizar:
 npm run test:01
 ```
 
-🔹 Para esta homework necesitarás emular peticiones a una api con el fin de consumir los datos que allí están, para ello, debes correr el servidor **db.json**, sin este paso no podrás visualizar el resultado esperado y tampoco pasarán los tests. A continuación, los pasos para correr el servidor:
+🔹 Para esta homework necesitarás emular peticiones a una api con el fin de consumir los datos que allí están, para ello, debes correr el servidor **db.json**. Sin esto, no podrás visualizar el resultado esperado y no pasarán los tests. A continuación, los pasos para correr el servidor:
 
 * Abrir una segunda terminal.
 * En la terminal, dirígete a la carpeta que estamos trabajando.
 * Ejecuta el comando:
- 
+
 ```bash
 npm run server
 ```
 
-🔹 Para poder correr la aplicación de forma local, sólo debes ejecutar el comando
+🔹 Y por último, para poder correr la aplicación de forma local, en una **nueva terminal** sólo debes ejecutar el comando
 
 ```bash
 npm start
 ```
 
 * Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
-
 
 ---
 
@@ -91,16 +91,17 @@ Además:
 🔹 Para estos ejercicios, trabajaremos sólo dentro la carpeta `components`. Dentro de esta carpeta encontrarás:
 
 * Una carpeta llamada **Animals**, la cual a su vez contiene:
-   * El componente `Animals.jsx`
+  * El componente `Animals.jsx`
 * Una carpeta llamada **Species**, la cual a su vez contiene:
-   * El componente `Species.jsx`
+  * El componente `Species.jsx`
 * Una carpeta llamada **Zoo**, la cual a su vez contiene:
-   * El componente `Zoo.jsx`
-   * La hoja de estilos **Zoo.module.css**
+  * El componente `Zoo.jsx`
+  * La hoja de estilos **Zoo.module.css**
 
 ---
 
 ## 👩‍💻 Ejercicio 1
+
 ### Crea un estado a nuestro componente funcional usando React.useState
 
 🔹 El componente funcional `Zoo.jsx`, es actualmente un componente sin estado.
@@ -108,17 +109,17 @@ Además:
 🔹 Abre el archivo `Zoo.jsx`, dentro de él encontrarás:
 
 * El import de:
-   * La librería **React**
-   * El componente **Animals** 
-   * El componente **Species**
-   * El archivo **Zoo.module.css**
+  * La librería **React**
+  * El componente **Animals**
+  * El componente **Species**
+  * El archivo **Zoo.module.css**
 
 * La función `Zoo` que renderiza:
 
-   * Un div.
-   * Dentro de este div, se renderiza:
-      * Una etiqueta h1
-      * Una etiqueta div
+  * Un div.
+  * Dentro de este div, se renderiza:
+    * Una etiqueta h1
+    * Una etiqueta div
 
 🔹 Lo que hay que hacer:
 
@@ -129,7 +130,7 @@ Además:
 * `species` en el que su valor sea un array vacío.
 * `copyAnimals` en el que su valor sea un array vacío.
 
- Por ejemplo: 
+ Por ejemplo:
 
 ```js
 const [example, setExample] = React.useState({
@@ -141,32 +142,33 @@ const [example, setExample] = React.useState({
 
 > **Nota**: Para que corran los test, el hook debe ser utilizado de esta manera: **React.useState()**. No debe utilizarse como **useState()**. 💡
 
-2. Renderiza una etiqueta label encima de la etiqueta h1 que contenga el texto `Zoo Name:`.
-3. Renderiza una etiqueta input debajo de la etiqueta label y encima de la etiqueta h1.
+2. Renderiza una etiqueta label arriba de la etiqueta h1 que contenga el texto `Zoo Name:`.
+3. Renderiza una etiqueta input debajo de la etiqueta label y arriba de la etiqueta h1.
 4. En la etiqueta h1, renderiza el estado ***zoo.zooName***
 5. A la etiqueta input asígnale el atributo `value` con el estado ***zoo.zooName***.
 6. Crea una función llamada `handleInputChange`, que reciba un **evento** como parámetro.
-7. Dentro de la función ***handleInputChange***, setea el estado zoo, la propiedad **zooName**, capturando el valor del input.
+7. Dentro de la función ***handleInputChange***, setea del estado zoo, la propiedad **zooName**, capturando el valor del input.
 8. A la etiqueta input, asígnale el atributo `onChange`, que sea igual a la función ***handleInputChange*** creada anteriormente.
-
 
 🔹 Resultado esperado:
 
-<p align="center"><img src="./img/img01.gif" height="300px"></p> 
+<p align="center"><img src="./img/img01.gif" height="300px"></p>
 
 ---
+
 ## 👩‍💻 Ejercicio 2
 
-### Crea el hook React.useEffect en nuestro componente funcional 
+### Crea el hook React.useEffect en nuestro componente funcional
 
 🔹 Continúa trabajando en el componente **Zoo.jsx**.
 
 🔹 Lo que hay que hacer:
 
 1. Utiliza el hook React.useEffect.
+
 > **Nota**: No olvides que el hook ReactuseEffect recibe dos parámetros. 💡
 
-2. Dentro del hook, usa fetch para hacer una llamada al servidor **db.json** a través del endpoint `'http://localhost:3001/animals'`, obteniendo el objeto **animals** con los datos de los animales. Para utilizar fetch, es necesario usar promesas, como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook React.useEffect:
+2. Dentro del hook, usa fetch para hacer una llamada al servidor **db.json** a través de la url `'http://localhost:3001/animals'`, obteniendo el objeto **animals** con los datos de los animales. Para utilizar fetch, es necesario usar promesas, como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook React.useEffect:
 
 ```js
 fetch("http://localhost:3001/animals")
@@ -187,8 +189,8 @@ fetch("http://localhost:3001/animals")
 3. Crea una función llamada `handleSpecies`, que reciba un **evento** como parámetro.
 4. Crea una función llamada `handleAllSpecies`.
 4. Dentro de la etiqueta div, por debajo de lo ya existente allí dentro, renderizarás el componente Species y el componente Animals, haciendo lo siguiente:
-      * Pasa el estado **zoo**, con su propiedad `species` y las funciones `handleSpecies`, `handleAllSpecies` como props al renderizar el componente ***Species***.
-      * Pasa el estado **zoo**, con su propiedad `animals` como props al renderizar el componente ***Animals***.
+     * Pasa del estado **zoo**, únicamente la propiedad `species` (utilizando dicho nombre) y las funciones `handleSpecies`, `handleAllSpecies` como props al renderizar el componente ***Species***.
+     * Pasa del estado **zoo**, únicamente la propiedad `animals` (utilizando dicho nombre) como props al renderizar el componente ***Animals***.
 
 ---
 
@@ -203,11 +205,10 @@ fetch("http://localhost:3001/animals")
 * El import de la librería **React**
 
 * La función de clase `Animals` que renderiza un div.
-   
 
 🔹 Lo que hay que hacer:
 
-1. Dentro del div, mapea y renderiza las props animals  de acuerdo a lo que necesitemos:
+1. Dentro del div, mapea y renderiza las props `animals`  de acuerdo a lo que necesitemos:
    * Por cada animal, debemos renderizar un div con lo siguiente:
       * Una etiqueta **h5** con el nombre del animal.
       * Una etiqueta **img** con los atributos:
@@ -216,12 +217,12 @@ fetch("http://localhost:3001/animals")
          * ***width*** con un valor de 300px (para darle un tamaño apropiado a la imagen).
       * Una etiqueta **span** con la especie del animal.
 
-> Tips: 
+> Tip:
 > * Para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
 
 🔹 Resultado esperado:
 
-<p align="center"><img src="./img/img02.gif" height="300px"></p> 
+<p align="center"><img src="./img/img02.gif" height="300px"></p>
 
 ---
 
@@ -239,11 +240,11 @@ fetch("http://localhost:3001/animals")
 
 🔹 Lo que hay que hacer:
 
-1. Renderizar una etiqueta **h2** con el texto `Species:`.
+1. Renderizar una etiqueta **h2** con el texto `Species`.
 2. El componente recibe props, y dentro del div, mapea y renderiza las especies que vienen por props en una etiqueta **button**.
-3. Agrega a la etiqueta button los siguientes atributos: 
+3. Agrega a la etiqueta button los siguientes atributos:
    * ***key***?
-   * El evento ***onClick***, asignándole la función `handleSpecies` que también recibe por props.
+   * El evento ***onClick***, asignándole la función `handleSpecies` que también se recibe por props.
    * Un ***value*** asignándole la especie.
 4. En el children del button renderiza las especies.
 5. Fuera del map, agrega una segunda etiqueta de botón en el que renderices en el evento ***onClick*** la función `handleAllSpecies`.
@@ -251,17 +252,16 @@ fetch("http://localhost:3001/animals")
 
 (Por ahora nuestros botones no hacen nada).
 
-> Tips: 
+> Tip:
 > * Para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
 
 🔹 Resultado esperado:
 
-<p align="center"><img src="./img/img03.gif" height="300px"></p> 
+<p align="center"><img src="./img/img03.gif" height="300px"></p>
 
 ---
 
-
-## 👩‍💻 Ejercicio 5 
+## 👩‍💻 Ejercicio 5
 
 ### ...Estamos llegando a la última parte de la homework ⭐
 
@@ -270,10 +270,10 @@ Vamos a dar la funcionalidad correspondiente a la app para que cuando el usuario
 🔹 Lo que hay que hacer:
 
 1. Volvamos al componente Zoo
-2. Dentro de la función `handleSpecies`, setea el estado **zoo**, la propiedad animals, implementando la lógica para filtrar los animales según su especie.
-3. Dentro de la función `handleAllSpecies`, setea dentro del estado **zoo**, la propiedad animals con el valor de la propiedad copyAnimals.
+2. Dentro de la función `handleSpecies`, setea el estado **zoo**, modificando la propiedad animals, implementando la lógica para filtrar los animales según su especie.
+3. Dentro de la función `handleAllSpecies`, setea dentro del estado **zoo**, modificando la propiedad animals con el valor de la propiedad `copyAnimals`.
 
-> Tips: 
+> Tip:
 > * Para recorrer el arreglo y retornar sólo los elementos necesarios, puedes usar el método `filter`.
 > **Nota**: Al hacer filter del estado zoo.animals, los datos que no coincidan con el filtrado, se perderían; puedes utilizar la propiedad "zoo.copyAnimals" para mantener una copia de ese arreglo.
 
