@@ -32,7 +32,7 @@ describe('01 | Ejercicios', () => {
     useStateSpy = jest.spyOn(React, 'useState')
     useEffect = jest.spyOn(React, 'useEffect')
     useStateSpy.mockImplementation(() => [
-      { zooName: '', animals: [], copyAnimals: [], species: [] },
+      { zooName: '', animals: [], allAnimals: [], species: [] },
       useState
     ])
 
@@ -46,7 +46,7 @@ describe('01 | Ejercicios', () => {
     expect(useStateSpy).toHaveBeenCalledWith({
       zooName: '',
       animals: [],
-      copyAnimals: [],
+      allAnimals: [],
       species: []
     })
   })
@@ -79,7 +79,7 @@ describe('01 | Ejercicios', () => {
     expect(useState).toHaveBeenCalledWith({
       zooName: 'Zoo de Prueba',
       animals: [],
-      copyAnimals: [],
+      allAnimals: [],
       species: []
     })
 
@@ -87,7 +87,7 @@ describe('01 | Ejercicios', () => {
     expect(useState).toHaveBeenCalledWith({
       zooName: 'Henry Zoo',
       animals: [],
-      copyAnimals: [],
+      allAnimals: [],
       species: []
     })
   })

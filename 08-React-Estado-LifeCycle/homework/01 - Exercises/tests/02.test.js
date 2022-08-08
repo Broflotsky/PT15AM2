@@ -29,7 +29,7 @@ describe('02 | Ejercicios', () => {
     useStateSpy = jest.spyOn(React, 'useState')
     useEffect = jest.spyOn(React, 'useEffect')
     useStateSpy.mockImplementation(() => [
-      { zooName: '', animals: [], copyAnimals: [], species: [] },
+      { zooName: '', animals: [], allAnimals: [], species: [] },
       useState
     ])
 
