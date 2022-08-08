@@ -130,31 +130,13 @@ Además:
 
 1. Importa `Routes` y `Route` desde **react-router-dom**.
 2. Renderiza el componente **Routes**.
-3. Crea las siguientes rutas utilizando el componente **Route** dentro de ***Routes***:
-   * "/": Para la `NavBar`.
-   * "/home": Para el componente `Home`.
-   
-4.    
-
-```js
-fetch("http://localhost:3001/animals")
-      .then((res) => res.json())
-      .then((data) =>
-        setZoo({ ...zoo, 
-        animals: data.animals, 
-        species: data.species, 
-        copyAnimals:data.animals })
-      )
-      .catch((error) => console.log(error));
-```
-
-> **Nota**: Si tienes conocimiento base en promesas y deseas hacerlo de otra manera, puedes hacer la llamada utilizando `axios` para traer los datos. 💡
-
-3. Crea una función llamada `handleSpecies`, que reciba un **evento** como parámetro.
-4. Crea una función llamada `handleAllSpecies`.
-4. Dentro del segundo div:
-      * Pasa el estado **zoo**, con su propiedad `species` y las funciones `handleSpecies`, `handleAllSpecies` como props al renderizar el componente ***Species***.
-      * Pasa el estado **zoo**, con su propiedad `animals` como props al renderizar el componente ***Animals***.
+3. Crea las siguientes rutas para navegar, utilizando el componente **Route** dentro de ***Routes***:
+   * "/home" --> Para el componente `Home`.
+   * "/detail/:id" --> Para el componente `Detail`.  
+4. Crea las siguientes rutas dinámicas para renderizar los siguientes componentes:
+   * Nav: Debe aparecer en todas las rutas.
+   * Cards: Debe aparecer sólo en la ruta "/".
+   * Detail: Debe aparecer sólo en la ruta "/detail/{detailId}
 
 ---
 
