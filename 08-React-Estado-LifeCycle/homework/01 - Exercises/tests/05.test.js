@@ -27,7 +27,7 @@ describe('05 | Ejercicios', () => {
       })
     )
 
-    apiMock.get('/animals').reply(200, data.animals)
+    apiMock.get('/zoo').reply(200, data.animals)
   })
 
   it("Al hacer click en el botón de la especie 'Mamíferos', debe filtrar el estado que le llega por props a Animals por los animales de esa especie", async () => {

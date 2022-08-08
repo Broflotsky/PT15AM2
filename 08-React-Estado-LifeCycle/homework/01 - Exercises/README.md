@@ -168,10 +168,10 @@ const [example, setExample] = React.useState({
 
 > **Nota**: No olvides que el hook ReactuseEffect recibe dos parámetros. 💡
 
-2. Dentro del hook, usa fetch para hacer una llamada al servidor **db.json** a través de la url `'http://localhost:3001/animals'`, obteniendo el objeto **animals** con los datos de los animales. Para utilizar fetch, es necesario usar promesas, como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook React.useEffect:
+2. Dentro del hook, usa fetch para hacer una llamada al servidor **db.json** a través de la url `'http://localhost:3001/zoo'`, obteniendo el objeto **zoo** con los datos de los animales. Para utilizar fetch, es necesario usar promesas, como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook React.useEffect:
 
 ```js
-fetch("http://localhost:3001/animals")
+fetch("http://localhost:3001/zoo")
       .then((res) => res.json())
       .then((data) =>
         setZoo({ 
