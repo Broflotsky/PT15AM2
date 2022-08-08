@@ -270,8 +270,8 @@ Vamos a dar la funcionalidad correspondiente a la app para que cuando el usuario
 🔹 Lo que hay que hacer:
 
 1. Volvamos al componente Zoo
-2. Dentro de la función `handleSpecies`, setea el estado **zoo**, la propiedad animals, implementando la lógica para filtrar los animales según su especie.
-3. Dentro de la función `handleAllSpecies`, setea dentro del estado **zoo**, la propiedad animals con el valor de la propiedad copyAnimals.
+2. Dentro de la función `handleSpecies`, setea el estado **zoo**, modificando la propiedad animals, implementando la lógica para filtrar los animales según su especie.
+3. Dentro de la función `handleAllSpecies`, setea dentro del estado **zoo**, modificando la propiedad animals con el valor de la propiedad `copyAnimals`.
 
 > Tip:
 > * Para recorrer el arreglo y retornar sólo los elementos necesarios, puedes usar el método `filter`.
