@@ -128,7 +128,7 @@ Además:
 * `zooName` en el que su valor sea un string vacío.
 * `animals` en el que su valor sea un array vacío.
 * `species` en el que su valor sea un array vacío.
-* `copyAnimals` en el que su valor sea un array vacío.
+* `allAnimals` en el que su valor sea un array vacío.
 
  Por ejemplo:
 
@@ -178,7 +178,7 @@ fetch("http://localhost:3001/animals")
         ...zoo, 
         animals: data.animals, 
         species: data.species, 
-        copyAnimals:data.animals 
+        allAnimals:data.animals 
         })
       )
       .catch((error) => console.log(error));
@@ -271,11 +271,11 @@ Vamos a dar la funcionalidad correspondiente a la app para que cuando el usuario
 
 1. Volvamos al componente Zoo
 2. Dentro de la función `handleSpecies`, setea el estado **zoo**, modificando la propiedad animals, implementando la lógica para filtrar los animales según su especie.
-3. Dentro de la función `handleAllSpecies`, setea dentro del estado **zoo**, modificando la propiedad animals con el valor de la propiedad `copyAnimals`.
+3. Dentro de la función `handleAllSpecies`, setea dentro del estado **zoo**, modificando la propiedad animals con el valor de la propiedad `allAnimals`.
 
 > Tip:
 > * Para recorrer el arreglo y retornar sólo los elementos necesarios, puedes usar el método `filter`.
-> **Nota**: Al hacer filter del estado zoo.animals, los datos que no coincidan con el filtrado, se perderían; puedes utilizar la propiedad "zoo.copyAnimals" para mantener una copia de ese arreglo.
+> **Nota**: Al hacer filter del estado zoo.animals, los datos que no coincidan con el filtrado, se perderían; puedes utilizar la propiedad "zoo.allAnimals" para mantener una copia de ese arreglo.
 
 🔹 Resultado esperado:
 
