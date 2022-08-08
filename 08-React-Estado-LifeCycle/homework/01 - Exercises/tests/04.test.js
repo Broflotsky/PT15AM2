@@ -36,7 +36,7 @@ describe('04 | Ejercicios', () => {
 
   it('Cada botón debería tener el evento onClick', () => {
     const buttons = species.find('button')
-    expect(buttons).toBeGreaterThan(1)
+    expect(buttons.length).toBeGreaterThan(1)
     buttons.forEach((button) => {
       expect(button.props().hasOwnProperty('onClick')).toBe(true)
       expect(button.props().onClick).toBeInstanceOf(Function)
