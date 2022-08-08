@@ -217,7 +217,8 @@ fetch("http://localhost:3001/zoo")
          * ***width*** con un valor de 300px (para darle un tamaño apropiado a la imagen).
       * Una etiqueta **span** con la especie del animal.
 
-> Tip:
+> Tips:
+> * En el arhivo `db.json` puedes ver las propiedades de cada animal.
 > * Para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
 
 🔹 Resultado esperado:
