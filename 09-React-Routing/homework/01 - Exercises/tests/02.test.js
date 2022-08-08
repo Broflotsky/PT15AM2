@@ -31,7 +31,7 @@ describe("02 | Ejercicios", () => {
     useStateSpy = jest.spyOn(React, "useState");
     useEffect = jest.spyOn(React, "useEffect");
     useStateSpy.mockImplementation(() => [
-      { zooName: "", animals: [], copyAnimals: [], species: [] },
+      { zooName: "", animals: [], allAnimals: [], species: [] },
       useState,
     ]);
 
@@ -53,7 +53,7 @@ describe("02 | Ejercicios", () => {
         animals: data.animals.animals,
         species: data.animals.species,
         // CopyAnimals lo utilizaremos para no perder el estado al hacer los filtros
-        copyAnimals: data.animals.animals,
+        allAnimals: data.animals.animals,
       });
     }, 300);
   });

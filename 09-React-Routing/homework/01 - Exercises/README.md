@@ -171,7 +171,6 @@ Además:
 <p align="center"><img src="./img/img02.gif" height="300px"></p> 
 
 ---
-
 ## Recordemos que...
 
 * Los hooks son funciones especiales que nos permiten acceder a las funcionalidades de React.

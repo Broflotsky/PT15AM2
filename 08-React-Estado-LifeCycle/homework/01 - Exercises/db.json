@@ -1,5 +1,5 @@
 {
-  "animals": {
+  "zoo": {
     "species": ["Mamíferos", "Reptiles", "Aves"],
     "animals": [
       {

@@ -1,10 +1,8 @@
 # Módulo 2 Front End | React-Estado-LifeCycle
 
-## Temas de la clase
+## Temas de la homework
 
 - Estados
-- Estados vs Variables
-- Bind con Arrow Function
 - Ciclo de vida
 - One way data flow
 - Hooks

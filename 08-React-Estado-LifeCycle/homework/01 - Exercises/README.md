@@ -128,7 +128,7 @@ Además:
 * `zooName` en el que su valor sea un string vacío.
 * `animals` en el que su valor sea un array vacío.
 * `species` en el que su valor sea un array vacío.
-* `copyAnimals` en el que su valor sea un array vacío.
+* `allAnimals` en el que su valor sea un array vacío.
 
  Por ejemplo:
 
@@ -168,17 +168,17 @@ const [example, setExample] = React.useState({
 
 > **Nota**: No olvides que el hook ReactuseEffect recibe dos parámetros. 💡
 
-2. Dentro del hook, usa fetch para hacer una llamada al servidor **db.json** a través de la url `'http://localhost:3001/animals'`, obteniendo el objeto **animals** con los datos de los animales. Para utilizar fetch, es necesario usar promesas, como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook React.useEffect:
+2. Dentro del hook, usa fetch para hacer una llamada al servidor **db.json** a través de la url `'http://localhost:3001/zoo'`, obteniendo el objeto **zoo** con los datos de los animales. Para utilizar fetch, es necesario usar promesas, como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook React.useEffect:
 
 ```js
-fetch("http://localhost:3001/animals")
+fetch("http://localhost:3001/zoo")
       .then((res) => res.json())
       .then((data) =>
         setZoo({ 
         ...zoo, 
         animals: data.animals, 
         species: data.species, 
-        copyAnimals:data.animals 
+        allAnimals:data.animals 
         })
       )
       .catch((error) => console.log(error));
@@ -217,7 +217,8 @@ fetch("http://localhost:3001/animals")
          * ***width*** con un valor de 300px (para darle un tamaño apropiado a la imagen).
       * Una etiqueta **span** con la especie del animal.
 
-> Tip:
+> Tips:
+> * En el arhivo `db.json` puedes ver las propiedades de cada animal.
 > * Para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
 
 🔹 Resultado esperado:
@@ -243,7 +244,7 @@ fetch("http://localhost:3001/animals")
 1. Renderizar una etiqueta **h2** con el texto `Species`.
 2. El componente recibe props, y dentro del div, mapea y renderiza las especies que vienen por props en una etiqueta **button**.
 3. Agrega a la etiqueta button los siguientes atributos:
-   * ***key***?
+   * ***key***
    * El evento ***onClick***, asignándole la función `handleSpecies` que también se recibe por props.
    * Un ***value*** asignándole la especie.
 4. En el children del button renderiza las especies.
@@ -271,11 +272,11 @@ Vamos a dar la funcionalidad correspondiente a la app para que cuando el usuario
 
 1. Volvamos al componente Zoo
 2. Dentro de la función `handleSpecies`, setea el estado **zoo**, modificando la propiedad animals, implementando la lógica para filtrar los animales según su especie.
-3. Dentro de la función `handleAllSpecies`, setea dentro del estado **zoo**, modificando la propiedad animals con el valor de la propiedad `copyAnimals`.
+3. Dentro de la función `handleAllSpecies`, setea dentro del estado **zoo**, modificando la propiedad animals con el valor de la propiedad `allAnimals`.
 
 > Tip:
 > * Para recorrer el arreglo y retornar sólo los elementos necesarios, puedes usar el método `filter`.
-> **Nota**: Al hacer filter del estado zoo.animals, los datos que no coincidan con el filtrado, se perderían; puedes utilizar la propiedad "zoo.copyAnimals" para mantener una copia de ese arreglo.
+> **Nota**: Al hacer filter del estado zoo.animals, los datos que no coincidan con el filtrado, se perderían; puedes utilizar la propiedad "zoo.allAnimals" para mantener una copia de ese arreglo.
 
 🔹 Resultado esperado:
 

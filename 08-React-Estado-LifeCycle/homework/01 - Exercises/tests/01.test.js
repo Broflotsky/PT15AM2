@@ -26,13 +26,13 @@ describe('01 | Ejercicios', () => {
     // Se Mockea las request a las api
     const apiMock = nock('http://localhost:3001').persist()
 
-    apiMock.get('/animals').reply(200, data.animals)
+    apiMock.get('/zoo').reply(200, data.animals)
 
     useState = jest.fn()
     useStateSpy = jest.spyOn(React, 'useState')
     useEffect = jest.spyOn(React, 'useEffect')
     useStateSpy.mockImplementation(() => [
-      { zooName: '', animals: [], copyAnimals: [], species: [] },
+      { zooName: '', animals: [], allAnimals: [], species: [] },
       useState
     ])
 
@@ -46,7 +46,7 @@ describe('01 | Ejercicios', () => {
     expect(useStateSpy).toHaveBeenCalledWith({
       zooName: '',
       animals: [],
-      copyAnimals: [],
+      allAnimals: [],
       species: []
     })
   })
@@ -79,7 +79,7 @@ describe('01 | Ejercicios', () => {
     expect(useState).toHaveBeenCalledWith({
       zooName: 'Zoo de Prueba',
       animals: [],
-      copyAnimals: [],
+      allAnimals: [],
       species: []
     })
 
@@ -87,7 +87,7 @@ describe('01 | Ejercicios', () => {
     expect(useState).toHaveBeenCalledWith({
       zooName: 'Henry Zoo',
       animals: [],
-      copyAnimals: [],
+      allAnimals: [],
       species: []
     })
   })
