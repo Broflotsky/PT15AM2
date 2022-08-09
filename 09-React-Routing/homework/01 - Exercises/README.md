@@ -91,12 +91,16 @@ Además:
    * El componente `Home.jsx`
 * Una carpeta llamada **NavBar**, la cual a su vez contiene:
    * El componente `NavBar.jsx`
-* Una carpeta llamada **SearchBar**, la cual a su vez contiene:
-   * El componente `SearchBar.jsx`
 * Una carpeta llamada **Card**, la cual a su vez contiene:
    * El componente `Card.jsx`
 * Una carpeta llamada **Cards**, la cual a su vez contiene:
    * El componente `Cards.jsx`
+* Una carpeta llamada **Promotions**, la cual a su vez contiene:
+   * El componente `Promotions.jsx`
+* Una carpeta llamada **Shipping**, la cual a su vez contiene:
+   * El componente `Shipping.jsx`
+* Una carpeta llamada **Detail**, la cual a su vez contiene:
+   * El componente `Detail.jsx`
 
 ---
 
@@ -116,7 +120,7 @@ Además:
 
 🔹 Lo que hay que hacer:
 
-1. Importa `BrowserRouter` desde **'react-router-dom'**
+1. Importa `BrowserRouter` desde **'react-router-dom'**.
 2. Envuelve **App** en el componente ***BrowserRouter***.
 
 ---
@@ -130,13 +134,19 @@ Además:
 
 1. Importa `Routes` y `Route` desde **react-router-dom**.
 2. Renderiza el componente **Routes**.
-3. Crea las siguientes rutas para navegar, utilizando el componente **Route** dentro de ***Routes***:
-   * "/home" --> Para el componente `Home`.
-   * "/detail/:id" --> Para el componente `Detail`.  
-4. Crea las siguientes rutas dinámicas para renderizar los siguientes componentes:
+3. Renderiza el componente **Route** dentro del componente ***Routes***.
+4. El componente ***Route*** debe tener los atributos `path` y `element`.
+
+> Tip:
+> Debes hacer un componente ***Route*** por cada ruta que se precise crear.
+
+5. Para la aplicación Cruise App necesitas crear las siguientes rutas:
+
+   * Home --> path: **"/home"** element: `<Home/>`.
+   * Detail --> path:**"/detail/:id"** element `<Detail/>`.  
+4. Además necesitas crear rutas dinámicas:
    * Nav: Debe aparecer en todas las rutas.
    * Cards: Debe aparecer sólo en la ruta "/".
-   * Detail: Debe aparecer sólo en la ruta "/detail/{detailId}
 
 ---
 
@@ -144,27 +154,17 @@ Además:
 
 ### Links
 
-🔹 Ahora trabajaremos en el componente **Animals.jsx**.
-
-🔹 Abre el archivo `Animals.jsx`, dentro de él encontrarás:
-
-* El import de la librería **React**
-
-* La función de clase `Animals` que renderiza un div.
-   
+🔹 Ahora crea links para navegar entre rutas.   
 
 🔹 Lo que hay que hacer:
 
-1. Dentro del div, mapea y renderiza las props animals  de acuerdo a lo que necesitemos:
-   * Una etiqueta **h5** con el nombre de los animales.
-   * Una etiqueta **img** con los atributos:
-      * ***src*** asignando como valor la imagen de los animales.
-      * ***alt*** asignando como valor el nombre de los animales.
-      * ***width*** con un valor de 300px (para darle un tamaño apropiado a la imagen).
-   * Una etiqueta **span** con la especie de los animales.
+1. En el componente NavBar, importa `Link` desde **react-router-dom**.
+2. Dentro de la etiqueta `nav`, renderiza **Link** con el atributo `to` y asígnale la ruta `"/"`.
+3. En el children de ***Link*** coloca la etiqueta **img** ya creada.
+4. Ahora dirígete al componente Card, importa **Link** desde ***react-router-dom***.
+5. Renderiza Link con su atributo "to" y asígnale la ruta `"/detail/:id"`.
+3. En el children de ***Link*** renderiza el nombre de la naviera.
 
-> Tips: 
-> * Para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
 
 🔹 Resultado esperado:
 

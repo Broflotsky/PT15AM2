@@ -1,17 +1,13 @@
 # Módulo 2 Front End | React-Routing
 
-## Temas de la clase
+## Temas de la homework
 
 - SPA (Single Page Application)
-- React Router
+- React Router DOM
+- Routes
 - Route
 - Link
 - NavLink
-- Navigate
-- Outlet
-- useParams
-- useNavigate
-- useLocation
 
 ---
 
@@ -30,6 +26,7 @@ Al finalizar esta homework habrás aprendido a:
 - Manejor de rutas con parámetros.
 - Crear rutas dinámicas.
 - Anidar rutas.
+
 ---
 
 ## ¿Cómo lo lograremos?
