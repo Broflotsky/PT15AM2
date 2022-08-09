@@ -32,8 +32,8 @@ describe('05 | Ejercicios', () => {
 
   it("Al hacer click en el botón de la especie 'Mamíferos', debe filtrar el estado que le llega por props a Animals por los animales de esa especie", async () => {
     await act(async () => {
+      render(<Species species={[]}/>)
       render(<Zoo />)
-      render(<Species />)
     })
     act(() => {
       fireEvent.click(screen.getByRole('button', { name: 'Mamíferos' }))
@@ -49,8 +49,8 @@ describe('05 | Ejercicios', () => {
 
   it("Al hacer click en el botón de la especie 'Reptiles', debe filtrar el estado que le llega por props a Animals por los animales de esa especie", async () => {
     await act(async () => {
+      render(<Species species={[]}/>)
       render(<Zoo />)
-      render(<Species />)
     })
     act(() => {
       fireEvent.click(screen.getByRole('button', { name: 'Reptiles' }))
@@ -66,8 +66,8 @@ describe('05 | Ejercicios', () => {
 
   it("Al hacer click en el botón de la especie 'Aves', debe filtrar el estado que le llega por props a Animals por los animales de esa especie", async () => {
     await act(async () => {
+      render(<Species species={[]}/>)
       render(<Zoo />)
-      render(<Species />)
     })
     act(() => {
       fireEvent.click(screen.getByRole('button', { name: 'Aves' }))
