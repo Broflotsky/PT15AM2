@@ -243,13 +243,12 @@ fetch("http://localhost:3001/zoo")
 
 1. Renderizar una etiqueta **h2** con el texto `Species`.
 2. El componente recibe props, y dentro del div, mapea y renderiza las especies que vienen por props en una etiqueta **button**.
-3. Agrega a la etiqueta button los siguientes atributos:
+3. En el children del button renderiza las especies.
+4. Agrega a la etiqueta button los siguientes atributos:
    * ***key***
    * El evento ***onClick***, asignándole la función `handleSpecies` que también se recibe por props.
    * Un ***value*** asignándole la especie.
-4. En el children del button renderiza las especies.
-5. Fuera del map, agrega una segunda etiqueta de botón en el que renderices en el evento ***onClick*** la función `handleAllSpecies`.
-6. En el children del segundo botón coloca el texto "All Animals".
+5. Fuera del map, agrega una segunda etiqueta de botón con el evento ***onClick*** que llame a la función `handleAllSpecies` y que su children sea "All Animals".
 
 (Por ahora nuestros botones no hacen nada).
 
