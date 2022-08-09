@@ -1,6 +1,6 @@
 # Módulo 2 Front End | React-Estilos
 
-## Temas de la clase
+## Temas de la homework
 
 - Estilos en React
 - Inline Styling (CSS in JS)

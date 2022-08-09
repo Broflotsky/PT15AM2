@@ -1,8 +1,11 @@
 import NavBar from "../NavBar/NavBar";
 import Cards from "../Cards/Cards";
+import { useState } from "react";
 
 
 export default function Home() {
+
+  const [cruise, setCruise] = useState()
 
   function onSearch(cruise){
     fetch(`http://localhost:3001/cruises?name=${cruise}`)

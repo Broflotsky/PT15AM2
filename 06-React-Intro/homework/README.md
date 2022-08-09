@@ -1,13 +1,12 @@
 # Módulo 2 Front End | React-Intro
 
-## Temas de la clase
+## Temas de la homework
 
 - React
 - Componentes
 - JSX
 - Componentes funcionales y componentes de clase
 - Props
-- Webpack
 
 ---
 
