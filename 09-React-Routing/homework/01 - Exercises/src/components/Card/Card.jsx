@@ -1,9 +1,10 @@
-import React from 'react'
+import styleCard from "./Card.module.css";
 
-function Card() {
+export default function Card({ name, image }) {
   return (
-    <div>Card</div>
-  )
+    <div className={styleCard.container}>
+      <h4>{name}</h4>
+      <img src={image} alt="" />
+    </div>
+  );
 }
-
-export default Card

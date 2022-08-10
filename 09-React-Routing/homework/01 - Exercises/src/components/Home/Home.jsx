@@ -16,13 +16,7 @@ export default function Home() {
 
   return (
     <div>
-      {cruise.map((c) => (
-        <h1>{c.name}</h1>
-      ))}
-
-      <img src={cruise.image} alt="" />
-
-      <Cards />
+      <Cards cruise={cruise} />
     </div>
   );
 }
