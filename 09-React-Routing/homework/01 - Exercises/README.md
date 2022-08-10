@@ -99,8 +99,8 @@ Además:
    * El componente `Promotions.jsx`
 * Una carpeta llamada **Shipping**, la cual a su vez contiene:
    * El componente `Shipping.jsx`
-* Una carpeta llamada **Detail**, la cual a su vez contiene:
-   * El componente `Detail.jsx`
+* Una carpeta llamada **CardDetail**, la cual a su vez contiene:
+   * El componente `CardDetail.jsx`
 
 ---
 
