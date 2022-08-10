@@ -10,7 +10,7 @@
           "travelDay": 1,
           "day": "lunes",
           "date": "sep 25",
-          "dity": "Miami",
+          "city": "Miami",
           "departure_time": "16:00",
           "arrival_Time": "16:00"
         },
@@ -18,7 +18,7 @@
           "travelDay": 2,
           "day": "martes",
           "date": "sep 26",
-          "dity": "Key West",
+          "city": "Key West",
           "departure_time": "13:30",
           "arrival_time": "07:30"
         },
@@ -26,7 +26,7 @@
           "travelDay": 3,
           "day": "miércoles",
           "date": "sep 27",
-          "dity": "Cozumel",
+          "city": "Cozumel",
           "departure_time": "22:00",
           "arrival_time": "12:00"
         },
@@ -34,7 +34,7 @@
           "travelDay": 4,
           "day": "jueves",
           "date": "sep 28",
-          "dity": "Cruising",
+          "city": "Cruising",
           "departure_time": "",
           "arrival_time": ""
         },
@@ -42,7 +42,7 @@
           "travelDay": 5,
           "day": "viernes",
           "date": "sep 29",
-          "dity": "Miami",
+          "city": "Miami",
           "departure_time": "",
           "arrival_time": "08:00"
         }

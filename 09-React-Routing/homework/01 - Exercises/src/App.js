@@ -4,6 +4,7 @@ import Home from "./components/Home/Home.jsx";
 import NavBar from "./components/NavBar/NavBar.jsx";
 import Shipping from "./components/Shipping/Shipping.jsx";
 import Promotions from "./components/Promotions/Promotions.jsx";
+import CardDetail from "./components/CardDetail/CardDetail.jsx";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/shipping" element={<Shipping />} />
         <Route path="/promotions" element={<Promotions />} />
+        <Route path="/card/:id" element={<CardDetail/>} />
       </Routes>
     </div>
   );
