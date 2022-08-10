@@ -1,12 +1,18 @@
 .container {
   display: flex;
   margin: 2em;
-  border: solid black;
-  width: 40vw;
+  border: #454545 solid;
+  color: #f6f4e6;
+  background-color: #454545;
+  border-radius: 5px;
+  width: 30vw;
   height: 40vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 .container img {
-  width: 40vw;
-  height: 40vh;
+  width: 30vw;
+  height: 30vh;
   object-fit: cover;
 }
