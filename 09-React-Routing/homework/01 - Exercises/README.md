@@ -144,7 +144,7 @@ Además:
 
    * Home --> path: **"/home"** element: `<Home/>`.
    * Detail --> path:**"/detail/:id"** element `<Detail/>`.  
-4. Además necesitas crear rutas dinámicas:
+6. Además necesitas crear rutas dinámicas:
    * Nav: Debe aparecer en todas las rutas.
    * Cards: Debe aparecer sólo en la ruta "/".
 
