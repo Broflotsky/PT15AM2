@@ -1,3 +1,4 @@
+import React from "react";
 import styleCard from "./Card.module.css";
 import { Link } from "react-router-dom";
 

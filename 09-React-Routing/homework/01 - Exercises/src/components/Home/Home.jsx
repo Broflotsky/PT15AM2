@@ -1,3 +1,4 @@
+import React from "react";
 import Cards from "../Cards/Cards";
 import { useEffect, useState } from "react";
 
