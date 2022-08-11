@@ -1,11 +1,13 @@
 import styleCard from "./Card.module.css";
+import { Link } from "react-router-dom";
 
-export default function Card({ name, image, itinerary }) {
-  console.log(itinerary.da);
+export default function Card({ name, image, id }) {
   return (
-    <div className={styleCard.container}>
-      <h4>{name}</h4>
-      <img src={image} alt="" />
-    </div>
+    <Link to={`/cruises/${id}`}>
+      <div className={styleCard.container}>
+        <h4>{name}</h4>
+        <img src={image} alt="" />
+      </div>
+    </Link>
   );
 }
