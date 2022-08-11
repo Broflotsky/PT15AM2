@@ -1,14 +1,13 @@
 import styleCard from "./Card.module.css";
-import { NavLink } from "react-router-dom";
-import CardDetail from "../CardDetail/CardDetail";
+import { Link } from "react-router-dom";
 
 export default function Card({ name, image, id }) {
   return (
-    <div className={styleCard.container}>
-      <NavLink to={<CardDetail />}>
+    <Link to={`/cruises/${id}`}>
+      <div className={styleCard.container}>
         <h4>{name}</h4>
         <img src={image} alt="" />
-      </NavLink>
-    </div>
+      </div>
+    </Link>
   );
 }
