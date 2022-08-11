@@ -9,7 +9,6 @@ export default function CardDetail() {
     fetch(`http://localhost:3001/cruises/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.about);
         setCruiseDetail(data);
       })
       .catch((error) => console.log(error));
@@ -30,11 +29,14 @@ export default function CardDetail() {
       {cruiseDetail.itinerary &&
         cruiseDetail.itinerary.map((d) => (
           <div key={d.date}>
-            <p>{d.day}</p>
-            <p>{d.date}</p>
-            <p>{d.city}</p>
-            <p>{d.departure_time}</p>
-            <p>{d.arrival_time}</p>
+            <div>
+              <span>{d.travelDay}</span>
+            </div>
+            <span>{d.day}</span>
+            <span>{d.date}</span>
+            <span>{d.city}</span>
+            <span>{d.departure_time}</span>
+            <span>{d.arrival_time}</span>
           </div>
         ))}
       <img src={cruiseDetail.map} alt={cruiseDetail.name + "map"} />

@@ -135,22 +135,14 @@ Además:
 
 1. Importa `Routes` y `Route` desde **react-router-dom**.
 2. Renderiza el componente **Routes**.
-3. Renderiza el componente **Route** dentro del componente **_Routes_**.
-4. El componente **_Route_** debe tener los atributos `path` y `element`.
+3. Renderiza un componente **Route** dentro del componente **_Routes_** con los atributos `path` y `element`para cada ruta que necesites crear:
 
-> Tip:
-> Debes hacer un componente **_Route_** por cada ruta que se precise crear.
+   - Home --> path: **"/"** element: `<Home/>`.
+   - Shipping --> path: **"/shipping"** element: `<Shipping/>`
+   - Promotions --> path: **"/promotions"** element: `<Promotions/>`
+   - CardDetail --> path: **"/cruises/:id"** element: `<CardDetail/>`.
 
-5. Para la aplicación Cruise App necesitas crear las siguientes rutas:
-
-   - Home --> path: **"/home"** element: `<Home/>`.
-   - Navieras --> path:
-
-   - Cards: Debe aparecer sólo en la ruta "/".
-
-6. Además necesitas crear rutas dinámicas:
-   - Nav: Debe aparecer en todas las rutas.
-   - Detail --> path:**"/detail/:id"** element `<Detail/>`.
+4. Además necesitas que `NavBar` sea una ruta dinámica que aparezca en toda la aplicación.
 
 ---
 
