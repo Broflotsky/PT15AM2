@@ -13,12 +13,17 @@ export default function Promotions() {
       <img
         style={{ width: "50vw" }}
         src="https://cdn-content.crucerum.com/public/storage/destinos/1517345477.jpg"
-        alt=""
+        alt="prom1"
       />
       <img
         style={{ width: "50vw", paddingTop: "2em" }}
         src="https://www.tarjetadeoferta.com/uploads/contest_det/avatar_dets/000/000/002/original/Banner.jpg"
-        alt=""
+        alt="prom2"
+      />
+      <img
+        style={{ width: "50vw", paddingTop: "2em" }}
+        src="https://static.traveltek.net/uploaded/2020/2/1581093734_hpbfredolsenjanv2.jpg"
+        alt="prom3"
       />
     </div>
   );

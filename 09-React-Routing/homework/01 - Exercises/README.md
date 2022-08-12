@@ -206,8 +206,8 @@ Además:
 
 ## Recursos adicionales
 
-- Documentación **"Using the State Hook "** <https://reactjs.org/docs/hooks-state.html>
-- Documentación **"Using the Effect Hook "** <https://reactjs.org/docs/hooks-effect.html>
+- Documentación **"React Router - useNavigate"** <https://reactrouter.com/docs/en/v6/hooks/use-navigate>
+- Documentación **"React Router - useParams"** <https://reactrouter.com/docs/en/v6/hooks/use-params>
 
 ---
 
