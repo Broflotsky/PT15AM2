@@ -165,18 +165,32 @@ Además:
    - Envuelve el código en el componente **Link**.
 
 2. En el componente **_CardDetail_**:
+
    - Importa `useParams` y `useNavigate` desde **react-router-dom**
-   - Destructura el `id` del objeto params para luego usarlo dinámicamente.
+   - Obtiene el `id` del objeto params (utilizando destructuring) para luego usarlo dinámicamente en la ruta.
      Ejemplo:
      ```jsx
-     const { example } = useParams();
+     const { id } = useParams();
      ```
-3. En el componente NavBar, importa `NavLink` desde **react-router-dom**.
-4. Dentro de la etiqueta `nav`, renderiza **Link** con el atributo `to` y asígnale la ruta `"/"`.
-5. En el children de **_Link_** coloca la etiqueta **img** ya creada.
-6. Ahora dirígete al componente Card, importa **Link** desde **_react-router-dom_**.
-7. Renderiza Link con su atributo "to" y asígnale la ruta `"/detail/:id"`.
-8. En el children de **_Link_** renderiza el nombre de la naviera.
+   - Guarda en una constante llamada `navigate` el hook **useNavigate**.
+     Ejemplo:
+     ```jsx
+     const navigate = useNavigate();
+     ```
+   - Crea una función llamada `backToHome` en donde ejecute **navigate** y redirija a la ruta `"/"`.
+   - Al botón que contiene el texto "Volver".
+
+3. En el componente **_NavBar_**:
+
+   - Importa `NavLink` desde **react-router-dom**.
+   - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/"` que envuelva la etiqueta imagen.
+   - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/shipping"` que envuelva la etiqueta span con el texto "Shipping".
+   - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/promotions"` que envuelva la etiqueta span "Promociones".
+
+4. En el children de **_Link_** coloca la etiqueta **img** ya creada.
+5. Ahora dirígete al componente Card, importa **Link** desde **_react-router-dom_**.
+6. Renderiza Link con su atributo "to" y asígnale la ruta `"/detail/:id"`.
+7. En el children de **_Link_** renderiza el nombre de la naviera.
 
 🔹 Resultado esperado:
 

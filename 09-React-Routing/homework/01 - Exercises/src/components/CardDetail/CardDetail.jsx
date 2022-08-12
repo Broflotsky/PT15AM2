@@ -24,7 +24,7 @@ export default function CardDetail() {
   return (
     <div className={styles.container}>
       <button className={styles.buttonBack} onClick={backToHome}>
-        Volver al Home
+        Volver
       </button>
 
       <div>

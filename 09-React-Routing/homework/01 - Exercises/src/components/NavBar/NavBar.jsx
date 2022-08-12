@@ -38,7 +38,7 @@ export default function NavBar() {
               }
               to="/promotions"
             >
-              <span>Promotions</span>
+              <span>Promociones</span>
             </NavLink>
           </li>
         </div>
