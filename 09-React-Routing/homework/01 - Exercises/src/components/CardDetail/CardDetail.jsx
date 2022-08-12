@@ -23,24 +23,44 @@ export default function CardDetail() {
   };
   return (
     <div className={styles.container}>
-      <h1>{cruiseDetail.name}</h1>
-      <img src={cruiseDetail.image} alt={cruiseDetail.name + "picture"} />
-      <p>{cruiseDetail.about}</p>
-      {cruiseDetail.itinerary &&
-        cruiseDetail.itinerary.map((d) => (
-          <div key={d.date}>
-            <div>
-              <span>{d.travelDay}</span>
-            </div>
-            <span>{d.day}</span>
-            <span>{d.date}</span>
-            <span>{d.city}</span>
-            <span>{d.departure_time}</span>
-            <span>{d.arrival_time}</span>
+      <button className={styles.buttonBack} onClick={backToHome}>
+        Volver al Home
+      </button>
+
+      <div>
+        <div>
+          <h1>{cruiseDetail.name}</h1>
+          <img
+            className={styles.image}
+            src={cruiseDetail.image}
+            alt={cruiseDetail.name + "picture"}
+          />
+          <h2>Acerca de {cruiseDetail.name}</h2>
+          <p>{cruiseDetail.about}</p>
+        </div>
+
+        <div className={styles.divMapIti}>
+          <div className={styles.containerTable}>
+            <div className={styles.tableTitle}>Itinerario</div>
+            {cruiseDetail.itinerary &&
+              cruiseDetail.itinerary.map((d) => (
+                <div className={styles.travel} key={d.travelDay}>
+                  <div className={styles.day}>Día {d.travelDay}</div>
+                  <div className={styles.items}>{d.day}</div>
+                  <div className={styles.items}>{d.date}</div>
+                  <div className={styles.items}>{d.city}</div>
+                  <div className={styles.items}>
+                    {d.departure_time ? "Salida: " + d.departure_time : ""}
+                  </div>
+                  <div className={styles.items}>
+                    {d.arrival_time ? "Llegada: " + d.arrival_time : ""}
+                  </div>
+                </div>
+              ))}
           </div>
-        ))}
-      <img src={cruiseDetail.map} alt={cruiseDetail.name + "map"} />
-      <button onClick={backToHome}>Volver al Home</button>
+          <img src={cruiseDetail.map} alt={cruiseDetail.name + "map"} />
+        </div>
+      </div>
     </div>
   );
 }

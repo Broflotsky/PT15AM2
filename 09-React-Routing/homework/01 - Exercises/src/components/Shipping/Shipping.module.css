@@ -1,0 +1,14 @@
+.cruises {
+  display: flex;
+  justify-content: center;
+}
+
+.cruises ul {
+  border: solid #454545 1px;
+  width: 6em;
+  margin: 6em;
+}
+.cruises li {
+  list-style: none;
+  margin: 0%;
+}

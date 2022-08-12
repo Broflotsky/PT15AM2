@@ -1,3 +1,9 @@
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
 .container {
   display: flex;
   margin: 2em;
@@ -23,4 +29,16 @@
   width: 30vw;
   height: 30vh;
   object-fit: cover;
+}
+
+.container img:hover {
+  border-radius: 0% 0% 50% 50% / 0% 0% 5% 5%;
+}
+
+.container h4 {
+  text-decoration: none;
+}
+
+.container h4:hover {
+  color: #fddb3a;
 }

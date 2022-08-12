@@ -154,7 +154,7 @@ Además:
 
 🔹 Lo que hay que hacer:
 
-1. En el componente NavBar, importa `Link` desde **react-router-dom**.
+1. En el componente NavBar, importa `NavLink` desde **react-router-dom**.
 2. Dentro de la etiqueta `nav`, renderiza **Link** con el atributo `to` y asígnale la ruta `"/"`.
 3. En el children de **_Link_** coloca la etiqueta **img** ya creada.
 4. Ahora dirígete al componente Card, importa **Link** desde **_react-router-dom_**.
