@@ -1,11 +1,10 @@
 import React from "react";
 import Cards from "../Cards/Cards";
-import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [cruise, setCruise] = useState([]);
+  const [cruise, setCruise] = React.useState([]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     fetch("http://localhost:3001/cruises")
       .then((res) => res.json())
       .then((data) => {
