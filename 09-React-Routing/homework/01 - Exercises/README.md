@@ -184,13 +184,8 @@ Además:
 
    - Importa `NavLink` desde **react-router-dom**.
    - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/"` que envuelva la etiqueta imagen.
-   - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/shipping"` que envuelva la etiqueta span con el texto "Shipping".
-   - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/promotions"` que envuelva la etiqueta span "Promociones".
-
-4. En el children de **_Link_** coloca la etiqueta **img** ya creada.
-5. Ahora dirígete al componente Card, importa **Link** desde **_react-router-dom_**.
-6. Renderiza Link con su atributo "to" y asígnale la ruta `"/detail/:id"`.
-7. En el children de **_Link_** renderiza el nombre de la naviera.
+   - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/shipping"`, que envuelva la etiqueta span con el texto "Shipping".
+   - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/promotions"`, que envuelva la etiqueta span "Promociones".
 
 🔹 Resultado esperado:
 
