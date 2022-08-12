@@ -86,20 +86,25 @@ Además:
 
 🔹 Para estos ejercicios, trabajaremos en la carpeta `components` y en el archivo `App.js`. Dentro de la carpeta **components** encontrarás:
 
+- Una carpeta llamada **Card**, la cual a su vez contiene:
+  - El componente `Card.jsx`
+  - La hoja de estilos Card.module.css
+- Una carpeta llamada **CardDetail**, la cual a su vez contiene:
+  - El componente `CardDetail.jsx`
+  - La hoja de estilos CardDetail.module.css
+- Una carpeta llamada **Cards**, la cual a su vez contiene:
+  - El componente `Cards.jsx`
+  - La hoja de estilos Cards.module.css
 - Una carpeta llamada **Home**, la cual a su vez contiene:
   - El componente `Home.jsx`
 - Una carpeta llamada **NavBar**, la cual a su vez contiene:
   - El componente `NavBar.jsx`
-- Una carpeta llamada **Card**, la cual a su vez contiene:
-  - El componente `Card.jsx`
-- Una carpeta llamada **Cards**, la cual a su vez contiene:
-  - El componente `Cards.jsx`
+  - La hoja de estilos NavBar.module.css
 - Una carpeta llamada **Promotions**, la cual a su vez contiene:
   - El componente `Promotions.jsx`
 - Una carpeta llamada **Shipping**, la cual a su vez contiene:
   - El componente `Shipping.jsx`
-- Una carpeta llamada **CardDetail**, la cual a su vez contiene:
-  - El componente `CardDetail.jsx`
+  - La hoja de estilos Shipping.module.css
 
 ---
 
@@ -142,7 +147,7 @@ Además:
    - Promotions --> path: **"/promotions"** element: `<Promotions/>`
    - CardDetail --> path: **"/cruises/:id"** element: `<CardDetail/>`.
 
-4. Además necesitas que `NavBar` sea una ruta dinámica que aparezca en toda la aplicación.
+4. Además necesitas que `NavBar` sea una ruta dinámica que aparezca en toda la aplicación, colocándola antes del componente Routes.
 
 ---
 
@@ -154,12 +159,24 @@ Además:
 
 🔹 Lo que hay que hacer:
 
-1. En el componente NavBar, importa `NavLink` desde **react-router-dom**.
-2. Dentro de la etiqueta `nav`, renderiza **Link** con el atributo `to` y asígnale la ruta `"/"`.
-3. En el children de **_Link_** coloca la etiqueta **img** ya creada.
-4. Ahora dirígete al componente Card, importa **Link** desde **_react-router-dom_**.
-5. Renderiza Link con su atributo "to" y asígnale la ruta `"/detail/:id"`.
-6. En el children de **_Link_** renderiza el nombre de la naviera.
+1. En el componente **_Card_**:
+
+   - Importa `Link` desde **react-router-dom**.
+   - Envuelve el código en el componente **Link**.
+
+2. En el componente **_CardDetail_**:
+   - Importa `useParams` y `useNavigate` desde **react-router-dom**
+   - Destructura el `id` del objeto params para luego usarlo dinámicamente.
+     Ejemplo:
+     ```jsx
+     const { example } = useParams();
+     ```
+3. En el componente NavBar, importa `NavLink` desde **react-router-dom**.
+4. Dentro de la etiqueta `nav`, renderiza **Link** con el atributo `to` y asígnale la ruta `"/"`.
+5. En el children de **_Link_** coloca la etiqueta **img** ya creada.
+6. Ahora dirígete al componente Card, importa **Link** desde **_react-router-dom_**.
+7. Renderiza Link con su atributo "to" y asígnale la ruta `"/detail/:id"`.
+8. En el children de **_Link_** renderiza el nombre de la naviera.
 
 🔹 Resultado esperado:
 
