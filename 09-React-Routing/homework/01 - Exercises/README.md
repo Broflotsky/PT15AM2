@@ -178,7 +178,7 @@ Además:
      const navigate = useNavigate();
      ```
    - Crea una función llamada `backToHome` en donde ejecute **navigate** y redirija a la ruta `"/"`.
-   - Al botón que contiene el texto "Volver".
+   - Al botón que contiene el texto "Volver" asígnale el atributo **onClick** en donde se ejecute la función creada **backToHome**.
 
 3. En el componente **_NavBar_**:
 
