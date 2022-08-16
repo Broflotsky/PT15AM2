@@ -54,7 +54,7 @@ describe("03 | Ejercicios", () => {
     mockUseEffect();
   });
 
-  it("Envuelve todo el código dentro del componente Link que importaste previamente desde react-router-dom", () => {
+  it("Componente Card | Envuelve todo el código dentro del componente Link que importaste previamente desde react-router-dom", () => {
     const card = shallow(<Card />);
     expect(card.find("Link")).toHaveLength(1);
   });
@@ -88,7 +88,28 @@ describe("03 | Ejercicios", () => {
     const homeLink = navBar.find("NavLink").at(0);
     expect(homeLink).toBeDefined();
     expect(homeLink.prop("to")).toBe("/");
-    
+  });
+
+  it("Componente NavBar | Deberia renderizar un </NavLink> para redirigir a '/shipping'", () => {
+    const navBar = mount(
+      <MemoryRouter initialEntries={["/", "/cruises/2", "/shipping", "/promotions"]}>
+        <NavBar />
+      </MemoryRouter>
+    )
+    const shippingLink = navBar.find("NavLink").at(1);
+    expect(shippingLink).toBeDefined();
+    expect(shippingLink.prop("to")).toBe("/shipping");
+  });
+
+  it("Componente NavBar | Deberia renderizar un </NavLink> para redirigir a '/promotions'", () => {
+    const navBar = mount(
+      <MemoryRouter initialEntries={["/", "/cruises/2", "/shipping", "/promotions"]}>
+        <NavBar />
+      </MemoryRouter>
+    )
+    const promotionsLink = navBar.find("NavLink").at(2);
+    expect(promotionsLink).toBeDefined();
+    expect(promotionsLink.prop("to")).toBe("/promotions");
   });
 
   afterEach(() => jest.restoreAllMocks());
