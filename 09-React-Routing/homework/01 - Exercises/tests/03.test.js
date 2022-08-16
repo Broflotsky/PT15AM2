@@ -85,9 +85,8 @@ describe("03 | Ejercicios", () => {
         <NavBar />
       </MemoryRouter>
     )
-    const homeLink = navBar.find("NavLink").at(0);
+    const homeLink = navBar.find("NavLink").findWhere(n => n.prop("to") === "/");
     expect(homeLink).toBeDefined();
-    expect(homeLink.prop("to")).toBe("/");
   });
 
   it("Componente NavBar | Deberia renderizar un </NavLink> para redirigir a '/shipping'", () => {
@@ -96,9 +95,8 @@ describe("03 | Ejercicios", () => {
         <NavBar />
       </MemoryRouter>
     )
-    const shippingLink = navBar.find("NavLink").at(1);
+    const shippingLink = navBar.find("NavLink").findWhere(n => n.prop("to") === "/shipping");
     expect(shippingLink).toBeDefined();
-    expect(shippingLink.prop("to")).toBe("/shipping");
   });
 
   it("Componente NavBar | Deberia renderizar un </NavLink> para redirigir a '/promotions'", () => {
@@ -107,9 +105,8 @@ describe("03 | Ejercicios", () => {
         <NavBar />
       </MemoryRouter>
     )
-    const promotionsLink = navBar.find("NavLink").at(2);
+    const promotionsLink = navBar.find("NavLink").findWhere(n => n.prop("to") === "/promotions");
     expect(promotionsLink).toBeDefined();
-    expect(promotionsLink.prop("to")).toBe("/promotions");
   });
 
   afterEach(() => jest.restoreAllMocks());
