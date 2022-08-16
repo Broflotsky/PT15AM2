@@ -189,18 +189,18 @@ Además:
 
 🔹 Resultado esperado:
 
-<p align="center"><img src="./img/img02.gif" height="300px"></p>
+<p align="center"><img src="./img/img.gif" height="300px"></p>
 
 ---
 
 ## Recordemos que...
 
-- Los hooks son funciones especiales que nos permiten acceder a las funcionalidades de React.
-- El hook React.useState devuelve un array en el que tendrá el valor de ese estado y un método para actualizar ese estado.
-- Las variables de estado no tienen que inicializarse siempre en un objeto, puede ser en un array, string, número, boolean, etc.
-- Puedes usar en el componente los React.useState que desees.😃
-- El hook useEffect recibe dos parámetros: la función que React ejecutará cada renderización y un array de dependencias como opcional.
-- Puedes Utilizar más de un useEffect en el mismo componente. 😃
+- Para conectar nuestra aplicación a la url del navegador debes renderizar Browser Router alrededor de tu app .
+- Routes genera un árbol de rutas y es a partir de esto que podemos renderizar los componentes.
+- Route representa una ruta en el árbol, siempre debe ir con sus atributos path y element.
+- La diferencia entre Link y NavLink está que Link no tiene un estilo especial y NavLink resalta el enlace actual o activo utilizando la función "isActive".😃
+- useParams devuelve un objeto con las propiedades y el valor de los segmentos dinámicos de la URL.
+- useNavigate devuelve una función que permite la navegación programática en la aplicación. 😃
 
 ---
 
