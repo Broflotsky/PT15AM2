@@ -19,7 +19,7 @@ export default function CardDetail() {
   const navigate = useNavigate();
 
   const backToHome = () => {
-    navigate("/", { replace: true });
+    navigate("/");
   };
   return (
     <div className={styles.container}>
