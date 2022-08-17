@@ -14,7 +14,7 @@ export default function NavBar() {
         </li>
         <div className={styleNav.options}>
           <li>
-            <span>Shipping</span>
+            <span>Navieras</span>
           </li>
           <li>
             <span>Promociones</span>
