@@ -125,8 +125,7 @@ Además:
 
 🔹 Lo que hay que hacer:
 
-1. Importa `BrowserRouter` desde **'react-router-dom'**.
-2. Envuelve **App** en el componente **_BrowserRouter_**.
+1. Importa `BrowserRouter` desde **'react-router-dom'** y envuelve **App** en el componente **_BrowserRouter_**.
 
 ---
 
