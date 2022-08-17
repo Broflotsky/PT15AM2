@@ -14,7 +14,7 @@ Continuamos con nuestra Rick & Morty App, utilizando React Router DOM vamos a en
 
 Al finalizar, tendremos tres rutas que podremos navegar:
 
-- **"/"**: El home.
+- **"/"**: Home.
 - **"/detail/{detailId}/"**: en esta ruta, tendremos información más detallada sobre el personaje en particular.
 - **"/about"**: en esta ruta colocarás tu nombre y describirás de qué trata la aplicación Rick & Morty.
 

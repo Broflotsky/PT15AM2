@@ -162,7 +162,7 @@ Además:
 1. En el componente **_Card_**:
 
    - Importa `Link` desde **react-router-dom**.
-   - Envuelve el código en el componente **Link**.
+   - Envuelve el código en el componente **Link** con el atributo to, en el que dirija a la ruta '`/cruises/${id}`'.
 
 2. En el componente **_CardDetail_**:
 
