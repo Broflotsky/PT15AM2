@@ -137,16 +137,15 @@ Además:
 
 🔹 Lo que hay que hacer:
 
-1. Importa `Routes` y `Route` desde **react-router-dom**.
-2. Renderiza el componente **Routes**.
-3. Renderiza un componente **Route** dentro del componente **_Routes_** con los atributos `path` y `element`para cada ruta que necesites crear:
+1. Importa `Routes` y `Route` desde **react-router-dom** y renderiza el componente **Routes**.
+2. Renderiza un componente **Route** dentro del componente **_Routes_** con los atributos `path` y `element`para cada ruta que necesites crear:
 
    - Home --> path: **"/"** element: `<Home/>`.
    - Shipping --> path: **"/shipping"** element: `<Shipping/>`
    - Promotions --> path: **"/promotions"** element: `<Promotions/>`
    - CardDetail --> path: **"/cruises/:id"** element: `<CardDetail/>`.
 
-4. Además necesitas que `NavBar` sea una ruta dinámica que aparezca en toda la aplicación, colocándola antes del componente Routes.
+3. Además necesitas que `NavBar` sea una ruta dinámica que aparezca en toda la aplicación, colocándola antes del componente Routes.
 
 ---
 
