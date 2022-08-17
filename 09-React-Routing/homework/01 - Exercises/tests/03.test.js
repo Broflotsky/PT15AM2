@@ -30,7 +30,6 @@ describe("03 | Ejercicios", () => {
   const mockUseEffect = () => useEffect.mockImplementation(() => jest.fn());
   const navigate = jest.fn();
   beforeEach(() => {
-
     console.error.mockClear();
 
     let id;
@@ -81,32 +80,35 @@ describe("03 | Ejercicios", () => {
 
   it("Componente NavBar | Deberia renderizar un </NavLink> para redirigir a '/'", () => {
     const navBar = mount(
-      <MemoryRouter initialEntries={["/", "/cruises/2", "/shipping", "/promotions"]}>
+      <MemoryRouter
+        initialEntries={["/", "/cruises/2", "/shipping", "/promotions"]}
+      >
         <NavBar />
       </MemoryRouter>
-    )
-    const homeLink = navBar.find("NavLink").findWhere(n => n.prop("to") === "/");
-    expect(homeLink).toBeDefined();
+    );
+    expect(navBar.find("NavLink").at(0).prop("to")).toBe("/");
   });
 
   it("Componente NavBar | Deberia renderizar un </NavLink> para redirigir a '/shipping'", () => {
     const navBar = mount(
-      <MemoryRouter initialEntries={["/", "/cruises/2", "/shipping", "/promotions"]}>
+      <MemoryRouter
+        initialEntries={["/", "/cruises/2", "/shipping", "/promotions"]}
+      >
         <NavBar />
       </MemoryRouter>
-    )
-    const shippingLink = navBar.find("NavLink").findWhere(n => n.prop("to") === "/shipping");
-    expect(shippingLink).toBeDefined();
+    );
+    expect(navBar.find("NavLink").at(1).prop("to")).toBe("/shipping");
   });
 
   it("Componente NavBar | Deberia renderizar un </NavLink> para redirigir a '/promotions'", () => {
     const navBar = mount(
-      <MemoryRouter initialEntries={["/", "/cruises/2", "/shipping", "/promotions"]}>
+      <MemoryRouter
+        initialEntries={["/", "/cruises/2", "/shipping", "/promotions"]}
+      >
         <NavBar />
       </MemoryRouter>
-    )
-    const promotionsLink = navBar.find("NavLink").findWhere(n => n.prop("to") === "/promotions");
-    expect(promotionsLink).toBeDefined();
+    );
+    expect(navBar.find("NavLink").at(2).prop("to")).toBe("/promotions");
   });
 
   afterEach(() => jest.restoreAllMocks());
