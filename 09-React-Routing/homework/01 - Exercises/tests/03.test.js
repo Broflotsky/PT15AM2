@@ -16,6 +16,7 @@ import NavBar from "../src/components/NavBar/NavBar";
 // Configuramos Enzyme y limpiamos sus mensajes de error
 configure({ adapter: new Adapter() });
 console.error = jest.fn();
+console.warn = jest.fn();
 
 // Configuramos fetch
 global.fetch = fetch;
@@ -31,7 +32,7 @@ describe("03 | Ejercicios", () => {
   const navigate = jest.fn();
   beforeEach(() => {
     console.error.mockClear();
-
+    console.warn.mockClear();
     let id;
 
     const apiMock = nock("http://localhost:3001").persist();

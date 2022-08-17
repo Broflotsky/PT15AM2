@@ -159,8 +159,7 @@ Además:
 
 1. En el componente **_Card_**:
 
-   - Importa `Link` desde **react-router-dom**.
-   - Envuelve el código en el componente **Link**.
+   - Importa `Link` desde **react-router-dom** y envuelve el código en el componente **Link**.
 
 2. En el componente **_CardDetail_**:
 
