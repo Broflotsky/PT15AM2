@@ -7,15 +7,17 @@ export default function NavBar() {
     <div className={styleNav.container}>
       <ul className={styleNav.menu}>
         <li>
-        <img src={logo} alt="logo" />
+          <img src={logo} alt="logo" />
         </li>
         <li>
           <h1>Central de Cruceros</h1>
         </li>
         <div className={styleNav.options}>
           <li>
+            <span>Navieras</span>
           </li>
           <li>
+            <span>Promociones</span>
           </li>
         </div>
       </ul>
