@@ -125,8 +125,7 @@ Además:
 
 🔹 Lo que hay que hacer:
 
-1. Importa `BrowserRouter` desde **'react-router-dom'**.
-2. Envuelve **App** en el componente **_BrowserRouter_**.
+1. Importa `BrowserRouter` desde **'react-router-dom'** y envuelve **App** en el componente **_BrowserRouter_**.
 
 ---
 
@@ -138,16 +137,15 @@ Además:
 
 🔹 Lo que hay que hacer:
 
-1. Importa `Routes` y `Route` desde **react-router-dom**.
-2. Renderiza el componente **Routes**.
-3. Renderiza un componente **Route** dentro del componente **_Routes_** con los atributos `path` y `element`para cada ruta que necesites crear:
+1. Importa `Routes` y `Route` desde **react-router-dom** y renderiza el componente **Routes**.
+2. Renderiza un componente **Route** dentro del componente **_Routes_** con los atributos `path` y `element`para cada ruta que necesites crear:
 
    - Home --> path: **"/"** element: `<Home/>`.
    - Shipping --> path: **"/shipping"** element: `<Shipping/>`
    - Promotions --> path: **"/promotions"** element: `<Promotions/>`
    - CardDetail --> path: **"/cruises/:id"** element: `<CardDetail/>`.
 
-4. Además necesitas que `NavBar` sea una ruta dinámica que aparezca en toda la aplicación, colocándola antes del componente Routes.
+3. Además necesitas que `NavBar` sea una ruta dinámica que aparezca en toda la aplicación, colocándola antes del componente Routes.
 
 ---
 
@@ -161,8 +159,7 @@ Además:
 
 1. En el componente **_Card_**:
 
-   - Importa `Link` desde **react-router-dom**.
-   - Envuelve el código en el componente **Link** con el atributo to, en el que dirija a la ruta '`/cruises/${id}`'.
+   - Importa `Link` desde **react-router-dom** y envuelve el código en el componente **Link** con el atributo to, en el que dirija a la ruta '`/cruises/${id}`'.
 
 2. En el componente **_CardDetail_**:
 
@@ -184,7 +181,7 @@ Además:
 
    - Importa `NavLink` desde **react-router-dom**.
    - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/"` que envuelva la etiqueta imagen.
-   - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/shipping"`, que envuelva la etiqueta span con el texto "Shipping".
+   - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/shipping"`, que envuelva la etiqueta span con el texto "Navieras".
    - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/promotions"`, que envuelva la etiqueta span "Promociones".
 
 🔹 Resultado esperado:
