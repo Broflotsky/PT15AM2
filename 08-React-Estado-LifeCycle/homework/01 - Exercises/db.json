@@ -1,0 +1,32 @@
+{
+  "zoo": {
+    "species": ["Mamíferos", "Reptiles", "Aves"],
+    "animals": [
+      {
+        "name": "León",
+        "specie": "Mamíferos",
+        "image": "https://3.bp.blogspot.com/-eBecCh7SUwA/UYEHi98ozZI/AAAAAAAAD70/trn8KMoYza4/s1600/Leon_1.jpg"
+      },
+      {
+        "name": "Delfín",
+        "specie": "Mamíferos",
+        "image": "https://www.bioenciclopedia.com/wp-content/uploads/2012/04/delfin-comun-800.jpg"
+      },
+      {
+        "name": "Cocodrilo",
+        "specie": "Reptiles",
+        "image": "https://www.tribuna.com.mx/u/fotografias/m/2020/12/23/f960x540-168819_242894_0.jpg"
+      },
+      {
+        "name": "Pavo real",
+        "specie": "Aves",
+        "image": "https://www.zoobarcelona.cat/sites/default/files/animal/2016-12/Pavo%20cristatus3.jpg"
+      },
+      {
+        "name": "Boa constrictor",
+        "specie": "Reptiles",
+        "image": "https://www.beardsleyzoo.org/uploads/1/2/4/2/124214186/266_orig.jpg"
+      }
+    ]
+  }
+}

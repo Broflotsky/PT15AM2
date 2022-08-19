@@ -16,8 +16,6 @@ Con tu App podremos:
 * Poder agregar las películas a tu lista de favoritos.
 * Poder sacar películas de tu lista de favoritos.
 
-
-
 ### Comenzamos
 
 Para poder comenzar tenemos que instalar las dependencias que utilizaremos. Tendran en el `package.json` ya las dependencias. Ahora hacemos:

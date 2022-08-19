@@ -40,7 +40,7 @@ En la segunda parte, vamos a modificar un poco de código para pasar los tests.
 
 Nuestra tarea va a ser construir este formulario:
 
-![](./public/formulario.png)
+![form](./public/formulario.png)
 
 Va a tener:
 

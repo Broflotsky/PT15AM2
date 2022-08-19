@@ -6,7 +6,7 @@ En este proyecto, serás facilitado con el codigo basico de una pequeña aplicac
 
 El botón de incremento debería incrementar el contador en 1.
 
-Por el contrario, el botón de disminución debería disminuir el contador en 1. 
+Por el contrario, el botón de disminución debería disminuir el contador en 1.
 
 El objetivo de este proyecto es familiarizarte con el patrón de flujo de datos global de Redux, así como exponerte a cómo Redux está típicamente conectado a una aplicación de React.
 
