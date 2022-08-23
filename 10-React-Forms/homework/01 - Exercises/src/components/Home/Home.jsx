@@ -2,13 +2,13 @@ import React from "react";
 import Cards from "../Cards/Cards";
 
 export default function Home() {
-  const [cruise, setCruise] = React.useState([]);
+  const [music, setMusic] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("http://localhost:3001/cruises")
+    fetch("http://localhost:3001/music")
       .then((res) => res.json())
       .then((data) => {
-        setCruise(...cruise, data);
+        setMusic(...music, data);
       })
       .catch((error) => console.log(error));
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <div>
-      <Cards cruise={cruise} />
+      <Cards music={music} />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-# HW 02 - React-Routing | Ejercicios
+# HW 10 - React-Forms | Ejercicios
 
 ## Duración estimada 🕒
 
@@ -8,15 +8,15 @@ x minutos
 
 ## Intro
 
-Encontrarás en esta homework la Cruise App ya estructurada con sus componentes, lo que debes realizar, de acuerdo con lo visto en clase, es el enrutamiento de la aplicación.
+En esta homework encontrarás casi lista la Music App, sin embargo, deberás solucionar al usuario la necesidad de que se comunique con la plataforma, posiblemente para dejar un mensaje contando la experiencia y/o sugerencias para la aplicación.
 
 ---
 
 ## Consigna de la homework
 
-- Implementar las rutas correspondientes para renderizar los componentes de la aplicación.
-- Realizar redirecciones a otros componentes.
-- Mantener renderizado un componente en todas las rutas.
+- Crear un formulario controlado.
+- Crear inputs dinámicos.
+- Manejar errores en los inputs.
 
 ---
 
@@ -79,59 +79,57 @@ Además:
 
 🔹 Dentro de la carpeta `src` encontrarás el esqueleto del proyecto React, estructurado de la siguiente manera:
 
+- Un carpeta llamada `assets`
 - Una carpeta llamada `components`
 - Un archivo llamado `App.js`
 - Un archivo **index.css**
 - Un archivo `index.js`
 
-🔹 Para estos ejercicios, trabajaremos en la carpeta `components` y en el archivo `App.js`. Dentro de la carpeta **components** encontrarás:
+🔹 Dentro de la carpeta `components` encontrarás:
 
 - Una carpeta llamada **Card**, la cual a su vez contiene:
   - El componente `Card.jsx`
   - La hoja de estilos Card.module.css
-- Una carpeta llamada **CardDetail**, la cual a su vez contiene:
-  - El componente `CardDetail.jsx`
-  - La hoja de estilos CardDetail.module.css
 - Una carpeta llamada **Cards**, la cual a su vez contiene:
   - El componente `Cards.jsx`
   - La hoja de estilos Cards.module.css
+- Una carpeta llamada **Contact**, la cual a su vez contiene:
+  - El componente `Contact.jsx`
 - Una carpeta llamada **Home**, la cual a su vez contiene:
   - El componente `Home.jsx`
 - Una carpeta llamada **NavBar**, la cual a su vez contiene:
   - El componente `NavBar.jsx`
   - La hoja de estilos NavBar.module.css
-- Una carpeta llamada **Promotions**, la cual a su vez contiene:
-  - El componente `Promotions.jsx`
-- Una carpeta llamada **Shipping**, la cual a su vez contiene:
-  - El componente `Shipping.jsx`
-  - La hoja de estilos Shipping.module.css
 
 ---
 
 ## 👩‍💻 Ejercicio 1
 
-### BrowserRouter
+### Crear inputs
 
-🔹 Abre el archivo `index.js`, dentro de él encontrarás:
-
-- El import de:
-
-  - **React**
-  - **ReactDOM**
-  - **index.css**
-  - **App.js**
-
-- También encontrarás el ReactDOM renderizando los elementos de react en el navegador.
+🔹 Abre el archivo `Contact.jsx`, dentro de él encontrarás el import de **React**
 
 🔹 Lo que hay que hacer:
 
-1. Importa `BrowserRouter` desde **'react-router-dom'** y envuelve **App** en el componente **_BrowserRouter_**.
+1. Crea una etiqueta form.
+2. Dentro de la etiqueta form, crear:
+
+- Una etiqueta label y su children sea **Nombre:**
+- Una etiqueta input con los atributos `name`, `value`, `placeholder`, por ahora, que estos atributos sean string vacío.
+- Una etiqueta label y su children sea **Correo Electrónico:**
+- Otra etiqueta input con los atributos `name`, `value`, `placeholder`, por ahora, que estos atributos sean string vacío.
+- Una etiqueta label y su children sea **Teléfono:**
+- Otra etiqueta input con los atributos `name`, `value`, `placeholder`, por ahora, que estos atributos sean string vacío.
+- Una etiqueta label y su children sea **Asunto:**
+- Otra etiqueta input con los atributos `name`, `value`, `placeholder`, por ahora, que estos atributos sean string vacío.
+- Una etiqueta label y su children sea **Mensaje:**
+- Otra etiqueta input con los atributos `name`, `value`, `placeholder`, por ahora, que estos atributos sean string vacío.
 
 ---
 
 ## 👩‍💻 Ejercicio 2
 
-### Routing
+### Estados
 
 🔹 Ahora dirígete al componente App.js.
 
@@ -151,7 +149,48 @@ Además:
 
 ## 👩‍💻 Ejercicio 3
 
-### Links
+### Errores
+
+🔹 Ahora crea links para navegar entre rutas.
+
+🔹 Lo que hay que hacer:
+
+1. En el componente **_Card_**:
+
+   - Importa `Link` desde **react-router-dom** y envuelve el código en el componente **Link** con el atributo to, en el que dirija a la ruta '`/cruises/${id}`'.
+
+2. En el componente **_CardDetail_**:
+
+   - Importa `useParams` y `useNavigate` desde **react-router-dom**
+   - Obtiene el `id` del objeto params (utilizando destructuring) para luego usarlo dinámicamente en la ruta.
+     Ejemplo:
+     ```jsx
+     const { id } = useParams();
+     ```
+   - Guarda en una constante llamada `navigate` el hook **useNavigate**.
+     Ejemplo:
+     ```jsx
+     const navigate = useNavigate();
+     ```
+   - Crea una función llamada `backToHome` en donde ejecute **navigate** y redirija a la ruta `"/"`.
+   - Al botón que contiene el texto "Volver" asígnale el atributo **onClick** en donde se ejecute la función creada **backToHome**.
+
+3. En el componente **_NavBar_**:
+
+   - Importa `NavLink` desde **react-router-dom**.
+   - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/"` que envuelva la etiqueta imagen.
+   - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/shipping"`, que envuelva la etiqueta span con el texto "Navieras".
+   - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/promotions"`, que envuelva la etiqueta span "Promociones".
+
+🔹 Resultado esperado:
+
+<p align="center"><img src="./img/img.gif" height="300px"></p>
+
+---
+
+## 👩‍💻 Ejercicio 4
+
+### Envío de formulario
 
 🔹 Ahora crea links para navegar entre rutas.
 

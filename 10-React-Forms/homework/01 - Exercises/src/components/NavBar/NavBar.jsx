@@ -1,5 +1,6 @@
 import React from "react";
-import logo from "../../assets/logo.png";
+import { NavLink, Link } from "react-router-dom";
+import logo from "../../assets/logo.jpg";
 import styleNav from "./NavBar.module.css";
 
 export default function NavBar() {
@@ -7,17 +8,23 @@ export default function NavBar() {
     <div className={styleNav.container}>
       <ul className={styleNav.menu}>
         <li>
-          <img src={logo} alt="logo" />
+          <Link to="/">
+            <img src={logo} alt="logo" />
+          </Link>
         </li>
         <li>
-          <h1>Central de Cruceros</h1>
+          <h1>TIPOS DE MÚSICA</h1>
         </li>
         <div className={styleNav.options}>
           <li>
-            <span>Navieras</span>
-          </li>
-          <li>
-            <span>Promociones</span>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? styleNav.active : styleNav.disable
+              }
+              to="/contact"
+            >
+              <span>Contacto</span>
+            </NavLink>
           </li>
         </div>
       </ul>
