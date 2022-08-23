@@ -22,18 +22,22 @@ Al finalizar, tendremos tres rutas que podremos navegar:
 
 ## Comencemos
 
-En el archivo `App.js` ya tenemos importados y estamos renderizando los 3 componentes que vamos a codear. Revisa el código, verás que le estamos pasando props a estos componentes.
+Vamos a comenzar creando los componentes que nos faltan en nuestra carpeta components. Creamos `About.jsx` y `Detalle.jsx` con sus respectivos archivos `.css` para el estilado dentro de la carpeta `components`.
 
 ---
 
 ### 👩‍💻 Ejercicio 1
 
-### Crear Nav
+### Rutas dinámicas
 
-1. Crear el componente `Nav`.
-2. Escribir el código correspondiente en `components/Nav.jsx`.
+Cómo sabemos, `react-router` nos da la posibilidad de crear rutas dinámicas. Estas rutas serán los caminos o espacios en el que se renderizará el componente que nosotros decidamos.
+nos permitiras y podemos decidir qué componentes queremos que aparezcan en qué rutas.
+Para nuestro ejercicio nosotros queremos ver lo siguiente:
 
-> **Hint**: Este componente debe incluir el componente `SearchBar`.
+- `<Nav />` tiene que aparecer en todas las rutas.
+- `<Cards />` debe aparecer sólo en la ruta `/`.
+- `<About />` debe aparecer sólo la ruta `/about`.
+- `<Detail />` debe aparecer sólo en la ruta `/detail/{detailId}`
 
 ---
 

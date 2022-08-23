@@ -1,0 +1,151 @@
+{
+  "cruises": [
+    {
+      "id": 1,
+      "name": "Carnival",
+      "image": "http://www.cruceroclick.com/admin/archivos/Image/CARNIVAL/Carnival%20Victory%20Navegando%20Proa.jpg",
+      "about": "Carnival Cruise Lines es un miembro de la exclusiva Alianza Principal Mundial de Líneas de Cruceros, que también incluye muchas de las líneas más finas del mundo de cruceros. En conjunto, estas líneas afiliadas comparten un compromiso con la excelencia y el valor, que ofrece una sinfonía de vacaciones en crucero diseñado para atraer a una amplia variedad de estilos de vida y presupuestos y navegar a algunos de los destinos turísticos más atractivos del planeta. Carnival Cruise Lines se enorgullece en ser el 'Más Popular de Vacaciones en Crucero en el Mundo' - una distinción que logra ofrecer una amplia gama de cruceros de vacaciones de calidad que son a la vez asequible y agradable para todos los que buscan una aventura increíble de cruceros. Carnival Cruise Lines es la línea de cruceros más grande, ya que ofrecen vacaciones crucero de calidad a precios asequibles - hasta ahora el mejor valor en el mercado de vacaciones. Carnival se esfuerza cada día para ofrecer un gran servicio a nuestros pasajeros, tanto si está de vacaciones a bordo de un 'Fun Ship' (Barco de Diversión) o interactuando con nuestro equipo de expertos de excursiones en tierra antes o después de su viaje. Carnival Cruise Lines reconoce que sus vacaciones son muy importantes para usted - una inversión en tiempo y dinero que debe ser verdaderamente gratificante - así Carnival quiere hacer todo lo posible para asegurarse que su crucero sea agradable y sobre todo divertido!",
+      "itinerary": [
+        {
+          "travelDay": 1,
+          "day": "lunes",
+          "date": "sep 25",
+          "city": "Miami",
+          "departure_time": "16:00",
+          "arrival_Time": "16:00"
+        },
+        {
+          "travelDay": 2,
+          "day": "martes",
+          "date": "sep 26",
+          "city": "Key West",
+          "departure_time": "13:30",
+          "arrival_time": "07:30"
+        },
+        {
+          "travelDay": 3,
+          "day": "miércoles",
+          "date": "sep 27",
+          "city": "Cozumel",
+          "departure_time": "22:00",
+          "arrival_time": "12:00"
+        },
+        {
+          "travelDay": 4,
+          "day": "jueves",
+          "date": "sep 28",
+          "city": "Cruising",
+          "departure_time": "",
+          "arrival_time": ""
+        },
+        {
+          "travelDay": 5,
+          "day": "viernes",
+          "date": "sep 29",
+          "city": "Miami",
+          "departure_time": "",
+          "arrival_time": "08:00"
+        }
+      ],
+      "map": "https://i.pinimg.com/originals/18/ec/4e/18ec4e1625d5b3e4eb5270abb4b05894.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Norwegian",
+      "image": "https://images.canusa.de/img/kreuzfahrt/ncl/norwegian-getaway/aerial-meer-nassau.cr5679x2489-0x386.2000x877cut.q80.jpg",
+      "about": "Solo Norwegian ofrece Freestyle Cruising. Son tus vacaciones y eres libre de disfrutarlo en tus propios términos. Vístete elegante o informal. Duerme hasta tarde o disfruta el amanecer desde tu propio camarote con balcón privado. Disfruta de entretenimientos totalmente nuevos en alta mar. Incluso puedes comer en un lugar diferente cada día de la semana. Con Freestyle Cruising tienes una gran variedad de opciones de restaurantes de cortesía incluidos en el precio de tu crucero, y todos disponibles según tus horarios. La libertad continúa con entretenimiento para todos. Desde espectáculos de Broadway hasta clubes para adultos, donde puedes bailar hasta el amanecer, y actividades supervisadas para niños y adolescentes. Cuando quieras recuperarte de tanta diversión, puedes ir a tu camarote de alojamiento que está diseñado para complementarse con la manera en que viajas en crucero. El Norwegian Epic es el barco que eligen los que viajan al Mediterráneo o al Caribe. De hecho, literalmente hemos cambiado el rostro del entretenimiento en líneas de cruceros con la presentación de Burn the Floor y Priscila, la Reina del Desierto (ésta última desde Octubre 2015), y eso es solo el comienzo. Norwegian Epic ofrece artistas de primer nivel y un nuevo estilo de alojamiento: desde los camarotes Studio, diseñados y con un precio acorde a pasajeros solos, al camarote privado Haven. Agrega más de 20 diferentes opciones de comidas y entenderás por qué esto es Freestyle Cruising a una verdadera gran escala.",
+      "itinerary": [
+        {
+          "travelDay": 1,
+          "day": "sábado",
+          "date": "mayo 06",
+          "city": "Honolulu, hi",
+          "departure_time": "19:00",
+          "arrival_time": ""
+        },
+        {
+          "travelDay": 2,
+          "day": "domingo",
+          "date": "mayo 07",
+          "city": "Kahului, hi",
+          "departure_time": "08:00",
+          "arrival_time": "14:00"
+        },
+        {
+          "travelDay": 3,
+          "day": "martes",
+          "date": "mayo 09",
+          "city": "Hilo, hi",
+          "departure_time": "08:00",
+          "arrival_time": "12:00"
+        },
+        {
+          "travelDay": 4,
+          "day": "jueves",
+          "date": "mayo 11",
+          "city": "Cruising",
+          "departure_time": "",
+          "arrival_time": ""
+        },
+        {
+          "travelDay": 5,
+          "day": "sábado",
+          "date": "mayo 13",
+          "city": "Honolulu, hi",
+          "departure_time": "",
+          "arrival_time": "07:00"
+        }
+      ],
+      "map": "https://www.stepmap.de/landkarte/Hawaii-reise-1286937.png"
+    },
+    {
+      "id": 3,
+      "name": "Royal Caribbean",
+      "image": "https://www.orlandosentinel.com/resizer/YT0y-buQ2ABUtNroqY4ZFgCLsEk=/1440x0/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/tronc/EA67Y6DC7BAY7FA64VUUYVRBYA.jpg",
+      "about": "Royal Caribbean International cuenta con una flota de 41 barcos actualmente en servicio. Con sus cruceros, la compañía ofrece itinerarios exclusivos. Royal Caribbean ha revolucionado el concepto de crucero. Ha traído al mar el primer muro de escalada libre, la primera pista de patinaje sobre hielo, el primer Royal Promenade, el primer Surf Park, el primer ring de boxeo, el primer Central Park, el primer AcquaTheater, un carrusel construido totalmente a mano ... En 2006 inauguró el Freedom of the Seas, el primero de la clase a la que da nombre. Completan la clase Freedon el Liberty of the Seas desde 2007 y el Independence of the Seas desde 2008. En Noviembre del 2009 Royal Caribbean dio a conocer el barco más grande e innovador jamás construido, el Oasis of the Seas, que traslada el mundo de los cruceros a una nueva era. El segundo barco de esta nueva clase, el Allure of the Seas, comenzó su andadura a principios de 2011. Destinos: Alaska, Asia, Australia / Nueva Zelanda, Bahamas, Bermudas, Canadá Inglaterra / Nueva, el Caribe, Dubai, Europa, Hawai, México, Canal de Panamá y Sudamérica. Royal Caribbean visita 254 puertos en 76 países de los 5 continentes.",
+      "itinerary": [
+        {
+          "travelDay": 1,
+          "day": "sábado",
+          "date": "jun 06",
+          "city": "Civitavecchia (Roma), Italia",
+          "departure_time": "08:00",
+          "arrival_time": ""
+        },
+        {
+          "travelDay": 2,
+          "day": "domingo",
+          "date": "jun 07",
+          "city": "Messina (Sicilia), Italia",
+          "departure_time": "08:00",
+          "arrival_time": "14:00"
+        },
+        {
+          "travelDay": 3,
+          "day": "lunes",
+          "date": "jun 08",
+          "city": "Cruising",
+          "departure_time": "",
+          "arrival_time": ""
+        },
+        {
+          "travelDay": 4,
+          "day": "miércoles",
+          "date": "jun 10",
+          "city": "La Canea (Souda), Creta, Grecia",
+          "departure_time": "08:00",
+          "arrival_time": "14:00"
+        },
+        {
+          "travelDay": 5,
+          "day": "sábado",
+          "date": "jun 13",
+          "city": "Civitavecchia (Roma), Italia",
+          "departure_time": "",
+          "arrival_time": "07:00"
+        }
+      ],
+      "map": "https://www.vayacruceros.com/img/itinerarios-vc/10972969.png"
+    }
+  ]
+}
