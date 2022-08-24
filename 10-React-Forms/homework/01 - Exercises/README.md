@@ -115,15 +115,24 @@ Además:
 2. Dentro de la etiqueta form, crear:
 
 - Una etiqueta label y su children sea **Nombre:**
-- Una etiqueta input con los atributos `name`, `value`, `placeholder`, por ahora, que estos atributos sean string vacío.
+- Una etiqueta input con los atributos `name`, `value`, `placeholder`, `type`, por ahora, que estos atributos sean string vacío.
 - Una etiqueta label y su children sea **Correo Electrónico:**
-- Otra etiqueta input con los atributos `name`, `value`, `placeholder`, por ahora, que estos atributos sean string vacío.
+- Otra etiqueta input con los atributos `name`, `value`, `placeholder`, `type`, por ahora, que estos atributos sean string vacío.
 - Una etiqueta label y su children sea **Teléfono:**
-- Otra etiqueta input con los atributos `name`, `value`, `placeholder`, por ahora, que estos atributos sean string vacío.
+- Otra etiqueta input con los atributos `name`, `value`, `placeholder`, `type`, por ahora, que estos atributos sean string vacío.
 - Una etiqueta label y su children sea **Asunto:**
-- Otra etiqueta input con los atributos `name`, `value`, `placeholder`, por ahora, que estos atributos sean string vacío.
+- Otra etiqueta input con los atributos `name`, `value`, `placeholder`, `type`, por ahora, que estos atributos sean string vacío.
 - Una etiqueta label y su children sea **Mensaje:**
-- Otra etiqueta input con los atributos `name`, `value`, `placeholder`, por ahora, que estos atributos sean string vacío.
+- Otra etiqueta input con los atributos `name`, `value`, `placeholder`, `type`, por ahora, que estos atributos sean string vacío.
+- Una etiqueta botón con el atributo `type` con su valor sea **submit** y el children del botón sea **enviar**
+
+3. Asígnale a cada atributo **name** del input el valor del children de cada label. Ejemplo:
+
+```html
+<label>Nombre</label>
+
+<input name="nombre" />
+```
 
 ---
 
@@ -131,124 +140,85 @@ Además:
 
 ### Estados
 
-🔹 Ahora dirígete al componente App.js.
+🔹 Ahora agrega estados al componente Contact, estos estados estarán conectados con los inputs que creaste en el ejercicio anterior.
 
 🔹 Lo que hay que hacer:
 
-1. Importa `Routes` y `Route` desde **react-router-dom** y renderiza el componente **Routes**.
-2. Renderiza un componente **Route** dentro del componente **_Routes_** con los atributos `path` y `element`para cada ruta que necesites crear:
+1. Crea un estado para los inputs del formulario, el estado debe iniciar en un objeto en el que cada una de sus propiedades sean el name de los inputs. Ejemplo:
 
-   - Home --> path: **"/"** element: `<Home/>`.
-   - Shipping --> path: **"/shipping"** element: `<Shipping/>`
-   - Promotions --> path: **"/promotions"** element: `<Promotions/>`
-   - CardDetail --> path: **"/cruises/:id"** element: `<CardDetail/>`.
+```jsx
+const [input, setInput] = React.useState({
+  nombre: "",
+  correo_electronico: "",
+});
+```
 
-3. Además necesitas que `NavBar` sea una ruta dinámica que aparezca en toda la aplicación, colocándola antes del componente Routes.
+2. El valor de cada propiedad debe iniciar en un string vacío, excepto la propiedad **telefono** que inicia en 0.
 
----
+3. Conecta el estado con el formulario, para ello, asigna al atributo **value** de cada input el estado correspondiente. Ejemplo:
 
-## 👩‍💻 Ejercicio 3
+````html
+<input name="nombre" value="{nombre}" />
 
-### Errores
+3. Además necesitas que `NavBar` sea una ruta dinámica que aparezca en toda la
+aplicación, colocándola antes del componente Routes. --- ## 👩‍💻 Ejercicio 3 ###
+Errores 🔹 Ahora crea links para navegar entre rutas. 🔹 Lo que hay que hacer:
+1. En el componente **_Card_**: - Importa `Link` desde **react-router-dom** y
+envuelve el código en el componente **Link** con el atributo to, en el que
+dirija a la ruta '`/cruises/${id}`'. 2. En el componente **_CardDetail_**: -
+Importa `useParams` y `useNavigate` desde **react-router-dom** - Obtiene el `id`
+del objeto params (utilizando destructuring) para luego usarlo dinámicamente en
+la ruta. Ejemplo: ```jsx const { id } = useParams(); ``` - Guarda en una
+constante llamada `navigate` el hook **useNavigate**. Ejemplo: ```jsx const
+navigate = useNavigate(); ``` - Crea una función llamada `backToHome` en donde
+ejecute **navigate** y redirija a la ruta `"/"`. - Al botón que contiene el
+texto "Volver" asígnale el atributo **onClick** en donde se ejecute la función
+creada **backToHome**. 3. En el componente **_NavBar_**: - Importa `NavLink`
+desde **react-router-dom**. - Renderiza el componente **NavLink** con el
+atributo `to` que redirija a la ruta `"/"` que envuelva la etiqueta imagen. -
+Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta
+`"/shipping"`, que envuelva la etiqueta span con el texto "Navieras". -
+Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta
+`"/promotions"`, que envuelva la etiqueta span "Promociones". 🔹 Resultado
+esperado:
 
-🔹 Ahora crea links para navegar entre rutas.
+<p align="center"><img src="./img/img.gif" height="300px" /></p>
 
-🔹 Lo que hay que hacer:
+--- ## 👩‍💻 Ejercicio 4 ### Envío de formulario 🔹 Ahora crea links para navegar
+entre rutas. 🔹 Lo que hay que hacer: 1. En el componente **_Card_**: - Importa
+`Link` desde **react-router-dom** y envuelve el código en el componente **Link**
+con el atributo to, en el que dirija a la ruta '`/cruises/${id}`'. 2. En el
+componente **_CardDetail_**: - Importa `useParams` y `useNavigate` desde
+**react-router-dom** - Obtiene el `id` del objeto params (utilizando
+destructuring) para luego usarlo dinámicamente en la ruta. Ejemplo: ```jsx const
+{ id } = useParams(); ``` - Guarda en una constante llamada `navigate` el hook
+**useNavigate**. Ejemplo: ```jsx const navigate = useNavigate(); ``` - Crea una
+función llamada `backToHome` en donde ejecute **navigate** y redirija a la ruta
+`"/"`. - Al botón que contiene el texto "Volver" asígnale el atributo
+**onClick** en donde se ejecute la función creada **backToHome**. 3. En el
+componente **_NavBar_**: - Importa `NavLink` desde **react-router-dom**. -
+Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta
+`"/"` que envuelva la etiqueta imagen. - Renderiza el componente **NavLink** con
+el atributo `to` que redirija a la ruta `"/shipping"`, que envuelva la etiqueta
+span con el texto "Navieras". - Renderiza el componente **NavLink** con el
+atributo `to` que redirija a la ruta `"/promotions"`, que envuelva la etiqueta
+span "Promociones". 🔹 Resultado esperado:
 
-1. En el componente **_Card_**:
+<p align="center"><img src="./img/img.gif" height="300px" /></p>
 
-   - Importa `Link` desde **react-router-dom** y envuelve el código en el componente **Link** con el atributo to, en el que dirija a la ruta '`/cruises/${id}`'.
-
-2. En el componente **_CardDetail_**:
-
-   - Importa `useParams` y `useNavigate` desde **react-router-dom**
-   - Obtiene el `id` del objeto params (utilizando destructuring) para luego usarlo dinámicamente en la ruta.
-     Ejemplo:
-     ```jsx
-     const { id } = useParams();
-     ```
-   - Guarda en una constante llamada `navigate` el hook **useNavigate**.
-     Ejemplo:
-     ```jsx
-     const navigate = useNavigate();
-     ```
-   - Crea una función llamada `backToHome` en donde ejecute **navigate** y redirija a la ruta `"/"`.
-   - Al botón que contiene el texto "Volver" asígnale el atributo **onClick** en donde se ejecute la función creada **backToHome**.
-
-3. En el componente **_NavBar_**:
-
-   - Importa `NavLink` desde **react-router-dom**.
-   - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/"` que envuelva la etiqueta imagen.
-   - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/shipping"`, que envuelva la etiqueta span con el texto "Navieras".
-   - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/promotions"`, que envuelva la etiqueta span "Promociones".
-
-🔹 Resultado esperado:
-
-<p align="center"><img src="./img/img.gif" height="300px"></p>
-
----
-
-## 👩‍💻 Ejercicio 4
-
-### Envío de formulario
-
-🔹 Ahora crea links para navegar entre rutas.
-
-🔹 Lo que hay que hacer:
-
-1. En el componente **_Card_**:
-
-   - Importa `Link` desde **react-router-dom** y envuelve el código en el componente **Link** con el atributo to, en el que dirija a la ruta '`/cruises/${id}`'.
-
-2. En el componente **_CardDetail_**:
-
-   - Importa `useParams` y `useNavigate` desde **react-router-dom**
-   - Obtiene el `id` del objeto params (utilizando destructuring) para luego usarlo dinámicamente en la ruta.
-     Ejemplo:
-     ```jsx
-     const { id } = useParams();
-     ```
-   - Guarda en una constante llamada `navigate` el hook **useNavigate**.
-     Ejemplo:
-     ```jsx
-     const navigate = useNavigate();
-     ```
-   - Crea una función llamada `backToHome` en donde ejecute **navigate** y redirija a la ruta `"/"`.
-   - Al botón que contiene el texto "Volver" asígnale el atributo **onClick** en donde se ejecute la función creada **backToHome**.
-
-3. En el componente **_NavBar_**:
-
-   - Importa `NavLink` desde **react-router-dom**.
-   - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/"` que envuelva la etiqueta imagen.
-   - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/shipping"`, que envuelva la etiqueta span con el texto "Navieras".
-   - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/promotions"`, que envuelva la etiqueta span "Promociones".
-
-🔹 Resultado esperado:
-
-<p align="center"><img src="./img/img.gif" height="300px"></p>
-
----
-
-## Recordemos que...
-
-- Para conectar nuestra aplicación a la url del navegador debes renderizar Browser Router alrededor de tu app .
-- Routes genera un árbol de rutas y es a partir de esto que podemos renderizar los componentes.
-- Route representa una ruta en el árbol, siempre debe ir con sus atributos path y element.
-- La diferencia entre Link y NavLink está que Link no tiene un estilo especial y NavLink resalta el enlace actual o activo utilizando la función "isActive".😃
-- useParams devuelve un objeto con las propiedades y el valor de los segmentos dinámicos de la URL.
-- useNavigate devuelve una función que permite la navegación programática en la aplicación. 😃
-
----
-
-## Recursos adicionales
-
-- Documentación **"React Router - useNavigate"** <https://reactrouter.com/docs/en/v6/hooks/use-navigate>
-- Documentación **"React Router - useParams"** <https://reactrouter.com/docs/en/v6/hooks/use-params>
-
----
-
-Listo!! Aprendiste cómo funcionan las rutas en React!! ✨🚀
-
-Dirígete a la carpeta 📂 [**"02 - Integration"**](../02%20-%20Integration/README.md) y continúa desarrollando la app de Rick & Morty 🤩
-
----
+--- ## Recordemos que... - Para conectar nuestra aplicación a la url del
+navegador debes renderizar Browser Router alrededor de tu app . - Routes genera
+un árbol de rutas y es a partir de esto que podemos renderizar los componentes.
+- Route representa una ruta en el árbol, siempre debe ir con sus atributos path
+y element. - La diferencia entre Link y NavLink está que Link no tiene un estilo
+especial y NavLink resalta el enlace actual o activo utilizando la función
+"isActive".😃 - useParams devuelve un objeto con las propiedades y el valor de
+los segmentos dinámicos de la URL. - useNavigate devuelve una función que
+permite la navegación programática en la aplicación. 😃 --- ## Recursos
+adicionales - Documentación **"React Router - useNavigate"**
+<https://reactrouter.com/docs/en/v6/hooks/use-navigate> - Documentación **"React
+Router - useParams"** <https://reactrouter.com/docs/en/v6/hooks/use-params> ---
+Listo!! Aprendiste cómo funcionan las rutas en React!! ✨🚀 Dirígete a la
+carpeta 📂 [**"02 - Integration"**](../02%20-%20Integration/README.md) y
+continúa desarrollando la app de Rick & Morty 🤩 ---
+````
