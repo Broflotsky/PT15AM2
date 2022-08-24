@@ -1,0 +1,39 @@
+{
+  "name": "10-react-forms",
+  "version": "1.0.0",
+  "dependencies": {
+    "@babel/runtime": "^7.13.10",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/user-event": "^13.1.1",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "grade": "react-scripts test --json --watchAll=false --outputFile=./result.json"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/react": "^11.2.6",
+    "enzyme": "^3.11.0"
+  }
+}

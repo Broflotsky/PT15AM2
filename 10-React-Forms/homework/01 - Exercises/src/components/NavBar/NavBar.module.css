@@ -1,0 +1,54 @@
+.container {
+  background: #454545;
+  width: 100vw;
+  height: 70px;
+  color: #f6f4e6;
+  display: flex;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  width: 100vw;
+  height: 70px;
+  top: -2%;
+}
+
+.menu li {
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu li:hover {
+  color: #fddb3a;
+}
+
+.menu li img {
+  height: 68px;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-140%, 8%);
+}
+
+.menu li h1 {
+  align-items: center;
+}
+
+.options li {
+  display: inline-flex;
+  padding: 0.5em;
+}
+
+.active {
+  color: brown;
+  font-weight: bold;
+  text-decoration: none;
+}
+.disable {
+  color: #f6f4e6;
+  text-decoration: none;
+}

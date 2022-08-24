@@ -22,7 +22,7 @@ Al finalizar, habremos creado tres rutas por las que podremos navegar:
 
 ## Comencemos
 
-En el archivo `App.js` ya tenemos importados y estamos renderizando los 3 componentes que vamos a codear. Revisa el código, verás que le estamos pasando props a estos componentes.
+Vamos a comenzar creando los componentes que nos faltan en nuestra carpeta components. Creamos `About.jsx` y `Detalle.jsx` con sus respectivos archivos `.css` para el estilado dentro de la carpeta `components`.
 
 Cómo sabemos, `react-router` nos da la posibilidad de crear rutas dinámicas. Esto nos permite renderizar algunos componentes u otros dependiendo el path en el que nos encontremos. Para este ejercicio, cada ruta renderizara estos componentes:
 
@@ -31,11 +31,24 @@ Cómo sabemos, `react-router` nos da la posibilidad de crear rutas dinámicas. E
 -  `<About />` debe aparecer sólo la ruta "`/about`".
 -  `<Detail />` debe aparecer sólo en la ruta "`/detail/{detailId}`".
 
+<<<<<<< HEAD
 ---
 
 ### 👩‍💻 Ejercicio 1
 
 Instalar y configurar `react-router-dom` para que toda la aplicación pueda escuchar las rutas.
+=======
+### Rutas dinámicas
+
+Cómo sabemos, `react-router` nos da la posibilidad de crear rutas dinámicas. Estas rutas serán los caminos o espacios en el que se renderizará el componente que nosotros decidamos.
+nos permitiras y podemos decidir qué componentes queremos que aparezcan en qué rutas.
+Para nuestro ejercicio nosotros queremos ver lo siguiente:
+
+- `<Nav />` tiene que aparecer en todas las rutas.
+- `<Cards />` debe aparecer sólo en la ruta `/`.
+- `<About />` debe aparecer sólo la ruta `/about`.
+- `<Detail />` debe aparecer sólo en la ruta `/detail/{detailId}`
+>>>>>>> e4a9f5054c39a3d5c107e86a7225f124fa0f4267
 
 ---
 
