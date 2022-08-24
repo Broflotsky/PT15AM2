@@ -1,12 +1,15 @@
-import { React } from "react";
+import React from "react";
 
 export default function Contact() {
-  const [input, setInput] = React.useState({
-    name: "",
-    correo_electronico: "",
-    telefono: 0,
-    asunto: "",
-    mensaje: "",
+  const [state, setState] = React.useState({
+    errors: {},
+    inputs: {
+      name: "",
+      email: "",
+      phone: 0,
+      subject: "",
+      message: "",
+    },
   });
 
   function handleChange(evento) {}
@@ -17,7 +20,7 @@ export default function Contact() {
         <label>Nombre:</label>
         <input
           name="name"
-          value={input.nombre}
+          value={state.inputs.name}
           placeholder="Escribe tu nombre..."
           type=""
         />
@@ -25,7 +28,7 @@ export default function Contact() {
         <label>Correo Electrónico:</label>
         <input
           name="correo_electronico"
-          value={input.correo_electronico}
+          value={state.inputs.email}
           placeholder="Escribe tu email..."
           type=""
         />
@@ -33,7 +36,7 @@ export default function Contact() {
         <label>Teléfono:</label>
         <input
           name="telefono"
-          value={input.telefono}
+          value={state.inputs.phone}
           placeholder="Escribe un teléfono..."
           type=""
         />
@@ -41,7 +44,7 @@ export default function Contact() {
         <label>Asunto:</label>
         <input
           name="asunto"
-          value={input.asunto}
+          value={state.inputs.subject}
           placeholder="Escribe el asunto..."
           type=""
         />
@@ -49,7 +52,7 @@ export default function Contact() {
         <label>Mensaje:</label>
         <input
           name="mensaje"
-          value={input.mensaje}
+          value={state.inputs.message}
           placeholder="Escribe tu mensaje..."
           type=""
         />

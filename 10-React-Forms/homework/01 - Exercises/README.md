@@ -151,11 +151,21 @@ Además:
 
 🔹 Lo que hay que hacer:
 
-1. Crea un estado para los inputs del formulario, el estado debe iniciar en un objeto en el que cada una de sus propiedades sean el name de los inputs. Ejemplo:
+1. Crea un estado llamado `state` para los inputs del formulario y manejar los errores de cada uno de ellos, el estado debe iniciar en un objeto con las propiedades **inputs** y **errors**.
+
+2. La propiedad **inputs** debe ser un objeto con las siguientes propiedades:
+
+- name, su valor debe ser un string vacío
+- email, su valor debe ser un string vacío,
+- phone: 0,
+- subject: "",
+- message:
+
+Ejemplo:
 
 ```jsx
-const [input, setInput] = React.useState({
-  name: "",
+const [state, setState] = React.useState({
+  inputs: {},
 });
 ```
 
@@ -169,7 +179,7 @@ const [input, setInput] = React.useState({
 
 4. Crea la función **handleChange** antes del return, esta función recibe un `evento` como parámetro.
 
-5. Dentro de la función handleChange
+5. Dentro de la función handleChange, setea el estado input
 
 ---
 
