@@ -22,39 +22,39 @@ export default function Contact() {
           name="name"
           value={state.inputs.name}
           placeholder="Escribe tu nombre..."
-          type=""
+          type="text"
         />
 
         <label>Correo Electrónico:</label>
         <input
-          name="correo_electronico"
+          name="email"
           value={state.inputs.email}
           placeholder="Escribe tu email..."
-          type=""
+          type="text"
         />
 
         <label>Teléfono:</label>
         <input
-          name="telefono"
+          name="phone"
           value={state.inputs.phone}
           placeholder="Escribe un teléfono..."
-          type=""
+          type="number"
         />
 
         <label>Asunto:</label>
         <input
-          name="asunto"
+          name="subject"
           value={state.inputs.subject}
           placeholder="Escribe el asunto..."
-          type=""
+          type="text"
         />
 
         <label>Mensaje:</label>
         <input
-          name="mensaje"
+          name="message"
           value={state.inputs.message}
           placeholder="Escribe tu mensaje..."
-          type=""
+          type="text"
         />
         <button type="submit">Enviar</button>
       </form>
