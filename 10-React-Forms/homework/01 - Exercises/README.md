@@ -115,19 +115,35 @@ Además:
 2. Dentro de la etiqueta form, crear:
 
 - Una etiqueta label y su texto sea **Nombre:**
-- Una etiqueta input con los atributos
+- Una etiqueta input con los siguiente atributos:
   - `name` y su valor sea **name**.
-  - `value`
-  * `placeholder`,
-  * `type`
+  - `value` y su valor sea por ahora un string vacío.
+  - `placeholder`y su valor sea **"Escribe tu nombre..."**
+  - `type` y su valor sea **text**
 - Una etiqueta label y su texto sea **Correo Electrónico:**
-- Otra etiqueta input con los atributos `name`, `value`, `placeholder`, `type`, por ahora, que estos atributos sean string vacío.
+- Otra etiqueta input con los siguiente atributos:
+  - `name` y su valor sea **email**.
+  - `value` y su valor sea por ahora un string vacío.
+  - `placeholder`y su valor sea **"Escribe tu email..."**
+  - `type` y su valor sea **text**
 - Una etiqueta label y su texto sea **Teléfono:**
-- Otra etiqueta input con los atributos `name`, `value`, `placeholder`, `type`, por ahora, que estos atributos sean string vacío.
+- Otra etiqueta input con los siguiente atributos:
+  - `name` y su valor sea **phone**.
+  - `value` y su valor sea por ahora un string vacío.
+  - `placeholder`y su valor sea **"Escribe un teléfono..."**
+  - `type` y su valor sea **number**
 - Una etiqueta label y su texto sea **Asunto:**
-- Otra etiqueta input con los atributos `name`, `value`, `placeholder`, `type`, por ahora, que estos atributos sean string vacío.
+- Otra etiqueta input con los siguiente atributos:
+  - `name` y su valor sea **subject**.
+  - `value` y su valor sea por ahora un string vacío.
+  - `placeholder`y su valor sea **"Escribe el asunto..."**
+  - `type` y su valor sea **text**
 - Una etiqueta label y su texto sea **Mensaje:**
-- Otra etiqueta input con los atributos `name`, `value`, `placeholder`, `type`, por ahora, que estos atributos sean string vacío.
+- Otra etiqueta input con los siguiente atributos:
+  - `name` y su valor sea **message**.
+  - `value` y su valor sea por ahora un string vacío.
+  - `placeholder`y su valor sea **"Escribe tu mensaje..."**
+  - `type` y su valor sea **text**
 - Una etiqueta botón con el atributo `type` con su valor sea **submit** y el children del botón sea **enviar**
 
 3. Asígnale a cada atributo **name** del input el valor del texto de cada label. Ejemplo:
