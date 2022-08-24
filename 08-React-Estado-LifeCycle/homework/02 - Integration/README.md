@@ -1,4 +1,4 @@
-# HW 02 - React-Estado-LifeCycle | Integración
+# HW 08 - React-Estado-LifeCycle | Integración
 
 ## Duración estimada 🕒
 
