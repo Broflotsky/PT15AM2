@@ -2,20 +2,22 @@ import { React } from "react";
 
 export default function Contact() {
   const [input, setInput] = React.useState({
-    nombre: "",
+    name: "",
     correo_electronico: "",
     telefono: 0,
     asunto: "",
     mensaje: "",
   });
+
+  function handleChange(evento) {}
   return (
     <div>
       Crear Formulario
       <form>
         <label>Nombre:</label>
         <input
-          name="nombre"
-          value=""
+          name="name"
+          value={input.nombre}
           placeholder="Escribe tu nombre..."
           type=""
         />
@@ -23,7 +25,7 @@ export default function Contact() {
         <label>Correo Electrónico:</label>
         <input
           name="correo_electronico"
-          value=""
+          value={input.correo_electronico}
           placeholder="Escribe tu email..."
           type=""
         />
@@ -31,7 +33,7 @@ export default function Contact() {
         <label>Teléfono:</label>
         <input
           name="telefono"
-          value=""
+          value={input.telefono}
           placeholder="Escribe un teléfono..."
           type=""
         />
@@ -39,7 +41,7 @@ export default function Contact() {
         <label>Asunto:</label>
         <input
           name="asunto"
-          value=""
+          value={input.asunto}
           placeholder="Escribe el asunto..."
           type=""
         />
@@ -47,7 +49,7 @@ export default function Contact() {
         <label>Mensaje:</label>
         <input
           name="mensaje"
-          value=""
+          value={input.mensaje}
           placeholder="Escribe tu mensaje..."
           type=""
         />
