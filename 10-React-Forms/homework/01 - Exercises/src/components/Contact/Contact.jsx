@@ -1,12 +1,12 @@
-import { React } from "react";
+import React from "react";
 
 export default function Contact() {
   const [input, setInput] = React.useState({
     name: "",
-    correo_electronico: "",
-    telefono: 0,
-    asunto: "",
-    mensaje: "",
+    email: "",
+    phone: 0,
+    subject: "",
+    message: "",
   });
 
   function handleChange(evento) {}
@@ -17,41 +17,41 @@ export default function Contact() {
         <label>Nombre:</label>
         <input
           name="name"
-          value={input.nombre}
+          value={input.name}
           placeholder="Escribe tu nombre..."
-          type=""
+          type="text"
         />
 
         <label>Correo Electrónico:</label>
         <input
-          name="correo_electronico"
-          value={input.correo_electronico}
+          name="email"
+          value={input.email}
           placeholder="Escribe tu email..."
-          type=""
+          type="text"
         />
 
         <label>Teléfono:</label>
         <input
-          name="telefono"
+          name="phone"
           value={input.telefono}
           placeholder="Escribe un teléfono..."
-          type=""
+          type="number"
         />
 
         <label>Asunto:</label>
         <input
-          name="asunto"
+          name="subject"
           value={input.asunto}
           placeholder="Escribe el asunto..."
-          type=""
+          type="text"
         />
 
         <label>Mensaje:</label>
         <input
-          name="mensaje"
+          name="message"
           value={input.mensaje}
           placeholder="Escribe tu mensaje..."
-          type=""
+          type="text"
         />
         <button type="submit">Enviar</button>
       </form>
