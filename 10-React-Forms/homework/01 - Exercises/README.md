@@ -117,42 +117,29 @@ Además:
 - Una etiqueta label y su texto sea **Nombre:**
 - Una etiqueta input con los siguiente atributos:
   - `name` y su valor sea **name**.
-  - `value` y su valor sea por ahora un string vacío.
   - `placeholder`y su valor sea **"Escribe tu nombre..."**
   - `type` y su valor sea **text**
 - Una etiqueta label y su texto sea **Correo Electrónico:**
 - Otra etiqueta input con los siguiente atributos:
   - `name` y su valor sea **email**.
-  - `value` y su valor sea por ahora un string vacío.
   - `placeholder`y su valor sea **"Escribe tu email..."**
   - `type` y su valor sea **text**
 - Una etiqueta label y su texto sea **Teléfono:**
 - Otra etiqueta input con los siguiente atributos:
   - `name` y su valor sea **phone**.
-  - `value` y su valor sea por ahora un string vacío.
   - `placeholder`y su valor sea **"Escribe un teléfono..."**
   - `type` y su valor sea **number**
 - Una etiqueta label y su texto sea **Asunto:**
 - Otra etiqueta input con los siguiente atributos:
   - `name` y su valor sea **subject**.
-  - `value` y su valor sea por ahora un string vacío.
   - `placeholder`y su valor sea **"Escribe el asunto..."**
   - `type` y su valor sea **text**
 - Una etiqueta label y su texto sea **Mensaje:**
 - Otra etiqueta input con los siguiente atributos:
   - `name` y su valor sea **message**.
-  - `value` y su valor sea por ahora un string vacío.
   - `placeholder`y su valor sea **"Escribe tu mensaje..."**
   - `type` y su valor sea **text**
-- Una etiqueta botón con el atributo `type` con su valor sea **submit** y el children del botón sea **enviar**
-
-3. Asígnale a cada atributo **name** del input el valor del texto de cada label. Ejemplo:
-
-```html
-<label>Nombre</label>
-
-<input name="nombre" />
-```
+- Una etiqueta botón con el atributo `type` donde su valor sea **submit** y el texto del botón sea **enviar**
 
 ---
 
@@ -168,17 +155,16 @@ Además:
 
 ```jsx
 const [input, setInput] = React.useState({
-  nombre: "",
-  correo_electronico: "",
+  name: "",
 });
 ```
 
-2. El valor de cada propiedad debe iniciar en un string vacío, excepto la propiedad **telefono** que inicia en 0.
+2. El valor de cada propiedad debe iniciar en un string vacío, excepto la propiedad **phone** que inicia en 0.
 
-3. Conecta el estado con el formulario, para ello, asigna al atributo **value** de cada input el estado correspondiente. Ejemplo:
+3. Conecta el estado con el formulario, para ello, crea el atributo **value** en cada input asignándole el estado correspondiente. Ejemplo:
 
-```html
-<input name="nombre" value="{input.nombre}" />
+```jsx
+<input name="nombre" value={input.name} />
 ```
 
 4. Crea la función **handleChange** antes del return, esta función recibe un `evento` como parámetro.
