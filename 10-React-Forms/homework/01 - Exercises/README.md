@@ -157,29 +157,31 @@ Además:
 
 - name, su valor debe ser un string vacío
 - email, su valor debe ser un string vacío,
-- phone: 0,
-- subject: "",
-- message:
+- phone, su valor debe ser 0,
+- subject, su valor debe ser un string vacío,
+- message, su valor debe ser un string vacío
+
+3. La propiedad **errors** debe ser un objeto vacío.
 
 Ejemplo:
 
 ```jsx
 const [state, setState] = React.useState({
-  inputs: {},
+  inputs: {
+    name: "",
+  },
 });
 ```
 
-2. El valor de cada propiedad debe iniciar en un string vacío, excepto la propiedad **phone** que inicia en 0.
-
-3. Conecta el estado con el formulario, para ello, crea el atributo **value** en cada input asignándole el estado correspondiente. Ejemplo:
+4. Conecta el estado con el formulario, para ello, crea el atributo **value** en cada input asignándole el estado correspondiente. Ejemplo:
 
 ```jsx
-<input name="nombre" value={input.name} />
+<input name="name" value={state.inputs.name} />
 ```
 
 4. Crea la función **handleChange** antes del return, esta función recibe un `evento` como parámetro.
 
-5. Dentro de la función handleChange, setea el estado input
+5. Dentro de la función handleChange setea el estado **state**, con el spread operator copia el estado anterior y con la propiedad target del evento, utilizando ES6
 
 ---
 
