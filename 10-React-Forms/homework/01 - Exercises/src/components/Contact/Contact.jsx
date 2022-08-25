@@ -1,18 +1,21 @@
 import React from "react";
 
 export default function Contact() {
-  const [state, setState] = React.useState({
-    errors: {},
-    inputs: {
-      name: "",
-      email: "",
-      phone: 0,
-      subject: "",
-      message: "",
-    },
+  const [inputs, setInputs] = React.useState({
+    name: "",
+    email: "",
+    phone: 0,
+    subject: "",
+    message: "",
   });
 
-  function handleChange(evento) {}
+  const [errors, setErrors] = React.useState({});
+  function handleChange(evento) {
+    setInputs({
+      ...inputs,
+      [evento.target.name]: evento.target.value,
+    });
+  }
   return (
     <div>
       Crear Formulario
@@ -20,41 +23,46 @@ export default function Contact() {
         <label>Nombre:</label>
         <input
           name="name"
-          value={state.inputs.name}
+          value={inputs.name}
           placeholder="Escribe tu nombre..."
           type="text"
+          onChange={handleChange}
         />
 
         <label>Correo Electrónico:</label>
         <input
           name="email"
-          value={state.inputs.email}
+          value={inputs.email}
           placeholder="Escribe tu email..."
           type="text"
+          onChange={handleChange}
         />
 
         <label>Teléfono:</label>
         <input
           name="phone"
-          value={state.inputs.phone}
+          value={inputs.phone}
           placeholder="Escribe un teléfono..."
           type="number"
+          onChange={handleChange}
         />
 
         <label>Asunto:</label>
         <input
           name="subject"
-          value={state.inputs.subject}
+          value={inputs.subject}
           placeholder="Escribe el asunto..."
           type="text"
+          onChange={handleChange}
         />
 
         <label>Mensaje:</label>
-        <input
+        <textarea
           name="message"
-          value={state.inputs.message}
+          value={inputs.message}
           placeholder="Escribe tu mensaje..."
           type="text"
+          onChange={handleChange}
         />
         <button type="submit">Enviar</button>
       </form>

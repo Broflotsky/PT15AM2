@@ -135,7 +135,7 @@ Además:
   - `placeholder`y su valor sea **"Escribe el asunto..."**
   - `type` y su valor sea **text**
 - Una etiqueta label y su texto sea **Mensaje:**
-- Otra etiqueta input con los siguiente atributos:
+- Una etiqueta textarea con los siguiente atributos:
   - `name` y su valor sea **message**.
   - `placeholder`y su valor sea **"Escribe tu mensaje..."**
   - `type` y su valor sea **text**
@@ -151,9 +151,7 @@ Además:
 
 🔹 Lo que hay que hacer:
 
-1. Crea un estado llamado `state` para los inputs del formulario y manejar los errores de cada uno de ellos, el estado debe iniciar en un objeto con las propiedades **inputs** y **errors**.
-
-2. La propiedad **inputs** debe ser un objeto con las siguientes propiedades:
+1. Crea un estado llamado `inputs` , el estado debe iniciar en un objeto con las siguientes propiedades:
 
 - name, su valor debe ser un string vacío
 - email, su valor debe ser un string vacío,
@@ -161,27 +159,35 @@ Además:
 - subject, su valor debe ser un string vacío,
 - message, su valor debe ser un string vacío
 
-3. La propiedad **errors** debe ser un objeto vacío.
-
 Ejemplo:
 
 ```jsx
-const [state, setState] = React.useState({
+const [inputs, setInputs] = React.useState({
   inputs: {
     name: "",
   },
 });
 ```
 
-4. Conecta el estado con el formulario, para ello, crea el atributo **value** en cada input asignándole el estado correspondiente. Ejemplo:
+2. Crea un segundo estado llamado `errors` debe ser un objeto vacío.
+
+3. Conecta el estado con el formulario, para ello, crea el atributo **value** en cada input asignándole el estado correspondiente. Ejemplo:
 
 ```jsx
-<input name="name" value={state.inputs.name} />
+<input name="name" value={inputs.name} />
 ```
 
-4. Crea la función **handleChange** antes del return, esta función recibe un `evento` como parámetro.
+4. Crea la función **handleChange** antes del return, esta función recibe un `evento` como parámetro y dentro de ella haz lo siguiente:
 
-5. Dentro de la función handleChange setea el estado **state**, con el spread operator copia el estado anterior y con la propiedad target del evento, utilizando ES6
+- Setea el estado **inputs**,
+- Usa el spread operator para copiar el estado anterior
+- El evento que recibimos como parámetro en la función, utilizando ES6, haz que las propiedades y valores del estado sean dinámicas. Ejemplo:
+
+```jsx
+[evento.target.name]: evento.target.value
+```
+
+5. Crea el atributo onChange a los inputs del formulario y asígnale la función **handleChange** previamente creada.
 
 ---
 
