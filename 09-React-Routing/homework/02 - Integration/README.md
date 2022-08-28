@@ -22,45 +22,44 @@ Al finalizar, habremos creado tres rutas por las que podremos navegar:
 
 ## Comencemos
 
-Vamos a comenzar creando los componentes que nos faltan en nuestra carpeta components. Creamos `About.jsx` y `Detalle.jsx` con sus respectivos archivos `.css` para el estilado dentro de la carpeta `components`.
+Vamos a comenzar creando los componentes que nos faltan en nuestra carpeta components. Creamos `About.jsx` y `Detalle.jsx` con sus respectivos archivos. Sólo los crearemos, aún no los construiremos. También creamos el archivo `.css` para el estilado. Recuerda que puedes utilizar cualquier formato de estilos (in-line, module, styled components, etc)
 
-Cómo sabemos, `react-router` nos da la posibilidad de crear rutas dinámicas. Esto nos permite renderizar algunos componentes u otros dependiendo el path en el que nos encontremos. Para este ejercicio, cada ruta renderizara estos componentes:
+Cómo sabemos, `react-router-dom` nos da la posibilidad de crear rutas dinámicas. Estas rutas serán los path o links en el que se renderizará el componente que nosotros decidamos. Para este ejercicio queremos que en cada link se vea lo siguiente:
 
 -  `<Nav />` tiene que aparecer en todas las rutas.
--  `<Cards />` debe aparecer sólo en la ruta "`/`".
--  `<About />` debe aparecer sólo la ruta "`/about`".
--  `<Detail />` debe aparecer sólo en la ruta "`/detail/{detailId}`".
+-  `<Cards />` debe aparecer sólo en la ruta `/`.
+-  `<About />` debe aparecer sólo en la ruta `/about`.
+-  `<Detail />` debe aparecer sólo en la ruta `/detail/{detailId}`
 
-<<<<<<< HEAD
 ---
 
 ### 👩‍💻 Ejercicio 1
 
-Instalar y configurar `react-router-dom` para que toda la aplicación pueda escuchar las rutas.
-=======
-### Rutas dinámicas
+### Instalar y configurar `react-router-dom`.
 
-Cómo sabemos, `react-router` nos da la posibilidad de crear rutas dinámicas. Estas rutas serán los caminos o espacios en el que se renderizará el componente que nosotros decidamos.
-nos permitiras y podemos decidir qué componentes queremos que aparezcan en qué rutas.
-Para nuestro ejercicio nosotros queremos ver lo siguiente:
+Instala `react-router-dom` desde la terminal. Importa y envuelve la aplicación con "**BrowserRouter**" en el archivo index.js.
 
-- `<Nav />` tiene que aparecer en todas las rutas.
-- `<Cards />` debe aparecer sólo en la ruta `/`.
-- `<About />` debe aparecer sólo la ruta `/about`.
-- `<Detail />` debe aparecer sólo en la ruta `/detail/{detailId}`
->>>>>>> e4a9f5054c39a3d5c107e86a7225f124fa0f4267
+Importa los elementos "**Routes**" y "**Route**", para que luego definamos las rutas en el archivo app.js.
 
 ---
 
 ### 👩‍💻 Ejercicio 2
 
-Crea el componente `<About />`. Este será una vista que contenga tu información, y una explicación de qué se trata la aplicación!
+### Mi perfil.
+
+Ahora si construiremos el componente `<About />`. Este componente será una vista que contenga tu información y una explicación de qué se trata la aplicación!
+
+Esto significa que es completamente libre. Puedes mostrar incluso una foto tuya. Esto le servirá a las personas que vean tu App para conocer al creador :D.
 
 ---
 
 ### 👩‍💻 Ejercicio 3
 
-En nuestro archivo "app.js" (aplicación), crea las rutas necesarias para que los componentes `<About />`, `<Cards />` y `<Nav />` se rendericen en sus links correspondientes.
+### Routing time!
+
+En nuestro archivo "app.js" (aplicación), crea las rutas necesarias para que los componentes `<About />`, `<Cards />` y `<Nav />` se rendericen en sus links correspondientes. Recuerda que en el **EJERCICIO 1** ya están especificadas las rutas.
+
+Respecto al componente `<Detail />`, su ruta recibirá el parámetro **id**, por lo que debes asegurarte de escribir bien el path de esta ruta.
 
 > **Nota:** Comprueba en tu navegador que los links rendericen el componente correcto, y que el componente `<Nav />` se vea siempre.
 
@@ -68,12 +67,14 @@ En nuestro archivo "app.js" (aplicación), crea las rutas necesarias para que lo
 
 ### 👩‍💻 Ejercicio 4
 
-Ahora nuestra SPA cuenta con dos rutas distintas: "`/`" y "`/about`". Pero nos está faltando una más: "`/detail/{detailId}`". Si observas, esta última ruta lleva un **template string**. Esto quiere decir que esta ruta, en su segundo término, siempre llevará distintos valores. Esto nos permitirá crear una ruta específica e individual para el detalle de cada personaje.
+### Detail redirection.
 
-En este caso, el valor que pasaremos es el ID de cada personaje.
+Ahora nuestra SPA cuenta con tres rutas distintas: "`/`", "`/detail/{detailId}`" y "`/about`".
 
-1. Crea un Link en cada `<Card />` (en el elemento que muestre el nombre del personaje) para que nos redirija a la ruta de cada personaje.
-2. Al Link de cada una de las cards deberás pasarle la propiedad ID del personaje.
+Para este ejercicio:
+
+1. En el componente `<Card />` importa y envuelve el nombre del personaje con el elemento "**Link**". Tiene que redirigirnos a la ruta de cada personaje.
+2. A este componente deberás pasarle por **props** el "**id**" del personaje para usarlo en el Link.
 
 ```js
 // Card.js
@@ -88,17 +89,17 @@ En este caso, el valor que pasaremos es el ID de cada personaje.
 
 ### 👩‍💻 Ejercicio 5
 
-¡Genial! Cuando hacemos click sobre el nombre de un personaje dentro de una Card, esta nos redirige al link con el ID del personaje. Ahora necesitamos crear el componente que mostrará toda la información del personaje.
+### Construcción del Detail.
 
-Para obtener esta información, importa los hooks **useState** y **useEffect** de `react`, y el hook **useParams** de `react-router-dom`.
+¡Genial! Cuando hacemos click sobre el nombre en una Card esta nos redirige a la ruta con el ID del personaje. Ahora necesitamos crear el componente que mostrará toda la información del personaje.
+
+Para obtener esta información importa los hooks **useState** y **useEffect** de `react`, y el hook **useParams** de `react-router-dom` en el componente `<Detail />`.
 
 1. Primero obten el ID del personaje mediante **useParams**.
 
-2. Crea un estado local con el nombre **character** en el que puedas guardar la siguiente información del personaje:
+2. Crea un estado local con el nombre **characters**.
 
--  "nombre" | "status" | "especie" | "género" | "origin" | "location" | "imagen"
-
-3. Crea un **useEffect**. Pásale el siguiente callback en su interior, y en el arreglo de dependencia agrega la variable **ID** obtenida mediante _useParams_.
+3. Crea un **useEffect**. En su interior pásale el siguiente código como callback. Es muy importante que en el arreglo de dependencias agregues la variable **ID** obtenida mediante _useParams_.
 
 ```js
 () =>
@@ -106,7 +107,7 @@ Para obtener esta información, importa los hooks **useState** y **useEffect** d
       .then((response) => response.json())
       .then((char) => {
          if (char.name) {
-            setCharacter(char);
+            setCharacters(char);
          } else {
             window.alert('No hay personajes con ese ID');
          }
@@ -114,6 +115,7 @@ Para obtener esta información, importa los hooks **useState** y **useEffect** d
       .catch((err) => {
          window.alert('No hay personajes con ese ID');
       });
+return setCharacters({});
 ```
 
 ---
@@ -122,13 +124,15 @@ Para obtener esta información, importa los hooks **useState** y **useEffect** d
 
 Ahora en tu estado local **character** tendrás toda la información del personaje disponible para que la renderices en este componente (`<Detail />`).
 
-Dale estilos al componente.
+Dándole estilos debería quedarte algo similar a esto:
+
+<img src="./img/final_detail.png" width='800px'/>
 
 ---
 
 ### 👩‍💻 Ejercicio 7
 
-Crea un botón que te permita regresar a "**/**".
+Crea un botón en el componente `<Detail />` que te permita regresar a "`/`".
 
 ---
 
