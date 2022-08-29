@@ -14,7 +14,7 @@ Continuamos con nuestra Rick & Morty App. Utilizaremos React-Router-DOM el cual 
 
 Al finalizar, habremos creado tres rutas por las que podremos navegar:
 
--  **"/"**: esta será la ruta del Home (vista principal/general).
+-  **"/home"**: esta será la ruta del Home (vista principal/general).
 -  **"/detail/${detailId}/"**: en esta ruta encontraremos información más detallada sobre el personaje en particular.
 -  **"/about"**: en esta ruta colocarás tu nombre y describirás de qué trata la aplicación Rick & Morty.
 
@@ -27,7 +27,7 @@ Vamos a comenzar creando los componentes que nos faltan en nuestra carpeta compo
 Cómo sabemos, `react-router-dom` nos da la posibilidad de crear rutas dinámicas. Estas rutas serán los path o links en el que se renderizará el componente que nosotros decidamos. Para este ejercicio queremos que en cada link se vea lo siguiente:
 
 -  `<Nav />` tiene que aparecer en todas las rutas.
--  `<Cards />` debe aparecer sólo en la ruta `/`.
+-  `<Cards />` debe aparecer sólo en la ruta `/home`.
 -  `<About />` debe aparecer sólo en la ruta `/about`.
 -  `<Detail />` debe aparecer sólo en la ruta `/detail/{detailId}`
 
@@ -69,7 +69,7 @@ Respecto al componente `<Detail />`, su ruta recibirá el parámetro **id**, por
 
 ### Detail redirection.
 
-Ahora nuestra SPA cuenta con tres rutas distintas: "`/`", "`/detail/{detailId}`" y "`/about`".
+Ahora nuestra SPA cuenta con tres rutas distintas: "`/home`", "`/detail/{detailId}`" y "`/about`".
 
 Para este ejercicio:
 
@@ -93,21 +93,21 @@ Para este ejercicio:
 
 ¡Genial! Cuando hacemos click sobre el nombre en una Card esta nos redirige a la ruta con el ID del personaje. Ahora necesitamos crear el componente que mostrará toda la información del personaje.
 
-Para obtener esta información importa los hooks **useState** y **useEffect** de `react`, y el hook **useParams** de `react-router-dom` en el componente `<Detail />`.
+Para obtener esta información importa los hooks **useState** de `react` y **useParams** de `react-router-dom` en el componente `<Detail />`.
 
 1. Primero obten el ID del personaje mediante **useParams**.
 
-2. Crea un estado local con el nombre **characters**.
+2. Crea un estado local con el nombre **character**.
 
-3. Crea un **useEffect**. En su interior pásale el siguiente código como callback. Es muy importante que en el arreglo de dependencias agregues la variable **ID** obtenida mediante _useParams_.
+3. En este paso importaremos el hook **useEffect** de `react`. Una vez importado, copia el siguiente código y pégalo en el cuerpo del componente.
 
 ```js
-() =>
+useEffect(() => {
    fetch(`https://rickandmortyapi.com/api/character/${id}`)
       .then((response) => response.json())
       .then((char) => {
          if (char.name) {
-            setCharacters(char);
+            setCharacter(char);
          } else {
             window.alert('No hay personajes con ese ID');
          }
@@ -115,8 +115,11 @@ Para obtener esta información importa los hooks **useState** y **useEffect** de
       .catch((err) => {
          window.alert('No hay personajes con ese ID');
       });
-return setCharacters({});
+   return setCharacter({});
+}, [id]);
 ```
+
+> **NOTA:** Este código es el que buscará al personaje de la API cada vez que el componente se monte. Y luego, cada vez que se desmonte, borrará su información.
 
 ---
 
@@ -132,7 +135,7 @@ Dándole estilos debería quedarte algo similar a esto:
 
 ### 👩‍💻 Ejercicio 7
 
-Crea un botón en el componente `<Detail />` que te permita regresar a "`/`".
+Crea un botón en el componente `<Detail />` que te permita regresar a "`/home`".
 
 ---
 
@@ -142,4 +145,4 @@ Ahora te desafiamos a que crees un nuevo componente llamado **Error**. A este co
 
 Pueden inspirarte en el siguiente link: "https://github.com/errroorrxd".
 
-El desafío es. Haz que este componente se muestre cada vez que el usuario ingrese a cualquier otra ruta que no exista. Es decir que no la hayas especificado en esta homework. Por ejemplo, si creaste una ruta "`/`" y "`/about`", y el usuario en el navegador escribe y "`/henry`", debería mostrar el error 404.
+El desafío es. Haz que este componente se muestre cada vez que el usuario ingrese a cualquier otra ruta que no exista. Es decir que no la hayas especificado en esta homework. Por ejemplo, si creaste una ruta "`/home`" y "`/about`", y el usuario en el navegador escribe y "`/henry`", debería mostrar el error 404.

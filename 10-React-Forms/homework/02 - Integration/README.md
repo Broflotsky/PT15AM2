@@ -1,4 +1,4 @@
-# HW 02 - React-Routing | Integración
+## HW 10 - React-Forms | Integración
 
 ## Duración estimada 🕒
 
@@ -8,183 +8,151 @@ x minutos
 
 ## Rick & Morty App
 
-### Intro
+## Intro
 
-Continuamos con nuestra Rick & Morty App, utilizando React Router DOM vamos a enrutar nuestra SPA.
+En la integración de hoy crearemos un formulario de login. Así, cada vez que ingresemos a nuestra app deberemos logearnos para utilizarla. Tanto el formulario como sus validaciones las haremos con Javascript.
 
-Al finalizar, tendremos tres rutas que podremos navegar:
+Nuestro formulario va a estar compuesto de:
 
-- **"/"**: Home.
-- **"/detail/{detailId}/"**: en esta ruta, tendremos información más detallada sobre el personaje en particular.
-- **"/about"**: en esta ruta colocarás tu nombre y describirás de qué trata la aplicación Rick & Morty.
+-  Username: el nombre de usuario tiene que ser un email, si no, tiene que mostrar un error.
+-  Password: la contraseña tiene que contener por lo menos un número y tener una longitud de entre 6 y 10 caracteres, si no debe mostrar un error.
 
 ---
 
 ## Comencemos
 
-Vamos a comenzar creando los componentes que nos faltan en nuestra carpeta components. Creamos `About.jsx` y `Detalle.jsx` con sus respectivos archivos `.css` para el estilado dentro de la carpeta `components`.
+Vamos a comenzar creando el componente que nos falta en nuestra carpeta components. Creamos `Form.jsx` con su respectivo archivo `.css` para darle estilos.
 
 ---
 
 ### 👩‍💻 Ejercicio 1
 
-### Rutas dinámicas
+### Estructura
 
-Cómo sabemos, `react-router` nos da la posibilidad de crear rutas dinámicas. Estas rutas serán los caminos o espacios en el que se renderizará el componente que nosotros decidamos.
-nos permitiras y podemos decidir qué componentes queremos que aparezcan en qué rutas.
-Para nuestro ejercicio nosotros queremos ver lo siguiente:
+Vamos a trabajar en el archivo `Form.jsx` que acabas de crear.
 
-- `<Nav />` tiene que aparecer en todas las rutas.
-- `<Cards />` debe aparecer sólo en la ruta `/`.
-- `<About />` debe aparecer sólo la ruta `/about`.
-- `<Detail />` debe aparecer sólo en la ruta `/detail/{detailId}`
+Primero agregaremos una etiqueta `<div />` que envolverá a todo el componente. Tiene que haber una etiqueta `<label />` y una `<input />` tanto para el **username** como para la **password**. Por último, agrega una etiqueta `<button />`.
+
+Dale algo de estilos al componente. Te dejamos una plantilla de cómo puede quedar!
+
+<img src="./img/form_v1.png" alt="" />
 
 ---
 
 ### 👩‍💻 Ejercicio 2
 
-### Reestructurar Home
+### Ruteo
 
-1. Veamos primero una imagen del resultado final y pensemos la estructura general:
+Ahora deberás cumplir los siguientes dos pasos:
 
-<img src="./img/layout.png" width='800px'/>
+1. Crea una ruta en el archivo `app.jsx` para que el formulario se renderice en el path "`/`".
+2. Si obervas la imagen del ejercicio anterior, la barra de navegación también se muestra en el **Login**. Cambia esto de modo que el `<Nav />` se muestre en todos lados, menos en el **Login**.
 
-> - **Recuadro rojo**: Nav
-> - **Recuadro amarillo**: SearchBar
-> - **Recuadro verde**: Cards
-> - **Recuadro azul**: Card
-
-2. Ahora vamos a modificar el contenido del archivo `App.js`:
-
-   - En `App` sólo vamos a renderizar los componentes `Cards` y `Nav`.
-   - Ya no vamos a renderizar la primera `Card` "suelta" que pusimos en la primera clase, ya que el mismo `Cards` incluye varias `Card`.
-   - Lo mismo sucede con `SearchBar`, no lo vamos a renderizar más directamente en App, debido a que ya se encuentra dentro de `Nav`.
-
-3. Importar y renderizar los componentes que vamos a utilizar.
-4. Aplicar estilos básicos al componente **_Nav_**.
-
-🔹 Resultado esperado:
-
-<img src="./img/home1.png" width='800px'/>
+> **PISTA:** investiga sobre el hook "useLocation" de react-router-dom, y piensa cómo hacer un renderizado condicional.
 
 ---
 
 ### 👩‍💻 Ejercicio 3
 
-### Implementar un estado
+### Estado del formulario
 
-Necesitamos mantener actualizado el listado de personajes a mostrar, para ello debemos crear un estado al componente `App.js` donde tengamos el array de personajes.
+El siguiente paso es poder controlar nuestro formulario. Para esto trabajaremos con un estado local con esta estructura:
 
-1. Borra el import que traes de data.js (Ya no vamos a usar más los datos de este archivo).
-2. Importa el hook useState.
-3. Crea un estado `characters` donde guardaremos el array de personajes.
+```js
+// Form.jsx
+const [userData, setUserData] = React.useState({ username: '', password: '' });
+```
+
+Ahora conecta tu estado local con los inputs correspondientes utilizando la propiedad `value`.
+
+Por último, usaremos el evento `onChange` en ambos inputs para poder guardar la información del usuario. Te sugerimos que crees una función **handleInputChange** la cual reciba el evento del input, y a partir de esta se modifique el estado local.
 
 ---
 
 ### 👩‍💻 Ejercicio 4
 
-### Función para agregar personajes
+### Validaciones
 
-Ahora debemos crear una función para agregar nuevos personajes a nuestro estado `characters` y se la pasaremos al `SearchBar` mediante el `Nav`.
+En tu componente `<Form />` crea un nuevo estado local llamado "**errors**". Este es el estado que usaras para encontrar errores en el formulario.
 
-> **Hint**: Como aún no hemos hecho el llamado a la API para obtener los datos del personaje, agregamos uno por default para ver que esté funcionando:
+Luego crea un nuevo archivo en la carpeta de tu componente Form.jsx con el nombre "**validation.js**". Aquí dentro deberás crear una función que valide lo siguiente:
 
-```jsx
-const example = {
-  name: "Morty Smith",
-  species: "Human",
-  gender: "Male",
-  image: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
-};
-```
+**USERNAME**
+
+-  el nombre de usuario tiene que ser un email _(explora validaciónes REGEX en internet!)_.
+-  el nombre de usuario no puede estar vacío.
+-  el nombre de usuario no puede tener más de 35 caracteres.
+
+**PASSWORD**
+
+-  la contraseña tiene que tener al menos un número.
+-  la contraseña tiene que tener una longitud entre 6 y 10 caracteres.
+
+No te olvides de renderizar y darle estilos a tus errores! Te dejamos un ejemplo de cómo puede quedar.
+
+<img src="./img/input_error.png" alt="" >
 
 ---
 
 ### 👩‍💻 Ejercicio 5
 
-### Le pasamos la función a Nav
+### Simulación de seguridad
 
-Nuestra función recién creada, que modifica el estado `characters` se la pasamos a `Nav`.
+Ahora simularemos una base de datos donde esté guardado un username y password. De esta forma, sólo si la indormación de usuario coincide podrá usar la aplicación. Para esto:
+
+1. En el archivo `App.js` crea lo siguiente:
+
+   -  Un estado local llamado "**access**" que se inicialice en `false`.
+   -  Una variable llamada "**username**", y que sea igual a tu email.
+   -  Una variable "**password**", y que sea igual a una contraseña.
+
+2. Crea una función llamada "**login**" que reciba por parámetro "_userData_". Esta función tiene que preguntar si el username y password que declaraste más arriba son iguales a los que le está llegando por parámetro. En caso afirmativo, el estado local access ahora será `true`. Importa el hook "**useNavigate**" de `react-router-dom` y haremos que nos redirija a `/home` si la información es correcta.
+
+```jsx
+const navigate = useNavigate();
+const [access, setAccess] = useState(false);
+const username = 'ejemplo@gmail.com';
+const password = '1password';
+
+function login(userData) {
+   if (userData.password === password && userData.username === username) {
+      setAccess(true);
+      navigate('/home');
+   }
+}
+```
+
+3. Por último, pega el siguiente código en el cuerpo del componente:
+
+```jsx
+//App.js
+useEffect(() => {
+   !access && navigate('/');
+}, [access]);
+```
+
+Esto no nos dejará navegar por la aplicación, al menos que ingresemos la información correcta!
 
 ---
 
 ### 👩‍💻 Ejercicio 6
 
-### Seguimos pasando la función para que llegue a su destino
+### Login
 
-Quien finalmente debe ejecutar la función `onSearch` no es el `Nav` sino el `SearchBar`, por lo que debemos hacerle llegar dicha función.
+Ahora le daremos la funcionalidad de cambiar los permisos a nuestro login! Para esto:
 
----
+1. En el archivo `App.js`, le pasaremos la función **login** que creaste en el ejercicio anterior por props al componente `<Form />`.
 
-### 👩‍💻 Ejercicio 7
+2. En el componente `<Form />`, crea una función "**handleSubmit**". Esta función por dentro sólo debe ejecutar la función "**login**" recibida por props. No te olvides de pasarle por parámetro tu estado local _userData_!
 
-### Analizando función onSearch
+¡Listo! Ya tienes un Login funcional!!😀🥳🤓
 
-En la homework anterior **06-React-Intro, 02 - Integration**, ya habíamos creado el componente `SearchBar` que recibía la función como parámetro y la ejecutaba cuando se hacía un `submit` del form.
-
-En este punto la función ya debería ejecutarse, cada vez que le demos click al botón `Agregar`, un nuevo personaje se añade a nuestro estado `characters` y por cada uno de ellos nuestro componente `Cards` renderiza una `Card`.
-
-Si observamos el código anterior estamos llamando a la función `onSearch` sin pasarle ningún parámetro, pero quisiéramos que ese parámetro dependa del input ingresado por el usuario.
-
----
-
-### 👩‍💻 Ejercicio 8
-
-### Pasándole parámetros a la función
-
-1. Modifica el componente `SearchBar` para que mantenga un **estado** interno del nombre del personaje (`character`) escrito por el usuario y que cuando haya un cambio en el input, lo detecte mediante el listener `onChange` y actualice dicho estado.
-
-2. Adicionalmente, pasar dicho estado `character` como parámetro de la función `onSearch` cuando la llamamos en el `submit`; para que utilice el estado, que contiene lo que ingresó el usuario y éste valor llegue así a la función **_onSearch_** que tenemos en **App.js**.
-
----
-
-### 👩‍💻 Ejercicio 9
-
-### Buscando datos reales
-
-1. Ahora debemos modificar la función `onSearch` para que obtenga los datos necesarios desde la API de [Rick&Morty](https://rickandmortyapi.com). Para ello vamos a utilizar `fetch` para hacer la llamada y obtener el resultado. Por el momento sólo vamos a obtener los personajes por ID, ya que si los buscamos por nombre hay demasiados resultados debido a que los mismos se repiten bastante.
-
-2. Mostrar un mensaje en caso de que el personaje no exista.
-
-> **Hint**:Como aún no has visto promesas, tienes este snippet para que copies y pegues la función **_onSearch_**:
-
-```js
-function onSearch(character) {
-  fetch(`https://rickandmortyapi.com/api/character/${character}`)
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.name) {
-        setCharacters((oldChars) => [...oldChars, data]);
-      } else {
-        window.alert("No hay personajes con ese ID");
-      }
-    });
-}
-```
-
----
-
-### 👩‍💻 Ejercicio 10
-
-### Cerrar cards
-
-Por último, recordemos que en la homework anterior **06-React-Intro, 02 - Integration** habíamos creado el componente `Card` para que reciba una función como parámetro. Ésta va a ser la encargada de eliminar esa card al momento de hacer click en el botón `X`.
-
-Para ello es necesario definir dicha función `onClose` en **App.js**, para que a partir del id recibido, elimina dicho personaje del array de personajes del **_estado_**.
-
-> **Hint**: Puedes utilizar el método `filter`.
-
----
-
-🔹 Resultado esperado:
-
-<img src="./img/final.gif" width='800px'/>
-
-Listo! tu app es ahora dinámica e interactiva!! 👏🏼🚀
+Pruebalo ingresando la información que declaraste previamente.
 
 ---
 
 ## 👩‍💻 Ejercicio Extra
 
-- Controlar que no se puedan agregar personajes repetidos.
-- Agregar un botón en la navbar que agregue un personaje random (Hint: hay 826 personajes en total).
+-  Ahora te desafiamos a que crees un boton "**Logout**" en tu componente `<Nav />`. Si lo presionas debe quitar los permisos de acceso y redirigirte automáticamente a tu componente `<Form />`.
+
+> **PISTA:** lo puedes hacer creando una función **logout** en tu archivo App.js.
