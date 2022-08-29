@@ -44,8 +44,8 @@ Nuestra tarea va a ser construir este formulario:
 
 Va a tener:
 
-* Username: El userName tiene que ser un email, si no, tiene que mostrar un error.
-* Password: El password tiene que contener por lo menos un número, si no debe mostrar un error.
+- Username: El userName tiene que ser un email, si no, tiene que mostrar un error.
+- Password: El password tiene que contener por lo menos un número, si no debe mostrar un error.
 
 > Ya te dejamos el css necesario para que sólo te concentres en el formulario. Lo econtrarás en `index.css`
 
@@ -60,7 +60,7 @@ Te dejamos un ejemplo de cómo quedaría sólo con el input para el username.
 ```js
 // Form.jsx
 
-export default function  Form() {
+export default function Form() {
   return (
     <form>
       <div>
@@ -69,7 +69,7 @@ export default function  Form() {
       </div>
       ...
     </form>
-  )
+  );
 }
 ```
 
@@ -93,7 +93,7 @@ export default function Form() {
 
 Con esto, estamos agregando estado al componente.
 
-Genial! ahora tenemos estado, pero tenemos que *conectarlo* con el formulario. Para eso vamos a poner como `value` del input el estado correspondiente.
+Genial! ahora tenemos estado, pero tenemos que _conectarlo_ con el formulario. Para eso vamos a poner como `value` del input el estado correspondiente.
 
 ```js
 // Form.jsx
@@ -131,12 +131,9 @@ export default function  Form() {
 
 Recuerden que `setUsername` y `setPassword` reciben un string que usará para actualizar el estado. Y que `onChange` ejecuta una función pasándole un `evento` como argumento, por lo tanto, tenemos que pasarle una función nueva que reciba un `evento` e invoque a `setUsername` con el valor del input, que esta en `evento.target.value`.
 
-
-
 Si hiciste todo bien hasta acá y corres los tests, deberías pasar 6 del total!
 
 ![](./public/tests1.png)
-
 
 #### Mejorando el Estado
 
@@ -179,7 +176,7 @@ Recordemos que el `onChange` pasa un evento a la función que le pasemos. Y dent
 
 Entonces, si le pasamos esta función a cualquier input, podemos usar su atributo `name` para indicar el nombre de la propiedad en el estado.
 
-Recuerden que `setInput` *pista* el estado anterior. Por lo tanto tenemos que pasarle también las propiedades viejas que tenia el estado, podemos usar el spreading de ES6:
+Recuerden que `setInput` _pista_ el estado anterior. Por lo tanto tenemos que pasarle también las propiedades viejas que tenia el estado, podemos usar el spreading de ES6:
 
 ```js
 {
@@ -258,7 +255,7 @@ Otro ejemplo:
 
 Te compartimos la primera mitad de la función `validate`, lo que ves en el if es una expresión regular que controlar por un mail válido (estas expresiones son comunes y podés encontrarlas en internet!).
 
-__IMPORTANTE__: Para que funcionen correctamente los tests esta función debe ir por fuera del componente Form. Adicionalmente colocarla allí nos permitiría de ser necesario importarla en otro archivo y reutilizarla.
+**IMPORTANTE**: Para que funcionen correctamente los tests esta función debe ir por fuera del componente Form. Adicionalmente colocarla allí nos permitiría de ser necesario importarla en otro archivo y reutilizarla.
 
 ```js
 export function validate(input) {
@@ -292,14 +289,15 @@ const [errors, setErrors] = React.useState({});
 Por último, tenemos que agregar el control de errores durante el `handleInputChange`:
 
 ```js
-setErrors(validate({
-       ...input,
-       [e.target.name]: e.target.value
-     }));
+setErrors(
+  validate({
+    ...input,
+    [e.target.name]: e.target.value,
+  })
+);
 ```
 
 Donde pondrías esa porción de código?...
-
 
 Hasta acá deberías tener 12 tests pasando!!!
 
