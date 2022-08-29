@@ -3,7 +3,7 @@ import "./Contact.modules.css";
 
 const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 
-const regexPhone = /^(\d{3,4}-{1}){1}\d{3,4}$/;
+const regexPhone = /^[0-9]+$/;
 
 export default function Contact() {
   const [inputs, setInputs] = React.useState({
@@ -80,7 +80,7 @@ export default function Contact() {
           onChange={handleChange}
           className={errors.phone && "warning"}
         />
-        <p className="danger">{errors.email}</p>
+        <p className="danger">{errors.phone}</p>
 
         <label>Asunto:</label>
         <input

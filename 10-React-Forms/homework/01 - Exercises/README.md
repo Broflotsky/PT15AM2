@@ -203,14 +203,14 @@ const [inputs, setInputs] = React.useState({
 2. Dentro de la función declara una variable llamada `errors` y que su valor sea un objeto vacío.
 3. Condiciona cada input que viene del objeto **inputs** que se está recibiendo como parámetro para que cumpla cada condición.
 
-> Tip: para el email y el phone, puedes utilizar las variables que están guardando los regex.
+> Tip: Para manejar los errores de los inputs de email y phone, puedes utilizar las variables `regexEmail` y `regexPhone` que están guardando los regex (expresiones regulares).
 
 Ejemplo:
 
 ```jsx
 if (!inputs.name) {
   errors.name = "Se requiere un nombre";
-} else if (!inputs.email && !regexEmail.test(inputs.email)) {
+} else if (!regexEmail.test(inputs.email)) {
   errors.email = "Se requiere un email";
 }
 ```
@@ -236,19 +236,27 @@ setErrors(
 6. Debes informar a los usuarios que tiene errores en los inputs, para ello, haz lo siguiente:
 
 - Crea una hoja de estilos llamada `Contact.modules.css`
-- Crea una clase llamada `.warning` con la propiedad **border** y que su valor sea **red**.
+- Crea una clase llamada `.warning` con la propiedad **border** y que su valor sea **solid**, **red** y 1 px.
+- Crea otra clase llamada `danger` con la propiedades:
+  - font-size: 10px
+  - color: red
+  - margin-left: 10em
+- Importa en el componente **Contact.jsx** los estilos.
 - En cada input crea el atributo **className** y asigna condicionalmente la propiedad del estado errors de acuerdo al input en el que te encuentres.
   Ejemplo:
 
 ```jsx
-<input className={errors.name && styles.warning}>
+<input className={errors.name && 'warning'}>
 ```
 
 - Por último, agrega una etiqueta `p` debajo de cada input, en el que su texto sea la propiedad del objeto errors de acuerdo al input en el que te encuentres validando.
+- Crea a la etiqueta **p** el atributo className y asígnale la clase `'danger'`
 
-  🔹 Resultado esperado:
+Ejemplo:
 
-<p align="center"><img src="./img/img.gif" height="300px" /></p>
+```jsx
+<p className="danger">{errors.name}</p>
+```
 
 ---
 
@@ -258,25 +266,11 @@ setErrors(
 
 ### Envío de formulario
 
-🔹 Ahora crea links para navegar
-entre rutas.
-🔹 Lo que hay que hacer: 1. En el componente **_Card_**: - Importa
-`Link` desde **react-router-dom** y envuelve el código en el componente **Link**
-con el atributo to, en el que dirija a la ruta '`/cruises/${id}`'. 2. En el
-componente **_CardDetail_**: - Importa `useParams` y `useNavigate` desde
-**react-router-dom** - Obtiene el `id` del objeto params (utilizando
-destructuring) para luego usarlo dinámicamente en la ruta. Ejemplo: `jsx const { id } = useParams(); ` - Guarda en una constante llamada `navigate` el hook
-**useNavigate**. Ejemplo: `jsx const navigate = useNavigate(); ` - Crea una
-función llamada `backToHome` en donde ejecute **navigate** y redirija a la ruta
-`"/"`. - Al botón que contiene el texto "Volver" asígnale el atributo
-**onClick** en donde se ejecute la función creada **backToHome**. 3. En el
-componente **_NavBar_**: - Importa `NavLink` desde **react-router-dom**. -
-Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta
-`"/"` que envuelva la etiqueta imagen. - Renderiza el componente **NavLink** con
-el atributo `to` que redirija a la ruta `"/shipping"`, que envuelva la etiqueta
-span con el texto "Navieras". - Renderiza el componente **NavLink** con el
-atributo `to` que redirija a la ruta `"/promotions"`, que envuelva la etiqueta
-span "Promociones".
+🔹 Ahora solo nos falta "enviar" el formulario.
+
+🔹 Lo que hay que hacer:
+
+1. Define una función llamada `handleSubmit`, en ella vamos a
 
 🔹 Resultado esperado:
 
@@ -309,6 +303,10 @@ span "Promociones".
   Listo!!
   Aprendiste cómo funcionan las rutas en React!! ✨🚀
   Dirígete a la carpeta 📂 [**"02 - Integration"**](../02%20-%20Integration/README.md) y continúa desarrollando la app de Rick & Morty 🤩 ---
+
+```
+
+```
 
 ```
 
