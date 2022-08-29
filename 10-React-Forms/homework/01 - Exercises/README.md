@@ -114,28 +114,28 @@ Además:
 1. Crea una etiqueta form.
 2. Dentro de la etiqueta form, crear:
 
-- Una etiqueta label y su texto sea **Nombre:**
+- Una etiqueta label y su texto sea **'Nombre:'**
 - Una etiqueta input con los siguiente atributos:
   - `name` y su valor sea **name**.
   - `placeholder`y su valor sea **"Escribe tu nombre..."**
   - `type` y su valor sea **text**
-- Una etiqueta label y su texto sea **Correo Electrónico:**
+- Una etiqueta label y su texto sea **'Correo Electrónico:'**
 - Otra etiqueta input con los siguiente atributos:
   - `name` y su valor sea **email**.
   - `placeholder`y su valor sea **"Escribe tu email..."**
   - `type` y su valor sea **text**
-- Una etiqueta label y su texto sea **Teléfono:**
+- Una etiqueta label y su texto sea **'Teléfono:'**
 - Otra etiqueta input con los siguiente atributos:
   - `name` y su valor sea **phone**.
   - `placeholder`y su valor sea **"Escribe un teléfono..."**
   - `type` y su valor sea **number**
-- Una etiqueta label y su texto sea **Asunto:**
+- Una etiqueta label y su texto sea **'Asunto:'**
 - Otra etiqueta input con los siguiente atributos:
   - `name` y su valor sea **subject**.
   - `placeholder`y su valor sea **"Escribe el asunto..."**
   - `type` y su valor sea **text**
-- Una etiqueta label y su texto sea **Mensaje:**
-- Otra etiqueta input con los siguiente atributos:
+- Una etiqueta label y su texto sea **'Mensaje:'**
+- Una etiqueta textarea con los siguiente atributos:
   - `name` y su valor sea **message**.
   - `placeholder`y su valor sea **"Escribe tu mensaje..."**
   - `type` y su valor sea **text**
@@ -151,9 +151,7 @@ Además:
 
 🔹 Lo que hay que hacer:
 
-1. Crea un estado llamado `state` para los inputs del formulario y manejar los errores de cada uno de ellos, el estado debe iniciar en un objeto con las propiedades **inputs** y **errors**.
-
-2. La propiedad **inputs** debe ser un objeto con las siguientes propiedades:
+1. Crea un estado llamado `inputs` , el estado debe iniciar en un objeto con las siguientes propiedades:
 
 - name, su valor debe ser un string vacío
 - email, su valor debe ser un string vacío,
@@ -161,82 +159,118 @@ Además:
 - subject, su valor debe ser un string vacío,
 - message, su valor debe ser un string vacío
 
-3. La propiedad **errors** debe ser un objeto vacío.
-
 Ejemplo:
 
 ```jsx
-const [state, setState] = React.useState({
+const [inputs, setInputs] = React.useState({
   inputs: {
     name: "",
   },
 });
 ```
 
-4. Conecta el estado con el formulario, para ello, crea el atributo **value** en cada input asignándole el estado correspondiente. Ejemplo:
+2. Crea un segundo estado llamado `errors` debe ser un objeto vacío.
+
+3. Conecta el estado con el formulario, para ello, crea el atributo **value** en cada input asignándole el estado correspondiente. Ejemplo:
 
 ```jsx
-<input name="name" value={state.inputs.name} />
+<input name="name" value={inputs.name} />
 ```
 
-4. Crea la función **handleChange** antes del return, esta función recibe un `evento` como parámetro.
+4. Crea la función **handleChange** antes del return, esta función recibe un `evento` como parámetro y dentro de ella haz lo siguiente:
 
-5. Dentro de la función handleChange setea el estado **state**, con el spread operator copia el estado anterior y con la propiedad target del evento, utilizando ES6
+- Setea el estado **inputs**
+- Usa el spread operator para copiar el estado anterior
+- El evento que recibimos como parámetro en la función, utilizando ES6, haz que las propiedades y valores del estado sean dinámicas. Ejemplo:
+
+```jsx
+[evento.target.name]: evento.target.value
+```
+
+5. Crea el atributo `onChange` a los inputs del formulario y asígnale la función **handleChange** previamente creada.
 
 ---
 
 ## 👩‍💻 Ejercicio 3
 
-### Errores
+### Manejo de errores
 
-🔹 Ahora crea links para navegar entre rutas.
+🔹 En este ejercicio validarás cada input del formulario, cada vez que se actualice el estado, controlando que cumpla con las condiciones requeridas.
+
 🔹 Lo que hay que hacer:
 
-1. En el componente **_Card_**: - Importa `Link` desde **react-router-dom** y
-   envuelve el código en el componente **Link** con el atributo to, en el que
-   dirija a la ruta '`/cruises/${id}`'. 2. En el componente **_CardDetail_**: -
-   Importa `useParams` y `useNavigate` desde **react-router-dom** - Obtiene el `id`
-   del objeto params (utilizando destructuring) para luego usarlo dinámicamente en
-   la ruta. Ejemplo: `jsx const { id } = useParams(); ` - Guarda en una
-   constante llamada `navigate` el hook **useNavigate**. Ejemplo: `jsx const navigate = useNavigate(); ` - Crea una función llamada `backToHome` en donde
-   ejecute **navigate** y redirija a la ruta `"/"`. - Al botón que contiene el
-   texto "Volver" asígnale el atributo **onClick** en donde se ejecute la función
-   creada **backToHome**. 3. En el componente **_NavBar_**: - Importa `NavLink`
-   desde **react-router-dom**. - Renderiza el componente **NavLink** con el
-   atributo `to` que redirija a la ruta `"/"` que envuelva la etiqueta imagen. -
-   Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta
-   `"/shipping"`, que envuelva la etiqueta span con el texto "Navieras". -
-   Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta
-   `"/promotions"`, que envuelva la etiqueta span "Promociones". 🔹 Resultado
-   esperado:
+1. Define una función llamada `validate` que reciba como parámetro el objeto **inputs**.
+2. Dentro de la función declara una variable llamada `errors` y que su valor sea un objeto vacío.
+3. Condiciona cada input que viene del objeto **inputs** que se está recibiendo como parámetro para que cumpla cada condición.
 
-<p align="center"><img src="./img/img.gif" height="300px" /></p>
+> Tip: Para manejar los errores de los inputs de email y phone, puedes utilizar las variables `regexEmail` y `regexPhone` que están guardando los regex (expresiones regulares).
+
+Ejemplo:
+
+```jsx
+if (!inputs.name) {
+  errors.name = "Se requiere un nombre";
+} else if (!regexEmail.test(inputs.email)) {
+  errors.email = "Se requiere un email";
+}
+```
+
+4. La función debe retornar el objeto errors.
+5. En la función **handleChange**:
+
+- Setea el estado **errors** que reciba la función `validate`
+- Usa el spread operator para copiar el estado anterior
+- El evento que recibimos como parámetro en la función, utilizando ES6, haz que las propiedades y valores del estado sean dinámicas.
+
+Ejemplo:
+
+```jsx
+setErrors(
+  validate({
+    ...inputs,
+    [e.target.name]: e.target.value,
+  })
+);
+```
+
+6. Debes informar a los usuarios que tiene errores en los inputs, para ello, haz lo siguiente:
+
+- Crea una hoja de estilos llamada `Contact.modules.css`
+- Crea una clase llamada `.warning` con la propiedad **border** y que su valor sea **solid**, **red** y 1 px.
+- Crea otra clase llamada `danger` con la propiedades:
+  - font-size: 10px
+  - color: red
+  - margin-left: 10em
+- Importa en el componente **Contact.jsx** los estilos.
+- En cada input crea el atributo **className** y asigna condicionalmente la propiedad del estado errors de acuerdo al input en el que te encuentres.
+  Ejemplo:
+
+```jsx
+<input className={errors.name && 'warning'}>
+```
+
+- Por último, agrega una etiqueta `p` debajo de cada input, en el que su texto sea la propiedad del objeto errors de acuerdo al input en el que te encuentres validando.
+- Crea a la etiqueta **p** el atributo className y asígnale la clase `'danger'`
+
+Ejemplo:
+
+```jsx
+<p className="danger">{errors.name}</p>
+```
 
 ---
+
+### ...Estamos llegando a la última parte de la homework ⭐
 
 ## 👩‍💻 Ejercicio 4
 
 ### Envío de formulario
 
-🔹 Ahora crea links para navegar
-entre rutas.
-🔹 Lo que hay que hacer: 1. En el componente **_Card_**: - Importa
-`Link` desde **react-router-dom** y envuelve el código en el componente **Link**
-con el atributo to, en el que dirija a la ruta '`/cruises/${id}`'. 2. En el
-componente **_CardDetail_**: - Importa `useParams` y `useNavigate` desde
-**react-router-dom** - Obtiene el `id` del objeto params (utilizando
-destructuring) para luego usarlo dinámicamente en la ruta. Ejemplo: `jsx const { id } = useParams(); ` - Guarda en una constante llamada `navigate` el hook
-**useNavigate**. Ejemplo: `jsx const navigate = useNavigate(); ` - Crea una
-función llamada `backToHome` en donde ejecute **navigate** y redirija a la ruta
-`"/"`. - Al botón que contiene el texto "Volver" asígnale el atributo
-**onClick** en donde se ejecute la función creada **backToHome**. 3. En el
-componente **_NavBar_**: - Importa `NavLink` desde **react-router-dom**. -
-Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta
-`"/"` que envuelva la etiqueta imagen. - Renderiza el componente **NavLink** con
-el atributo `to` que redirija a la ruta `"/shipping"`, que envuelva la etiqueta
-span con el texto "Navieras". - Renderiza el componente **NavLink** con el
-atributo `to` que redirija a la ruta `"/promotions"`, que envuelva la etiqueta
-span "Promociones".
+🔹 Ahora solo nos falta "enviar" el formulario.
+
+🔹 Lo que hay que hacer:
+
+1. Define una función llamada `handleSubmit`, en ella vamos a
 
 🔹 Resultado esperado:
 
@@ -269,3 +303,15 @@ span "Promociones".
   Listo!!
   Aprendiste cómo funcionan las rutas en React!! ✨🚀
   Dirígete a la carpeta 📂 [**"02 - Integration"**](../02%20-%20Integration/README.md) y continúa desarrollando la app de Rick & Morty 🤩 ---
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
