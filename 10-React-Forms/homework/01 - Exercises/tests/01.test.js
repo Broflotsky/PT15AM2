@@ -32,7 +32,7 @@ describe("01 | Ejercicios", () => {
     });
   });
 
-  it("Deberia renderizar un label para el correo electronico con el texto 'Correo Electrónico'", () => {
+  it("Deberia renderizar un label para el correo electronico con el texto 'Correo Electrónico:'", () => {
     expect(contact.find("label").at(1).text()).toEqual("Correo Electrónico:");
   });
 
@@ -46,7 +46,7 @@ describe("01 | Ejercicios", () => {
     });
   });
 
-  it("Deberia renderizar un label para el correo telefono con el texto 'Teléfono'", () => {
+  it("Deberia renderizar un label para el telefono con el texto 'Teléfono:'", () => {
     expect(contact.find("label").at(2).text()).toEqual("Teléfono:");
   });
 
@@ -61,7 +61,7 @@ describe("01 | Ejercicios", () => {
     });
   });
 
-  it("Deberia renderizar un label para el correo telefono con el texto 'Asunto'", () => {
+  it("Deberia renderizar un label para el asunto con el texto 'Asunto:'", () => {
     expect(contact.find("label").at(3).text()).toEqual("Asunto:");
   });
 
@@ -76,12 +76,13 @@ describe("01 | Ejercicios", () => {
     });
   });
 
-  it("Deberia renderizar un label para el correo telefono con el texto 'Mensaje'", () => {
+  it("Deberia renderizar un label para el mensaje con el texto 'Mensaje:'", () => {
     expect(contact.find("label").at(4).text()).toEqual("Mensaje:");
   });
 
-  it("Debería renderizar un input para el mensaje con los atributos name, placeholder y type", () => {
-    const inputMessage = contact.find("input").at(4);
+  it("Debería renderizar un textarea para el mensaje con los atributos name, placeholder y type", () => {
+    const inputMessage = contact.find("textarea").at(0);
+
     expect(inputMessage.props()).toEqual({
       ...inputMessage.props(),
       name: "message",

@@ -1,108 +1,76 @@
+// Configuramos test
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
-import { MemoryRouter } from "react-router-dom";
-import { configure, mount, shallow } from "enzyme";
-import fetch from "node-fetch";
+import { configure, shallow } from "enzyme";
+import Contact from "../src/components/Contact/Contact";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
-import nock from "nock";
-import data from "../db.json";
-
 // Importamos variables/componentes
-import App from "../src/App";
-import Home from "../src/components/Home/Home";
-import CardDetail from "../src/components/CardDetail/CardDetail";
-import Shipping from "../src/components/Shipping/Shipping";
-import NavBar from "../src/components/NavBar/NavBar";
-import Promotions from "../src/components/Promotions/Promotions";
-
-jest.mock("../src/components/Home/Home", () => () => <></>);
-jest.mock("../src/components/CardDetail/CardDetail", () => () => <></>);
-jest.mock("../src/components/Shipping/Shipping", () => () => <></>);
-jest.mock("../src/components/NavBar/NavBar", () => () => <></>);
 
 configure({ adapter: new Adapter() });
-console.error = jest.fn();
-console.warn = jest.fn();
-
-global.fetch = fetch;
 
 describe("02 | Ejercicios", () => {
-  let routes;
-
+  let contact;
   beforeEach(() => {
-    console.error.mockClear();
-    console.warn.mockClear();
-    // Se Mockea las request a las api
-    const apiMock = nock("http://localhost:3001").persist();
-
-    apiMock.get("/cruises").reply(200, data.cruises);
+    contact = shallow(<Contact />);
   });
 
-  routes = ["/", "/cruises/2", "/shipping", "/promotions"];
-
-  const componentToUse = (route) => {
-    return (
-      <MemoryRouter initialEntries={[route]}>
-        <App />
-      </MemoryRouter>
-    );
-  };
-
-  it("En App.js debería renderizarse el componente Routes", () => {
-    const app = shallow(<App />);
-    expect(app.find("Routes")).toHaveLength(1);
-  });
-
-  it("El componente Home deberia ser renderizado en la ruta /", () => {
-    const app = mount(componentToUse(routes[0]));
-    expect(app.find(Home)).toHaveLength(1);
-    expect(app.find(CardDetail)).toHaveLength(0);
-    expect(app.find(Shipping)).toHaveLength(0);
-    expect(app.find(Promotions)).toHaveLength(0);
-  });
-
-  it("El componente Shipping deberia ser renderizado en la ruta /shipping", () => {
-    const app = mount(componentToUse(routes[2]));
-    expect(app.find(CardDetail)).toHaveLength(0);
-    expect(app.find(Home)).toHaveLength(0);
-    expect(app.find(Shipping)).toHaveLength(1);
-    expect(app.find(Promotions)).toHaveLength(0);
-  });
-
-  it("El componente CardDetail deberia ser renderizado en la ruta /cruises/:id", () => {
-    const app = mount(componentToUse(routes[1]));
-    expect(app.find(CardDetail)).toHaveLength(1);
-    expect(app.find(Home)).toHaveLength(0);
-    expect(app.find(Shipping)).toHaveLength(0);
-    expect(app.find(Promotions)).toHaveLength(0);
-  });
-
-  it("El componente Promotions deberia ser renderizado en la ruta /promotions", () => {
-    const app = mount(componentToUse(routes[3]));
-    expect(app.find(Promotions)).toHaveLength(1);
-    expect(app.find(CardDetail)).toHaveLength(0);
-    expect(app.find(Home)).toHaveLength(0);
-    expect(app.find(Shipping)).toHaveLength(0);
-  });
-  
-    it("El componente Routes debe renderizar un Route por cada ruta", () => {
-      const app = shallow(<App />);
-      const routesChildren = app.find("Routes").children();
-      expect(routesChildren).toHaveLength(4);
-      routesChildren.forEach((c) => {
-        expect(c.props().element).toBeTruthy();
-        expect(c.props().path).toBeTruthy();
-      });
+  it("El form deberia cambiar de estado cuando escriban en el input de name", () => {
+    expect(contact.find("input[name='name']").prop("value")).toEqual("");
+    contact.find("input[name='name']").simulate("change", {
+      target: { value: "Henry", name: "name" },
     });
+    const inputName = contact.find("input[name='name']");
+    expect(inputName.prop("value")).toEqual("Henry");
+  });
 
-  it("El componente NavBar debería ser renderizado en todas las rutas", () => {
-    const app = mount(componentToUse(routes[0]));
-    expect(app.find(NavBar)).toHaveLength(1);
-    const app2 = mount(componentToUse(routes[1]));
-    expect(app2.find(NavBar)).toHaveLength(1);
-    const app3 = mount(componentToUse(routes[2]));
-    expect(app3.find(NavBar)).toHaveLength(1);
-    const app4 = mount(componentToUse(routes[3]));
-    expect(app4.find(NavBar)).toHaveLength(1);
+  it("El form deberia cambiar de estado cuando escriban en el input de email", () => {
+    expect(contact.find("input[name='email']").prop("value")).toEqual("");
+    contact.find("input[name='email']").simulate("change", {
+      target: { value: "henry@gmail.com", name: "email" },
+    });
+    const inputEmail = contact.find("input[name='email']");
+    expect(inputEmail.prop("value")).toEqual("henry@gmail.com");
+  });
+
+  it("El form deberia cambiar de estado cuando escriban en el input de phone", () => {
+    expect(contact.find("input[name='phone']").prop("value")).toEqual(0);
+    contact.find("input[name='phone']").simulate("change", {
+      target: { value: 123456789, name: "phone" },
+    });
+    const inputPhone = contact.find("input[name='phone']");
+    expect(inputPhone.prop("value")).toEqual(123456789);
+  });
+
+  it("El form deberia cambiar de estado cuando escriban en el input de subject", () => {
+    expect(contact.find("input[name='subject']").prop("value")).toEqual("");
+    contact.find("input[name='subject']").simulate("change", {
+      target: { value: "Subject Input", name: "subject" },
+    });
+    const inputSubject = contact.find("input[name='subject']");
+    expect(inputSubject.prop("value")).toEqual("Subject Input");
+  });
+
+  it("El form deberia cambiar de estado cuando escriban en el input de message", () => {
+    expect(contact.find("textarea[name='message']").prop("value")).toEqual("");
+    contact.find("textarea[name='message']").simulate("change", {
+      target: { value: "Message Input", name: "message" },
+    });
+    const inputMessage = contact.find("textarea[name='message']");
+    expect(inputMessage.prop("value")).toEqual("Message Input");
+  });
+
+  it("Deberia asignar la funcion 'handleChange' al 'onChange' de cada input", () => {
+    const inputs = contact.find("input");
+    expect(inputs.length).toBe(4);
+    inputs.forEach((i) => {
+      expect(i.props().onChange).toBeDefined();
+      expect(typeof i.props().onChange).toBe("function");
+    });
+  });
+
+  it("Deberia asignar la funcion 'handleChange' al 'onChange' del textarea", () => {
+    const textArea = contact.find("textarea");
+    expect(textArea.length).toBe(1);
+    expect(typeof textArea.props().onChange).toBe("function");
   });
 });
