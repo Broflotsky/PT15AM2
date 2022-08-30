@@ -266,8 +266,8 @@ e) Debes informar a los usuarios que tiene errores en los inputs, para ello, haz
 <input className={errors.name && 'warning'}>
 ```
 
-- Por último, agrega una etiqueta `p` debajo de cada input, en el que su texto sea la propiedad del objeto errors de acuerdo al input en el que te encuentres validando.
-- Crea a la etiqueta **p** el atributo className y asígnale la clase `'danger'`
+- Debajo de cada input, si existe un error, agrega una etiqueta `p` debajo del mismo, en el que su texto sea la propiedad del objeto errors de acuerdo al input que te encuentres validando.
+- Crea a la etiqueta **p** el atributo className y asígnale la clase `'danger'`.
 
 Ejemplo:
 
@@ -304,12 +304,10 @@ Ejemplo:
 
 ## Recordemos que...
 
--
-- La diferencia entre Link y NavLink está que Link no tiene un estilo
-  especial y NavLink resalta el enlace actual o activo utilizando la función
-  "isActive".😃 - useParams devuelve un objeto con las propiedades y el valor de
-  los segmentos dinámicos de la URL. - useNavigate devuelve una función que
-  permite la navegación programática en la aplicación. 😃
+- Un formulario controlado es cuando el estado maneja los valores de los inputs y lo actualiza de acuerdo a los eventos del mismo usando setState.
+- El evento.preventDefault() permite prevenir el comportamiento predeterminado de un submit. 😃
+- Con la propiedad target del evento, puedes setear las propiedades de un estado dinámicamente
+- Puedes hacer las propiedades de un estado dinámicas de acuerdo al name y value de la propiedad del evento target.
 
   ***
 
