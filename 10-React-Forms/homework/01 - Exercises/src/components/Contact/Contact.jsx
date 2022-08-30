@@ -3,8 +3,6 @@ import "./Contact.modules.css";
 
 const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 
-const regexPhone = /^[0-9\b]+$/;
-
 export function validate(inputs) {
   let errors = {};
   if (!inputs.name) {
@@ -13,8 +11,8 @@ export function validate(inputs) {
   if (!regexEmail.test(inputs.email)) {
     errors.email = "Debe ser un correo electrónico";
   }
-  if (inputs.phone <= 0 || !regexPhone.test(inputs.phone)) {
-    errors.phone = "Solo números";
+  if (typeof inputs.phone !== "number" || inputs.phone <= 0) {
+    errors.phone = "Sólo números positivos";
   }
   if (!inputs.subject) {
     errors.subject = "Se requiere un asunto";
@@ -86,7 +84,7 @@ export default function Contact() {
           onChange={handleChange}
           className={errors.name && "warning"}
         />
-        <p className="danger">{errors.name}</p>
+        {errors.name && <p className="danger">{errors.name}</p>}
 
         <label>Correo Electrónico:</label>
         <input
@@ -97,7 +95,7 @@ export default function Contact() {
           onChange={handleChange}
           className={errors.email && "warning"}
         />
-        <p className="danger">{errors.email}</p>
+        {errors.email && <p className="danger">{errors.email}</p>}
 
         <label>Teléfono:</label>
         <input
@@ -108,7 +106,7 @@ export default function Contact() {
           onChange={handleChange}
           className={errors.phone && "warning"}
         />
-        <p className="danger">{errors.phone}</p>
+        {errors.phone && <p className="danger">{errors.phone}</p>}
 
         <label>Asunto:</label>
         <input
@@ -119,7 +117,7 @@ export default function Contact() {
           onChange={handleChange}
           className={errors.subject && "warning"}
         />
-        <p className="danger">{errors.subject}</p>
+        {errors.subject && <p className="danger">{errors.subject}</p>}
 
         <label>Mensaje:</label>
         <textarea
@@ -130,7 +128,7 @@ export default function Contact() {
           onChange={handleChange}
           className={errors.message && "warning"}
         />
-        <p className="danger">{errors.message}</p>
+        {errors.message && <p className="danger">{errors.message}</p>}
         <button type="submit">Enviar</button>
       </form>
     </div>
