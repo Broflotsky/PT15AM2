@@ -305,31 +305,19 @@ Ejemplo:
 ## Recordemos que...
 
 - Un formulario controlado es cuando el estado maneja los valores de los inputs y lo actualiza de acuerdo a los eventos del mismo usando setState.
-- El evento.preventDefault() permite prevenir el comportamiento predeterminado de un submit. 😃
-- Con la propiedad target del evento, puedes setear las propiedades de un estado dinámicamente
-- Puedes hacer las propiedades de un estado dinámicas de acuerdo al name y value de la propiedad del evento target.
+- El evento.preventDefault() permite prevenir el comportamiento predeterminado de un submit.😃
+- Con la propiedad target del evento, puedes setear las propiedades de un estado dinámicamente el name y value de cada input del formulario.
+- Formula siempre qué datos quieres recibir y qué experiencia quieres dar al usuario, en el momento que definas las funciones handleChange y handleSubmit.
 
-  ***
+---
 
 ## Recursos adicionales
 
-- Documentación **"React Router - useNavigate"** <https://reactrouter.com/docs/en/v6/hooks/use-navigate>
-- Documentación **"React Router - useParams"** <https://reactrouter.com/docs/en/v6/hooks/use-params>
+- Documentación **"Formularios"** <https://es.reactjs.org/docs/forms.html>
+- Documentación **"Regular Expressions"** <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions>
 
 ---
 
 Listo!!
 Aprendiste cómo funcionan las rutas en React!! ✨🚀
 Dirígete a la carpeta 📂 [**"02 - Integration"**](../02%20-%20Integration/README.md) y continúa desarrollando la app de Rick & Morty 🤩 ---
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
