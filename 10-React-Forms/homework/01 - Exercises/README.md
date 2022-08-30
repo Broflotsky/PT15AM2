@@ -205,15 +205,22 @@ const [inputs, setInputs] = React.useState({
 
 🔹 Lo que hay que hacer:
 
-1. Define una función llamada `validate` que reciba como parámetro el objeto **inputs**.
-2. Dentro de la función declara una variable llamada `errors` y que su valor sea un objeto vacío.
-3. Valida cada input del formulario que viene del objeto **inputs** que se está recibiendo como parámetro en la función, para que se cumplan las siguientes condiciones:
+1. Define una función llamada `validate` fuera del componente Contact, que reciba como parámetro el objeto **inputs**, esta función debe ser exportada para que funcionen los tests. Ejemplo:
+
+```jsx
+export function validate() {}
+```
+
+Dentro de la función debes hacer lo siguiente:
+
+a) Declara una variable llamada `errors` y que su valor sea un objeto vacío.
+b) Valida cada input del formulario que viene del objeto **inputs** que se está recibiendo como parámetro en la función, para que se cumplan las siguientes condiciones:
 
 - En el input **name**, si este campo está vacío, agrega la propiedad name al objeto **errors** en donde su valor sea, por ejemplo, "Se requiere un nombre".
 - En el input **email**, valida si el email que ingresa el usuario coincide con el regex de la constante `regexEmail`, aplicándole el método `test()` y dentro de sus paréntesis coloca `input.email`; agrega la propiedad email al objeto **errors** en donde su valor sea, por ejemplo, "Debe ser un correo electrónico".
 - En el input **phone**, valida si el email que ingresa el usuario coincide con el regex de la constante `regexPhone`, aplicándole el método `test()` y dentro de sus paréntesis coloca `input.phone`; agrega la propiedad phone al objeto **errors** en donde su valor sea, por ejemplo, "Sólo números".
 - En el input **subject**, si este campo está vacío, agrega la propiedad subject al objeto **errors** en donde su valor sea, por ejemplo, "Se requiere un asunto".
-- En el input **message**, si este campo está vacío, agrega la propiedad message al objeto **errors** en donde su valor sea, por ejemplo, "Se requiere un message".
+- En el input **message**, si este campo está vacío, agrega la propiedad message al objeto **errors** en donde su valor sea, por ejemplo, "Se requiere un mensaje".
 
 Ejemplo:
 
@@ -225,8 +232,8 @@ if (!inputs.name) {
 }
 ```
 
-4. La función debe retornar el objeto errors.
-5. En la función **handleChange**:
+c) La función debe retornar el objeto errors.
+d) En la función **handleChange**:
 
 - Setea el estado **errors** y que éste reciba la función `validate`
 - Usa el spread operator para copiar el estado anterior
@@ -243,7 +250,7 @@ setErrors(
 );
 ```
 
-6. Debes informar a los usuarios que tiene errores en los inputs, para ello, haz lo siguiente:
+e) Debes informar a los usuarios que tiene errores en los inputs, para ello, haz lo siguiente:
 
 - Crea una hoja de estilos llamada `Contact.modules.css`
 - Crea una clase llamada `.warning` con la propiedad **border** y que su valor sea **solid**, **red** y 1 px.
@@ -297,12 +304,8 @@ Ejemplo:
 
 ## Recordemos que...
 
-- Para conectar nuestra aplicación a la url del
-  navegador debes renderizar Browser Router alrededor de tu app . - Routes genera
-  un árbol de rutas y es a partir de esto que podemos renderizar los componentes.
-
-- Route representa una ruta en el árbol, siempre debe ir con sus atributos path
-  y element. - La diferencia entre Link y NavLink está que Link no tiene un estilo
+-
+- La diferencia entre Link y NavLink está que Link no tiene un estilo
   especial y NavLink resalta el enlace actual o activo utilizando la función
   "isActive".😃 - useParams devuelve un objeto con las propiedades y el valor de
   los segmentos dinámicos de la URL. - useNavigate devuelve una función que
@@ -310,16 +313,16 @@ Ejemplo:
 
   ***
 
-  ## Recursos adicionales
+## Recursos adicionales
 
-  - Documentación **"React Router - useNavigate"** <https://reactrouter.com/docs/en/v6/hooks/use-navigate>
-  - Documentación **"React Router - useParams"** <https://reactrouter.com/docs/en/v6/hooks/use-params>
+- Documentación **"React Router - useNavigate"** <https://reactrouter.com/docs/en/v6/hooks/use-navigate>
+- Documentación **"React Router - useParams"** <https://reactrouter.com/docs/en/v6/hooks/use-params>
 
-  ***
+---
 
-  Listo!!
-  Aprendiste cómo funcionan las rutas en React!! ✨🚀
-  Dirígete a la carpeta 📂 [**"02 - Integration"**](../02%20-%20Integration/README.md) y continúa desarrollando la app de Rick & Morty 🤩 ---
+Listo!!
+Aprendiste cómo funcionan las rutas en React!! ✨🚀
+Dirígete a la carpeta 📂 [**"02 - Integration"**](../02%20-%20Integration/README.md) y continúa desarrollando la app de Rick & Morty 🤩 ---
 
 ```
 
