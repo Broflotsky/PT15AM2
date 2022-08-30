@@ -3,7 +3,7 @@ import "./Contact.modules.css";
 
 const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 
-const regexPhone = /^[0-9]+$/;
+const regexPhone = /^[0-9\b]+$/;
 
 export default function Contact() {
   const [inputs, setInputs] = React.useState({
@@ -14,20 +14,29 @@ export default function Contact() {
     message: "",
   });
 
-  const [errors, setErrors] = React.useState({});
+  const [errors, setErrors] = React.useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
 
   function validate(inputs) {
     let errors = {};
-    console.log(inputs);
     if (!inputs.name) {
       errors.name = "Se requiere un nombre";
-    } else if (!regexEmail.test(inputs.email)) {
+    }
+    if (!regexEmail.test(inputs.email)) {
       errors.email = "Debe ser un correo electrónico";
-    } else if (!regexPhone.test(inputs.phone)) {
+    }
+    if (inputs.phone <= 0 || !regexPhone.test(inputs.phone)) {
       errors.phone = "Solo números";
-    } else if (!inputs.subject) {
+    }
+    if (!inputs.subject) {
       errors.subject = "Se requiere un asunto";
-    } else if (!inputs.message) {
+    }
+    if (!inputs.message) {
       errors.message = "Se requiere un mensaje";
     }
 
@@ -46,11 +55,27 @@ export default function Contact() {
     );
   }
 
-  function handleSubmit() {}
+  function handleSubmit(evento) {
+    evento.preventDefault();
+    setErrors(validate(errors));
+    if (Object.keys(errors).length === 0) {
+      alert("Datos completos");
+      setInputs({
+        name: "",
+        email: "",
+        phone: 0,
+        subject: "",
+        message: "",
+      });
+      setErrors(validate({ ...inputs, errors: "" }));
+    } else {
+      alert("Debes llenar todos los campos");
+    }
+  }
   return (
     <div>
       Crear Formulario
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Nombre:</label>
         <input
           name="name"
