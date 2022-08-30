@@ -201,9 +201,13 @@ const [inputs, setInputs] = React.useState({
 
 1. Define una función llamada `validate` que reciba como parámetro el objeto **inputs**.
 2. Dentro de la función declara una variable llamada `errors` y que su valor sea un objeto vacío.
-3. Condiciona cada input que viene del objeto **inputs** que se está recibiendo como parámetro para que cumpla cada condición.
+3. Valida cada input del formulario que viene del objeto **inputs** que se está recibiendo como parámetro en la función, para que se cumplan las siguientes condiciones:
 
-> Tip: Para manejar los errores de los inputs de email y phone, puedes utilizar las variables `regexEmail` y `regexPhone` que están guardando los regex (expresiones regulares).
+- En el input **name**, si este campo está vacío, agrega la propiedad name al objeto **errors** en donde su valor sea, por ejemplo, "Se requiere un nombre".
+- En el input **email**, valida si el email que ingresa el usuario coincide con el regex de la constante `regexEmail`, aplicándole el método `test()` y dentro de sus paréntesis coloca `input.email`; agrega la propiedad email al objeto **errors** en donde su valor sea, por ejemplo, "Debe ser un correo electrónico".
+- En el input **phone**, valida si el email que ingresa el usuario coincide con el regex de la constante `regexPhone`, aplicándole el método `test()` y dentro de sus paréntesis coloca `input.phone`; agrega la propiedad phone al objeto **errors** en donde su valor sea, por ejemplo, "Sólo números".
+- En el input **subject**, si este campo está vacío, agrega la propiedad subject al objeto **errors** en donde su valor sea, por ejemplo, "Se requiere un asunto".
+- En el input **message**, si este campo está vacío, agrega la propiedad message al objeto **errors** en donde su valor sea, por ejemplo, "Se requiere un message".
 
 Ejemplo:
 
@@ -270,7 +274,10 @@ Ejemplo:
 
 🔹 Lo que hay que hacer:
 
-1. Define una función llamada `handleSubmit`, en ella vamos a
+1. Define una función llamada `handleSubmit`, que reciba un **evento** como parámetro, en ella realizarás la lógica que ejecutará el formulario cuando el usuario de click en el botón **Enviar**.
+2. Dentro de la función:
+
+- Utiliza el método `prevent default()` que cancela el evento si es cancelable, lo que significa que la acción predeterminada que pertenece al evento no ocurrirá
 
 🔹 Resultado esperado:
 

@@ -18,13 +18,13 @@ export default function Contact() {
 
   function validate(inputs) {
     let errors = {};
-
+    console.log(inputs);
     if (!inputs.name) {
       errors.name = "Se requiere un nombre";
     } else if (!regexEmail.test(inputs.email)) {
-      errors.email = "Se requiere un email";
+      errors.email = "Debe ser un correo electrónico";
     } else if (!regexPhone.test(inputs.phone)) {
-      errors.phone = "Debe ser un número";
+      errors.phone = "Solo números";
     } else if (!inputs.subject) {
       errors.subject = "Se requiere un asunto";
     } else if (!inputs.message) {
@@ -45,6 +45,8 @@ export default function Contact() {
       })
     );
   }
+
+  function handleSubmit() {}
   return (
     <div>
       Crear Formulario
