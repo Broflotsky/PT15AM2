@@ -16,8 +16,9 @@ x minutos
 
 Al finalizar esta homework habrás aprendido a:
 
-- Conocer la importancia de validar campos de formulario.
--
+- Conocer la importancia de manejar campos de formulario con estados.
+- Que el usuario ingrese los datos de acuerdo a como se lo permitas.
+- Pensar en cómo será la experiencia de usuario en tus aplicaciones.
 
 ---
 
