@@ -216,11 +216,11 @@ Dentro de la función debes hacer lo siguiente:
 a) Declara una variable llamada `errors` y que su valor sea un objeto vacío.
 b) Valida cada input del formulario que viene del objeto **inputs** que se está recibiendo como parámetro en la función, para que se cumplan las siguientes condiciones:
 
-- En el input **name**, si este campo está vacío, agrega la propiedad name al objeto **errors** en donde su valor sea, por ejemplo, "Se requiere un nombre".
-- En el input **email**, valida si el email que ingresa el usuario coincide con el regex de la constante `regexEmail`, aplicándole el método `test()` y dentro de sus paréntesis coloca `input.email`; agrega la propiedad email al objeto **errors** en donde su valor sea, por ejemplo, "Debe ser un correo electrónico".
-- En el input **phone**, valida si el email que ingresa el usuario coincide con el regex de la constante `regexPhone`, aplicándole el método `test()` y dentro de sus paréntesis coloca `input.phone`; agrega la propiedad phone al objeto **errors** en donde su valor sea, por ejemplo, "Sólo números".
-- En el input **subject**, si este campo está vacío, agrega la propiedad subject al objeto **errors** en donde su valor sea, por ejemplo, "Se requiere un asunto".
-- En el input **message**, si este campo está vacío, agrega la propiedad message al objeto **errors** en donde su valor sea, por ejemplo, "Se requiere un mensaje".
+- En el input **name**, si este campo está vacío, agrega la propiedad name al objeto **errors** en donde su valor sea "Se requiere un nombre".
+- En el input **email**, valida si el email que ingresa el usuario coincide con el regex de la constante `regexEmail`, aplicándole el método `test()` y dentro de sus paréntesis coloca `input.email`; agrega la propiedad email al objeto **errors** en donde su valor sea "Debe ser un correo electrónico".
+- En el input **phone**, valida si el email que ingresa el usuario coincide con el regex de la constante `regexPhone`, aplicándole el método `test()` y dentro de sus paréntesis coloca `input.phone`; agrega la propiedad phone al objeto **errors** en donde su valor sea "Sólo números".
+- En el input **subject**, si este campo está vacío, agrega la propiedad subject al objeto **errors** en donde su valor sea "Se requiere un asunto".
+- En el input **message**, si este campo está vacío, agrega la propiedad message al objeto **errors** en donde su valor sea "Se requiere un mensaje".
 
 Ejemplo:
 
