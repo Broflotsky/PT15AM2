@@ -293,7 +293,7 @@ Ejemplo:
 
 - Utiliza el método `preventDefault()` al parámetro **evento** para prevenir que el formulario se envíe por defecto.
 - Setea el estado **errors** y que éste reciba la función `validate` sin olvidar que la función **validate** recibe como argumento `errors`.
-- Convierte el estado **errors** en un array para medir su longitud, si es igual a 0, muestra un alert con un mensaje, por ejemplo, "Datos completos" y setea los estados **inputs** y **errors** en su estado original (recuerda que `errors` tiene la función validate); en caso contrario, muestra un alert con otro mensaje, por ejemplo, "Debe llenar todos los campos".
+- Convierte el estado **errors** en un array para medir su longitud, si es igual a 0, muestra un alert con un mensaje, por ejemplo, "Datos completos" y setea los estados **inputs** y **errors** en su estado original (recuerda que `errors` tiene la función validate); en caso contrario, muestra un alert con otro mensaje, por ejemplo, "Debes corregir los errores".
 
 3. Crea el atributo `onSubmit` a la etiqueta **form** y asígnale la función **handleSubmit**.
 
