@@ -1,0 +1,15 @@
+.cnt {
+    padding-top: 10px;
+}
+.form-container {
+    display:flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.form-container button {
+    margin-left: 20px;
+}
+.label {
+    padding-right: 10px;
+}

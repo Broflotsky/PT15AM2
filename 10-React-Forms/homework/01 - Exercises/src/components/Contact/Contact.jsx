@@ -11,7 +11,7 @@ export function validate(inputs) {
   if (!regexEmail.test(inputs.email)) {
     errors.email = "Debe ser un correo electrónico";
   }
-  if (typeof inputs.phone !== "number" || inputs.phone <= 0) {
+  if (inputs.phone <= 0) {
     errors.phone = "Sólo números positivos";
   }
   if (!inputs.subject) {

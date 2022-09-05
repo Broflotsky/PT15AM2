@@ -1,0 +1,34 @@
+{
+  "music": [
+    {
+      "id": 1,
+      "name": "Alternativa",
+      "image": "https://postmusica.com/wp-content/uploads/2020/11/musica-alternativa.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Blues",
+      "image": "https://postmusica.com/wp-content/uploads/2020/11/musica-blues-scaled.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Clásica",
+      "image": "https://postmusica.com/wp-content/uploads/2020/11/musica-clasica.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Childrens",
+      "image": "https://postmusica.com/wp-content/uploads/2020/11/childrens-musica.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Electrónica",
+      "image": "https://postmusica.com/wp-content/uploads/2020/11/musica-electronica.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Jazz",
+      "image": "https://postmusica.com/wp-content/uploads/2020/11/musica-jazz.jpg"
+    }
+  ]
+}

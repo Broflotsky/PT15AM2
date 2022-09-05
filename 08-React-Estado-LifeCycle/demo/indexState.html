@@ -1,54 +1,57 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
 
-<head>
-  <meta charset=UTF-8>
-  <title></title>
-</head>
+  <body>
+    <div id="app"></div>
 
-<body>
-  <div id='app'></div>
-
-  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-  <script type="text/babel">
-
-    class Contador extends React.Component {
-      constructor(props) {
-        super(props);
-        this.state = {
-          contador: this.props.numero
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      class Contador extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            contador: this.props.numero,
+          };
+          // this.onButtonClick = this.onButtonClick.bind(this);
         }
-        // this.onButtonClick = this.onButtonClick.bind(this);
+
+        // onButtonClick(){
+        //   console.log('this', this);
+        //   this.setState({
+        //     contador: this.state.contador + 1,
+        //   });
+        // }
+
+        onButtonClick = () => {
+          console.log("this arrow", this);
+          this.setState({
+            contador: this.state.contador + 1,
+          });
+        };
+
+        render() {
+          return (
+            <div>
+              <button onClick={this.onButtonClick}>Suma uno!</button>
+              <p>Hola! van {this.state.contador}</p>
+            </div>
+          );
+        }
       }
 
-      // onButtonClick(){
-      //   console.log('this', this);
-      //   this.setState({
-      //     contador: this.state.contador + 1,
-      //   });
-      // }
-
-      onButtonClick = () => {
-        console.log('this arrow', this)
-        this.setState({
-          contador: this.state.contador + 1
-        })
-      }
-
-      render() {
-        return (
-          <div>
-            <button onClick={this.onButtonClick}>Suma uno!</button>
-            <p>Hola! van {this.state.contador}</p>
-          </div>
-        )
-      }
-    };
-
-    ReactDOM.render(<Contador numero={0} />, document.getElementById('app'));
-  </script>
-</body>
-
+      ReactDOM.render(<Contador numero={0} />, document.getElementById("app"));
+    </script>
+  </body>
 </html>
