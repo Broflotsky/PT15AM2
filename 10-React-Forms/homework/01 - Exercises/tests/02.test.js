@@ -13,6 +13,20 @@ describe("02 | Ejercicios", () => {
   beforeEach(() => {
     contact = shallow(<Contact />);
   });
+  /* Correr estos test una vez hayan terminado de configurar su estado local acorde al README.md, ya que acá se testean los cambios del estado al escribir sobre los input */
+  it("Deberia asignar la funcion 'handleChange' al 'onChange' de cada input", () => {
+    const inputs = contact.find("input");
+    inputs.forEach((i) => {
+      expect(i.props().onChange).toBeDefined();
+      expect(typeof i.props().onChange).toBe("function");
+    });
+  });
+
+  it("Deberia asignar la funcion 'handleChange' al 'onChange' del textarea", () => {
+    const textArea = contact.find("textarea");
+    expect(textArea.length).toBe(1);
+    expect(typeof textArea.props().onChange).toBe("function");
+  });
 
   it("El form deberia cambiar de estado cuando escriban en el input de name", () => {
     expect(contact.find("input[name='name']").prop("value")).toEqual("");
@@ -59,18 +73,4 @@ describe("02 | Ejercicios", () => {
     expect(inputMessage.prop("value")).toEqual("Message Input");
   });
 
-  it("Deberia asignar la funcion 'handleChange' al 'onChange' de cada input", () => {
-    const inputs = contact.find("input");
-    expect(inputs.length).toBe(4);
-    inputs.forEach((i) => {
-      expect(i.props().onChange).toBeDefined();
-      expect(typeof i.props().onChange).toBe("function");
-    });
-  });
-
-  it("Deberia asignar la funcion 'handleChange' al 'onChange' del textarea", () => {
-    const textArea = contact.find("textarea");
-    expect(textArea.length).toBe(1);
-    expect(typeof textArea.props().onChange).toBe("function");
-  });
 });

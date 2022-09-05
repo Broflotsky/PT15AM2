@@ -139,7 +139,7 @@ Además:
   - `name` y su valor sea **message**.
   - `placeholder`y su valor sea **"Escribe tu mensaje..."**
   - `type` y su valor sea **text**
-- Una etiqueta botón con el atributo `type` donde su valor sea **submit** y el texto del botón sea **enviar**
+- Una etiqueta botón con el atributo `type` donde su valor sea **submit** y el texto del botón sea **Enviar**
 
 ---
 
@@ -182,8 +182,9 @@ const [inputs, setInputs] = React.useState({
 ```jsx
 <input name="name" value={inputs.name} />
 ```
+4. Crea la función **handleChange** antes del return, crea el atributo `onChange` a los inputs y textarea del formulario y asígnale **handleChange** como valor.
 
-4. Crea la función **handleChange** antes del return, esta función recibe un `evento` como parámetro y dentro de ella haz lo siguiente:
+5. En la función **handleChange** previamente creada, recibe un `evento` como parámetro y dentro de ella haz lo siguiente:
 
 - Setea el estado **inputs**
 - Usa el spread operator para copiar el estado anterior
@@ -193,7 +194,6 @@ const [inputs, setInputs] = React.useState({
 [evento.target.name]: evento.target.value
 ```
 
-5. Crea el atributo `onChange` a los inputs del formulario y asígnale la función **handleChange** previamente creada.
 
 ---
 
