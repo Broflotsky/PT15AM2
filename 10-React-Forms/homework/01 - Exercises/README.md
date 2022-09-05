@@ -139,7 +139,7 @@ Además:
   - `name` y su valor sea **message**.
   - `placeholder`y su valor sea **"Escribe tu mensaje..."**
   - `type` y su valor sea **text**
-- Una etiqueta botón con el atributo `type` donde su valor sea **submit** y el texto del botón sea **enviar**
+- Una etiqueta botón con el atributo `type` donde su valor sea **submit** y el texto del botón sea **Enviar**
 
 ---
 
@@ -184,8 +184,9 @@ const [inputs, setInputs] = React.useState({
 ```jsx
 <input name="name" value={inputs.name} />
 ```
+4. Crea la función **handleChange** antes del return, crea el atributo `onChange` a los inputs y textarea del formulario y asígnale **handleChange** como valor.
 
-4. Crea la función **handleChange** antes del return, esta función recibe un `evento` como parámetro y dentro de ella haz lo siguiente:
+5. En la función **handleChange** previamente creada, recibe un `evento` como parámetro y dentro de ella haz lo siguiente:
 
 - Setea el estado **inputs**
 - Usa el spread operator para copiar el estado anterior
@@ -195,7 +196,6 @@ const [inputs, setInputs] = React.useState({
 [evento.target.name]: evento.target.value
 ```
 
-5. Crea el atributo `onChange` a los inputs del formulario y asígnale la función **handleChange** previamente creada.
 
 ---
 
@@ -295,7 +295,7 @@ Ejemplo:
 
 - Utiliza el método `preventDefault()` al parámetro **evento** para prevenir que el formulario se envíe por defecto.
 - Setea el estado **errors** y que éste reciba la función `validate` sin olvidar que la función **validate** recibe como argumento `errors`.
-- Convierte el estado **errors** en un array para medir su longitud, si es igual a 0, muestra un alert con un mensaje, por ejemplo, "Datos completos" y setea los estados **inputs** y **errors** en su estado original (recuerda que `errors` tiene la función validate); en caso contrario, muestra un alert con otro mensaje, por ejemplo, "Debe llenar todos los campos".
+- Convierte el estado **errors** en un array para medir su longitud, si es igual a 0, muestra un alert con un mensaje, por ejemplo, "Datos completos" y setea los estados **inputs** y **errors** en su estado original (recuerda que `errors` tiene la función validate); en caso contrario, muestra un alert con otro mensaje, por ejemplo, "Debes corregir los errores".
 
 3. Crea el atributo `onSubmit` a la etiqueta **form** y asígnale la función **handleSubmit**.
 
