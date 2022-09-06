@@ -151,6 +151,8 @@ Además:
 
 🔹 Lo que hay que hacer:
 
+> **Hint**: Correr los tests una vez hayan terminado de configurar su estado local, ya los tests validan los cambios del estado al escribir sobre los inputs.
+
 1. Crea un estado llamado `inputs` , el estado debe iniciar en un objeto con las siguientes propiedades:
 
 - name, su valor debe ser un string vacío
@@ -177,7 +179,7 @@ const [inputs, setInputs] = React.useState({
 - subject, su valor debe ser un string vacío,
 - message, su valor debe ser un string vacío.
 
-3. Conecta el estado con el formulario, para ello, crea el atributo **value** en cada input asignándole el estado correspondiente. Ejemplo:
+3. Conecta el estado con el formulario, para ello, crea el atributo **value** en cada input y/o textarea asignándole el estado correspondiente. Ejemplo:
 
 ```jsx
 <input name="name" value={inputs.name} />
