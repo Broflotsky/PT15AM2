@@ -16,7 +16,7 @@ describe("02 | Ejercicios", () => {
   /* Correr estos test una vez hayan terminado de configurar su estado local acorde al README.md, ya que acá se testean los cambios del estado al escribir sobre los input */
   it("Deberia asignar la funcion 'handleChange' al 'onChange' de cada input", () => {
     const inputs = contact.find("input");
-    expect(inputs).toBeGreaterThan(0);
+    expect(inputs.length).toBeGreaterThan(0);
     inputs.forEach((i) => {
       expect(i.props().onChange).toBeDefined();
       expect(typeof i.props().onChange).toBe("function");
