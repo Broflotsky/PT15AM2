@@ -44,7 +44,19 @@ describe("03 | Ejercicios", () => {
       });
     });
 
-    it("El teléfono debe ser un número", () => {
+    it("El teléfono debe ser un número positivo", () => {
+      expect(
+        validate({
+          name: "Henry",
+          email: "henry@gmail.com",
+          phone: -235642,
+          subject: "Asunto Henry",
+          message: "Mensaje Henry",
+        })
+      ).toEqual({
+        phone: "Sólo números positivos",
+      });
+
       expect(
         validate({
           name: "Henry",
@@ -72,7 +84,7 @@ describe("03 | Ejercicios", () => {
       });
     });
 
-    it("El asunto debe ser obligatorio y no estar vacío", () => {
+    it("El message debe ser obligatorio y no estar vacío", () => {
       expect(
         validate({
           name: "Henry",
@@ -100,7 +112,7 @@ describe("03 | Ejercicios", () => {
   });
 
   describe("***Estilos de errores***", () => {
-    it("Si el nombre tiene errores, el input debe tener una clase 'warning'", () => {
+    it("Si el nombre tiene errores, el input debe tener una clase 'warning'. Cuando estos errores desaparezcan, el input NO debe tener la clase 'warning'", () => {
       contact.find("input[name='name']").simulate("change", {
         target: {
           name: "name",
@@ -109,9 +121,7 @@ describe("03 | Ejercicios", () => {
       });
       input = contact.find("input[name='name']");
       expect(input.hasClass("warning")).toBeTruthy();
-    });
-
-    it("Si el nombre no tiene errores, el input NO debe tener una clase 'warning'", () => {
+      // Ahora testeamos que el error desaparezca cuando ingresamos el input correcto
       contact.find("input[name='name']").simulate("change", {
         target: {
           name: "name",
@@ -122,7 +132,7 @@ describe("03 | Ejercicios", () => {
       expect(input.hasClass("warning")).toBeFalsy();
     });
 
-    it("Si el email tiene errores, el input debe tener una clase 'warning'", () => {
+    it("Si el email tiene errores, el input debe tener una clase 'warning'. Cuando estos errores desaparezcan, el input NO debe tener la clase 'warning'", () => {
       contact.find("input[name='email']").simulate("change", {
         target: {
           name: "email",
@@ -131,9 +141,7 @@ describe("03 | Ejercicios", () => {
       });
       input = contact.find("input[name='email']");
       expect(input.hasClass("warning")).toBeTruthy();
-    });
-
-    it("Si el email no tiene errores, el input NO debe tener una clase 'warning'", () => {
+      // Ahora testeamos que el error desaparezca cuando ingresamos el input correcto
       contact.find("input[name='email']").simulate("change", {
         target: {
           name: "email",
@@ -144,7 +152,7 @@ describe("03 | Ejercicios", () => {
       expect(input.hasClass("warning")).toBeFalsy();
     });
 
-    it("Si el teléfono tiene errores, el input debe tener una clase 'warning'", () => {
+    it("Si el teléfono tiene errores, el input debe tener una clase 'warning'. Cuando estos errores desaparezcan, el input NO debe tener la clase 'warning'", () => {
       contact.find("input[name='phone']").simulate("change", {
         target: {
           name: "phone",
@@ -153,20 +161,27 @@ describe("03 | Ejercicios", () => {
       });
       input = contact.find("input[name='phone']");
       expect(input.hasClass("warning")).toBeTruthy();
-    });
-
-    it("Si el teléfono no tiene errores, el input NO debe tener una clase 'warning'", () => {
+      // El telefono NO tiene que ser un numero negativo
       contact.find("input[name='phone']").simulate("change", {
         target: {
           name: "phone",
-          value: 23564200,
+          value: -235642,
+        },
+      });
+      input = contact.find("input[name='phone']");
+      expect(input.hasClass("warning")).toBeTruthy();
+      // Ahora testeamos que el error desaparezca cuando ingresamos el input correcto
+      contact.find("input[name='phone']").simulate("change", {
+        target: {
+          name: "phone",
+          value: 235642,
         },
       });
       input = contact.find("input[name='phone']");
       expect(input.hasClass("warning")).toBeFalsy();
     });
 
-    it("Si el asunto tiene errores, el input debe tener una clase 'warning'", () => {
+    it("Si el asunto tiene errores, el input debe tener una clase 'warning'. Cuando estos errores desaparezcan, el input NO debe tener la clase 'warning'", () => {
       contact.find("input[name='subject']").simulate("change", {
         target: {
           name: "subject",
@@ -175,9 +190,7 @@ describe("03 | Ejercicios", () => {
       });
       input = contact.find("input[name='subject']");
       expect(input.hasClass("warning")).toBeTruthy();
-    });
-
-    it("Si el asunto no tiene errores, el input NO debe tener una clase 'warning'", () => {
+      // Ahora testeamos que el error desaparezca cuando ingresamos el input correcto
       contact.find("input[name='subject']").simulate("change", {
         target: {
           name: "subject",
@@ -188,7 +201,7 @@ describe("03 | Ejercicios", () => {
       expect(input.hasClass("warning")).toBeFalsy();
     });
 
-    it("Si el mensaje tiene errores, el input debe tener una clase 'warning'", () => {
+    it("Si el mensaje tiene errores, el input debe tener una clase 'warning'. Cuando estos errores desaparezcan, el input NO debe tener la clase 'warning'", () => {
       contact.find("textarea[name='message']").simulate("change", {
         target: {
           name: "message",
@@ -197,9 +210,7 @@ describe("03 | Ejercicios", () => {
       });
       input = contact.find("textarea[name='message']");
       expect(input.hasClass("warning")).toBeTruthy();
-    });
-
-    it("Si el mensaje no tiene errores, el input NO debe tener una clase 'warning'", () => {
+      // Ahora testeamos que el error desaparezca cuando ingresamos el input correcto
       contact.find("textarea[name='message']").simulate("change", {
         target: {
           name: "message",
