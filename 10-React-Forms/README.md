@@ -34,10 +34,10 @@ Como sabemos, el estado en React es mutable, y lo mantenemos dentro del componen
 Con Hooks:
 
 ```javascript
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function Form() {
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
 
   function handleChange(e) {
     setName(e.target.value);
@@ -45,48 +45,43 @@ function Form() {
 
   return (
     <form>
-      <input 
-        type="text" 
-        name="name"
-        value={name} 
-        onChange={handleChange} 
-      />
+      <input type="text" name="name" value={name} onChange={handleChange} />
     </form>
-  )
+  );
 }
 ```
 
 Con Class:
 
 ```javascript
-import React from 'react';
+import React from "react";
 
 class Form extends React.Component {
-  constructor () {
+  constructor() {
     super();
     this.state = {
-      name: ''
-    }
+      name: "",
+    };
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(e) {
     this.setState({
-      name: e.target.value
+      name: e.target.value,
     });
   }
 
-  render () {
+  render() {
     return (
       <form>
-          <input 
-            type="text" 
-            name="name"   
-            value={this.state.name} 
-            onChange={this.handleChange} 
-          />
+        <input
+          type="text"
+          name="name"
+          value={this.state.name}
+          onChange={this.handleChange}
+        />
       </form>
-    );        
+    );
   }
 }
 
@@ -102,12 +97,12 @@ En la mayoria de los casos tendremos mas de un solo input. Para manejarlos podem
 Con Hooks:
 
 ```javascript
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function Form() {
   const [input, setInput] = useState({
-    name: '',
-    lastname: ''
+    name: "",
+    lastname: "",
   });
 
   function handleChange(e) {
@@ -115,24 +110,21 @@ function Form() {
     const name = e.target.name;
 
     setInput({
-      [name]: value // Sintaxis ES6 para actualizar la key correspondiente
+      [name]: value, // Sintaxis ES6 para actualizar la key correspondiente
     });
   }
 
   return (
     <form>
-      <input
-        name="name"
-        type="text"
-        value={name}
-        onChange={handleChange} />
+      <input name="name" type="text" value={name} onChange={handleChange} />
       <input
         name="lastname"
         type="text"
         value={lastname}
-        onChange={handleChange} />
+        onChange={handleChange}
+      />
     </form>
-  )
+  );
 }
 
 export default Form;
@@ -141,14 +133,14 @@ export default Form;
 Con Class:
 
 ```javascript
-import React from 'react';
+import React from "react";
 
 class Form extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: '',
-      lastname: ''
+      name: "",
+      lastname: "",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -159,23 +151,25 @@ class Form extends React.Component {
     const name = e.target.name;
 
     this.setState({
-      [name]: value // Sintaxis ES6 para actualizar la key correspondiente
+      [name]: value, // Sintaxis ES6 para actualizar la key correspondiente
     });
   }
 
   render() {
     return (
       <form>
-          <input
-            name="name"
-            type="name"
-            value={this.state.name}
-            onChange={this.handleChange} />
-          <input
-            name="lastname"
-            type="name"
-            value={this.state.lastname}
-            onChange={this.handleChange} />
+        <input
+          name="name"
+          type="name"
+          value={this.state.name}
+          onChange={this.handleChange}
+        />
+        <input
+          name="lastname"
+          type="name"
+          value={this.state.lastname}
+          onChange={this.handleChange}
+        />
       </form>
     );
   }
@@ -191,63 +185,66 @@ Otra de las cosas que queremos hacer en nuestro componente es validar los input 
 Con Hooks:
 
 ```javascript
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function Form() {
   const [input, setInput] = useState({
-    name: '',
-    lastname: '',
-    user: ''
+    name: "",
+    lastname: "",
+    user: "",
   });
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   function validateEmail(value) {
     var emailPattern = /\S+@\S+\.\S+/; // Expresion Regular para validar Emails.
 
-    if(!emailPattern.test(value)) {
-      console.log('entro al if')
-      setError('El usuario debe ser un email');
+    if (!emailPattern.test(value)) {
+      console.log("entro al if");
+      setError("El usuario debe ser un email");
     } else {
-      setError('')
+      setError("");
     }
   }
 
   function handleChange(e) {
     const { value, name } = e.target;
 
-    if(name === 'user') {
-      validateEmail(input.user)
+    if (name === "user") {
+      validateEmail(input.user);
     }
 
     setInput({
       ...input,
-      [name]: value // Sintaxis ES6 para actualizar la key correspondiente
+      [name]: value, // Sintaxis ES6 para actualizar la key correspondiente
     });
   }
   return (
-    <form>  
+    <form>
       <input
         name="name"
         type="text"
         value={input.name}
         onChange={handleChange}
-        placeholder="Nombre" />
+        placeholder="Nombre"
+      />
       <input
         name="lastname"
         type="text"
         value={input.lastname}
         onChange={handleChange}
-        placeholder="Apellido" />
+        placeholder="Apellido"
+      />
       <input
         name="user"
         type="text"
         value={input.user}
         onChange={handleChange}
-        placeholder="Usuario" />
+        placeholder="Usuario"
+      />
       {!error ? null : <div>{error}</div>}
       <input type="submit" value="Submit" />
     </form>
-  )
+  );
 }
 
 export default Form;
@@ -256,16 +253,16 @@ export default Form;
 Con Class:
 
 ```javascript
-import React from 'react';
+import React from "react";
 
 class Form extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: '',
-      lastname: '',
-      user: '',
-      error: ''
+      name: "",
+      lastname: "",
+      user: "",
+      error: "",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -274,52 +271,55 @@ class Form extends React.Component {
   validateEmail(value) {
     var emailPattern = /\S+@\S+\.\S+/; // Expresion Regular para validar Emails.
 
-    if(!emailPattern.test(value)) {
+    if (!emailPattern.test(value)) {
       this.setState({
-        error: 'El usuario debe ser un email'
-      })
+        error: "El usuario debe ser un email",
+      });
     } else {
-        this.setState({
-          error: ''
-        })
+      this.setState({
+        error: "",
+      });
     }
   }
 
   handleChange(e) {
     const { value, name } = e.target;
 
-    if(name === 'user') {
-      this.validateEmail(this.state.user)
+    if (name === "user") {
+      this.validateEmail(this.state.user);
     }
 
     this.setState({
-      [name]: value // Sintaxis ES6 para actualizar la key correspondiente
+      [name]: value, // Sintaxis ES6 para actualizar la key correspondiente
     });
   }
 
   render() {
     return (
       <form>
-          <input
-            name="name"
-            type="text"
-            value={this.state.name}
-            onChange={this.handleChange}
-            placeholder="Nombre" />
-          <input
-            name="lastname"
-            type="text"
-            value={this.state.lastname}
-            onChange={this.handleChange}
-            placeholder="Apellido" />
-          <input
-            name="user"
-            type="text"
-            value={this.state.user}
-            onChange={this.handleChange}
-            placeholder="Usuario" />
-          {!this.state.error ? null : <div>{this.state.error}</div>}
-          <input type="submit" value="Submit" />
+        <input
+          name="name"
+          type="text"
+          value={this.state.name}
+          onChange={this.handleChange}
+          placeholder="Nombre"
+        />
+        <input
+          name="lastname"
+          type="text"
+          value={this.state.lastname}
+          onChange={this.handleChange}
+          placeholder="Apellido"
+        />
+        <input
+          name="user"
+          type="text"
+          value={this.state.user}
+          onChange={this.handleChange}
+          placeholder="Usuario"
+        />
+        {!this.state.error ? null : <div>{this.state.error}</div>}
+        <input type="submit" value="Submit" />
       </form>
     );
   }
@@ -332,17 +332,17 @@ Para tener un Formulario completo. Tenemos que hacer algun tipo de validacion en
 Ahora nuestro state `error`, pasara a ser un objecto con cada tipo de error segun nuestro input, y agregaremos `disabled` para saber si nuestro form esta habilidado o no.
 
 ```javascript
-    this.state = {
-      name: '',
-      lastname: '',
-      user: '',
-      errors: {
-        name: '',
-        lastname: '',
-        user: ''
-      },
-      disabled: true
-    };
+this.state = {
+  name: "",
+  lastname: "",
+  user: "",
+  errors: {
+    name: "",
+    lastname: "",
+    user: "",
+  },
+  disabled: true,
+};
 ```
 
 Dentro de `handleChange` agregamos un switch statement para validar cada input:
@@ -353,13 +353,13 @@ Dentro de `handleChange` agregamos un switch statement para validar cada input:
     let errors = this.state.errors;
 
     switch (name) {
-      case 'name': 
+      case 'name':
         errors.name = value.length < 5 ? 'Nombre debe tener almenos 5 caracteres' : '';
         break;
-      case 'lastname': 
+      case 'lastname':
         errors.lastname = value.length < 5 ? 'Apellido debe tener almenos 5 caracteres' : '';
         break;
-      case 'user': 
+      case 'user':
         var emailPattern = /\S+@\S+\.\S+/;
         errors.user = emailPattern.test(value) ? '' : 'El usuario debe ser un email';
         break;
@@ -394,21 +394,21 @@ Crearemos una funcion que valide que nuestro Formulario no tenga ningun error pa
 Y asi tendriamos un Formulario Controlado, en donde estamos haciendo validaciones por cada input, y deshabilitamos el input de submit hasta pasar todas las validaciones.
 
 ```javascript
-import React from 'react';
+import React from "react";
 
 class Form extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: '',
-      lastname: '',
-      user: '',
+      name: "",
+      lastname: "",
+      user: "",
       errors: {
-        name: '',
-        lastname: '',
-        user: ''
+        name: "",
+        lastname: "",
+        user: "",
       },
-      disabled: true
+      disabled: true,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -416,16 +416,15 @@ class Form extends React.Component {
 
   validarForm(errors) {
     let valid = true;
-    Object.values(errors).forEach( (val) => val.length > 0 && (valid = false)
-    );
-    if(valid) {
+    Object.values(errors).forEach((val) => val.length > 0 && (valid = false));
+    if (valid) {
       this.setState({
-        disabled: false
-      })
+        disabled: false,
+      });
     } else {
       this.setState({
-        disabled: true
-      })
+        disabled: true,
+      });
     }
   }
 
@@ -434,56 +433,66 @@ class Form extends React.Component {
     let errors = this.state.errors;
 
     switch (name) {
-      case 'name': 
-        errors.name = value.length < 5 ? 'Nombre debe tener 5 caracteres' : '';
+      case "name":
+        errors.name = value.length < 5 ? "Nombre debe tener 5 caracteres" : "";
         break;
-      case 'lastname': 
-        errors.lastname = value.length < 5 ? 'Apellido debe tener 5 caracteres' : '';
+      case "lastname":
+        errors.lastname =
+          value.length < 5 ? "Apellido debe tener 5 caracteres" : "";
         break;
-      case 'user': 
+      case "user":
         var emailPattern = /\S+@\S+\.\S+/; // Expresion Regular para validar Emails.
-        errors.user = emailPattern.test(value) ? '' : 'El usuario debe ser un email';
+        errors.user = emailPattern.test(value)
+          ? ""
+          : "El usuario debe ser un email";
         break;
       default:
         break;
     }
     this.setState({
       [name]: value, // Sintaxis ES6 para actualizar la key correspondiente
-      errors
+      errors,
     });
 
-    this.validarForm(this.state.errors)
+    this.validarForm(this.state.errors);
   }
 
   render() {
     return (
-      <form style={{display: 'flex', flexDirection: 'column', width: '150px'}}>
-          <input
-            name="name"
-            type="name"
-            value={this.state.name}
-            onChange={this.handleChange}
-            placeholder="Nombre" />
-          {!this.state.errors.name ? null : <div>{this.state.errors.name}</div>}
-          <input
-            name="lastname"
-            type="name"
-            value={this.state.lastname}
-            onChange={this.handleChange}
-            placeholder="Apellido" />
-          {!this.state.errors.lastname ? null : <div>{this.state.errors.lastname}</div>}
-          <input
-            name="user"
-            type="name"
-            value={this.state.user}
-            onChange={this.handleChange}
-            placeholder="Usuario" />
-          {!this.state.errors.user ? null : <div>{this.state.errors.user}</div>}
-          <input disabled={this.state.disabled} type="submit" value="Submit" />
+      <form
+        style={{ display: "flex", flexDirection: "column", width: "150px" }}
+      >
+        <input
+          name="name"
+          type="name"
+          value={this.state.name}
+          onChange={this.handleChange}
+          placeholder="Nombre"
+        />
+        {!this.state.errors.name ? null : <div>{this.state.errors.name}</div>}
+        <input
+          name="lastname"
+          type="name"
+          value={this.state.lastname}
+          onChange={this.handleChange}
+          placeholder="Apellido"
+        />
+        {!this.state.errors.lastname ? null : (
+          <div>{this.state.errors.lastname}</div>
+        )}
+        <input
+          name="user"
+          type="name"
+          value={this.state.user}
+          onChange={this.handleChange}
+          placeholder="Usuario"
+        />
+        {!this.state.errors.user ? null : <div>{this.state.errors.user}</div>}
+        <input disabled={this.state.disabled} type="submit" value="Submit" />
       </form>
     );
   }
-};
+}
 
 export default Form;
 ```
@@ -496,21 +505,17 @@ Vamos paso a paso, utilizando Hooks. La idea de este ejemplo que haremos sera cr
 Lo primero que haremos es crear el Form con los datos estaticos, en este caso el nombre de una persona.
 
 ```javascript
-import React from 'react'; 
+import React from "react";
 
-function Form() {  
-
-  return (        
-    <form>            
+function Form() {
+  return (
+    <form>
       <label htmlFor="nombre">Nombre:</label>
-      <input
-          type="text"
-          name="nombre"
-      />     
-      <input type="submit" value="Submit" />        
-    </form>   
+      <input type="text" name="nombre" />
+      <input type="submit" value="Submit" />
+    </form>
   );
-};
+}
 export default Form;
 ```
 
@@ -518,42 +523,32 @@ Para crear los inputs dinamicos utilizaremos un arreglo de objetos. Cada objeto 
 Agregaremos un boton que nos permite agregar un nuevo familiar, es decir, un nuevo objeto al arreglo. Lo que generara un cambio de state y que el componente se actualice con los cambios. Tendremos que iterar sobre ese arreglo y por cada elemento renderizar un nuevo input, dependiendo la cantidad de keys que tenga en el objeto.
 
 ```javascript
-import React, { useState } from 'react'; 
+import React, { useState } from "react";
 
-function Form() {  
-  const [familiar, setFamiliar] = useState([
-    { nombre: '' },
-  ]);
+function Form() {
+  const [familiar, setFamiliar] = useState([{ nombre: "" }]);
 
-  return (        
-    <form>            
+  return (
+    <form>
       <label htmlFor="nombre">Nombre:</label>
-      <input
-          type="text"
-          name="nombre"
-      />     
-      <input
-        type="button"
-        value="Agrega un Familiar"
-      />
-      {
-      familiar.map((el, i) => (
+      <input type="text" name="nombre" />
+      <input type="button" value="Agrega un Familiar" />
+      {familiar.map((el, i) => (
         <div key={`persona-${i}`}>
           <label htmlFor={`nombre-${i}`}>{`Familiar #${i + 1}`}</label>
           <input
-              type="text"
-              name={`nombre-${i}`}
-              id={i}
-              data-name="nombre"
-              value={e.nombre}
+            type="text"
+            name={`nombre-${i}`}
+            id={i}
+            data-name="nombre"
+            value={e.nombre}
           />
         </div>
-      ))
-      }
-      <input type="submit" value="Submit" />        
-    </form>   
+      ))}
+      <input type="submit" value="Submit" />
+    </form>
   );
-};
+}
 export default Form;
 ```
 
@@ -562,48 +557,41 @@ export default Form;
 Por el momento estamos iterando sobre el state `familiar` para mostrar un input. Todavia no es dinamico. Para eso tenemos que dejar que el usuario agregue inputs haciendo click en el boton que creamos. Vamos a crear un metodo que agregue un nuevo objeto a nuestro state.
 
 ```javascript
-import React, { useState } from 'react'; 
+import React, { useState } from "react";
 
-function Form() {  
-  const modeloFamiliar = { nombre: '' }; // Creamos un modelo de Familiar para poder usar este objeto para agregar al state cada vez que agregamos un familiar
-  const [familiar, setFamiliar] = useState([
-    { ...modeloFamiliar },
-  ]);
+function Form() {
+  const modeloFamiliar = { nombre: "" }; // Creamos un modelo de Familiar para poder usar este objeto para agregar al state cada vez que agregamos un familiar
+  const [familiar, setFamiliar] = useState([{ ...modeloFamiliar }]);
 
   const agregaFamiliar = () => {
-      setFamiliar([...familiar, { ...modeloFamiliar }]); // Hacemos una copia del state que teniamos y agregamos un objeto nuevo al state.
+    setFamiliar([...familiar, { ...modeloFamiliar }]); // Hacemos una copia del state que teniamos y agregamos un objeto nuevo al state.
   };
 
-  return (        
-    <form>            
+  return (
+    <form>
       <label htmlFor="nombre">Nombre:</label>
-      <input
-          type="text"
-          name="nombre"
-      />     
+      <input type="text" name="nombre" />
       <input
         type="button"
         value="Agrega un Familiar"
         onClick={agregaFamiliar}
       />
-      {
-      familiar.map((el, i) => (
+      {familiar.map((el, i) => (
         <div key={`persona-${i}`}>
           <label htmlFor={`nombre-${i}`}>{`Familiar #${i + 1}`}</label>
           <input
-              type="text"
-              name={`nombre-${i}`}
-              id={i}
-              data-name="nombre"
-              value={el.nombre}
+            type="text"
+            name={`nombre-${i}`}
+            id={i}
+            data-name="nombre"
+            value={el.nombre}
           />
         </div>
-      ))
-      }
-      <input type="submit" value="Submit" />        
-    </form>   
+      ))}
+      <input type="submit" value="Submit" />
+    </form>
   );
-};
+}
 export default Form;
 ```
 
@@ -612,25 +600,24 @@ export default Form;
 Ya tenemos nuestros inputs, ahora tenemos que, utilizando lo antes visto. Capturar los valores ingresados utilizando un estado.
 
 ```javascript
-function Form() {  
-  const modeloFamiliar = { nombre: '' };
-  const [familiar, setFamiliar] = useState([
-    { ...modeloFamiliar },
-  ]);
+function Form() {
+  const modeloFamiliar = { nombre: "" };
+  const [familiar, setFamiliar] = useState([{ ...modeloFamiliar }]);
 
   const [persona, setPersona] = useState({
-    nombre: '',
+    nombre: "",
   });
 
   const agregaFamiliar = () => {
-      setFamiliar([...familiar, { ...modeloFamiliar }]);
+    setFamiliar([...familiar, { ...modeloFamiliar }]);
   };
 
   // Este metodo lo usamos para capturar el valor ingresado en nuestro input estatico
-  const handlePersonaChange = (e) => setPersona({
-    ...persona,
-    [e.target.name]: e.target.value,
-  });
+  const handlePersonaChange = (e) =>
+    setPersona({
+      ...persona,
+      [e.target.name]: e.target.value,
+    });
 
   // Este metodo lo usamos para controlar los inputs que se van creando dinamicamente
   // Primero hacemos una copia del estado `familiar`
@@ -642,39 +629,37 @@ function Form() {
     setFamiliar(familiares);
   };
 
-  return (        
-    <form>            
+  return (
+    <form>
       <label htmlFor="nombre">Nombre:</label>
       <input
         type="text"
         name="nombre"
         value={persona.nombre}
         onChange={handlePersonaChange}
-      />  
+      />
       <input
         type="button"
         value="Agrega un Familiar"
         onClick={agregaFamiliar}
       />
-      {
-      familiar.map((el, i) => (
+      {familiar.map((el, i) => (
         <div key={`persona-${i}`}>
           <label htmlFor={`nombre-${i}`}>{`Familiar #${i + 1}`}</label>
           <input
-              type="text"
-              name={`nombre-${i}`}
-              id={i}
-              data-name="nombre"
-              value={el.nombre}
-              onChange={handleFamiliarChange} // Agregamos el metodo a cada input que generamos
+            type="text"
+            name={`nombre-${i}`}
+            id={i}
+            data-name="nombre"
+            value={el.nombre}
+            onChange={handleFamiliarChange} // Agregamos el metodo a cada input que generamos
           />
         </div>
-      ))
-      }
-      <input type="submit" value="Submit" />        
-    </form>   
+      ))}
+      <input type="submit" value="Submit" />
+    </form>
   );
-};
+}
 
 export default Form;
 ```
@@ -739,4 +724,4 @@ function Uncontrolled() {
 
 ## Homework
 
-Completa la tarea descrita en el archivo [README](https://github.com/soyHenry/FT-M2/blob/master/10-React-Forms/homework/README.md)
+Completa la tarea descrita en el archivo [README](./homework/README.md)

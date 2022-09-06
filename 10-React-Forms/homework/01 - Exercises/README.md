@@ -183,7 +183,9 @@ const [inputs, setInputs] = React.useState({
 <input name='name' value={inputs.name} />
 ```
 
-4. Crea la función **handleChange** antes del return. Esta función recibe un `evento` como parámetro y dentro de ella haz lo siguiente:
+4. Crea la función **handleChange** antes del return, crea el atributo `onChange` a los inputs y textarea del formulario y asígnale **handleChange** como valor.
+
+5. Crea la función **handleChange** antes del return. Esta función recibe un `evento` como parámetro y dentro de ella haz lo siguiente:
 
 -  Setea el estado **inputs**.
 -  Usa el "_spread operator_" para copiar el estado anterior.

@@ -11,7 +11,7 @@ export function validate(inputs) {
   if (!regexEmail.test(inputs.email)) {
     errors.email = "Debe ser un correo electrónico";
   }
-  if (typeof inputs.phone !== "number" || inputs.phone <= 0) {
+  if (inputs.phone <= 0) {
     errors.phone = "Sólo números positivos";
   }
   if (!inputs.subject) {
@@ -55,7 +55,6 @@ export default function Contact() {
   }
 
   function handleSubmit(evento) {
-    evento.preventDefault();
     setErrors(validate(errors));
     if (Object.keys(errors).length === 0) {
       alert("Datos completos");
@@ -68,7 +67,7 @@ export default function Contact() {
       });
       setErrors(validate({ ...inputs, errors: "" }));
     } else {
-      alert("Debes llenar todos los campos");
+      alert("Debes corregir los errores");
     }
   }
   return (
