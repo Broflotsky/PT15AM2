@@ -1,8 +1,10 @@
-# Módulo 2 Front End | React-Forms
+# Módulo 2 Front End | React-Redux
 
 ## Temas de la homework
 
-- Formularios controlados / no controlados
+- Redux
+- Componentes presentacionales vs containers
+- React-redux
 
 ---
 
@@ -16,9 +18,10 @@ x minutos
 
 Al finalizar esta homework habrás aprendido a:
 
-- Conocer la importancia de manejar campos de formulario con estados.
-- Que el usuario ingrese los datos de acuerdo a como se lo permitas.
-- Pensar en cómo será la experiencia de usuario en tus aplicaciones.
+- Conectar react con redux.
+- Conocer la importancia de manejar estados globales con redux.
+- Tener un mayor control en la aplicación y flujo de datos.
+- Crear y usar las actions para actualizar los estados globales.
 
 ---
 

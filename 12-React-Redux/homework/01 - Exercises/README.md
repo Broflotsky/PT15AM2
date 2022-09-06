@@ -1,4 +1,4 @@
-# HW 10 - React-Forms | Ejercicios
+# HW 12 - React-Redux | Ejercicios
 
 ## Duración estimada 🕒
 
@@ -8,15 +8,14 @@ x minutos
 
 ## Intro
 
-En esta homework encontrarás casi lista la Music App, sin embargo, deberás solucionar al usuario la necesidad de que se comunique con la plataforma, posiblemente para dejar un mensaje contando la experiencia y/o sugerencias para la aplicación.
+En esta homework desarrollarás una aplicación que permita al usuario agregar y eliminar o tachar una lista de compras.
 
 ---
 
 ## Consigna de la homework
 
-- Crear un formulario controlado.
-- Crear inputs dinámicos.
-- Manejar errores en los inputs.
+- Crear una lista de compras.
+- Eliminar o tachar una lista de compras.
 
 ---
 
@@ -42,16 +41,6 @@ Si deseas correr por test, puedes utilizar:
 npm run test:01
 ```
 
-🔹 Para esta homework necesitarás emular peticiones a una api con el fin de consumir los datos que allí están, para ello, debes correr el servidor **db.json**, sin este paso no podrás visualizar el resultado esperado y tampoco pasarán los tests. A continuación, los pasos para correr el servidor:
-
-- Abrir una segunda terminal.
-- En la terminal, dirígete a la carpeta que estamos trabajando.
-- Ejecuta el comando:
-
-```bash
-npm run server
-```
-
 🔹 Para poder correr la aplicación de forma local, sólo debes ejecutar el comando
 
 ```bash
@@ -71,7 +60,6 @@ npm start
 - Una carpeta llamada **public**
 - Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
 - Una carpeta llamada **tests**
-- Un archivo **db.json**
 - Un archivo **package.json**
 - Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
 
@@ -86,20 +74,6 @@ Además:
 - Un archivo `index.js`
 
 🔹 Dentro de la carpeta `components` encontrarás:
-
-- Una carpeta llamada **Card**, la cual a su vez contiene:
-  - El componente `Card.jsx`
-  - La hoja de estilos Card.module.css
-- Una carpeta llamada **Cards**, la cual a su vez contiene:
-  - El componente `Cards.jsx`
-  - La hoja de estilos Cards.module.css
-- Una carpeta llamada **Contact**, la cual a su vez contiene:
-  - El componente `Contact.jsx`
-- Una carpeta llamada **Home**, la cual a su vez contiene:
-  - El componente `Home.jsx`
-- Una carpeta llamada **NavBar**, la cual a su vez contiene:
-  - El componente `NavBar.jsx`
-  - La hoja de estilos NavBar.module.css
 
 ---
 
