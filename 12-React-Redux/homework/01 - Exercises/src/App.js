@@ -1,18 +1,21 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home/Home.jsx";
-import NavBar from "./components/NavBar/NavBar.jsx";
-import Contact from "./components/Contact/Contact";
-// import CardDetail from "./components/CardDetail/CardDetail.jsx";
 
 export default function App() {
+  const [input, setInput] = React.useState("");
+
+  function handleChange(e) {
+    e.preventDefault();
+    setInput();
+  }
+
+  function handleAddList(e) {}
+
   return (
     <div>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <label>Ingresa un item:</label>
+      <input value={input} onChange={handleChange} />
+      <button>Agregar</button>
+      <button></button>
     </div>
   );
 }
