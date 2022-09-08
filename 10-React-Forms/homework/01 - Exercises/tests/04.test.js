@@ -72,7 +72,7 @@ describe("04 | Ejercicios", () => {
 
   it("El formulario deberia tener el atributo onSubmit que ejecute la función handleSubmit previamente creada", () => {
     onSubmit = contact.find("form").prop("onSubmit");
-    onSubmit({ preventDefault: handleSubmit() });
+    onSubmit({ preventDefault: handleSubmit });
     expect(handleSubmit).toHaveBeenCalled();
   });
 });
