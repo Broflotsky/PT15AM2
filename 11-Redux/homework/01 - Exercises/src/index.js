@@ -1,24 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import Counter from './components/Counter';
-import counter from './reducers';
+const { createStore } = require('redux');
+const contador = require('./reducer');
+const { incremento, decremento } = require('./actions');
 
-// Esta línea instancia nuestro store central de Redux.
-// La función `createStore` recibe el reducer
-// que es responsable de la actualización del store , junto
-//con cualquier estado inicial con el que queramos que
-//empiece el store (que en este caso es ninguno).
-const store = createStore(counter);
+// En esta linea creamos nuestro store. Pasandole como parametro nuestro Reducer
+var store;
 
-// Aquí, envolvemos nuestro componente principal React dentro de las etiquetas del Provider,
-// que vienen del paquete react-redux.
-// Esto es necesario porque el store necesita saber hacia dónde está pasando su estado. 
-// El componente Provider es donde "vive" el store.
-ReactDOM.render(
-  <Provider store={store}>
-    <Counter />
-  </Provider>,
-  document.getElementById('root')
-);
+// Obtenemos el elemento con el id `valor`.
+var valor;
+
+// Esta funcion nos va a servir para actualizar nuestro DOM con el valor que tengamos en nuestro Store.
+// En el primer render y cada vez que nos subscribamos al Store.
+// Utilizamos el elemento obtenido arriba para mostrar el State.
+function renderContador() {
+  // Obtenemos la propiedad 'contador' de nuestro store:
+  
+  // Seteamos el numero obtenido como texto dentro del elemento con id 'valor':
+
+}
+
+// Ejecutamos la funcion 'renderContador':
+
+
+
+// Nos subscribimos al store pasandole la misma funcion. Asi cada vez que llegue una accion, ejecutamos la funcion:
+
+
+
+// Por ultimo, utilizamos los botones de nuestro HTML para que cada vez que hagamos click,
+// hagan un dispatch al store de la accion correspondiente:
