@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import Card from '../Card/Card';
 import './products.css';
 
 function Products() {
