@@ -1,0 +1,23 @@
+.cardBg {
+   background-color: rgb(238, 255, 0);
+   width: 15vw;
+   height: 8vh;
+   font-family: Helvetica;
+   font-size: 1.3rem;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin: 2vw;
+   position: relative;
+}
+
+.cardBtn {
+   background-color: red;
+   border: none;
+   font-family: Helvetica;
+   font-weight: bold;
+   cursor: pointer;
+   position: absolute;
+   top: 0;
+   right: 0;
+}

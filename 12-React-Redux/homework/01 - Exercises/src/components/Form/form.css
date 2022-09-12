@@ -1,0 +1,33 @@
+.formBg {
+   height: 100vh;
+   width: 38vw;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: center;
+   font-size: 1.2rem;
+   font-family: Helvetica;
+   background-color: rgb(247, 247, 247);
+}
+
+.inputBox {
+   width: 75%;
+   background-color: grey;
+   display: flex;
+   flex-direction: column;
+}
+
+.formBtn {
+   width: 8rem;
+   height: 2.5rem;
+   background-color: grey;
+   border: none;
+   border-radius: 1.2rem;
+   font-weight: bold;
+   letter-spacing: 0.1rem;
+   cursor: pointer;
+}
+
+.logo {
+   width: 60%;
+}

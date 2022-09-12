@@ -8,14 +8,14 @@ x minutos
 
 ## Intro
 
-En esta homework desarrollarás una aplicación que le permite al usuario agregar y eliminar uno o varios productos de una lista de compras.
+En esta homework desarrollarás una aplicación que le permite al usuario agregar y eliminar productos de una lista de compras.
 
 ---
 
 ## Consigna de la homework
 
--  Crear una lista de compras.
--  Eliminar uno o varios productos de la lista de compras.
+-  Agregar productos a una lista de compras.
+-  Eliminar productos de la lista de compras.
 
 ---
 
@@ -55,98 +55,159 @@ npm start
 
 🔹 Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
--  Una carpeta llamada **_mocks_**
--  Una carpeta llamada **img**
--  Una carpeta llamada **public**
--  Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
--  Una carpeta llamada **tests**
+-  Una carpeta llamada **_mocks_**.
+-  Una carpeta llamada **_public_**.
+-  Una carpeta llamada **_tests_**
 -  Un archivo **package.json**
+-  Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
 -  Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
-
----
-
-## CHECK
-
--  Y un archivo **.env**
-
----
 
 Además:
 
 🔹 Dentro de la carpeta `src` encontrarás el esqueleto del proyecto React, estructurado de la siguiente manera:
 
 -  Una carpeta llamada `assets`
--  Una carpeta llamada `components` --------CHECK-----------
+-  Una carpeta llamada `components`
+   -  Una carpeta llamada `Form`
+   -  Una carpeta llamada `Card`
+   -  Una carpeta llamada `Products`
 -  Una carpeta llamada `redux`
    -  Una carpeta llamada `actions`
    -  Una carpeta llamada `reducer`
    -  Una carpeta llamada `store`
--  Un archivo llamado `App.js`
--  Un archivo **index.css**
--  Un archivo `index.js`
+-  Un archivo llamado `Home.js`
+-  Un archivo llamado `home.css`
+-  Un archivo llamado `index.js`
 
----
-
-## CHECK
-
-🔹 Estarás trabajando en las carpetas actions, reducer, store y el archivo App.js.
-
----
+Estarás trabajando con algunos componentes y con las herramientas de Redux.
 
 🔹 Da un vistazo al archivo `index.js`, dentro de la carpeta **store**, para que veas cómo se configura el store.
 
+---
+
 ## 👩‍💻 Ejercicio 1
 
-### Actions
+### **ACTIONS**
 
 🔹 Dentro de la carpeta **actions**, encontrarás dos archivos:
 
--  `index.js`, en el que harás las respectivas funciones para la lista de compras.
--  `types.js`, en el que guardarás las constantes de los types.
+-  `index.js`: en este harás las funciones _action creators_ para gestionar tu lista de compras (agregar, editar o eliminar productos).
+-  `types.js`: en este guardarás los types para enviar a tu reducer.
 
 🔹 Lo que hay que hacer:
 
 1. En el archivo **types.js**, crea y exporta las siguientes constantes:
 
--  ADD_ITEM, en el que su valor sea 'ADD_ITEM'
--  EDIT_ITEM, en el que su valor sea 'EDIT_ITEM'
--  DELETE_ITEM, en el que su valor sea 'DELETE_ITEM'
+-  ADD_PRODUCT: que su valor sea 'ADD_PRODUCT'.
+-  DELETE_PRODUCT: que su valor sea 'DELETE_PRODUCT'.
 
 2. En el archivo **actions.js**, importa las constantes que están en el archivo **types.js**.
 
-> Hint: Puedes utilizar destructuring para importar los types.
+   > NOTA: puedes utilizar destructuring para importar los types.
 
-3. Define y exporta una función llamada addItem que recibe como parámetro `payload`, esta función debe retornar la propiedad type con su valor: **ADD_ITEM** y la propiedad payload con el valor que recibe por parámetro la función.
+3. Define y exporta una función llamada addProduct que recibe como parámetro `product`. Esta función debe retornar la propiedad **type** con el valor ADD_PRODUCT, y la propiedad **payload** con el valor que recibe por parámetro la función.
 
-4. Define y exporta una función llamada editItem que recibe como parámetro `id`, esta función debe retornar la propiedad type con su valor: **EDIT_ITEM** y la propiedad payload con el valor que recibe por parámetro la función.
-
-5. Define y exporta una función llamada deleteItem que recibe como parámetro `id`, esta función debe retornar la propiedad type con su valor: **DELETE_ITEM** y la propiedad payload con el valor que recibe por parámetro la función.
-
-mapDispatchToProps mapStateToProps
+4. Define y exporta una función llamada deleteProduct que recibe como parámetro `productName`. Esta función debe retornar la propiedad **type** con el valor DELETE_PRODUCT, y la propiedad **payload** con el valor que recibe por parámetro la función.
 
 ---
 
 ## 👩‍💻 Ejercicio 2
 
-### Reducer
+### **REDUCER**
 
-la lista debería ser un array de obj.
+Dirígete al archivo `redux/reducer/index.js`. Si te fijas, el **Initial State** (tu estado global) ya está declarado, y más abajo se esta exportando por defecto una función **rootReducer** que aún no a sido creada. Por lo tanto, sigue los siguientes pasos:
 
-🔹 Ahora agrega estados al componente Contact, estos estados estarán conectados con los inputs que creaste en el ejercicio anterior.
+1. Crea una función llamada **rootReducer** que reciba como parámetro:
 
-🔹 Lo que hay que hacer:
+   -  Una variable _**state**_, que sea igual al _initialState_ ya declarado.
+   -  Una variable **_action_** (puedes hacer _destructuring_ de sus dos propiedades).
+
+2. Dentro de esta función crea una declaración **switch** que reciba por parámetro la propiedad _**type**_ de la _action_.
+
+3. Dentro de esta declaración **switch** crearemos dos casos distintos, y un caso _default_.
+
+   **Caso A)** El nombre de este caso será **ADD_PRODUCT**. Lo que hará es agregar en tu propiedad **list** del estado global el producto recibido por _paylaod_. Una vez insertado, retornará un objeto en el cual se haga un _**spread operator**_ del estado, y la propiedad **list** será igual al nuevo arreglo (que contiene el payload recibido).
+
+   **Caso B)** El nombre de este caso será **DELETE_PRODUCT**. Lo que hará es tomar el arreglo de objetos **list**, y buscar aquel producto que tenga el mismo nombre que se recibe por la propiedad _payload_. Filtraremos ese producto y nos quedaremos con todos los demás. Una vez que tengamos el resto de productos retornará un objeto en el cual se haga un _**spread operator**_ del estado, y la propiedad **list** será igual al nuevo arreglo (que ha filtrado el producto recibido por payload).
+
+   > NOTA: ten en cuenta que para filtrar los productos deberás ingresar a la propiedad name de cada uno y comparar si el nombre recibido por payload es igual.
+
+   **Caso default)** El caso default de este switch sólo retornará el estado.
 
 ---
 
 ## 👩‍💻 Ejercicio 3
 
-### ...Estamos llegando a la última parte de la homework ⭐
+### **COMPONENTE FORMULARIO**
 
-### Componentes
+Dirígete al componente `components/Form/Form.jsx` y revísa lo que tiene por un momento. Verás que el componente tiene un formulario controlado, con el cual un usuario podrá agregar un nuevo producto a la lista de compras. Para que esto funcione correctamente deberás hacer lo siguiente:
 
-🔹 En este ejercicio validarás cada input del formulario, cada vez que se actualice el estado, controlando que cumpla con las condiciones requeridas.
+1. Importa en este archivo la _action_ llamada "**addProduct**".
 
-🔹 Lo que hay que hacer:
+2. Termina de crear la función **mapDispatchToProps**. Esta función debe recibir por parámetro "_dispatch_". En el cuerpo de la función se debe retornar un objeto con una propiedad llamada "_addProduct_" que será igual a una función que recibe por parámetro `product`, y que en su cuerpo hace un dispatch de la _action_ que importaste en el paso anterior. Recuerda que esa action recibe por parámetro `product`.
+
+3. Este componente debe recibir por props la función "_addProduct_". Te recomendamos que la recibas haciendo _**destructuring**_.
+
+4. Crea una función (dentro del cuerpo del componente `Form`) llamada **handleSubmit**. Esta función, en su cuerpo, ejecutará a la función recibida por props: `addProduct`. A esta le pasaremos como argumento el estado local llamado "product". Una vez hecho esto, ve al botón que se encuentra en el componente, y mediante un evento `onClick`, pásale esta función recién creada.
+
+---
+
+## 👩‍💻 Ejercicio 4
+
+### **COMPONENTE PRODUCTS**
+
+Dirígete al componente `components/Products/Products.jsx`. Lo que hará este componente será renderizar nuestra lista de productos en el navegador. Para esto tomate un momento para explorar este componente y revisar lo que tiene dentro. Luego resuelve:
+
+1. Importa el componente `Card`.
+
+2. Termina de crear la función **mapStateToProps**. Esta recibe por parámetro _state_. En el cuerpo de esta función se retornará un objeto que tenga como propiedad _list_, y que será igual a "_state.list_".
+
+3. El componente `Products` recibe por props nuestro estado global "**list**". Te recomendamos que las recibas haciendo _**destructuring**_.
+
+4. Ahora renderizaremos nuestra lista de productos. Utiliza el método **MAP** para mapear la propiedad **list**. Por cada producto en esta lista deberás renderizar un componente _**Card**_ (importado previamente). A este componente `Card` pásale como propiedades el **NAME**, el **PRICE** de cada producto, y una **KEY** que los pueda diferenciar.
+
+5. Por último, cuando nosotros agregamos un nuevo producto a lista podemos ver que eso no se muestra en la pantalla aún. Esto es porque, si bien sí se está agregando a nuestro estado global, nuestro componente debe actualizarse para mostrar esta información. Por lo que ahora haremos un "_hardcodeo_" para que el componente se actualice.
+   -  Importa `useState`.
+   -  Crea un nuevo estado local llamado "**aux**" y que se inicialice en un string vacío.
+   -  Al botón "_**refresh**_" pásale un evento `onClick`. Este evento lo que hará es setear este nuevo estado con la función nativa de Javascipt `Date.now()`. Observa este ejemplo:
+
+```javascript
+   onClick={() => setAux(Date.now())}
+```
+
+¡Listo! Ahora, cada vez que presionemos este botón, forzaremos al componente a actualizarse. Prueba agregar un producto a tu lista y refrescar el componente.
+
+---
+
+## 👩‍💻 Ejercicio 5
+
+### ...estamos llegando a la última parte de la homework ⭐
+
+### **FUNCIONALIDAD DELETE**
+
+En este ejercicio crearemos la funcionalidad de eliminar productos de nuestra lista. Para esto, nos dirigiremos al componente `Card`. Una vez allí:
+
+1. Importa la _action_ **deleteProduct**.
+
+2. Termina de crear la función **mapDispatchToProps**. Esta función recibe por parámetro a `dispatch`. En el cuerpo de esta función se retorna un objeto con una propiedad llamada **deleteProduct**, que será igual a una función que recibe por parámetro **_productName_**, y que en su cuerpo hará un dipatch de la _action_ previamente importada. Ten en cuenta que al ejecutarse esta acción estará enviando por parámetro el _productName_.
+
+3. El componente `Card` recibe por props nuestra función "**deleteProduct**". Te recomendamos que la recibas haciendo _**destructuring**_.
+
+4. Crea una función llamada **handleDelete** en el cuerpo del componente. Esta función debe ejecutar la función _handleDelete_ pasando como argumento el nombre del producto. Una vez creada, mediante un evento `onClick`, haz que el botón de eliminar maneje esta función.
+
+¡Listo! Ahora cuando apretes el boton de eliminar, la card desaparecerá.
+
+---
+
+## 👩‍💻 Extra
+
+Si llegaste hasta aquí te desafiamos a que intenes hacer lo siguiente:
+
+-  Haz que el formulario se limpie una vez agregado un producto a nuestra lista.
+-  Crea validaciones en el formulario para agregar productos.
+   -  Que no deje crear productos sin nombre o sin precio.
+   -  Que no deje crear dos productos con el mismo nombre.
+-  Haz que siempre pueda haber como máximo un total de 9 cards.
 
 ---
 

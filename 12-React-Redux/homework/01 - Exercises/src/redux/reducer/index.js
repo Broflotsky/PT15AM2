@@ -1,5 +1,7 @@
-// const initialState = {
-//     list:[]
-// }
+const initialState = {
+   list: [],
+};
 
-// export default rootReducer
+function rootReducer() {}
+
+export default rootReducer;
