@@ -14,7 +14,7 @@ function rootReducer(state = initialState, { type, payload }) {
 
       case 'DELETE_PRODUCT':
          const productDeleted = state.list.filter((product) => {
-            return product.name !== payload;
+            return product.id !== payload;
          });
 
          return {

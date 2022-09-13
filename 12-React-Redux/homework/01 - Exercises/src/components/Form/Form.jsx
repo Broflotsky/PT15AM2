@@ -5,7 +5,7 @@ import Caja from '../../assets/caja.png';
 import './form.css';
 
 function Form({ addProduct }) {
-   const [product, setProduct] = useState({ name: '', price: '' });
+   const [product, setProduct] = useState({ name: '', price: '', id: '' });
 
    function handleInputChange(e) {
       e.preventDefault();
@@ -13,6 +13,7 @@ function Form({ addProduct }) {
    }
 
    function handleSubmit() {
+      setProduct({ ...product, id: Date.now() });
       addProduct(product);
    }
 

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card from '../Card/Card';
 import './products.css';
 
@@ -14,7 +14,14 @@ function Products({ list }) {
             {list &&
                list.length &&
                list.map((pro, i) => {
-                  return <Card key={i} name={pro.name} price={pro.price} />;
+                  return (
+                     <Card
+                        key={i}
+                        name={pro.name}
+                        price={pro.price}
+                        id={pro.id}
+                     />
+                  );
                })}
          </div>
          <button className='productsBtn' onClick={() => setAux(Date.now())}>
