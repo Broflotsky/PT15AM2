@@ -15,7 +15,6 @@ export default function App() {
       <label>Ingresa un item:</label>
       <input value={input} onChange={handleChange} />
       <button>Agregar</button>
-      <button></button>
     </div>
   );
 }
