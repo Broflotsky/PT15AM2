@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { useState } from 'react';
+import { addProduct } from '../../redux/actions/actions';
 import Caja from '../../assets/caja.png';
 import './form.css';
 
@@ -10,6 +11,11 @@ function Form({ addProduct }) {
       e.preventDefault();
       setProduct({ ...product, [e.target.name]: e.target.value });
    }
+
+   function handleSubmit() {
+      addProduct(product);
+   }
+
    return (
       <div className='formBg'>
          <div className='inputBox'>
@@ -29,14 +35,18 @@ function Form({ addProduct }) {
                value={product.price}
             />
          </div>
-         <button className='formBtn'>¡ADD!</button>
+         <button className='formBtn' onClick={handleSubmit}>
+            ¡ADD!
+         </button>
          <img src={Caja} alt='' className='logo' />
       </div>
    );
 }
 
-function mapDispatchToProps() {
-   return {};
+function mapDispatchToProps(dispatch) {
+   return {
+      addProduct: (product) => dispatch(addProduct(product)),
+   };
 }
 
 export default connect(null, mapDispatchToProps)(Form);

@@ -2,9 +2,9 @@
 
 ## Temas de la homework
 
-- Redux
-- Componentes presentacionales vs containers
-- React-redux
+-  Redux
+-  Componentes presentacionales vs containers
+-  React-redux
 
 ---
 
@@ -18,13 +18,17 @@ x minutos
 
 Al finalizar esta homework habrás aprendido a:
 
-- Conectar react con redux.
-- Conocer la importancia de manejar estados globales con redux.
-- Tener un mayor control en la aplicación y flujo de datos.
-- Crear y usar las actions para actualizar los estados globales.
+-  Conectar react con redux.
+-  Conocer la importancia de manejar estados globales con redux.
+-  Tener un mayor control en la aplicación y flujo de datos.
+-  Crear y usar las actions para actualizar los estados globales.
 
 ---
 
 ## ¿Cómo lo lograremos?
 
-Esta homework está estructurada en 2 partes, en primer lugar nos enfocaremos en realizar ejercicios independientes (carpeta: [01- Exercises](./01%20-%20Exercises/README.md)) y luego continuaremos en el desarrollo de la aplicación integradora (carpeta: [02 -Integration](./02%20-%20Integration/README.md)).
+Esta homework está estructurada en 2 partes:
+
+1. en primer lugar nos enfocaremos en realizar ejercicios independientes (carpeta: [01- Exercises](./01%20-%20Exercises/README.md)).
+
+2. luego continuaremos en el desarrollo de la aplicación integradora (carpeta: [02 -Integration](./02%20-%20Integration/README.md)).

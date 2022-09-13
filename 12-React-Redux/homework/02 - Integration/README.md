@@ -1,4 +1,4 @@
-## HW 10 - React-Forms | Integración
+## HW 12 - React-Redux | Integración
 
 ## Duración estimada 🕒
 
@@ -10,49 +10,40 @@ x minutos
 
 ## Intro
 
-En la integración de hoy crearemos un formulario de login. Así, cada vez que ingresemos a nuestra app deberemos logearnos para utilizarla. Tanto el formulario como sus validaciones las haremos con Javascript.
+En la integración de hoy crearemos un espacio en el que podremos guardar a nuestros personajes favoritos. ¡Podremos agregarlos y eliminarlos!
 
-Nuestro formulario va a estar compuesto de:
+Para esto:
 
--  Username: el nombre de usuario tiene que ser un email, si no, tiene que mostrar un error.
--  Password: la contraseña tiene que contener por lo menos un número y tener una longitud de entre 6 y 10 caracteres, si no debe mostrar un error.
+-  ❤️ Fav button: nuestras Cards tendrán un botón para agregar/eliminar de favoritos.
+-  👀 Vista nueva: crearemos una nueva vista en la que se muestre específicamente todos nuestros personajes favoritos.
 
 ---
 
 ## Comencemos
 
-Vamos a comenzar creando el componente que nos falta en nuestra carpeta components. Creamos `Form.jsx` con su respectivo archivo `.css` para darle estilos.
+Para comenzar, dirígete a la carpeta "**components**", y crea un nuevo directorio llamado "**Favorites**". Dentro de él crea un archivo `Favorites.jsx` y un archivo `favorites.css`. Ahora crea un componente funcional dentro del primer archivo.
+
+Una vez hecho esto, dirígete al archivo `App.js`. Allí crea una nueva ruta llamada `/favorites`, la cual renderizará el componete que acabas de crear.
 
 ---
 
-### 👩‍💻 Ejercicio 1
+## 👩‍💻 Ejercicio 1
 
-### Estructura
+### **REDIRECTION**
 
-Vamos a trabajar en el archivo `Form.jsx` que acabas de crear.
-
-Primero agregaremos una etiqueta `<div />` que envolverá a todo el componente. Tiene que haber una etiqueta `<label />` y una `<input />` tanto para el **username** como para la **password**. Por último, agrega una etiqueta `<button />`.
-
-Dale algo de estilos al componente. Te dejamos una plantilla de cómo puede quedar!
-
-<img src="./img/form_v1.png" alt="" />
+Crea un botón en el componente `Nav` que te redirija a `/favorites`. Y dentro del componente favorites crea un botón que te lleve a `/home`.
 
 ---
 
-### 👩‍💻 Ejercicio 2
+## 👩‍💻 Ejercicio 2
 
-### Ruteo
+### **FAV BUTTON**
 
-Ahora deberás cumplir los siguientes dos pasos:
-
-1. Crea una ruta en el archivo `app.jsx` para que el formulario se renderice en el path "`/`".
-2. Si obervas la imagen del ejercicio anterior, la barra de navegación también se muestra en el **Login**. Cambia esto de modo que el `<Nav />` se muestre en todos lados, menos en el **Login**.
-
-> **PISTA:** investiga sobre el hook "useLocation" de react-router-dom, y piensa cómo hacer un renderizado condicional.
+Ahora crearemos un botón para agregar y eliminar de favoritos!
 
 ---
 
-### 👩‍💻 Ejercicio 3
+## 👩‍💻 Ejercicio 3
 
 ### Estado del formulario
 
@@ -69,7 +60,7 @@ Por último, usaremos el evento `onChange` en ambos inputs para poder guardar la
 
 ---
 
-### 👩‍💻 Ejercicio 4
+## 👩‍💻 Ejercicio 4
 
 ### Validaciones
 
