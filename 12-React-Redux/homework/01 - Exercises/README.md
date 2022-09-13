@@ -115,7 +115,11 @@ Estarás trabajando con algunos componentes y con las herramientas de Redux.
 
 ### **REDUCER**
 
-Dirígete al archivo `redux/reducer/index.js`. Si te fijas, el **Initial State** (tu estado global) ya está declarado, y más abajo se esta exportando por defecto una función **rootReducer** que aún no a sido creada. Por lo tanto, sigue los siguientes pasos:
+🔹 Dentro de la carpeta **reducer**:
+
+Si te fijas, el **Initial State** (tu estado global) ya está declarado, y más abajo se esta exportando por defecto una función **rootReducer** que aún no a sido creada. Por lo tanto, sigue los siguientes pasos:
+
+🔹 Lo que hay que hacer:
 
 1. Crea una función llamada **rootReducer** que reciba como parámetro:
 
@@ -140,7 +144,11 @@ Dirígete al archivo `redux/reducer/index.js`. Si te fijas, el **Initial State**
 
 ### **COMPONENTE FORMULARIO**
 
-Dirígete al componente `components/Form/Form.jsx` y revísa lo que tiene por un momento. Verás que el componente tiene un formulario controlado, con el cual un usuario podrá agregar un nuevo producto a la lista de compras. Para que esto funcione correctamente deberás hacer lo siguiente:
+🔹 Dentro de la carpeta **Form**:
+
+Revisa lo que tiene por un momento. Verás que el componente tiene un formulario controlado, con el cual un usuario podrá agregar un nuevo producto a la lista de compras. Para que esto funcione correctamente deberás hacer lo siguiente:
+
+🔹 Lo que hay que hacer:
 
 1. Importa en este archivo la _action_ llamada "**addProduct**".
 
@@ -156,7 +164,11 @@ Dirígete al componente `components/Form/Form.jsx` y revísa lo que tiene por un
 
 ### **COMPONENTE PRODUCTS**
 
-Dirígete al componente `components/Products/Products.jsx`. Lo que hará este componente será renderizar nuestra lista de productos en el navegador. Para esto tomate un momento para explorar este componente y revisar lo que tiene dentro. Luego resuelve:
+🔹 Dentro de la carpeta **Products**:
+
+Lo que hará este componente será renderizar nuestra lista de productos en el navegador. Para esto tomate un momento para explorar este componente y revisar lo que tiene dentro. Luego resuelve:
+
+🔹 Lo que hay que hacer:
 
 1. Importa el componente `Card`.
 
@@ -185,7 +197,11 @@ Dirígete al componente `components/Products/Products.jsx`. Lo que hará este co
 
 ### **FUNCIONALIDAD DELETE**
 
-En este ejercicio crearemos la funcionalidad de eliminar productos de nuestra lista. Para esto, nos dirigiremos al componente `Card`. Una vez allí:
+🔹 Dentro de la carpeta **Card**:
+
+En este ejercicio crearemos la funcionalidad de eliminar productos de nuestra lista.
+
+🔹 Lo que hay que hacer:
 
 1. Importa la _action_ **deleteProduct**.
 
@@ -211,7 +227,7 @@ Si llegaste hasta aquí te desafiamos a que intenes hacer lo siguiente:
 
 ---
 
-## Recordemos que...
+<!-- ## Recordemos que...
 
 -  Un formulario controlado es cuando el estado maneja los valores de los inputs y lo actualiza de acuerdo a los eventos del mismo usando setState.
 -  El evento.preventDefault() permite prevenir el comportamiento predeterminado de un submit.😃
@@ -227,4 +243,4 @@ Si llegaste hasta aquí te desafiamos a que intenes hacer lo siguiente:
 
 ---
 
-Listo!! Aprendiste cómo funcionan las rutas en React!! ✨🚀 Dirígete a la carpeta 📂 [**"02 - Integration"**](../02%20-%20Integration/README.md) y continúa desarrollando la app de Rick & Morty 🤩 ---
+Listo!! Aprendiste cómo funcionan las rutas en React!! ✨🚀 Dirígete a la carpeta 📂 [**"02 - Integration"**](../02%20-%20Integration/README.md) y continúa desarrollando la app de Rick & Morty 🤩 --- -->
