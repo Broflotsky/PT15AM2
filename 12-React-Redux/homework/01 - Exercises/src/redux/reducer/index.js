@@ -1,11 +1,12 @@
 const initialState = {
    list: [],
+   hola: {}
 };
 
 function rootReducer(state = initialState, { type, payload }) {
    switch (type) {
       case 'ADD_PRODUCT':
-         const productAdded = state.list;
+         const productAdded = [...state.list];
          productAdded.push(payload);
          return {
             ...state,
