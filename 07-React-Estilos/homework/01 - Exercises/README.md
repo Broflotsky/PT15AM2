@@ -114,10 +114,10 @@ Ya sabes cómo funciona y se conectan los archivos module.css a los componentes,
 
 1. En el componente `Botones.jsx`, importa `styled` desde "styled-components"`
 2. Encontrarás una constante llamada `DivButtons`, la cual debe contener mínimamente los siguientes estilos para el div:
-   -  `display: flex`
-   -  `flex-direction: row`
-   -  `justify-content: space-around`
-   -  `align-items: center`
+   -  `display: flex;`
+   -  `flex-direction: row;`
+   -  `justify-content: space-around;`
+   -  `align-items: center;`
 
 Por ejemplo:
 
@@ -130,9 +130,9 @@ const DivExample = styled.div`
 
 3. Encontrarás una constante llamada `Buttons`, la cual debe contener mínimamente los estilos para los botones:
 
-   -  `border-radius: 5px`
-   -  `margin: 10px`
-   -  `padding: 5px`
+   -  `border-radius: 5px;`
+   -  `margin: 10px;`
+   -  `padding: 5px;`
 
 4. Cambia las etiquetas por las constantes mencionadas anteriormente. Por ejemplo:
 

@@ -1,14 +1,17 @@
 import { connect } from 'react-redux';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from '../Card/Card';
 import './products.css';
 
 function Products({ list }) {
    const [aux, setAux] = useState('');
 
+   // useEffect(() => {});
+
    return (
       <div className='productsBg'>
          <h1 className='productsTl'>HENRY MARKET</h1>
+
          <div className='productsList'>
             {/* ¡Renderiza aquí todas tus cards! */}
             {list &&
@@ -36,4 +39,5 @@ function mapStateToProps(state) {
       list: state.list,
    };
 }
+
 export default connect(mapStateToProps, null)(Products);

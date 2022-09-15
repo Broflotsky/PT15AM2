@@ -99,7 +99,11 @@ Ya sabemos cómo funciona un componente en React, ahora vamos a crear un compone
 4. El componente debe renderizar un div.
 5. Dentro del div, renderiza un botón llamado "Módulo 1".
 6. Dentro del div, renderiza un botón llamado "Módulo 2".
-7. Cada botón debe tener el atributo `onClick` que muestre un `alert` con cualquier texto.
+7. Cada botón debe tener el atributo `onClick` que muestre un `alert` con cualquier texto. Para esto, puedes copiar el siguiente código para que te familiarices con la función **alert**.
+
+```javascript
+    onClick={() => alert('Tu mensaje')}
+```
 
 **... Estamos llegando a la última parte de la homework** ⭐
 
