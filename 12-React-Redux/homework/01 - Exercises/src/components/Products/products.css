@@ -27,15 +27,3 @@
    flex-wrap: wrap;
    overflow-y: auto;
 }
-
-.productsBtn {
-   width: 10vw;
-   height: 5vh;
-   border-radius: 1rem;
-   background-color: white;
-   font-family: Helvetica;
-   font-weight: bold;
-   font-size: 1rem;
-   border: none;
-   cursor: pointer;
-}

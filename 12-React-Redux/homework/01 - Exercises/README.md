@@ -132,6 +132,10 @@ Si te fijas, el **Initial State** (tu estado global) ya está declarado, y más 
 
    **Caso A)** El nombre de este caso será **ADD_PRODUCT**. Lo que hará es obtener tu propiedad **list** del estado global mediante un _**spread operator**_. Luego le insertarás lo que recibes por _payload_ (recuerda que **list** es un arreglo, asique ya te imaginarás qué propiedad usar...). Una vez insertado, retornará un objeto en el cual se haga un _**spread operator**_ del estado, y la propiedad **list** será igual al nuevo arreglo (que contiene el payload recibido).
 
+   ```javascript
+   [...state.list];
+   ```
+
    **Caso B)** El nombre de este caso será **DELETE_PRODUCT**. Lo que hará es tomar el arreglo de objetos **list**, y buscar aquel producto que tenga el mismo id que se recibe por la propiedad _payload_. Filtraremos ese producto y nos quedaremos con todos los demás. Una vez que tengamos el resto de productos retornará un objeto en el cual se haga un _**spread operator**_ del estado, y la propiedad **list** será igual al nuevo arreglo (que ha filtrado el producto recibido por payload).
 
    > NOTA: ten en cuenta que para filtrar los productos deberás ingresar a la propiedad id de cada uno y comparar si el id recibido por payload es igual.
@@ -189,17 +193,6 @@ Lo que hará este componente será renderizar nuestra lista de productos en el n
 3. El componente `Products` recibe por props nuestro estado global "**list**". Te recomendamos que las recibas haciendo _**destructuring**_.
 
 4. Ahora renderizaremos nuestra lista de productos. Utiliza el método **MAP** para mapear la propiedad **list**. Por cada producto en esta lista deberás renderizar un componente _**Card**_ (importado previamente). A este componente `Card` pásale como propiedades el **NAME**, el **PRICE**, el **ID** de cada producto, y una **KEY** que los pueda diferenciar.
-
-5. Por último, cuando nosotros agregamos un nuevo producto a lista podemos ver que eso no se muestra en la pantalla aún. Esto es porque, si bien sí se está agregando a nuestro estado global, nuestro componente debe actualizarse para mostrar esta información. Por lo que ahora haremos un "_hardcodeo_" para que el componente se actualice.
-   -  Importa `useState`.
-   -  Crea un nuevo estado local llamado "**aux**" y que se inicialice en un string vacío.
-   -  Al botón "_**refresh**_" pásale un evento `onClick`. Este evento lo que hará es setear este nuevo estado con la función nativa de Javascipt `Date.now()`. Observa este ejemplo:
-
-```javascript
-   onClick={() => setAux(Date.now())}
-```
-
-¡Listo! Ahora, cada vez que presionemos este botón, forzaremos al componente a actualizarse. Prueba agregar un producto a tu lista y refrescar el componente.
 
 ---
 
