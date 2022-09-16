@@ -180,7 +180,7 @@ const [inputs, setInputs] = React.useState({
 3. Conecta el estado con el formulario. Para ello, crea el atributo **value** en cada input asignándole el estado correspondiente. Ejemplo:
 
 ```jsx
-<input name='name' value={inputs.name} />
+<input name='name' value={inputs.inputs.name} />
 ```
 
 4. Crea la función **handleChange** antes del return, crea el atributo `onChange` a los inputs y textarea del formulario y asígnale **handleChange** como valor.
