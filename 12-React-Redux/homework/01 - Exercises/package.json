@@ -35,6 +35,7 @@
     "test:02": "jest tests/02.test.js",
     "test:03": "jest tests/03.test.js",
     "test:04": "jest tests/04.test.js",
+    "test:05": "jest tests/05.test.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
