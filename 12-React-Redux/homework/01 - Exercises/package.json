@@ -30,7 +30,7 @@
     "start": "react-scripts start",
     "server": "json-server --watch db.json --port 3001",
     "build": "react-scripts build",
-    "test": "jest --detectOpenHandles --verbose",
+    "test": "jest --verbose",
     "test:01": "jest tests/01.test.js",
     "test:02": "jest tests/02.test.js",
     "test:03": "jest tests/03.test.js",

@@ -1,6 +1,5 @@
 const initialState = {
    list: [],
-   hola: {}
 };
 
 function rootReducer(state = initialState, { type, payload }) {
