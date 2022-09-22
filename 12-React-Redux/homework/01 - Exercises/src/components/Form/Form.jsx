@@ -1,3 +1,4 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import { useState } from 'react';
 import { addProduct } from '../../redux/actions/actions';
@@ -11,7 +12,7 @@ function Form({ addProduct }) {
       e.preventDefault();
       setProduct({ ...product, [e.target.name]: e.target.value });
    }
-
+   
    function handleSubmit() {
       setProduct({ ...product, id: Date.now() });
       addProduct(product);
@@ -44,7 +45,7 @@ function Form({ addProduct }) {
    );
 }
 
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
    return {
       addProduct: (product) => dispatch(addProduct(product)),
    };
