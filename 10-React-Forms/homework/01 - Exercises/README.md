@@ -179,7 +179,7 @@ const [inputs, setInputs] = React.useState({
 3. Conecta el estado con el formulario. Para ello, crea el atributo **value** en cada input asignándole el estado correspondiente. Ejemplo:
 
 ```jsx
-<input name="name" value={inputs.inputs.name} />
+<input name="name" value={inputs.name} />
 ```
 
 4. Crea la función **handleChange** antes del return, crea el atributo `onChange` a los inputs y textarea del formulario y asígnale **handleChange** como valor.
@@ -219,7 +219,7 @@ a) Declara una variable llamada `errors` y que su valor sea un objeto vacío.
 b) Valida cada input del formulario que viene del objeto **inputs** que se recibe como parámetro en la función:
 
 - En el input **name**, si este campo está vacío, agrega la propiedad name al objeto **errors** en donde su valor sea "Se requiere un nombre".
-- En el input **email**, valida si el email que ingresa el usuario coincide con el regex de la constante `regexEmail`, aplicándole el método `test()` y dentro de sus paréntesis coloca `inputs.email`; agrega la propiedad email al objeto **errors** en donde su valor sea "Debe ser un correo electrónico".
+- En el input **email**, valida si el email que ingresa el usuario coincide con el formato regex de la constante `regexEmail`, aplicándole a esta el método `test()` y dentro de sus paréntesis coloca `inputs.email`; agrega la propiedad email al objeto **errors** en donde su valor sea "Debe ser un correo electrónico".
 - En el input **phone**, valida si el phone que ingresa el usuario es un número positivo; agrega la propiedad phone al objeto **errors** en donde su valor sea "Sólo números positivos".
 - En el input **subject**, si este campo está vacío, agrega la propiedad subject al objeto **errors** en donde su valor sea "Se requiere un asunto".
 - En el input **message**, si este campo está vacío, agrega la propiedad message al objeto **errors** en donde su valor sea "Se requiere un mensaje".
@@ -267,7 +267,7 @@ e) Debes informar a los usuarios que tiene errores en los inputs. Para ello, haz
 ```
 
 - Debajo de cada input (si existe un error) agrega una etiqueta `p` debajo, en el que su texto sea la propiedad del objeto errors de acuerdo al input que te encuentres validando.
-- Crea agrega en la etiqueta **p** el atributo className y asígnale la clase `'danger'`.
+- Agrega en la etiqueta **p** el atributo className y asígnale la clase `'danger'`.
 
 Ejemplo:
 
@@ -291,7 +291,7 @@ Ejemplo:
 2. Dentro de la función:
 
 - Utiliza el método `preventDefault()` del parámetro **evento** para prevenir que el formulario se envíe por defecto.
-- Convierte el estado **errors** en un array para medir su longitud, si es igual a 0, muestra un alert con un mensaje, por ejemplo, "Datos completos" y setea los estados **inputs** y **errors** en su estado original (recuerda que `errors` tiene la función validate); en caso contrario, muestra un alert con otro mensaje, por ejemplo, "Debe llenar todos los campos".
+- Convierte el estado **errors** en un array para medir su longitud, si es igual a 0, muestra un alert con un mensaje, por ejemplo, "Datos completos" y setea los estados **inputs** y **errors** en su estado original (recuerda que `errors` tiene la función validate); **en caso contrario**, muestra un alert con otro mensaje, por ejemplo, "Debe llenar todos los campos".
 
 3. Crea el atributo `onSubmit` a la etiqueta **form** y asígnale la función **handleSubmit**.
 
