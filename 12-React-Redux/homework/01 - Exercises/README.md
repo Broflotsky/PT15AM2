@@ -162,15 +162,15 @@ Revisa lo que tiene por un momento. Verás que el componente tiene un formulario
 
 4. Crea una función (dentro del cuerpo del componente `Form`) llamada **handleSubmit**. Esta función hará:
 
--  Primero, setteará el estado local `product` de manera que todas las propiedades queden igual que antes, excepto la propiedad **id**. Esta debe ser igual a la función:
+-  Ejecutará la función recibida por props: `addProduct`. A esta le pasaremos como argumento el estado local llamado "product" en forma de _**spread operator**_. De esta forma también indicaremos que la propiedad **id** va a ser igual a la función **now()** del objeto global _Date_.
 
    ```javascript
    Date.now();
    ```
 
--  Luego ejecutará a la función recibida por props: `addProduct`. A esta le pasaremos como argumento el estado local llamado "product". Una vez hecho esto, ve al botón que se encuentra en el componente, y mediante un evento `onClick`, pásale esta función recién creada.
-
 Esto le permitirá a cada producto tener un ID único.
+
+5. Una vez hecho esto, ve al botón que se encuentra en el componente, y mediante un evento `onClick`, pásale esta función recién creada.
 
 > **NOTA:** prueba ejecutar la función _Date.now()_ en tu consola y verifica qué respuesta te da.
 
