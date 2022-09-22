@@ -12,10 +12,9 @@ function Form({ addProduct }) {
       e.preventDefault();
       setProduct({ ...product, [e.target.name]: e.target.value });
    }
-   
+
    function handleSubmit() {
-      setProduct({ ...product, id: Date.now() });
-      addProduct(product);
+      addProduct({ ...product, id: Date.now() });
    }
 
    return (

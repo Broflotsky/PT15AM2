@@ -7,6 +7,7 @@ function Card({ name, price, id, deleteProduct }) {
       deleteProduct(id);
    }
 
+
    return (
       <div className='cardBg'>
          <h5>{name}: </h5>
