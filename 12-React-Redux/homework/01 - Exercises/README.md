@@ -107,7 +107,7 @@ Estarás trabajando con algunos componentes y con las herramientas de Redux.
 
 3. Define y exporta una función llamada addProduct que recibe como parámetro `product`. Esta función debe retornar la propiedad **type** con el valor ADD_PRODUCT, y la propiedad **payload** con el valor que recibe por parámetro la función.
 
-4. Define y exporta una función llamada deleteProduct que recibe como parámetro `productName`. Esta función debe retornar la propiedad **type** con el valor DELETE_PRODUCT, y la propiedad **payload** con el valor que recibe por parámetro la función.
+4. Define y exporta una función llamada deleteProduct que recibe como parámetro `id`. Esta función debe retornar la propiedad **type** con el valor DELETE_PRODUCT, y la propiedad **payload** con el valor que recibe por parámetro la función.
 
 ---
 
@@ -130,11 +130,15 @@ Si te fijas, el **Initial State** (tu estado global) ya está declarado, y más 
 
 3. Dentro de esta declaración **switch** crearemos dos casos distintos, y un caso _default_.
 
-   **Caso A)** El nombre de este caso será **ADD_PRODUCT**. Lo que hará es agregar en tu propiedad **list** del estado global el producto recibido por _paylaod_. Una vez insertado, retornará un objeto en el cual se haga un _**spread operator**_ del estado, y la propiedad **list** será igual al nuevo arreglo (que contiene el payload recibido).
+   **Caso A)** El nombre de este caso será **ADD_PRODUCT**. Lo que hará es obtener tu propiedad **list** del estado global mediante un _**spread operator**_. Luego le insertarás lo que recibes por _payload_ (recuerda que **list** es un arreglo, asique ya te imaginarás qué propiedad usar...). Una vez insertado, retornará un objeto en el cual se haga un _**spread operator**_ del estado, y la propiedad **list** será igual al nuevo arreglo (que contiene el payload recibido).
 
-   **Caso B)** El nombre de este caso será **DELETE_PRODUCT**. Lo que hará es tomar el arreglo de objetos **list**, y buscar aquel producto que tenga el mismo nombre que se recibe por la propiedad _payload_. Filtraremos ese producto y nos quedaremos con todos los demás. Una vez que tengamos el resto de productos retornará un objeto en el cual se haga un _**spread operator**_ del estado, y la propiedad **list** será igual al nuevo arreglo (que ha filtrado el producto recibido por payload).
+   ```javascript
+   [...state.list];
+   ```
 
-   > NOTA: ten en cuenta que para filtrar los productos deberás ingresar a la propiedad name de cada uno y comparar si el nombre recibido por payload es igual.
+   **Caso B)** El nombre de este caso será **DELETE_PRODUCT**. Lo que hará es tomar el arreglo de objetos **list**, y buscar aquel producto que tenga el mismo id que se recibe por la propiedad _payload_. Filtraremos ese producto y nos quedaremos con todos los demás. Una vez que tengamos el resto de productos retornará un objeto en el cual se haga un _**spread operator**_ del estado, y la propiedad **list** será igual al nuevo arreglo (que ha filtrado el producto recibido por payload).
+
+   > NOTA: ten en cuenta que para filtrar los productos deberás ingresar a la propiedad id de cada uno y comparar si el id recibido por payload es igual.
 
    **Caso default)** El caso default de este switch sólo retornará el estado.
 
@@ -156,7 +160,19 @@ Revisa lo que tiene por un momento. Verás que el componente tiene un formulario
 
 3. Este componente debe recibir por props la función "_addProduct_". Te recomendamos que la recibas haciendo _**destructuring**_.
 
-4. Crea una función (dentro del cuerpo del componente `Form`) llamada **handleSubmit**. Esta función, en su cuerpo, ejecutará a la función recibida por props: `addProduct`. A esta le pasaremos como argumento el estado local llamado "product". Una vez hecho esto, ve al botón que se encuentra en el componente, y mediante un evento `onClick`, pásale esta función recién creada.
+4. Crea una función (dentro del cuerpo del componente `Form`) llamada **handleSubmit**. Esta función hará:
+
+-  Ejecutará la función recibida por props: `addProduct`. A esta le pasaremos como argumento el estado local llamado "product" en forma de _**spread operator**_. De esta forma también indicaremos que la propiedad **id** va a ser igual a la función **now()** del objeto global _Date_.
+
+   ```javascript
+   Date.now();
+   ```
+
+Esto le permitirá a cada producto tener un ID único.
+
+5. Una vez hecho esto, ve al botón que se encuentra en el componente, y mediante un evento `onClick`, pásale esta función recién creada.
+
+> **NOTA:** prueba ejecutar la función _Date.now()_ en tu consola y verifica qué respuesta te da.
 
 ---
 
@@ -176,18 +192,7 @@ Lo que hará este componente será renderizar nuestra lista de productos en el n
 
 3. El componente `Products` recibe por props nuestro estado global "**list**". Te recomendamos que las recibas haciendo _**destructuring**_.
 
-4. Ahora renderizaremos nuestra lista de productos. Utiliza el método **MAP** para mapear la propiedad **list**. Por cada producto en esta lista deberás renderizar un componente _**Card**_ (importado previamente). A este componente `Card` pásale como propiedades el **NAME**, el **PRICE** de cada producto, y una **KEY** que los pueda diferenciar.
-
-5. Por último, cuando nosotros agregamos un nuevo producto a lista podemos ver que eso no se muestra en la pantalla aún. Esto es porque, si bien sí se está agregando a nuestro estado global, nuestro componente debe actualizarse para mostrar esta información. Por lo que ahora haremos un "_hardcodeo_" para que el componente se actualice.
-   -  Importa `useState`.
-   -  Crea un nuevo estado local llamado "**aux**" y que se inicialice en un string vacío.
-   -  Al botón "_**refresh**_" pásale un evento `onClick`. Este evento lo que hará es setear este nuevo estado con la función nativa de Javascipt `Date.now()`. Observa este ejemplo:
-
-```javascript
-   onClick={() => setAux(Date.now())}
-```
-
-¡Listo! Ahora, cada vez que presionemos este botón, forzaremos al componente a actualizarse. Prueba agregar un producto a tu lista y refrescar el componente.
+4. Ahora renderizaremos nuestra lista de productos. Utiliza el método **MAP** para mapear la propiedad **list**. Por cada producto en esta lista deberás renderizar un componente _**Card**_ (importado previamente). A este componente `Card` pásale como propiedades el **NAME**, el **PRICE**, el **ID** de cada producto, y una **KEY** que los pueda diferenciar.
 
 ---
 
@@ -205,7 +210,7 @@ En este ejercicio crearemos la funcionalidad de eliminar productos de nuestra li
 
 1. Importa la _action_ **deleteProduct**.
 
-2. Termina de crear la función **mapDispatchToProps**. Esta función recibe por parámetro a `dispatch`. En el cuerpo de esta función se retorna un objeto con una propiedad llamada **deleteProduct**, que será igual a una función que recibe por parámetro **_productName_**, y que en su cuerpo hará un dipatch de la _action_ previamente importada. Ten en cuenta que al ejecutarse esta acción estará enviando por parámetro el _productName_.
+2. Termina de crear la función **mapDispatchToProps**. Esta función recibe por parámetro a `dispatch`. En el cuerpo de esta función se retorna un objeto con una propiedad llamada **deleteProduct**, que será igual a una función que recibe por parámetro **_id_**, y que en su cuerpo hará un dispatch de la _action_ previamente importada. Ten en cuenta que al ejecutarse esta acción estará enviando por parámetro el _id_.
 
 3. El componente `Card` recibe por props nuestra función "**deleteProduct**". Te recomendamos que la recibas haciendo _**destructuring**_.
 
@@ -227,20 +232,23 @@ Si llegaste hasta aquí te desafiamos a que intenes hacer lo siguiente:
 
 ---
 
-<!-- ## Recordemos que...
+## Recordemos que...
 
--  Un formulario controlado es cuando el estado maneja los valores de los inputs y lo actualiza de acuerdo a los eventos del mismo usando setState.
--  El evento.preventDefault() permite prevenir el comportamiento predeterminado de un submit.😃
--  Con la propiedad target del evento, puedes setear las propiedades de un estado dinámicamente el name y value de cada input del formulario.
--  Formula siempre qué datos quieres recibir y qué experiencia quieres dar al usuario, en el momento que definas las funciones handleChange y handleSubmit.
+-  El **mapDispatchToProps** sirve para enviar información al _reducer_, y en difinitiva, al estado global.
+-  El **mapStateToProps** sirve para traer información del estado global a un componente.
+-  Las **actions** son las que transportan la información que se despacha de un componente al reducer.
+-  El **reducer** es el que gestion la información de nuestro estado global.
 
 ---
 
 ## Recursos adicionales
 
--  Documentación **"Formularios"** <https://es.reactjs.org/docs/forms.html>
--  Documentación **"Regular Expressions"** <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions>
+-  Documentación [**React-Redux**](https://react-redux.js.org/)
+-  Documentación [**mapDispatchToProps**](https://react-redux.js.org/using-react-redux/connect-mapdispatch)
+-  Documentación [**mapStateToProps**](https://react-redux.js.org/using-react-redux/connect-mapstate)
 
 ---
 
-Listo!! Aprendiste cómo funcionan las rutas en React!! ✨🚀 Dirígete a la carpeta 📂 [**"02 - Integration"**](../02%20-%20Integration/README.md) y continúa desarrollando la app de Rick & Morty 🤩 --- -->
+¡Listo! Aprendiste cómo conectar React con Redux, y los beneficios de tener un estado global.
+
+✨🚀 Dirígete a la carpeta 📂 [**"02 - Integration"**](../02%20-%20Integration/README.md) y continúa desarrollando la app de Rick & Morty 🤩 ---

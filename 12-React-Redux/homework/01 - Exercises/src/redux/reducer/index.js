@@ -5,7 +5,7 @@ const initialState = {
 function rootReducer(state = initialState, { type, payload }) {
    switch (type) {
       case 'ADD_PRODUCT':
-         const productAdded = state.list;
+         const productAdded = [...state.list];
          productAdded.push(payload);
          return {
             ...state,
@@ -14,7 +14,7 @@ function rootReducer(state = initialState, { type, payload }) {
 
       case 'DELETE_PRODUCT':
          const productDeleted = state.list.filter((product) => {
-            return product.name !== payload;
+            return product.id !== payload;
          });
 
          return {

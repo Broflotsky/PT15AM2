@@ -45,7 +45,19 @@ Además:
 
 ## Instrucciones para correr el proyecto
 
-Desde la carpeta `02 - Integration` se deben ejecutar los siguientes comandos:
+Para realizar este proyecto crearemos un nuevo respoitorio. Para esto:
+
+1. Abre tu terminal y dirígete a tu escritorio (desktop) con el comando **`cd`**. Una vez allí copia y pega el siguiente comando que te permitirá crear un repositorio desde cero:
+
+```bash
+    npx create-react-app rickandmorty
+```
+
+2. Luego de ejecutar este comando verás que se creó una carpeta en tu escritorio, y dentro de ella estará tu nueva apliación de React. Ahora le haremos algunas modificaciones. En esta carpeta encontrarás sub-carpetas llamadas "**img**", "**src**" y un archivo "**.env**".
+
+En el repositorio que creaste deberás pegar todas estas carpetas y archivo. Ten en cuenta que deberás reemplazar la carpeta "**_src_**".
+
+3. Una vez hecho todos estos pasos, en el nuevo repositorio ejecuta el comando:
 
 ```bash
 npm install

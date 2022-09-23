@@ -70,7 +70,7 @@ describe("04 | Ejercicios", () => {
     expect(window.alert).toHaveBeenCalledWith("Datos completos");
   });
 
-  it("El formulario deberia tener el atributo onSubmit que ejecute la función handleSubmit previamente creada", () => {
+  it("Deberia ejecutar e.preventDefault() al hacer submit", () => {
     onSubmit = contact.find("form").prop("onSubmit");
     onSubmit({ preventDefault: handleSubmit });
     expect(handleSubmit).toHaveBeenCalled();

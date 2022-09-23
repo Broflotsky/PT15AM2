@@ -15,7 +15,7 @@ Continuamos con nuestra Rick & Morty App. Utilizaremos React-Router-DOM el cual 
 Al finalizar, habremos creado tres rutas por las que podremos navegar:
 
 -  **"/home"**: esta será la ruta del Home (vista principal/general).
--  **"/detail/${detailId}/"**: en esta ruta encontraremos información más detallada sobre el personaje en particular.
+-  **"/detail/:detailId"**: en esta ruta encontraremos información más detallada sobre el personaje en particular.
 -  **"/about"**: en esta ruta colocarás tu nombre y describirás de qué trata la aplicación Rick & Morty.
 
 ---
@@ -29,7 +29,7 @@ Cómo sabemos, `react-router-dom` nos da la posibilidad de crear rutas dinámica
 -  `<Nav />` tiene que aparecer en todas las rutas.
 -  `<Cards />` debe aparecer sólo en la ruta `/home`.
 -  `<About />` debe aparecer sólo en la ruta `/about`.
--  `<Detail />` debe aparecer sólo en la ruta `/detail/{detailId}`
+-  `<Detail />` debe aparecer sólo en la ruta `/detail/:detailId`
 
 ---
 
@@ -69,7 +69,7 @@ Respecto al componente `<Detail />`, su ruta recibirá el parámetro **id**, por
 
 ### Detail redirection.
 
-Ahora nuestra SPA cuenta con tres rutas distintas: "`/home`", "`/detail/{detailId}`" y "`/about`".
+Ahora nuestra SPA cuenta con tres rutas distintas: "`/home`", "`/detail/:detailId`" y "`/about`".
 
 Para este ejercicio:
 

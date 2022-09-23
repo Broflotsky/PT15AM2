@@ -1,76 +1,61 @@
 // Configuramos test
-import React from "react";
-import "@testing-library/jest-dom/extend-expect";
-import { configure, shallow } from "enzyme";
-import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
-// Importamos variables/componentes
-import Contact from "../src/components/Contact/Contact";
-
-configure({ adapter: new Adapter() });
-
+import reducer from "../src/redux/reducer/index";
+import * as actions from "../src/redux/actions/actions";
 describe("02 | Ejercicios", () => {
-  let contact;
-  beforeEach(() => {
-    contact = shallow(<Contact />);
-  });
+  it("El reducer deberia agregar un producto a la lista cuando el caso es 'ADD_PRODUCT", () => {
+    const state = {
+      list: []
+    }
+    const payloads = [{
+      name: "Bananas",
+      price: 120,
+      id: 13123
+    }, {
+      name: "Uvas",
+      price: 200,
+      id: 54631
+    }];
+    const firstProduct = reducer({...state}, actions.addProduct(payloads[0]));
+    
+    const secondProduct = reducer({...state}, actions.addProduct(payloads[1]));
 
-  it("El form deberia cambiar de estado cuando escriban en el input de name", () => {
-    expect(contact.find("input[name='name']").prop("value")).toEqual("");
-    contact.find("input[name='name']").simulate("change", {
-      target: { value: "Henry", name: "name" },
+    // Chequeamos de que no se esté mutando el estado
+    expect(firstProduct).not.toEqual(state);
+    expect(secondProduct).not.toEqual(state);
+    expect(firstProduct).toEqual({
+      list: [payloads[0]]
     });
-    const inputName = contact.find("input[name='name']");
-    expect(inputName.prop("value")).toEqual("Henry");
-  });
-
-  it("El form deberia cambiar de estado cuando escriban en el input de email", () => {
-    expect(contact.find("input[name='email']").prop("value")).toEqual("");
-    contact.find("input[name='email']").simulate("change", {
-      target: { value: "henry@gmail.com", name: "email" },
-    });
-    const inputEmail = contact.find("input[name='email']");
-    expect(inputEmail.prop("value")).toEqual("henry@gmail.com");
-  });
-
-  it("El form deberia cambiar de estado cuando escriban en el input de phone", () => {
-    expect(contact.find("input[name='phone']").prop("value")).toEqual(0);
-    contact.find("input[name='phone']").simulate("change", {
-      target: { value: 123456789, name: "phone" },
-    });
-    const inputPhone = contact.find("input[name='phone']");
-    expect(inputPhone.prop("value")).toEqual(123456789);
-  });
-
-  it("El form deberia cambiar de estado cuando escriban en el input de subject", () => {
-    expect(contact.find("input[name='subject']").prop("value")).toEqual("");
-    contact.find("input[name='subject']").simulate("change", {
-      target: { value: "Subject Input", name: "subject" },
-    });
-    const inputSubject = contact.find("input[name='subject']");
-    expect(inputSubject.prop("value")).toEqual("Subject Input");
-  });
-
-  it("El form deberia cambiar de estado cuando escriban en el input de message", () => {
-    expect(contact.find("textarea[name='message']").prop("value")).toEqual("");
-    contact.find("textarea[name='message']").simulate("change", {
-      target: { value: "Message Input", name: "message" },
-    });
-    const inputMessage = contact.find("textarea[name='message']");
-    expect(inputMessage.prop("value")).toEqual("Message Input");
-  });
-
-  it("Deberia asignar la funcion 'handleChange' al 'onChange' de cada input", () => {
-    const inputs = contact.find("input");
-    expect(inputs.length).toBe(4);
-    inputs.forEach((i) => {
-      expect(i.props().onChange).toBeDefined();
-      expect(typeof i.props().onChange).toBe("function");
+  
+    expect(secondProduct).toEqual({
+      list: [payloads[1]]
     });
   });
+  
+  it("El reducer deberia eliminar un producto de la lista cuando el caso es 'DELETE_PRODUCT", () => {
+    const state = {
+      list: [{id: 12313, name: "Mandarinas", price: 230}, { id: 65445, name: "Tomates", price: 130 }]
+    }
+    const payload1 = 12313;
+    const payload2 = 65445;
+    
+    const firstCall = reducer({...state}, actions.deleteProduct(payload1));
+    const secondCall = reducer({...state}, actions.deleteProduct(payload2));
 
-  it("Deberia asignar la funcion 'handleChange' al 'onChange' del textarea", () => {
-    const textArea = contact.find("textarea");
-    expect(textArea.length).toBe(1);
-    expect(typeof textArea.props().onChange).toBe("function");
+    expect(firstCall).not.toEqual(state);
+    expect(secondCall).not.toEqual(state);
+
+    expect(firstCall).toEqual({
+      list: [{ id: 65445, name: "Tomates", price: 130 }]
+    });
+
+    expect(secondCall).toEqual({
+      list: [{ id: 12313, name: "Mandarinas", price: 230}]
+    });
+  });
+  
+  it("El reducer deberia retornar el estado inicial si no se cumplio ningun caso", () => {
+    expect(reducer(undefined, [])).toEqual({
+      list: []
+    });
   });
 });

@@ -1,3 +1,4 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import { useState } from 'react';
 import { addProduct } from '../../redux/actions/actions';
@@ -5,7 +6,7 @@ import Caja from '../../assets/caja.png';
 import './form.css';
 
 function Form({ addProduct }) {
-   const [product, setProduct] = useState({ name: '', price: '' });
+   const [product, setProduct] = useState({ name: '', price: '', id: '' });
 
    function handleInputChange(e) {
       e.preventDefault();
@@ -13,7 +14,7 @@ function Form({ addProduct }) {
    }
 
    function handleSubmit() {
-      addProduct(product);
+      addProduct({ ...product, id: Date.now() });
    }
 
    return (
@@ -43,7 +44,7 @@ function Form({ addProduct }) {
    );
 }
 
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
    return {
       addProduct: (product) => dispatch(addProduct(product)),
    };
