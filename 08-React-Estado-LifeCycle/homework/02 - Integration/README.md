@@ -12,9 +12,9 @@ x minutos
 
 Hasta el momento, en nuestra Rick & Morty App tenemos estos 3 Componentes:
 
--  Card.jsx
--  Cards.jsx
--  SearchBar.jsx
+- Card.jsx
+- Cards.jsx
+- SearchBar.jsx
 
 Adicionalmente, vamos a crear otro componente denominado `Nav` que será nuestra barra superior de navegación, en la cual incluiremos el componente `SearchBar`.
 
@@ -47,16 +47,16 @@ En el archivo `App.js` ya tenemos importados y estamos renderizando los 3 compon
 
 <img src="./img/layout.png" width='800px'/>
 
-> -  **Recuadro rojo**: Nav
-> -  **Recuadro amarillo**: SearchBar
-> -  **Recuadro verde**: Cards
-> -  **Recuadro azul**: Card
+> - **Recuadro rojo**: Nav
+> - **Recuadro amarillo**: SearchBar
+> - **Recuadro verde**: Cards
+> - **Recuadro azul**: Card
 
 2. Ahora vamos a modificar el contenido del archivo `App.js`:
 
-   -  En `App` sólo vamos a renderizar los componentes `Cards` y `Nav`.
-   -  Ya no vamos a renderizar la primera `Card` "suelta" que pusimos en la primera clase. Ahora el componente `Cards` será quien contenga todas las `Card` individualmente.
-   -  Lo mismo sucede con `SearchBar`. No lo vamos a seguir renderizando de forma directa en App, debido a que ya se encuentra dentro de `Nav`.
+   - En `App` sólo vamos a renderizar los componentes `Cards` y `Nav`.
+   - Ya no vamos a renderizar la primera `Card` "suelta" que pusimos en la primera clase. Ahora el componente `Cards` será quien contenga todas las `Card` individualmente.
+   - Lo mismo sucede con `SearchBar`. No lo vamos a seguir renderizando de forma directa en App, debido a que ya se encuentra dentro de `Nav`.
 
 3. Importar y renderizar los componentes que vamos a utilizar.
 4. Aplicar estilos básicos al componente **_Nav_**.
@@ -83,16 +83,16 @@ Necesitamos mantener actualizado el listado de personajes a mostrar. Para ello d
 
 ### Función para agregar personajes
 
-Ahora debemos crear una función para agregar nuevos personajes a nuestro estado `characters` y se la pasaremos al `SearchBar` mediante el `Nav`.
+Ahora debemos crear una función llamada `onSearch` para agregar nuevos personajes a nuestro estado `characters` y se la pasaremos al `SearchBar` mediante el `Nav`.
 
 > **Hint**: Como aún no hemos hecho el llamado a la API para obtener los datos del personaje, agregamos uno por default para ver que esté funcionando:
 
 ```jsx
 const example = {
-   name: 'Morty Smith',
-   species: 'Human',
-   gender: 'Male',
-   image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
+  name: "Morty Smith",
+  species: "Human",
+  gender: "Male",
+  image: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
 };
 ```
 
@@ -140,23 +140,25 @@ Si observamos el código anterior estamos llamando a la función `onSearch` sin 
 
 ### Buscando datos reales
 
-1. Ahora debemos modificar la función `onSearch` para que obtenga los datos necesarios desde la API de [Rick&Morty](https://rickandmortyapi.com). Para ello vamos a utilizar `fetch` para hacer la llamada y obtener el resultado. Por el momento sólo vamos a obtener los personajes por ID, ya que si los buscamos por nombre hay demasiados resultados debido a que los mismos se repiten bastante.
+1. Comenta el código que engloba la constante **example**
 
-2. Mostrar un mensaje en caso de que el personaje no exista.
+2. Ahora debemos modificar la función `onSearch` para que obtenga los datos necesarios desde la API de [Rick&Morty](https://rickandmortyapi.com). Para ello vamos a utilizar `fetch` para hacer la llamada y obtener el resultado. Por el momento sólo vamos a obtener los personajes por ID, ya que si los buscamos por nombre hay demasiados resultados debido a que los mismos se repiten bastante.
+
+3. Mostrar un mensaje en caso de que el personaje no exista.
 
 > **Hint**:Como aún no has visto promesas, tienes este snippet para que copies y pegues la función **_onSearch_**:
 
 ```js
 function onSearch(character) {
-   fetch(`https://rickandmortyapi.com/api/character/${character}`)
-      .then((response) => response.json())
-      .then((data) => {
-         if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
-         } else {
-            window.alert('No hay personajes con ese ID');
-         }
-      });
+  fetch(`https://rickandmortyapi.com/api/character/${character}`)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.name) {
+        setCharacters((oldChars) => [...oldChars, data]);
+      } else {
+        window.alert("No hay personajes con ese ID");
+      }
+    });
 }
 ```
 
@@ -186,5 +188,5 @@ Listo! tu app es ahora dinámica e interactiva!! 👏🏼🚀
 
 ## 👩‍💻 Ejercicio Extra
 
--  Controlar que no se puedan agregar personajes repetidos.
--  Generar un botón en la navbar que agregue un personaje random (Hint: hay 826 personajes en total).
+- Controlar que no se puedan agregar personajes repetidos.
+- Generar un botón en la navbar que agregue un personaje random (Hint: hay 826 personajes en total).
