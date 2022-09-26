@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
-import React, { useState } from 'react';
-import Card from '../Card/Card';
+import React from 'react';
+import { Card } from '../Card/Card';
 import './products.css';
 
-function Products({ list }) {
+export function Products({ list }) {
    return (
+      <>
       <div className='productsBg'>
          <h1 className='productsTl'>HENRY MARKET</h1>
 
@@ -24,10 +25,11 @@ function Products({ list }) {
                })}
          </div>
       </div>
+      </>
    );
 }
 
-function mapStateToProps(state) {
+export function mapStateToProps(state) {
    return {
       list: state.list,
    };
