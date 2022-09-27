@@ -20,7 +20,7 @@ export function Card({ name, price, id, deleteProduct }) {
    );
 }
 
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
    return {
       deleteProduct: (id) => {
          dispatch(deleteProduct(id));
