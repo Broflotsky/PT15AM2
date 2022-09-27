@@ -21,8 +21,6 @@ function ToDo (description) {
   // Tu código acá:
   this.description = description;
   this.complete = false;
-
-
 }
 
 
@@ -69,7 +67,6 @@ function buildToDo(todo, index) {
 
   toDoShell.appendChild(toDoText);
 
-
   toDoText.addEventListener('click', completeToDo);
 
   return toDoShell;
@@ -84,7 +81,6 @@ function buildToDos(toDos) {
   // Tu código acá:
   return toDos.map(buildToDo);
 }
-
 
 // La función 'displayToDos' se va a encargar de que se vean los toDo's en pantalla
 //  1) Seleccionr el elemento cuyo id es 'toDoContainer' y almacenarlo en una variable denominada 'toDoContainer'
@@ -108,7 +104,6 @@ function displayToDos() {
   }
 
 }
-
 
 // La función 'addToDo' agregará un nuevo ToDo al array 'toDoItems'
 // [NOTA: Algunas cuestiones a tener en cuenta sobre el elemento 'input' de HTML (Ya que 'toDoInput' es un input)
