@@ -1,5 +1,5 @@
-const initialState = {
-  list: []
-}
+// const initialState = {
+//   list: []
+// }
 
-export default rootReducer
+// export default rootReducer

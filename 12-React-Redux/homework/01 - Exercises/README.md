@@ -117,7 +117,7 @@ Estarás trabajando con algunos componentes y con las herramientas de Redux.
 
 🔹 Dentro de la carpeta **reducer**:
 
-Si te fijas, el **Initial State** (tu estado global) ya está declarado, y más abajo se esta exportando por defecto una función **rootReducer** que aún no a sido creada. Por lo tanto, sigue los siguientes pasos:
+Si observas, el **Initial State** (tu estado global) ya está declarado, y más abajo se esta exportando por defecto una función **rootReducer** que aún no ha sido creada (ambos estan comentados). Por lo tanto, debes descomentar las lineas y seguir los siguientes pasos.
 
 🔹 Lo que hay que hacer:
 
