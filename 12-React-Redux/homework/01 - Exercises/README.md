@@ -186,7 +186,7 @@ Lo que hará este componente será renderizar nuestra lista de productos en el n
 
 🔹 Lo que hay que hacer:
 
-1. Importa el componente `Card`.
+1. Importa el componente `Card` que, como verás, ya está importado y sólo debés descomentarlo. (No cambiar la manera en la que se importa, porque sino fallarán los test)
 
 2. Termina de crear la función **mapStateToProps**. Esta recibe por parámetro _state_. En el cuerpo de esta función se retornará un objeto que tenga como propiedad _list_, y que será igual a "_state.list_".
 
@@ -214,7 +214,7 @@ En este ejercicio crearemos la funcionalidad de eliminar productos de nuestra li
 
 3. El componente `Card` recibe por props nuestra función "**deleteProduct**". Te recomendamos que la recibas haciendo _**destructuring**_.
 
-4. Crea una función llamada **handleDelete** en el cuerpo del componente. Esta función debe ejecutar la función _handleDelete_ pasando como argumento el nombre del producto. Una vez creada, mediante un evento `onClick`, haz que el botón de eliminar maneje esta función.
+4. Crea una función llamada **handleDelete** en el cuerpo del componente. Esta función debe ejecutar la función _deleteProduct_ que le llega por props, pasando como argumento el id del producto. Una vez creada, mediante un evento `onClick`, haz que el botón de eliminar maneje esta función.
 
 ¡Listo! Ahora cuando apretes el boton de eliminar, la card desaparecerá.
 
