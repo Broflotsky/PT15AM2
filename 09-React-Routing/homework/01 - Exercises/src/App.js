@@ -7,7 +7,6 @@ import Promotions from "./components/Promotions/Promotions.jsx";
 import CardDetail from "./components/CardDetail/CardDetail.jsx";
 /* eslint-disable */
 
-
 export default function App() {
   return <div></div>;
 }
