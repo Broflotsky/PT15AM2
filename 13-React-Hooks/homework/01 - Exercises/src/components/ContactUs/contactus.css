@@ -1,0 +1,39 @@
+.contactBg {
+   width: 70vw;
+   height: 100vh;
+   background-image: URL('../../assets/oficina.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.contactForm {
+   background-color: rgba(0, 0, 0, 0.8);
+   width: 100%;
+   height: 50%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.contactInput {
+   width: 40%;
+   height: 4vh;
+   border: none;
+}
+
+.contactButton {
+   width: 10%;
+   height: 4vh;
+   border: none;
+}
+
+.contactTitle {
+   font-family: Helvetica;
+   font-size: 7vh;
+   font-weight: 400;
+}

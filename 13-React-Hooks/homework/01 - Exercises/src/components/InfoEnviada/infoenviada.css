@@ -1,0 +1,15 @@
+.infoBg {
+   width: 30vw;
+   height: 50vh;
+   display: flex;
+   flex-direction: column;
+}
+
+.infoTitle {
+   font-family: Helvetica;
+   font-size: 2.3vh;
+   padding-left: 2rem;
+   background-color: grey;
+   margin-top: -0.1vh;
+   height: 3vh;
+}
