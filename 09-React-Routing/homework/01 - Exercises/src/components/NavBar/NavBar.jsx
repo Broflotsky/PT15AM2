@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../assets/logo.png";
+import logoHenry from "../../assets/logo-henry.png";
 import styleNav from "./NavBar.module.css";
 
 export default function NavBar() {
@@ -7,6 +8,7 @@ export default function NavBar() {
     <div className={styleNav.container}>
       <ul className={styleNav.menu}>
         <li>
+          <img src={logoHenry} alt="logo-henry" />
           <img src={logo} alt="logo" />
         </li>
         <li>

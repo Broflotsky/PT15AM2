@@ -14,9 +14,9 @@ Continuamos con nuestra Rick & Morty App. Utilizaremos React-Router-DOM el cual 
 
 Al finalizar, habremos creado tres rutas por las que podremos navegar:
 
--  **"/home"**: esta será la ruta del Home (vista principal/general).
--  **"/detail/:detailId"**: en esta ruta encontraremos información más detallada sobre el personaje en particular.
--  **"/about"**: en esta ruta colocarás tu nombre y describirás de qué trata la aplicación Rick & Morty.
+- **"/home"**: esta será la ruta del Home (vista principal/general).
+- **"/detail/:detailId"**: en esta ruta encontraremos información más detallada sobre el personaje en particular.
+- **"/about"**: en esta ruta colocarás tu nombre y describirás de qué trata la aplicación Rick & Morty.
 
 ---
 
@@ -26,10 +26,10 @@ Vamos a comenzar creando los componentes que nos faltan en nuestra carpeta compo
 
 Cómo sabemos, `react-router-dom` nos da la posibilidad de crear rutas dinámicas. Estas rutas serán los path o links en el que se renderizará el componente que nosotros decidamos. Para este ejercicio queremos que en cada link se vea lo siguiente:
 
--  `<Nav />` tiene que aparecer en todas las rutas.
--  `<Cards />` debe aparecer sólo en la ruta `/home`.
--  `<About />` debe aparecer sólo en la ruta `/about`.
--  `<Detail />` debe aparecer sólo en la ruta `/detail/:detailId`
+- `<Nav />` tiene que aparecer en todas las rutas.
+- `<Cards />` debe aparecer sólo en la ruta `/home`.
+- `<About />` debe aparecer sólo en la ruta `/about`.
+- `<Detail />` debe aparecer sólo en la ruta `/detail/:detailId`
 
 ---
 
@@ -50,6 +50,8 @@ Importa los elementos "**Routes**" y "**Route**", para que luego definamos las r
 Ahora si construiremos el componente `<About />`. Este componente será una vista que contenga tu información y una explicación de qué se trata la aplicación!
 
 Esto significa que es completamente libre. Puedes mostrar incluso una foto tuya. Esto le servirá a las personas que vean tu App para conocer al creador :D.
+
+En la Navbar agrega el link About que dirija al componente **<About/>**
 
 ---
 
@@ -79,7 +81,7 @@ Para este ejercicio:
 ```js
 // Card.js
 ...
-<Link to={`/detail/${id}`} >
+<Link to={`/detail/${detailId}`} >
   <h5 className="card-title">{name}</h5>
 </Link>
 ...
@@ -103,19 +105,19 @@ Para obtener esta información importa los hooks **useState** de `react` y **use
 
 ```js
 useEffect(() => {
-   fetch(`https://rickandmortyapi.com/api/character/${id}`)
-      .then((response) => response.json())
-      .then((char) => {
-         if (char.name) {
-            setCharacter(char);
-         } else {
-            window.alert('No hay personajes con ese ID');
-         }
-      })
-      .catch((err) => {
-         window.alert('No hay personajes con ese ID');
-      });
-   return setCharacter({});
+  fetch(`https://rickandmortyapi.com/api/character/${id}`)
+    .then((response) => response.json())
+    .then((char) => {
+      if (char.name) {
+        setCharacter(char);
+      } else {
+        window.alert("No hay personajes con ese ID");
+      }
+    })
+    .catch((err) => {
+      window.alert("No hay personajes con ese ID");
+    });
+  return setCharacter({});
 }, [id]);
 ```
 
