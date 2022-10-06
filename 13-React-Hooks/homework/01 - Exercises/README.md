@@ -92,9 +92,18 @@ Estarás trabajando con algunos componentes y con las herramientas de Redux. -->
 
 🔹 Lo que hay que hacer:
 
-1. Importa el hook `useState`.
+1. Importa `React` para luego poder usar su método `useState`.
 
 2. Crea un estado local llamado "_form_" para guardar la información de todos los inputs: **nombre**, **email**, **asunto** y **mensaje**.
+
+```js 
+const [state, setState] = React.useState({
+   nombre: '',
+   email: '',
+   asunto: '',
+   mensaje: ''
+})
+```
 
 3. Crea una función "_handleInput_" para manejar estos inputs.
 
