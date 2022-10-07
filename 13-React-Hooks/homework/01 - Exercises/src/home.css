@@ -7,3 +7,8 @@ body {
    height: 100vh;
    display: flex;
 }
+
+.dataBg {
+   height: 100vh;
+   width: 30vw;
+}
