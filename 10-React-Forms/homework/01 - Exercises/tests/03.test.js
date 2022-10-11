@@ -61,7 +61,7 @@ describe("03 | Ejercicios", () => {
         validate({
           name: "Henry",
           email: "henry@gmail.com",
-          phone: "235642",
+          phone: -31,
           subject: "Asunto Henry",
           message: "Mensaje Henry",
         })
@@ -153,14 +153,6 @@ describe("03 | Ejercicios", () => {
     });
 
     it("Si el teléfono tiene errores, el input debe tener una clase 'warning'. Cuando estos errores desaparezcan, el input NO debe tener la clase 'warning'", () => {
-      contact.find("input[name='phone']").simulate("change", {
-        target: {
-          name: "phone",
-          value: "235642",
-        },
-      });
-      input = contact.find("input[name='phone']");
-      expect(input.hasClass("warning")).toBeTruthy();
       // El telefono NO tiene que ser un numero negativo
       contact.find("input[name='phone']").simulate("change", {
         target: {
