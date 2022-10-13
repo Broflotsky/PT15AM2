@@ -14,7 +14,7 @@ En esta homework, vamos a crear una serie de Componentes de React, que luego van
 
 > **Nota**: Todos los Componentes que hagamos en este homework son `Puros`, por lo tanto, ninguno tiene estado, simplemente reciben datos por props.
 >
-> No te preocupes por el estilo de los componentes. En el homework siguiente vamos a darle Estilos.
+> No te preocupes por el estilo de los componentes. En el homework siguiente vamos a darle estilos.
 
 ---
 
@@ -22,22 +22,21 @@ En esta homework, vamos a crear una serie de Componentes de React, que luego van
 
 🔹 Dentro de la carpeta `02 - Integration`, vas a encontrar la siguiente estructura:
 
--  Una carpeta llamada **img**
--  Una carpeta llamada **public**
--  Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
--  Un archivo **package.json**
--  Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
+- Una carpeta llamada **img**
+- Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
+- Un archivo **package.json**
+- Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
 
 Además:
 
 🔹 Dentro de la carpeta `src` vas a encontrar ya el esqueleto del proyecto React, estructurado de la siguiente manera, donde deberás codear cada Componente:
 
--  Una carpeta llamada **components**
--  Un archivo llamado **App.css**
--  Un archivo llamado **App.js**
--  Un archivo llamado **data.js**
--  Un archivo **index.css**
--  Un archivo **index.js**
+- Una carpeta llamada **components**
+- Un archivo llamado **App.css**
+- Un archivo llamado **App.js**
+- Un archivo llamado **data.js**
+- Un archivo **index.css**
+- Un archivo **index.js**
 
 > **Nota**: Sabemos que los Componentes de React tienen que cumplir el principio de una única responsabilidad, es decir que cada Componente debe cumplir una única tarea bien definida.
 
@@ -45,7 +44,7 @@ Además:
 
 ## Instrucciones para correr el proyecto
 
-Para realizar este proyecto crearemos un nuevo respoitorio. Para esto:
+Para realizar este proyecto crearemos un nuevo repositorio. Para esto debemos hacer lo siguiente:
 
 1. Abre tu terminal y dirígete a tu escritorio (desktop) con el comando **`cd`**. Una vez allí copia y pega el siguiente comando que te permitirá crear un repositorio desde cero:
 
@@ -53,7 +52,7 @@ Para realizar este proyecto crearemos un nuevo respoitorio. Para esto:
     npx create-react-app rickandmorty
 ```
 
-2. Luego de ejecutar este comando verás que se creó una carpeta en tu escritorio, y dentro de ella estará tu nueva apliación de React. Ahora le haremos algunas modificaciones. En esta carpeta encontrarás sub-carpetas llamadas "**img**", "**src**" y un archivo "**.env**".
+2. Luego de ejecutar este comando verás que se creó una carpeta en tu escritorio y dentro de ella estará tu nueva aplicación de React. Ahora haremos algunas modificaciones. En la carpeta **02-Integration** encontrarás sub-carpetas llamadas "**img**", "**src**" y un archivo "**.env**".
 
 En el repositorio que creaste deberás pegar todas estas carpetas y archivo. Ten en cuenta que deberás reemplazar la carpeta "**_src_**".
 
@@ -73,7 +72,7 @@ Comienza a correr la aplicación de forma local por lo que se puede ver desde el
 
 > Hint: Si aún tenemos corriendo el server local de la homework Exercises, vamos a obtener un error debido a que el puerto predeterminado (3000) está ocupado. Podemos elegir utilizar otro puerto, o terminar el proceso anterior y luego reintentarlo.
 >
-> No es necesario volver a correr el proyecto cada vez que se realice un cambio, el mismo se verá automáticamente reflejando en el navegador.
+> No es necesario volver a correr el proyecto cada vez que se realice un cambio, el mismo se verá automáticamente reflejado en el navegador.
 
 ---
 
@@ -95,13 +94,13 @@ Además cuando el usuario haga click en la X de "cerrar", se invocará una funci
 
 Este componente `Card` va a recibir las siguientes props:
 
--  **name**: Nombre
--  **species**: Especie
--  **gender**: Género
--  **image**: Imagen
--  **onClose**: La función que se va a ejecutar cuando el usuario haga click en el botón de cerrar.
+- **name**: Nombre
+- **species**: Especie
+- **gender**: Género
+- **image**: Imagen
+- **onClose**: La función que se va a ejecutar cuando el usuario haga click en el botón de cerrar.
 
-> Luego todos estos datos van a venir de una API externa, pero por ahora no nos interesa esa parte. Por el momento nosotros te los vamos a brindar desde un archivo local **(src/data.js)**, para que ya puedas ver tu componente funcionando.
+> Más adelante todos estos datos van a venir de una API externa, pero por ahora no nos interesa esa parte. Por el momento nosotros te los vamos a brindar desde un archivo local **(src/data.js)**, para que ya puedas ver tu componente funcionando.
 
 ---
 
@@ -127,7 +126,7 @@ Básicamente, va a recibir un arreglo de `personajes` (con todos sus datos), y v
 
 Vamos a crear este componente para luego poder agregar más personajes que deseemos ver.
 
-Este Componente recibe por props una función `onSearch`, que recibe un parámetro (que luego será el ID del personaje tomado desde el input; pero de momento le pasamos uno cualquiera, ya que aún no estamos utilizando estados dentro del componente).
+Este Componente recibe por props una función `onSearch`, dicha función recibe un parámetro (que luego será el ID del personaje tomado desde el input; pero de momento le pasamos uno cualquiera, ya que aún no estamos utilizando estados dentro del componente).
 
 La función `onSearch` se debe ejecutar cuando se haga click en el botón `Agregar`.
 

@@ -26,7 +26,7 @@ Vamos a comenzar creando los componentes que nos faltan en nuestra carpeta compo
 
 Cómo sabemos, `react-router-dom` nos da la posibilidad de crear rutas dinámicas. Estas rutas serán los path o links en el que se renderizará el componente que nosotros decidamos. Para este ejercicio queremos que en cada link se vea lo siguiente:
 
-- `<Nav />` tiene que aparecer en todas las rutas.
+- `<Nav />` debe que aparecer en todas las rutas.
 - `<Cards />` debe aparecer sólo en la ruta `/home`.
 - `<About />` debe aparecer sólo en la ruta `/about`.
 - `<Detail />` debe aparecer sólo en la ruta `/detail/:detailId`
@@ -127,7 +127,14 @@ useEffect(() => {
 
 ### 👩‍💻 Ejercicio 6
 
-Ahora en tu estado local **character** tendrás toda la información del personaje disponible para que la renderices en este componente (`<Detail />`).
+Ahora en tu estado local **character** tendrás toda la información del personaje disponible para que la renderices en este componente (`<Detail />`). Debes traer la siguiente información:
+
+- Name
+- Status
+- Specie
+- Genrer
+- Origin
+- Image
 
 Dándole estilos debería quedarte algo similar a esto:
 
