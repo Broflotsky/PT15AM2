@@ -230,9 +230,17 @@ React.useEffect();
 
 🔹 Lo que hay que hacer:
 
-1. Renderiza en este componente la información que tienes guardada en tu estado local "**informacion**".
+1. Renderiza una etiqueta h1 que contenga el texto `ESTA ES LA INFORMACIÓN QUE ENVIASTE...`.
 
-2. Dale estilos a cada dato.
+2. Renderiza una etiqueta h3 que contenga la propiedad `nombre` del estado `informacion`.
+
+3. Renderiza una etiqueta h3 que contenga la propiedad `email` del estado `informacion`.
+
+4. Renderiza una etiqueta h3 que contenga la propiedad `asunto` del estado `informacion`.
+
+5. Renderiza una etiqueta h3 que contenga la propiedad `mensaje` del estado `informacion`.
+
+6. Dale los estilos que gustes a cada etiqueta.
 
 ---
 
