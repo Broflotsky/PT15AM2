@@ -18,6 +18,13 @@ En esta homework crearemos dos cosas😄
 
 ---
 
+## 👩‍💻 Ejercicio 0 | PROBANDO ERROR STORE PARALELO
+
+Para comenzar a trabajar, primero tendremos que crear un estado global en el que se guarden todos nuestros personajes a medida que los vamos agregandoDirígete al archivo en el que se encuentran tus **actions**. Allí deberás:
+
+
+---
+
 ## 👩‍💻 Ejercicio 1
 
 ### **ACTIONS**
