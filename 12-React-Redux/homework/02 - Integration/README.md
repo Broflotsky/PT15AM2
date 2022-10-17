@@ -148,4 +148,8 @@ Todo el trabajo que hiciste en esta integración debería darte un resultado y f
 
 ## 👩‍💻 Ejercicio Extra
 
--  Ahora te desafiamos a que crees, dentro de esta misma aplicación una nueva vista que sea tu "**porftolio**". Aquí podrás agregar/eliminar/editar tus proyectos construidos durante el bootcamp en Henry!
+### **¡Ahora te proponemos dos desafíos!**
+
+**1.** Si revisas, esta aplicación tiene un pequeño bug que tendrás que resolver... Cuando preciónas el ❤️ de una de las Cards, el personaje aparece en la vista de "**Favoritos**". Pero si luego eliminas el personaje, este aún permanece en esta vista. Busca la manera para que cuando elimines un personaje, también se elimine de "**Favoritos**" (si es que está allí).
+
+**2.** Te animamos a que crees, dentro de esta misma aplicación, una nueva vista que sea tu "**PORFOLIO**". Aquí podrás agregar/eliminar/editar tus proyectos construidos durante el bootcamp en Henry!

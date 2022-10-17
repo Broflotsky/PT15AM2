@@ -1,4 +1,4 @@
-# HW 12 - React-Redux | Ejercicios
+## HW 13 - React-Hooks | Integración
 
 ## Duración estimada 🕒
 
@@ -6,82 +6,15 @@ x minutos
 
 ---
 
+## Rick & Morty App
+
 ## Intro
 
-En esta homework desarrollarás una aplicación que le permite al usuario agregar y eliminar productos de una lista de compras.
+En esta homework crearemos dos cosas😄
 
----
+-  Por un lado, haremos un **filtrado** para nuestros personajes favoritos. Vamos a filtrar todos los personajes por su status: _alive_, _dead_ o _unknown_.
 
-## Consigna de la homework
-
--  Agregar productos a una lista de compras.
--  Eliminar productos de la lista de compras.
-
----
-
-## Pasos básicos para realizar la homework
-
-🔹 Para poder ejecutar los `test` de esta homework, es necesario que abramos la terminal ubicados dentro de la carpeta `01 - Exercises`.
-
--  Cuando te encuentres en esta carpeta, debes ejecutar el comando
-
-```bash
-npm install
-```
-
--  Listo!! Ya puedes correr los test:
-
-```bash
-npm test
-```
-
-Si deseas correr por test, puedes utilizar:
-
-```bash
-npm run test:01
-```
-
-🔹 Para poder correr la aplicación de forma local, sólo debes ejecutar el comando
-
-```bash
-npm start
-```
-
--  Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
-
----
-
-## Conociendo la estructura
-
-🔹 Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
-
--  Una carpeta llamada **_mocks_**.
--  Una carpeta llamada **_public_**.
--  Una carpeta llamada **_tests_**
--  Un archivo **package.json**
--  Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
--  Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
-
-Además:
-
-🔹 Dentro de la carpeta `src` encontrarás el esqueleto del proyecto React, estructurado de la siguiente manera:
-
--  Una carpeta llamada `assets`
--  Una carpeta llamada `components`
-   -  Una carpeta llamada `Form`
-   -  Una carpeta llamada `Card`
-   -  Una carpeta llamada `Products`
--  Una carpeta llamada `redux`
-   -  Una carpeta llamada `actions`
-   -  Una carpeta llamada `reducer`
-   -  Una carpeta llamada `store`
--  Un archivo llamado `Home.js`
--  Un archivo llamado `home.css`
--  Un archivo llamado `index.js`
-
-Estarás trabajando con algunos componentes y con las herramientas de Redux.
-
-🔹 Da un vistazo al archivo `index.js`, dentro de la carpeta **store**, para que veas cómo se configura el store.
+-  Por otro lado, haremos un **ordenamiento** también para nuestros personajes favoritos. Vamos a ordenar todos los personajes por su id (de mayor a menor y viceversa).
 
 ---
 
@@ -89,25 +22,11 @@ Estarás trabajando con algunos componentes y con las herramientas de Redux.
 
 ### **ACTIONS**
 
-🔹 Dentro de la carpeta **actions**, encontrarás dos archivos:
+Dirígete al archivo en el que se encuentran tus **actions**. Allí deberás:
 
--  `index.js`: en este harás las funciones _action creators_ para gestionar tu lista de compras (agregar, editar o eliminar productos).
--  `types.js`: en este guardarás los types para enviar a tu reducer.
+1. Crear una action-creator con el nombre "**_filterCards_**". Esta action-creator recibirá por parámetro un **status**. La action que retornará tendrá un _type_ llamado "**FILTER**", y dentro del _payload_ irá el status recibido.
 
-🔹 Lo que hay que hacer:
-
-1. En el archivo **types.js**, crea y exporta las siguientes constantes:
-
--  ADD_PRODUCT: que su valor sea 'ADD_PRODUCT'.
--  DELETE_PRODUCT: que su valor sea 'DELETE_PRODUCT'.
-
-2. En el archivo **actions.js**, importa las constantes que están en el archivo **types.js**.
-
-   > NOTA: puedes utilizar destructuring para importar los types.
-
-3. Define y exporta una función llamada addProduct que recibe como parámetro `product`. Esta función debe retornar la propiedad **type** con el valor ADD_PRODUCT, y la propiedad **payload** con el valor que recibe por parámetro la función.
-
-4. Define y exporta una función llamada deleteProduct que recibe como parámetro `id`. Esta función debe retornar la propiedad **type** con el valor DELETE_PRODUCT, y la propiedad **payload** con el valor que recibe por parámetro la función.
+2. Crear una action-creator con el nombre "**_orderCards_**". Esta action-creator recibirá por parámetro un **id**. La action que retornará tendrá un _type_ llamado "**ORDER**", y dentro del _payload_ irá el id recibido.
 
 ---
 
@@ -115,140 +34,68 @@ Estarás trabajando con algunos componentes y con las herramientas de Redux.
 
 ### **REDUCER**
 
-🔹 Dentro de la carpeta **reducer**:
+Dirígete al archivo en el que se encuentra tu **reducer**. Allí deberás:
 
-Si te fijas, el **Initial State** (tu estado global) ya está declarado, y más abajo se esta exportando por defecto una función **rootReducer** que aún no a sido creada. Por lo tanto, sigue los siguientes pasos:
+**1.** Crea un caso con el nombre "_FILTER_". Haz una copia de tu estado "**_myFavorites_**" mediante destructuring. Filtra aquellos personajes que tengan el mismo status que recibes por payload (**Alive**, **Dead** o **Unkown**).
 
-🔹 Lo que hay que hacer:
+**2.** Crea un caso con el nombre "_ORDER_". Haz una copia de tu estado "**_myFavorites_**" mediante destructuring. Utiliza el método **sort** de arreglos para ordenar tus personajes en base al número de su ID. Si el _payload_ es "**Ascendiente**", entonces de menor a mayor. Si el _payload_ es "**Descendiente**, entonces de mayor a menor.
 
-1. Crea una función llamada **rootReducer** que reciba como parámetro:
-
-   -  Una variable _**state**_, que sea igual al _initialState_ ya declarado.
-   -  Una variable **_action_** (puedes hacer _destructuring_ de sus dos propiedades).
-
-2. Dentro de esta función crea una declaración **switch** que reciba por parámetro la propiedad _**type**_ de la _action_.
-
-3. Dentro de esta declaración **switch** crearemos dos casos distintos, y un caso _default_.
-
-   **Caso A)** El nombre de este caso será **ADD_PRODUCT**. Lo que hará es obtener tu propiedad **list** del estado global mediante un _**spread operator**_. Luego le insertarás lo que recibes por _payload_ (recuerda que **list** es un arreglo, asique ya te imaginarás qué propiedad usar...). Una vez insertado, retornará un objeto en el cual se haga un _**spread operator**_ del estado, y la propiedad **list** será igual al nuevo arreglo (que contiene el payload recibido).
-
-   ```javascript
-   [...state.list];
-   ```
-
-   **Caso B)** El nombre de este caso será **DELETE_PRODUCT**. Lo que hará es tomar el arreglo de objetos **list**, y buscar aquel producto que tenga el mismo id que se recibe por la propiedad _payload_. Filtraremos ese producto y nos quedaremos con todos los demás. Una vez que tengamos el resto de productos retornará un objeto en el cual se haga un _**spread operator**_ del estado, y la propiedad **list** será igual al nuevo arreglo (que ha filtrado el producto recibido por payload).
-
-   > NOTA: ten en cuenta que para filtrar los productos deberás ingresar a la propiedad id de cada uno y comparar si el id recibido por payload es igual.
-
-   **Caso default)** El caso default de este switch sólo retornará el estado.
+> **NOTA:** investiga en la web sobre cómo funciona el método sort.
 
 ---
 
 ## 👩‍💻 Ejercicio 3
 
-### **COMPONENTE FORMULARIO**
+### **FILTER/ORDER COMPONENT**
 
-🔹 Dentro de la carpeta **Form**:
+Dirígete al archivo en el que se encuentra tu componente **favorites**. Allí deberás:
 
-Revisa lo que tiene por un momento. Verás que el componente tiene un formulario controlado, con el cual un usuario podrá agregar un nuevo producto a la lista de compras. Para que esto funcione correctamente deberás hacer lo siguiente:
+1. Dentro de un `div`, crea dos elementos de HTML **selector**.
 
-🔹 Lo que hay que hacer:
+   -  Dentro del primero le pasaremos dos opciones: **Ascendente** y **Descendente**. Asegúrate de pasarles estos valores en sus atributos `value`. Por ejemplo:
 
-1. Importa en este archivo la _action_ llamada "**addProduct**".
-
-2. Termina de crear la función **mapDispatchToProps**. Esta función debe recibir por parámetro "_dispatch_". En el cuerpo de la función se debe retornar un objeto con una propiedad llamada "_addProduct_" que será igual a una función que recibe por parámetro `product`, y que en su cuerpo hace un dispatch de la _action_ que importaste en el paso anterior. Recuerda que esa action recibe por parámetro `product`.
-
-3. Este componente debe recibir por props la función "_addProduct_". Te recomendamos que la recibas haciendo _**destructuring**_.
-
-4. Crea una función (dentro del cuerpo del componente `Form`) llamada **handleSubmit**. Esta función hará:
-
--  Ejecutará la función recibida por props: `addProduct`. A esta le pasaremos como argumento el estado local llamado "product" en forma de _**spread operator**_. De esta forma también indicaremos que la propiedad **id** va a ser igual a la función **now()** del objeto global _Date_.
-
-   ```javascript
-   Date.now();
+   ```html
+   <option value="Ascendente">Ascendente</option>
    ```
 
-Esto le permitirá a cada producto tener un ID único.
+   -  Dentro del segundo pásales las opciones: **Alive**, **Dead** y **Unknown**.
 
-5. Una vez hecho esto, ve al botón que se encuentra en el componente, y mediante un evento `onClick`, pásale esta función recién creada.
+2. Cada vez que se seleccione una opción de ordenamiento, despacha la action "**orderCards**". Recuerda pasarle por parámetro el `target.value` del input.
 
-> **NOTA:** prueba ejecutar la función _Date.now()_ en tu consola y verifica qué respuesta te da.
+3. Cada vez que se seleccione una opción de filtrad, despacha la action "**filterCards**". Recuerda pasarle por parámetro el `target.value` del input.
 
 ---
 
 ## 👩‍💻 Ejercicio 4
 
-### **COMPONENTE PRODUCTS**
+### **COMPONENTE DE FAVORITOS**
 
-🔹 Dentro de la carpeta **Products**:
+Dirígete a tu capeta de componentes, y crea allí dentro una carpeta que contenga un archivo `Favorites.jsx` y otro `favorites.css`.
 
-Lo que hará este componente será renderizar nuestra lista de productos en el navegador. Para esto tomate un momento para explorar este componente y revisar lo que tiene dentro. Luego resuelve:
+1. Crea una ruta en el archivo `App.js` para mostrar este componente. La ruta se puede llamar **/favorites**. También crea un botón en tu `Navbar` que te redirija a esta ruta, y otro que te devuelva a tu `Home`.
 
-🔹 Lo que hay que hacer:
+2. Dentro de este componente crea una función **mapStateToProps**. Esta función debe traer nuestro estado global _**myFavorites**_ a este componente. Luego recíbelo por props.
 
-1. Importa el componente `Card`.
+3. Una vez que tengas la lista de tus personajes favoritos dentro de tu componente, deberás mappearlo (recorrerlo) y reenderizar un `<div>` con información del personaje.
 
-2. Termina de crear la función **mapStateToProps**. Esta recibe por parámetro _state_. En el cuerpo de esta función se retornará un objeto que tenga como propiedad _list_, y que será igual a "_state.list_".
-
-3. El componente `Products` recibe por props nuestro estado global "**list**". Te recomendamos que las recibas haciendo _**destructuring**_.
-
-4. Ahora renderizaremos nuestra lista de productos. Utiliza el método **MAP** para mapear la propiedad **list**. Por cada producto en esta lista deberás renderizar un componente _**Card**_ (importado previamente). A este componente `Card` pásale como propiedades el **NAME**, el **PRICE**, el **ID** de cada producto, y una **KEY** que los pueda diferenciar.
+> **NOTA:** no te olvides de darle estilos al componente.
 
 ---
 
-## 👩‍💻 Ejercicio 5
+## 👩‍💻 Ejercicio Extra
 
-### ...estamos llegando a la última parte de la homework ⭐
+### **¡LISTO! YA FUNCIONA TODO**
 
-### **FUNCIONALIDAD DELETE**
+Todo el trabajo que hiciste en esta integración debería darte un resultado y funcionamiento similar a este:
 
-🔹 Dentro de la carpeta **Card**:
-
-En este ejercicio crearemos la funcionalidad de eliminar productos de nuestra lista.
-
-🔹 Lo que hay que hacer:
-
-1. Importa la _action_ **deleteProduct**.
-
-2. Termina de crear la función **mapDispatchToProps**. Esta función recibe por parámetro a `dispatch`. En el cuerpo de esta función se retorna un objeto con una propiedad llamada **deleteProduct**, que será igual a una función que recibe por parámetro **_id_**, y que en su cuerpo hará un dispatch de la _action_ previamente importada. Ten en cuenta que al ejecutarse esta acción estará enviando por parámetro el _id_.
-
-3. El componente `Card` recibe por props nuestra función "**deleteProduct**". Te recomendamos que la recibas haciendo _**destructuring**_.
-
-4. Crea una función llamada **handleDelete** en el cuerpo del componente. Esta función debe ejecutar la función _handleDelete_ pasando como argumento el nombre del producto. Una vez creada, mediante un evento `onClick`, haz que el botón de eliminar maneje esta función.
-
-¡Listo! Ahora cuando apretes el boton de eliminar, la card desaparecerá.
+<img src="./img/favDemostration.gif" alt="" />
 
 ---
 
-## 👩‍💻 Extra
+## 👩‍💻 Ejercicio Extra
 
-Si llegaste hasta aquí te desafiamos a que intenes hacer lo siguiente:
+### **¡Ahora te proponemos dos desafíos!**
 
--  Haz que el formulario se limpie una vez agregado un producto a nuestra lista.
--  Crea validaciones en el formulario para agregar productos.
-   -  Que no deje crear productos sin nombre o sin precio.
-   -  Que no deje crear dos productos con el mismo nombre.
--  Haz que siempre pueda haber como máximo un total de 9 cards.
+**1.** Si revisas, esta aplicación tiene un pequeño bug que tendrás que resolver... Cuando preciónas el ❤️ de una de las Cards, el personaje aparece en la vista de "**Favoritos**". Pero si luego eliminas el personaje, este aún permanece en esta vista. Busca la manera para que cuando elimines un personaje, también se elimine de "**Favoritos**" (si es que está allí).
 
----
-
-## Recordemos que...
-
--  El **mapDispatchToProps** sirve para enviar información al _reducer_, y en difinitiva, al estado global.
--  El **mapStateToProps** sirve para traer información del estado global a un componente.
--  Las **actions** son las que transportan la información que se despacha de un componente al reducer.
--  El **reducer** es el que gestion la información de nuestro estado global.
-
----
-
-## Recursos adicionales
-
--  Documentación [**React-Redux**](https://react-redux.js.org/)
--  Documentación [**mapDispatchToProps**](https://react-redux.js.org/using-react-redux/connect-mapdispatch)
--  Documentación [**mapStateToProps**](https://react-redux.js.org/using-react-redux/connect-mapstate)
-
----
-
-¡Listo! Aprendiste cómo conectar React con Redux, y los beneficios de tener un estado global.
-
-✨🚀 Dirígete a la carpeta 📂 [**"02 - Integration"**](../02%20-%20Integration/README.md) y continúa desarrollando la app de Rick & Morty 🤩 ---
+**2.** Te animamos a que crees, dentro de esta misma aplicación, una nueva vista que sea tu "**PORFOLIO**". Aquí podrás agregar/eliminar/editar tus proyectos construidos durante el bootcamp en Henry!
