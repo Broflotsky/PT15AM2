@@ -194,7 +194,7 @@ const { formulario } = useSelector((state) => {
 
 🔹 Lo que hay que hacer:
 
-1. Importa el hook `useState`, y crea un estado local llamado "**informacion**". Este estado debe ser un objeto con las propiedades: **nombre**, **email**, **asunto** y **mensaje**.
+1. Importa el hook `React.useState`, y crea un estado local llamado "**informacion**". Este estado debe ser un objeto con las propiedades: **nombre**, **email**, **asunto** y **mensaje**.
 
 ---
 

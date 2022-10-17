@@ -1,15 +1,14 @@
 import './infoenviada.css';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 const InfoEnviada = () => {
-   const [informacion, setInformacion] = useState({
+   const [informacion, setInformacion] = React.useState({
       nombre: '',
       email: '',
       asunto: '',
       mensaje: '',
    });
-
    const { formulario } = useSelector((state) => {
       return state;
    });
