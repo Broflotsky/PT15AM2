@@ -20,10 +20,14 @@ const InfoEnviada = () => {
    return (
       <div className='infoBg'>
          <h1 className='infoTitle'>ESTA ES LA INFORMACIÓN QUE ENVIASTE...</h1>
-         <h3>{informacion.nombre}</h3>
-         <h3>{informacion.email}</h3>
-         <h3>{informacion.asunto}</h3>
-         <h3>{informacion.mensaje}</h3>
+         {informacion.nombre && (
+            <div>
+               <li className='infoText'>{informacion.nombre}</li>
+               <li className='infoText'>{informacion.email}</li>
+               <li className='infoText'>{informacion.asunto}</li>
+               <li className='infoText'>{informacion.mensaje}</li>
+            </div>
+         )}
       </div>
    );
 };

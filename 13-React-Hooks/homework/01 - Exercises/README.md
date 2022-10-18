@@ -97,7 +97,7 @@ En este ejercicio crearemos un formulario para enviar un mail a la empresa.
 2. Crea un estado local llamado "_form_" para guardar la información de todos los inputs: **nombre**, **email**, **asunto** y **mensaje**.
 
 ```js
-const [state, setState] = React.useState({
+const [form, setForm] = React.useState({
    nombre: '',
    email: '',
    asunto: '',
@@ -230,7 +230,9 @@ React.useEffect();
 
 🔹 Lo que hay que hacer:
 
-1. Renderiza en este componente la información que tienes guardada en tu estado local "**informacion**".
+1. Renderiza en este componente la información que tienes guardada en tu estado local "**informacion**". Debería quedarte algo como esto:
+
+<img src="./img/example1.gif" alt="" />
 
 2. Dale estilos a cada dato.
 
