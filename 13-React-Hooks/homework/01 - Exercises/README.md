@@ -230,19 +230,25 @@ React.useEffect();
 
 🔹 Lo que hay que hacer:
 
-1. Renderiza en este componente la información que tienes guardada en tu estado local "**informacion**". Debería quedarte algo como esto:
+1. Renderiza una etiqueta h1 que contenga el texto `ESTA ES LA INFORMACIÓN QUE ENVIASTE...`.
 
-<img src="./img/example1.gif" alt="" />
+2. Renderiza una etiqueta h3 que contenga la propiedad `nombre` del estado `informacion`.
 
-2. Dale estilos a cada dato.
+3. Renderiza una etiqueta h3 que contenga la propiedad `email` del estado `informacion`.
+
+4. Renderiza una etiqueta h3 que contenga la propiedad `asunto` del estado `informacion`.
+
+5. Renderiza una etiqueta h3 que contenga la propiedad `mensaje` del estado `informacion`.
+
+6. Dale los estilos que gustes a cada etiqueta.
 
 ---
 
 ## 👩‍💻 Ejercicio 5
 
-En este ejercicio crearás una funcionalidad de _**Copiado al Portapapeles**_ del número telefónico de la empresa.
-
 ### ...estamos llegando a la última parte de la homework ⭐
+
+En este ejercicio crearás una funcionalidad de _**Copiado al Portapapeles**_ del número telefónico de la empresa.
 
 ### **USE REF**
 

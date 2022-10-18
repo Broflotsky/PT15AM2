@@ -22,21 +22,22 @@ En esta homework, vamos a crear una serie de Componentes de React, que luego van
 
 🔹 Dentro de la carpeta `02 - Integration`, vas a encontrar la siguiente estructura:
 
--  Una carpeta llamada **img**
--  Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
--  Un archivo **package.json**
--  Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
+- Una carpeta llamada **img**
+- Una carpeta llamada **public**
+- Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
+- Un archivo **package.json**
+- Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
 
 Además:
 
 🔹 Dentro de la carpeta `src` vas a encontrar ya el esqueleto del proyecto React, estructurado de la siguiente manera, donde deberás codear cada Componente:
 
--  Una carpeta llamada **components**
--  Un archivo llamado **App.css**
--  Un archivo llamado **App.js**
--  Un archivo llamado **data.js**
--  Un archivo **index.css**
--  Un archivo **index.js**
+- Una carpeta llamada **components**
+- Un archivo llamado **App.css**
+- Un archivo llamado **App.js**
+- Un archivo llamado **data.js**
+- Un archivo **index.css**
+- Un archivo **index.js**
 
 > **Nota**: Sabemos que los Componentes de React tienen que cumplir el principio de una única responsabilidad, es decir que cada Componente debe cumplir una única tarea bien definida.
 
@@ -60,11 +61,11 @@ Además cuando el usuario haga click en la X de "cerrar", se invocará una funci
 
 Este componente `Card` va a recibir las siguientes props:
 
--  **name**: Nombre
--  **species**: Especie
--  **gender**: Género
--  **image**: Imagen
--  **onClose**: La función que se va a ejecutar cuando el usuario haga click en el botón de cerrar.
+- **name**: Nombre
+- **species**: Especie
+- **gender**: Género
+- **image**: Imagen
+- **onClose**: La función que se va a ejecutar cuando el usuario haga click en el botón de cerrar.
 
 > Más adelante todos estos datos van a venir de una API externa, pero por ahora no nos interesa esa parte. Por el momento nosotros te los vamos a brindar desde un archivo local **(src/data.js)**, para que ya puedas ver tu componente funcionando.
 
@@ -130,7 +131,7 @@ Esperamos que se "levante" el servidor local y luego veremos algo así:
 
 <img src="./img/cra_02.gif" height="360px">
 
--  Ahora simplemente tendrás que reemplazar la carpeta `/src` de este nuevo proyecto que acabas de crear, por la misma carpeta en la que estuviste trabajando dentro de esta homework.
+- Ahora simplemente tendrás que reemplazar la carpeta `/src` de este nuevo proyecto que acabas de crear, por la misma carpeta en la que estuviste trabajando dentro de esta homework.
 
 En el navegador ya deberías ver los cambios. Lo que hicimos en la homework Integration Parte 1 está corriendo como una app independiente.
 

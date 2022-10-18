@@ -2,7 +2,7 @@
 
 ## Duración estimada 🕒
 
-x minutos
+60 minutos
 
 ---
 
@@ -182,9 +182,7 @@ const [inputs, setInputs] = React.useState({
 <input name="name" value={inputs.name} />
 ```
 
-4. Crea la función **handleChange** antes del return, crea el atributo `onChange` a los inputs y textarea del formulario y asígnale **handleChange** como valor.
-
-5. Crea la función **handleChange** antes del return. Esta función recibe un `evento` como parámetro y dentro de ella haz lo siguiente:
+4. Crea la función **handleChange** antes del return. Esta función recibe un `evento` como parámetro y dentro de ella haz lo siguiente:
 
 - Setea el estado **inputs**.
 - Usa el "_spread operator_" para copiar el estado anterior.
@@ -194,7 +192,7 @@ const [inputs, setInputs] = React.useState({
 [evento.target.name]: evento.target.value
 ```
 
-5. Crea el atributo `onChange` en los inputs del formulario y asígnale la función **handleChange** previamente creada.
+5. Crea el atributo `onChange` en los inputs del formulario y asígnale como valor la función **handleChange** previamente creada.
 
 ---
 
@@ -253,21 +251,21 @@ setErrors(
 
 e) Debes informar a los usuarios que tiene errores en los inputs. Para ello, haz lo siguiente:
 
-- Crea una hoja de estilos llamada `Contact.modules.css`.
-- Crea una clase llamada `.warning` con la propiedad **border** y que su valor sea **solid**, **red** y 1 px.
-- Crea otra clase llamada `danger` con la propiedades:
-  - font-size: 10px.
-  - color: red.
-  - margin-left: 10em.
-- Importa en el componente **Contact.jsx** los estilos.
-- En cada input crea el atributo **className** y asigna condicionalmente la propiedad del estado errors de acuerdo al input en el que te encuentres. Ejemplo:
+1. Lee la hoja de estilos llamada `Contact.modules.css`, dentro de ella encontrarás:
+   a) Una clase llamada `.warning` con la propiedad **border** y donde sus valores son: **solid**, **red** y 1 px.
+   b) Además verás otra clase llamada `danger` con la propiedades:
+   - font-size: 10px.
+   - color: red.
+   - margin-left: 10em.
+     c) Observa que la hoja de estilos **Contact.modules.css** se encuentra importada en el componente **Contact.jsx**.
+2. En cada input crea el atributo **className** y asigna condicionalmente la propiedad del estado errors de acuerdo al input en el que te encuentres. Ejemplo:
 
 ```jsx
 <input className={errors.name && 'warning'}>
 ```
 
-- Debajo de cada input (si existe un error) agrega una etiqueta `p` debajo, en el que su texto sea la propiedad del objeto errors de acuerdo al input que te encuentres validando.
-- Agrega en la etiqueta **p** el atributo className y asígnale la clase `'danger'`.
+3. Debajo de cada input (si existe un error) agrega una etiqueta `p` debajo, en el que su texto sea la propiedad del objeto errors de acuerdo al input que te encuentres validando.
+4. Agrega en la etiqueta **p** el atributo className y asígnale la clase `'danger'`.
 
 Ejemplo:
 
