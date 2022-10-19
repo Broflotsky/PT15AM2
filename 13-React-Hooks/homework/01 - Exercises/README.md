@@ -260,7 +260,7 @@ En este ejercicio crearás una funcionalidad de _**Copiado al Portapapeles**_ de
 
 2. Crea un estado local llamado "**number**" que sea un string y tenga un número cualquiera con la estructura:
 
-   XXXX - XXX XXXX
+   XXX-XXX-XXXX
 
 3. Crea una constante llamada "**numberRef**" que será igual al hook `useRef()` ejecutado.
 
@@ -271,7 +271,7 @@ En este ejercicio crearás una funcionalidad de _**Copiado al Portapapeles**_ de
 
           TELÉFONO: {number}
 
-> **NOTA:** es muy importante que el texto que escribas dentro de la etiqueta "div" sea literalmente el anterior.
+> **NOTA:** es muy importante que el texto que escribas dentro de la etiqueta "div" sea literalmente el anterior, debido a que se tomará como referencia, el valor de tu estado local.
 
 5. Crea una función llamada **handleCopy**. En el cuerpo de la función tienes que copiar y pegar el siguiente código:
 
