@@ -2,9 +2,9 @@
 
 ## Temas de la homework
 
--  Redux.
--  Estado global.
--  Actions.
+- Redux.
+- Estado global.
+- Actions.
 
 ---
 
@@ -18,16 +18,16 @@ x minutos
 
 Al finalizar esta homework habrás aprendido a:
 
--  Crear una aplicación de Javascript integrada con Redux
--  Crear una _Action_.
--  Crear un reducer con sus distintos casos.
--  Seguir el flujo de Redux.
+- Crear una aplicación de Javascript integrada con Redux
+- Crear una _Action_.
+- Crear un reducer con sus distintos casos.
+- Seguir el flujo de Redux.
 
 ---
 
 ## ¿Cómo lo lograremos?
 
-Esta vez **NO HAY INTEGRATION**. La integración se hará en la próxima Homework, asique por ahora nos enfoquemos en resolver los ejercicios de hoy y aprender todas las ventajas que nos brinda Redux! Para esto:
+Esta vez **NO HAY INTEGRATION**. La integración la seguiremos en la próxima Homework, así que por ahora nos enfocaremos en resolver los ejercicios de hoy y aprender todas las ventajas que nos brinda Redux! Para esto:
 
 Primero resuelve la Homework: [01-Exercises](./01%20-%20Exercises/README.md). En esta practicarás integrar Redux puro en tus aplicaciones.
 

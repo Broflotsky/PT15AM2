@@ -2,7 +2,7 @@
 
 ## Duración estimada 🕒
 
-x minutos
+50 minutos
 
 ---
 
@@ -146,7 +146,7 @@ Si observamos el código anterior estamos llamando a la función `onSearch` sin 
 
 3. Mostrar un mensaje en caso de que el personaje no exista.
 
-> **Hint**:Como aún no has visto promesas, tienes este snippet para que copies y pegues la función **_onSearch_**:
+> **Hint**: Como aún no has visto promesas, tienes este snippet para que copies y pegues la función **_onSearch_**:
 
 ```js
 function onSearch(character) {

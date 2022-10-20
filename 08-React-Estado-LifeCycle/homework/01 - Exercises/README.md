@@ -10,7 +10,7 @@
 
 En esta actividad debes desarrollar una Zoo App utilizando componentes funcionales y componentes de clase. La misma necesita:
 
-- Tener un text-input con en el que el usuario pueda bautizar su zoológico como desee.
+- Tener un text-input en el que el usuario pueda bautizar su zoológico como desee.
 - Mostrar todos los animales que tiene el zoológico.
 - Tener botones con la funcionalidad de mostrar los animales según su especie.
 
@@ -118,9 +118,7 @@ Además:
 - La función `Zoo` que renderiza:
 
   - Un div.
-  - Dentro de este div, se renderiza:
-    - Una etiqueta h1.
-    - Una etiqueta div.
+  - Dentro de este div, se renderiza una etiqueta h1.
 
 🔹 Lo que hay que hacer:
 
@@ -167,7 +165,9 @@ const [example, setExample] = React.useState({
 
 1. Utiliza el hook React.useEffect.
 
-> **Nota**: No olvides que el hook ReactuseEffect recibe dos parámetros. 💡
+> **Hint**: No olvides que el hook ReactuseEffect recibe dos parámetros. 💡
+
+> **Nota**: Para que corran los test, el hook debe ser utilizado de esta manera: **React.useEffect()**. No debe utilizarse como **useEffect()**. 💡
 
 2. Dentro del hook, usa fetch para hacer una petición al servidor **db.json** a través de la url `'http://localhost:3001/zoo'`. Así obtendrás el objeto **zoo** con los datos de los animales. Para utilizar fetch, es necesario usar promesas. Como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook React.useEffect:
 
@@ -189,7 +189,7 @@ fetch("http://localhost:3001/zoo")
 
 3. Crea una función llamada `handleSpecies`, que reciba un **evento** como parámetro.
 4. Crea una función llamada `handleAllSpecies`.
-5. Dentro de la etiqueta div y por debajo de lo que ya existe allí, renderizá el componente Species y el componente Animals, haciendo lo siguiente:
+5. Dentro de la etiqueta div y por debajo de lo que ya existe allí, renderiza el componente Species y el componente Animals, haciendo lo siguiente:
    - Pasa del estado **zoo**, únicamente la propiedad `species` (utilizando dicho nombre) y las funciones `handleSpecies`, `handleAllSpecies` como props al renderizar el componente **_Species_**.
    - Pasa del estado **zoo**, únicamente la propiedad `animals` (utilizando dicho nombre) como props al renderizar el componente **_Animals_**.
 
@@ -280,6 +280,8 @@ Vamos a dar la funcionalidad correspondiente a la app para que cuando el usuario
 >
 > - Para recorrer el arreglo y retornar sólo los elementos necesarios, puedes usar el método `filter`. **Nota**: al hacer filter del estado zoo.animals, los datos que no coincidan con el filtrado, se perderían; puedes utilizar la propiedad "zoo.allAnimals" para mantener una copia de ese arreglo.
 
+> Para esta instancia deben pasar todos los tests. ✅ 🏆
+
 🔹 Resultado esperado:
 
 <p align="center"><img src="./img/img04.gif" height="300px"></p>
@@ -293,7 +295,7 @@ Vamos a dar la funcionalidad correspondiente a la app para que cuando el usuario
 - Las variables de estado no tienen que inicializarse siempre en un objeto, puede ser en un array, string, número, boolean, etc.
 - Puedes usar en el componente los React.useState que desees.😃
 - El hook useEffect recibe dos parámetros: la función que React ejecutará en alguna etapa del ciclo de vida del componente (monta, actualiza, desmonta), y un array de dependencias como opcional.
-- Puedes Utilizar más de un useEffect en el mismo componente. 😃
+- Puedes utilizar más de un useEffect en el mismo componente. 😃
 
 ---
 

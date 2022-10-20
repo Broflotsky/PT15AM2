@@ -1,4 +1,4 @@
-# HW 10 - Redux | Ejercicios 01
+# HW 11 - Redux | Ejercicios 01
 
 ## Duración estimada 🕒
 
@@ -14,9 +14,9 @@ En este proyecto vamos a crear un pequeño flujo de Redux para entender cómo fu
 
 ## Consigna de la homework
 
--  Darle funcionalidad al flujo de Redux.
--  Crear un reducer.
--  Crear distintas _Actions_.
+- Darle funcionalidad al flujo de Redux.
+- Crear un reducer.
+- Crear distintas _Actions_.
 
 ---
 
@@ -30,18 +30,18 @@ En esta Homework no hay testing ya que no son necesarios. Podrás verificar desd
 
 🔹 Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
--  Carpeta **_dist_**
--  Archivo **_package.json_**
--  Archivo **_webpack.config.js_**
--  Archivo **_README.md_** que ahora mismo estás leyendo. 🧐
--  `src`
-   -  **_index.js_**
-   -  `actions`
-      -  **_index.js_**
-   -  `action-types`
-      -  **_index.js_**
-   -  `reducer`
-      -  **_index.js_**
+- Carpeta **_dist_**
+- Archivo **_package.json_**
+- Archivo **_webpack.config.js_**
+- Archivo **_README.md_** que ahora mismo estás leyendo. 🧐
+- `src`
+  - **_index.js_**
+  - `actions`
+    - **_index.js_**
+  - `action-types`
+    - **_index.js_**
+  - `reducer`
+    - **_index.js_**
 
 ---
 
@@ -57,11 +57,11 @@ Tómate tu tiempo para caminar por la código de la aplicacion. Hay un montón d
 
 ## Recordemos que...
 
--  Las **_Actions_** son funciones que nos permiten enviar información a nuestro reducer.
--  El reducer nos permite gestionar la información de nuestro estado global.
+- Las **_Actions_** son funciones que nos permiten enviar información a nuestro reducer.
+- El reducer nos permite gestionar la información de nuestro estado global.
 
 ---
 
 ## Recursos adicionales
 
--  Documentación de [Redux](https://redux.js.org/introduction/getting-started)
+- Documentación de [Redux](https://redux.js.org/introduction/getting-started)
