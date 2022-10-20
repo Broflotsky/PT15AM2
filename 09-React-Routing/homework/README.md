@@ -2,12 +2,12 @@
 
 ## Temas de la homework
 
--  SPA (Single Page Application)
--  React Router DOM
--  Routes
--  Route
--  Link
--  NavLink
+- SPA (Single Page Application)
+- React Router DOM
+- Routes
+- Route
+- Link
+- NavLink
 
 ---
 
@@ -16,7 +16,7 @@ Vamos a utilizar el código que hicimos en el `homework` anterior. Si no lo term
 
 ## Duración total estimada 🕒
 
-x minutos
+110 minutos
 
 ---
 
@@ -24,11 +24,11 @@ x minutos
 
 Al finalizar esta homework habrás aprendido a:
 
--  Establecer rutas en las aplicaciones.
--  Realizar redirecciones.
--  Manejor de rutas con parámetros.
--  Crear rutas dinámicas.
--  Anidar rutas.
+- Establecer rutas en las aplicaciones.
+- Realizar redirecciones.
+- Manejor de rutas con parámetros.
+- Crear rutas dinámicas.
+- Anidar rutas.
 
 ---
 

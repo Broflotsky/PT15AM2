@@ -10,7 +10,7 @@
 
 En esta homework, vamos a crear dos componentes de React, que nos ayudarán a entender mucho mejor cómo funciona esta grandiosa librería 😀
 
-> **Nota**: No te preocupes por el estilo de los componentes. En la siguiente clase y homework nos dedicaremos a ellos.
+> **Nota**: No te preocupes por el estilo de los componentes. En la siguiente clase y homework nos dedicaremos a ello.
 
 ---
 
@@ -29,6 +29,8 @@ npm install
 ```bash
 npm test
 ```
+
+El primer test pasará sin que hagas nada, simplemente está para que te ayude a verificar que estás realizando correctamente los pasos y que no tienes errores.
 
 🔹 Para poder correr la aplicación de forma local, sólo debes ejecutar el comando
 
@@ -74,10 +76,10 @@ Además:
 
 1. Que la función renderice un div.
 2. Dentro de este div, crea la etiqueta correspondiente para un título h1 (puedes colocar el texto que desees).
-3. Encontrarás una constante de tipo string llamada `studentName`, asígnale un texto con tu nombre. Dicha constante debe ser renderizada dentro de un h3.
+3. Encontrarás una constante de tipo string llamada `studentName`, asígnale un texto con tu nombre. Dicha constante debe ser renderizada dentro de una etiqueta h3.
 4. Encontrarás una constante llamada `techSkills` de tipo array, con 5 elementos. Los elementos de este arreglo deben renderizarse en una lista desordenada.
 
-> Tip: para recorrer el arreglo y retonar elementos de acuerdo a su contenido, puedes usar el método `map`.
+> Tip: para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`.
 
 🔹 Resultado esperado:
 
@@ -113,6 +115,8 @@ Ahora necesitamos conectar estos dos componentes, ¿Cómo lo hacemos? Muy fácil
 2. Debes renderizar `Botones.jsx`, como etiqueta en el componente `Bienvenido.jsx`
 3. Dentro del componente `Bienvenido` debemos pasarle el objeto `alerts` como **_props_** al renderizar el componente `Botones`.
 4. El componente `Botones.jsx` recibe por props del componente `Bienvenido.jsx` dicho objeto con dos propiedades: `m1` y `m2`. Estos serán renderizados dentro del alert que dispara cada botón.
+
+> Para esta instancia deben pasar todos los tests. ✅ 🏆
 
 🔹 Resultado esperado:
 

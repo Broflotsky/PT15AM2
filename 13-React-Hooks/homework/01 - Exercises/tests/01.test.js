@@ -39,7 +39,6 @@ describe("01 | Ejercicios", () => {
   });
 
   it("El componente ContactUs debe tener un estado local que sea un objeto, con las propiedades nombre, email, asunto y mensaje", () => {
-    console.log(useStateSpy.mock.calls)
     expect(useStateSpy).toHaveBeenCalledWith({
       nombre: "",
       email: "",

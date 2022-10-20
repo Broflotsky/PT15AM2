@@ -93,7 +93,7 @@ Básicamente, va a recibir un arreglo de `personajes` (con todos sus datos), y v
 
 Vamos a crear este componente para luego poder agregar más personajes que deseemos ver.
 
-Este Componente recibe por props una función `onSearch`, dicha función recibe un parámetro (que luego será el ID del personaje tomado desde el input; pero de momento le pasamos uno cualquiera, ya que aún no estamos utilizando estados dentro del componente).
+Este Componente recibe por props una función `onSearch`, dicha función recibe un parámetro (que más adelante será el ID del personaje tomado desde el input; pero de momento le pasamos uno cualquiera, ya que aún no estamos utilizando estados dentro del componente).
 
 La función `onSearch` se debe ejecutar cuando se haga click en el botón `Agregar`.
 
@@ -101,7 +101,7 @@ La función `onSearch` se debe ejecutar cuando se haga click en el botón `Agreg
 
 ## Parte 2
 
-## Listo! Ahora creemos una app desde cero
+## Listo! Ahora creamos una app desde cero
 
 ¿Ya completaste los puntos anteriores y funciona todo? ¡Perfecto! Ya podemos comenzar a crear nuestra propia app:
 
@@ -135,4 +135,4 @@ Esperamos que se "levante" el servidor local y luego veremos algo así:
 
 En el navegador ya deberías ver los cambios. Lo que hicimos en la homework Integration Parte 1 está corriendo como una app independiente.
 
-Listo! Ya tenes tu primer app hecha con React 👏🏼🚀
+Listo! Ya tienes tu primer app hecha con React 👏🏼🚀
