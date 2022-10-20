@@ -22,7 +22,7 @@ Al finalizar, habremos creado tres rutas por las que podremos navegar:
 
 ## Comencemos
 
-Vamos a comenzar creando los componentes que nos faltan en nuestra carpeta components. Creamos `About.jsx` y `Detalle.jsx` con sus respectivos archivos. Sólo los crearemos, aún no los construiremos. También creamos el archivo `.css` para el estilado. Recuerda que puedes utilizar cualquier formato de estilos (in-line, module, styled components, etc)
+Vamos a comenzar creando los componentes que nos faltan en nuestra carpeta components. Creamos `About.jsx` y `Detail.jsx` con sus respectivos archivos. Sólo los crearemos, aún no los construiremos. También creamos el archivo `.css` para el estilado. Recuerda que puedes utilizar cualquier formato de estilos (in-line, module, styled components, etc)
 
 Cómo sabemos, `react-router-dom` nos da la posibilidad de crear rutas dinámicas. Estas rutas serán los path o links en el que se renderizará el componente que nosotros decidamos. Para este ejercicio queremos que en cada link se vea lo siguiente:
 
@@ -47,11 +47,11 @@ Importa los elementos "**Routes**" y "**Route**", para que luego definamos las r
 
 ### Mi perfil.
 
-Ahora si construiremos el componente `<About />`. Este componente será una vista que contenga tu información y una explicación de qué se trata la aplicación!
+Ahora si construiremos el componente `<About />`. Este componente será una vista que contenga tu información y una explicación acerca de la aplicación!
 
-Esto significa que es completamente libre. Puedes mostrar incluso una foto tuya. Esto le servirá a las personas que vean tu App para conocer al creador :D.
+Esto significa que es completamente libre. Puedes mostrar incluso una foto tuya. Esto le servirá a las personas que vean tu App para conocer al creador 🤠✨.
 
-En la Navbar agrega el link About que dirija al componente **<About/>**
+En la Navbar agrega el link About que dirija al componente **About** y el link Home para que dirija al componente **Home**
 
 ---
 
@@ -61,7 +61,7 @@ En la Navbar agrega el link About que dirija al componente **<About/>**
 
 En nuestro archivo "app.js" (aplicación), crea las rutas necesarias para que los componentes `<About />`, `<Cards />` y `<Nav />` se rendericen en sus links correspondientes. Recuerda que en el **EJERCICIO 1** ya están especificadas las rutas.
 
-Respecto al componente `<Detail />`, su ruta recibirá el parámetro **id**, por lo que debes asegurarte de escribir bien el path de esta ruta.
+Respecto al componente `<Detail />`, su ruta recibirá el parámetro **detailId**, por lo que debes asegurarte de escribir bien el path de esta ruta.
 
 > **Nota:** Comprueba en tu navegador que los links rendericen el componente correcto, y que el componente `<Nav />` se vea siempre.
 
@@ -76,7 +76,7 @@ Ahora nuestra SPA cuenta con tres rutas distintas: "`/home`", "`/detail/:detailI
 Para este ejercicio:
 
 1. En el componente `<Card />` importa y envuelve el nombre del personaje con el elemento "**Link**". Tiene que redirigirnos a la ruta de cada personaje.
-2. A este componente deberás pasarle por **props** el "**id**" del personaje para usarlo en el Link.
+2. A este componente deberás pasarle por **props** el "**detailId**" del personaje para usarlo en el Link.
 
 ```js
 // Card.js
@@ -154,4 +154,4 @@ Ahora te desafiamos a que crees un nuevo componente llamado **Error**. A este co
 
 Pueden inspirarte en el siguiente link: "https://github.com/errroorrxd".
 
-El desafío es. Haz que este componente se muestre cada vez que el usuario ingrese a cualquier otra ruta que no exista. Es decir que no la hayas especificado en esta homework. Por ejemplo, si creaste una ruta "`/home`" y "`/about`", y el usuario en el navegador escribe y "`/henry`", debería mostrar el error 404.
+El desafío es el siguiente: haz que este componente se muestre cada vez que el usuario ingrese a cualquier otra ruta que no exista. Es decir que no la hayas especificado en esta homework. Por ejemplo, si creaste una ruta "`/home`" y "`/about`", y el usuario en el navegador escribe y "`/henry`", debería mostrar el error 404.

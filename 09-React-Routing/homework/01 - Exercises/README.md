@@ -139,12 +139,12 @@ Además:
 🔹 Lo que hay que hacer:
 
 1. Importa `Routes` y `Route` desde **react-router-dom** y renderiza el componente **Routes**.
-2. Renderiza un componente **Route** dentro del componente **_Routes_** con los atributos `path` y `element`para cada ruta que necesites crear:
+2. Renderiza un componente **Route** dentro del componente **_Routes_** con los atributos `path` y `element` para cada ruta que necesites crear:
 
-   - Home --> path: **"/"** element: `<Home/>`.
+   - Home --> path: **"/"** element: `<Home/>`
    - Shipping --> path: **"/shipping"** element: `<Shipping/>`
    - Promotions --> path: **"/promotions"** element: `<Promotions/>`
-   - CardDetail --> path: **"/cruises/:id"** element: `<CardDetail/>`.
+   - CardDetail --> path: **"/cruises/:id"** element: `<CardDetail/>`
 
 3. Además necesitas que `NavBar` sea una ruta dinámica que aparezca en toda la aplicación, colocándola antes del componente Routes.
 
@@ -184,6 +184,8 @@ Además:
    - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/shipping"`, que envuelva la etiqueta span con el texto "Navieras".
    - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/promotions"`, que envuelva la etiqueta span "Promociones".
 
+> Para esta instancia deben pasar todos los tests. ✅ 🏆
+
 🔹 Resultado esperado:
 
 <p align="center"><img src="./img/img.gif" height="300px"></p>
@@ -203,8 +205,8 @@ Además:
 
 ## Recursos adicionales
 
-- Documentación **"React Router - useNavigate"** <https://reactrouter.com/docs/en/v6/hooks/use-navigate>
-- Documentación **"React Router - useParams"** <https://reactrouter.com/docs/en/v6/hooks/use-params>
+- Documentación **"React Router - useNavigate"** <https://reactrouter.com/en/v6.3.0/api#usenavigate>
+- Documentación **"React Router - useParams"** <https://reactrouter.com/en/v6.3.0/api#usesearchparams>
 
 ---
 
