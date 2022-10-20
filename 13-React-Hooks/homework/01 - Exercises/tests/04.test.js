@@ -71,7 +71,7 @@ describe('04 - Ejercicios', () => {
     });
   });
   
-  it('Debe renderizar una etiqueta "h1" con el valor del estado "informacion"', () => {
+  it('Debe renderizar una etiqueta "h1" con el text "ESTA ES LA INFORMACIÓN QUE ENVIASTE..."', () => {
     expect(infoEnviada.find("h1").text()).toEqual("ESTA ES LA INFORMACIÓN QUE ENVIASTE...");
   });
 

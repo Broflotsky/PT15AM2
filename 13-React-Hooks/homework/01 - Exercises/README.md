@@ -97,7 +97,7 @@ En este ejercicio crearemos un formulario para enviar un mail a la empresa.
 2. Crea un estado local llamado "_form_" para guardar la información de todos los inputs: **nombre**, **email**, **asunto** y **mensaje**.
 
 ```js
-const [state, setState] = React.useState({
+const [form, setForm] = React.useState({
    nombre: '',
    email: '',
    asunto: '',
@@ -246,9 +246,9 @@ React.useEffect();
 
 ## 👩‍💻 Ejercicio 5
 
-En este ejercicio crearás una funcionalidad de _**Copiado al Portapapeles**_ del número telefónico de la empresa.
-
 ### ...estamos llegando a la última parte de la homework ⭐
+
+En este ejercicio crearás una funcionalidad de _**Copiado al Portapapeles**_ del número telefónico de la empresa.
 
 ### **USE REF**
 
@@ -260,7 +260,7 @@ En este ejercicio crearás una funcionalidad de _**Copiado al Portapapeles**_ de
 
 2. Crea un estado local llamado "**number**" que sea un string y tenga un número cualquiera con la estructura:
 
-   XXXX - XXX XXXX
+   XXX-XXX-XXXX
 
 3. Crea una constante llamada "**numberRef**" que será igual al hook `useRef()` ejecutado.
 
@@ -271,7 +271,7 @@ En este ejercicio crearás una funcionalidad de _**Copiado al Portapapeles**_ de
 
           TELÉFONO: {number}
 
-> **NOTA:** es muy importante que el texto que escribas dentro de la etiqueta "div" sea literalmente el anterior.
+> **NOTA:** es muy importante que el texto que escribas dentro de la etiqueta "div" sea literalmente el anterior, debido a que se tomará como referencia, el valor de tu estado local.
 
 5. Crea una función llamada **handleCopy**. En el cuerpo de la función tienes que copiar y pegar el siguiente código:
 

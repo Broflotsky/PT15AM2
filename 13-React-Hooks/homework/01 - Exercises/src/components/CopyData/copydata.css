@@ -8,23 +8,7 @@
    background-color: black;
 }
 
-.copyBtn {
-   width: 4rem;
-   height: 2rem;
-   font-size: 1rem;
-   border: none;
-}
-
 .mapa {
    width: 100%;
    height: 45vh;
-}
-
-.numberBox {
-   display: flex;
-   align-items: center;
-   justify-content: space-evenly;
-   padding: 0 2rem 0 2rem;
-   color: white;
-   font-family: Helvetica;
 }
