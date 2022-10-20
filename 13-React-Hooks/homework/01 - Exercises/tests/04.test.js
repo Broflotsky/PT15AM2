@@ -1,5 +1,4 @@
 import React from "react";
-import * as ReactRedux from 'react-redux';
 import "@testing-library/jest-dom/extend-expect";
 import { mount, configure } from "enzyme";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
