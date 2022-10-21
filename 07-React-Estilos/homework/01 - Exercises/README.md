@@ -205,4 +205,4 @@ El componente debe verse en el navegador similar a esta imagen:
 
 Listo!! Ahora estás preparado para estilar tu app!! 👨‍🎨👩‍🎨✨🚀
 
-Dirígete a la carpeta 📂 [**"02 - Integration"**](../02%20-%20Integration/README.md) y diviértete estilando la app de Rick & Morty 🤩
+Dirígete a la carpeta 📂 [**"02 - Integration"**](../02%20-%20Integration/README.md) y diviértete dando estilos la app de Rick & Morty 🤩
