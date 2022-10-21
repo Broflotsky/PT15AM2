@@ -196,8 +196,8 @@ El componente debe verse en el navegador similar a esta imagen:
 
 ## **🔎 Recursos adicionales**
 
--  Documentación **"Styled Components"** <https://styled-components.com/docs/basics>
--  Documentación **"CSS"** <https://www.w3schools.com/css/default.asp>
+-  Documentación [**Styled Components**](https://styled-components.com/docs/basics)
+-  Documentación [**CSS**](https://www.w3schools.com/css/default.asp)
 
 <br />
 
