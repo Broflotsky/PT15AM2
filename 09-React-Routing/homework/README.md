@@ -11,9 +11,6 @@
 
 ---
 
-Vamos a utilizar el código que hicimos en el `homework` anterior. Si no lo terminaste, no te preocupes, en `src` dejamos todo el código para tener el proyecto funcionando.  
-**IMPORTANTE** : Reutilicen también la `apiKey` que crearon en la homework anterior
-
 ## Duración total estimada 🕒
 
 110 minutos
@@ -26,7 +23,7 @@ Al finalizar esta homework habrás aprendido a:
 
 - Establecer rutas en las aplicaciones.
 - Realizar redirecciones.
-- Manejor de rutas con parámetros.
+- Manejo de rutas con parámetros.
 - Crear rutas dinámicas.
 - Anidar rutas.
 

@@ -7,7 +7,7 @@ const CopyData = () => {
    return (
       <div className='copyBg'>
          <div>{/*Aquí puedes renderizar lo pedido en las instrucciones*/}</div>
-         <iframe src={mapa} className='mapa' />
+         <iframe src={mapa} className='mapa' title="mapa" />
       </div>
    );
 };

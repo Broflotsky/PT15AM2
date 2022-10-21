@@ -96,6 +96,8 @@ En este ejercicio crearemos un formulario para enviar un mail a la empresa.
 
 2. Crea un estado local llamado "_form_" para guardar la información de todos los inputs: **nombre**, **email**, **asunto** y **mensaje**.
 
+3. Crea una función "_handleInput_" para manejar estos inputs y pásala a los eventos `onChange` de cada uno.
+
 ```js
 const [form, setForm] = React.useState({
    nombre: '',
@@ -105,7 +107,6 @@ const [form, setForm] = React.useState({
 });
 ```
 
-3. Crea una función "_handleInput_" para manejar estos inputs.
 
 ---
 
