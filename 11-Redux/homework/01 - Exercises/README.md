@@ -2,7 +2,7 @@
 
 ## Duración estimada 🕒
 
-x minutos
+45 minutos
 
 ---
 
@@ -49,7 +49,7 @@ En esta Homework no hay testing ya que no son necesarios. Podrás verificar desd
 
 Comenzarás en el archivo `src/index.js`. Allí encontrarás comentado las primeras tareas a realizar. Si te fijas, dentro de todos los archivos de esta Homework encontrarás comentado las instrucciones para trabajar.
 
-Tómate tu tiempo para caminar por la código de la aplicacion. Hay un montón de pequeños detalles informativos en los comentarios que no querrás perderte. Te animo a que mires cada archivo antes de intentar escribir cualquier código. 😃
+Tómate tu tiempo para caminar por el código de la aplicacion. Hay un montón de pequeños detalles informativos en los comentarios que no querrás perderte. Te animo a que mires cada archivo antes de intentar escribir cualquier código. 😃
 
 ¡Buena suerte y que te diviertas!
 

@@ -95,6 +95,7 @@ Además:
   - La hoja de estilos Cards.module.css
 - Una carpeta llamada **Contact**, la cual a su vez contiene:
   - El componente `Contact.jsx`
+  - La hoja de estilos Contact.module.css
 - Una carpeta llamada **Home**, la cual a su vez contiene:
   - El componente `Home.jsx`
 - Una carpeta llamada **NavBar**, la cual a su vez contiene:
@@ -107,7 +108,7 @@ Además:
 
 ### Crear inputs
 
-🔹 Abre el archivo `Contact.jsx`. Dentro de él encontrarás el import de **React**.
+🔹 Abre el archivo `Contact.jsx`. Dentro de él encontrarás el import de **React** y el import de la hoja de estilos **Contact.module.css**.
 
 🔹 Lo que hay que hacer:
 
@@ -115,29 +116,29 @@ Además:
 2. Dentro de la etiqueta form, crear:
 
 - Una etiqueta label y su texto sea **'Nombre:'**
-- Una etiqueta input con los siguiente atributos:
+- Una etiqueta input con los siguientes atributos:
   - `name` y su valor sea **name**.
-  - `placeholder`y su valor sea **"Escribe tu nombre..."**
+  - `placeholder` y su valor sea **"Escribe tu nombre..."**
   - `type` y su valor sea **text**
 - Una etiqueta label y su texto sea **'Correo Electrónico:'**
-- Otra etiqueta input con los siguiente atributos:
+- Otra etiqueta input con los siguientes atributos:
   - `name` y su valor sea **email**.
-  - `placeholder`y su valor sea **"Escribe tu email..."**
+  - `placeholder` y su valor sea **"Escribe tu email..."**
   - `type` y su valor sea **text**
 - Una etiqueta label y su texto sea **'Teléfono:'**
-- Otra etiqueta input con los siguiente atributos:
+- Otra etiqueta input con los siguientes atributos:
   - `name` y su valor sea **phone**.
-  - `placeholder`y su valor sea **"Escribe un teléfono..."**
+  - `placeholder` y su valor sea **"Escribe un teléfono..."**
   - `type` y su valor sea **number**
 - Una etiqueta label y su texto sea **'Asunto:'**
-- Otra etiqueta input con los siguiente atributos:
+- Otra etiqueta input con los siguientes atributos:
   - `name` y su valor sea **subject**.
-  - `placeholder`y su valor sea **"Escribe el asunto..."**
+  - `placeholder` y su valor sea **"Escribe el asunto..."**
   - `type` y su valor sea **text**
 - Una etiqueta label y su texto sea **'Mensaje:'**
-- Una etiqueta textarea con los siguiente atributos:
+- Una etiqueta textarea con los siguientes atributos:
   - `name` y su valor sea **message**.
-  - `placeholder`y su valor sea **"Escribe tu mensaje..."**
+  - `placeholder` y su valor sea **"Escribe tu mensaje..."**
   - `type` y su valor sea **text**
 - Una etiqueta botón con el atributo `type` donde su valor sea **submit** y el texto del botón sea **enviar**
 
@@ -204,7 +205,7 @@ const [inputs, setInputs] = React.useState({
 
 🔹 Lo que hay que hacer:
 
-1. Define una función llamada `validate` fuera del componente "**Contact**", que reciba como parámetro el objeto **inputs** Esta función debe ser exportada para que funcionen los tests. Ejemplo:
+1. Define una función llamada `validate` fuera del componente "**Contact**", que reciba como parámetro el objeto **inputs**. Esta función debe ser exportada para que funcionen los tests. Ejemplo:
 
 ```jsx
 export function validate() {}
@@ -252,12 +253,15 @@ setErrors(
 e) Debes informar a los usuarios que tiene errores en los inputs. Para ello, haz lo siguiente:
 
 1. Lee la hoja de estilos llamada `Contact.modules.css`, dentro de ella encontrarás:
+
    a) Una clase llamada `.warning` con la propiedad **border** y donde sus valores son: **solid**, **red** y 1 px.
+
    b) Además verás otra clase llamada `danger` con la propiedades:
+
    - font-size: 10px.
    - color: red.
    - margin-left: 10em.
-     c) Observa que la hoja de estilos **Contact.modules.css** se encuentra importada en el componente **Contact.jsx**.
+
 2. En cada input crea el atributo **className** y asigna condicionalmente la propiedad del estado errors de acuerdo al input en el que te encuentres. Ejemplo:
 
 ```jsx
@@ -292,6 +296,8 @@ Ejemplo:
 - Convierte el estado **errors** en un array para medir su longitud, si es igual a 0, muestra un alert con un mensaje, por ejemplo, "Datos completos" y setea los estados **inputs** y **errors** en su estado original (recuerda que `errors` tiene la función validate); **en caso contrario**, muestra un alert con otro mensaje, por ejemplo, "Debe llenar todos los campos".
 
 3. Crea el atributo `onSubmit` a la etiqueta **form** y asígnale la función **handleSubmit**.
+
+> Para esta instancia deben pasar todos los tests. ✅ 🏆
 
 🔹 Resultado esperado:
 

@@ -2,7 +2,7 @@
 
 ## Duración estimada 🕒
 
-x minutos
+60 minutos
 
 ---
 
@@ -10,12 +10,12 @@ x minutos
 
 ## Intro
 
-En la integración de hoy crearemos un formulario de login. Así, cada vez que ingresemos a nuestra app deberemos logearnos para utilizarla. Tanto el formulario como sus validaciones las haremos con Javascript.
+En la integración de hoy crearemos un formulario de login. Así, cada vez que ingresemos a nuestra app tendremos que logearnos para utilizarla. Tanto el formulario como sus validaciones las haremos con Javascript.
 
 Nuestro formulario va a estar compuesto de:
 
--  Username: el nombre de usuario tiene que ser un email, si no, tiene que mostrar un error.
--  Password: la contraseña tiene que contener por lo menos un número y tener una longitud de entre 6 y 10 caracteres, si no debe mostrar un error.
+- Username: el nombre de usuario tiene que ser un email, si no, tiene que mostrar un error.
+- Password: la contraseña tiene que contener por lo menos un número y tener una longitud de entre 6 y 10 caracteres, si no debe mostrar un error.
 
 ---
 
@@ -60,7 +60,7 @@ El siguiente paso es poder controlar nuestro formulario. Para esto trabajaremos 
 
 ```js
 // Form.jsx
-const [userData, setUserData] = React.useState({ username: '', password: '' });
+const [userData, setUserData] = React.useState({ username: "", password: "" });
 ```
 
 Ahora conecta tu estado local con los inputs correspondientes utilizando la propiedad `value`.
@@ -73,20 +73,20 @@ Por último, usaremos el evento `onChange` en ambos inputs para poder guardar la
 
 ### Validaciones
 
-En tu componente `<Form />` crea un nuevo estado local llamado "**errors**". Este es el estado que usaras para encontrar errores en el formulario.
+En tu componente `<Form />` crea un nuevo estado local llamado "**errors**". Este es el estado que usarás para encontrar errores en el formulario.
 
 Luego crea un nuevo archivo en la carpeta de tu componente Form.jsx con el nombre "**validation.js**". Aquí dentro deberás crear una función que valide lo siguiente:
 
 **USERNAME**
 
--  el nombre de usuario tiene que ser un email _(explora validaciónes REGEX en internet!)_.
--  el nombre de usuario no puede estar vacío.
--  el nombre de usuario no puede tener más de 35 caracteres.
+- el nombre de usuario tiene que ser un email _(explora validaciónes REGEX en internet!)_.
+- el nombre de usuario no puede estar vacío.
+- el nombre de usuario no puede tener más de 35 caracteres.
 
 **PASSWORD**
 
--  la contraseña tiene que tener al menos un número.
--  la contraseña tiene que tener una longitud entre 6 y 10 caracteres.
+- la contraseña tiene que tener al menos un número.
+- la contraseña tiene que tener una longitud entre 6 y 10 caracteres.
 
 No te olvides de renderizar y darle estilos a tus errores! Te dejamos un ejemplo de cómo puede quedar.
 
@@ -98,27 +98,27 @@ No te olvides de renderizar y darle estilos a tus errores! Te dejamos un ejemplo
 
 ### Simulación de seguridad
 
-Ahora simularemos una base de datos donde esté guardado un username y password. De esta forma, sólo si la indormación de usuario coincide podrá usar la aplicación. Para esto:
+Ahora simularemos una base de datos donde esté guardado un username y password. De esta forma, solo si la información de usuario coincide podrá usar la aplicación. Para esto:
 
 1. En el archivo `App.js` crea lo siguiente:
 
-   -  Un estado local llamado "**access**" que se inicialice en `false`.
-   -  Una variable llamada "**username**", y que sea igual a tu email.
-   -  Una variable "**password**", y que sea igual a una contraseña.
+   - Un estado local llamado "**access**" que se inicialice en `false`.
+   - Una variable llamada "**username**", y que sea igual a tu email.
+   - Una variable "**password**", y que sea igual a una contraseña.
 
-2. Crea una función llamada "**login**" que reciba por parámetro "_userData_". Esta función tiene que preguntar si el username y password que declaraste más arriba son iguales a los que le está llegando por parámetro. En caso afirmativo, el estado local access ahora será `true`. Importa el hook "**useNavigate**" de `react-router-dom` y haremos que nos redirija a `/home` si la información es correcta.
+2. Crea una función llamada "**login**" que reciba por parámetro "_userData_". Esta función tiene que preguntar si el username y password que declaraste más arriba son iguales a los que les está llegando por parámetro. En caso afirmativo, el estado local access ahora será `true`. Importa el hook "**useNavigate**" de `react-router-dom` y haremos que nos redirija a `/home` si la información es correcta.
 
 ```jsx
 const navigate = useNavigate();
 const [access, setAccess] = useState(false);
-const username = 'ejemplo@gmail.com';
-const password = '1password';
+const username = "ejemplo@gmail.com";
+const password = "1password";
 
 function login(userData) {
-   if (userData.password === password && userData.username === username) {
-      setAccess(true);
-      navigate('/home');
-   }
+  if (userData.password === password && userData.username === username) {
+    setAccess(true);
+    navigate("/home");
+  }
 }
 ```
 
@@ -127,7 +127,7 @@ function login(userData) {
 ```javascript
 //App.js
 useEffect(() => {
-   !access && navigate('/');
+  !access && navigate("/");
 }, [access]);
 ```
 
@@ -153,6 +153,6 @@ Pruebalo ingresando la información que declaraste previamente.
 
 ## 👩‍💻 Ejercicio Extra
 
--  Ahora te desafiamos a que crees un boton "**Logout**" en tu componente `<Nav />`. Si lo presionas debe quitar los permisos de acceso y redirigirte automáticamente a tu componente `<Form />`.
+- Ahora te desafiamos a que crees un botón "**Logout**" en tu componente `<Nav />`. Si lo presionas debe quitar los permisos de acceso y redirigirte automáticamente a tu componente `<Form />`.
 
 > **PISTA:** lo puedes hacer creando una función **logout** en tu archivo App.js.

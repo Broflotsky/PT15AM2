@@ -14,7 +14,7 @@ describe("02 | Ejercicios", () => {
     contact = shallow(<Contact />);
   });
   /* Correr estos test una vez hayan terminado de configurar su estado local acorde al README.md, ya que acá se testean los cambios del estado al escribir sobre los input */
-  it("Deberia asignar la funcion 'handleChange' al 'onChange' de cada input", () => {
+  it("Debería asignar la función 'handleChange' al 'onChange' de cada input", () => {
     const inputs = contact.find("input");
     expect(inputs.length).toBeGreaterThan(0);
     inputs.forEach((i) => {
@@ -23,13 +23,13 @@ describe("02 | Ejercicios", () => {
     });
   });
 
-  it("Deberia asignar la funcion 'handleChange' al 'onChange' del textarea", () => {
+  it("Debería asignar la función 'handleChange' al 'onChange' del textarea", () => {
     const textArea = contact.find("textarea");
     expect(textArea.length).toBe(1);
     expect(typeof textArea.props().onChange).toBe("function");
   });
 
-  it("El form deberia cambiar de estado cuando escriban en el input de name", () => {
+  it("El form debería cambiar de estado cuando escriban en el input de name", () => {
     expect(contact.find("input[name='name']").prop("value")).toEqual("");
     contact.find("input[name='name']").simulate("change", {
       target: { value: "Henry", name: "name" },
@@ -38,7 +38,7 @@ describe("02 | Ejercicios", () => {
     expect(inputName.prop("value")).toEqual("Henry");
   });
 
-  it("El form deberia cambiar de estado cuando escriban en el input de email", () => {
+  it("El form debería cambiar de estado cuando escriban en el input de email", () => {
     expect(contact.find("input[name='email']").prop("value")).toEqual("");
     contact.find("input[name='email']").simulate("change", {
       target: { value: "henry@gmail.com", name: "email" },
@@ -47,7 +47,7 @@ describe("02 | Ejercicios", () => {
     expect(inputEmail.prop("value")).toEqual("henry@gmail.com");
   });
 
-  it("El form deberia cambiar de estado cuando escriban en el input de phone", () => {
+  it("El form debería cambiar de estado cuando escriban en el input de phone", () => {
     expect(contact.find("input[name='phone']").prop("value")).toEqual(0);
     contact.find("input[name='phone']").simulate("change", {
       target: { value: 123456789, name: "phone" },
@@ -56,7 +56,7 @@ describe("02 | Ejercicios", () => {
     expect(inputPhone.prop("value")).toEqual(123456789);
   });
 
-  it("El form deberia cambiar de estado cuando escriban en el input de subject", () => {
+  it("El form debería cambiar de estado cuando escriban en el input de subject", () => {
     expect(contact.find("input[name='subject']").prop("value")).toEqual("");
     contact.find("input[name='subject']").simulate("change", {
       target: { value: "Subject Input", name: "subject" },
@@ -65,7 +65,7 @@ describe("02 | Ejercicios", () => {
     expect(inputSubject.prop("value")).toEqual("Subject Input");
   });
 
-  it("El form deberia cambiar de estado cuando escriban en el input de message", () => {
+  it("El form debería cambiar de estado cuando escriban en el input de message", () => {
     expect(contact.find("textarea[name='message']").prop("value")).toEqual("");
     contact.find("textarea[name='message']").simulate("change", {
       target: { value: "Message Input", name: "message" },
@@ -73,5 +73,4 @@ describe("02 | Ejercicios", () => {
     const inputMessage = contact.find("textarea[name='message']");
     expect(inputMessage.prop("value")).toEqual("Message Input");
   });
-
 });
