@@ -1,12 +1,14 @@
 # HW 07 - React-Estilos | Integración
 
-## Duración estimada 🕒
+## **Duración estimada 🕒**
 
 Dependerá de todo el amor que le quieras colocar a tu app 💛
 
+<br />
+
 ---
 
-## Intro
+## **INTRO**
 
 En este homework vas a utilizar `CSS Modules` o `Styled Components` (tú eliges) para dar estilos a los componentes que hicimos la clase anterior.
 
@@ -20,9 +22,11 @@ npm install styled-components
 
 -  En caso de utilizar `CSS Modules` es necesario que la extensión de los archivos donde se definan los estilos sea `.module.css` (Por ejemplo: `Card.module.css`)
 
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio
+## **👩‍💻 EJERCICIO 1**
 
 Tu tarea consiste en agregar estilos CSS para que los componentes de tu App de **_Rick&Morty_** queden muy _lindos!_
 
