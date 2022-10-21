@@ -122,9 +122,9 @@ function login(userData) {
 }
 ```
 
-3. Por último, pega el siguiente código en el cuerpo del componente:
+3. Por último, lleva el siguiente código a tu componente (no te olvides de importar el `useEffect`).
 
-```jsx
+```javascript
 //App.js
 useEffect(() => {
   !access && navigate("/");

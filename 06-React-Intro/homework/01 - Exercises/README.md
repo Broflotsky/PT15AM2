@@ -1,30 +1,34 @@
-# HW 06 - React-Intro | Ejercicios
+# HW 06: React-Intro | Ejercicios
 
-## Duración estimada 🕒
+## **Duración estimada 🕒**
 
 60 minutos
 
+<br />
+
 ---
 
-## Consigna de la homework
+## **INTRO**
 
 En esta homework, vamos a crear dos componentes de React, que nos ayudarán a entender mucho mejor cómo funciona esta grandiosa librería 😀
 
 > **Nota**: No te preocupes por el estilo de los componentes. En la siguiente clase y homework nos dedicaremos a ello.
 
+<br />
+
 ---
 
-## Pasos básicos para realizar la homework
+## **Pasos básicos para realizar la homework**
 
 🔹 Para poder ejecutar los `test` de esta homework, es necesario que abramos la terminal ubicados dentro de la carpeta `01 - Exercises`.
 
-- Cuando te encuentres en esta carpeta, debes ejecutar el comando
+-  Cuando te encuentres en esta carpeta, debes ejecutar el comando
 
 ```bash
 npm install
 ```
 
-- Listo!! Ya puedes correr los test:
+-  Listo!! Ya puedes correr los test:
 
 ```bash
 npm test
@@ -38,37 +42,43 @@ El primer test pasará sin que hagas nada, simplemente está para que te ayude a
 npm start
 ```
 
-- Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
+-  Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
+
+<br />
 
 ---
 
-### Conociendo la estructura
+### **ESTRUCTURA**
 
 🔹 Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
-- Una carpeta llamada **img**
-- Una carpeta llamada **public**
-- Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
-- Una carpeta llamada **tests**
-- Un archivo **package.json**
-- Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
+-  Una carpeta llamada **img**
+-  Una carpeta llamada **public**
+-  Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
+-  Una carpeta llamada **tests**
+-  Un archivo **package.json**
+-  Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
 
 Además:
 
 🔹 Dentro de la carpeta `src` vas a encontrar ya el esqueleto del proyecto React, estructurado de la siguiente manera:
 
-- Una carpeta llamada `components`
-- Un archivo llamado **App.js**
-- Un archivo **index.css**
-- Un archivo **index.js**
+-  Una carpeta llamada `components`
+-  Un archivo llamado **App.js**
+-  Un archivo **index.css**
+-  Un archivo **index.js**
 
 🔹 Para estos ejercicios, trabajaremos sólo dentro la carpeta `components`. En principio sólo tenemos el componente `Bienvenido.jsx`.
 
+<img src="./img/ramas.jpg" alt="" />
+
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio 1
+## **👩‍💻 EJERCICIO 1**
 
-### Nuestro primer componente funcional de React
+### **Nuestro primer componente funcional de React**
 
 🔹 En el archivo `Bienvenido.jsx` encontrarás definida la función de un componente funcional de React. Dentro de ella aplicaremos la magia de React para combinar los temas vistos en clase.
 
@@ -85,9 +95,11 @@ Además:
 
 <p align="center"><img src="./img/01.png" height="300px" ></p>
 
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio 2
+## **👩‍💻 EJERCICIO 2**
 
 🔹 Llegó la hora de crear tu primer componente desde cero
 
@@ -107,7 +119,7 @@ Ya sabemos cómo funciona un componente en React, ahora vamos a crear un compone
     onClick={() => alert('Tu mensaje')}
 ```
 
-**... Estamos llegando a la última parte de la homework** ⭐
+**...estamos llegando a la última parte de la homework** ⭐
 
 Ahora necesitamos conectar estos dos componentes, ¿Cómo lo hacemos? Muy fácil!
 
@@ -124,20 +136,26 @@ Ahora necesitamos conectar estos dos componentes, ¿Cómo lo hacemos? Muy fácil
 
 <p align="center"><img src="./img/03.png" height="300px"></p>
 
----
-
-## Recuerda que...
-
-- Todo en React es un componente y existen dos tipos: los componentes funcionales y los componentes de clase.
-- Un componente funcional es una función de Javascript que puede o no recibir datos (props). Tanto el nombre de la función como el nombre del archivo se deben llamar igual y deben ser con mayúscula inicial.
-- Un componente de clase es otra manera de definir un componente, la diferencia radica en que el componente de clase es con sintaxis de ES5 y el componente funcional con ES6.
-- Las props o propiedades son la manera que tiene React para pasar parámetros de un componente padre a sus hijos.
+<br />
 
 ---
 
-## Recursos adicionales
+## **🧠 Recuerda que...**
 
-- Documentación **"Intro to React"** <https://reactjs.org/tutorial/tutorial.html>
+-  Todo en React es un componente y existen dos tipos: los componentes funcionales y los componentes de clase.
+-  Un componente funcional es una función de Javascript que puede o no recibir datos (props). Tanto el nombre de la función como el nombre del archivo se deben llamar igual y deben ser con mayúscula inicial.
+-  Un componente de clase es otra manera de definir un componente, la diferencia radica en que el componente de clase es con sintaxis de ES5 y el componente funcional con ES6.
+-  Las props o propiedades son la manera que tiene React para pasar parámetros de un componente padre a sus hijos.
+
+<br />
+
+---
+
+## **🔎 Recursos adicionales**
+
+-  Documentación **"Intro to React"** <https://reactjs.org/tutorial/tutorial.html>
+
+<br />
 
 ---
 

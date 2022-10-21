@@ -1,55 +1,61 @@
-# HW 06 - React-Intro | Integración
+# HW 06: React-Intro | Integración
 
-## Duración estimada 🕒
+## **Duración estimada** 🕒
 
 90 minutos
 
 ---
 
-## Rick & Morty App
+## **Rick & Morty App**
 
-### Intro
+### **INTRO**
 
 En esta homework, vamos a crear una serie de Componentes de React, que luego van a formar parte de nuestro primer desarrollo front-end.
 
-> **Nota**: Todos los Componentes que hagamos en este homework son `Puros`, por lo tanto, ninguno tiene estado, simplemente reciben datos por props.
->
-> No te preocupes por el estilo de los componentes. En la siguiente homework vamos a dárselos.
+> **Nota**: Todos los Componentes que hagamos en este homework son `Puros`, por lo tanto, ninguno tiene estado, simplemente reciben datos por props. No te preocupes por el estilo de los componentes. En la siguiente homework vamos a dárselos.
 
 ---
 
-### Conociendo la estructura
+### **ESTRUCTURA**
 
 🔹 Dentro de la carpeta `02 - Integration`, vas a encontrar la siguiente estructura:
 
-- Una carpeta llamada **img**
-- Una carpeta llamada **public**
-- Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
-- Un archivo **package.json**
-- Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
+-  Una carpeta llamada **img**
+-  Una carpeta llamada **public**
+-  Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
+-  Un archivo **package.json**
+-  Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
 
 Además:
 
 🔹 Dentro de la carpeta `src` vas a encontrar ya el esqueleto del proyecto React, estructurado de la siguiente manera, donde deberás codear cada Componente:
 
-- Una carpeta llamada **components**
-- Un archivo llamado **App.css**
-- Un archivo llamado **App.js**
-- Un archivo llamado **data.js**
-- Un archivo **index.css**
-- Un archivo **index.js**
+-  Una carpeta llamada **components**
+-  Un archivo llamado **App.css**
+-  Un archivo llamado **App.js**
+-  Un archivo llamado **data.js**
+-  Un archivo **index.css**
+-  Un archivo **index.js**
 
 > **Nota**: Sabemos que los Componentes de React tienen que cumplir el principio de una única responsabilidad, es decir que cada Componente debe cumplir una única tarea bien definida.
+
+<img src="./img/ramas.jpg" alt="" />
 
 ---
 
 ## **PARTE 1**
 
-## Comencemos
+---
+
+### **COMENCEMOS**
+
+Tu primer paso será ejecutar el comando `npm install` para instalar todas las dependencias.
 
 En el archivo `App.js` ya tenemos importados y estamos renderizando los 3 componentes que vamos a codear. Revisa el código, verás que le estamos pasando props a estos componentes.
 
-### 👩‍💻 01 - Haz el componente Character Card
+<br />
+
+### **👩‍💻 01 - Haz el componente Character Card**
 
 (`components/Card.js`)
 
@@ -61,23 +67,25 @@ Además cuando el usuario haga click en la X de "cerrar", se invocará una funci
 
 Este componente `Card` va a recibir las siguientes props:
 
-- **name**: Nombre
-- **species**: Especie
-- **gender**: Género
-- **image**: Imagen
-- **onClose**: La función que se va a ejecutar cuando el usuario haga click en el botón de cerrar.
+-  **name**: Nombre
+-  **species**: Especie
+-  **gender**: Género
+-  **image**: Imagen
+-  **onClose**: La función que se va a ejecutar cuando el usuario haga click en el botón de cerrar.
 
 > Más adelante todos estos datos van a venir de una API externa, pero por ahora no nos interesa esa parte. Por el momento nosotros te los vamos a brindar desde un archivo local **(src/data.js)**, para que ya puedas ver tu componente funcionando.
 
 ---
 
-### 👩‍💻 02 - Haz el componente Cards
+<br />
+
+### **👩‍💻 02 - Haz el componente Cards**
 
 (`components/Cards.js`)
 
 <img src="./img/Cards.png" height="250px">
 
-Este Componente nos va a servir para renderizar **varios** Componentes `Card`.
+Este Componente nos va a servir para renderizar **varios** componentes `Card`.
 
 Básicamente, va a recibir un arreglo de `personajes` (con todos sus datos), y va a utilizar un componente `Card` (reutilizando el mismo que ya hicimos en el punto anterior) por cada uno de ellos, pasándole las props correspondientes.
 
@@ -85,7 +93,9 @@ Básicamente, va a recibir un arreglo de `personajes` (con todos sus datos), y v
 
 ---
 
-### 👩‍💻 03 - Haz el componente de la de Barra de búsqueda
+<br />
+
+### **👩‍💻 03 - Haz el componente de la de Barra de búsqueda**
 
 (`components/SearchBar.js`)
 
@@ -97,11 +107,15 @@ Este Componente recibe por props una función `onSearch`, dicha función recibe 
 
 La función `onSearch` se debe ejecutar cuando se haga click en el botón `Agregar`.
 
+<br />
+
 ---
 
-## Parte 2
+## **PARTE 2**
 
-## Listo! Ahora creamos una app desde cero
+---
+
+### **¡Listo! Ahora creamos una app desde cero...**
 
 ¿Ya completaste los puntos anteriores y funciona todo? ¡Perfecto! Ya podemos comenzar a crear nuestra propia app:
 
@@ -131,7 +145,7 @@ Esperamos que se "levante" el servidor local y luego veremos algo así:
 
 <img src="./img/cra_02.gif" height="360px">
 
-- Ahora simplemente tendrás que reemplazar la carpeta `/src` de este nuevo proyecto que acabas de crear, por la misma carpeta en la que estuviste trabajando dentro de esta homework.
+-  Ahora simplemente tendrás que reemplazar la carpeta `/src` de este nuevo proyecto que acabas de crear, por la misma carpeta en la que estuviste trabajando dentro de esta homework.
 
 En el navegador ya deberías ver los cambios. Lo que hicimos en la homework Integration Parte 1 está corriendo como una app independiente.
 
