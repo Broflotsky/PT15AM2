@@ -10,7 +10,7 @@
 
 ## Duración total estimada 🕒
 
-x minutos
+45 minutos
 
 ---
 
@@ -31,4 +31,4 @@ Esta vez **NO HAY INTEGRATION**. La integración la seguiremos en la próxima Ho
 
 Primero resuelve la Homework: [01-Exercises](./01%20-%20Exercises/README.md). En esta practicarás integrar Redux puro en tus aplicaciones.
 
-La segunda es Homework es: [02-Exercises](./02%20-%20Exercises/README.md). Aquí le darás un primer vistazo a cómo conectar el funcionamiento de React y Redux, aunque profundizaremos en esto en la próxima homework.
+La segunda es Homework es: [02-Exercises](./02%20-%20Exercises-vistazo%20de%20React/README.md). Aquí le darás un primer vistazo a cómo conectar el funcionamiento de React y Redux, aunque profundizaremos en esto en la próxima homework.

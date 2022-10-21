@@ -2,21 +2,21 @@
 
 ## Duración estimada 🕒
 
-x minutos
+45 minutos
 
 ---
 
 ## Intro
 
-En este proyecto, te facilitaremos el codigo básico de una pequeña aplicación Redux. La aplicación en sí misma es sólo un contador. Tiene un botón de incremento y otro de decremento. La idea es que en tu navegador se renderice el número correspondiente dependiendo de qué botón toques.
+En este proyecto, te facilitaremos el código básico de una pequeña aplicación Redux. La aplicación en sí misma es sólo un contador. Tiene un botón de incremento y otro de decremento. La idea es que en tu navegador se renderice el número correspondiente dependiendo de qué botón toques.
 
 ---
 
 ## Consigna de la homework
 
--  Crear un reducer.
--  Crear distintas _Actions_.
--  Darle funcionalidad a los botones de incremento y decremento.
+- Crear un reducer.
+- Crear distintas _Actions_.
+- Darle funcionalidad a los botones de incremento y decremento.
 
 ---
 
@@ -28,19 +28,19 @@ En esta Homework no hay testing ya que no son necesarios. Podrás verificar desd
 
 ## Conociendo la estructura
 
-🔹 Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
+🔹 Dentro de la carpeta `02 - Exercises (vistazo de React)` , vas a encontrar la siguiente estructura:
 
--  Carpeta **_public_**
--  Archivo **_package.json_**
--  Archivo **_README.md_** que ahora mismo estás leyendo. 🧐
--  `src`
-   -  **_index.js_**
-   -  `actions`
-      -  **_index.js_**
-   -  `reducer`
-      -  **_index.js_**
-   -  `components`
-      -  **_Counter.js_**
+- Carpeta **_public_**
+- Archivo **_package.json_**
+- Archivo **_README.md_** que ahora mismo estás leyendo. 🧐
+- `src`
+  - **_index.js_**
+  - `actions`
+    - **_index.js_**
+  - `reducer`
+    - **_index.js_**
+  - `components`
+    - **_Counter.js_**
 
 ---
 
@@ -48,7 +48,7 @@ En esta Homework no hay testing ya que no son necesarios. Podrás verificar desd
 
 La metodología para este ejercicio será distinta. Comenzarás en el archivo `src/components/Counter.js`. Allí encontrarás comentado las primeras tareas a realizar. Si te fijas, dentro de todos los archivos de esta Homework encontrarás comentado las instrucciones para trabajar.
 
-Tómate tu tiempo para caminar por la código de la aplicacion. Hay un montón de pequeños detalles informativos en los comentarios que no querrás perderte. Te animo a que mires cada archivo antes de intentar escribir cualquier código. 😃
+Tómate tu tiempo para caminar por la código de la aplicación. Hay un montón de pequeños detalles informativos en los comentarios que no querrás perderte. Te animo a que mires cada archivo antes de intentar escribir cualquier código. 😃
 
 ¡Buena suerte y que te diviertas!
 
@@ -56,12 +56,12 @@ Tómate tu tiempo para caminar por la código de la aplicacion. Hay un montón d
 
 ## Recordemos que...
 
--  Los componentes de React no pueden pasarse información entre sí (al menos que sea de paders a hijos). Redux viene a resolver este problema con su estado global. ¡Podremos guardar y adquirir la información de allí desde cualquier parte de nuestra aplicación!
--  Las **_Actions_** son funciones que nos permiten enviar información a nuestro reducer.
--  El reducer nos permite gestionar la información de nuestro estado global.
+- Los componentes de React no pueden pasarse información entre sí (al menos que sea de padres a hijos). Redux viene a resolver este problema con su estado global. ¡Podremos guardar y adquirir la información de allí desde cualquier parte de nuestra aplicación!
+- Las **_Actions_** son funciones que nos permiten enviar información a nuestro reducer.
+- El reducer nos permite gestionar la información de nuestro estado global.
 
 ---
 
 ## Recursos adicionales
 
--  Documentación de [Redux](https://redux.js.org/introduction/getting-started)
+- Documentación de [Redux](https://redux.js.org/introduction/getting-started)
