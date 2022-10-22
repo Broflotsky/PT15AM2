@@ -153,7 +153,7 @@ Ahora necesitamos conectar estos dos componentes, ¿Cómo lo hacemos? Muy fácil
 
 ## **🔎 Recursos adicionales**
 
--  Documentación **"Intro to React"** <https://reactjs.org/tutorial/tutorial.html>
+-  Documentación [**Intro to React**](https://reactjs.org/tutorial/tutorial.html)
 
 <br />
 

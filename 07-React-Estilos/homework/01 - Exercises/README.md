@@ -196,8 +196,8 @@ El componente debe verse en el navegador similar a esta imagen:
 
 ## **🔎 Recursos adicionales**
 
--  Documentación **"Styled Components"** <https://styled-components.com/docs/basics>
--  Documentación **"CSS"** <https://www.w3schools.com/css/default.asp>
+-  Documentación [**Styled Components**](https://styled-components.com/docs/basics)
+-  Documentación [**CSS**](https://www.w3schools.com/css/default.asp)
 
 <br />
 
@@ -205,4 +205,4 @@ El componente debe verse en el navegador similar a esta imagen:
 
 Listo!! Ahora estás preparado para estilar tu app!! 👨‍🎨👩‍🎨✨🚀
 
-Dirígete a la carpeta 📂 [**"02 - Integration"**](../02%20-%20Integration/README.md) y diviértete estilando la app de Rick & Morty 🤩
+Dirígete a la carpeta 📂 [**"02 - Integration"**](../02%20-%20Integration/README.md) y diviértete dando estilos la app de Rick & Morty 🤩

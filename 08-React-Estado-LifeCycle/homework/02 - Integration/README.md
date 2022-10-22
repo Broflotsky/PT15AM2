@@ -1,62 +1,70 @@
-# HW 08 - React-Estado-LifeCycle | Integración
+# HW 08: React-Estado-LifeCycle | Integración
 
-## Duración estimada 🕒
+## **Duración estimada 🕒**
 
 50 minutos
 
+<br />
+
 ---
 
-## Rick & Morty App
+## **Rick & Morty App**
 
-### Intro
+### **INTRO**
 
 Hasta el momento, en nuestra Rick & Morty App tenemos estos 3 Componentes:
 
-- Card.jsx
-- Cards.jsx
-- SearchBar.jsx
+-  Card.jsx
+-  Cards.jsx
+-  SearchBar.jsx
 
 Adicionalmente, vamos a crear otro componente denominado `Nav` que será nuestra barra superior de navegación, en la cual incluiremos el componente `SearchBar`.
 
 También vamos a reestructurar nuestra vista **_"Home"_**, que no es más que nuestro archivo `App.js` para darle una forma más ordenada.
 
+<br />
+
 ---
 
-## Comencemos
+### **COMENCEMOS**
 
 En el archivo `App.js` ya tenemos importados y estamos renderizando los 3 componentes que vamos a codear. Revisa el código, verás que le estamos pasando props a estos componentes.
 
+<br />
+
 ---
 
-### 👩‍💻 Ejercicio 1
+### **👩‍💻 EJERCICIO 1**
 
-### Crear Nav
+### **Crear Nav**
 
 1. Crear el componente `Nav`.
 2. Escribir el código correspondiente en `components/Nav.jsx`.
 
 > **Hint**: Este componente debe incluir el componente `SearchBar`.
 
+<br />
+
 ---
 
-### 👩‍💻 Ejercicio 2
+### **👩‍💻 EJERCICIO 2**
 
-### Reestructurar Home
+### **Reestructurar Home**
 
 1. Veamos primero una imagen del resultado final y pensemos la estructura general:
 
 <img src="./img/layout.png" width='800px'/>
 
-> - **Recuadro rojo**: Nav
-> - **Recuadro amarillo**: SearchBar
-> - **Recuadro verde**: Cards
-> - **Recuadro azul**: Card
+> -  **Recuadro rojo**: Nav
+> -  **Recuadro amarillo**: SearchBar
+> -  **Recuadro verde**: Cards
+> -  **Recuadro azul**: Card
 
 2. Ahora vamos a modificar el contenido del archivo `App.js`:
 
-   - En `App` sólo vamos a renderizar los componentes `Cards` y `Nav`.
-   - Ya no vamos a renderizar la primera `Card` "suelta" que pusimos en la primera clase. Ahora el componente `Cards` será quien contenga todas las `Card` individualmente.
-   - Lo mismo sucede con `SearchBar`. No lo vamos a seguir renderizando de forma directa en App, debido a que ya se encuentra dentro de `Nav`.
+   -  En `App` sólo vamos a renderizar los componentes `Cards` y `Nav`.
+   -  Ya no vamos a renderizar la primera `Card` "suelta" que pusimos en la primera clase. Ahora el componente `Cards` será quien contenga todas las `Card` individualmente.
+   -  Lo mismo sucede con `SearchBar`. No lo vamos a seguir renderizando de forma directa en App, debido a que ya se encuentra dentro de `Nav`.
 
 3. Importar y renderizar los componentes que vamos a utilizar.
 4. Aplicar estilos básicos al componente **_Nav_**.
@@ -65,11 +73,13 @@ En el archivo `App.js` ya tenemos importados y estamos renderizando los 3 compon
 
 <img src="./img/home1.png" width='800px'/>
 
+<br />
+
 ---
 
-### 👩‍💻 Ejercicio 3
+### **👩‍💻 EJERCICIO 3**
 
-### Implementar un estado
+### **Implementar un estado**
 
 Necesitamos mantener actualizado el listado de personajes a mostrar. Para ello debemos crear un estado en el componente `App.js` donde tengamos el array de personajes.
 
@@ -77,11 +87,13 @@ Necesitamos mantener actualizado el listado de personajes a mostrar. Para ello d
 2. Importa el hook useState.
 3. Crea un estado `characters` donde guardaremos el array de personajes.
 
+<br />
+
 ---
 
-### 👩‍💻 Ejercicio 4
+### **👩‍💻 EJERCICIO 4**
 
-### Función para agregar personajes
+### **Función para agregar personajes**
 
 Ahora debemos crear una función llamada `onSearch` para agregar nuevos personajes a nuestro estado `characters` y se la pasaremos al `SearchBar` mediante el `Nav`.
 
@@ -89,34 +101,40 @@ Ahora debemos crear una función llamada `onSearch` para agregar nuevos personaj
 
 ```jsx
 const example = {
-  name: "Morty Smith",
-  species: "Human",
-  gender: "Male",
-  image: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+   name: 'Morty Smith',
+   species: 'Human',
+   gender: 'Male',
+   image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
 };
 ```
 
+<br />
+
 ---
 
-### 👩‍💻 Ejercicio 5
+### **👩‍💻 EJERCICIO 5**
 
-### Le pasamos la función a Nav
+### **Le pasamos la función a Nav**
 
 Nuestra función recién creada (que modifica el estado `characters`) se la pasamos al componente `Nav`.
 
+<br />
+
 ---
 
-### 👩‍💻 Ejercicio 6
+### **👩‍💻 EJERCICIO 6**
 
-### Seguimos pasando la función para que llegue a su destino
+### **Seguimos pasando la función para que llegue a su destino**
 
 Quien finalmente debe ejecutar la función `onSearch` no es el `Nav` sino el `SearchBar`, por lo que debemos hacerle llegar dicha función.
 
+<br />
+
 ---
 
-### 👩‍💻 Ejercicio 7
+### **👩‍💻 EJERCICIO 7**
 
-### Analizando función onSearch
+### **Analizando función onSearch**
 
 En la homework anterior **06-React-Intro, 02 - Integration**, ya habíamos creado el componente `SearchBar` que recibía la función como parámetro y la ejecutaba cuando se hacía un `submit` del form.
 
@@ -124,21 +142,25 @@ En este punto la función ya debería ejecutarse. Cada vez que le demos click al
 
 Si observamos el código anterior estamos llamando a la función `onSearch` sin pasarle ningún parámetro, pero quisiéramos que ese parámetro dependa del input ingresado por el usuario.
 
+<br />
+
 ---
 
-### 👩‍💻 Ejercicio 8
+### **👩‍💻 EJERCICIO 8**
 
-### Pasándole parámetros a la función
+### **Pasándole parámetros a la función**
 
 1. Modifica el componente `SearchBar` para que mantenga un **estado** interno del nombre del personaje (`character`) escrito por el usuario y que cuando haya un cambio en el input, lo detecte mediante el listener `onChange` y actualice dicho estado.
 
 2. Adicionalmente, pasar dicho estado `character` como parámetro de la función `onSearch` cuando la llamamos en el `submit`; para que utilice el estado, que contiene lo que ingresó el usuario y éste valor llegue así a la función **_onSearch_** que tenemos en **App.js**.
 
+<br />
+
 ---
 
-### 👩‍💻 Ejercicio 9
+### **👩‍💻 EJERCICIO 9**
 
-### Buscando datos reales
+### **Buscando datos reales**
 
 1. Comenta el código que engloba la constante **example**
 
@@ -150,25 +172,27 @@ Si observamos el código anterior estamos llamando a la función `onSearch` sin 
 
 ```js
 function onSearch(character) {
-  fetch(`https://rickandmortyapi.com/api/character/${character}`)
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.name) {
-        setCharacters((oldChars) => [...oldChars, data]);
-      } else {
-        window.alert("No hay personajes con ese ID");
-      }
-    });
+   fetch(`https://rickandmortyapi.com/api/character/${character}`)
+      .then((response) => response.json())
+      .then((data) => {
+         if (data.name) {
+            setCharacters((oldChars) => [...oldChars, data]);
+         } else {
+            window.alert('No hay personajes con ese ID');
+         }
+      });
 }
 ```
 
 > **Nota**: si tienes conocimiento base en promesas y deseas hacerlo de otra manera, puedes hacer la llamada utilizando `axios` para traer los datos. En caso que no, te invitamos a que veas el código y analices qué puede estar pasando.💡
 
+<br />
+
 ---
 
-### 👩‍💻 Ejercicio 10
+### **👩‍💻 EJERCICIO 10**
 
-### Cerrar cards
+### **Cerrar cards**
 
 Por último, recordemos que en la homework anterior **06-React-Intro, 02 - Integration** habíamos creado el componente `Card` para que reciba una función como parámetro. Ésta va a ser la encargada de eliminar esa card al momento de hacer click en el botón `X`.
 
@@ -184,9 +208,11 @@ Para ello es necesario definir dicha función `onClose` en **App.js**, para que 
 
 Listo! tu app es ahora dinámica e interactiva!! 👏🏼🚀
 
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio Extra
+## **📌 EJERCICIO EXTRA**
 
-- Controlar que no se puedan agregar personajes repetidos.
-- Generar un botón en la navbar que agregue un personaje random (Hint: hay 826 personajes en total).
+-  Controlar que no se puedan agregar personajes repetidos.
+-  Generar un botón en la navbar que agregue un personaje random (Hint: hay 826 personajes en total).
