@@ -22,13 +22,13 @@ Lee atentamente este **README** y realiza cada uno de los ejercicios.
 
 🔹 Para poder ejecutar los `test` de esta homework, es necesario que abramos la terminal ubicados dentro de la carpeta `01 - Exercises`.
 
--  Cuando te encuentres en esta carpeta, debes ejecutar el comando
+- Cuando te encuentres en esta carpeta, debes ejecutar el comando
 
 ```bash
 npm install
 ```
 
--  Listo!! Ya puedes correr los test:
+- Listo!! Ya puedes correr los test:
 
 ```bash
 npm test
@@ -46,7 +46,7 @@ npm run test:01
 npm start
 ```
 
--  Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
+- Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
 
 ---
 
@@ -54,29 +54,29 @@ npm start
 
 🔹 Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
--  Una carpeta llamada **_mocks_**.
--  Una carpeta llamada **_public_**.
--  Una carpeta llamada **_tests_**
--  Un archivo **package.json**
--  Una carpeta llamada `src` (es la carpeta en donde trabajaremos)
--  Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
+- Una carpeta llamada **_img_**.
+- Una carpeta llamada **_public_**.
+- Una carpeta llamada **_tests_**
+- Un archivo **package.json**
+- Una carpeta llamada `src` (es la carpeta en donde trabajaremos)
+- Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
 
 Además:
 
 🔹 Dentro de la carpeta `src` encontrarás el esqueleto del proyecto React, estructurado de la siguiente manera:
 
--  Una carpeta llamada `assets`
--  Una carpeta llamada `components`
-   -  Una carpeta llamada `ContactUs`
-   -  Una carpeta llamada `CopyData`
-   -  Una carpeta llamada `InfoEnviada`
--  Una carpeta llamada `redux`
-   -  Una carpeta llamada `actions`
-   -  Una carpeta llamada `reducer`
-   -  Una carpeta llamada `store`
--  Un archivo llamado `Home.js`
--  Un archivo llamado `home.css`
--  Un archivo llamado `index.js`
+- Una carpeta llamada `assets`
+- Una carpeta llamada `components`
+  - Una carpeta llamada `ContactUs`
+  - Una carpeta llamada `CopyData`
+  - Una carpeta llamada `InfoEnviada`
+- Una carpeta llamada `redux`
+  - Una carpeta llamada `actions`
+  - Una carpeta llamada `reducer`
+  - Una carpeta llamada `store`
+- Un archivo llamado `Home.js`
+- Un archivo llamado `home.css`
+- Un archivo llamado `index.js`
 
 Estarás trabajando con algunos componentes y con las herramientas de Redux.
 
@@ -92,7 +92,7 @@ En este ejercicio crearemos un formulario para enviar un mail a la empresa.
 
 🔹 Lo que hay que hacer:
 
-1. Importa `React` para luego poder usar su método `useState`.
+1. Encontrarás importado `React` para que luego puedas usar su método `React.useState`.
 
 2. Crea un estado local llamado "_form_" para guardar la información de todos los inputs: **nombre**, **email**, **asunto** y **mensaje**.
 
@@ -100,13 +100,12 @@ En este ejercicio crearemos un formulario para enviar un mail a la empresa.
 
 ```js
 const [form, setForm] = React.useState({
-   nombre: '',
-   email: '',
-   asunto: '',
-   mensaje: '',
+  nombre: "",
+  email: "",
+  asunto: "",
+  mensaje: "",
 });
 ```
-
 
 ---
 
@@ -124,7 +123,7 @@ En este ejercicio crearás todo el flujo para enviar la información del formula
 
 1. Crea y exporta una _**actionCreator**_ llamada "**enviarForm**".
 
-2. Debe recibir por parámetro una varibla "_formulario_".
+2. Debe recibir por parámetro una variable "_formulario_".
 
 3. Debe retornar una acción con tipo "**FORM_DATA**", y en el payload el formulario recibido por parámetro.
 
@@ -150,7 +149,7 @@ En este ejercicio crearás todo el flujo para enviar la información del formula
 
 🔹 Lo que hay que hacer:
 
-1. Importa el hook `useDispatch`. Instancialo dentro del componente de esta manera:
+1. Importa el hook `useDispatch`. Instáncialo dentro del componente de esta manera:
 
 ```javascript
 const dispatch = useDispatch();
@@ -160,8 +159,8 @@ const dispatch = useDispatch();
 
 3. Crea una función llamada "_handleSubmit_". Esta función debe:
 
-   -  despachar esta _actionCreator_, la cual recibe por parámetro el estado local "**form**".
-   -  limpiar el formulario una vez despachada la informacion
+   - Despachar esta _actionCreator_, la cual recibe por parámetro el estado local "**form**".
+   - Limpiar el formulario una vez despachada la información
 
 4. Pásale esta función a la etiqueta `button` de este componente, dentro de un evento "**onClick**.
 
@@ -169,7 +168,7 @@ const dispatch = useDispatch();
 
 ## 👩‍💻 Ejercicio 3
 
-En este ejercicio traerás la infromación del estado global a un componente.
+En este ejercicio traerás la información del estado global a un componente.
 
 ### **USE SELECTOR**
 
@@ -183,7 +182,7 @@ En este ejercicio traerás la infromación del estado global a un componente.
 
 ```javascript
 const { formulario } = useSelector((state) => {
-   return state;
+  return state;
 });
 ```
 
@@ -191,11 +190,11 @@ const { formulario } = useSelector((state) => {
 
 ##### **GUARDAR LA INFORMACIÓN**
 
-🔹 Dirígete al archivo **components/InfoEnviada/InfoEnviada.jsx**.
+🔹 Continuamos en el archivo **components/InfoEnviada/InfoEnviada.jsx**.
 
 🔹 Lo que hay que hacer:
 
-1. Importa el hook `React.useState`, y crea un estado local llamado "**informacion**". Este estado debe ser un objeto con las propiedades: **nombre**, **email**, **asunto** y **mensaje**.
+1. Importa el hook `React.useState` y crea un estado local llamado "**informacion**". Este estado debe ser un objeto con las propiedades: **nombre**, **email**, **asunto** y **mensaje**.
 
 ---
 
@@ -209,7 +208,7 @@ En este ejercicio
 
 ##### **EFFECT**
 
-🔹 Dirígete al archivo **components/InfoEnviada/InfoEnviada.jsx**.
+🔹 Continuamos en el archivo **components/InfoEnviada/InfoEnviada.jsx**.
 
 🔹 Lo que hay que hacer:
 
@@ -227,7 +226,7 @@ React.useEffect();
 
 ##### **RENDER DE LA INFORMACIÓN**
 
-🔹 Dirígete al archivo **components/InfoEnviada/InfoEnviada.jsx**.
+🔹 Continuamos en el archivo **components/InfoEnviada/InfoEnviada.jsx**.
 
 🔹 Lo que hay que hacer:
 
@@ -257,18 +256,18 @@ En este ejercicio crearás una funcionalidad de _**Copiado al Portapapeles**_ de
 
 🔹 Lo que hay que hacer:
 
-1. Importa los hooks `useState` y `useRef`.
+1.  Importa los hooks `useState` y `useRef`.
 
-2. Crea un estado local llamado "**number**" que sea un string y tenga un número cualquiera con la estructura:
+2.  Crea un estado local llamado "**number**" que sea un string y tenga un número cualquiera con la estructura:
 
-   XXX-XXX-XXXX
+    XXX-XXX-XXXX
 
-3. Crea una constante llamada "**numberRef**" que será igual al hook `useRef()` ejecutado.
+3.  Crea una constante llamada "**numberRef**" que será igual al hook `useRef()` ejecutado.
 
-4. Dentro del componente crea:
+4.  Dentro del componente crea:
 
-   -  Una etiqueta `button` con el texto "**_Copy_**"
-   -  Una etiqueta `div`. Esta debe tener una propiedad `ref` igual a la referencia que creamos anteriormente. Además, dentro de esta etiqueta debes escribir:
+    - Una etiqueta `button` con el texto "**_Copy_**"
+    - Una etiqueta `div`. Esta debe tener una propiedad `ref` igual a la referencia que creamos anteriormente. Además, dentro de esta etiqueta debes escribir:
 
           TELÉFONO: {number}
 
@@ -278,17 +277,19 @@ En este ejercicio crearás una funcionalidad de _**Copiado al Portapapeles**_ de
 
 ```javascript
 let copyText = numberRef.current.lastChild.data;
-const textArea = document.createElement('textarea');
+const textArea = document.createElement("textarea");
 textArea.textContent = copyText;
 document.body.append(textArea);
 textArea.select();
-document.execCommand('copy');
+document.execCommand("copy");
 textArea.remove();
 ```
 
 > **NOTA:** este código sirve para que el número de télefono se copie en el portapapeles del usuario. No es importante que entiendas qué está sucediendo en ese código, pero te invitamos a que lo analices.
 
 6. Pásale la función **handleCopy** a la etiqueta `button` que creaste anteriormente, mediante un evento **onClick**.
+
+> Para esta instancia deben pasar todos los tests. ✅ 🏆
 
 ---
 
@@ -302,17 +303,17 @@ Te desafiamos a que crees las validaciones necesarias para cada uno de los input
 
 ## Recordemos que...
 
--  El **useState** nos permite guardar información de manera local en un componente.
--  El **useDispatch** nos permite enviar acciones a nuestro reducer.
--  El **useSelector** nos permite traer información de nuestro estado global a un componente.
--  El **useEffect** nos permite manejar el ciclo de vida de un componente.
--  El **useRef** nos permite tener una referencia directa de un elemento del DOM en nuestro código.
+- El **useState** nos permite guardar información de manera local en un componente.
+- El **useDispatch** nos permite enviar acciones a nuestro reducer.
+- El **useSelector** nos permite traer información de nuestro estado global a un componente.
+- El **useEffect** nos permite manejar el ciclo de vida de un componente.
+- El **useRef** nos permite tener una referencia directa de un elemento del DOM en nuestro código.
 
 ---
 
 ## Recursos adicionales
 
--  Documentación [**HOOKS EN REACT**](https://reactjs.org/docs/hooks-intro.html)
+- Documentación [**HOOKS EN REACT**](https://reactjs.org/docs/hooks-intro.html)
 
 ---
 

@@ -1,53 +1,38 @@
-import React, { useState } from 'react'
-import { connect } from 'react-redux'
-import { addProduct } from '../../redux/actions/actions'
-import Caja from '../../assets/caja.png'
-import './form.css'
+import React, { useState } from "react";
+import { connect } from "react-redux";
 
-function Form ({ addProduct }) {
-  const [product, setProduct] = useState({ name: '', price: '', id: '' })
+import Caja from "../../assets/caja.png";
+import "./form.css";
 
-  function handleInputChange (e) {
-    e.preventDefault()
-    setProduct({ ...product, [e.target.name]: e.target.value })
-  }
+function Form() {
+  const [product, setProduct] = useState({ name: "", price: "", id: "" });
 
-  function handleSubmit (e) {
-    e.preventDefault()
-    addProduct({ ...product, id: Date.now() })
+  function handleInputChange(e) {
+    e.preventDefault();
+    setProduct({ ...product, [e.target.name]: e.target.value });
   }
 
   return (
-    <div className='formBg'>
-      <div className='inputBox'>
+    <div className="formBg">
+      <div className="inputBox">
         <label>Nombre: </label>
-        <input
-          name='name'
-          onChange={handleInputChange}
-          value={product.name}
-        />
+        <input name="name" onChange={handleInputChange} value={product.name} />
       </div>
-      <div className='inputBox'>
+      <div className="inputBox">
         <label>Precio:</label>
         <input
-          type='number'
-          name='price'
+          type="number"
+          name="price"
           onChange={handleInputChange}
           value={product.price}
         />
       </div>
-      <button className='formBtn' onClick={handleSubmit}>
-        ¡ADD!
-      </button>
-      <img src={Caja} alt='' className='logo' />
+      <button className="formBtn">¡ADD!</button>
+      <img src={Caja} alt="" className="logo" />
     </div>
-  )
+  );
 }
 
-export function mapDispatchToProps (dispatch) {
-  return {
-    addProduct: (product) => dispatch(addProduct(product))
-  }
-}
+export function mapDispatchToProps() {}
 
-export default connect(null, mapDispatchToProps)(Form)
+export default connect(null, mapDispatchToProps)(Form);

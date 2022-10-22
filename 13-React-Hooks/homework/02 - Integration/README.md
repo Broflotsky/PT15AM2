@@ -12,13 +12,13 @@ x minutos
 
 En esta homework crearemos dos cosas😄
 
--  Por un lado, haremos un **filtrado** para nuestros personajes favoritos. Vamos a filtrar todos los personajes por su género. En total hay cuatro géneros:
+- Por un lado, haremos un **filtrado** para nuestros personajes favoritos. Vamos a filtrar todos los personajes por su género. En total hay cuatro géneros:
 
 ```javascript
-['Male', 'Female', 'unknown', 'Genderless'];
+["Male", "Female", "unknown", "Genderless"];
 ```
 
--  Por otro lado, haremos un **ordenamiento** también para nuestros personajes favoritos. Vamos a ordenar todos los personajes por su id (de mayor a menor y viceversa).
+- Por otro lado, haremos un **ordenamiento** también para nuestros personajes favoritos. Vamos a ordenar todos los personajes por su id (de mayor a menor y viceversa).
 
 ---
 
@@ -42,7 +42,7 @@ Para comenzar a trabajar, primero tendremos que crear un estado global en el que
 
 1. Crea un nuevo estado global (dentro del _initialState_) llamado _**allCharacters**_. Este debe ser un arreglo vacío.
 
-2. Dentro del caso **ADD_FAV** estás haciendo una copia de tu estado _**myFavorites**_. Tendrás que reemplazar esto por una copia de tu nuevo estado _**allCharacters**_. Una vez hecho esto, en el estado que retorna este caso deberás agregar también la propiedad _**allCharacters**_ e igualrla a la copia de tu estado.
+2. Dentro del caso **ADD_FAV** estás haciendo una copia de tu estado _**myFavorites**_. Tendrás que reemplazar esto por una copia de tu nuevo estado _**allCharacters**_. Una vez hecho esto, en el estado que retorna este caso deberás agregar también la propiedad _**allCharacters**_ e igualarla a la copia de tu estado.
 
 3. Crea un caso con el nombre "_FILTER_". Haz una copia de tu estado "**_allCharacters_**" mediante destructuring. Filtra aquellos personajes que tengan el mismo género que recibes por payload. Retorna tu estado global, pero que la propiedad **_myFavorites_** sea igual al filtrado que haz hecho.
 
@@ -60,17 +60,17 @@ Dirígete al archivo en el que se encuentra tu componente **Favorites**. Allí d
 
 1. Dentro de un `div`, crea dos elementos de HTML **selector**.
 
-   -  Dentro del primero le pasaremos dos opciones: **Ascendente** y **Descendente**. Asegúrate de pasarles estos valores en sus atributos `value`. Por ejemplo:
+   - Dentro del primero le pasaremos dos opciones: **Ascendente** y **Descendente**. Asegúrate de pasarles estos valores en sus atributos `value`. Por ejemplo:
 
    ```html
    <option value="Ascendente">Ascendente</option>
    ```
 
-   -  Dentro del segundo pásales las opciones: **Male**, **Female**, **Genderless** y **unknown**. Asegúrate de pasarles estos valores en sus atributos `value`. Por ejemplo:
+   - Dentro del segundo pásales las opciones: **Male**, **Female**, **Genderless** y **unknown**. Asegúrate de pasarles estos valores en sus atributos `value`. Por ejemplo:
 
 2. Cada vez que se seleccione una opción de ordenamiento, despacha la action "**orderCards**". Recuerda pasarle por parámetro el `e.target.value` del input. Utiliza el hook `useDispatch`.
 
-3. Cada vez que se seleccione una opción de filtrad, despacha la action "**filterCards**". Recuerda pasarle por parámetro el `e.target.value` del input. Utiliza el hook `useDispatch`.
+3. Cada vez que se seleccione una opción de filtrado, despacha la action "**filterCards**". Recuerda pasarle por parámetro el `e.target.value` del input. Utiliza el hook `useDispatch`.
 
 ---
 
