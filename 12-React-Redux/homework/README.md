@@ -1,31 +1,37 @@
-# Módulo 2 Front End | React-Redux
+# Módulo 2: Front End | React-Redux
 
-## Temas de la homework
+## **Temas de la homework**
 
-- Redux
-- Componentes presentacionales vs containers
-- React-redux
+-  Redux
+-  Componentes presentacionales vs containers
+-  React-redux
+
+<br />
 
 ---
 
-## Duración total estimada 🕒
+## **Duración total estimada 🕒**
 
 x minutos
 
+<br />
+
 ---
 
-## Aprendizaje esperado
+## **Aprendizaje esperado**
 
 Al finalizar esta homework habrás aprendido a:
 
-- Conectar react con redux.
-- Conocer la importancia de manejar estados globales con redux.
-- Tener un mayor control en la aplicación y flujo de datos.
-- Crear y usar las actions para actualizar los estados globales.
+-  Conectar react con redux.
+-  Conocer la importancia de manejar estados globales con redux.
+-  Tener un mayor control en la aplicación y flujo de datos.
+-  Crear y usar las actions para actualizar los estados globales.
+
+<br />
 
 ---
 
-## ¿Cómo lo lograremos?
+## **¿Cómo lo lograremos?**
 
 Esta homework está estructurada en 2 partes:
 
