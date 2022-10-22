@@ -2,9 +2,9 @@
 
 ## **Temas de la homework**
 
--  Redux
--  Componentes presentacionales vs containers
--  React-redux
+-  Redux.jsx.
+-  Componentes presentacionales vs containers.
+-  React-redux.
 
 <br />
 
