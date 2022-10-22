@@ -60,11 +60,12 @@ npm start
 
 🔹 Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
--  Una carpeta llamada **_img_**.
--  Una carpeta llamada **_public_**.
--  Una carpeta llamada **_tests_**
--  Un archivo **package.json**
--  Una carpeta llamada `src` (es la carpeta en donde trabajaremos)
+-  Una carpeta llamada **img**.
+-  Una carpeta llamada **public**.
+-  Una carpeta llamada **tests**.
+-  Una carpeta llamada **mocks**.
+-  Una carpeta llamada `src` (es la carpeta en donde trabajaremos).
+-  Un archivo **package.json**.
 -  Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
 
 Además:
@@ -86,11 +87,13 @@ Además:
 
 Estarás trabajando con algunos componentes y con las herramientas de Redux.
 
+<img src="./img/ramas.jpg" alt="" />
+
 <br />
 
 ---
 
-## 👩‍💻 Ejercicio 1
+## **👩‍💻 EJERCICIO 1**
 
 En este ejercicio crearemos un formulario para enviar un mail a la empresa.
 
@@ -115,9 +118,11 @@ const [form, setForm] = React.useState({
 });
 ```
 
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio 2
+## **👩‍💻 EJERCICIO 2**
 
 En este ejercicio crearás todo el flujo para enviar la información del formulario al estado global.
 
@@ -172,9 +177,11 @@ const dispatch = useDispatch();
 
 4. Pásale esta función a la etiqueta `button` de este componente, dentro de un evento "**onClick**.
 
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio 3
+## **👩‍💻 EJERCICIO 3**
 
 En este ejercicio traerás la información del estado global a un componente.
 
@@ -204,9 +211,11 @@ const { formulario } = useSelector((state) => {
 
 1. Importa el hook `React.useState` y crea un estado local llamado "**informacion**". Este estado debe ser un objeto con las propiedades: **nombre**, **email**, **asunto** y **mensaje**.
 
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio 4
+## **👩‍💻 EJERCICIO 4**
 
 En este ejercicio mostrarás la información de tu estado global en la pantalla.
 
@@ -250,11 +259,13 @@ React.useEffect();
 
 6. Dale los estilos que gustes a cada etiqueta.
 
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio 5
+## **👩‍💻 EJERCICIO 5**
 
-### ...estamos llegando a la última parte de la homework ⭐
+### **...estamos llegando a la última parte de la homework ⭐**
 
 En este ejercicio crearás una funcionalidad de _**Copiado al Portapapeles**_ del número telefónico de la empresa.
 
@@ -299,17 +310,21 @@ textArea.remove();
 
 > Para esta instancia deben pasar todos los tests. ✅ 🏆
 
+<br />
+
 ---
 
-## 👩‍💻 Extra
+## **📌 EJERCICIO EXTRA**
 
 ##### **VALIDACIONES**
 
 Te desafiamos a que crees las validaciones necesarias para cada uno de los inputs del formulario.
 
+<br />
+
 ---
 
-## Recordemos que...
+## **🧠 Recuerda que...**
 
 -  El **useState** nos permite guardar información de manera local en un componente.
 -  El **useDispatch** nos permite enviar acciones a nuestro reducer.
@@ -317,11 +332,15 @@ Te desafiamos a que crees las validaciones necesarias para cada uno de los input
 -  El **useEffect** nos permite manejar el ciclo de vida de un componente.
 -  El **useRef** nos permite tener una referencia directa de un elemento del DOM en nuestro código.
 
+<br />
+
 ---
 
-## Recursos adicionales
+## **🔎 Recursos adicionales**
 
 -  Documentación [**HOOKS EN REACT**](https://reactjs.org/docs/hooks-intro.html)
+
+<br />
 
 ---
 
