@@ -1,34 +1,40 @@
-# HW 13 - React-Hooks | Ejercicios
+# HW 13: React-Hooks | Ejercicios
 
-## Duración estimada 🕒
+## **Duración estimada 🕒**
 
 x minutos
 
+<br />
+
 ---
 
-## Intro
+## **INTRO**
 
 En esta homework trabajarás en una serie de ejercicios específcos para crear una página de Contact Us. En cada ejercicio practicarás un **Hook** de React o de Redux.
 
+<br />
+
 ---
 
-## Consigna de la homework
+### **CONSIGNA**
 
 Lee atentamente este **README** y realiza cada uno de los ejercicios.
 
+<br />
+
 ---
 
-## Pasos básicos para realizar la homework
+## **Pasos básicos para realizar la homework**
 
 🔹 Para poder ejecutar los `test` de esta homework, es necesario que abramos la terminal ubicados dentro de la carpeta `01 - Exercises`.
 
-- Cuando te encuentres en esta carpeta, debes ejecutar el comando
+-  Cuando te encuentres en esta carpeta, debes ejecutar el comando
 
 ```bash
 npm install
 ```
 
-- Listo!! Ya puedes correr los test:
+-  Listo!! Ya puedes correr los test:
 
 ```bash
 npm test
@@ -46,39 +52,41 @@ npm run test:01
 npm start
 ```
 
-- Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
+-  Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
 
 ---
 
-## Conociendo la estructura
+## **ESTRUCTURA**
 
 🔹 Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
-- Una carpeta llamada **_img_**.
-- Una carpeta llamada **_public_**.
-- Una carpeta llamada **_tests_**
-- Un archivo **package.json**
-- Una carpeta llamada `src` (es la carpeta en donde trabajaremos)
-- Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
+-  Una carpeta llamada **_img_**.
+-  Una carpeta llamada **_public_**.
+-  Una carpeta llamada **_tests_**
+-  Un archivo **package.json**
+-  Una carpeta llamada `src` (es la carpeta en donde trabajaremos)
+-  Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
 
 Además:
 
 🔹 Dentro de la carpeta `src` encontrarás el esqueleto del proyecto React, estructurado de la siguiente manera:
 
-- Una carpeta llamada `assets`
-- Una carpeta llamada `components`
-  - Una carpeta llamada `ContactUs`
-  - Una carpeta llamada `CopyData`
-  - Una carpeta llamada `InfoEnviada`
-- Una carpeta llamada `redux`
-  - Una carpeta llamada `actions`
-  - Una carpeta llamada `reducer`
-  - Una carpeta llamada `store`
-- Un archivo llamado `Home.js`
-- Un archivo llamado `home.css`
-- Un archivo llamado `index.js`
+-  Una carpeta llamada `assets`
+-  Una carpeta llamada `components`
+   -  Una carpeta llamada `ContactUs`
+   -  Una carpeta llamada `CopyData`
+   -  Una carpeta llamada `InfoEnviada`
+-  Una carpeta llamada `redux`
+   -  Una carpeta llamada `actions`
+   -  Una carpeta llamada `reducer`
+   -  Una carpeta llamada `store`
+-  Un archivo llamado `Home.js`
+-  Un archivo llamado `home.css`
+-  Un archivo llamado `index.js`
 
 Estarás trabajando con algunos componentes y con las herramientas de Redux.
+
+<br />
 
 ---
 
@@ -100,10 +108,10 @@ En este ejercicio crearemos un formulario para enviar un mail a la empresa.
 
 ```js
 const [form, setForm] = React.useState({
-  nombre: "",
-  email: "",
-  asunto: "",
-  mensaje: "",
+   nombre: '',
+   email: '',
+   asunto: '',
+   mensaje: '',
 });
 ```
 
@@ -159,8 +167,8 @@ const dispatch = useDispatch();
 
 3. Crea una función llamada "_handleSubmit_". Esta función debe:
 
-   - Despachar esta _actionCreator_, la cual recibe por parámetro el estado local "**form**".
-   - Limpiar el formulario una vez despachada la información
+   -  Despachar esta _actionCreator_, la cual recibe por parámetro el estado local "**form**".
+   -  Limpiar el formulario una vez despachada la información
 
 4. Pásale esta función a la etiqueta `button` de este componente, dentro de un evento "**onClick**.
 
@@ -182,7 +190,7 @@ En este ejercicio traerás la información del estado global a un componente.
 
 ```javascript
 const { formulario } = useSelector((state) => {
-  return state;
+   return state;
 });
 ```
 
@@ -256,18 +264,18 @@ En este ejercicio crearás una funcionalidad de _**Copiado al Portapapeles**_ de
 
 🔹 Lo que hay que hacer:
 
-1.  Importa los hooks `useState` y `useRef`.
+1. Importa los hooks `useState` y `useRef`.
 
-2.  Crea un estado local llamado "**number**" que sea un string y tenga un número cualquiera con la estructura:
+2. Crea un estado local llamado "**number**" que sea un string y tenga un número cualquiera con la estructura:
 
-    XXX-XXX-XXXX
+   XXX-XXX-XXXX
 
-3.  Crea una constante llamada "**numberRef**" que será igual al hook `useRef()` ejecutado.
+3. Crea una constante llamada "**numberRef**" que será igual al hook `useRef()` ejecutado.
 
-4.  Dentro del componente crea:
+4. Dentro del componente crea:
 
-    - Una etiqueta `button` con el texto "**_Copy_**"
-    - Una etiqueta `div`. Esta debe tener una propiedad `ref` igual a la referencia que creamos anteriormente. Además, dentro de esta etiqueta debes escribir:
+   -  Una etiqueta `button` con el texto "**_Copy_**"
+   -  Una etiqueta `div`. Esta debe tener una propiedad `ref` igual a la referencia que creamos anteriormente. Además, dentro de esta etiqueta debes escribir:
 
           TELÉFONO: {number}
 
@@ -277,11 +285,11 @@ En este ejercicio crearás una funcionalidad de _**Copiado al Portapapeles**_ de
 
 ```javascript
 let copyText = numberRef.current.lastChild.data;
-const textArea = document.createElement("textarea");
+const textArea = document.createElement('textarea');
 textArea.textContent = copyText;
 document.body.append(textArea);
 textArea.select();
-document.execCommand("copy");
+document.execCommand('copy');
 textArea.remove();
 ```
 
@@ -303,17 +311,17 @@ Te desafiamos a que crees las validaciones necesarias para cada uno de los input
 
 ## Recordemos que...
 
-- El **useState** nos permite guardar información de manera local en un componente.
-- El **useDispatch** nos permite enviar acciones a nuestro reducer.
-- El **useSelector** nos permite traer información de nuestro estado global a un componente.
-- El **useEffect** nos permite manejar el ciclo de vida de un componente.
-- El **useRef** nos permite tener una referencia directa de un elemento del DOM en nuestro código.
+-  El **useState** nos permite guardar información de manera local en un componente.
+-  El **useDispatch** nos permite enviar acciones a nuestro reducer.
+-  El **useSelector** nos permite traer información de nuestro estado global a un componente.
+-  El **useEffect** nos permite manejar el ciclo de vida de un componente.
+-  El **useRef** nos permite tener una referencia directa de un elemento del DOM en nuestro código.
 
 ---
 
 ## Recursos adicionales
 
-- Documentación [**HOOKS EN REACT**](https://reactjs.org/docs/hooks-intro.html)
+-  Documentación [**HOOKS EN REACT**](https://reactjs.org/docs/hooks-intro.html)
 
 ---
 

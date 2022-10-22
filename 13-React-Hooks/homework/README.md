@@ -1,29 +1,35 @@
 # Módulo 2 Front End | React-Hooks
 
-## Temas de la homework
+## **Temas de la homework**
 
-- Hooks | React | Redux.
-- Aplicación de distintos tipos de hooks.
+-  Hooks | React | Redux.
+-  Aplicación de distintos tipos de hooks.
+
+<br />
 
 ---
 
-## Duración total estimada 🕒
+## **Duración total estimada 🕒**
 
 x minutos
 
+<br />
+
 ---
 
-## Aprendizaje esperado
+## **Aprendizaje esperado**
 
 Al finalizar esta homework habrás:
 
-- Aprendido a utilizar de manera correcta distintos hooks.
-- Tener un mejor entendimiento sobre el flujo entre React y Redux.
-- Aprovechar el ciclo de vida de un componente mediante un useEffect.
+-  Aprendido a utilizar de manera correcta distintos hooks.
+-  Tener un mejor entendimiento sobre el flujo entre React y Redux.
+-  Aprovechar el ciclo de vida de un componente mediante un useEffect.
+
+<br />
 
 ---
 
-## ¿Cómo lo lograremos?
+## **¿Cómo lo lograremos?**
 
 Esta homework está estructurada en 2 partes:
 
