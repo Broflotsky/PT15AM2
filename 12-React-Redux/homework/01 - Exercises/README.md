@@ -57,7 +57,7 @@ npm start
 
 ---
 
-## Conociendo la estructura
+## **ESTRUCTURA**
 
 🔹 Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
