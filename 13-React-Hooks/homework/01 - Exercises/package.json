@@ -1,0 +1,88 @@
+{
+  "name": "13-react-hooks",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^13.1.1",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
+    "babel-jest": "^26.6.0",
+    "enzyme": "^3.11.0",
+    "identity-obj-proxy": "^3.0.0",
+    "is-react": "^1.5.4",
+    "jest-styled-components": "^7.0.8",
+    "json-server": "^0.17.0",
+    "nock": "^13.2.9",
+    "node-fetch": "^2.6.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^4.0.3",
+    "redux": "^4.2.0",
+    "redux-mock-store": "^1.5.4",
+    "redux-thunk": "^2.4.1",
+    "styled-components": "^5.3.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "server": "json-server --watch db.json --port 3001",
+    "build": "react-scripts build",
+    "test": "jest --verbose",
+    "test:01": "jest tests/01.test.js",
+    "test:02": "jest tests/02.test.js",
+    "test:03": "jest tests/03.test.js",
+    "test:04": "jest tests/04.test.js",
+    "test:05": "jest tests/05.test.js",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "standard": "^17.0.0"
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ]
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>"
+    ],
+    "modulePaths": [],
+    "setupFilesAfterEnv": [
+      "<rootDir>/package.json"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
+  },
+  "babel": {
+    "presets": [
+      "@babel/react",
+      "@babel/env"
+    ],
+    "plugins": [
+      "@babel/proposal-class-properties",
+      "@babel/plugin-transform-runtime"
+    ]
+  }
+}

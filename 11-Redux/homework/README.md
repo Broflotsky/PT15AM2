@@ -1,27 +1,34 @@
-# Homework - Redux Counter
+# Módulo 2 Front End | Redux
 
-En este proyecto, serás facilitado con el codigo basico de una pequeña aplicación Redux. La aplicación en sí misma es sólo un contador con botones de incremento y decremento.
+## Temas de la homework
 
-### Redux Counter
+- Redux.
+- Estado global.
+- Actions.
 
-El botón de incremento debería incrementar el contador en 1.
+---
 
-Por el contrario, el botón de disminución debería disminuir el contador en 1. 
+## Duración total estimada 🕒
 
-El objetivo de este proyecto es familiarizarte con el patrón de flujo de datos global de Redux, así como exponerte a cómo Redux está típicamente conectado a una aplicación de React.
+45 minutos
 
-Para ejecutar el código del proyecto, use el comando `npm install` del directorio raíz para instalar sus `node_modules`. Luego `npm start`. Verás que la aplicación no funciona.
+---
 
-Hay un par de puntos en la aplicación en los que tendrás que escribir el código para que la aplicación funcione.
+## Aprendizaje esperado
 
-Estos puntos están en `reducers/index.js`, `actions/index.js`, y `components/contadores.js`.
+Al finalizar esta homework habrás aprendido a:
 
-El código está bastante comentado. Esto es para ayudar a aclarar todo lo que está pasando con el código que se le ha proporcionado.
+- Crear una aplicación de Javascript integrada con Redux
+- Crear una _Action_.
+- Crear un reducer con sus distintos casos.
+- Seguir el flujo de Redux.
 
-Cuando se trata de configurar una aplicación Redux y conectarla a los componentes de React, hay una cantidad decente de información, pero los beneficios que Redux te da cuando se trata de la previsibilidad y la simplicidad de tu flujo de datos valen la pena - ¡especialmente cuando tu aplicación se amplía y se hace mucho más grande!
+---
 
-Tómate tu tiempo para caminar por la código de la aplicacion. Hay un montón de pequeños detalles informativos en los comentarios que no querrás perderte. Te animo a que mires cada archivo antes de intentar escribir cualquier código.
+## ¿Cómo lo lograremos?
 
-Si terminas rápidamente, verás que hay algunos avisos de problemas de estiramiento en la parte superior del archivo componente Counter.js. Siéntase libre de intentar implementarlos. O, podrías echar un vistazo a la impresionante documentación de Redux aquí.
+Esta vez **NO HAY INTEGRATION**. La integración la seguiremos en la próxima Homework, así que por ahora nos enfocaremos en resolver los ejercicios de hoy y aprender todas las ventajas que nos brinda Redux! Para esto:
 
-¡Buena suerte y que te diviertas!
+Primero resuelve la Homework: [01-Exercises](./01%20-%20Exercises/README.md). En esta practicarás integrar Redux puro en tus aplicaciones.
+
+La segunda es Homework es: [02-Exercises](./02%20-%20Exercises-vistazo%20de%20React/README.md). Aquí le darás un primer vistazo a cómo conectar el funcionamiento de React y Redux, aunque profundizaremos en esto en la próxima homework.

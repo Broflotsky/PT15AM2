@@ -1,0 +1,104 @@
+.container {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  margin: 1em;
+}
+
+.buttonBack {
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #454545;
+  background-image: linear-gradient(315deg, #cdb436 0%, #454545 74%);
+  background-size: 200% 100%;
+  background-position: left;
+  transition: 500ms;
+  color: #f6f4e6;
+  margin: 5px;
+  font-weight: bold;
+  font-size: large;
+}
+
+.buttonBack :before {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 40px;
+  background-color: #1b2845;
+  background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
+  transition: 500ms;
+}
+
+.buttonBack:hover {
+  background-position: right;
+  color: #c6c3c3;
+}
+
+.buttonBack:hover:before {
+  color: rgba(255, 255, 255, 0.8);
+}
+.buttonBack :focus {
+  outline: none;
+}
+
+.image {
+  width: 50em;
+  height: 25em;
+  object-fit: cover;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.container p {
+  width: 80vw;
+}
+
+.divMapIti {
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 1em;
+}
+
+.containerTable {
+  display: grid;
+  grid-template-columns: 150px;
+  grid-template-rows: 50px;
+  border-style: ridge;
+}
+
+.containerTable div {
+  text-align: center;
+}
+
+.tableTitle {
+  font-weight: bold;
+  grid-column: 1/6;
+  background-color: #454545;
+  color: #f6f4e6;
+}
+
+.travel {
+  border: #454545 solid;
+}
+
+.day {
+  background-color: #827f7f;
+  color: #f6f4e6;
+}
+
+.divMapIti img {
+  width: 20em;
+}

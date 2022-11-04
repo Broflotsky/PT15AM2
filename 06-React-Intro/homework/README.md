@@ -1,63 +1,37 @@
-## Henry Weather Card
+# Módulo 2: Front-End | React-Intro
 
-### Ejercicio
+## **Temas de la homework**
 
-En este homework, vamos a crear una serie de Componentes de React que luego vamos a usar en el próximo homework.
+-  React
+-  Componentes
+-  JSX
+-  Componentes funcionales y componentes de clase
+-  Props
 
-> **Nota**: Todos los Componentes que hagamos en este homework son `Puros` o `Funcionales`, por lo tanto, ninguno tiene estado, simplemente reciben datos por props.
->
-> No te preocupes por el estilo de los componentes. En el homework de mañana vamos a darle Estilos.
+<br />
 
-En la carpeta `src` vas a encontrar ya el esqueleto del proyecto React, y los archivos donde deberás codear cada Componente.
+---
 
-Sabemos que los Componentes de React tiene que cumplir el principio de una sóla responsabilidad, es decir que cada Componente debé cumplir una sóla tarea bien definida. Los Componentes que vamos a codear son:
+## **Duración total estimada 🕒**
 
+150 minutos
 
-#### Weather Card (`components/Card.js`)
+<br />
 
-Esta tarjeta va a mostrar el nombre de una ciudad, con su temperatura máxima y mínima, y con una imagen que representa el estado del clima (soleado, nublado, etc..), además cuando el usuario haga click en la X de cerrar, se invocará una función que tambien viene como props.
+---
 
-![](./img/WeatherCard.png)
+## **Aprendizaje esperado**
 
-Este Componente va a recibir las siguientes props:
-- **max**: Temperatura Máxima.
-- **min**: Temperatura Mínima.
-- **name**: Nombre de la ciudad.
-- **img**: nombre de la imagen que se debe mostrar.
-- **onClose**: recibe una función que se va a ejecutar cuando el usuario haga click en el botón de cerrar.
+Al finalizar esta homework habrás aprendido a:
 
-Todos estos datos van a venir de una API de clima, pero por ahora no nos interesa esa parte. Nosotros te vamos a dar datos de prueba para que puedas ver tu componente funcionando.
+-  Crear componentes de React tanto funcionales como de clase.
+-  Entender el propósito de las props.
+-  Iniciar la creación de una app nativa a partir de la creación de sus componentes y utilización de Props.
 
-__IMPORTANTE:__ Para poder obtener la imagen correspondiente desde la API del clima deben utilizar la siguiente URL `http://openweathermap.org/img/wn/${img}@2x.png` donde img debería ser el código del icono asociado a la imagen que recibe como prop. Por ejemplo: http://openweathermap.org/img/wn/02d@2x.png
+<br />
 
-#### Cards (`components/Cards.js`)
+---
 
-Este Componente nos va a servir para renderizar muchos Componentes `Cards`. Básicamente, este componente va a recibir un arreglo de `ciudades` (con todos sus datos), y va a crear un componente `Card` por cada ciudad, pasandole las props correspondientes.
+## **¿Cómo lo lograremos?**
 
-![](./img/Cards.png)
-
-> Tip: Podés usar la función `map` y devolver un componente `Card` por cada elemento del arreglo. [Acá](https://es.reactjs.org/docs/lists-and-keys.html#rendering-multiple-components) un ejemplo de la documentación de React.
-
-#### Barra de búsqueda (`components/SearchBar.js`)
-
-Este componente se va a utilizarse para luego poder encontrar las ciudades sobre las cuales se desee ver el clima actual.
-
-![](./img/SearchBar.png)
-
-
-Este Componente recibe por props una función `onSearch` que recibe un parámetro (que será el nombre de la ciudad tomado desde el input pero de momento pueden pasarle uno cualquiera ya que aún no estamos utilizando estados dentro del componente). La función `onSearch` se debe ejecutar cuando se haga click en el botón `Agregar`.
-
-### Instrucciones para correr el proyecto
-
-Desde la carpeta `homework` se pueden ejecutar los siguientes comandos:
-
-#### `npm install`
-
-Instala todas las dependecias necesarias para correr el proyecto correctamente
-
-#### `npm start`
-
-Comienza a correr la aplicación de forma local por lo que se puede ver desde el navegador accediendo a
-http://localhost:3000
-
->No es necesario volver a correr el proyecto cada vez que se realice un cambio sino que se verá automáticamente reflejando en el navegador.
+Esta homework está estructurada en dos partes, en primer lugar nos enfocaremos en realizar ejercicios independientes (carpeta: [01- Exercises](./01%20-%20Exercises/README.md)) y luego iniciaremos la construcción de una aplicación que será tu primer desarrollo front-end (carpeta: [02 -Integration](./02%20-%20Integration/README.md)).

@@ -1,24 +1,34 @@
-# Henry
+# Módulo 2: Front End | React-Estilos
 
-## Estilos
+## **Temas de la homework**
 
-![CSSMOdule](https://i0.wp.com/programmingwithmosh.com/wp-content/uploads/2019/01/css-modules-logo.png?resize=150%2C150&ssl=1)
+-  Estilos en React
+-  Inline Styling (CSS in JS)
+-  CSS Modules
+-  Styled Components
 
-En este homework vas a utilizar CSS Modules para dar estilos a los componentes que hicimos la clase anterior.
+<br />
 
-### Configurando webpack
+---
 
-Como este homework está creado con `create-react-app`, no es necesario ninguna configuración para usar `css modules`. Simplemente podemos usarlo *out of the box*.
+## **Duración total estimada 🕒**
 
-__IMPORTANTE:__ Por la configuración del proyecto, para poder utilizar CSS Modules es necesario que la extensión de los archivos donde se definan los estilos sea `.module.css` (Por ejemplo: Card.module.css)
+180 minutos
 
-Pueden recordar cómo se usa CSS MODULES viendo los ejemplos [acá](https://css-modules.github.io/webpack-demo/).
+<br />
 
-### Ejercicio
+---
 
-Utilizando CSS Modules, tu tarea consiste en agregar estilos CSS para que los componentes queden *lindos*, pueden usar estas imágenes de referencia:
+## **Aprendizaje esperado**
 
-![Cards](./img/Cards.png)
-![SearchBard](./img/SearchBar.png)
+Al finalizar esta homework habrás aprendido a:
 
-Sé creativo!
+-  Aplicar estilos en React implementándolos de las diferentes formas enseñadas en clase, entenderás lo dinámico y divertido que es diseñar y dar estilos a nuestros componentes.
+
+<br />
+
+---
+
+## **¿Cómo lo lograremos?**
+
+Esta homework está estructurada en 2 partes, en primer lugar nos enfocaremos en realizar ejercicios independientes (carpeta: [01- Exercises](./01%20-%20Exercises/README.md)) y luego continuaremos trabajando en nuestra aplicación integradora, aplicando allí los conocimientos que aprendimos hoy. (carpeta: [02 -Integration](./02%20-%20Integration/README.md)).
