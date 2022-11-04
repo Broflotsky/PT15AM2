@@ -31,7 +31,7 @@
     2. [React-Redux](./12-React-Redux)
     
 - Hooks:
-- [Hooks](./13-React-Hooks)
+    1. [Hooks](./13-React-Hooks)
 
 </div>
 
