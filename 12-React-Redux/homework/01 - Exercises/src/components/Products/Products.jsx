@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import React from "react";
 import "./products.css";
 //El componente Card lo exportamos haciendo destructuring para poder testearlo
-// import { Card } from '../Card/Card'
+// import Card from '../Card/Card'
 
 export function Products() {
   return (
