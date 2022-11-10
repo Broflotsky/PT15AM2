@@ -70,7 +70,7 @@ describe("04 | Ejercicios", () => {
     expect(window.alert).toHaveBeenCalledWith("Datos completos");
   });
 
-  it("Deberia ejecutar e.preventDefault() al hacer submit", () => {
+  it("Debería ejecutar e.preventDefault() al hacer submit", () => {
     onSubmit = contact.find("form").prop("onSubmit");
     onSubmit({ preventDefault: handleSubmit });
     expect(handleSubmit).toHaveBeenCalled();

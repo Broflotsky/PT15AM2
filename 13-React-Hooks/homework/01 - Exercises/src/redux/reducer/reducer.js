@@ -1,5 +1,5 @@
 const initialState = {
-   formulario: {},
+  formulario: {},
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {};

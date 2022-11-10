@@ -1,27 +1,27 @@
 import React from "react";
-import * as ReactRedux from 'react-redux';
+import * as ReactRedux from "react-redux";
 import "@testing-library/jest-dom/extend-expect";
 import { mount, configure } from "enzyme";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 import InfoEnviada from "../src/components/InfoEnviada/InfoEnviada";
-import configureStore from 'redux-mock-store';
+import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
 
 configure({ adapter: new Adapter() });
 
-describe('03 | Ejercicios', () => {
+describe("03 | Ejercicios", () => {
   const mockStore = configureStore();
   let useState, useStateSpy;
-  it('Deberia invocar el hook useSelector', () => {
+  it("Debería invocar el hook useSelector", () => {
     const store = mockStore({
       formulario: {
-        mensaje: '',
-        asunto: '',
-        nombre: '',
-        email: ''
-      }
+        mensaje: "",
+        asunto: "",
+        nombre: "",
+        email: "",
+      },
     });
-    const useSelectorSpy = jest.spyOn(ReactRedux, 'useSelector');
+    const useSelectorSpy = jest.spyOn(ReactRedux, "useSelector");
     mount(
       <Provider store={store}>
         <InfoEnviada />
@@ -29,7 +29,7 @@ describe('03 | Ejercicios', () => {
     );
     expect(useSelectorSpy).toHaveBeenCalled();
   });
-  it('Deberia guardar los datos del store en un estado local', () => {
+  it("Debería guardar los datos del store en un estado local", () => {
     useState = jest.fn();
     useStateSpy = jest.spyOn(React, "useState");
     useStateSpy.mockImplementation(() => [
@@ -43,11 +43,11 @@ describe('03 | Ejercicios', () => {
     ]);
     const store = mockStore({
       formulario: {
-        mensaje: '',
-        asunto: '',
-        nombre: '',
-        email: ''
-      }
+        mensaje: "",
+        asunto: "",
+        nombre: "",
+        email: "",
+      },
     });
     mount(
       <Provider store={store}>
@@ -55,10 +55,10 @@ describe('03 | Ejercicios', () => {
       </Provider>
     );
     expect(useStateSpy).toHaveBeenCalledWith({
-      mensaje: '',
-      asunto: '',
-      nombre: '',
-      email: ''
-    })
+      mensaje: "",
+      asunto: "",
+      nombre: "",
+      email: "",
+    });
   });
 });

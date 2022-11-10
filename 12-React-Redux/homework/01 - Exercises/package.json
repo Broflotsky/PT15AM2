@@ -1,5 +1,5 @@
 {
-  "name": "09-react-routing",
+  "name": "12-react-redux",
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
@@ -23,6 +23,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "^4.0.3",
     "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
     "styled-components": "^5.3.5"
   },

@@ -60,17 +60,17 @@ describe("03 | Ejercicios", () => {
   });
 
   it("Componente Card | El componente Link debe tener el atributo 'to' igual a '/cruises/:id'", () => {
-    const card = shallow(<Card id={1}/>);
+    const card = shallow(<Card id={1} />);
     expect(card.find("Link").prop("to")).toBe("/cruises/1");
 
-    const card2 = shallow(<Card id={2}/>);
+    const card2 = shallow(<Card id={2} />);
     expect(card2.find("Link").prop("to")).toBe("/cruises/2");
 
-    const card3 = shallow(<Card id={3}/>);
+    const card3 = shallow(<Card id={3} />);
     expect(card3.find("Link").prop("to")).toBe("/cruises/3");
   });
 
-  it("Componente CardDetail | Deberia llamar a la funcion useParams y guardar el id", async () => {
+  it("Componente CardDetail | Debería llamar a la función useParams y guardar el id", async () => {
     jest.spyOn(Router, "useParams").mockReturnValue({ id: "1" });
     mount(
       <MemoryRouter initialEntries={["/cruises/1"]}>
@@ -80,7 +80,7 @@ describe("03 | Ejercicios", () => {
     expect(Router.useParams).toHaveBeenCalled();
   });
 
-  it("Componente CardDetail | Deberia llamar a la funcion useNavigate al hacer click y redirigir a '/'", () => {
+  it("Componente CardDetail | Debería llamar a la función useNavigate al hacer click y redirigir a '/'", () => {
     const detail = mount(
       <MemoryRouter initialEntries={["/cruises/1"]}>
         <CardDetail />
@@ -90,7 +90,7 @@ describe("03 | Ejercicios", () => {
     expect(navigate).toHaveBeenCalledWith("/");
   });
 
-  it("Componente NavBar | Deberia renderizar un </NavLink> para redirigir a '/'", () => {
+  it("Componente NavBar | Debería renderizar un </NavLink> para redirigir a '/'", () => {
     const navBar = mount(
       <MemoryRouter
         initialEntries={["/", "/cruises/2", "/shipping", "/promotions"]}
@@ -101,7 +101,7 @@ describe("03 | Ejercicios", () => {
     expect(navBar.find("NavLink").at(0).prop("to")).toBe("/");
   });
 
-  it("Componente NavBar | Deberia renderizar un </NavLink> para redirigir a '/shipping'", () => {
+  it("Componente NavBar | Debería renderizar un </NavLink> para redirigir a '/shipping'", () => {
     const navBar = mount(
       <MemoryRouter
         initialEntries={["/", "/cruises/2", "/shipping", "/promotions"]}
@@ -112,7 +112,7 @@ describe("03 | Ejercicios", () => {
     expect(navBar.find("NavLink").at(1).prop("to")).toBe("/shipping");
   });
 
-  it("Componente NavBar | Deberia renderizar un </NavLink> para redirigir a '/promotions'", () => {
+  it("Componente NavBar | Debería renderizar un </NavLink> para redirigir a '/promotions'", () => {
     const navBar = mount(
       <MemoryRouter
         initialEntries={["/", "/cruises/2", "/shipping", "/promotions"]}

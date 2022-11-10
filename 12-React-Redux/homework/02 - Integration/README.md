@@ -1,14 +1,16 @@
-## HW 12 - React-Redux | Integración
+## HW 12: React-Redux | Integración
 
-## Duración estimada 🕒
+## **Duración estimada 🕒**
 
 x minutos
 
+<br />
+
 ---
 
-## Rick & Morty App
+## **Rick & Morty App**
 
-## Intro
+## **INTRO**
 
 En la integración de hoy crearemos un espacio en el que podremos guardar a nuestros personajes favoritos. ¡Podremos agregarlos y eliminarlos!
 
@@ -17,9 +19,11 @@ Para esto:
 -  ❤️ Fav button: nuestras Cards tendrán un botón para agregar/eliminar de favoritos.
 -  👀 Vista nueva: crearemos una nueva vista en la que se muestre específicamente todos nuestros personajes favoritos.
 
+<br />
+
 ---
 
-## Comencemos
+### **COMENCEMOS**
 
 Para comenzar, en tu terminal dirígete a la carpeta raíz de tu proyecto. Allí tendrás que instalar las siguientes dependencias:
 
@@ -33,9 +37,11 @@ Dentro del archivo `store.js`, haz la configuración del store. Una vez configur
 
 > **NOTA:** puedes guiarte por cómo lo tienes hecho en la homework anterior. Ten en cuenta que el reducer lo crearás en el siguiente paso.
 
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio 1
+## **👩‍💻 EJERCICIO 1**
 
 ### **REDUCER**
 
@@ -53,9 +59,11 @@ Dirígete al archivo en el que se encuentra tu **reducer**. Allí deberás:
 
 5. No te olvides de tu caso _**default**_.
 
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio 2
+## **👩‍💻 EJERCICIO 2**
 
 ### **ACTIONS**
 
@@ -67,21 +75,23 @@ Crea dos _actions-creators_.
 
 > **NOTA:** no olvides que el nombre que asignes en la propiedad "TYPE" de tu acción, debe coincidir exactamente con el nombre de los casos que hayas asignado en tu reducer.
 
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio 3
+## **👩‍💻 EJERCICIO 3**
 
 ### **FAV BUTTON**
 
 Ahora crearemos un botón para agregar y eliminar de favoritos! Para esto:
 
-1. Dirígete al componente `Card`. Aquí deberás crear una función **mapDispatchToProps** que contenga dos funciones. Una para agregar tu personaje favorito, y otra para eliminarlo. Ten en cuenta que deberás importar las _**actions**_ que ya creaste.
+1. Dirígete al componente `Card`. Aquí deberás crear una función **mapDispatchToProps** que contenga dos funciones: Una para agregar tu personaje favorito, y otra para eliminarlo. Ten en cuenta que deberás importar las _**actions**_ que ya creaste.
 
 2. Luego conecta esta función con tu componente, y recibe ambas funciones despachadoras por props.
 
-3. Ahora crea un estado local en tu componente que se llame **isFav**, e inicializalo en `false`.
+3. Ahora crea un estado local en tu componente que se llame **isFav**, e inicialízalo en `false`.
 
-4. Crea una función en el cuerpo del componente llada **handleFavorite**. Esta función estará dividida en dos partes:
+4. Crea una función en el cuerpo del componente llamada **handleFavorite**. Esta función estará dividida en dos partes:
 
    -  Si el estado _**isFav**_ es `true`, entonces settea ese estado en false, y despacha la función **deleteFavorite** que recibiste por props pasándole el **ID** del personaje como argumento.
    -  Si el estado _**isFav**_ es `false`, entonces settea ese estado en true, y despacha la función **addFavorite** que recibiste por props, pasándole `props` como argumento.
@@ -104,7 +114,7 @@ En este punto debería quedarte algo como esto:
 
 6. Una vez hecho esto, nos tenemos que asegurar que el status de nuestro estado local se mantenga aunque nos vayamos y volvamos al componente. Para esto vamos a agregar en este componete una función **mapStateToProps**. Esa función debe traer nuestro estado global **myFavorites**. Recíbelo por `props` dentro de tu componente.
 
-7. Este `useEffect` comprobará si la el personaje que contiene esta `Card` ya está dentro de tus favoritos. En ese caso setteara el estado **isFav** en true. Copialo y pégalo dentro de tu componente (no te olvides de importarlo).
+7. Este `useEffect` comprobará si el personaje que contiene esta `Card` ya está dentro de tus favoritos. En ese caso setteará el estado **isFav** en true. Cópialo y pégalo dentro de tu componente (no te olvides de importarlo).
 
 ```javascript
 useEffect(() => {
@@ -116,27 +126,29 @@ useEffect(() => {
 }, [myFavorites]);
 ```
 
-> **DESAFÍO:** te deafiamos a que reconstruyas ese useEffect, pero utilizando un **bucle For** en lugar de un **.forEach()**.
+> **DESAFÍO:** te desafiamos a que reconstruyas ese useEffect, pero utilizando un **bucle For** en lugar de un **.forEach()**.
+
+<br />
 
 ---
 
-## 👩‍💻 Ejercicio 4
+## **👩‍💻 EJERCICIO 4**
 
 ### **COMPONENTE DE FAVORITOS**
 
-Dirígete a tu capeta de componentes, y crea allí dentro una carpeta que contenga un archivo `Favorites.jsx` y otro `favorites.css`.
+Dirígete a tu carpeta de componentes, y crea allí dentro una carpeta que contenga un archivo `Favorites.jsx` y otro `favorites.css`.
 
 1. Crea una ruta en el archivo `App.js` para mostrar este componente. La ruta se puede llamar **/favorites**. También crea un botón en tu `Navbar` que te redirija a esta ruta, y otro que te devuelva a tu `Home`.
 
 2. Dentro de este componente crea una función **mapStateToProps**. Esta función debe traer nuestro estado global _**myFavorites**_ a este componente. Luego recíbelo por props.
 
-3. Una vez que tengas la lista de tus personajes favoritos dentro de tu componente, deberás mappearlo (recorrerlo) y reenderizar un `<div>` con información del personaje.
+3. Una vez que tengas la lista de tus personajes favoritos dentro de tu componente, deberás mappearlo (recorrerlo) y re-renderizar un `<div>` con información del personaje.
 
 > **NOTA:** no te olvides de darle estilos al componente.
 
----
+<br />
 
-## 👩‍💻 Ejercicio Extra
+---
 
 ### **¡LISTO! YA FUNCIONA TODO**
 
@@ -144,12 +156,14 @@ Todo el trabajo que hiciste en esta integración debería darte un resultado y f
 
 <img src="./img/favDemostration.gif" alt="" />
 
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio Extra
+## **📌 EJERCICIO EXTRA**
 
 ### **¡Ahora te proponemos dos desafíos!**
 
-**1.** Si revisas, esta aplicación tiene un pequeño bug que tendrás que resolver... Cuando preciónas el ❤️ de una de las Cards, el personaje aparece en la vista de "**Favoritos**". Pero si luego eliminas el personaje, este aún permanece en esta vista. Busca la manera para que cuando elimines un personaje, también se elimine de "**Favoritos**" (si es que está allí).
+**1.** Si revisas, esta aplicación tiene un pequeño bug que tendrás que resolver... Cuando presionas el ❤️ de una de las Cards, el personaje aparece en la vista de "**Favoritos**". Pero si luego eliminas el personaje, este aún permanece en esta vista. Busca la manera para que cuando elimines un personaje, también se elimine de "**Favoritos**" (si es que está allí).
 
-**2.** Te animamos a que crees, dentro de esta misma aplicación, una nueva vista que sea tu "**PORFOLIO**". Aquí podrás agregar/eliminar/editar tus proyectos construidos durante el bootcamp en Henry!
+**2.** Te animamos a que crees, dentro de esta misma aplicación, una nueva vista que sea tu "**PORTFOLIO**". Aquí podrás agregar/eliminar/editar tus proyectos construidos durante el bootcamp en Henry!

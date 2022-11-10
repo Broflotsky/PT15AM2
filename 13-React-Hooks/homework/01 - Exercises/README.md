@@ -1,24 +1,30 @@
-# HW 13 - React-Hooks | Ejercicios
+# HW 13: React-Hooks | Ejercicios
 
-## Duración estimada 🕒
+## **Duración estimada 🕒**
 
 x minutos
 
+<br />
+
 ---
 
-## Intro
+## **INTRO**
 
 En esta homework trabajarás en una serie de ejercicios específcos para crear una página de Contact Us. En cada ejercicio practicarás un **Hook** de React o de Redux.
 
+<br />
+
 ---
 
-## Consigna de la homework
+### **CONSIGNA**
 
 Lee atentamente este **README** y realiza cada uno de los ejercicios.
 
+<br />
+
 ---
 
-## Pasos básicos para realizar la homework
+## **Pasos básicos para realizar la homework**
 
 🔹 Para poder ejecutar los `test` de esta homework, es necesario que abramos la terminal ubicados dentro de la carpeta `01 - Exercises`.
 
@@ -50,15 +56,16 @@ npm start
 
 ---
 
-## Conociendo la estructura
+## **ESTRUCTURA**
 
 🔹 Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
--  Una carpeta llamada **_mocks_**.
--  Una carpeta llamada **_public_**.
--  Una carpeta llamada **_tests_**
--  Un archivo **package.json**
--  Una carpeta llamada `src` (es la carpeta en donde trabajaremos)
+-  Una carpeta llamada **img**.
+-  Una carpeta llamada **public**.
+-  Una carpeta llamada **tests**.
+-  Una carpeta llamada **mocks**.
+-  Una carpeta llamada `src` (es la carpeta en donde trabajaremos).
+-  Un archivo **package.json**.
 -  Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
 
 Además:
@@ -80,9 +87,13 @@ Además:
 
 Estarás trabajando con algunos componentes y con las herramientas de Redux.
 
+<img src="./img/ramas.jpg" alt="" />
+
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio 1
+## **👩‍💻 EJERCICIO 1**
 
 En este ejercicio crearemos un formulario para enviar un mail a la empresa.
 
@@ -92,9 +103,11 @@ En este ejercicio crearemos un formulario para enviar un mail a la empresa.
 
 🔹 Lo que hay que hacer:
 
-1. Importa `React` para luego poder usar su método `useState`.
+1. Encontrarás importado `React` para que luego puedas usar su método `React.useState`.
 
 2. Crea un estado local llamado "_form_" para guardar la información de todos los inputs: **nombre**, **email**, **asunto** y **mensaje**.
+
+3. Crea una función "_handleInput_" para manejar estos inputs y pásala a los eventos `onChange` de cada uno.
 
 ```js
 const [form, setForm] = React.useState({
@@ -105,11 +118,11 @@ const [form, setForm] = React.useState({
 });
 ```
 
-3. Crea una función "_handleInput_" para manejar estos inputs.
+<br />
 
 ---
 
-## 👩‍💻 Ejercicio 2
+## **👩‍💻 EJERCICIO 2**
 
 En este ejercicio crearás todo el flujo para enviar la información del formulario al estado global.
 
@@ -123,7 +136,7 @@ En este ejercicio crearás todo el flujo para enviar la información del formula
 
 1. Crea y exporta una _**actionCreator**_ llamada "**enviarForm**".
 
-2. Debe recibir por parámetro una varibla "_formulario_".
+2. Debe recibir por parámetro una variable "_formulario_".
 
 3. Debe retornar una acción con tipo "**FORM_DATA**", y en el payload el formulario recibido por parámetro.
 
@@ -149,7 +162,7 @@ En este ejercicio crearás todo el flujo para enviar la información del formula
 
 🔹 Lo que hay que hacer:
 
-1. Importa el hook `useDispatch`. Instancialo dentro del componente de esta manera:
+1. Importa el hook `useDispatch`. Instáncialo dentro del componente de esta manera:
 
 ```javascript
 const dispatch = useDispatch();
@@ -159,16 +172,18 @@ const dispatch = useDispatch();
 
 3. Crea una función llamada "_handleSubmit_". Esta función debe:
 
-   -  despachar esta _actionCreator_, la cual recibe por parámetro el estado local "**form**".
-   -  limpiar el formulario una vez despachada la informacion
+   -  Despachar esta _actionCreator_, la cual recibe por parámetro el estado local "**form**".
+   -  Limpiar el formulario una vez despachada la información
 
 4. Pásale esta función a la etiqueta `button` de este componente, dentro de un evento "**onClick**.
 
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio 3
+## **👩‍💻 EJERCICIO 3**
 
-En este ejercicio traerás la infromación del estado global a un componente.
+En este ejercicio traerás la información del estado global a un componente.
 
 ### **USE SELECTOR**
 
@@ -190,15 +205,17 @@ const { formulario } = useSelector((state) => {
 
 ##### **GUARDAR LA INFORMACIÓN**
 
-🔹 Dirígete al archivo **components/InfoEnviada/InfoEnviada.jsx**.
+🔹 Continuamos en el archivo **components/InfoEnviada/InfoEnviada.jsx**.
 
 🔹 Lo que hay que hacer:
 
-1. Importa el hook `React.useState`, y crea un estado local llamado "**informacion**". Este estado debe ser un objeto con las propiedades: **nombre**, **email**, **asunto** y **mensaje**.
+1. Importa el hook `React.useState` y crea un estado local llamado "**informacion**". Este estado debe ser un objeto con las propiedades: **nombre**, **email**, **asunto** y **mensaje**.
+
+<br />
 
 ---
 
-## 👩‍💻 Ejercicio 4
+## **👩‍💻 EJERCICIO 4**
 
 En este ejercicio mostrarás la información de tu estado global en la pantalla.
 
@@ -208,7 +225,7 @@ En este ejercicio
 
 ##### **EFFECT**
 
-🔹 Dirígete al archivo **components/InfoEnviada/InfoEnviada.jsx**.
+🔹 Continuamos en el archivo **components/InfoEnviada/InfoEnviada.jsx**.
 
 🔹 Lo que hay que hacer:
 
@@ -226,7 +243,7 @@ React.useEffect();
 
 ##### **RENDER DE LA INFORMACIÓN**
 
-🔹 Dirígete al archivo **components/InfoEnviada/InfoEnviada.jsx**.
+🔹 Continuamos en el archivo **components/InfoEnviada/InfoEnviada.jsx**.
 
 🔹 Lo que hay que hacer:
 
@@ -242,11 +259,13 @@ React.useEffect();
 
 6. Dale los estilos que gustes a cada etiqueta.
 
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio 5
+## **👩‍💻 EJERCICIO 5**
 
-### ...estamos llegando a la última parte de la homework ⭐
+### **...estamos llegando a la última parte de la homework ⭐**
 
 En este ejercicio crearás una funcionalidad de _**Copiado al Portapapeles**_ del número telefónico de la empresa.
 
@@ -289,17 +308,23 @@ textArea.remove();
 
 6. Pásale la función **handleCopy** a la etiqueta `button` que creaste anteriormente, mediante un evento **onClick**.
 
+> Para esta instancia deben pasar todos los tests. ✅ 🏆
+
+<br />
+
 ---
 
-## 👩‍💻 Extra
+## **📌 EJERCICIO EXTRA**
 
 ##### **VALIDACIONES**
 
 Te desafiamos a que crees las validaciones necesarias para cada uno de los inputs del formulario.
 
+<br />
+
 ---
 
-## Recordemos que...
+## **🧠 Recuerda que...**
 
 -  El **useState** nos permite guardar información de manera local en un componente.
 -  El **useDispatch** nos permite enviar acciones a nuestro reducer.
@@ -307,11 +332,15 @@ Te desafiamos a que crees las validaciones necesarias para cada uno de los input
 -  El **useEffect** nos permite manejar el ciclo de vida de un componente.
 -  El **useRef** nos permite tener una referencia directa de un elemento del DOM en nuestro código.
 
+<br />
+
 ---
 
-## Recursos adicionales
+## **🔎 Recursos adicionales**
 
 -  Documentación [**HOOKS EN REACT**](https://reactjs.org/docs/hooks-intro.html)
+
+<br />
 
 ---
 
