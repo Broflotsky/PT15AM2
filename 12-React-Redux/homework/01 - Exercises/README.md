@@ -229,14 +229,15 @@ Lo que hará este componente será renderizar nuestra lista de productos en el n
 
 2. Termina de crear la función **mapStateToProps**. Esta recibe por parámetro _state_. En el cuerpo de esta función se retornará un objeto que tenga como propiedad _list_, y que será igual a "_state.list_".
 
+3. Termina de crear la función **mapDispatchToProps**. Esta recibe por parámetros _dispatch_. En el cuerpo de esta función se retornará un objeto que tenga como propiedad _getStoreName_, cuyo valor será una función que tendrá que hacer un `dispatch` de _actions.getStoreName_.  
 
 4. El componente `Products` recibe por props nuestro estado global "**list**". Te recomendamos que las recibas haciendo _**destructuring**_.
 
 5. Declara un **useEffect** y despacha la action **getStoreName** dentro. Debe ejecutarse solamente al montarse el componente.
 
-6. Renderiza un `<h1>`, tendrá que contener el valor del estado global **storeName**.
+7. Renderiza un `<h1>`, tendrá que contener el valor del estado global **storeName**.
 
-6. Ahora tendrás que renderizar nuestra lista de productos. Utiliza el método **map** para mapear la propiedad **list**. Por cada producto en esta lista deberás renderizar un componente _**Card**_ (importado previamente). A este componente `Card` pásale como propiedades el **name**, el **price**, el **id** de cada producto, y una **key** que los pueda diferenciar.
+8. Ahora tendrás que renderizar nuestra lista de productos. Utiliza el método **map** para mapear la propiedad **list**. Por cada producto en esta lista deberás renderizar un componente _**Card**_ (importado previamente). A este componente `Card` pásale como propiedades el **name**, el **price**, el **id** de cada producto, y una **key** que los pueda diferenciar.
 
 <br />
 
