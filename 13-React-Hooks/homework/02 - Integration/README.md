@@ -1,28 +1,32 @@
-## HW 13 - React-Hooks | Integración
+## HW 13: React-Hooks | Integración
 
-## Duración estimada 🕒
+## **Duración estimada 🕒**
 
 x minutos
 
+<br />
+
 ---
 
-## Rick & Morty App
+## **Rick & Morty App**
 
-## Intro
+## **INTRO**
 
 En esta homework crearemos dos cosas😄
 
-- Por un lado, haremos un **filtrado** para nuestros personajes favoritos. Vamos a filtrar todos los personajes por su género. En total hay cuatro géneros:
+-  Por un lado, haremos un **filtrado** para nuestros personajes favoritos. Vamos a filtrar todos los personajes por su género. En total hay cuatro géneros:
 
 ```javascript
-["Male", "Female", "unknown", "Genderless"];
+['Male', 'Female', 'unknown', 'Genderless'];
 ```
 
-- Por otro lado, haremos un **ordenamiento** también para nuestros personajes favoritos. Vamos a ordenar todos los personajes por su id (de mayor a menor y viceversa).
+-  Por otro lado, haremos un **ordenamiento** también para nuestros personajes favoritos. Vamos a ordenar todos los personajes por su id (de mayor a menor y viceversa).
+
+<br />
 
 ---
 
-## 👩‍💻 Ejercicio 1
+## **👩‍💻 EJERCICIO 1**
 
 ### **ACTIONS**
 
@@ -32,9 +36,11 @@ Dirígete al archivo en el que se encuentran tus **actions**. Allí deberás:
 
 2. Crear una action-creator con el nombre "**_orderCards_**". Esta action-creator recibirá por parámetro un **id**. La action que retornará tendrá un _type_ llamado "**ORDER**", y dentro del _payload_ irá el id recibido.
 
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio 2
+## **👩‍💻 EJERCICIO 2**
 
 ### **REDUCER**
 
@@ -50,9 +56,11 @@ Para comenzar a trabajar, primero tendremos que crear un estado global en el que
 
 > **NOTA:** investiga en la web sobre cómo funciona el método sort.
 
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio 3
+## **👩‍💻 EJERCICIO 3**
 
 ### **FILTER/ORDER COMPONENT**
 
@@ -60,17 +68,19 @@ Dirígete al archivo en el que se encuentra tu componente **Favorites**. Allí d
 
 1. Dentro de un `div`, crea dos elementos de HTML **selector**.
 
-   - Dentro del primero le pasaremos dos opciones: **Ascendente** y **Descendente**. Asegúrate de pasarles estos valores en sus atributos `value`. Por ejemplo:
+   -  Dentro del primero le pasaremos dos opciones: **Ascendente** y **Descendente**. Asegúrate de pasarles estos valores en sus atributos `value`. Por ejemplo:
 
    ```html
    <option value="Ascendente">Ascendente</option>
    ```
 
-   - Dentro del segundo pásales las opciones: **Male**, **Female**, **Genderless** y **unknown**. Asegúrate de pasarles estos valores en sus atributos `value`. Por ejemplo:
+   -  Dentro del segundo pásales las opciones: **Male**, **Female**, **Genderless** y **unknown**. Asegúrate de pasarles estos valores en sus atributos `value`. Por ejemplo:
 
 2. Cada vez que se seleccione una opción de ordenamiento, despacha la action "**orderCards**". Recuerda pasarle por parámetro el `e.target.value` del input. Utiliza el hook `useDispatch`.
 
 3. Cada vez que se seleccione una opción de filtrado, despacha la action "**filterCards**". Recuerda pasarle por parámetro el `e.target.value` del input. Utiliza el hook `useDispatch`.
+
+<br />
 
 ---
 

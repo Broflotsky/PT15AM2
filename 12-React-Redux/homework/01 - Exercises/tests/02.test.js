@@ -1,6 +1,26 @@
 // Configuramos test
 import reducer from "../src/redux/reducer/index";
 import * as actions from "../src/redux/actions/actions";
+import data from '../db.json';
+
+jest.mock('../src/redux/actions/actions', () => ({
+  __esmodules: true,
+  addProduct: (payload) => ({
+    type: 'ADD_PRODUCT',
+    payload
+  }),
+
+  deleteProduct: (payload) => ({
+    type: 'DELETE_PRODUCT',
+    payload
+  }),
+
+  getStoreName: (payload) => ({
+    type: 'GET_STORE_NAME',
+    payload
+  })
+}));
+
 describe("02 | Ejercicios", () => {
   it("El reducer debería agregar un producto a la lista cuando el caso es 'ADD_PRODUCT", () => {
     const state = {
@@ -62,9 +82,25 @@ describe("02 | Ejercicios", () => {
     });
   });
 
+  it("El reducer debería setear la propiedad 'storeName' con el valor de action.payload", () => {
+    const state = {
+      storeName: ""
+    };
+    const results = reducer(state, {
+      type: 'GET_STORE_NAME',
+      payload: data.store.name
+    });
+    expect(results).not.toEqual(state);
+    // ^ No mutar el estado!
+    expect(results).toEqual({
+      storeName: data.store.name
+    });
+  });
+
   it("El reducer debería retornar el estado inicial si no se cumplió ningún caso", () => {
     expect(reducer(undefined, [])).toEqual({
       list: [],
+      storeName: ""
     });
   });
 });

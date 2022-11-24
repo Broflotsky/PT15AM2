@@ -1,35 +1,41 @@
-# HW 12 - React-Redux | Ejercicios
+# HW 12: React-Redux | Ejercicios
 
-## Duración estimada 🕒
+## **Duración estimada 🕒**
 
 x minutos
 
+<br />
+
 ---
 
-## Intro
+## **INTRO**
 
 En esta homework desarrollarás una aplicación que le permite al usuario agregar y eliminar productos de una lista de compras.
 
----
-
-## Consigna de la homework
-
-- Agregar productos a una lista de compras.
-- Eliminar productos de la lista de compras.
+<br />
 
 ---
 
-## Pasos básicos para realizar la homework
+### **CONSIGNA**
+
+-  Agregar productos a una lista de compras.
+-  Eliminar productos de la lista de compras.
+
+<br />
+
+---
+
+## **Pasos básicos para realizar la homework**
 
 🔹 Para poder ejecutar los `test` de esta homework, es necesario que abramos la terminal ubicados dentro de la carpeta `01 - Exercises`.
 
-- Cuando te encuentres en esta carpeta, debes ejecutar el comando
+-  Cuando te encuentres en esta carpeta, debes ejecutar el comando
 
 ```bash
 npm install
 ```
 
-- Listo!! Ya puedes correr los test:
+-  Listo!! Ya puedes correr los test:
 
 ```bash
 npm test
@@ -47,59 +53,65 @@ npm run test:01
 npm start
 ```
 
-- Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
+-  Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
 
 ---
 
-## Conociendo la estructura
+## **ESTRUCTURA**
 
 🔹 Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
-- Una carpeta llamada **_mocks_**.
-- Una carpeta llamada **_public_**.
-- Una carpeta llamada **_tests_**
-- Un archivo **package.json**
-- Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
-- Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
+-  Una carpeta llamada **mocks**.
+-  Una carpeta llamada **public**.
+-  Una carpeta llamada **tests**.
+-  Una carpeta llamada **img**.
+-  Un archivo **package.json**
+-  Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
+-  Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
 
 Además:
 
 🔹 Dentro de la carpeta `src` encontrarás el esqueleto del proyecto React, estructurado de la siguiente manera:
 
-- Una carpeta llamada `assets`
-- Una carpeta llamada `components`
-  - Una carpeta llamada `Card`
-  - Una carpeta llamada `Form`
-  - Una carpeta llamada `Products`
-- Una carpeta llamada `redux`
-  - Una carpeta llamada `actions`
-  - Una carpeta llamada `reducer`
-  - Una carpeta llamada `store`
-- Un archivo llamado `Home.js`
-- Un archivo llamado `home.css`
-- Un archivo llamado `index.js`
+-  Una carpeta llamada `assets`
+-  Una carpeta llamada `components`
+   -  Una carpeta llamada `Card`
+   -  Una carpeta llamada `Form`
+   -  Una carpeta llamada `Products`
+-  Una carpeta llamada `redux`
+   -  Una carpeta llamada `actions`
+   -  Una carpeta llamada `reducer`
+   -  Una carpeta llamada `store`
+-  Un archivo llamado `Home.js`
+-  Un archivo llamado `home.css`
+-  Un archivo llamado `index.js`
 
 Estarás trabajando con algunos componentes y con las herramientas de Redux.
 
 🔹 Da un vistazo al archivo `index.js`, dentro de la carpeta **store**, para que veas cómo se configura el store.
 
+<img src="./img/ramas.jpg" alt="" />
+
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio 1
+## **👩‍💻 EJERCICIO 1**
 
 ### **ACTIONS**
 
 🔹 Dentro de la carpeta **actions**, encontrarás dos archivos:
 
-- `actions.js`: en este archivo harás las funciones _action creators_ para gestionar tu lista de compras (agregar, editar o eliminar productos).
-- `types.js`: en este archivo guardarás los types para enviar a tu reducer.
+-  `actions.js`: en este archivo harás las funciones _action creators_ para gestionar tu lista de compras (agregar, editar o eliminar productos).
+-  `types.js`: en este archivo guardarás los types para enviar a tu reducer.
 
 🔹 Lo que hay que hacer:
 
 1. En el archivo **types.js**, crea y exporta las siguientes constantes:
 
-- ADD_PRODUCT: que su valor sea 'ADD_PRODUCT'.
-- DELETE_PRODUCT: que su valor sea 'DELETE_PRODUCT'.
+-  ADD_PRODUCT: que su valor sea 'ADD_PRODUCT'.
+-  DELETE_PRODUCT: que su valor sea 'DELETE_PRODUCT'.
+-  GET_STORE_NAME: que su valor sea 'GET_STORE_NAME'.
 
 2. En el archivo **actions.js**, importa las constantes que están en el archivo **types.js**.
 
@@ -109,9 +121,27 @@ Estarás trabajando con algunos componentes y con las herramientas de Redux.
 
 4. Define y exporta una función llamada deleteProduct que recibe como parámetro `id`. Esta función debe retornar la propiedad **type** con el valor DELETE_PRODUCT, y la propiedad **payload** con el valor que recibe por parámetro la función.
 
+5. Importa la libería **axios**.
+
+6. Define y exporta una función llamada getStoreName. Esta función deberá realizar una **request** a   `http://localhost:3001/store` utilizando el método `get` de **axios** y retornar un objeto con la propiedad **type** con el valor *GET_STORE_NAME*, y como payload la respuesta que brinde la **api**.
+
+Acá tienes un snippet para poder realizar la request:
+```js
+return (dispatch) => {
+    return fetch('http://localhost:3001/store')
+      .then((results) => results.json()
+        .then((results) => dispatch()).catch(err => console.log(err)))
+```
+
+¡Ahora te toca terminar el **dispatch** para completar la función!
+
+> NOTA: Puedes echar un vistazo al archivo **db.json**, ahí están los datos que enviará la **api**. 
+
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio 2
+## **👩‍💻 EJERCICIO 2**
 
 ### **REDUCER**
 
@@ -125,28 +155,35 @@ Si observas, el **Initial State** (tu estado global) ya está declarado, y más 
 
 2. Crea una función llamada **rootReducer** que reciba como parámetro:
 
-   - Una variable _**state**_, que sea igual al _initialState_ ya declarado.
-   - Una variable **_action_** (puedes hacer _destructuring_ de sus dos propiedades).
+   -  Una variable _**state**_, que sea igual al _initialState_ ya declarado.
+   -  Una variable **_action_** (puedes hacer _destructuring_ de sus dos propiedades).
 
 3. Dentro de esta función crea una declaración **switch** que reciba por parámetro la propiedad _**type**_ de la _action_.
 
-4. Dentro de esta declaración **switch** crearemos dos casos distintos, y un caso _default_.
+4. Dentro de esta declaración **switch** crearás tres casos distintos, y un caso _default_.
 
-   **Caso A)** El nombre de este caso será **ADD_PRODUCT**. Lo que hará es obtener tu propiedad **list** del estado global mediante un _**spread operator**_. Luego le insertarás lo que recibes por _payload_ (recuerda que **list** es un arreglo, así que ya te imaginarás qué propiedad usar...). Una vez insertado, retornará un objeto en el cual se haga un _**spread operator**_ del estado, y la propiedad **list** será igual al nuevo arreglo (que contiene el payload recibido).
+   **Caso A )** El nombre de este caso será **ADD_PRODUCT**. Lo que hará es obtener tu propiedad **list** del estado global mediante un _**spread operator**_. Luego le insertarás lo que recibes por _payload_ (recuerda que **list** es un arreglo, así que ya te imaginarás qué propiedad usar...). Una vez insertado, retornará un objeto en el cual se haga un _**spread operator**_ del estado, y la propiedad **list** será igual al nuevo arreglo (que contiene el payload recibido).
 
    ```javascript
    [...state.list];
    ```
 
-   **Caso B)** El nombre de este caso será **DELETE_PRODUCT**. Lo que hará es tomar el arreglo de objetos **list**, y buscar aquel producto que tenga el mismo id que se recibe por la propiedad _payload_. Filtraremos ese producto y nos quedaremos con todos los demás. Una vez que tengamos el resto de productos retornará un objeto en el cual se haga un _**spread operator**_ del estado, y la propiedad **list** será igual al nuevo arreglo (que ha filtrado el producto recibido por payload).
+   **Caso B )** El nombre de este caso será **DELETE_PRODUCT**. Lo que hará es tomar el arreglo de objetos **list**, y buscar aquel producto que tenga el mismo id que se recibe por la propiedad _payload_. Tendrás que filtrar ese producto y quedarte con todos los demás. Una vez que tengas el resto de productos retornará un objeto en el cual se haga un _**spread operator**_ del estado, y la propiedad **list** será igual al nuevo arreglo (que ha filtrado el producto recibido por payload).  
+   
 
    > NOTA: ten en cuenta que para filtrar los productos deberás ingresar a la propiedad id de cada uno y comparar si el id recibido por payload es igual.
 
+   **Caso C )** El nombre de este caso será **GET_STORE_NAME**. Tendrás que setear la propiedad **storeName** del estado con el valor de la propiedad **payload** de **action**. 
+
    **Caso default)** El caso default de este switch sólo retornará el estado.
+
+   > Nota: Recuerda NO mutar el estado global.
+
+<br />
 
 ---
 
-## 👩‍💻 Ejercicio 3
+## **👩‍💻 EJERCICIO 3**
 
 ### **COMPONENTE FORMULARIO**
 
@@ -174,9 +211,11 @@ Esto le permitirá a cada producto tener un ID único.
 
 > **NOTA:** prueba ejecutar la función _Date.now()_ en tu consola y verifica qué respuesta te da.
 
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio 4
+## **👩‍💻 EJERCICIO 4**
 
 ### **COMPONENTE PRODUCTS**
 
@@ -190,15 +229,23 @@ Lo que hará este componente será renderizar nuestra lista de productos en el n
 
 2. Termina de crear la función **mapStateToProps**. Esta recibe por parámetro _state_. En el cuerpo de esta función se retornará un objeto que tenga como propiedad _list_, y que será igual a "_state.list_".
 
-3. El componente `Products` recibe por props nuestro estado global "**list**". Te recomendamos que las recibas haciendo _**destructuring**_.
+3. Termina de crear la función **mapDispatchToProps**. Esta recibe por parámetros _dispatch_. En el cuerpo de esta función se retornará un objeto que tenga como propiedad _getStoreName_, cuyo valor será una función que tendrá que hacer un `dispatch` de _actions.getStoreName_.  
 
-4. Ahora renderizaremos nuestra lista de productos. Utiliza el método **map** para mapear la propiedad **list**. Por cada producto en esta lista deberás renderizar un componente _**Card**_ (importado previamente). A este componente `Card` pásale como propiedades el **name**, el **price**, el **id** de cada producto, y una **key** que los pueda diferenciar.
+4. El componente `Products` recibe por props nuestro estado global "**list**". Te recomendamos que las recibas haciendo _**destructuring**_.
+
+5. Declara un **useEffect** y despacha la action **getStoreName** dentro. Debe ejecutarse solamente al montarse el componente.
+
+7. Renderiza un `<h1>`, tendrá que contener el valor del estado global **storeName**.
+
+8. Ahora tendrás que renderizar nuestra lista de productos. Utiliza el método **map** para mapear la propiedad **list**. Por cada producto en esta lista deberás renderizar un componente _**Card**_ (importado previamente). A este componente `Card` pásale como propiedades el **name**, el **price**, el **id** de cada producto, y una **key** que los pueda diferenciar.
+
+<br />
 
 ---
 
-## 👩‍💻 Ejercicio 5
+## **👩‍💻 EJERCICIO 5**
 
-### ...estamos llegando a la última parte de la homework ⭐
+### **...estamos llegando a la última parte de la homework ⭐**
 
 ### **FUNCIONALIDAD DELETE**
 
@@ -220,34 +267,42 @@ En este ejercicio crearemos la funcionalidad de eliminar productos de nuestra li
 
 > Para esta instancia deben pasar todos los tests. ✅ 🏆
 
+<br />
+
 ---
 
-## 👩‍💻 Extra
+## **📌 EJERCICIO EXTRA**
 
 Si llegaste hasta aquí te desafiamos a que intenes hacer lo siguiente:
 
-- Haz que el formulario se limpie una vez agregado un producto a nuestra lista.
-- Crea validaciones en el formulario para agregar productos.
-  - Que no deje crear productos sin nombre o sin precio.
-  - Que no deje crear dos productos con el mismo nombre.
-- Haz que siempre pueda haber como máximo un total de 9 cards.
+-  Haz que el formulario se limpie una vez agregado un producto a nuestra lista.
+-  Crea validaciones en el formulario para agregar productos.
+   -  Que no deje crear productos sin nombre o sin precio.
+   -  Que no deje crear dos productos con el mismo nombre.
+-  Haz que siempre pueda haber como máximo un total de 9 cards.
+
+<br />
 
 ---
 
-## Recordemos que...
+## **🧠 Recordemos que...**
 
-- El **mapDispatchToProps** sirve para enviar información al _reducer_, y en definitiva, al estado global.
-- El **mapStateToProps** sirve para traer información del estado global a un componente.
-- Las **actions** son las que transportan la información que se despacha de un componente al reducer.
-- El **reducer** es el que gestiona la información de nuestro estado global.
+-  El **mapDispatchToProps** sirve para enviar información al _reducer_, y en definitiva, al estado global.
+-  El **mapStateToProps** sirve para traer información del estado global a un componente.
+-  Las **actions** son las que transportan la información que se despacha de un componente al reducer.
+-  El **reducer** es el que gestiona la información de nuestro estado global.
+
+<br />
 
 ---
 
-## Recursos adicionales
+## **🔎 Recursos adicionales**
 
-- Documentación [**React-Redux**](https://react-redux.js.org/)
-- Documentación [**mapDispatchToProps**](https://react-redux.js.org/using-react-redux/connect-mapdispatch)
-- Documentación [**mapStateToProps**](https://react-redux.js.org/using-react-redux/connect-mapstate)
+-  Documentación [**React-Redux**](https://react-redux.js.org/)
+-  Documentación [**mapDispatchToProps**](https://react-redux.js.org/using-react-redux/connect-mapdispatch)
+-  Documentación [**mapStateToProps**](https://react-redux.js.org/using-react-redux/connect-mapstate)
+
+<br />
 
 ---
 

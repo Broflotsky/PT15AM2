@@ -1,25 +1,29 @@
-## HW 12 - React-Redux | Integración
+## HW 12: React-Redux | Integración
 
-## Duración estimada 🕒
+## **Duración estimada 🕒**
 
 x minutos
 
+<br />
+
 ---
 
-## Rick & Morty App
+## **Rick & Morty App**
 
-## Intro
+## **INTRO**
 
 En la integración de hoy crearemos un espacio en el que podremos guardar a nuestros personajes favoritos. ¡Podremos agregarlos y eliminarlos!
 
 Para esto:
 
-- ❤️ Fav button: nuestras Cards tendrán un botón para agregar/eliminar de favoritos.
-- 👀 Vista nueva: crearemos una nueva vista en la que se muestre específicamente todos nuestros personajes favoritos.
+-  ❤️ Fav button: nuestras Cards tendrán un botón para agregar/eliminar de favoritos.
+-  👀 Vista nueva: crearemos una nueva vista en la que se muestre específicamente todos nuestros personajes favoritos.
+
+<br />
 
 ---
 
-## Comencemos
+### **COMENCEMOS**
 
 Para comenzar, en tu terminal dirígete a la carpeta raíz de tu proyecto. Allí tendrás que instalar las siguientes dependencias:
 
@@ -33,9 +37,11 @@ Dentro del archivo `store.js`, haz la configuración del store. Una vez configur
 
 > **NOTA:** puedes guiarte por cómo lo tienes hecho en la homework anterior. Ten en cuenta que el reducer lo crearás en el siguiente paso.
 
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio 1
+## **👩‍💻 EJERCICIO 1**
 
 ### **REDUCER**
 
@@ -53,23 +59,27 @@ Dirígete al archivo en el que se encuentra tu **reducer**. Allí deberás:
 
 5. No te olvides de tu caso _**default**_.
 
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio 2
+## **👩‍💻 EJERCICIO 2**
 
 ### **ACTIONS**
 
 Crea dos _actions-creators_.
 
-- Una que sea para agregar personajes a tu lista de favoritos. Recibe por parámetro el personaje.
+-  Una que sea para agregar personajes a tu lista de favoritos. Recibe por parámetro el personaje.
 
-- Otro que sea para eliminar un personaje de la lista de favoritos. Recibe por parámetro el id del personaje.
+-  Otro que sea para eliminar un personaje de la lista de favoritos. Recibe por parámetro el id del personaje.
 
 > **NOTA:** no olvides que el nombre que asignes en la propiedad "TYPE" de tu acción, debe coincidir exactamente con el nombre de los casos que hayas asignado en tu reducer.
 
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio 3
+## **👩‍💻 EJERCICIO 3**
 
 ### **FAV BUTTON**
 
@@ -83,18 +93,18 @@ Ahora crearemos un botón para agregar y eliminar de favoritos! Para esto:
 
 4. Crea una función en el cuerpo del componente llamada **handleFavorite**. Esta función estará dividida en dos partes:
 
-   - Si el estado _**isFav**_ es `true`, entonces settea ese estado en false, y despacha la función **deleteFavorite** que recibiste por props pasándole el **ID** del personaje como argumento.
-   - Si el estado _**isFav**_ es `false`, entonces settea ese estado en true, y despacha la función **addFavorite** que recibiste por props, pasándole `props` como argumento.
+   -  Si el estado _**isFav**_ es `true`, entonces settea ese estado en false, y despacha la función **deleteFavorite** que recibiste por props pasándole el **ID** del personaje como argumento.
+   -  Si el estado _**isFav**_ es `false`, entonces settea ese estado en true, y despacha la función **addFavorite** que recibiste por props, pasándole `props` como argumento.
 
 5. Ahora te ayudaremos a crear un renderizado condicional. Si tu estado local `isFav` es true, entonces se mostrará un botón. Si es false, se mostrará otro botón. Para esto, copia y pega el siguiente código al comienzo del renderizado de tu componente (no te olvides de darle estilos).
 
 ```javascript
 {
-  isFav ? (
-    <button onClick={handleFavorite}>❤️</button>
-  ) : (
-    <button onClick={handleFavorite}>🤍</button>
-  );
+   isFav ? (
+      <button onClick={handleFavorite}>❤️</button>
+   ) : (
+      <button onClick={handleFavorite}>🤍</button>
+   );
 }
 ```
 
@@ -108,19 +118,21 @@ En este punto debería quedarte algo como esto:
 
 ```javascript
 useEffect(() => {
-  myFavorites.forEach((fav) => {
-    if (fav.id === props.id) {
-      setIsFav(true);
-    }
-  });
+   myFavorites.forEach((fav) => {
+      if (fav.id === props.id) {
+         setIsFav(true);
+      }
+   });
 }, [myFavorites]);
 ```
 
 > **DESAFÍO:** te desafiamos a que reconstruyas ese useEffect, pero utilizando un **bucle For** en lugar de un **.forEach()**.
 
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio 4
+## **👩‍💻 EJERCICIO 4**
 
 ### **COMPONENTE DE FAVORITOS**
 
@@ -134,6 +146,8 @@ Dirígete a tu carpeta de componentes, y crea allí dentro una carpeta que conte
 
 > **NOTA:** no te olvides de darle estilos al componente.
 
+<br />
+
 ---
 
 ### **¡LISTO! YA FUNCIONA TODO**
@@ -142,9 +156,11 @@ Todo el trabajo que hiciste en esta integración debería darte un resultado y f
 
 <img src="./img/favDemostration.gif" alt="" />
 
+<br />
+
 ---
 
-## 👩‍💻 Ejercicio Extra
+## **📌 EJERCICIO EXTRA**
 
 ### **¡Ahora te proponemos dos desafíos!**
 

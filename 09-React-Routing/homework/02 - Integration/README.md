@@ -148,7 +148,7 @@ Ahora en tu estado local **character** tendrás toda la información del persona
 - Name
 - Status
 - Specie
-- Genrer
+- Gender
 - Origin
 - Image
 
