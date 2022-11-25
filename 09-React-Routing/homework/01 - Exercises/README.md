@@ -177,7 +177,7 @@ Además:
 
 1. En el componente **_Card_**:
 
-   -  Importa `Link` desde **react-router-dom** y envuelve el código en el componente **Link** con el atributo to, en el que dirija a la ruta '\`/cruises/:${id}`'.
+   -  Importa `Link` desde **react-router-dom** y envuelve el código en el componente **Link** con el atributo to, en el que dirija a la ruta '\`/cruises/${id}`'.
 
 2. En el componente **_CardDetail_**:
 
@@ -200,6 +200,7 @@ Además:
    -  Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/"` que envuelva la etiqueta imagen.
    -  Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/shipping"`, que envuelva la etiqueta span con el texto "Navieras".
    -  Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/promotions"`, que envuelva la etiqueta span "Promociones".
+   -  Agrega una etiqueta "_className_" al div contenedor. Esta etiqueta será igual a un ternario.
 
 > Para esta instancia deben pasar todos los tests. ✅ 🏆
 
