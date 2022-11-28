@@ -16,9 +16,9 @@ Continuamos con nuestra Rick & Morty App. Utilizaremos React-Router-DOM el cual 
 
 Al finalizar, habremos creado tres rutas por las que podremos navegar:
 
--  **"/home"**: esta será la ruta del Home (vista principal/general).
--  **"/detail/:detailId"**: en esta ruta encontraremos información más detallada sobre el personaje en particular.
--  **"/about"**: en esta ruta colocarás tu nombre y describirás de qué trata la aplicación Rick & Morty.
+- **"/home"**: esta será la ruta del Home (vista principal/general).
+- **"/detail/:detailId"**: en esta ruta encontraremos información más detallada sobre el personaje en particular.
+- **"/about"**: en esta ruta colocarás tu nombre y describirás de qué trata la aplicación Rick & Morty.
 
 <br />
 
@@ -30,10 +30,10 @@ Vamos a comenzar creando los componentes que nos faltan en nuestra carpeta compo
 
 Cómo sabemos, `react-router-dom` nos da la posibilidad de crear rutas dinámicas. Estas rutas serán los path o links en el que se renderizará el componente que nosotros decidamos. Para este ejercicio queremos que en cada link se vea lo siguiente:
 
--  `<Nav />` debe que aparecer en todas las rutas.
--  `<Cards />` debe aparecer sólo en la ruta `/home`.
--  `<About />` debe aparecer sólo en la ruta `/about`.
--  `<Detail />` debe aparecer sólo en la ruta `/detail/:detailId`
+- `<Nav />` debe que aparecer en todas las rutas.
+- `<Cards />` debe aparecer sólo en la ruta `/home`.
+- `<About />` debe aparecer sólo en la ruta `/about`.
+- `<Detail />` debe aparecer sólo en la ruta `/detail/:detailId`
 
 <br />
 
@@ -88,13 +88,13 @@ Ahora nuestra SPA cuenta con tres rutas distintas: "`/home`", "`/detail/:detailI
 Para este ejercicio:
 
 1. En el componente `<Card />` importa y envuelve el nombre del personaje con el elemento "**Link**". Tiene que redirigirnos a la ruta de cada personaje.
-2. A este componente deberás pasarle por **props** el "**detailId**" del personaje para usarlo en el Link.
+2. A este componente deberás pasarle por **props** el "**id**" del personaje para usarlo en el Link.
 
 ```js
 // Card.js
 ...
-<Link to={`/detail/${detailId}`} >
-  <h5 className="card-title">{name}</h5>
+<Link to={`/detail/${props.id}`} >
+  <h5 className="card-title">{props.name}</h5>
 </Link>
 ...
 ```
@@ -119,19 +119,19 @@ Para obtener esta información importa los hooks **useState** de `react` y **use
 
 ```js
 useEffect(() => {
-   fetch(`https://rickandmortyapi.com/api/character/${id}`)
-      .then((response) => response.json())
-      .then((char) => {
-         if (char.name) {
-            setCharacter(char);
-         } else {
-            window.alert('No hay personajes con ese ID');
-         }
-      })
-      .catch((err) => {
-         window.alert('No hay personajes con ese ID');
-      });
-   return setCharacter({});
+  fetch(`https://rickandmortyapi.com/api/character/${detailId}`)
+    .then((response) => response.json())
+    .then((char) => {
+      if (char.name) {
+        setCharacter(char);
+      } else {
+        window.alert("No hay personajes con ese ID");
+      }
+    })
+    .catch((err) => {
+      window.alert("No hay personajes con ese ID");
+    });
+  return setCharacter({});
 }, [id]);
 ```
 
@@ -145,12 +145,12 @@ useEffect(() => {
 
 Ahora en tu estado local **character** tendrás toda la información del personaje disponible para que la renderices en este componente (`<Detail />`). Debes traer la siguiente información:
 
--  Name
--  Status
--  Specie
--  Genrer
--  Origin
--  Image
+- Name
+- Status
+- Specie
+- Gender
+- Origin
+- Image
 
 Dándole estilos debería quedarte algo similar a esto:
 

@@ -1,5 +1,7 @@
 // const initialState = {
-//   list: []
-// }
+//    list: [],
+// };
 
-// export default rootReducer
+// const rootReducer = () => {};
+
+// export default rootReducer;
