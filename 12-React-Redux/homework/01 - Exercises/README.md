@@ -127,15 +127,19 @@ Estarás trabajando con algunos componentes y con las herramientas de Redux.
 
 Acá tienes un snippet para poder realizar la request:
 ```js
-return (dispatch) => {
-    return fetch('http://localhost:3001/store')
-      .then((results) => results.json()
-        .then((results) => dispatch()).catch(err => console.log(err)))
+return async function (dispatch) {
+    try {
+      let response = await axios.get("http://localhost:3001/store");
+      return dispatch();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 ```
 
 ¡Ahora te toca terminar el **dispatch** para completar la función!
 
-> NOTA: Puedes echar un vistazo al archivo **db.json**, ahí están los datos que enviará la **api**. 
+> NOTA: Recuerda que axios devuelve la repuesta en forma de objeto en una propiedad llamada data, tenlo en cuenta al momento de terminar el dispatch. Puedes echar un vistazo al archivo **db.json**, ahí están los datos que enviará la **api**. 
 
 <br />
 
