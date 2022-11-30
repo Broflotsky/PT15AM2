@@ -130,7 +130,9 @@ Acá tienes un snippet para poder realizar la request:
 return async function (dispatch) {
     try {
       let response = await axios.get("http://localhost:3001/store");
-      return dispatch();
+      return dispatch(
+         /*Aquí es donde agregas tu código*/
+      );
     } catch (error) {
       console.log(error);
     }
