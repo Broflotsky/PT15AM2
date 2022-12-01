@@ -37,11 +37,31 @@ npm test
 
 Los dos primeros test pasarán sin que hagas nada, simplemente están para que te ayuden a verificar que estás realizando correctamente los pasos y que no tienes errores.
 
-🔹 Para poder correr la aplicación de forma local, debes abrir una segunda terminal, ubicarte en la carpeta que estás trabajando y ejecuta el comando:
+---
+
+### **⚠️ IMPORTANTE**
+
+Para levantar el proyecto, siempre que relices las homeworks de **EJERCICIOS** deberás realizar los siguientes pasos:
+
+Corre en tu terminal el comando:
 
 ```bash
-npm start
+node -v
 ```
+
+Si tienes la versión 16 / 17, debes correr el comando:
+
+```bash
+npm run start16
+```
+
+Si tienes la version 18, debes correr el comando:
+
+```bash
+npm run start18
+```
+
+<br />
 
 -  Ingresando a <http://localhost:3000> desde el navegador, podrás ir viendo en tiempo real el resultado de tu trabajo.
 

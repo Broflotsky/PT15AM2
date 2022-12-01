@@ -47,11 +47,31 @@ Si deseas correr por test, puedes utilizar:
 npm run test:01
 ```
 
-🔹 Para poder correr la aplicación de forma local, sólo debes ejecutar el comando
+---
+
+### **⚠️ IMPORTANTE**
+
+Para levantar el proyecto, siempre que relices las homeworks de **EJERCICIOS** deberás realizar los siguientes pasos:
+
+Corre en tu terminal el comando:
 
 ```bash
-npm start
+node -v
 ```
+
+Si tienes la versión 16 / 17, debes correr el comando:
+
+```bash
+npm run start16
+```
+
+Si tienes la version 18, debes correr el comando:
+
+```bash
+npm run start18
+```
+
+<br />
 
 -  Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
 
@@ -123,9 +143,10 @@ Estarás trabajando con algunos componentes y con las herramientas de Redux.
 
 5. Importa la libería **axios**.
 
-6. Define y exporta una función llamada getStoreName. Esta función deberá realizar una **request** a   `http://localhost:3001/store` utilizando el método `get` de **axios** y retornar un objeto con la propiedad **type** con el valor *GET_STORE_NAME*, y como payload la respuesta que brinde la **api**.
+6. Define y exporta una función llamada getStoreName. Esta función deberá realizar una **request** a `http://localhost:3001/store` utilizando el método `get` de **axios** y retornar un objeto con la propiedad **type** con el valor _GET_STORE_NAME_, y como payload la respuesta que brinde la **api**.
 
 Acá tienes un snippet para poder realizar la request:
+
 ```js
 return (dispatch) => {
     return fetch('http://localhost:3001/store')
@@ -135,7 +156,7 @@ return (dispatch) => {
 
 ¡Ahora te toca terminar el **dispatch** para completar la función!
 
-> NOTA: Puedes echar un vistazo al archivo **db.json**, ahí están los datos que enviará la **api**. 
+> NOTA: Puedes echar un vistazo al archivo **db.json**, ahí están los datos que enviará la **api**.
 
 <br />
 
@@ -168,12 +189,11 @@ Si observas, el **Initial State** (tu estado global) ya está declarado, y más 
    [...state.list];
    ```
 
-   **Caso B )** El nombre de este caso será **DELETE_PRODUCT**. Lo que hará es tomar el arreglo de objetos **list**, y buscar aquel producto que tenga el mismo id que se recibe por la propiedad _payload_. Tendrás que filtrar ese producto y quedarte con todos los demás. Una vez que tengas el resto de productos retornará un objeto en el cual se haga un _**spread operator**_ del estado, y la propiedad **list** será igual al nuevo arreglo (que ha filtrado el producto recibido por payload).  
-   
+   **Caso B )** El nombre de este caso será **DELETE_PRODUCT**. Lo que hará es tomar el arreglo de objetos **list**, y buscar aquel producto que tenga el mismo id que se recibe por la propiedad _payload_. Tendrás que filtrar ese producto y quedarte con todos los demás. Una vez que tengas el resto de productos retornará un objeto en el cual se haga un _**spread operator**_ del estado, y la propiedad **list** será igual al nuevo arreglo (que ha filtrado el producto recibido por payload).
 
    > NOTA: ten en cuenta que para filtrar los productos deberás ingresar a la propiedad id de cada uno y comparar si el id recibido por payload es igual.
 
-   **Caso C )** El nombre de este caso será **GET_STORE_NAME**. Tendrás que setear la propiedad **storeName** del estado con el valor de la propiedad **payload** de **action**. 
+   **Caso C )** El nombre de este caso será **GET_STORE_NAME**. Tendrás que setear la propiedad **storeName** del estado con el valor de la propiedad **payload** de **action**.
 
    **Caso default)** El caso default de este switch sólo retornará el estado.
 
@@ -229,15 +249,15 @@ Lo que hará este componente será renderizar nuestra lista de productos en el n
 
 2. Termina de crear la función **mapStateToProps**. Esta recibe por parámetro _state_. En el cuerpo de esta función se retornará un objeto que tenga como propiedad _list_, y que será igual a "_state.list_".
 
-3. Termina de crear la función **mapDispatchToProps**. Esta recibe por parámetros _dispatch_. En el cuerpo de esta función se retornará un objeto que tenga como propiedad _getStoreName_, cuyo valor será una función que tendrá que hacer un `dispatch` de _actions.getStoreName_.  
+3. Termina de crear la función **mapDispatchToProps**. Esta recibe por parámetros _dispatch_. En el cuerpo de esta función se retornará un objeto que tenga como propiedad _getStoreName_, cuyo valor será una función que tendrá que hacer un `dispatch` de _actions.getStoreName_.
 
 4. El componente `Products` recibe por props nuestro estado global "**list**". Te recomendamos que las recibas haciendo _**destructuring**_.
 
 5. Declara un **useEffect** y despacha la action **getStoreName** dentro. Debe ejecutarse solamente al montarse el componente.
 
-7. Renderiza un `<h1>`, tendrá que contener el valor del estado global **storeName**.
+6. Renderiza un `<h1>`, tendrá que contener el valor del estado global **storeName**.
 
-8. Ahora tendrás que renderizar nuestra lista de productos. Utiliza el método **map** para mapear la propiedad **list**. Por cada producto en esta lista deberás renderizar un componente _**Card**_ (importado previamente). A este componente `Card` pásale como propiedades el **name**, el **price**, el **id** de cada producto, y una **key** que los pueda diferenciar.
+7. Ahora tendrás que renderizar nuestra lista de productos. Utiliza el método **map** para mapear la propiedad **list**. Por cada producto en esta lista deberás renderizar un componente _**Card**_ (importado previamente). A este componente `Card` pásale como propiedades el **name**, el **price**, el **id** de cada producto, y una **key** que los pueda diferenciar.
 
 <br />
 
