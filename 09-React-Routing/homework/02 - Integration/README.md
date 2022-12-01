@@ -158,6 +158,8 @@ Dándole estilos debería quedarte algo similar a esto:
 
 <br />
 
+> Hint: Ten en cuenta el tipo de dato de cada propiedad renderizada! Además cuando vayas a renderizar la información puede suceder que al ser la llamada a la API de Rick & Morty asíncrona, no le da tiempo de guardar la información y renderizarla. Para ello, puedes usar "?" para validar si nuestro estado tiene información a renderizar.
+
 ---
 
 ### **👩‍💻 EJERCICIO 7**

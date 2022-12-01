@@ -25,9 +25,9 @@ describe("04 | Ejercicios", () => {
     window.alert = alert;
   });
 
-  it("Debe mostrar un alert 'Debes corregir todos los errores' cuando haya un error en el formulario", () => {
+  it("Debe mostrar un alert 'Debe llenar todos los campos' cuando haya un error en el formulario", () => {
     contact.find("form").simulate("submit", { preventDefault: () => {} });
-    expect(window.alert).toHaveBeenCalledWith("Debes corregir los errores");
+    expect(window.alert).toHaveBeenCalledWith("Debe llenar todos los campos");
   });
 
   it("Debería mostrar un alert 'Datos completos' al hacer submit correctamente", () => {
