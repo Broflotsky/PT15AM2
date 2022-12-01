@@ -58,11 +58,31 @@ npm run test:01
 npm run server
 ```
 
-🔹 Para poder correr la aplicación de forma local, sólo debes ejecutar el comando
+---
+
+### **⚠️ IMPORTANTE**
+
+Para levantar el proyecto, siempre que relices las homeworks de **EJERCICIOS** deberás realizar los siguientes pasos:
+
+Corre en tu terminal el comando:
 
 ```bash
-npm start
+node -v
 ```
+
+Si tienes la versión 16 / 17, debes correr el comando:
+
+```bash
+npm run start16
+```
+
+Si tienes la version 18, debes correr el comando:
+
+```bash
+npm run start18
+```
+
+<br />
 
 -  Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
 
@@ -245,7 +265,8 @@ Ejemplo:
 ```jsx
 if (!inputs.name) {
    errors.name = 'Se requiere un nombre';
-} else if (!regexEmail.test(inputs.email)) {
+}
+if (!regexEmail.test(inputs.email)) {
    errors.email = 'Debe ser un correo electrónico';
 }
 ```
@@ -271,7 +292,7 @@ e) Debes informar a los usuarios que tiene errores en los inputs. Para ello, haz
 
 1. Lee la hoja de estilos llamada `Contact.modules.css`, dentro de ella encontrarás:
 
-   a) Una clase llamada `.warning` con la propiedad **border** y donde sus valores son: **solid**, **red** y 1 px.
+   a) Una clase llamada `.warning` con las propiedades **border** donde sus valores son: **solid**, **red**,1px y **border radius** donde su valor es 0.2em;.
 
    b) Además verás otra clase llamada `danger` con la propiedades:
 

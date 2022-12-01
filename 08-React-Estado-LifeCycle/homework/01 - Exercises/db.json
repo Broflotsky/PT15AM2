@@ -1,0 +1,32 @@
+{
+   "zoo": {
+      "species": ["Mamiferos", "Reptiles", "Aves"],
+      "animals": [
+         {
+            "name": "León",
+            "specie": "Mamiferos",
+            "image": "https://res.cloudinary.com/dbktfquei/image/upload/v1669903462/leon_svuwdd.jpg"
+         },
+         {
+            "name": "Delfín",
+            "specie": "Mamiferos",
+            "image": "https://res.cloudinary.com/dbktfquei/image/upload/v1669903461/delfin_vd9k6c.webp"
+         },
+         {
+            "name": "Cocodrilo",
+            "specie": "Reptiles",
+            "image": "https://res.cloudinary.com/dbktfquei/image/upload/v1669903461/cocodrilo_oap3i5.jpg"
+         },
+         {
+            "name": "Pavo real",
+            "specie": "Aves",
+            "image": "https://res.cloudinary.com/dbktfquei/image/upload/v1669903463/pavo_lei0sc.jpg"
+         },
+         {
+            "name": "Boa constrictor",
+            "specie": "Reptiles",
+            "image": "https://res.cloudinary.com/dbktfquei/image/upload/v1669903462/serpiente_gymdwu.jpg"
+         }
+      ]
+   }
+}
