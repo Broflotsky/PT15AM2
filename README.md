@@ -29,6 +29,9 @@
 - Redux:
     1. [Intro](./11-Redux)
     2. [React-Redux](./12-React-Redux)
+    
+- Hooks:
+    1. [Hooks](./13-React-Hooks)
 
 </div>
 
@@ -42,6 +45,3 @@ __IMPORTANTE:__ Luego de completar cada una de las homeworks del día deberán e
   git push
 ```
 
-Extra:
-
-- [React Hooks](./13-React-Hooks)

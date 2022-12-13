@@ -6,7 +6,7 @@
 // Usando querySelector seleccionar dicho span por su id ('createdBy') y luego usando innerHTML
 // agregar tu nombre al final del texto actual. Ej: 'Aplicación creada por Franco'
 // Tu código acá:
-
+  
 
 
 // Crear una clase denominada 'ToDo' cuyo constructor debe recibir un único parámetro del tipo string
@@ -16,9 +16,9 @@
 // 2) 'complete'    : debe setearse en false
 // Ayuda: usar 'this' en el constructor
 
-function ToDo () {
+function ToDo (description) {
   // Tu código acá:
-
+  
 }
 
 
@@ -27,7 +27,6 @@ function ToDo () {
 // Debe setear el atributo 'complete' del ToDo en true
 
 // Tu código acá:
-
 
 
 // Agregar dos parámetros a la función 'buildToDo':
@@ -50,7 +49,6 @@ function ToDo () {
 
 function buildToDo(todo, index) {
   // Tu código acá:
-
 }
 
 // La función 'buildToDos' debe crear un array de objetos toDo y devolverlo
@@ -60,9 +58,7 @@ function buildToDo(todo, index) {
 
 function buildToDos(toDos) {
   // Tu código acá:
-
 }
-
 
 // La función 'displayToDos' se va a encargar de que se vean los toDo's en pantalla
 //  1) Seleccionr el elemento cuyo id es 'toDoContainer' y almacenarlo en una variable denominada 'toDoContainer'
@@ -75,9 +71,7 @@ function buildToDos(toDos) {
 
 function displayToDos() {
   // Tu código acá:
-
 }
-
 
 // La función 'addToDo' agregará un nuevo ToDo al array 'toDoItems'
 // [NOTA: Algunas cuestiones a tener en cuenta sobre el elemento 'input' de HTML (Ya que 'toDoInput' es un input)
@@ -90,7 +84,7 @@ function displayToDos() {
 
 function addToDo() {
   // Tu código acá:
-
+ 
 }
 
 // Agregar un 'Event Listener' para que cada vez que el botón 'AGREGAR' sea clickeado
@@ -99,6 +93,7 @@ function addToDo() {
 //   2) Agregarle un 'click' event listener, pasándole la función 'addToDo' como callback
 
 // Tu código acá:
+
 
 
 // La función completeToDo se va a ejecutar cuando queramos completar un todo
@@ -115,9 +110,9 @@ function addToDo() {
 
 function completeToDo(event) {
   // DESCOMENTAR LA SIGUIENTE LINEA
-  // const index = event.target.id;
+  //const index = event.target.id;
   // Tu código acá:
-
+  
 }
 
 // Una vez que llegaste a este punto verificá que todos los tests pasen
