@@ -45,24 +45,10 @@ describe("04 | Ejercicios", () => {
       },
     });
 
-    contact.find("input[name='phone']").simulate("change", {
-      target: {
-        name: "phone",
-        value: 23564200,
-      },
-    });
-
     contact.find("textarea[name='message']").simulate("change", {
       target: {
         name: "message",
         value: "Mensaje Henry",
-      },
-    });
-
-    contact.find("input[name='subject']").simulate("change", {
-      target: {
-        name: "subject",
-        value: "Asunto Henry",
       },
     });
 
