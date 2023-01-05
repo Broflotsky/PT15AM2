@@ -52,7 +52,7 @@ Si deseas correr por test, puedes utilizar:
 npm run test:01
 ```
 
-🔹 Para esta homework necesitarás emular peticiones a una API con el fin de consumir los datos que estén allí. Para ello debes correr el servidor **db.js**. Sin esto, no podrás visualizar el resultado esperado y no pasarán los tests. A continuación, los pasos para correr el servidor:
+🔹 Para esta homework necesitarás emular peticiones a una API con el fin de consumir los datos que estén allí. Para ello debes correr el servidor **db.json**. Sin esto, no podrás visualizar el resultado esperado y no pasarán los tests. A continuación, los pasos para correr el servidor:
 
 -  Abrir una segunda terminal.
 -  En la terminal, dirígete a la carpeta que estamos trabajando.
@@ -62,11 +62,31 @@ npm run test:01
 npm run server
 ```
 
-🔹 Y por último, para poder correr la aplicación de forma local: en una **nueva terminal** sólo debes ejecutar el comando
+---
+
+### **⚠️ IMPORTANTE**
+
+Para levantar el proyecto, siempre que relices las homeworks de **EJERCICIOS** deberás realizar los siguientes pasos:
+
+Corre en tu terminal el comando:
 
 ```bash
-npm start
+node -v
 ```
+
+Si tienes la versión 16 / 17, debes correr el comando:
+
+```bash
+npm run start16
+```
+
+Si tienes la version 18, debes correr el comando:
+
+```bash
+npm run start18
+```
+
+<br />
 
 -  Ingresando a <http://localhost:3000> desde el navegador, podremos ver en tiempo real el resultado de nuestro trabajo.
 
@@ -83,7 +103,7 @@ npm start
 -  Una carpeta llamada **public**
 -  Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
 -  Una carpeta llamada **tests**
--  Un archivo **db.js**
+-  Un archivo **db.json**
 -  Un archivo **package.json**
 -  Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
 
@@ -184,7 +204,7 @@ const [example, setExample] = React.useState({
 
 > **Nota**: Para que corran los test, el hook debe ser utilizado de esta manera: **React.useEffect()**. No debe utilizarse como **useEffect()**. 💡
 
-2. Dentro del hook, usa fetch para hacer una petición al servidor **db.js** a través de la url `'http://localhost:3001/zoo'`. Así obtendrás el objeto **zoo** con los datos de los animales. Para utilizar fetch, es necesario usar promesas. Como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook React.useEffect:
+2. Dentro del hook, usa fetch para hacer una petición al servidor **db.json** a través de la url `'http://localhost:3001/zoo'`. Así obtendrás el objeto **zoo** con los datos de los animales. Para utilizar fetch, es necesario usar promesas. Como aún no las has visto, tienes este snippet para que copies y pegues dentro del hook React.useEffect:
 
 ```js
 fetch('http://localhost:3001/zoo')
@@ -237,7 +257,7 @@ fetch('http://localhost:3001/zoo')
 
 > Tips:
 >
-> -  En el arhivo `db.js` puedes ver las propiedades de cada animal.
+> -  En el arhivo `db.json` puedes ver las propiedades de cada animal.
 > -  Para recorrer el arreglo y retornar elementos de acuerdo a su contenido, puedes usar el método `map`, recuerda que el map recibe dos parámetros, uno de ellos es la key.
 
 🔹 Resultado esperado:

@@ -47,13 +47,37 @@ Si deseas correr por test, puedes utilizar:
 npm run test:01
 ```
 
-🔹 Para poder correr la aplicación de forma local, sólo debes ejecutar el comando
+---
+
+### **⚠️ IMPORTANTE**
+
+Para levantar el proyecto, siempre que relices las homeworks de **EJERCICIOS** deberás realizar los siguientes pasos:
+
+Corre en tu terminal el comando:
 
 ```bash
-npm start
+node -v
 ```
 
+<<<<<<< HEAD
 - Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
+=======
+Si tienes la versión 16 / 17, debes correr el comando:
+
+```bash
+npm run start16
+```
+
+Si tienes la version 18, debes correr el comando:
+
+```bash
+npm run start18
+```
+
+<br />
+
+-  Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
+>>>>>>> 949123bdd3f0e6e51101820ee7a361a4f8863b7c
 
 ---
 
@@ -128,15 +152,25 @@ Estarás trabajando con algunos componentes y con las herramientas de Redux.
 Acá tienes un snippet para poder realizar la request:
 
 ```js
-return (dispatch) => {
-    return fetch('http://localhost:3001/store')
-      .then((results) => results.json()
-        .then((results) => dispatch()).catch(err => console.log(err)))
+return async function (dispatch) {
+    try {
+      let response = await axios.get("http://localhost:3001/store");
+      return dispatch(
+         /*Aquí es donde agregas tu código*/
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
 ```
 
 ¡Ahora te toca terminar el **dispatch** para completar la función!
 
+<<<<<<< HEAD
 > NOTA: Puedes echar un vistazo al archivo **db.json**, ahí están los datos que enviará la **api**.
+=======
+> NOTA: Recuerda que axios devuelve la repuesta en forma de objeto en una propiedad llamada data, tenlo en cuenta al momento de terminar el dispatch. Puedes echar un vistazo al archivo **db.json**, ahí están los datos que enviará la **api**. 
+>>>>>>> 949123bdd3f0e6e51101820ee7a361a4f8863b7c
 
 <br />
 

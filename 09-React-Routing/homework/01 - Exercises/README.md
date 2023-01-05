@@ -58,11 +58,31 @@ npm run test:01
 npm run server
 ```
 
-🔹 Para poder correr la aplicación de forma local, sólo debes ejecutar el comando
+---
+
+### **⚠️ IMPORTANTE**
+
+Para levantar el proyecto, siempre que relices las homeworks de **EJERCICIOS** deberás realizar los siguientes pasos:
+
+Corre en tu terminal el comando:
 
 ```bash
-npm start
+node -v
 ```
+
+Si tienes la versión 16 / 17, debes correr el comando:
+
+```bash
+npm run start16
+```
+
+Si tienes la version 18, debes correr el comando:
+
+```bash
+npm run start18
+```
+
+<br />
 
 -  Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
 
@@ -178,7 +198,6 @@ Además:
 1. En el componente **_Card_**:
 
 -  Importa `Link` desde **react-router-dom** y envuelve el código en el componente **Link** con el atributo to, en el que dirija a la ruta '\`/cruises/${id}`'.
--  Importa `Link` desde **react-router-dom** y envuelve el código en el componente **Link** con el atributo to, en el que dirija a la ruta '\`/cruises/:${id}`'.
 
 2. En el componente **_CardDetail_**:
 

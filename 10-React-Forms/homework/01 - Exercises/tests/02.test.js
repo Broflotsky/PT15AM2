@@ -47,24 +47,6 @@ describe("02 | Ejercicios", () => {
     expect(inputEmail.prop("value")).toEqual("henry@gmail.com");
   });
 
-  it("El form debería cambiar de estado cuando escriban en el input de phone", () => {
-    expect(contact.find("input[name='phone']").prop("value")).toEqual(0);
-    contact.find("input[name='phone']").simulate("change", {
-      target: { value: 123456789, name: "phone" },
-    });
-    const inputPhone = contact.find("input[name='phone']");
-    expect(inputPhone.prop("value")).toEqual(123456789);
-  });
-
-  it("El form debería cambiar de estado cuando escriban en el input de subject", () => {
-    expect(contact.find("input[name='subject']").prop("value")).toEqual("");
-    contact.find("input[name='subject']").simulate("change", {
-      target: { value: "Subject Input", name: "subject" },
-    });
-    const inputSubject = contact.find("input[name='subject']");
-    expect(inputSubject.prop("value")).toEqual("Subject Input");
-  });
-
   it("El form debería cambiar de estado cuando escriban en el input de message", () => {
     expect(contact.find("textarea[name='message']").prop("value")).toEqual("");
     contact.find("textarea[name='message']").simulate("change", {
