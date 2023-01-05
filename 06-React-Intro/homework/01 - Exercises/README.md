@@ -22,13 +22,13 @@ En esta homework, vamos a crear dos componentes de React, que nos ayudarán a en
 
 🔹 Para poder ejecutar los `test` de esta homework, es necesario que abramos la terminal ubicados dentro de la carpeta `01 - Exercises`.
 
--  Cuando te encuentres en esta carpeta, debes ejecutar el comando
+- Cuando te encuentres en esta carpeta, debes ejecutar el comando
 
 ```bash
 npm install
 ```
 
--  Listo!! Ya puedes correr los test:
+- Listo!! Ya puedes correr los test:
 
 ```bash
 npm test
@@ -72,21 +72,21 @@ Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en t
 
 🔹 Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
--  Una carpeta llamada **img**
--  Una carpeta llamada **public**
--  Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
--  Una carpeta llamada **tests**
--  Un archivo **package.json**
--  Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
+- Una carpeta llamada **img**
+- Una carpeta llamada **public**
+- Una carpeta llamada `src` (Es la carpeta en donde trabajaremos)
+- Una carpeta llamada **tests**
+- Un archivo **package.json**
+- Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
 
 Además:
 
 🔹 Dentro de la carpeta `src` vas a encontrar ya el esqueleto del proyecto React, estructurado de la siguiente manera:
 
--  Una carpeta llamada `components`
--  Un archivo llamado **App.js**
--  Un archivo **index.css**
--  Un archivo **index.js**
+- Una carpeta llamada `components`
+- Un archivo llamado **App.js**
+- Un archivo **index.css**
+- Un archivo **index.js**
 
 🔹 Para estos ejercicios, trabajaremos sólo dentro la carpeta `components`. En principio sólo tenemos el componente `Bienvenido.jsx`.
 
@@ -162,10 +162,10 @@ Ahora necesitamos conectar estos dos componentes, ¿Cómo lo hacemos? Muy fácil
 
 ## **🧠 Recuerda que...**
 
--  Todo en React es un componente y existen dos tipos: los componentes funcionales y los componentes de clase.
--  Un componente funcional es una función de Javascript que puede o no recibir datos (props). Tanto el nombre de la función como el nombre del archivo se deben llamar igual y deben ser con mayúscula inicial.
--  Un componente de clase es otra manera de definir un componente, la diferencia radica en que el componente de clase es con sintaxis de ES5 y el componente funcional con ES6.
--  Las props o propiedades son la manera que tiene React para pasar parámetros de un componente padre a sus hijos.
+- Todo en React es un componente y existen dos tipos: los componentes funcionales y los componentes de clase.
+- Un componente funcional es una función de Javascript que puede o no recibir datos (props). Tanto el nombre de la función como el nombre del archivo se deben llamar igual y deben ser con mayúscula inicial.
+- Un componente de clase es otra manera de definir un componente, la diferencia radica en que el componente de clase es con sintaxis de ES5 y el componente funcional con ES6.
+- Las props o propiedades son la manera que tiene React para pasar parámetros de un componente padre a sus hijos.
 
 <br />
 
@@ -173,7 +173,7 @@ Ahora necesitamos conectar estos dos componentes, ¿Cómo lo hacemos? Muy fácil
 
 ## **🔎 Recursos adicionales**
 
--  Documentación [**Intro to React**](https://reactjs.org/tutorial/tutorial.html)
+- Documentación [**Intro to React**](https://reactjs.org/tutorial/tutorial.html)
 
 <br />
 
