@@ -17,10 +17,8 @@
       "react-scripts": "^5.0.1"
    },
    "scripts": {
-      "start16": "react-scripts start",
-      "start18": "react-scripts --openssl-legacy-provider start",
-      "build16": "react-scripts build",
-      "build18": "react-scripts --openssl-legacy-provider build",
+      "start": "react-scripts start",
+      "build": "react-scripts build",
       "test": "jest --verbose --detectOpenHandles",
       "eject": "react-scripts eject"
    },

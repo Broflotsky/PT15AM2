@@ -29,37 +29,14 @@ En esta homework, aprenderás a utilizar las diferentes formas de aplicar estilo
 npm install
 ```
 
--  Listo!! Ya puedes correr los test:
+-  Listo!! Ya puedes correr los test y levantar el proyecto con los comandos:
 
 ```bash
 npm test
+npm start
 ```
 
 Los dos primeros test pasarán sin que hagas nada, simplemente están para que te ayuden a verificar que estás realizando correctamente los pasos y que no tienes errores.
-
----
-
-### **⚠️ IMPORTANTE**
-
-Para levantar el proyecto, siempre que relices las homeworks de **EJERCICIOS** deberás realizar los siguientes pasos:
-
-Corre en tu terminal el comando:
-
-```bash
-node -v
-```
-
-Si tienes la versión 16 / 17, debes correr el comando:
-
-```bash
-npm run start16
-```
-
-Si tienes la version 18, debes correr el comando:
-
-```bash
-npm run start18
-```
 
 <br />
 

@@ -40,10 +40,11 @@ En esta actividad debes desarrollar una Zoo App utilizando componentes funcional
 npm install
 ```
 
--  Listo!! Ya puedes correr los test:
+-  Listo!! Ya puedes correr los test y levantar el proyecto con los comandos:
 
 ```bash
 npm test
+npm start
 ```
 
 Si deseas correr por test, puedes utilizar:
@@ -52,39 +53,7 @@ Si deseas correr por test, puedes utilizar:
 npm run test:01
 ```
 
-🔹 Para esta homework necesitarás emular peticiones a una API con el fin de consumir los datos que estén allí. Para ello debes correr el servidor **db.json**. Sin esto, no podrás visualizar el resultado esperado y no pasarán los tests. A continuación, los pasos para correr el servidor:
-
--  Abrir una segunda terminal.
--  En la terminal, dirígete a la carpeta que estamos trabajando.
--  Ejecuta el comando:
-
-```bash
-npm run server
-```
-
----
-
-### **⚠️ IMPORTANTE**
-
-Para levantar el proyecto, siempre que relices las homeworks de **EJERCICIOS** deberás realizar los siguientes pasos:
-
-Corre en tu terminal el comando:
-
-```bash
-node -v
-```
-
-Si tienes la versión 16 / 17, debes correr el comando:
-
-```bash
-npm run start16
-```
-
-Si tienes la version 18, debes correr el comando:
-
-```bash
-npm run start18
-```
+Los dos primeros test pasarán sin que hagas nada, simplemente están para que te ayuden a verificar que estás realizando correctamente los pasos y que no tienes errores.
 
 <br />
 

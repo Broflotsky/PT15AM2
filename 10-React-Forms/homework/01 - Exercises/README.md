@@ -36,13 +36,14 @@ En esta homework encontrarás casi terminada la Music App. Sin embargo, deberás
 npm install
 ```
 
--  Listo!! Ya puedes correr los test:
+-  Listo!! Ya puedes correr los test y levantar el proyecto con los comandos:
 
 ```bash
 npm test
+npm start
 ```
 
-Si deseas correr por cada uno de los test, puedes utilizar:
+Si deseas correr por test, puedes utilizar:
 
 ```bash
 npm run test:01
@@ -58,29 +59,13 @@ npm run test:01
 npm run server
 ```
 
----
+Los dos primeros test pasarán sin que hagas nada, simplemente están para que te ayuden a verificar que estás realizando correctamente los pasos y que no tienes errores.
 
-### **⚠️ IMPORTANTE**
+<br />
 
-Para levantar el proyecto, siempre que relices las homeworks de **EJERCICIOS** deberás realizar los siguientes pasos:
+-  Ingresando a <http://localhost:3000> desde el navegador, podrás ir viendo en tiempo real el resultado de tu trabajo.
 
-Corre en tu terminal el comando:
-
-```bash
-node -v
-```
-
-Si tienes la versión 16 / 17, debes correr el comando:
-
-```bash
-npm run start16
-```
-
-Si tienes la version 18, debes correr el comando:
-
-```bash
-npm run start18
-```
+<br />
 
 <br />
 
