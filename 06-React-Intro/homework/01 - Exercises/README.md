@@ -28,37 +28,14 @@ En esta homework, vamos a crear dos componentes de React, que nos ayudarán a en
 npm install
 ```
 
--  Listo!! Ya puedes correr los test:
+-  Listo!! Ya puedes correr los test y levantar el proyecto con los comandos:
 
 ```bash
 npm test
+npm start
 ```
 
 El primer test pasará sin que hagas nada, simplemente está para que te ayude a verificar que estás realizando correctamente los pasos y que no tienes errores.
-
----
-
-### **⚠️ IMPORTANTE**
-
-Para levantar el proyecto, siempre que relices las homeworks de **EJERCICIOS** deberás realizar los siguientes pasos:
-
-Corre en tu terminal el comando:
-
-```bash
-node -v
-```
-
-Si tienes la versión 16 / 17, debes correr el comando:
-
-```bash
-npm run start16
-```
-
-Si tienes la version 18, debes correr el comando:
-
-```bash
-npm run start18
-```
 
 <br />
 

@@ -46,36 +46,6 @@ describe("01 | Ejercicios", () => {
     });
   });
 
-  it("Debería renderizar un label para el teléfono con el texto 'Teléfono:'", () => {
-    expect(contact.find("label").at(2).text()).toEqual("Teléfono:");
-  });
-
-  it("Debería renderizar un input para el teléfono con los atributos name, placeholder y type", () => {
-    const inputPhone = contact.find("input").at(2);
-
-    expect(inputPhone.props()).toEqual({
-      ...inputPhone.props(),
-      name: "phone",
-      placeholder: "Escribe un teléfono...",
-      type: "number",
-    });
-  });
-
-  it("Debería renderizar un label para el asunto con el texto 'Asunto:'", () => {
-    expect(contact.find("label").at(3).text()).toEqual("Asunto:");
-  });
-
-  it("Debería renderizar un input para el asunto con los atributos name, placeholder y type", () => {
-    const inputSubject = contact.find("input").at(3);
-
-    expect(inputSubject.props()).toEqual({
-      ...inputSubject.props(),
-      name: "subject",
-      placeholder: "Escribe el asunto...",
-      type: "text",
-    });
-  });
-
   it("Debería renderizar un label para el mensaje con el texto 'Mensaje:'", () => {
     expect(contact.find("label").at(4).text()).toEqual("Mensaje:");
   });

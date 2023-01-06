@@ -21,8 +21,6 @@ describe("03 | Ejercicios", () => {
         validate({
           name: "",
           email: "henry@gmail.com",
-          phone: 235642,
-          subject: "Asunto Henry",
           message: "Mensaje Henry",
         })
       ).toEqual({
@@ -35,52 +33,10 @@ describe("03 | Ejercicios", () => {
         validate({
           name: "Henry",
           email: "henry",
-          phone: 235642,
-          subject: "Asunto Henry",
           message: "Mensaje Henry",
         })
       ).toEqual({
         email: "Debe ser un correo electrónico",
-      });
-    });
-
-    it("El teléfono debe ser un número positivo", () => {
-      expect(
-        validate({
-          name: "Henry",
-          email: "henry@gmail.com",
-          phone: -235642,
-          subject: "Asunto Henry",
-          message: "Mensaje Henry",
-        })
-      ).toEqual({
-        phone: "Sólo números positivos",
-      });
-
-      expect(
-        validate({
-          name: "Henry",
-          email: "henry@gmail.com",
-          phone: -31,
-          subject: "Asunto Henry",
-          message: "Mensaje Henry",
-        })
-      ).toEqual({
-        phone: "Sólo números positivos",
-      });
-    });
-
-    it("El asunto debe ser obligatorio y no estar vacío", () => {
-      expect(
-        validate({
-          name: "Henry",
-          email: "henry@gmail.com",
-          phone: 235642,
-          subject: "",
-          message: "Mensaje Henry",
-        })
-      ).toEqual({
-        subject: "Se requiere un asunto",
       });
     });
 
@@ -89,8 +45,6 @@ describe("03 | Ejercicios", () => {
         validate({
           name: "Henry",
           email: "henry@gmail.com",
-          phone: 235642,
-          subject: "Asunto Henry",
           message: "",
         })
       ).toEqual({
@@ -103,8 +57,6 @@ describe("03 | Ejercicios", () => {
         validate({
           name: "Henry",
           email: "henry@gmail.com",
-          phone: 235642,
-          subject: "Asunto Henry",
           message: "Mensaje Henry",
         })
       ).toEqual({});
@@ -149,47 +101,6 @@ describe("03 | Ejercicios", () => {
         },
       });
       input = contact.find("input[name='email']");
-      expect(input.hasClass("warning")).toBeFalsy();
-    });
-
-    it("Si el teléfono tiene errores, el input debe tener una clase 'warning'. Cuando estos errores desaparezcan, el input NO debe tener la clase 'warning'", () => {
-      // El telefono NO tiene que ser un numero negativo
-      contact.find("input[name='phone']").simulate("change", {
-        target: {
-          name: "phone",
-          value: -235642,
-        },
-      });
-      input = contact.find("input[name='phone']");
-      expect(input.hasClass("warning")).toBeTruthy();
-      // Ahora testeamos que el error desaparezca cuando ingresamos el input correcto
-      contact.find("input[name='phone']").simulate("change", {
-        target: {
-          name: "phone",
-          value: 235642,
-        },
-      });
-      input = contact.find("input[name='phone']");
-      expect(input.hasClass("warning")).toBeFalsy();
-    });
-
-    it("Si el asunto tiene errores, el input debe tener una clase 'warning'. Cuando estos errores desaparezcan, el input NO debe tener la clase 'warning'", () => {
-      contact.find("input[name='subject']").simulate("change", {
-        target: {
-          name: "subject",
-          value: "",
-        },
-      });
-      input = contact.find("input[name='subject']");
-      expect(input.hasClass("warning")).toBeTruthy();
-      // Ahora testeamos que el error desaparezca cuando ingresamos el input correcto
-      contact.find("input[name='subject']").simulate("change", {
-        target: {
-          name: "subject",
-          value: "Asunto Henry",
-        },
-      });
-      input = contact.find("input[name='subject']");
       expect(input.hasClass("warning")).toBeFalsy();
     });
 
