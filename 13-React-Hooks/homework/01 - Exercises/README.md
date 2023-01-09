@@ -47,9 +47,13 @@ Si deseas correr por test, puedes utilizar:
 npm run test:01
 ```
 
-<br />
+🔹 Para visualizar la aplicación desde el navegador, debes abrir una segunda terminal y ejecutar el comando:
 
--  Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
+```bash
+npm start
+```
+
+Ingresando a <http://localhost:3000> desde el navegador, podrás ver en tiempo real el resultado de nuestro trabajo.
 
 ---
 

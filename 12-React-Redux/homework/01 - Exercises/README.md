@@ -48,9 +48,20 @@ Si deseas correr por test, puedes utilizar:
 npm run test:01
 ```
 
+<<<<<<< HEAD
+🔹 Para visualizar la aplicación desde el navegador, debes abrir una segunda terminal y ejecutar el comando:
+
+```bash
+npm start
+```
+
+Ingresando a <http://localhost:3000> desde el navegador, podrás ver en tiempo real el resultado de nuestro trabajo.
+
+=======
 <br />
 
 -  Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
+>>>>>>> 7f4bfec170b210cdec1b3d2861b04883162a2c08
 
 ---
 
@@ -126,6 +137,15 @@ Acá tienes un snippet para poder realizar la request:
 
 ```js
 return async function (dispatch) {
+<<<<<<< HEAD
+  try {
+    let response = await axios.get("http://localhost:3001/store");
+    return dispatch();
+    /*Aquí es donde agregas tu código*/
+  } catch (error) {
+    console.log(error);
+  }
+=======
    try {
       let response = await axios.get('http://localhost:3001/store');
       return dispatch();
@@ -133,6 +153,7 @@ return async function (dispatch) {
    } catch (error) {
       console.log(error);
    }
+>>>>>>> 7f4bfec170b210cdec1b3d2861b04883162a2c08
 };
 ```
 
