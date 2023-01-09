@@ -40,10 +40,11 @@ En esta actividad debes desarrollar una Zoo App utilizando componentes funcional
 npm install
 ```
 
--  Listo!! Ya puedes correr los test:
+-  Listo!! Ya puedes correr los test y levantar el proyecto con los comandos:
 
 ```bash
 npm test
+npm start
 ```
 
 Si deseas correr por test, puedes utilizar:

@@ -34,10 +34,11 @@ Lee atentamente este **README** y realiza cada uno de los ejercicios.
 npm install
 ```
 
--  Listo!! Ya puedes correr los test:
+-  Listo!! Ya puedes correr los test y levantar el proyecto con los comandos:
 
 ```bash
 npm test
+npm start
 ```
 
 Si deseas correr por test, puedes utilizar:
