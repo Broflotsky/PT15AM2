@@ -58,33 +58,13 @@ npm run test:01
 npm run server
 ```
 
----
-
-### **⚠️ IMPORTANTE**
-
-Para levantar el proyecto, siempre que relices las homeworks de **EJERCICIOS** deberás realizar los siguientes pasos:
-
-Corre en tu terminal el comando:
+🔹 Para visualizar la aplicación desde el navegador, debes abrir una tercera terminal y ejecutar el comando:
 
 ```bash
-node -v
+npm start
 ```
 
-Si tienes la versión 16 / 17, debes correr el comando:
-
-```bash
-npm run start16
-```
-
-Si tienes la version 18, debes correr el comando:
-
-```bash
-npm run start18
-```
-
-<br />
-
--  Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
+Ingresando a <http://localhost:3000> desde el navegador, podrás ver en tiempo real el resultado de nuestro trabajo.
 
 <br />
 

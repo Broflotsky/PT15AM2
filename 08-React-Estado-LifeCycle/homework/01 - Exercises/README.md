@@ -22,7 +22,7 @@ En esta actividad debes desarrollar una Zoo App utilizando componentes funcional
 
 ## **Consigna de la homework**
 
--  Añadir un estado local en el componente **Zoo.jsx** utilizando el hook React.useState. Así tu componente será dinámico También se debe ejecutar ese estado cada vez que se renderice el componente con React.useEffect.
+-  Añadir un estado local en el componente **Zoo.jsx** utilizando el hook React.useState para que tu componente será dinámico. También se debe ejecutar ese estado cada vez que se renderice el componente con React.useEffect.
 -  El componente **Animals.jsx** recibirá estados por props.
 -  El componente **Species** también recibirá estados por props.
 
@@ -61,34 +61,13 @@ npm run test:01
 ```bash
 npm run server
 ```
-
----
-
-### **⚠️ IMPORTANTE**
-
-Para levantar el proyecto, siempre que relices las homeworks de **EJERCICIOS** deberás realizar los siguientes pasos:
-
-Corre en tu terminal el comando:
+🔹 Para visualizar la aplicación desde el navegador, debes abrir una tercera terminal y ejecutar el comando:
 
 ```bash
-node -v
+npm start
 ```
 
-Si tienes la versión 16 / 17, debes correr el comando:
-
-```bash
-npm run start16
-```
-
-Si tienes la version 18, debes correr el comando:
-
-```bash
-npm run start18
-```
-
-<br />
-
--  Ingresando a <http://localhost:3000> desde el navegador, podremos ver en tiempo real el resultado de nuestro trabajo.
+Ingresando a <http://localhost:3000> desde el navegador, podrás ver en tiempo real el resultado de nuestro trabajo.
 
 <br />
 
