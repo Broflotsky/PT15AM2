@@ -45,7 +45,8 @@
    "jest": {
       "setupFilesAfterEnv": [
          "<rootDir>/package.json"
-      ]
+      ],
+      "testEnvironment": "jsdom"
    },
    "babel": {
       "presets": [
