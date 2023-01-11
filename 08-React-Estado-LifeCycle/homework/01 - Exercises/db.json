@@ -1,15 +1,15 @@
 {
    "zoo": {
-      "species": ["Mamiferos", "Reptiles", "Aves"],
+      "species": ["Mamíferos", "Reptiles", "Aves"],
       "animals": [
          {
             "name": "León",
-            "specie": "Mamiferos",
+            "specie": "Mamíferos",
             "image": "https://res.cloudinary.com/dbktfquei/image/upload/v1669903462/leon_svuwdd.jpg"
          },
          {
             "name": "Delfín",
-            "specie": "Mamiferos",
+            "specie": "Mamíferos",
             "image": "https://res.cloudinary.com/dbktfquei/image/upload/v1669903461/delfin_vd9k6c.webp"
          },
          {
