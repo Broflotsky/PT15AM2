@@ -47,7 +47,7 @@ describe("01 | Ejercicios", () => {
   });
 
   it("Debería renderizar un label para el mensaje con el texto 'Mensaje:'", () => {
-    expect(contact.find("label").at(4).text()).toEqual("Mensaje:");
+    expect(contact.find("label").at(2).text()).toEqual("Mensaje:");
   });
 
   it("Debería renderizar un textarea para el mensaje con los atributos name, placeholder y type", () => {
