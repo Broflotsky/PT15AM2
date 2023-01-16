@@ -12,7 +12,7 @@
 
 ## **Duración total estimada 🕒**
 
-x minutos
+4 horas
 
 <br />
 

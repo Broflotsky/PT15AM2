@@ -2,7 +2,7 @@
 
 ## **Duración estimada 🕒**
 
-60 minutos
+2 horas
 
 <br />
 
