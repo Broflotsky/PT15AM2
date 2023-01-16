@@ -2,7 +2,7 @@
 
 ## **Duración estimada 🕒**
 
-50 minutos
+1 hora y media
 
 <br />
 
