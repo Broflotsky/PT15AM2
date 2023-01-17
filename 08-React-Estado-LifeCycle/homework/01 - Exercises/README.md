@@ -2,7 +2,7 @@
 
 ## **Duración estimada 🕒**
 
-60 minutos
+2 horas
 
 <br />
 
@@ -264,7 +264,7 @@ fetch('http://localhost:3001/zoo')
 
 1. Renderizar una etiqueta **h2** con el texto `Species`.
 2. El componente recibe props, y dentro del div, mapea y renderiza las especies que vienen por props en una etiqueta **button**.
-3. En el children del button renderiza las especies.
+3. El botón debe mostrar como texto las especies.
 4. Agrega a la etiqueta button los siguientes atributos:
    -  **_key_**
    -  El evento **_onClick_**, asignándole la función `props.handleSpecies` que también se recibe por props.

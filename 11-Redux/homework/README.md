@@ -10,7 +10,7 @@
 
 ## Duración total estimada 🕒
 
-45 minutos
+3 horas
 
 ---
 
