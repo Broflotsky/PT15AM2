@@ -3,37 +3,46 @@ import { connect } from 'react-redux';
 import Caja from '../../assets/caja.png';
 import './form.css';
 
-function Form() {
-   const [product, setProduct] = useState({ name: '', price: '', id: '' });
+class Form extends React.Component{
+   constructor(props){
+      super(props)
 
-   function handleInputChange(e) {
-      e.preventDefault();
-      setProduct({ ...product, [e.target.name]: e.target.value });
+      this.state = {
+         name: "",
+         price: "",
+         id: ""
+      }
    }
 
-   return (
-      <div className='formBg'>
-         <div className='inputBox'>
-            <label>Nombre: </label>
-            <input
-               name='name'
-               onChange={handleInputChange}
-               value={product.name}
-            />
-         </div>
-         <div className='inputBox'>
-            <label>Precio:</label>
-            <input
-               type='number'
-               name='price'
-               onChange={handleInputChange}
-               value={product.price}
-            />
-         </div>
-         <button className='formBtn'>¡ADD!</button>
-         <img src={Caja} alt='' className='logo' />
-      </div>
-   );
+   handleInputChange = (event) => {
+      this.setState({ ...this.state, [event.target.name]: event.target.value });
+   }
+
+   render(){
+      return (
+         <form className='formBg'>
+            <div className='inputBox'>
+               <label>Nombre: </label>
+               <input
+                  name='name'
+                  onChange={this.handleInputChange}
+                  value={this.state.name}
+               />
+            </div>
+            <div className='inputBox'>
+               <label>Precio:</label>
+               <input
+                  type='number'
+                  name='price'
+                  onChange={this.handleInputChange}
+                  value={this.state.price}
+               />
+            </div>
+            <button className='formBtn'>¡ADD!</button>
+            <img src={Caja} alt='' className='logo' />
+         </form>
+      )
+   }
 }
 
 export function mapDispatchToProps() {}

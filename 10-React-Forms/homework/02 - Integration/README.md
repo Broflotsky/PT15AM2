@@ -35,7 +35,7 @@ Vamos a comenzar creando el componente que nos falta en nuestra carpeta componen
 
 Vamos a trabajar en el archivo `Form.jsx` que acabas de crear.
 
-Primero agregaremos una etiqueta `<div />` que envolverá a todo el componente. Tiene que haber una etiqueta `<label />` y una `<input />` tanto para el **username** como para la **password**. Por último, agrega una etiqueta `<button />`.
+Primero agregaremos una etiqueta `<form />` que envolverá a todo el componente. Tiene que haber una etiqueta `<label />` y una `<input />` tanto para el **username** como para la **password**. Por último, agrega una etiqueta `<button />`.
 
 Dale algo de estilos al componente. Te dejamos una plantilla de cómo puede quedar!
 
