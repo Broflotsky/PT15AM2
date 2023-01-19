@@ -39,7 +39,7 @@ describe("05 | Ejercicios", () => {
     expect(
       copyData
         .find("div")
-        .at(2)
+        .at(1)
         .props()
         .children.join("")
         .includes(useStateSpy.mock.calls[0])
