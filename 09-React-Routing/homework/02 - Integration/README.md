@@ -61,6 +61,8 @@ Esto significa que es completamente libre. Puedes mostrar incluso una foto tuya.
 
 En la Navbar agrega el link About que dirija al componente **About** y el link Home para que dirija al componente **Home**.
 
+> **Hint**: Podrías utilizar NavLink para darle estilos al link About y Home.
+
 <br />
 
 ---
@@ -158,7 +160,7 @@ Dándole estilos debería quedarte algo similar a esto:
 
 <br />
 
-> Hint: Ten en cuenta el tipo de dato de cada propiedad renderizada! Además cuando vayas a renderizar la información puede suceder que al ser la llamada a la API de Rick & Morty asíncrona, no le da tiempo de guardar la información y renderizarla. Para ello, puedes usar "?" para validar si nuestro estado tiene información a renderizar.
+> **Hint**: Ten en cuenta el tipo de dato de cada propiedad renderizada! Además cuando vayas a renderizar la información puede suceder que al ser la llamada a la API de Rick & Morty asíncrona, no le da tiempo de guardar la información y renderizarla. Para ello, puedes usar "?" para validar si nuestro estado tiene información a renderizar.
 
 ---
 
