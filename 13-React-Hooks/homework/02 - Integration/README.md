@@ -84,6 +84,8 @@ En esta homework crearemos dos cosas que harán más completa nuestra aplicació
    
    c. Retorna tu estado global y la propiedad **_myFavorites_** ésta última debe ser igual al filtrado que haz hecho en el punto b.
 
+   >**Hint**: Recuerda cuando desarrollamos la homework 08-React-Estado-LifeCycle 01-Exercises: en Zoo app, creamos también copias de estado 😉.
+
 4. Crea un caso con el nombre "_ORDER_", en él vamos a ordenar nuestros personajes favoritos de forma ascendente y descendente, para ello debes hacer los siguientes pasos:
 
    a. Mediante destructuring trae la propiedad de estado "**_allCharacters_**". 
