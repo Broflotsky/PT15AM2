@@ -12,15 +12,15 @@
 
 ## **INTRO**
 
-En esta homework crearemos dos cosas😄
+En esta homework crearemos dos cosas que harán más completa nuestra aplicación: 😄
 
--  Por un lado, haremos un **filtrado** para nuestros personajes favoritos. Vamos a filtrar todos los personajes por su género. En total hay cuatro géneros:
+- Por un lado, haremos un **filtrado** para nuestros personajes favoritos. Vamos a filtrar todos los personajes por su género. En total hay cuatro géneros:
 
 ```javascript
-['Male', 'Female', 'unknown', 'Genderless'];
+["Male", "Female", "unknown", "Genderless"];
 ```
 
--  Por otro lado, haremos un **ordenamiento** también para nuestros personajes favoritos. Vamos a ordenar todos los personajes por su id (de mayor a menor y viceversa).
+- Por otro lado, haremos un **ordenamiento** también para nuestros personajes favoritos. Vamos a ordenar todos los personajes por su id (de mayor a menor y viceversa).
 
 <br />
 
@@ -30,11 +30,21 @@ En esta homework crearemos dos cosas😄
 
 ### **ACTIONS**
 
-Dirígete al archivo en el que se encuentran tus **actions**. Allí deberás:
+🔹 Dirígete al archivo en el que se encuentran tus **actions**. 
 
-1. Crear una action-creator con el nombre "**_filterCards_**". Esta action-creator recibirá por parámetro un **status**. La action que retornará tendrá un _type_ llamado "**FILTER**", y dentro del _payload_ irá el género recibido.
+🔹 Lo que hay que hacer:
 
-2. Crear una action-creator con el nombre "**_orderCards_**". Esta action-creator recibirá por parámetro un **id**. La action que retornará tendrá un _type_ llamado "**ORDER**", y dentro del _payload_ irá el id recibido.
+1. Crear una action-creator con el nombre "**_filterCards_**", esta action-creator debe:
+
+   a. Recibir por parámetro un **gender**.
+
+   b. Retornar  un **_type_** llamado "**FILTER**" y un **_payload_** donde su valor sea el parámetro recibido en la action.
+
+2. Crear una segunda action-creator con el nombre "**_orderCards_**". Esta action-creator debe:
+
+   a. Recibir por parámetro un **id**. 
+
+   b. Retornar un **_type_** llamado "**ORDER**", y un **_payload_** donde su valor sea el parámetro recibido en la action.
 
 <br />
 
@@ -44,15 +54,49 @@ Dirígete al archivo en el que se encuentran tus **actions**. Allí deberás:
 
 ### **REDUCER**
 
-Para comenzar a trabajar, primero tendremos que crear un estado global en el que se guarden todos nuestros personajes a medida que los vamos agregando. Dirígete al archivo en el que se encuentra tu reducer:
+🔹 Seguiremos trabajando nuestro reducer, el objetivo de este ejercicio es añadir una nueva propiedad de estado y con la propiedad que ya teníamos creada de la homework anterior (React-Redux), lograremos paso a paso filtrar y ordenar nuestros personajes favoritos.
 
-1. Crea un nuevo estado global (dentro del _initialState_) llamado _**allCharacters**_. Este debe ser un arreglo vacío.
+🔹 Lo que hay que hacer:
 
-2. Dentro del caso **ADD_FAV** estás haciendo una copia de tu estado _**myFavorites**_. Tendrás que reemplazar esto por una copia de tu nuevo estado _**allCharacters**_. Una vez hecho esto, en el estado que retorna este caso deberás agregar también la propiedad _**allCharacters**_ e igualarla a la copia de tu estado.
+1. Dirígete al archivo en el que se encuentra tu reducer:
 
-3. Crea un caso con el nombre "_FILTER_". Haz una copia de tu estado "**_allCharacters_**" mediante destructuring. Filtra aquellos personajes que tengan el mismo género que recibes por payload. Retorna tu estado global, pero que la propiedad **_myFavorites_** sea igual al filtrado que haz hecho.
+   a. Crea una nueva propiedad de estado llamada _**allCharacters**_ a nuestro estado global  **_initialState_**.
 
-4. Crea un caso con el nombre "_ORDER_". Haz una copia de tu estado "**_allCharacters_**" mediante destructuring. Utiliza el método **sort** de arreglos para ordenar tus personajes en base al número de su ID. Si el _payload_ es "**Ascendente**", entonces de menor a mayor. Si el _payload_ es "**Descendiente**, entonces de mayor a menor. Retorna tu estado global, pero que la propiedad **_myFavorites_** sea igual al ordenamiento que haz hecho.
+   b. **_allCharacters** debe ser un arreglo vacío.
+
+2. Modifiquemos el caso **ADD_FAV**:
+   
+   a. Actualmente tenemos en el return de este case:
+   
+      - El state.
+      
+      - Una propiedad llamada _**myFavorites**_ donde su valor es una copia del estado _**myFavorites**_ y el payload.
+      
+      ♦ Lo que debes es reemplazar la copia de _**myFavorites**_ por una copia del estado creado en el punto anterior: _**allCharacters**_.
+   
+   b. Debajo de la propiedad _**myFavorites**_ agrega la propiedad de estado _**allCharacters**_ donde su valor sea una copia de este estado y el payload.
+
+3. Crea un nuevo caso con el nombre "_FILTER_", en él vamos a filtrar nuestros personajes favoritos para ello debes hacer lo siguiente:
+
+   a. Mediante destructuring trae la propiedad de estado "**_allCharacters_**". 
+   
+   b. Filtra aquellos personajes que tengan el mismo género que recibes por payload. 
+   
+   c. Retorna tu estado global y la propiedad **_myFavorites_** ésta última debe ser igual al filtrado que haz hecho en el punto b.
+
+   >**Hint**: Recuerda cuando desarrollamos la homework 08-React-Estado-LifeCycle 01-Exercises: en Zoo app, creamos también copias de estado 😉.
+
+4. Crea un caso con el nombre "_ORDER_", en él vamos a ordenar nuestros personajes favoritos de forma ascendente y descendente, para ello debes hacer los siguientes pasos:
+
+   a. Mediante destructuring trae la propiedad de estado "**_allCharacters_**". 
+
+   b. Utilizar el método **sort** para ordenar tus personajes de acuerdo a su ID.
+
+   c. Si el _payload_ es igual a "**Ascendente**", los personajes deben ordenarse de menor a mayor.
+
+   d. Si el _payload_ es "**Descendente**, los personajes deben ordenarse de mayor a menor.
+
+   e. Retornar tu estado global y la propiedad **_myFavorites_**, ésta última debe ser igual al ordenamiento que acabas de hacer.
 
 > **NOTA:** investiga en la web sobre cómo funciona el método sort.
 
@@ -62,23 +106,49 @@ Para comenzar a trabajar, primero tendremos que crear un estado global en el que
 
 ## **👩‍💻 EJERCICIO 3**
 
-### **FILTER/ORDER COMPONENT**
+### **Filtros y ordenamientos en el componente Favorites**
 
-Dirígete al archivo en el que se encuentra tu componente **Favorites**. Allí deberás:
+🔹 Dirígete al archivo en el que se encuentra tu componente **Favorites**.
 
-1. Dentro de un `div`, crea dos elementos de HTML **selector**.
+🔹 Lo que hay que hacer:
 
-   -  Dentro del primero le pasaremos dos opciones: **Ascendente** y **Descendente**. Asegúrate de pasarles estos valores en sus atributos `value`. Por ejemplo:
+1. Crea una etiqueta `div`.
 
-   ```html
+2. Dentro del div crea una etiqueta `select` con el atributo **name**, para el ordenamiento, dentro de esta etiqueta:
+
+   a. Crea una etiqueta `option` con el atributo **value**, el valor del atributo debe ser "_Ascendente_" y su texto puede ser _Ascendente_.
+
+   b. Crea una segunda etiqueta **option** con el atributo **value**, el valor del atributo debe ser "_Descendente_" y su texto puede ser _Descendente_.
+
+   Por ejemplo:
+
+    ```html
    <option value="Ascendente">Ascendente</option>
    ```
 
-   -  Dentro del segundo pásales las opciones: **Male**, **Female**, **Genderless** y **unknown**. Asegúrate de pasarles estos valores en sus atributos `value`. Por ejemplo:
+3. Crea una segunda etiqueta **select** con el atributo name, para el filtrado, dentro de esta etiqueta:
 
-2. Cada vez que se seleccione una opción de ordenamiento, despacha la action "**orderCards**". Recuerda pasarle por parámetro el `e.target.value` del input. Utiliza el hook `useDispatch`.
+   a. Crea 4 etiquetas **option** cada una con su atributo **value** con los siguientes valores: **Male**, **Female**, **Genderless** y **unknown**. Cada texto de cada etiqueta option puede ser igual a cada valor.
 
-3. Cada vez que se seleccione una opción de filtrado, despacha la action "**filterCards**". Recuerda pasarle por parámetro el `e.target.value` del input. Utiliza el hook `useDispatch`.
+     ```html
+   <option value="Male">Male</option>
+   ```
+
+4. Crea una función que reciba como parámetro un evento y despache la acción "**orderCards**" con el hook **useDispatch**; la acción recibe como argumento `e.target.value`.
+
+5. Crea una función que reciba como parámetro un evento y despache la acción "**filterCards**" con el hook **useDispatch**; la acción recibe como argumento **e.target.value**.
+
+
+6. Agrega el atributo `onChange` a las etiquetas **select** y que su valor sea el nombre de la función correspondiente a cada select.
+
+<br />
+
+---
+
+## **👩‍💻 Extra Credit**
+
+Agrega una opción adicional en el select del filtro para que muestre todos los personajes. Desarrolla la lógica para que ello ocurra.
+
 
 <br />
 

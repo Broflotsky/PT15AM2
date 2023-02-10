@@ -28,13 +28,13 @@ Lee atentamente este **README** y realiza cada uno de los ejercicios.
 
 🔹 Para poder ejecutar los `test` de esta homework, es necesario que abramos la terminal ubicados dentro de la carpeta `01 - Exercises`.
 
--  Cuando te encuentres en esta carpeta, debes ejecutar el comando
+- Cuando te encuentres en esta carpeta, debes ejecutar el comando
 
 ```bash
 npm install
 ```
 
--  Listo!! Ya puedes correr los test y levantar el proyecto con los comandos:
+- Listo!! Ya puedes correr los test y levantar el proyecto con los comandos:
 
 ```bash
 npm test
@@ -61,30 +61,30 @@ Ingresando a <http://localhost:3000> desde el navegador, podrás ver en tiempo r
 
 🔹 Dentro de la carpeta `01 - Exercises`, vas a encontrar la siguiente estructura:
 
--  Una carpeta llamada **img**.
--  Una carpeta llamada **public**.
--  Una carpeta llamada **tests**.
--  Una carpeta llamada **mocks**.
--  Una carpeta llamada `src` (es la carpeta en donde trabajaremos).
--  Un archivo **package.json**.
--  Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
+- Una carpeta llamada **img**.
+- Una carpeta llamada **public**.
+- Una carpeta llamada `src` (es la carpeta en donde trabajaremos).
+- Una carpeta llamada **tests**.
+- Una carpeta llamada **mocks**.
+- Un archivo **package.json**.
+- Y el archivo `README.md` que ahora mismo estás leyendo. 🧐
 
 Además:
 
 🔹 Dentro de la carpeta `src` encontrarás el esqueleto del proyecto React, estructurado de la siguiente manera:
 
--  Una carpeta llamada `assets`
--  Una carpeta llamada `components`
-   -  Una carpeta llamada `ContactUs`
-   -  Una carpeta llamada `CopyData`
-   -  Una carpeta llamada `InfoEnviada`
--  Una carpeta llamada `redux`
-   -  Una carpeta llamada `actions`
-   -  Una carpeta llamada `reducer`
-   -  Una carpeta llamada `store`
--  Un archivo llamado `Home.js`
--  Un archivo llamado `home.css`
--  Un archivo llamado `index.js`
+- Una carpeta llamada `assets`
+- Una carpeta llamada `components`
+  - Una carpeta llamada `ContactUs`
+  - Una carpeta llamada `CopyData`
+  - Una carpeta llamada `InfoEnviada`
+- Una carpeta llamada `redux`
+  - Una carpeta llamada `actions`
+  - Una carpeta llamada `reducer`
+  - Una carpeta llamada `store`
+- Un archivo llamado `Home.js`
+- Un archivo llamado `home.css`
+- Un archivo llamado `index.js`
 
 Estarás trabajando con algunos componentes y con las herramientas de Redux.
 
@@ -96,7 +96,7 @@ Estarás trabajando con algunos componentes y con las herramientas de Redux.
 
 ## **👩‍💻 EJERCICIO 1**
 
-En este ejercicio crearemos un formulario para enviar un mail a la empresa.
+El objetivo de este ejercicio es crear un formulario para que los usuarios puedan contactar y enviar un mensaje a la aplicación de la empresa.
 
 ### **USE STATE**
 
@@ -106,18 +106,26 @@ En este ejercicio crearemos un formulario para enviar un mail a la empresa.
 
 1. Encontrarás importado `React` para que luego puedas usar su método `React.useState`.
 
-2. Crea un estado local llamado "_form_" para guardar la información de todos los inputs: **nombre**, **email**, **asunto** y **mensaje**.
+2. Crea un estado local llamado "**_form_**" para guardar la información de todos los inputs: **nombre**, **email**, **asunto** y **mensaje**.
 
-3. Crea una función "_handleInput_" para manejar estos inputs y pásala a los eventos `onChange` de cada uno.
+   ```js
+   const [form, setForm] = React.useState({
+     nombre: "",
+     email: "",
+     asunto: "",
+     mensaje: "",
+   });
+   ```
 
-```js
-const [form, setForm] = React.useState({
-   nombre: '',
-   email: '',
-   asunto: '',
-   mensaje: '',
-});
-```
+3. Crea una función "**_handleInput_**", en ella debes hacer lo siguiente:
+
+   a. Recibir como parámetro un evento.
+
+   b. Setear el estado local **form**.
+
+   c. Asignar el valor del evento a cada una de las propiedades.
+
+4. Con el atributo `onChange` de cada input del formulario asigna la función creada en el punto anterior.
 
 <br />
 
@@ -171,12 +179,14 @@ const dispatch = useDispatch();
 
 2. Importa la _actionCreator_ que declaraste hace unos momentos atrás.
 
-3. Crea una función llamada "_handleSubmit_". Esta función debe:
+3. Crea una función llamada "**_handleSubmit_**". Esta función debe:
 
-   -  Despachar esta _actionCreator_, la cual recibe por parámetro el estado local "**form**".
-   -  Limpiar el formulario una vez despachada la información
+   - Despachar esta _actionCreator_, la cual recibe por parámetro el estado local "**form**".
+   - Limpiar el formulario una vez despachada la información.
 
-4. Pásale esta función a la etiqueta `button` de este componente, dentro de un evento "**onClick**.
+4. Pásale esta función a la etiqueta `form` de este componente, dentro de su atributo "**onSubmit**.
+
+5. Agrega a la etiqueta `button` de este componente, el atributo **type** y su valor sea **submit** .
 
 <br />
 
@@ -198,7 +208,7 @@ En este ejercicio traerás la información del estado global a un componente.
 
 ```javascript
 const { formulario } = useSelector((state) => {
-   return state;
+  return state;
 });
 ```
 
@@ -210,7 +220,7 @@ const { formulario } = useSelector((state) => {
 
 🔹 Lo que hay que hacer:
 
-1. Importa el hook `React.useState` y crea un estado local llamado "**informacion**". Este estado debe ser un objeto con las propiedades: **nombre**, **email**, **asunto** y **mensaje**.
+- Crea un estado local llamado "**informacion**" usando el hook **React.useState**. Este estado debe ser un objeto con las propiedades: **nombre**, **email**, **asunto** y **mensaje**.
 
 <br />
 
@@ -218,9 +228,7 @@ const { formulario } = useSelector((state) => {
 
 ## **👩‍💻 EJERCICIO 4**
 
-En este ejercicio mostrarás la información de tu estado global en la pantalla.
-
-En este ejercicio
+En este ejercicio mostrarás la información de tu estado global en el navegador.
 
 ### **USE EFFECT**
 
@@ -230,15 +238,15 @@ En este ejercicio
 
 🔹 Lo que hay que hacer:
 
-1. Importa el hook `useEffect`, y decláralo dentro del componente (debajo del selector). Tendrás que declararlo de la manera:
+- Usa el hook `useEffect`, y decláralo dentro del componente (debajo del selector). Tendrás que declararlo de la siguiente manera:
 
 ```javascript
 React.useEffect();
 ```
 
-2. Dentro de este hook debes crear una función _callback_ que tiene que settear en tu estado local "**informacion**" el formulario que estás trayéndote desde el reducer (gracias al selector).
+2. Este hook recibe una función _callback_ la cual debe settear el estado local "**informacion**" y asignar a cada propiedad, el valor de las propiedades del formulario que traes mediante el hook useSelector desde el reducer.
 
-3. Crea, en este hook, un arreglo de dependencia que tenga incluído dentro el formulario recibido.
+3. Agrega al hook useEffect como segundo argumento un arreglo de dependencia que incluya el formulario recibido desde el reducer.
 
 </br>
 
@@ -248,7 +256,7 @@ React.useEffect();
 
 🔹 Lo que hay que hacer:
 
-1. Renderiza una etiqueta h1 que contenga el texto `ESTA ES LA INFORMACIÓN QUE ENVIASTE...`.
+1. Renderiza una etiqueta h1 que contenga el texto `Información que enviaste por el formulario...`.
 
 2. Renderiza una etiqueta h3 que contenga la propiedad `nombre` del estado `informacion`.
 
@@ -276,32 +284,34 @@ En este ejercicio crearás una funcionalidad de _**Copiado al Portapapeles**_ de
 
 🔹 Lo que hay que hacer:
 
-1. Importa los hooks `useState` y `useRef`.
+1.  Usa los hooks `useState` y `useRef`.
 
-2. Crea un estado local llamado "**number**" que sea un string y tenga un número cualquiera con la estructura:
+2.  Crea un estado local llamado "**number**", donde su estado inicial sea un string con números a tu elección, siguiendo la siguiente estructura:
 
-   XXX-XXX-XXXX
+    XXX-XXX-XXXX
 
-3. Crea una constante llamada "**numberRef**" que será igual al hook `useRef()` ejecutado.
+3.  Crea una constante llamada "**numberRef**" que será igual a la ejecución del hook `useRef()`.
 
-4. Dentro del componente crea:
+4.  El componente funcional CopyData debe renderizar:
 
-   -  Una etiqueta `button` con el texto "**_Copy_**"
-   -  Una etiqueta `div`. Esta debe tener una propiedad `ref` igual a la referencia que creamos anteriormente. Además, dentro de esta etiqueta debes escribir:
+    - Una etiqueta `button` con el texto "**_Copy_**"
+    - Una etiqueta `div`. A esta etiqueta debes agregar el atributo **ref** donde su valor sea la constante **numberRef**. Además, dentro de esta etiqueta debes escribir:
 
-          TELÉFONO: {number}
+      ```jsx
+      Teléfono: {number}
+      ```
 
-> **NOTA:** es muy importante que el texto que escribas dentro de la etiqueta "div" sea literalmente el anterior, debido a que se tomará como referencia, el valor de tu estado local.
+    > **NOTA:** es muy importante que el texto que escribas dentro de la etiqueta "div" sea literalmente el anterior, debido a que se tomará como referencia, el valor de tu estado local.
 
-5. Crea una función llamada **handleCopy**. En el cuerpo de la función tienes que copiar y pegar el siguiente código:
+5.  Crea una función llamada **handleCopy**. En el cuerpo de la función tienes que copiar y pegar el siguiente código:
 
 ```javascript
 let copyText = numberRef.current.lastChild.data;
-const textArea = document.createElement('textarea');
+const textArea = document.createElement("textarea");
 textArea.textContent = copyText;
 document.body.append(textArea);
 textArea.select();
-document.execCommand('copy');
+document.execCommand("copy");
 textArea.remove();
 ```
 
@@ -327,11 +337,11 @@ Te desafiamos a que crees las validaciones necesarias para cada uno de los input
 
 ## **🧠 Recuerda que...**
 
--  El **useState** nos permite guardar información de manera local en un componente.
--  El **useDispatch** nos permite enviar acciones a nuestro reducer.
--  El **useSelector** nos permite traer información de nuestro estado global a un componente.
--  El **useEffect** nos permite manejar el ciclo de vida de un componente.
--  El **useRef** nos permite tener una referencia directa de un elemento del DOM en nuestro código.
+- El **useState** nos permite guardar información de manera local en un componente.
+- El **useDispatch** nos permite enviar acciones a nuestro reducer.
+- El **useSelector** nos permite traer información de nuestro estado global a un componente.
+- El **useEffect** nos permite manejar el ciclo de vida de un componente.
+- El **useRef** nos permite tener una referencia directa de un elemento del DOM en nuestro código.
 
 <br />
 
@@ -339,7 +349,7 @@ Te desafiamos a que crees las validaciones necesarias para cada uno de los input
 
 ## **🔎 Recursos adicionales**
 
--  Documentación [**HOOKS EN REACT**](https://reactjs.org/docs/hooks-intro.html)
+- Documentación [**HOOKS EN REACT**](https://reactjs.org/docs/hooks-intro.html)
 
 <br />
 
